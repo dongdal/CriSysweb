@@ -5,7 +5,7 @@ Imports Microsoft.AspNet.Identity
 Imports PagedList
 
 Namespace Controllers
-    Public Class DemandesViewModel
+    Public Class DemandesController
         Inherits BaseController
 
         Private _db As New ApplicationDbContext

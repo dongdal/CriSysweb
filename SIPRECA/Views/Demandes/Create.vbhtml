@@ -26,13 +26,13 @@ End Code
 
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Reference, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.Reference, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Reference, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ReferencePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Reference, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.SinistreId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.SinistreId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.SinistreId, New SelectList(Model.Sinistres, "Value", "Text"), Resource.ComboSinistre,
       New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistre})
@@ -42,10 +42,10 @@ End Code
 
                 @<div Class="form-group row">
 
-                    @Html.LabelFor(Function(m) m.SinistrerId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.SinistrerId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.Sinistrer, "Value", "Text"), Resource.ComboSinistrer,
-             New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistrer})
+                        @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.Sinistrers, "Value", "Text"), Resource.ComboSinistrer,
+          New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistrer})
                         @Html.ValidationMessageFor(Function(m) m.SinistrerId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

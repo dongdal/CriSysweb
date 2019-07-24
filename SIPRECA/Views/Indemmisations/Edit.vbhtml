@@ -29,13 +29,13 @@ End Code
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Montant, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.Montant, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Montant, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Montant, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.CollectiviteId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.CollectiviteId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.CollectiviteId, New SelectList(Model.Collectivies, "Value", "Text"), Resource.ComboIndemnisation,
                   New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboIndemnisation})
@@ -45,7 +45,7 @@ End Code
 
                 @<div Class="form-group row">
 
-                    @Html.LabelFor(Function(m) m.DemandetId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.DemandetId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.DemandetId, New SelectList(Model.Demandes, "Value", "Text"), Resource.ComboDemande,
                          New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboDemande})
