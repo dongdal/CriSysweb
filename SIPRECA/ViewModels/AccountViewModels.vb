@@ -37,6 +37,12 @@ Public Class LoginViewModel
     <Display(Name:="GestUserPwd", ResourceType:=GetType(Resource))>
     Public Property Password As String
 
+    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    '<Display(Name:="AnneeBudgetaire", ResourceType:=GetType(Resource))>
+    'Public Property AnneeBudgetaireId As Long
+    'Public Overridable Property LesAnneeBudgetaires As ICollection(Of SelectListItem)
+    'Public Overridable Property AnneeBudgetaire As AnneeBudgetaire
+
     <Display(Name:="GestUserPwdMemo", ResourceType:=GetType(Resource))>
     Public Property RememberMe As Boolean
 End Class

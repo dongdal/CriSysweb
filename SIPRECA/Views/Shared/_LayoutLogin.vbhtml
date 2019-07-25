@@ -82,7 +82,6 @@
 
     <!--Multi Select Js-->
     <script>
-        $(document).ready(function () {
             $('.single-select').select2();
 
             $('.multiple-select').select2();
@@ -137,9 +136,6 @@
                 selectionFooter: "<div class='custom-header'>Selection footer</div>"
             });
 
-
-
-        });
     </script>
 
     @RenderSection("scripts", required:=False)

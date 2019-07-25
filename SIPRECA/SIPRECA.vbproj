@@ -197,23 +197,27 @@
     <Compile Include="Controllers\SinistresController.vb" />
     <Compile Include="Controllers\SuivisController.vb" />
     <Compile Include="Controllers\DemandesController.vb" />
-    <Compile Include="Controllers\IndemmisationsController.vb" />
     <Compile Include="Controllers\DepartementsController.vb" />
     <Compile Include="Controllers\CommunesController.vb" />
     <Compile Include="Controllers\RegionsController.vb" />
     <Compile Include="Controllers\TypeSinistresController.vb" />
     <Compile Include="Controllers\CollectivitesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
+    <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
     <Compile Include="Migrations\201907232032095_Create-DataBase.Designer.vb">
       <DependentUpon>201907232032095_Create-DataBase.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201907232032095_Create-DataBase.vb" />
+    <Compile Include="Migrations\201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.Designer.vb">
+      <DependentUpon>201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\CollectiviteSinistree.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
-    <Compile Include="ViewModels\IndemmisationViewModel.vb" />
     <Compile Include="ViewModels\DepartementViewModel.vb" />
     <Compile Include="ViewModels\CommuneViewModel.vb" />
     <Compile Include="ViewModels\RegionViewModel.vb" />
@@ -262,7 +266,6 @@
     <Compile Include="DAL\Config\EnqueteCfg.vb" />
     <Compile Include="DAL\Config\EntrepotsCfg.vb" />
     <Compile Include="DAL\Config\FormulaireCfg.vb" />
-    <Compile Include="DAL\Config\IndemmisationCfg.vb" />
     <Compile Include="DAL\Config\InstallationCfg.vb" />
     <Compile Include="DAL\Config\MaladieCfg.vb" />
     <Compile Include="DAL\Config\MaladieSinistreCfg.vb" />
@@ -331,7 +334,6 @@
     <Compile Include="Models\Entrepots.vb" />
     <Compile Include="Models\Formulaire.vb" />
     <Compile Include="Models\IdentityModels.vb" />
-    <Compile Include="Models\Indemmisation.vb" />
     <Compile Include="Models\Installation.vb" />
     <Compile Include="Models\Maladie.vb" />
     <Compile Include="Models\MaladieSinistre.vb" />
@@ -392,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907232032095_Create-DataBase.resx">
       <DependentUpon>201907232032095_Create-DataBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.resx">
+      <DependentUpon>201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1270,11 +1275,6 @@
     <Content Include="Views\Regions\Details.vbhtml" />
     <Content Include="Views\Regions\Edit.vbhtml" />
     <Content Include="Views\Regions\Index.vbhtml" />
-    <Content Include="Views\Indemmisations\Create.vbhtml" />
-    <Content Include="Views\Indemmisations\Delete.vbhtml" />
-    <Content Include="Views\Indemmisations\Details.vbhtml" />
-    <Content Include="Views\Indemmisations\Edit.vbhtml" />
-    <Content Include="Views\Indemmisations\Index.vbhtml" />
     <Content Include="Views\Demandes\Create.vbhtml" />
     <Content Include="Views\Demandes\Delete.vbhtml" />
     <Content Include="Views\Demandes\Details.vbhtml" />

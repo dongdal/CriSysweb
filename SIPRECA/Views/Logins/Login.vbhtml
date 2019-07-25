@@ -29,27 +29,40 @@ End Code
 
 
                         @<div Class="form-group">
-                             <div Class="position-relative has-icon-left">
-                                 @Html.LabelFor(Function(m) m.UserName, New With {.class = "sr-only"})
-                                 @Html.TextBoxFor(Function(m) m.UserName, New With {.class = "form-control", .placeholder = Resource.GestUserName})
-                                 @Html.ValidationMessageFor(Function(m) m.UserName, "", New With {.style = "color: red"})
-                                 <div Class="form-control-position">
-                                     <i Class="icon-user"></i>
-                                 </div>
-                             </div>
+                            <div Class="position-relative has-icon-left">
+                                @Html.LabelFor(Function(m) m.UserName, New With {.class = "sr-only"})
+                                @Html.TextBoxFor(Function(m) m.UserName, New With {.class = "form-control", .placeholder = Resource.GestUserName})
+                                @Html.ValidationMessageFor(Function(m) m.UserName, "", New With {.style = "color: red"})
+                                <div Class="form-control-position">
+                                    <i Class="icon-user"></i>
+                                </div>
+                            </div>
                         </div>
 
 
                         @<div Class="form-group">
-                             <div Class="position-relative has-icon-left">
-                                 @Html.LabelFor(Function(m) m.Password, New With {.class = "sr-only"})
-                                 @Html.PasswordFor(Function(m) m.Password, New With {.class = "form-control", .placeholder = Resource.GestPassWord})
-                                 @Html.ValidationMessageFor(Function(m) m.Password, "", New With {.style = "color: red"})
-                                 <div Class="form-control-position">
-                                     <i Class="icon-lock"></i>
-                                 </div>
-                             </div>
+                            <div Class="position-relative has-icon-left">
+                                @Html.LabelFor(Function(m) m.Password, New With {.class = "sr-only"})
+                                @Html.PasswordFor(Function(m) m.Password, New With {.class = "form-control", .placeholder = Resource.GestPassWord})
+                                @Html.ValidationMessageFor(Function(m) m.Password, "", New With {.style = "color: red"})
+                                <div Class="form-control-position">
+                                    <i Class="icon-lock"></i>
+                                </div>
+                            </div>
                         </div>
+
+                        @*@<div Class="form-group">
+
+                            <div Class="position-relative has-icon-left">
+                                @Html.LabelFor(Function(m) m.AnneeBudgetaireId, New With {.class = "sr-only"})
+                                @Html.DropDownListFor(Function(m) m.AnneeBudgetaireId, New SelectList(Model.LesAnneeBudgetaires, "Value", "Text"), Resource.ComboAnneeBudgetaire,
+New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboAnneeBudgetaire, .Style = "font-size: 9px"})
+                                @Html.ValidationMessageFor(Function(m) m.AnneeBudgetaireId, "", New With {.style = "color: #da0b0b"})
+                                <div Class="form-control-position">
+                                    <i Class="icon-list"></i>
+                                </div>
+                            </div>
+                        </div>*@
 
                         @<div class="form-group clearfix">
 

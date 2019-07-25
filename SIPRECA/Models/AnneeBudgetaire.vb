@@ -2,6 +2,7 @@
 Partial Public Class AnneeBudgetaire
     Public Sub New()
         BudgetCollectivite = New HashSet(Of BudgetCollectivite)()
+        CollectiviteSinistree = New HashSet(Of CollectiviteSinistree)()
     End Sub
 
 
@@ -17,4 +18,5 @@ Partial Public Class AnneeBudgetaire
     Public Overridable Property AspNetUser As ApplicationUser
 
     Public Overridable Property BudgetCollectivite As ICollection(Of BudgetCollectivite)
+    Public Overridable Property CollectiviteSinistree As ICollection(Of CollectiviteSinistree)
 End Class

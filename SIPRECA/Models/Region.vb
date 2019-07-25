@@ -8,7 +8,5 @@ Partial Public Class Region
 
     Public Property ChefLieu As String
 
-    'Public Overridable Property Collectivite As Collectivite
-
     Public Overridable Property Departement As ICollection(Of Departement)
 End Class

@@ -101,6 +101,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Année budgétaire.
+        '''</summary>
+        Public Shared ReadOnly Property AnneeBudgetaire() As String
+            Get
+                Return ResourceManager.GetString("AnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à CRISIS PLATEFORM.
         '''</summary>
         Public Shared ReadOnly Property AppTitle() As String
@@ -358,6 +367,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property Collectivite() As String
             Get
                 Return ResourceManager.GetString("Collectivite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner l&apos;année budgétaire.
+        '''</summary>
+        Public Shared ReadOnly Property ComboAnneeBudgetaire() As String
+            Get
+                Return ResourceManager.GetString("ComboAnneeBudgetaire", resourceCulture)
             End Get
         End Property
         

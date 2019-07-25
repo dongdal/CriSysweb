@@ -2,9 +2,9 @@
 Partial Public Class Sinistre
     Public Sub New()
         Causes = New HashSet(Of Causes)()
-        Demande = New HashSet(Of Demande)()
         Enquete = New HashSet(Of Enquete)()
         Site = New HashSet(Of Site)()
+        CollectiviteSinistree = New HashSet(Of CollectiviteSinistree)()
     End Sub
 
 
@@ -18,8 +18,8 @@ Partial Public Class Sinistre
     Public Overridable Property AspNetUser As ApplicationUser
 
     Public Overridable Property Causes As ICollection(Of Causes)
-    Public Overridable Property Demande As ICollection(Of Demande)
     Public Overridable Property Enquete As ICollection(Of Enquete)
     Public Overridable Property TypeSinistre As TypeSinistre
     Public Overridable Property Site As ICollection(Of Site)
+    Public Overridable Property CollectiviteSinistree As ICollection(Of CollectiviteSinistree)
 End Class

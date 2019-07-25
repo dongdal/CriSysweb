@@ -9,7 +9,6 @@ Partial Public Class Departement
     Public Property ChefLieu As String
     Public Property RegionId As Long
 
-    'Public Overridable Property Collectivite As Collectivite
     Public Overridable Property Commune As ICollection(Of Commune)
     Public Overridable Property Region As Region
 End Class

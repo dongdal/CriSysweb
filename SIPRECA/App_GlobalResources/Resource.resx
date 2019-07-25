@@ -843,4 +843,10 @@
   <data name="SinistreTypeSinistre" xml:space="preserve">
     <value>Type de sinistre</value>
   </data>
+  <data name="AnneeBudgetaire" xml:space="preserve">
+    <value>Année budgétaire</value>
+  </data>
+  <data name="ComboAnneeBudgetaire" xml:space="preserve">
+    <value>Veuillez sélectionner l'année budgétaire</value>
+  </data>
 </root>

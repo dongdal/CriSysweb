@@ -71,12 +71,24 @@ Public Class LoginsController
         AuthenticationManager.SignIn(New AuthenticationProperties() With {.IsPersistent = isPersistent}, identity)
     End Function
 
+    'Private Sub LoadComboBox(ByVal model As LoginViewModel)
+    '    Dim AnneeBudgetaire = (From annee In db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee)
+    '    Dim LesAnneeBudgetaire As New List(Of SelectListItem)
+    '    For Each item In AnneeBudgetaire
+    '        LesAnneeBudgetaire.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+    '    Next
+
+    '    model.LesAnneeBudgetaires = LesAnneeBudgetaire
+    'End Sub
+
     '
     ' GET: /Account/Login
     <AllowAnonymous>
     Public Function Login(returnUrl As String) As ActionResult
         ViewBag.ReturnUrl = returnUrl
-        Return View()
+        Dim model As New LoginViewModel
+        'LoadComboBox(model)
+        Return View(model)
     End Function
 
     '
@@ -104,6 +116,7 @@ Public Class LoginsController
         End If
 
         ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+        'LoadComboBox(model)
         Return View(model)
     End Function
 
