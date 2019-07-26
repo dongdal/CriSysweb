@@ -31,6 +31,17 @@ Public Class AccountController
 
     Public Property UserManager As UserManager(Of ApplicationUser)
 
+    Public Function SetExercice(AnneeBudgetaireId As Long) As ActionResult
+        'on recupere les infos de sessions
+        Dim annee = Db.AnneeBudgetaires.Find(AnneeBudgetaireId)
+
+        If annee IsNot Nothing Then
+            AppSession.AnneeBudgetaire = annee
+        End If
+
+        Return Redirect(Request.UrlReferrer.ToString)
+    End Function
+
     '<LocalizedAuthorize(Roles:="Administrateur")>
     Public Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
         ViewBag.CurrentSort = sortOrder

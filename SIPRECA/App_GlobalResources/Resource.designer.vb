@@ -110,6 +110,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Années Budgétaires.
+        '''</summary>
+        Public Shared ReadOnly Property AnneeBudgetaireListe() As String
+            Get
+                Return ResourceManager.GetString("AnneeBudgetaireListe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à CRISIS PLATEFORM.
         '''</summary>
         Public Shared ReadOnly Property AppTitle() As String
@@ -1082,6 +1091,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à La requête envoyée est erronée. Veuillez executer de nouveau l&apos;opération. Si le problème persiste, veuillez contacter l&apos;administrateur..
+        '''</summary>
+        Public Shared ReadOnly Property Error400_Explain() As String
+            Get
+                Return ResourceManager.GetString("Error400_Explain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez vous rassurer que vous avez sélectionner l&apos;année budgétaire..
+        '''</summary>
+        Public Shared ReadOnly Property Error400_SelectAnnee() As String
+            Get
+                Return ResourceManager.GetString("Error400_SelectAnnee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Requête incorrecte.
+        '''</summary>
+        Public Shared ReadOnly Property Error400_SubTitle() As String
+            Get
+                Return ResourceManager.GetString("Error400_SubTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Erreur 400.
+        '''</summary>
+        Public Shared ReadOnly Property Error400_Title() As String
+            Get
+                Return ResourceManager.GetString("Error400_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Etat.
         '''</summary>
         Public Shared ReadOnly Property Etat() As String
@@ -1874,6 +1919,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des modules.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleList() As String
+            Get
+                Return ResourceManager.GetString("ModuleList", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des sinistrés.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleSinistrer() As String
+            Get
+                Return ResourceManager.GetString("ModuleSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Montant.
         '''</summary>
         Public Shared ReadOnly Property Montant() As String
@@ -2131,6 +2194,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property SinistreTypeSinistre() As String
             Get
                 Return ResourceManager.GetString("SinistreTypeSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Système de gestion et de prévention des risques.
+        '''</summary>
+        Public Shared ReadOnly Property SIPRECA_Text() As String
+            Get
+                Return ResourceManager.GetString("SIPRECA_Text", resourceCulture)
             End Get
         End Property
         

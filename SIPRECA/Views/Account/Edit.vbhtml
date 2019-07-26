@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.Register
+    Layout = "~/Views/Shared/_LayoutPrincipal.vbhtml"
 End Code
 
 
@@ -58,10 +59,10 @@ End Code
 
                 @<div Class="form-group row">
                     @*@Html.LabelFor(Function(m) m.Sexe, New With {.class = "col-sm-2 col-form-label"})
-                <div Class="col-sm-4">
-                    @Html.TextBoxFor(Function(m) m.Sexe, New With {.class = "form-control form-control-square", .tabindex = "5"})
-                    @Html.ValidationMessageFor(Function(m) m.Sexe)
-                </div>*@
+                        <div Class="col-sm-4">
+                            @Html.TextBoxFor(Function(m) m.Sexe, New With {.class = "form-control form-control-square", .tabindex = "5"})
+                            @Html.ValidationMessageFor(Function(m) m.Sexe)
+                        </div>*@
                     @Html.LabelFor(Function(m) m.Sexe, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div Class="col-md-4">
                         <div Class="icheck-material-dark icheck-inline">

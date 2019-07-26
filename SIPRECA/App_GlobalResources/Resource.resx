@@ -849,4 +849,28 @@
   <data name="ComboAnneeBudgetaire" xml:space="preserve">
     <value>Veuillez sélectionner l'année budgétaire</value>
   </data>
+  <data name="AnneeBudgetaireListe" xml:space="preserve">
+    <value>Années Budgétaires</value>
+  </data>
+  <data name="Error400_Explain" xml:space="preserve">
+    <value>La requête envoyée est erronée. Veuillez executer de nouveau l'opération. Si le problème persiste, veuillez contacter l'administrateur.</value>
+  </data>
+  <data name="Error400_SelectAnnee" xml:space="preserve">
+    <value>Veuillez vous rassurer que vous avez sélectionner l'année budgétaire.</value>
+  </data>
+  <data name="Error400_SubTitle" xml:space="preserve">
+    <value>Requête incorrecte</value>
+  </data>
+  <data name="Error400_Title" xml:space="preserve">
+    <value>Erreur 400</value>
+  </data>
+  <data name="ModuleList" xml:space="preserve">
+    <value>Liste des modules</value>
+  </data>
+  <data name="ModuleSinistrer" xml:space="preserve">
+    <value>Gestion des sinistrés</value>
+  </data>
+  <data name="SIPRECA_Text" xml:space="preserve">
+    <value>Système de gestion et de prévention des risques</value>
+  </data>
 </root>

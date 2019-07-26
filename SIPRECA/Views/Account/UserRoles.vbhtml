@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.GestUserRolesTilte
+    Layout = "~/Views/Shared/_LayoutPrincipal.vbhtml"
 End Code
 
 

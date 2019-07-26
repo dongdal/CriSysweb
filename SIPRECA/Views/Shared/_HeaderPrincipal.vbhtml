@@ -29,47 +29,17 @@
                 </ul>
 
                 <ul class="navbar-nav align-items-center right-nav-link">
-
                     <li class="nav-item dropdown-lg">
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                            @Resource.AnneeBudgetaire : @AppSession.AnneeBudgetaire.Libelle
-                            <i class="icon-list"></i>
+                            <i class="icon-envelope-open"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right animated fadeIn" style="width: 380px !important;">
+                        <div class="dropdown-menu dropdown-menu-right animated fadeIn">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    @Resource.ComboAnneeBudgetaire
-                                    @*<span class="badge badge-danger">4</span>*@
+                                    You have 4 new messages
+                                    <span class="badge badge-danger">4</span>
                                 </li>
-                                @If AppSession.LesAnneeBudgetaires IsNot Nothing Then
-                                    For Each item In AppSession.LesAnneeBudgetaires
-                                        @<li Class="list-group-item">
-                                            <a href="@Url.Action("SetExercice", "Account", New With {.AnneeBudgetaireId = item.Id})">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="text-align: center">@Resource.AnneeBudgetaire - @item.Libelle</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    Next
-                                End If
-
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li Class="nav-item dropdown-lg">
-                        <a Class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                            <i Class="icon-envelope-open"></i>
-                        </a>
-                        <div Class="dropdown-menu dropdown-menu-right animated fadeIn">
-                            <ul Class="list-group list-group-flush">
-                                <li Class="list-group-item d-flex justify-content-between align-items-center">
-                                    You have 4 New messages
-                                    <span Class="badge badge-danger">4</span>
-                                </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-1.png" alt="user avatar"></div>
@@ -81,7 +51,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-2.png" alt="user avatar"></div>
@@ -93,7 +63,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-3.png" alt="user avatar"></div>
@@ -105,7 +75,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-4.png" alt="user avatar"></div>
@@ -117,21 +87,21 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item"><a href="javaScript:void();">See All Messages</a></li>
+                                <li class="list-group-item"><a href="javaScript:void();">See All Messages</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li Class="nav-item dropdown-lg">
-                        <a Class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                            <i Class="icon-bell"></i><span class="badge badge-primary badge-up">10</span>
+                    <li class="nav-item dropdown-lg">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                            <i class="icon-bell"></i><span class="badge badge-primary badge-up">10</span>
                         </a>
-                        <div Class="dropdown-menu dropdown-menu-right animated fadeIn">
-                            <ul Class="list-group list-group-flush">
-                                <li Class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
                                     You have 10 Notifications
-                                    <span Class="badge badge-primary">10</span>
+                                    <span class="badge badge-primary">10</span>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <i class="icon-people fa-2x mr-3 text-info"></i>
@@ -142,7 +112,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <i class="icon-cup fa-2x mr-3 text-warning"></i>
@@ -153,7 +123,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item">
+                                <li class="list-group-item">
                                     <a href="javaScript:void();">
                                         <div class="media">
                                             <i class="icon-bell fa-2x mr-3 text-danger"></i>
@@ -164,12 +134,12 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li Class="list-group-item"><a href="javaScript:void();">See All Notifications</a></li>
+                                <li class="list-group-item"><a href="javaScript:void();">See All Notifications</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li Class="nav-item language">
-                        <a Class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="#">
+                    <li class="nav-item language">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="#">
                             @*<i class="flag-icon flag-icon-gb"></i>*@
                             @If ViewContext.RouteData.Values("culture").Equals("en") Then
                                 @<i class="flag-icon flag-icon-gb"></i> @Resource.EnglishLang
@@ -181,12 +151,12 @@
                         <ul class="dropdown-menu dropdown-menu-right animated fadeIn">
                             <li class="dropdown-item">
                                 <a href="@Url.RouteUrl(LeLienFrancais)">
-                                    <i class="flag-icon flag-icon-fr"></i> @Resource.FrenchLang (fr-FR)
+                                    <i class="flag-icon flag-icon-fr"> </i> @Resource.FrenchLang (fr-FR)
                                 </a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="@Url.RouteUrl(LeLienAnglais)">
-                                    <i class="flag-icon flag-icon-gb"></i> @Resource.EnglishLang (en-GB)
+                                    <i class="flag-icon flag-icon-gb"> </i> @Resource.EnglishLang (en-GB)
                                 </a>
                             </li>
                         </ul>
@@ -203,7 +173,7 @@
                                     <div class="media">
                                         <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-17.png" alt="user avatar"></div>
                                         <div class="media-body">
-                                            <h6 class="mt-2 user-title">@AppSession.NomUser  @AppSession.PrenomUser</h6>
+                                            <h6 class="mt-2 user-title">@AppSession.NomUser @AppSession.PrenomUser</h6>
                                             <p class="user-subtitle">@AppSession.UserName</p>
                                         </div>
                                     </div>

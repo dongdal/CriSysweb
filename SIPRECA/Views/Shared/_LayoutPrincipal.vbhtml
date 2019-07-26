@@ -12,10 +12,17 @@
     @*@Scripts.Render("~/bundles/TemplateScript")*@
 
 </head>
-<body>
+<body @*onload="info_noti()"*@>
 
     <!-- Start wrapper-->
     <div id="wrapper">
+
+        <!--Start sidebar-wrapper-->
+        @*@Html.Partial("_LeftSideBar")*@
+        <!--End sidebar-wrapper-->
+        <!--Start topbar header-->
+        @Html.Partial("_HeaderPrincipal")
+        <!--End topbar header-->
 
         <div class="clearfix"></div>
 
@@ -24,7 +31,18 @@
             @RenderBody()
         </div>
         <!--End content-wrapper-->
-
+        <!--Start Back To Top Button-->
+        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+        <!--End Back To Top Button-->
+        <!--Start footer-->
+        <footer class="footer" style="left:0 !important">
+            <div class="container">
+                <div class="text-center">
+                    Copyright © @DateTime.Now.Year <a href="@Resource.MinatSiteWeb">@Resource.MINATName</a> --- @Resource.PoweredBy <a href="@Resource.TeamisWebSite">@Resource.TeamisName</a>
+                </div>
+            </div>
+        </footer>
+        <!--End footer-->
 
     </div>
     <!--End wrapper-->

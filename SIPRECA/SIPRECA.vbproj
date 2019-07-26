@@ -1290,6 +1290,11 @@
     <Content Include="Views\Sinistres\Details.vbhtml" />
     <Content Include="Views\Sinistres\Edit.vbhtml" />
     <Content Include="Views\Sinistres\Index.vbhtml" />
+    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Home\IndexSinistre.vbhtml" />
+    <Content Include="Views\Home\Error400.vbhtml" />
+    <Content Include="Views\Shared\_LayoutError.vbhtml" />
+    <Content Include="Views\Shared\_HeaderPrincipal.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -1313,7 +1318,7 @@
     <Content Include="Views\Home\Contact.vbhtml" />
     <Content Include="Views\Home\Index.vbhtml" />
     <Content Include="Views\Shared\Error.vbhtml" />
-    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Shared\_LayoutPrincipal.vbhtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
