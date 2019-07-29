@@ -317,6 +317,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Suppression de l&apos;élément annulée..
+        '''</summary>
+        Public Shared ReadOnly Property CancelingConfirmed() As String
+            Get
+                Return ResourceManager.GetString("CancelingConfirmed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Opération de clôture confirmée..
+        '''</summary>
+        Public Shared ReadOnly Property CancelingConfirmedCloture() As String
+            Get
+                Return ResourceManager.GetString("CancelingConfirmedCloture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Annulation Confirmée!!!.
+        '''</summary>
+        Public Shared ReadOnly Property CancelingProcess() As String
+            Get
+                Return ResourceManager.GetString("CancelingProcess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre mot de passe n&apos;a pas pu être changé. Vérifiez les informations entrées ou contactez l&apos;administrateur..
         '''</summary>
         Public Shared ReadOnly Property ChangePasswordImpossible() As String
@@ -605,6 +632,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter un sinistrer.
+        '''</summary>
+        Public Shared ReadOnly Property CreateSinistrer() As String
+            Get
+                Return ResourceManager.GetString("CreateSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajoutez un suivi de demande d&apos;indemnisation.
         '''</summary>
         Public Shared ReadOnly Property CreateSuivi() As String
@@ -727,6 +763,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property DateDelivranceCNI() As String
             Get
                 Return ResourceManager.GetString("DateDelivranceCNI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Date de naissance.
+        '''</summary>
+        Public Shared ReadOnly Property DateDeNaissance() As String
+            Get
+                Return ResourceManager.GetString("DateDeNaissance", resourceCulture)
             End Get
         End Property
         
@@ -992,6 +1037,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Telecharger.
+        '''</summary>
+        Public Shared ReadOnly Property DownloadFile() As String
+            Get
+                Return ResourceManager.GetString("DownloadFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une déclaration de sinistre.
         '''</summary>
         Public Shared ReadOnly Property EditCollectiviteSinistree() As String
@@ -1051,6 +1105,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditSinistre() As String
             Get
                 Return ResourceManager.GetString("EditSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un sinistrer.
+        '''</summary>
+        Public Shared ReadOnly Property EditSinistrer() As String
+            Get
+                Return ResourceManager.GetString("EditSinistrer", resourceCulture)
             End Get
         End Property
         
@@ -1181,6 +1244,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Erreur!!!.
+        '''</summary>
+        Public Shared ReadOnly Property ErreurTitle() As String
+            Get
+                Return ResourceManager.GetString("ErreurTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à La requête envoyée est erronée. Veuillez executer de nouveau l&apos;opération. Si le problème persiste, veuillez contacter l&apos;administrateur..
         '''</summary>
         Public Shared ReadOnly Property Error400_Explain() As String
@@ -1213,6 +1285,42 @@ Namespace My.Resources
         Public Shared ReadOnly Property Error400_Title() As String
             Get
                 Return ResourceManager.GetString("Error400_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à OUPS!!!.
+        '''</summary>
+        Public Shared ReadOnly Property ErrorAlertTitle() As String
+            Get
+                Return ResourceManager.GetString("ErrorAlertTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez remplir les dates correctement..
+        '''</summary>
+        Public Shared ReadOnly Property ErrorDateAlertBody() As String
+            Get
+                Return ResourceManager.GetString("ErrorDateAlertBody", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Une erreur est survenue lors du traitement de votre demande..
+        '''</summary>
+        Public Shared ReadOnly Property ErrorProcess() As String
+            Get
+                Return ResourceManager.GetString("ErrorProcess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Une erreur est survenue pendant le traitment de votre requête..
+        '''</summary>
+        Public Shared ReadOnly Property ErrorProcessCloture() As String
+            Get
+                Return ResourceManager.GetString("ErrorProcessCloture", resourceCulture)
             End Get
         End Property
         
@@ -1631,6 +1739,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des sinistrers.
+        '''</summary>
+        Public Shared ReadOnly Property ListSinistrer() As String
+            Get
+                Return ResourceManager.GetString("ListSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des suivis.
         '''</summary>
         Public Shared ReadOnly Property ListSuivi() As String
@@ -1811,6 +1928,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des sinistrer.
+        '''</summary>
+        Public Shared ReadOnly Property ManageSinistrer() As String
+            Get
+                Return ResourceManager.GetString("ManageSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Suivi des indemnisations.
         '''</summary>
         Public Shared ReadOnly Property ManageSuivi() As String
@@ -1888,6 +2014,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ManageTypeSuivi() As String
             Get
                 Return ResourceManager.GetString("ManageTypeSuivi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Le champ {0} est obligatoire: veuillez le remplir..
+        '''</summary>
+        Public Shared ReadOnly Property MdlError_Fichier() As String
+            Get
+                Return ResourceManager.GetString("MdlError_Fichier", resourceCulture)
             End Get
         End Property
         
@@ -2144,6 +2279,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pièce jointe.
+        '''</summary>
+        Public Shared ReadOnly Property PieceJointe() As String
+            Get
+                Return ResourceManager.GetString("PieceJointe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Menu pièce jointe.
+        '''</summary>
+        Public Shared ReadOnly Property PiecesJointeMenu() As String
+            Get
+                Return ResourceManager.GetString("PiecesJointeMenu", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Powered By.
         '''</summary>
         Public Shared ReadOnly Property PoweredBy() As String
@@ -2360,11 +2513,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à .
+        '''</summary>
+        Public Shared ReadOnly Property String1() As String
+            Get
+                Return ResourceManager.GetString("String1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} doit comporter au maximum {2} caractères..
         '''</summary>
         Public Shared ReadOnly Property StringLongLength() As String
             Get
                 Return ResourceManager.GetString("StringLongLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à L&apos;opération s&apos;est effectuée avec succès..
+        '''</summary>
+        Public Shared ReadOnly Property SuccesAlertBody() As String
+            Get
+                Return ResourceManager.GetString("SuccesAlertBody", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Succès.
+        '''</summary>
+        Public Shared ReadOnly Property SuccessAlertTitle() As String
+            Get
+                Return ResourceManager.GetString("SuccessAlertTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à L&apos;élément sélectionné a été correctement supprimé..
+        '''</summary>
+        Public Shared ReadOnly Property SuccessProcess() As String
+            Get
+                Return ResourceManager.GetString("SuccessProcess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à La directive a été clôturée avec succès..
+        '''</summary>
+        Public Shared ReadOnly Property SuccessProcessCloture() As String
+            Get
+                Return ResourceManager.GetString("SuccessProcessCloture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Succes!!!.
+        '''</summary>
+        Public Shared ReadOnly Property SuccessTitle() As String
+            Get
+                Return ResourceManager.GetString("SuccessTitle", resourceCulture)
             End Get
         End Property
         
@@ -2428,6 +2635,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property TypeSuivi() As String
             Get
                 Return ResourceManager.GetString("TypeSuivi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Charger.
+        '''</summary>
+        Public Shared ReadOnly Property Uploader() As String
+            Get
+                Return ResourceManager.GetString("Uploader", resourceCulture)
             End Get
         End Property
         

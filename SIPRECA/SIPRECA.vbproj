@@ -201,10 +201,12 @@
     <Compile Include="Controllers\DepartementsController.vb" />
     <Compile Include="Controllers\CommunesController.vb" />
     <Compile Include="Controllers\RegionsController.vb" />
+    <Compile Include="Controllers\SinistrersController.vb" />
     <Compile Include="Controllers\TypeSinistresController.vb" />
     <Compile Include="Controllers\CollectivitesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
+    <Compile Include="DAL\Config\PropositionCfg.vb" />
     <Compile Include="Migrations\201907232032095_Create-DataBase.Designer.vb">
       <DependentUpon>201907232032095_Create-DataBase.vb</DependentUpon>
     </Compile>
@@ -217,8 +219,13 @@
       <DependentUpon>201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb" />
+    <Compile Include="Migrations\201907291551007_Modification des Tables pour gestion des formulaires.Designer.vb">
+      <DependentUpon>201907291551007_Modification des Tables pour gestion des formulaires.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907291551007_Modification des Tables pour gestion des formulaires.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\CollectiviteSinistree.vb" />
+    <Compile Include="Models\Proposition.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
@@ -230,6 +237,7 @@
     <Compile Include="ViewModels\TypeSinistreViewModel.vb" />
     <Compile Include="ViewModels\TypeAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteViewModel.vb" />
+    <Compile Include="ViewModels\SinistrerViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Content Include="App_Code\IPrincipalExtensionModule.vb" />
     <Compile Include="App_GlobalResources\Resource.designer.vb">
@@ -260,7 +268,6 @@
     <Compile Include="DAL\Config\CategorieDArticleCfg.vb" />
     <Compile Include="DAL\Config\CausesCfg.vb" />
     <Compile Include="DAL\Config\ChampsCfg.vb" />
-    <Compile Include="DAL\Config\ChampsSectionCfg.vb" />
     <Compile Include="DAL\Config\CollectiviteCfg.vb" />
     <Compile Include="DAL\Config\CommuneCfg.vb" />
     <Compile Include="DAL\Config\CompetanceCfg.vb" />
@@ -327,7 +334,6 @@
     <Compile Include="Models\CategorieDArticle.vb" />
     <Compile Include="Models\Causes.vb" />
     <Compile Include="Models\Champs.vb" />
-    <Compile Include="Models\ChampsSection.vb" />
     <Compile Include="Models\Collectivite.vb" />
     <Compile Include="Models\Commune.vb" />
     <Compile Include="Models\Competance.vb" />
@@ -407,6 +413,9 @@
     <EmbeddedResource Include="Migrations\201907272016422_Remove_Field_SinistreId_From_Demande_Table.resx">
       <DependentUpon>201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291551007_Modification des Tables pour gestion des formulaires.resx">
+      <DependentUpon>201907291551007_Modification des Tables pour gestion des formulaires.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -419,6 +428,7 @@
     <Content Include="assets\css\app-style.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\icons.css" />
+    <Content Include="assets\css\jquery-confirm.min.css" />
     <Content Include="assets\css\PagedList.css" />
     <Content Include="assets\css\sidebar-menu.css" />
     <Content Include="assets\flags\1x1\ad.svg" />
@@ -1045,6 +1055,7 @@
     <Content Include="assets\js\index.js" />
     <Content Include="assets\js\index2.js" />
     <Content Include="assets\js\index3.js" />
+    <Content Include="assets\js\jquery-confirm.min.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\sidebar-menu.js" />
@@ -1309,6 +1320,11 @@
     <Content Include="Views\CollectiviteSinistrees\Details.vbhtml" />
     <Content Include="Views\CollectiviteSinistrees\Edit.vbhtml" />
     <Content Include="Views\CollectiviteSinistrees\Index.vbhtml" />
+    <Content Include="Views\Sinistrers\Create.vbhtml" />
+    <Content Include="Views\Sinistrers\Delete.vbhtml" />
+    <Content Include="Views\Sinistrers\Details.vbhtml" />
+    <Content Include="Views\Sinistrers\Edit.vbhtml" />
+    <Content Include="Views\Sinistrers\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

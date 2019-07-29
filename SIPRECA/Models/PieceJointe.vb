@@ -2,8 +2,8 @@
 Partial Public Class PieceJointe
 
     Public Property Id As Long
-    Public Property DemandeId As Long
-    Public Property ProjetId As Long
+    Public Property DemandeId As Long?
+    Public Property ProjetId As Long?
     Public Property Libelle As String
     Public Property Lien As String
     Public Property DateCreation As DateTime=Now

@@ -82,7 +82,8 @@
     @*<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>*@
     <script>
         $('.default-datepicker').datepicker({
-            todayHighlight: true
+            todayHighlight: true,
+            format: "dd/mm/yyyy"
         });
         $('#autoclose-datepicker').datepicker({
             autoclose: true,

@@ -1,7 +1,7 @@
 
 Partial Public Class Section
     Public Sub New()
-        ChampsSection = New HashSet(Of ChampsSection)()
+        Champs = New HashSet(Of Champs)()
     End Sub
 
     Public Property Id As Long
@@ -14,7 +14,7 @@ Partial Public Class Section
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property ChampsSection As ICollection(Of ChampsSection)
+    Public Overridable Property Champs As ICollection(Of Champs)
 
     Public Overridable Property Formulaire As Formulaire
 End Class

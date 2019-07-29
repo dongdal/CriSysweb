@@ -61,8 +61,17 @@ Public Module BundleConfig
           "~/assets/plugins/Chart.js/Chart.min.js",
           "~/assets/plugins/notifications/js/lobibox.min.js",
           "~/assets/plugins/notifications/js/notifications.min.js",
+          "~/assets/plugins/jquery.steps/js/jquery.steps.min.js",
+          "~/assets/plugins/jquery-validation/js/jquery.validate.min.js",
+          "~/assets/plugins/jquery.steps/js/jquery.wizard-init.js",
           "~/assets/js/index.js"))
 
+
+        bundles.Add(New StyleBundle("~/Assets/JQueryConfirmCSS").Include(
+                  "~/assets/css/jquery-confirm.min.css"))
+
+        bundles.Add(New ScriptBundle("~/bundles/JQueryConfirmJS").Include(
+  "~/assets/js/jquery-confirm.min.js"))
 
     End Sub
 End Module

@@ -35,6 +35,16 @@ Public Class DemandeViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="SelectFile")>
+    <Display(Name:="PieceJointe", ResourceType:=GetType(Resource))>
+    Public Property Fichiers As New List(Of HttpPostedFileBase)
+    'Public Property Fichiers As HttpPostedFileBase = Nothing
+
+    <Display(Name:="PiecesJointeMenu", ResourceType:=GetType(Resource))>
+    Public Property PiecesJointesId As Long?
+    Public Overridable Property LesPiecesJointes As ICollection(Of SelectListItem)
+    Public Overridable Property PiecesJointes As ICollection(Of PieceJointe)
+
     Public Sub New()
     End Sub
 

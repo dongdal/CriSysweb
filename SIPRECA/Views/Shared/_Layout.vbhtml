@@ -8,6 +8,7 @@
     <link rel="icon" href="~/assets/images/favicon.ico" type="image/x-icon">
     <title>@ViewBag.Title - @Resource.SIPRECA_Text</title>
     @Styles.Render("~/Assets/TemplateStyle")
+    @Styles.Render("~/Assets/JQueryConfirmCSS")
 
     @*@Scripts.Render("~/bundles/TemplateScript")*@
 
@@ -42,6 +43,7 @@
     <!--End wrapper-->
 
     @Scripts.Render("~/bundles/TemplateScript")
+    @Scripts.Render("~/bundles/JQueryConfirmJS")
 
     <!--DataTable Start-->
     <script>
@@ -76,7 +78,8 @@
     @*<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>*@
     <script>
         $('.default-datepicker').datepicker({
-            todayHighlight: true
+            todayHighlight: true,
+            format: "dd/mm/yyyy"
         });
         $('#autoclose-datepicker').datepicker({
             autoclose: true,

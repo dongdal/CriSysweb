@@ -46,7 +46,7 @@ Namespace Controllers
 
             ViewBag.CurrentFilter = searchString
 
-            Dim entities = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 Select e)
+            Dim entities = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id Select e)
             If Not String.IsNullOrEmpty(searchString) Then
                 entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistre.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.Collectivite.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.AnneeBudgetaire.Libelle.ToUpper.Contains(value:=searchString.ToUpper))

@@ -918,4 +918,76 @@
   <data name="ModelError_SinistreDejaDeclare" xml:space="preserve">
     <value>Désole, ce sinistre a déjà été déclaré pour cette localité et pour l'année budgétaire sélectionnée.</value>
   </data>
+  <data name="CancelingConfirmed" xml:space="preserve">
+    <value>Suppression de l'élément annulée.</value>
+  </data>
+  <data name="CancelingConfirmedCloture" xml:space="preserve">
+    <value>Opération de clôture confirmée.</value>
+  </data>
+  <data name="CancelingProcess" xml:space="preserve">
+    <value>Annulation Confirmée!!!</value>
+  </data>
+  <data name="CreateSinistrer" xml:space="preserve">
+    <value>Ajouter un sinistrer</value>
+  </data>
+  <data name="DateDeNaissance" xml:space="preserve">
+    <value>Date de naissance</value>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>Telecharger</value>
+  </data>
+  <data name="EditSinistrer" xml:space="preserve">
+    <value>Modifier un sinistrer</value>
+  </data>
+  <data name="ErreurTitle" xml:space="preserve">
+    <value>Erreur!!!</value>
+  </data>
+  <data name="ErrorAlertTitle" xml:space="preserve">
+    <value>OUPS!!!</value>
+  </data>
+  <data name="ErrorDateAlertBody" xml:space="preserve">
+    <value>Veuillez remplir les dates correctement.</value>
+  </data>
+  <data name="ErrorProcess" xml:space="preserve">
+    <value>Une erreur est survenue lors du traitement de votre demande.</value>
+  </data>
+  <data name="ErrorProcessCloture" xml:space="preserve">
+    <value>Une erreur est survenue pendant le traitment de votre requête.</value>
+  </data>
+  <data name="ListSinistrer" xml:space="preserve">
+    <value>Liste des sinistrers</value>
+  </data>
+  <data name="ManageSinistrer" xml:space="preserve">
+    <value>Gestion des sinistrer</value>
+  </data>
+  <data name="MdlError_Fichier" xml:space="preserve">
+    <value>Le champ {0} est obligatoire: veuillez le remplir.</value>
+  </data>
+  <data name="PieceJointe" xml:space="preserve">
+    <value>Pièce jointe</value>
+  </data>
+  <data name="PiecesJointeMenu" xml:space="preserve">
+    <value>Menu pièce jointe</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SuccesAlertBody" xml:space="preserve">
+    <value>L'opération s'est effectuée avec succès.</value>
+  </data>
+  <data name="SuccessAlertTitle" xml:space="preserve">
+    <value>Succès</value>
+  </data>
+  <data name="SuccessProcess" xml:space="preserve">
+    <value>L'élément sélectionné a été correctement supprimé.</value>
+  </data>
+  <data name="SuccessProcessCloture" xml:space="preserve">
+    <value>La directive a été clôturée avec succès.</value>
+  </data>
+  <data name="SuccessTitle" xml:space="preserve">
+    <value>Succes!!!</value>
+  </data>
+  <data name="Uploader" xml:space="preserve">
+    <value>Charger</value>
+  </data>
 </root>
