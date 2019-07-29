@@ -25,7 +25,7 @@ End Code
                 @Html.HiddenFor(Function(m) m.StatutExistant)
                 @Html.HiddenFor(Function(m) m.DateCreation)
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
-
+                @Html.HiddenFor(Function(m) m.AnneeBudgetaireId)
 
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Libelle, New With {.class = "col-sm-2 col-form-label required_field"})
@@ -46,22 +46,13 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                     @Html.LabelFor(Function(m) m.CollectiviteId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.CollectiviteId, New SelectList(Model.LesCollectivites, "Value", "Text"), Resource.ComboLocalite,
-                New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboLocalite})
+             New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboLocalite})
                         @Html.ValidationMessageFor(Function(m) m.CollectiviteId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.AnneeBudgetaireId, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.AnneeBudgetaireId, New SelectList(Model.LesAnneeBudgetaires, "Value", "Text"), Resource.ComboAnneeBudgetaire,
- New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.ComboAnneeBudgetaire})
-                        @Html.ValidationMessageFor(Function(m) m.AnneeBudgetaireId, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.DateSinistre, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.DateSinistre, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "5", .Placeholder = Resource.DateSinistrePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.DateSinistre, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateSinistrePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.DateSinistre, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

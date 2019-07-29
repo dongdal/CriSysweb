@@ -99,24 +99,6 @@
         End Set
     End Property
 
-    Shared Property AnneeBudgetaireId As Long
-        Get
-            Return HttpContext.Current.Session("AnneeBudgetaireId")
-        End Get
-        Set(value As Long)
-            HttpContext.Current.Session("AnneeBudgetaireId") = value
-        End Set
-    End Property
-
-    Shared Property AnneeBudgetaireLibelle As String
-        Get
-            Return HttpContext.Current.Session("AnneeBudgetaireLibelle")
-        End Get
-        Set(value As String)
-            HttpContext.Current.Session("AnneeBudgetaireLibelle") = value
-        End Set
-    End Property
-
     Shared Property AnneeBudgetaire As AnneeBudgetaire
         Get
             Return HttpContext.Current.Session("AnneeBudgetaire")

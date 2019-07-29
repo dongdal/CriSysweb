@@ -154,7 +154,7 @@ Namespace Controllers
         Function Create(ByVal entityVM As CollectiviteSinistreeViewModel) As ActionResult
             Dim SinistreDejaDeclare = (From item In Db.CollectiviteSinistree Where item.CollectiviteId = entityVM.CollectiviteId And
                                                                                  item.SinistreId = entityVM.SinistreId And item.AnneeBudgetaireId = item.AnneeBudgetaireId Select item).ToList.Count
-
+            entityVM.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
             If (SinistreDejaDeclare >= 1) Then
                 ModelState.AddModelError("", Resource.ModelError_SinistreDejaDeclare)
             Else
