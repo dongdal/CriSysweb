@@ -9,18 +9,20 @@ Public Class DemandeViewModel
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Reference As String
 
-    <Display(Name:="Sinistre", ResourceType:=GetType(Resource))>
-    Public Property SinistreId As String
-    Public Overridable Property Sinistres As ICollection(Of SelectListItem)
-    Public Overridable Property Sinistre As Sinistre
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="DemandeCollectiviteSinistree", ResourceType:=GetType(Resource))>
+    Public Property CollectiviteSinistreeId As String
+    Public Overridable Property LesCollectiviteSinistrees As ICollection(Of SelectListItem)
+    Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property StatutExistant As Short = 1
 
-    <Display(Name:="Sinistrer", ResourceType:=GetType(Resource))>
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="LeSinistrer", ResourceType:=GetType(Resource))>
     Public Property SinistrerId As String
-    Public Overridable Property Sinistrers As ICollection(Of SelectListItem)
+    Public Overridable Property LesSinistrers As ICollection(Of SelectListItem)
     Public Overridable Property Sinistrer As Sinistrer
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -39,8 +41,8 @@ Public Class DemandeViewModel
     Public Sub New(entity As Demande)
         With Me
             .Id = entity.Id
-            .Sinistre = entity.Sinistre
-            .SinistreId = entity.SinistreId
+            .CollectiviteSinistree = entity.CollectiviteSinistree
+            .CollectiviteSinistreeId = entity.CollectiviteSinistreeId
             .Sinistrer = entity.Sinistrer
             .SinistrerId = entity.SinistrerId
             .Reference = entity.Reference
@@ -55,9 +57,7 @@ Public Class DemandeViewModel
         Dim entity As New Demande
         With entity
             .Id = Id
-            .Sinistre = Sinistre
-            .SinistreId = SinistreId
-            .Sinistrer = Sinistrer
+            .CollectiviteSinistreeId = CollectiviteSinistreeId
             .SinistrerId = SinistrerId
             .Reference = Reference
             .StatutExistant = StatutExistant

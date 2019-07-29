@@ -1,16 +1,16 @@
-﻿@ModelType PagedList.IPagedList(Of AnneeBudgetaire)
+﻿@ModelType PagedList.IPagedList(Of CollectiviteSinistree)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListTypeAnneeBudgetaire
+    ViewBag.Title = Resource.ListCollectiviteSinistree
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageAnneeBudgetaire</h1>
+    <h1 class="page-title">@Resource.ManageCollectiviteSinistree</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "AnneeBudgetaires")>@Resource.ManageAnneeBudgetaire</a></li>
-        <li class="breadcrumb-item active">@Resource.ListTypeAnneeBudgetaire</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "CollectiviteSinistrees")>@Resource.ManageCollectiviteSinistree</a></li>
+        <li class="breadcrumb-item active">@Resource.ListCollectiviteSinistree</li>
     </ol>
 </div>
 
@@ -18,9 +18,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeAnneeBudgetaire</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListCollectiviteSinistree</div>
             <hr>
-            @Using Html.BeginForm("Index", "AnneeBudgetaires", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "CollectiviteSinistrees", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
@@ -45,7 +45,6 @@ End Code
                 </div>
             End Using
 
-            @*<table class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline form-material floating" id="exampleTableSearch" style="width: 100%;">*@
             <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
                 <thead>
                     <tr>
@@ -53,15 +52,16 @@ End Code
                             @Html.ActionLink(Resource.Libelle, "Index", New With {.sortOrder = ViewBag.LibelleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateDebut, "Index", New With {.sortOrder = ViewBag.DateDebutSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th><th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateFin, "Index", New With {.sortOrder = ViewBag.DateFinSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.CollectiviteSinistreeSinistre, "Index", New With {.sortOrder = ViewBag.SinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.CollectiviteSinistreeCollectivite, "Index", New With {.sortOrder = ViewBag.CollectiviteSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.AnneeBudgetaire, "Index", New With {.sortOrder = ViewBag.AnneeBudgetaireSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.DateSinistre, "Index", New With {.sortOrder = ViewBag.DateSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
@@ -76,13 +76,13 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateDebut)
+                                @Html.DisplayFor(Function(modelItem) item.Sinistre.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateFin)
+                                @Html.DisplayFor(Function(modelItem) item.Collectivite.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
+                                @Html.DisplayFor(Function(modelItem) item.AnneeBudgetaire.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
@@ -103,7 +103,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                          New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>

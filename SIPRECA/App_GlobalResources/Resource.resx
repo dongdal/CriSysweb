@@ -745,13 +745,13 @@
     <value>Veillez selectionnnez la collectivité</value>
   </data>
   <data name="ComboSinistre" xml:space="preserve">
-    <value>Veillez selectionnnez un sinistre</value>
+    <value>Veuillez selectionnnez un sinistre</value>
   </data>
   <data name="ComboSinistrer" xml:space="preserve">
     <value>Veillez selectionnnez un Sinistrer</value>
   </data>
   <data name="ComboTypeSuivi" xml:space="preserve">
-    <value>Veillez selectionnnez un type de suivi</value>
+    <value>Veillez selectionnner un type de suivi</value>
   </data>
   <data name="CreateDemande" xml:space="preserve">
     <value>Enregistrez une demande d'indemnisation</value>
@@ -872,5 +872,50 @@
   </data>
   <data name="SIPRECA_Text" xml:space="preserve">
     <value>Système de gestion et de prévention des risques</value>
+  </data>
+  <data name="CollectiviteSinistreeCollectivite" xml:space="preserve">
+    <value>Localité</value>
+  </data>
+  <data name="CollectiviteSinistreeSinistre" xml:space="preserve">
+    <value>Sinistre</value>
+  </data>
+  <data name="ComboCollectiviteSinistree" xml:space="preserve">
+    <value>Veuillez sélectionner une déclaration</value>
+  </data>
+  <data name="ComboLocalite" xml:space="preserve">
+    <value>Veuillez sélectionner la localité</value>
+  </data>
+  <data name="CreateCollectiviteSinistree" xml:space="preserve">
+    <value>Déclarer un sinistre</value>
+  </data>
+  <data name="DateSinistre" xml:space="preserve">
+    <value>Date du sinistre</value>
+  </data>
+  <data name="DateSinistrePlaceholder" xml:space="preserve">
+    <value>Veuiller entrer la date du sinistre</value>
+  </data>
+  <data name="DeleteCollectiviteSinistree" xml:space="preserve">
+    <value>Supprimer une déclaration de sinistre</value>
+  </data>
+  <data name="DemandeCollectiviteSinistree" xml:space="preserve">
+    <value>Déclaration sinistre</value>
+  </data>
+  <data name="EditCollectiviteSinistree" xml:space="preserve">
+    <value>Modifier une déclaration de sinistre</value>
+  </data>
+  <data name="LeSinistrer" xml:space="preserve">
+    <value>Le sinistré</value>
+  </data>
+  <data name="ListCollectiviteSinistree" xml:space="preserve">
+    <value>Liste des sinistres déclarés</value>
+  </data>
+  <data name="ManageCollectiviteSinistree" xml:space="preserve">
+    <value>Gestion des déclarations de sinistre</value>
+  </data>
+  <data name="ModelError_SinistreDeclareUtilise" xml:space="preserve">
+    <value>Impossible de supprimer cet élément car des demandes sont liées à celle-ci. Veuillez contacter l'administrateur.</value>
+  </data>
+  <data name="ModelError_SinistreDejaDeclare" xml:space="preserve">
+    <value>Désole, ce sinistre a déjà été déclaré pour cette localité et pour l'année budgétaire sélectionnée.</value>
   </data>
 </root>

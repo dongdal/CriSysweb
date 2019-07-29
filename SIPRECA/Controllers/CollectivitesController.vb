@@ -94,7 +94,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New CollectiviteViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: Collectivite/Create

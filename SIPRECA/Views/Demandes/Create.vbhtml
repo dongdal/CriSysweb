@@ -24,7 +24,6 @@ End Code
             @Using Html.BeginForm("Create", "Demandes", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
 
-
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Reference, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
@@ -32,11 +31,11 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.Reference, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.SinistreId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.CollectiviteSinistreeId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.SinistreId, New SelectList(Model.Sinistres, "Value", "Text"), Resource.ComboSinistre,
-      New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistre})
-                        @Html.ValidationMessageFor(Function(m) m.SinistreId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.CollectiviteSinistreeId, New SelectList(Model.LesCollectiviteSinistrees, "Value", "Text"), Resource.ComboCollectiviteSinistree,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboCollectiviteSinistree})
+                        @Html.ValidationMessageFor(Function(m) m.CollectiviteSinistreeId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
@@ -44,12 +43,11 @@ End Code
 
                     @Html.LabelFor(Function(m) m.SinistrerId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.Sinistrers, "Value", "Text"), Resource.ComboSinistrer,
-          New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistrer})
+                        @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.LesSinistrers, "Value", "Text"), Resource.ComboSinistrer,
+New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboSinistrer})
                         @Html.ValidationMessageFor(Function(m) m.SinistrerId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
-
 
                 @<div Class="form-group row">
                     <Label Class="col-sm-2 col-form-label"></Label>

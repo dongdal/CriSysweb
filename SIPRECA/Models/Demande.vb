@@ -7,7 +7,7 @@ Partial Public Class Demande
 
     Public Property Id As Long
 
-    Public Property SinistreId As Long
+    'Public Property SinistreId As Long
     Public Property SinistrerId As Long
     Public Property Reference As String
     Public Property Etat As Integer
@@ -19,7 +19,7 @@ Partial Public Class Demande
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Sinistre As Sinistre
+    'Public Overridable Property Sinistre As Sinistre
     Public Overridable Property Sinistrer As Sinistrer
     Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
 

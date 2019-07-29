@@ -29,7 +29,7 @@ Namespace Controllers
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder
             ViewBag.ReferenceSort = If(sortOrder = "Reference", "Reference_desc", "Reference")
-            ViewBag.SinistreSort = If(sortOrder = "Sinistre", "Sinistre_desc", "Sinistre")
+            ViewBag.CollectiviteSinistreeSort = If(sortOrder = "CollectiviteSinistree", "CollectiviteSinistree_desc", "CollectiviteSinistree")
             ViewBag.SinistrerSort = If(sortOrder = "Sinistrer", "Sinistrer_desc", "Sinistrer")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
@@ -44,7 +44,8 @@ Namespace Controllers
 
             Dim entities = (From e In Db.Demande Where e.StatutExistant = 1 Select e)
             If Not String.IsNullOrEmpty(searchString) Then
-                entities = entities.Where(Function(e) e.Sinistre.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistrer.Nom.ToUpper.Contains(value:=searchString.ToUpper))
+                entities = entities.Where(Function(e) e.CollectiviteSinistree.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Reference.ToUpper.Contains(value:=searchString.ToUpper) Or
+                                              e.Sinistrer.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistrer.Prenom.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -54,17 +55,21 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.Reference)
                 Case "Reference_desc"
                     entities = entities.OrderByDescending(Function(e) e.Reference)
-                Case "Sinistre"
-                    entities = entities.OrderBy(Function(e) e.Sinistre.Libelle)
-                Case "Sinistre_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Sinistre.Libelle)
                 Case "Sinistrer"
                     entities = entities.OrderBy(Function(e) e.Sinistrer.Nom)
                 Case "Sinistrer_desc"
                     entities = entities.OrderByDescending(Function(e) e.Sinistrer.Nom)
+                Case "CollectiviteSinistree"
+                    entities = entities.OrderBy(Function(e) e.CollectiviteSinistree.Libelle)
+                Case "CollectiviteSinistree_desc"
+                    entities = entities.OrderByDescending(Function(e) e.CollectiviteSinistree.Libelle)
+                Case "DateCreation"
+                    entities = entities.OrderBy(Function(e) e.DateCreation)
+                Case "DateCreation_desc"
+                    entities = entities.OrderByDescending(Function(e) e.DateCreation)
 
                 Case Else
-                    entities = entities.OrderBy(Function(e) e.Reference)
+                    entities = entities.OrderByDescending(Function(e) e.DateCreation)
                     Exit Select
             End Select
 
@@ -97,20 +102,24 @@ Namespace Controllers
                 End If
             Next
 
-            Dim Sinistre = (From e In Db.Sinistre Where e.StatutExistant = 1 Select e)
-            Dim Sinistres As New List(Of SelectListItem)
-            For Each item In Sinistre
-                Sinistres.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Dim CollectiviteSinistree = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id Select e)
+            Dim LesCollectiviteSinistrees As New List(Of SelectListItem)
+            For Each item In CollectiviteSinistree
+                LesCollectiviteSinistrees.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle & " | " & item.Sinistre.Libelle & " | " & item.Collectivite.Libelle})
             Next
 
             Dim Sinistrer = (From e In Db.Sinistrer Where e.StatutExistant = 1 Select e)
-            Dim Sinistrers As New List(Of SelectListItem)
+            Dim LesSinistrers As New List(Of SelectListItem)
             For Each item In Sinistrer
-                Sinistrers.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
+                If String.IsNullOrEmpty(item.Prenom) Then
+                    LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
+                Else
+                    LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom & " | " & item.Prenom})
+                End If
             Next
 
-            entityVM.Sinistres = Sinistres
-            entityVM.Sinistrers = Sinistrers
+            entityVM.LesCollectiviteSinistrees = LesCollectiviteSinistrees
+            entityVM.LesSinistrers = LesSinistrers
             entityVM.LesUtilisateurs = LesUtilisateurs
         End Sub
 

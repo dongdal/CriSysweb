@@ -380,11 +380,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Localité.
+        '''</summary>
+        Public Shared ReadOnly Property CollectiviteSinistreeCollectivite() As String
+            Get
+                Return ResourceManager.GetString("CollectiviteSinistreeCollectivite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property CollectiviteSinistreeSinistre() As String
+            Get
+                Return ResourceManager.GetString("CollectiviteSinistreeSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner l&apos;année budgétaire.
         '''</summary>
         Public Shared ReadOnly Property ComboAnneeBudgetaire() As String
             Get
                 Return ResourceManager.GetString("ComboAnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une déclaration.
+        '''</summary>
+        Public Shared ReadOnly Property ComboCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("ComboCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -416,6 +443,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la localité.
+        '''</summary>
+        Public Shared ReadOnly Property ComboLocalite() As String
+            Get
+                Return ResourceManager.GetString("ComboLocalite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la région.
         '''</summary>
         Public Shared ReadOnly Property ComboRegion() As String
@@ -425,7 +461,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veillez selectionnnez un sinistre.
+        '''  Recherche une chaîne localisée semblable à Veuillez selectionnnez un sinistre.
         '''</summary>
         Public Shared ReadOnly Property ComboSinistre() As String
             Get
@@ -452,7 +488,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veillez selectionnnez un type de suivi.
+        '''  Recherche une chaîne localisée semblable à Veillez selectionnner un type de suivi.
         '''</summary>
         Public Shared ReadOnly Property ComboTypeSuivi() As String
             Get
@@ -502,6 +538,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CreateAnneeBudgetaire() As String
             Get
                 Return ResourceManager.GetString("CreateAnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Déclarer un sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property CreateCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("CreateCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -731,11 +776,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Date du sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property DateSinistre() As String
+            Get
+                Return ResourceManager.GetString("DateSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuiller entrer la date du sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property DateSinistrePlaceholder() As String
+            Get
+                Return ResourceManager.GetString("DateSinistrePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une année budgetaire.
         '''</summary>
         Public Shared ReadOnly Property DeleteAnneeBudgetaire() As String
             Get
                 Return ResourceManager.GetString("DeleteAnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer une déclaration de sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("DeleteCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -893,6 +965,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Déclaration sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property DemandeCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("DemandeCollectiviteSinistree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Departement.
         '''</summary>
         Public Shared ReadOnly Property Departement() As String
@@ -907,6 +988,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property Disconnect() As String
             Get
                 Return ResourceManager.GetString("Disconnect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier une déclaration de sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property EditCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("EditCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -1433,6 +1523,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Le sinistré.
+        '''</summary>
+        Public Shared ReadOnly Property LeSinistrer() As String
+            Get
+                Return ResourceManager.GetString("LeSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Libelle.
         '''</summary>
         Public Shared ReadOnly Property Libelle() As String
@@ -1465,6 +1564,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property LieuNaissancePlaceholder() As String
             Get
                 Return ResourceManager.GetString("LieuNaissancePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des sinistres déclarés.
+        '''</summary>
+        Public Shared ReadOnly Property ListCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("ListCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -1636,6 +1744,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ManageAnneeBudgetaire() As String
             Get
                 Return ResourceManager.GetString("ManageAnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des déclarations de sinistre.
+        '''</summary>
+        Public Shared ReadOnly Property ManageCollectiviteSinistree() As String
+            Get
+                Return ResourceManager.GetString("ManageCollectiviteSinistree", resourceCulture)
             End Get
         End Property
         
@@ -1915,6 +2032,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property MINATSiteWeb() As String
             Get
                 Return ResourceManager.GetString("MINATSiteWeb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Impossible de supprimer cet élément car des demandes sont liées à celle-ci. Veuillez contacter l&apos;administrateur..
+        '''</summary>
+        Public Shared ReadOnly Property ModelError_SinistreDeclareUtilise() As String
+            Get
+                Return ResourceManager.GetString("ModelError_SinistreDeclareUtilise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Désole, ce sinistre a déjà été déclaré pour cette localité et pour l&apos;année budgétaire sélectionnée..
+        '''</summary>
+        Public Shared ReadOnly Property ModelError_SinistreDejaDeclare() As String
+            Get
+                Return ResourceManager.GetString("ModelError_SinistreDejaDeclare", resourceCulture)
             End Get
         End Property
         

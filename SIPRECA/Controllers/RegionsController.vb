@@ -101,7 +101,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New RegionViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: Regions/Create
@@ -131,7 +131,7 @@ Namespace Controllers
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
-            Dim region As Region = Db.Collectivite.Find(id)
+            Dim region As Region = Db.Region.Find(id)
             If IsNothing(region) Then
                 Return HttpNotFound()
             End If
@@ -166,7 +166,7 @@ Namespace Controllers
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
-            Dim region As Region = Db.Collectivite.Find(id)
+            Dim region As Region = Db.Region.Find(id)
             If IsNothing(region) Then
                 Return HttpNotFound()
             End If

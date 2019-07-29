@@ -52,7 +52,7 @@ End Code
                             @Html.ActionLink(Resource.Reference, "Index", New With {.sortOrder = ViewBag.ReferenceSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Sinistre, "Index", New With {.sortOrder = ViewBag.SinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.DemandeCollectiviteSinistree, "Index", New With {.sortOrder = ViewBag.CollectiviteSinistreeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Sinistrer, "Index", New With {.sortOrder = ViewBag.SinistrerSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
@@ -72,31 +72,28 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
-                        <td class="sorting_asc text-center">
-                            @Html.DisplayFor(Function(modelItem) item.Reference)
-                        </td>
-                        <td class="sorting_asc text-center">
-                            @Html.DisplayFor(Function(modelItem) item.Sinistre.Libelle)
-                        </td>
-                        <td class="sorting_asc text-center">
-                            @Html.DisplayFor(Function(modelItem) item.Sinistrer.Nom)
-                        </td>
-                        <td class="sorting_asc text-center">
-                            @Html.DisplayFor(Function(modelItem) item.StatutExistant)
-                        </td>
-                        <td class="sorting_asc text-center">
-                            @Html.DisplayFor(Function(modelItem) item.DateCreation)
-                        </td>
-                        <td class="text-center">
-                            <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                <i class="fa fa-edit" aria-hidden="true"></i>
-                            </a>
-                            <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.Reference)
+                            </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.CollectiviteSinistree.Libelle)
+                            </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
+                            </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.DateCreation)
+                            </td>
+                            <td class="text-center">
+                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
                     Next
                 </tbody>
 

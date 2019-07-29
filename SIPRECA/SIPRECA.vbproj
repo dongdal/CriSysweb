@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\CollectiviteSinistreesController.vb" />
     <Compile Include="Controllers\SinistresController.vb" />
     <Compile Include="Controllers\SuivisController.vb" />
     <Compile Include="Controllers\DemandesController.vb" />
@@ -212,9 +213,14 @@
       <DependentUpon>201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb" />
+    <Compile Include="Migrations\201907272016422_Remove_Field_SinistreId_From_Demande_Table.Designer.vb">
+      <DependentUpon>201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\CollectiviteSinistree.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
+    <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.resx">
       <DependentUpon>201907251610069_Refonte_Du_Model_Pour_Le_Module_SISA-Gestion_Des_Sinistrés.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907272016422_Remove_Field_SinistreId_From_Demande_Table.resx">
+      <DependentUpon>201907272016422_Remove_Field_SinistreId_From_Demande_Table.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1295,6 +1304,11 @@
     <Content Include="Views\Home\Error400.vbhtml" />
     <Content Include="Views\Shared\_LayoutError.vbhtml" />
     <Content Include="Views\Shared\_HeaderPrincipal.vbhtml" />
+    <Content Include="Views\CollectiviteSinistrees\Create.vbhtml" />
+    <Content Include="Views\CollectiviteSinistrees\Delete.vbhtml" />
+    <Content Include="Views\CollectiviteSinistrees\Details.vbhtml" />
+    <Content Include="Views\CollectiviteSinistrees\Edit.vbhtml" />
+    <Content Include="Views\CollectiviteSinistrees\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

@@ -9,7 +9,7 @@ End Code
     <h1 class="page-title">@Resource.ManageRegion</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Account")>@Resource.ManageRegion</a></li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Regions")>@Resource.ManageRegion</a></li>
         <li class="breadcrumb-item active">@Resource.ListRegion</li>
     </ol>
 </div>

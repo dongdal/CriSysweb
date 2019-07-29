@@ -47,7 +47,7 @@ Public Class RegionViewModel
         With entity
             .Id = Id
             .Libelle = Libelle
-            .ChefLieu = Libelle
+            .ChefLieu = ChefLieu
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
