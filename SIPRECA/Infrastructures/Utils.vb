@@ -95,5 +95,95 @@ Public Class Util
     '    Return LeNumeroSuivi.ToUpper
     'End Function
 
+    '[Enum].GetName(GetType(Util.ElementsSuiviDemandes), Util.ElementsSuiviDemandes.Creation)
+
+    Public Enum ElementsSuiviDemandes
+        ''' <summary>
+        ''' Valeur utilisée lors de la création de la demande d'indemnisation
+        ''' </summary>
+        Creation = 1
+
+        ''' <summary>
+        ''' Valeur utilisée lors de la validation au niveau communal
+        ''' </summary>
+        ValidationCommunale = 2
+
+        ''' <summary>
+        ''' Valeur utilisée lors du transfert d'un dossier de la commune vers le département
+        ''' </summary>
+        TransfertCommunal = 3
+
+        ''' <summary>
+        ''' Reception du dossier au niveau départemental
+        ''' </summary>
+        ReceptionDepartementale = 4
+
+        ''' <summary>
+        ''' Validation du dossier au niveau départemental
+        ''' </summary>
+        ValidationDepartementale = 5
+
+        ''' <summary>
+        ''' Transfert du dossier du niveau départemental au niveau régional
+        ''' </summary>
+        TransfertDepartemental = 6
+
+        ''' <summary>
+        ''' Reception du dossier au niveau régional
+        ''' </summary>
+        ReceptionRegionale = 7
+
+        ''' <summary>
+        ''' Validation du dossier au niveau régional
+        ''' </summary>
+        ValidationRegionale = 8
+
+        ''' <summary>
+        ''' Transfert du dossier du niveau régional au niveau national
+        ''' </summary>
+        TransfertRegional = 9
+
+        ''' <summary>
+        ''' Reception du dossier au niveau national
+        ''' </summary>
+        ReceptionNationale = 10
+
+        ''' <summary>
+        ''' Validation du dossier au niveau national
+        ''' </summary>
+        ValidationNationale = 11
+
+        ''' <summary>
+        ''' La demande d'indemnisation a été rejetée
+        ''' </summary>
+        DecisionDeRejet = 12
+
+        ''' <summary>
+        ''' La demande d'indemnisation a été approuvée
+        ''' </summary>
+        DecisionIndemnisation = 13
+    End Enum
+
+    Public Enum UserLevel
+        ''' <summary>
+        ''' Utilisateur de niveau communal
+        ''' </summary>
+        Communal = 1
+
+        ''' <summary>
+        ''' Utilisateur de niveau départemental
+        ''' </summary>
+        Departemental = 2
+
+        ''' <summary>
+        ''' Utilisateur de niveau régional
+        ''' </summary>
+        Regional = 3
+
+        ''' <summary>
+        ''' Utilisateur de niveau national
+        ''' </summary>
+        National = 4
+    End Enum
 
 End Class

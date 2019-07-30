@@ -100,6 +100,7 @@ Public Class LoginsController
         If ModelState.IsValid Then
             ' Valider le mot de passe
             Dim appUser = Await UserManager.FindAsync(model.UserName, model.Password)
+
             If appUser IsNot Nothing Then
                 Await SignInAsync(appUser, model.RememberMe)
 
@@ -112,12 +113,12 @@ Public Class LoginsController
             Else
                 'Return RedirectToAction("Login", "Account")
                 ModelState.AddModelError("", Resource.InvalidParam)
+                End If
             End If
-        End If
 
-        ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
-        'LoadComboBox(model)
-        Return View(model)
+            ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+            'LoadComboBox(model)
+            Return View(model)
     End Function
 
 

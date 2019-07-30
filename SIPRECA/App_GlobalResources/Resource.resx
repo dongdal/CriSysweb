@@ -805,10 +805,10 @@
     <value>Indemnisations</value>
   </data>
   <data name="MenuSuivi" xml:space="preserve">
-    <value>Suivis</value>
+    <value>Les Suivis</value>
   </data>
   <data name="Menu_Demande" xml:space="preserve">
-    <value>Demandes</value>
+    <value>Les Demandes</value>
   </data>
   <data name="ReferencePlaceholder" xml:space="preserve">
     <value>Entrez la référence</value>

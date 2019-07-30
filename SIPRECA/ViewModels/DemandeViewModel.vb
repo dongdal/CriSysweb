@@ -17,7 +17,7 @@ Public Class DemandeViewModel
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    Public Property StatutExistant As Short = 1
+    Public Property StatutExistant As Short = Util.ElementsSuiviDemandes.Creation
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="LeSinistrer", ResourceType:=GetType(Resource))>

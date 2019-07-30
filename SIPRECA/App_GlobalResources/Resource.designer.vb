@@ -2045,7 +2045,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Demandes.
+        '''  Recherche une chaîne localisée semblable à Les Demandes.
         '''</summary>
         Public Shared ReadOnly Property Menu_Demande() As String
             Get
@@ -2108,7 +2108,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Suivis.
+        '''  Recherche une chaîne localisée semblable à Les Suivis.
         '''</summary>
         Public Shared ReadOnly Property MenuSuivi() As String
             Get
