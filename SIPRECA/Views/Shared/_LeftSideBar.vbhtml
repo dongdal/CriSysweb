@@ -48,14 +48,19 @@
                 <li><a href="@Url.Action("Index", "Account")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
                 <li><a href="@Url.Action("Index", "AnneeBudgetaires")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_AnneeBudgetaire</a></li>
                 <li><a href="@Url.Action("Index", "Communes")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Communes</a></li>
+                <li><a href="@Url.Action("Index", "CollectiviteSinistrees")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Declarations</a></li>
                 <li><a href="@Url.Action("Index", "Demandes")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Demande</a></li>
                 <li><a href="@Url.Action("Index", "Departements")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Departements</a></li>
+                <li><a href="@Url.Action("Index", "Indemnisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>
+                <li><a href="@Url.Action("Index", "NatureAides")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNatureAide</a></li>
+                <li><a href="@Url.Action("Index", "Quartiers")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
                 <li><a href="@Url.Action("Index", "Regions")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
                 <li><a href="@Url.Action("Index", "Suivis")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSuivi</a></li>
                 <li><a href="@Url.Action("Index", "TypeAbris")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAbris</a></li>
+                <li><a href="@Url.Action("Index", "TypeAides")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
                 <li><a href="@Url.Action("Index", "TypeSinistres")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
                 <li><a href="@Url.Action("Index", "TypeSuivis")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
-                <li><a href="@Url.Action("Index", "Indemmisations")">@*<i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation*@</a></li>
+                @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>
         </li>

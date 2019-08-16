@@ -114,13 +114,33 @@ Public Class RegisterViewModel
     Public Property Email As String
 
     <Display(Name:="Etat", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")> 
     Public Property Etat As Short = 1
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
     <DataType(DataType.Date, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="DateDataType")>
     Public Property DateCreation As DateTime = Now
+
+    <Display(Name:="Region", ResourceType:=GetType(Resource))>
+    Public Property RegionId As Long?
+    Public Overridable Property Regions As ICollection(Of SelectListItem)
+    Public Overridable Property Region As Region
+
+    <Display(Name:="Departement", ResourceType:=GetType(Resource))>
+    Public Property DepartementId As Long?
+    Public Overridable Property Departements As ICollection(Of SelectListItem)
+    Public Overridable Property Departement As Departement
+
+    <Display(Name:="QuartierCommune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long?
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Niveau", ResourceType:=GetType(Resource))>
+    Public Property Niveau As String
+    Public Overridable Property LesNiveaux As ICollection(Of SelectListItem)
 
     Public Function GetUser() As ApplicationUser
         Dim user As New ApplicationUser
@@ -136,10 +156,17 @@ Public Class RegisterViewModel
             .DateExpirationCNI = DateExpirationCNI
             .AdresseUser = AdresseUser
             .Telephone = Telephone
+            .PhoneNumber = Telephone
+            .PhoneNumberConfirmed = True
+            .EmailConfirmed = True
             .Telephone2 = Telephone2
             .Email = Email
             .Etat = Etat
             .DateCreation = Now
+            .RegionId = RegionId
+            .DepartementId = DepartementId
+            .CommuneId = CommuneId
+            .Niveau = Niveau
         End With
         Return user
     End Function
@@ -222,6 +249,25 @@ Public Class EditUserViewModel
     <DataType(DataType.Date, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="DateDataType")>
     Public Property DateCreation As DateTime = Now
 
+    <Display(Name:="Region", ResourceType:=GetType(Resource))>
+    Public Property RegionId As Long?
+    Public Overridable Property Regions As ICollection(Of SelectListItem)
+    Public Overridable Property Region As Region
+
+    <Display(Name:="Departement", ResourceType:=GetType(Resource))>
+    Public Property DepartementId As Long?
+    Public Overridable Property Departements As ICollection(Of SelectListItem)
+    Public Overridable Property Departement As Departement
+
+    <Display(Name:="QuartierCommune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long?
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Niveau", ResourceType:=GetType(Resource))>
+    Public Property Niveau As String
+    Public Overridable Property LesNiveaux As ICollection(Of SelectListItem)
 
     Public Sub New()
 
@@ -245,6 +291,10 @@ Public Class EditUserViewModel
             Email = .Email
             Etat = .Etat
             DateCreation = .DateCreation
+            RegionId = .RegionId
+            DepartementId = .DepartementId
+            CommuneId = .CommuneId
+            Niveau = .Niveau
         End With
     End Sub
 
@@ -265,9 +315,16 @@ Public Class EditUserViewModel
             .AdresseUser = AdresseUser
             .Telephone = Telephone
             .Telephone2 = Telephone2
+            .EmailConfirmed = True
+            .PhoneNumber = Telephone
+            .PhoneNumberConfirmed = True
             .Email = Email
             .Etat = Etat
             .DateCreation = Now
+            .RegionId = RegionId
+            .DepartementId = DepartementId
+            .CommuneId = CommuneId
+            .Niveau = Niveau
         End With
         Return user
     End Function
@@ -327,10 +384,15 @@ Public Class SelectUserRolesViewModel
         ' Set the Selected property to true for those roles for 
         ' which the current user is a member:
         For Each userRole As IdentityUserRole In user.Roles
-            'Dim LeRoleCourant = (From rol In GetDb().Roles Where rol.Id = userRole.RoleId Select rol).FirstOrDefault()
-            Dim checkUserRole = Me.Roles.Find(Function(r) r.RoleName = userRole.Role.Name)
+            Dim LeRoleCourant = (From rol In GetDb().Roles Where rol.Id = userRole.RoleId Select rol).FirstOrDefault()
+            Dim checkUserRole = Me.Roles.Find(Function(r) r.RoleName = LeRoleCourant.Name)
             checkUserRole.Selected = True
         Next
+        'For Each userRole As IdentityUserRole In user.Roles
+        '    'Dim LeRoleCourant = (From rol In GetDb().Roles Where rol.Id = userRole.RoleId Select rol).FirstOrDefault()
+        '    Dim checkUserRole = Me.Roles.Find(Function(r) r.RoleName = userRole.Role.Name)
+        '    checkUserRole.Selected = True
+        'Next
 
     End Sub
 

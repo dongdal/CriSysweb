@@ -36,29 +36,43 @@ End Code
 
                     @Html.LabelFor(Function(m) m.ChefLieu, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ChefLieu, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.ChefLieu, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.Region.Libelle, New With {.class = "col-sm-2 col-form-label"})
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Superficie, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Region.Libelle, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.Superficie, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.SuperficiePlaceholder, .readonly = "true"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.Population, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Population, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.PopulationPlaceholder, .readonly = "true"})
                     </div>
                 </div>
 
                 @<div Class="form-group row">
 
-                    @Html.LabelFor(Function(m) m.DateCreation, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.Region.Libelle, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.DateCreation, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.Region.Libelle, New With {.class = "form-control form-control-square", .tabindex = "5", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
                     </div>
 
+                    @Html.LabelFor(Function(m) m.DateCreation, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.DateCreation, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                    </div>
+                </div>
+
+                @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.StatutExistant, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.StatutExistant, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.StatutExistant, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
                     </div>
 
                 </div>
-
                 @<div Class="form-group row">
                     <Label Class="col-sm-2 col-form-label"></Label>
                     <div Class="col-sm-10">

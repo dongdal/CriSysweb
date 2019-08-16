@@ -41,9 +41,9 @@ End Code
 
                 @<div Class="form-group row">
 
-                    @Html.LabelFor(Function(m) m.CollectiviteId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Collectivite.Libelle, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.ComboLocalite, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.Commune.Libelle, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.ComboLocalite, .readonly = "true"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.AnneeBudgetaireId, New With {.class = "col-sm-2 col-form-label"})

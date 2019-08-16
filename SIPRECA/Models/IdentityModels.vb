@@ -18,7 +18,7 @@ Public Class ApplicationUser
         Champs = New HashSet(Of Champs)()
         'ChampsSection = New HashSet(Of ChampsSection)()
         Collectivite = New HashSet(Of Collectivite)()
-        'Indemmisation = New HashSet(Of Indemmisation)()
+        Indemnisation = New HashSet(Of Indemnisation)()
         Competance = New HashSet(Of Competance)()
         Demande = New HashSet(Of Demande)()
         DemandeArticle = New HashSet(Of DemandeArticle)()
@@ -67,9 +67,20 @@ Public Class ApplicationUser
     Public Property AdresseUser As String
     Public Property Telephone As String
     Public Property Telephone2 As String
-    Public Property Email As String
+    'Public Property Email As String
     Public Property DateCreation As Date = Now
     Public Property Etat As Short = 1
+
+    Public Property CommuneId As Long?
+    Public Overridable Property Commune As Commune
+
+    Public Property DepartementId As Long?
+    Public Overridable Property Departement As Departement
+
+    Public Property RegionId As Long?
+    Public Overridable Property Region As Region
+
+    Public Property Niveau As String
 
     Public Overridable Property Abris As ICollection(Of Abris)
     Public Overridable Property Adresse As ICollection(Of Adresse)
@@ -90,7 +101,7 @@ Public Class ApplicationUser
     Public Overridable Property Enquete As ICollection(Of Enquete)
     Public Overridable Property Entrepots As ICollection(Of Entrepots)
     Public Overridable Property Formulaire As ICollection(Of Formulaire)
-    'Public Overridable Property Indemmisation As ICollection(Of Indemmisation)
+    Public Overridable Property Indemnisation As ICollection(Of Indemnisation)
     Public Overridable Property Installation As ICollection(Of Installation)
     Public Overridable Property Maladie As ICollection(Of Maladie)
     Public Overridable Property MaladieSinistre As ICollection(Of MaladieSinistre)
@@ -142,7 +153,6 @@ Public Class IdentityManager
         Return idResult.Succeeded
     End Function
 
-
     Public Function AddUserToRole(userId As String, roleName As String) As Boolean
         Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
         Dim idResult = um.AddToRole(userId, roleName)
@@ -153,10 +163,71 @@ Public Class IdentityManager
     Public Sub ClearUserRoles(userId As String)
         Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
         Dim user = um.FindById(userId)
+        Dim Db As New ApplicationDbContext
         Dim currentRoles = New List(Of IdentityUserRole)()
         currentRoles.AddRange(user.Roles)
         For Each role As IdentityUserRole In currentRoles
-            um.RemoveFromRole(userId, role.Role.Name)
+            Dim LeRole = (From rol In Db.Roles Where rol.Id = role.RoleId).FirstOrDefault
+            Dim result = um.RemoveFromRole(role.UserId, LeRole.Name)
+            Dim reussi = result.Succeeded
+            'um.RemoveFromRole(userId, role.RoleId)
         Next
     End Sub
+
+
+    'Public Function AddUserToRole(userId As String, roleName As String) As Boolean
+    '    Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
+    '    Dim idResult = um.AddToRole(userId, roleName)
+    '    Return idResult.Succeeded
+    'End Function
+
+
+    'Public Sub ClearUserRoles(userId As String)
+    '    Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
+    '    Dim user = um.FindById(userId)
+    '    Dim currentRoles = New List(Of IdentityUserRole)()
+    '    currentRoles.AddRange(user.Roles)
+    '    For Each role As IdentityUserRole In currentRoles
+    '        um.RemoveFromRole(userId, role.RoleId)
+    '    Next
+    'End Sub
 End Class
+
+'Public Class IdentityManager
+'    Public Function RoleExists(name As String) As Boolean
+'        Dim rm = New RoleManager(Of IdentityRole)(New RoleStore(Of IdentityRole)(New ApplicationDbContext()))
+'        Return rm.RoleExists(name)
+'    End Function
+
+
+'    Public Function CreateRole(name As String) As Boolean
+'        Dim rm = New RoleManager(Of IdentityRole)(New RoleStore(Of IdentityRole)(New ApplicationDbContext()))
+'        Dim idResult = rm.Create(New IdentityRole(name))
+'        Return idResult.Succeeded
+'    End Function
+
+
+'    Public Function CreateUser(user As ApplicationUser, password As String) As Boolean
+'        Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
+'        Dim idResult = um.Create(user, password)
+'        Return idResult.Succeeded
+'    End Function
+
+
+'    Public Function AddUserToRole(userId As String, roleName As String) As Boolean
+'        Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
+'        Dim idResult = um.AddToRole(userId, roleName)
+'        Return idResult.Succeeded
+'    End Function
+
+
+'    Public Sub ClearUserRoles(userId As String)
+'        Dim um = New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext()))
+'        Dim user = um.FindById(userId)
+'        Dim currentRoles = New List(Of IdentityUserRole)()
+'        currentRoles.AddRange(user.Roles)
+'        For Each role As IdentityUserRole In currentRoles
+'            um.RemoveFromRole(userId, role.Role.Name)
+'        Next
+'    End Sub
+'End Class

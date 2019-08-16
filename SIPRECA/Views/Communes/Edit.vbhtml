@@ -27,6 +27,8 @@ End Code
                 @Html.HiddenFor(Function(m) m.StatutExistant)
                 @Html.HiddenFor(Function(m) m.DateCreation)
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
+                @Html.HiddenFor(Function(m) m.Longitude)
+                @Html.HiddenFor(Function(m) m.Latitude)
 
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Libelle, New With {.class = "col-sm-2 col-form-label required_field"})
@@ -40,6 +42,20 @@ End Code
                         @Html.DropDownListFor(Function(m) m.DepartementId, New SelectList(Model.Departements, "Value", "Text"), Resource.ComboDepartement,
         New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboDepartement})
                         @Html.ValidationMessageFor(Function(m) m.DepartementId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Superficie, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Superficie, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.SuperficiePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Superficie, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.Population, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Population, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.PopulationPlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Population, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 

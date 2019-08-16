@@ -173,11 +173,96 @@ Public Class AccountController
         Return View(model)
     End Function
 
+    <HttpPost()>
+    Public Function LoadCommunes() As ActionResult
+        Dim results = (From e In Db.Commune Where e.StatutExistant = 1 Order By e.Libelle Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle})
+        Return Json(results, JsonRequestBehavior.AllowGet)
+    End Function
+
+    <HttpPost()>
+    Public Function LoadDepartements() As ActionResult
+        Dim results = (From e In Db.Departement Where e.StatutExistant = 1 Order By e.Libelle Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle})
+        Return Json(results, JsonRequestBehavior.AllowGet)
+    End Function
+
+    <HttpPost()>
+    Public Function LoadRegions() As ActionResult
+        Dim results = (From e In Db.Region Where e.StatutExistant = 1 Order By e.Libelle Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle})
+        Return Json(results, JsonRequestBehavior.AllowGet)
+    End Function
+
+    Private Sub LoadComboRegister(model As RegisterViewModel)
+        'Dim Departement = (From e In Db.Departement Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim Departements As New List(Of SelectListItem)
+        'For Each item In Departement
+        '    Departements.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+
+        'Dim Region = (From e In Db.Region Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim Regions As New List(Of SelectListItem)
+        'For Each item In Region
+        '    Regions.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+
+        'Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim LesCommunes As New List(Of SelectListItem)
+        'For Each item In Commune
+        '    LesCommunes.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+
+        Dim LesNiveaux As New List(Of SelectListItem) From {
+            New SelectListItem With {.Value = Util.UserLevel.Communal, .Text = Resource.NiveauCommunal},
+            New SelectListItem With {.Value = Util.UserLevel.Departemental, .Text = Resource.NiveauDepartemental},
+            New SelectListItem With {.Value = Util.UserLevel.Regional, .Text = Resource.NiveauRegional},
+            New SelectListItem With {.Value = Util.UserLevel.National, .Text = Resource.NiveauNational},
+            New SelectListItem With {.Value = Util.UserLevel.Autre, .Text = Resource.NiveauAutre}
+        }
+
+        model.LesNiveaux = LesNiveaux
+        model.LesCommunes = New List(Of SelectListItem)
+        model.Regions = New List(Of SelectListItem)
+        model.Departements = New List(Of SelectListItem)
+    End Sub
+
+    Private Sub LoadComboEdit(model As EditUserViewModel)
+        'Dim Departement = (From e In Db.Departement Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim Departements As New List(Of SelectListItem)
+        'For Each item In Departement
+        '    Departements.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+        'Dim Region = (From e In Db.Region Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim Regions As New List(Of SelectListItem)
+
+        'For Each item In Region
+        '    Regions.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+
+        'Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Order By e.Libelle Select e)
+        'Dim LesCommunes As New List(Of SelectListItem)
+        'For Each item In Commune
+        '    LesCommunes.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        'Next
+
+        Dim LesNiveaux As New List(Of SelectListItem) From {
+            New SelectListItem With {.Value = Util.UserLevel.Communal, .Text = Resource.NiveauCommunal},
+            New SelectListItem With {.Value = Util.UserLevel.Departemental, .Text = Resource.NiveauDepartemental},
+            New SelectListItem With {.Value = Util.UserLevel.Regional, .Text = Resource.NiveauRegional},
+            New SelectListItem With {.Value = Util.UserLevel.National, .Text = Resource.NiveauNational},
+            New SelectListItem With {.Value = Util.UserLevel.Autre, .Text = Resource.NiveauAutre}
+        }
+
+        model.LesNiveaux = LesNiveaux
+        model.LesCommunes = New List(Of SelectListItem)
+        model.Regions = New List(Of SelectListItem)
+        model.Departements = New List(Of SelectListItem)
+    End Sub
+
     '
     ' GET: /Account/Register
     <AllowAnonymous>
     Public Function Register() As ActionResult
         Dim model = New RegisterViewModel()
+        LoadComboRegister(model)
         Return View(model)
     End Function
 
@@ -190,6 +275,20 @@ Public Class AccountController
         If ModelState.IsValid Then
             ' Créer un identifiant local avant de connecter l'utilisateur
             Dim user = model.GetUser ' New ApplicationUser() With {.UserName = model.UserName}
+            If (user.Niveau.Equals("4") Or user.Niveau.Equals("5")) Then
+                user.CommuneId = Nothing
+                user.DepartementId = Nothing
+                user.RegionId = Nothing
+            ElseIf (user.Niveau.Equals("1")) Then
+                user.DepartementId = Nothing
+                user.RegionId = Nothing
+            ElseIf (user.Niveau.Equals("2")) Then
+                user.CommuneId = Nothing
+                user.RegionId = Nothing
+            ElseIf (user.Niveau.Equals("3")) Then
+                user.CommuneId = Nothing
+                user.DepartementId = Nothing
+            End If
             Try
                 Dim result = Await UserManager.CreateAsync(user, model.Password)
                 If result.Succeeded Then
@@ -201,6 +300,7 @@ Public Class AccountController
                 Util.GetError(ex, ModelState)
             End Try
         End If
+        LoadComboRegister(model)
 
         Return View(model)
     End Function
@@ -217,6 +317,7 @@ Public Class AccountController
 
         ViewBag.MessageId = Message
         Dim model As New EditUserViewModel(user:=user)
+        LoadComboEdit(model)
         Return View(model)
     End Function
 
@@ -257,6 +358,7 @@ Public Class AccountController
                 Util.GetError(ex, ModelState)
             End Try
         End If
+        LoadComboEdit(model)
         Return View(model)
     End Function
 

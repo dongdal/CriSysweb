@@ -79,7 +79,7 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Sinistre.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Collectivite.Libelle)
+                                @Html.DisplayFor(Function(modelItem) item.Commune.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.AnneeBudgetaire.Libelle)

@@ -5,6 +5,6 @@ Public Class DepartementCfg
     Public Sub New()
         Me.ToTable("Departement")
         Me.Property(Function(p) p.ChefLieu).IsRequired().HasMaxLength(250)
-Me.Property(Function(p) p.AspNetUserId).IsRequired()
+        Me.Property(Function(p) p.AspNetUserId).IsRequired()
     End Sub
 End Class

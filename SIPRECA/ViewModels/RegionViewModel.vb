@@ -14,6 +14,18 @@ Public Class RegionViewModel
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property ChefLieu As String
 
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <RegularExpression("^(\d+(((\,))\d+)?)$", ErrorMessageResourceName:="DecimalType", ErrorMessageResourceType:=GetType(Resource))>
+    <Display(Name:="Superficie", ResourceType:=GetType(Resource))>
+    <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Superficie As String = "0"
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <RegularExpression("^(\d+(((\,))\d+)?)$", ErrorMessageResourceName:="DecimalType", ErrorMessageResourceType:=GetType(Resource))>
+    <Display(Name:="Population", ResourceType:=GetType(Resource))>
+    <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Population As String = "0"
+
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property StatutExistant As Short = 1
@@ -28,6 +40,14 @@ Public Class RegionViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Longitude", ResourceType:=GetType(Resource))>
+    Public Property Longitude As Double?
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Latitude", ResourceType:=GetType(Resource))>
+    Public Property Latitude As Double?
+
     Public Sub New()
     End Sub
 
@@ -37,6 +57,10 @@ Public Class RegionViewModel
             .Libelle = entity.Libelle
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
+            .Population = entity.Population
+            .Superficie = entity.Superficie
+            .Latitude = entity.Latitude
+            .Longitude = entity.Longitude
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
         End With
@@ -49,6 +73,10 @@ Public Class RegionViewModel
             .Libelle = Libelle
             .ChefLieu = ChefLieu
             .StatutExistant = StatutExistant
+            .Superficie = Superficie
+            .Population = Population
+            .Longitude = Longitude
+            .Latitude = Latitude
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
         End With

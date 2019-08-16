@@ -42,7 +42,7 @@ Namespace Controllers
 
             ViewBag.CurrentFilter = searchString
 
-            Dim entities = (From e In Db.Suivi Where e.StatutExistant = 1 Select e)
+            Dim entities = (From e In Db.Suivi Where e.StatutExistant = 1 And e.Demande.Reference.ToLower.Equals(searchString.ToLower) Select e)
             If Not String.IsNullOrEmpty(searchString) Then
                 entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Demande.Reference.ToUpper.Contains(value:=searchString.ToUpper) Or e.TypeSuivi.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
             End If
@@ -68,7 +68,7 @@ Namespace Controllers
                     Exit Select
             End Select
 
-            Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
+            Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize") + 20
             Dim pageNumber As Integer = If(page, 1)
 
             Return View(entities.ToPagedList(pageNumber, pageSize))

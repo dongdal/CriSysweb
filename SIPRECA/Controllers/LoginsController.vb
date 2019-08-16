@@ -99,28 +99,65 @@ Public Class LoginsController
     Public Async Function Login(model As LoginViewModel, returnUrl As String) As Task(Of ActionResult)
         If ModelState.IsValid Then
             ' Valider le mot de passe
-            Dim appUser = Await UserManager.FindAsync(model.UserName, model.Password)
+            'Dim appUser = Await UserManager.FindAsync(model.UserName, model.Password)
 
-            If appUser IsNot Nothing Then
-                Await SignInAsync(appUser, model.RememberMe)
-
-                AppSession.UserId = appUser.Id
-                AppSession.NomUser = appUser.Nom
-                AppSession.PrenomUser = appUser.Prenom
-                AppSession.UserName = appUser.UserName
-
-                Return RedirectToAction("Index", "Home")
-            Else
-                'Return RedirectToAction("Login", "Account")
+            Dim appUser As ApplicationUser = Await UserManager.FindByNameAsync(model.UserName)
+            ' Invalid user, fail login
+            If appUser Is Nothing Then
                 ModelState.AddModelError("", Resource.InvalidParam)
+            ElseIf (Await UserManager.IsLockedOutAsync(appUser.Id) And Await UserManager.GetLockoutEndDateAsync(appUser.Id) > DateTime.UtcNow.AddHours(1)) Then
+                Dim TempsRestant = DateDiff(DateInterval.Minute, appUser.LockoutEndDateUtc.Value, DateTime.UtcNow.AddHours(1)) 'appUser.LockoutEndDateUtc.Value.Subtract(DateTime.UtcNow.AddHours(1)).Seconds
+                Return RedirectToAction("AccountLocked", "Logins", New With {TempsRestant, .MyAction = "Login", .Controleur = "Logins"})
+            Else
+                Dim result As Object = UserManager.PasswordHasher.VerifyHashedPassword(appUser.PasswordHash, model.Password)
+                If result = PasswordVerificationResult.Success Then
+                    AppSession.UserId = appUser.Id
+                    AppSession.NomUser = appUser.Nom
+                    AppSession.PrenomUser = appUser.Prenom
+                    AppSession.UserName = appUser.UserName
+                    AppSession.Niveau = appUser.Niveau
+                    Long.TryParse(appUser.CommuneId.ToString, AppSession.CommuneId)
+                    Long.TryParse(appUser.DepartementId.ToString, AppSession.DepartementId)
+                    Long.TryParse(appUser.RegionId.ToString, AppSession.RegionId)
+                    appUser.AccessFailedCount = 0
+                    appUser.LockoutEndDateUtc = Nothing
+                    appUser.LockoutEnabled = False
+                    UserManager.Update(appUser)
+                    Await SignInAsync(appUser, model.RememberMe)
+                    Return RedirectToAction("Index", "Home")
+                    'ElseIf result = PasswordVerificationResult.SuccessRehashNeeded Then
+                    '    ' Logged in using old Membership credentials - update hashed password in database
+                    '    ' Since we update the user on login anyway, we'll just set the new hash
+                    '    ' Optionally could set password via the ApplicationUserManager by using
+                    '    ' RemovePassword() and AddPassword()
+                    '    appUser.PasswordHash = UserManager.PasswordHasher.HashPassword(model.Password)
+                    '    Return RedirectToAction("Index", "Home")
+                Else
+                    ' Failed login, increment failed login counter
+                    ' Lockout for 15 minutes if more than 10 failed attempts
+                    Dim AccessFailedCount As Integer = ConfigurationManager.AppSettings("AccessFailedCount")
+
+                    appUser.AccessFailedCount += 1
+                    If appUser.AccessFailedCount >= AccessFailedCount Then
+                        appUser.LockoutEndDateUtc = DateTime.UtcNow.AddHours(1).AddMinutes(10)
+                        appUser.LockoutEnabled = True
+                    End If
+                    UserManager.Update(appUser)
+                    Return View(model)
                 End If
             End If
-
-            ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
-            'LoadComboBox(model)
-            Return View(model)
+        End If
+        ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+        'LoadComboBox(model)
+        Return View(model)
     End Function
 
+    Function AccountLocked(TempsRestant As Long, Optional MyAction As String = "Login", Optional Controleur As String = "Logins") As ActionResult
+        ViewBag.TempsRestant = TempsRestant * 60 & " Sec (" & TempsRestant & " Min)"
+        ViewBag.Action = MyAction
+        ViewBag.Controleur = Controleur
+        Return View()
+    End Function
 
     '
     ' POST: /Account/LogOff

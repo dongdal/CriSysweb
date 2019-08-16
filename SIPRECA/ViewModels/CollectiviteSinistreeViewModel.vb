@@ -17,9 +17,9 @@ Public Class CollectiviteSinistreeViewModel
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="CollectiviteSinistreeCollectivite", ResourceType:=GetType(Resource))>
-    Public Property CollectiviteId As Long
+    Public Property CommuneId As Long
     Public Overridable Property LesCollectivites As ICollection(Of SelectListItem)
-    Public Overridable Property Collectivite As Collectivite
+    Public Overridable Property Commune As Commune
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="AnneeBudgetaire", ResourceType:=GetType(Resource))>
@@ -56,8 +56,8 @@ Public Class CollectiviteSinistreeViewModel
             .DateSinistre = entity.DateSinistre
             .Sinistre = entity.Sinistre
             .SinistreId = entity.SinistreId
-            .Collectivite = entity.Collectivite
-            .CollectiviteId = entity.CollectiviteId
+            .Commune = entity.Commune
+            .CommuneId = entity.CommuneId
             .AnneeBudgetaire = entity.AnneeBudgetaire
             .AnneeBudgetaireId = entity.AnneeBudgetaireId
             .StatutExistant = entity.StatutExistant
@@ -74,7 +74,7 @@ Public Class CollectiviteSinistreeViewModel
             .Libelle = Libelle
             .DateSinistre = DateSinistre
             .SinistreId = SinistreId
-            .CollectiviteId = CollectiviteId
+            .CommuneId = CommuneId
             .AnneeBudgetaireId = AnneeBudgetaireId
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation

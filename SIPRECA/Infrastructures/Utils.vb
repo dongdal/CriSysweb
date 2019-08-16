@@ -99,14 +99,19 @@ Public Class Util
 
     Public Enum ElementsSuiviDemandes
         ''' <summary>
-        ''' Valeur utilisée lors de la création de la demande d'indemnisation
+        ''' Valeur utilisée lors de la création de la demande d'indemnisation au niveau communal
         ''' </summary>
-        Creation = 1
+        CreationCommunal = 1
 
         ''' <summary>
         ''' Valeur utilisée lors de la validation au niveau communal
         ''' </summary>
-        ValidationCommunale = 2
+        ValidationCommunal = 2
+
+        ''' <summary>
+        ''' Valeur utilisée lors du rejet d'un dossier de la commune 
+        ''' </summary>
+        RejetCommunal = -1
 
         ''' <summary>
         ''' Valeur utilisée lors du transfert d'un dossier de la commune vers le département
@@ -116,52 +121,77 @@ Public Class Util
         ''' <summary>
         ''' Reception du dossier au niveau départemental
         ''' </summary>
-        ReceptionDepartementale = 4
+        ReceptionDepartemental = 4
 
         ''' <summary>
-        ''' Validation du dossier au niveau départemental
+        ''' Creation du dossier au niveau départemental
         ''' </summary>
-        ValidationDepartementale = 5
+        CreationDepartemental = 5
 
         ''' <summary>
-        ''' Transfert du dossier du niveau départemental au niveau régional
+        ''' Validation du dossier au départemental 
         ''' </summary>
-        TransfertDepartemental = 6
+        ValidationDepartemental = 6
+
+        ''' <summary>
+        ''' Valeur utilisée lors du rejet d'un dossier du departement 
+        ''' </summary>
+        RejetDepartemental = -2
+
+        ''' <summary>
+        ''' Valeur utilisée lors du transfert d'un dossier du departement vers le regional
+        ''' </summary>
+        TransfertDepartemental = 7
 
         ''' <summary>
         ''' Reception du dossier au niveau régional
         ''' </summary>
-        ReceptionRegionale = 7
+        ReceptionRegionale = 8
 
         ''' <summary>
-        ''' Validation du dossier au niveau régional
+        ''' Creation du dossier du niveau régional
         ''' </summary>
-        ValidationRegionale = 8
+        CreationRegional = 9
 
         ''' <summary>
-        ''' Transfert du dossier du niveau régional au niveau national
+        ''' La demande d'indemnisation a été rejetée au niveau regional
         ''' </summary>
-        TransfertRegional = 9
+        RejetRegional = -3
+
+        ''' <summary>
+        ''' Validation du dossier au niveau regional
+        ''' </summary>
+        ValidationRegional = 10
+
+        ''' <summary>
+        ''' transfert du dossier au niveau regional vers niveau national
+        ''' </summary>
+        TransfertRegional = 11
 
         ''' <summary>
         ''' Reception du dossier au niveau national
         ''' </summary>
-        ReceptionNationale = 10
+        ReceptionNational = 12
+
+        ''' <summary>
+        ''' Creation du dossier du niveau national
+        ''' </summary>
+        CreationNational = 13
 
         ''' <summary>
         ''' Validation du dossier au niveau national
         ''' </summary>
-        ValidationNationale = 11
+        ValidationNational = 14
 
         ''' <summary>
-        ''' La demande d'indemnisation a été rejetée
+        ''' La demande d'indemnisation a été rejetée au niveau national
         ''' </summary>
-        DecisionDeRejet = 12
+        RejetNational = 15
 
         ''' <summary>
         ''' La demande d'indemnisation a été approuvée
         ''' </summary>
-        DecisionIndemnisation = 13
+        DecisionIndemnisation = 16
     End Enum
 
     Public Enum UserLevel
@@ -184,6 +214,28 @@ Public Class Util
         ''' Utilisateur de niveau national
         ''' </summary>
         National = 4
+
+        ''' <summary>
+        ''' Pour les autres types d'utilisateur
+        ''' </summary>
+        Autre = 5
+    End Enum
+
+    Public Enum StatutDemande
+        ''' <summary>
+        ''' La demande est toujours en cours de traitement
+        ''' </summary>
+        EnCours = 1
+
+        ''' <summary>
+        ''' La demande a été rejetée
+        ''' </summary>
+        Rejetee = 2
+
+        ''' <summary>
+        ''' La demande a été approuvée
+        ''' </summary>
+        Approuvee = 3
     End Enum
 
 End Class

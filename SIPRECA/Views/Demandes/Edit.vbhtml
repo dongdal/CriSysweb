@@ -31,10 +31,10 @@ End Code
                     <div class="card-body">
                         <ul class="nav nav-tabs nav-tabs-primary">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Home</span></a>
+                                <a class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Demande</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-user"></i> <span class="hidden-xs">Profile</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-user"></i> <span class="hidden-xs">Pièces jointes</span></a>
                             </li>
                         </ul>
 

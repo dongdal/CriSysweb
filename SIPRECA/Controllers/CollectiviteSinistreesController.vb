@@ -49,7 +49,7 @@ Namespace Controllers
             Dim entities = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id Select e)
             If Not String.IsNullOrEmpty(searchString) Then
                 entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistre.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
-                                              e.Collectivite.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.AnneeBudgetaire.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                                              e.Commune.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.AnneeBudgetaire.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -66,9 +66,9 @@ Namespace Controllers
                     entities = entities.OrderByDescending(Function(e) e.Sinistre.Libelle)
 
                 Case "Collectivite"
-                    entities = entities.OrderBy(Function(e) e.Collectivite.Libelle)
+                    entities = entities.OrderBy(Function(e) e.Commune.Libelle)
                 Case "Collectivite_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Collectivite.Libelle)
+                    entities = entities.OrderByDescending(Function(e) e.Commune.Libelle)
 
                 Case "AnneeBudgetaire"
                     entities = entities.OrderBy(Function(e) e.AnneeBudgetaire.Libelle)
@@ -112,6 +112,15 @@ Namespace Controllers
             Next
 
             Dim Collectivite = (From e In Db.Commune Where e.StatutExistant = 1 Select e)
+
+            If (AppSession.Niveau.Equals(Util.UserLevel.Departemental)) Then
+                Collectivite = Collectivite.Where(Function(e) e.DepartementId = AppSession.DepartementId)
+            ElseIf (AppSession.Niveau.Equals(Util.UserLevel.Regional)) Then
+                Collectivite = Collectivite.Where(Function(e) e.Departement.RegionId = AppSession.RegionId)
+            ElseIf (AppSession.Niveau.Equals(Util.UserLevel.Communal)) Then
+                Collectivite = Collectivite.Where(Function(e) e.Id = AppSession.CommuneId)
+            End If
+
             Dim LesCollectivites As New List(Of SelectListItem)
             For Each item In Collectivite
                 LesCollectivites.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
@@ -152,7 +161,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As CollectiviteSinistreeViewModel) As ActionResult
-            Dim SinistreDejaDeclare = (From item In Db.CollectiviteSinistree Where item.CollectiviteId = entityVM.CollectiviteId And
+            Dim SinistreDejaDeclare = (From item In Db.CollectiviteSinistree Where item.CommuneId = entityVM.CommuneId And
                                                                                  item.SinistreId = entityVM.SinistreId And item.AnneeBudgetaireId = item.AnneeBudgetaireId Select item).ToList.Count
             entityVM.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
             If (SinistreDejaDeclare >= 1) Then
@@ -195,24 +204,24 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As CollectiviteSinistreeViewModel) As ActionResult
-            Dim SinistreDejaDeclare = (From item In Db.CollectiviteSinistree Where item.CollectiviteId = entityVM.CollectiviteId And
-                                                                                 item.SinistreId = entityVM.SinistreId And item.AnneeBudgetaireId = item.AnneeBudgetaireId Select item).ToList.Count
+            'Dim SinistreDejaDeclare = (From item In Db.CollectiviteSinistree Where item.CollectiviteId = entityVM.CollectiviteId And
+            'item.SinistreId = entityVM.SinistreId And item.AnneeBudgetaireId = item.AnneeBudgetaireId Select item).ToList.Count
 
-            If (SinistreDejaDeclare >= 1) Then
-                ModelState.AddModelError("", Resource.ModelError_SinistreDejaDeclare)
-            Else
-                If ModelState.IsValid Then
-                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                    Try
-                        Db.SaveChanges()
-                        Return RedirectToAction("Index")
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
-                End If
+            'If (SinistreDejaDeclare >= 1) Then
+            '    ModelState.AddModelError("", Resource.ModelError_SinistreDejaDeclare)
+            'Else
+            If ModelState.IsValid Then
+                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return RedirectToAction("Index")
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
             End If
+            'End If
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function

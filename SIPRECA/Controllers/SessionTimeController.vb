@@ -73,11 +73,15 @@ Public Class SessionTimeController
 
             If (Await UserManager.FindAsync(model.UserName, model.Password)) IsNot Nothing Then
                 Await SignInAsync(Await UserManager.FindAsync(model.UserName, model.Password), model.RememberMe)
-
-                AppSession.UserId = (Await UserManager.FindAsync(model.UserName, model.Password)).Id
-                AppSession.NomUser = (Await UserManager.FindAsync(model.UserName, model.Password)).Nom
-                AppSession.PrenomUser = (Await UserManager.FindAsync(model.UserName, model.Password)).Prenom
-                AppSession.UserName = (Await UserManager.FindAsync(model.UserName, model.Password)).UserName
+                Dim user = UserManager.Find(model.UserName, model.Password)
+                AppSession.UserId = user.Id
+                AppSession.NomUser = user.Nom
+                AppSession.PrenomUser = user.Prenom
+                AppSession.UserName = user.UserName
+                AppSession.Niveau = user.Niveau
+                Long.TryParse(user.CommuneId.ToString, AppSession.CommuneId)
+                Long.TryParse(user.DepartementId.ToString, AppSession.DepartementId)
+                Long.TryParse(user.RegionId.ToString, AppSession.RegionId)
 
                 Return RedirectToAction("Index", "Home")
             Else

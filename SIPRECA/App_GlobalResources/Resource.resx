@@ -784,7 +784,7 @@
     <value>Modifier un suivi</value>
   </data>
   <data name="ListDemande" xml:space="preserve">
-    <value>Liste des demande d'indemnisation</value>
+    <value>Liste des demandes d'indemnisation</value>
   </data>
   <data name="ListIndemnisation" xml:space="preserve">
     <value>Liste des indemnisations</value>
@@ -796,13 +796,13 @@
     <value>Gestion des demandes d'indemnisation</value>
   </data>
   <data name="ManageIndemnisation" xml:space="preserve">
-    <value>Gestion des indemnisation</value>
+    <value>Gestion des indemnisations</value>
   </data>
   <data name="ManageSuivi" xml:space="preserve">
     <value>Suivi des indemnisations</value>
   </data>
   <data name="MenuIndemnisation" xml:space="preserve">
-    <value>Indemnisations</value>
+    <value>Les indemnisations</value>
   </data>
   <data name="MenuSuivi" xml:space="preserve">
     <value>Les Suivis</value>
@@ -969,9 +969,6 @@
   <data name="PiecesJointeMenu" xml:space="preserve">
     <value>Menu pièce jointe</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="SuccesAlertBody" xml:space="preserve">
     <value>L'opération s'est effectuée avec succès.</value>
   </data>
@@ -989,5 +986,257 @@
   </data>
   <data name="Uploader" xml:space="preserve">
     <value>Charger</value>
+  </data>
+  <data name="AccountLockedMessage" xml:space="preserve">
+    <value>Votre compte a été bloqué après plusieurs tentatives de connexion erronées.</value>
+  </data>
+  <data name="AccountLockedMessageTimeLeft" xml:space="preserve">
+    <value>Temps restant avant débloquage du compte: </value>
+  </data>
+  <data name="AccountLockedTitle" xml:space="preserve">
+    <value>Compte bloqué</value>
+  </data>
+  <data name="CommuneCombo" xml:space="preserve">
+    <value>Veuillez sélectionner une commune</value>
+  </data>
+  <data name="CreateNatureAide" xml:space="preserve">
+    <value>Ajouter une nature d'aide</value>
+  </data>
+  <data name="CreateQuartier" xml:space="preserve">
+    <value>Ajouter un quartier</value>
+  </data>
+  <data name="CreateTypeAide" xml:space="preserve">
+    <value>Ajouter un type d'aide</value>
+  </data>
+  <data name="DeleteNatureAide" xml:space="preserve">
+    <value>Supprimer une nature d'aide</value>
+  </data>
+  <data name="DeleteQuartier" xml:space="preserve">
+    <value>Supprimer un quartier</value>
+  </data>
+  <data name="DeleteTypeAide" xml:space="preserve">
+    <value>Supprimer un type d'aide</value>
+  </data>
+  <data name="EditNatureAide" xml:space="preserve">
+    <value>Modifier une nature d'aide</value>
+  </data>
+  <data name="EditQuartier" xml:space="preserve">
+    <value>Modifier un quartier</value>
+  </data>
+  <data name="EditTypeAide" xml:space="preserve">
+    <value>Modifier un type d'aide</value>
+  </data>
+  <data name="ListNatureAide" xml:space="preserve">
+    <value>Liste des natures d'aide</value>
+  </data>
+  <data name="ListQuartier" xml:space="preserve">
+    <value>Liste des quartiers</value>
+  </data>
+  <data name="ListTypeAide" xml:space="preserve">
+    <value>Liste des types d'aide</value>
+  </data>
+  <data name="ManageNatureAide" xml:space="preserve">
+    <value>Gestion des natures d'aide</value>
+  </data>
+  <data name="ManageQuartier" xml:space="preserve">
+    <value>Gestion des quartiers</value>
+  </data>
+  <data name="ManageTypeAide" xml:space="preserve">
+    <value>Gestion des types d'aide</value>
+  </data>
+  <data name="MenuNatureAide" xml:space="preserve">
+    <value>Les Natures d'aide</value>
+  </data>
+  <data name="MenuQuartier" xml:space="preserve">
+    <value>Les Quartiers</value>
+  </data>
+  <data name="MenuTypeAide" xml:space="preserve">
+    <value>Les Types d'aide</value>
+  </data>
+  <data name="NatureAideType" xml:space="preserve">
+    <value>Type d'aide</value>
+  </data>
+  <data name="QuartierCommune" xml:space="preserve">
+    <value>Commune</value>
+  </data>
+  <data name="TypeAideCombo" xml:space="preserve">
+    <value>Veullez sélectionner un type d'aide</value>
+  </data>
+  <data name="DecimalType" xml:space="preserve">
+    <value>Le champ {0} doit contenir un nombre (Exemple: 12; 4; 20,15; 0,95, etc.)</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Population</value>
+  </data>
+  <data name="PopulationPlaceholder" xml:space="preserve">
+    <value>Entrez la population</value>
+  </data>
+  <data name="Superficie" xml:space="preserve">
+    <value>Superficie</value>
+  </data>
+  <data name="SuperficiePlaceholder" xml:space="preserve">
+    <value>Entrez la superficie</value>
+  </data>
+  <data name="ComboNatureAide" xml:space="preserve">
+    <value>Selectionnez la nature de l'indemnisation</value>
+  </data>
+  <data name="CreateIndemnisation" xml:space="preserve">
+    <value>Ajouter une indemnisation</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionPlaceholder" xml:space="preserve">
+    <value>Entrez la description</value>
+  </data>
+  <data name="NatureAide" xml:space="preserve">
+    <value>Nature de l'indemnisation</value>
+  </data>
+  <data name="QantitePlaceholder" xml:space="preserve">
+    <value>Entrez la quantité</value>
+  </data>
+  <data name="Quantite" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="Niveau" xml:space="preserve">
+    <value>Niveau</value>
+  </data>
+  <data name="NiveauAutre" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="NiveauCombo" xml:space="preserve">
+    <value>Veuillez choisir un niveau</value>
+  </data>
+  <data name="NiveauCommunal" xml:space="preserve">
+    <value>Niveau Communal</value>
+  </data>
+  <data name="NiveauDepartemental" xml:space="preserve">
+    <value>Niveau Départemental</value>
+  </data>
+  <data name="NiveauNational" xml:space="preserve">
+    <value>NiveauNational</value>
+  </data>
+  <data name="NiveauRegional" xml:space="preserve">
+    <value>Niveau Régional</value>
+  </data>
+  <data name="AddItem" xml:space="preserve">
+    <value>Ajouter un élément</value>
+  </data>
+  <data name="BtnFiltrer" xml:space="preserve">
+    <value>Démarrer le filtre</value>
+  </data>
+  <data name="CancelingIndemnisation" xml:space="preserve">
+    <value>Vous-êtes sur le point d'annuler cette opération.</value>
+  </data>
+  <data name="CancelingReception" xml:space="preserve">
+    <value>Annulation de la réception</value>
+  </data>
+  <data name="CancelingRejet" xml:space="preserve">
+    <value>Annulation du rejet</value>
+  </data>
+  <data name="CancelingTransfert" xml:space="preserve">
+    <value>Annulation du transfert</value>
+  </data>
+  <data name="CancelingValidation" xml:space="preserve">
+    <value>Annulation de la validation</value>
+  </data>
+  <data name="ConfirmModification" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir confirmer les moficiations apportée? Si vous choisissez 'OUI' il ne vous sera plus possible de modifier cette demande.</value>
+  </data>
+  <data name="ConfirmReception" xml:space="preserve">
+    <value>Voulez-vous vraiment réceptionner cette demande?</value>
+  </data>
+  <data name="ConfirmRejet" xml:space="preserve">
+    <value>Voulez-vous vraiment rejeter cette demande?</value>
+  </data>
+  <data name="ConfirmTransfert" xml:space="preserve">
+    <value>Voulez-vous vraiment transférer cette demande?</value>
+  </data>
+  <data name="ConfirmValidation" xml:space="preserve">
+    <value>Voulez-vous vraiment valider cette demande?</value>
+  </data>
+  <data name="DetailsIndemnisations" xml:space="preserve">
+    <value>Informations détaillées sur l'indemnisation</value>
+  </data>
+  <data name="IndemnisationCombo" xml:space="preserve">
+    <value>Veuillez sélectionner une indemnisation</value>
+  </data>
+  <data name="IndemniserSinistre" xml:space="preserve">
+    <value>Indemniser sinistré</value>
+  </data>
+  <data name="LesIndemnisations" xml:space="preserve">
+    <value>Indemnisation</value>
+  </data>
+  <data name="MdlStatError_NatureAide" xml:space="preserve">
+    <value>Veuillez sélectionner un élément de la liste</value>
+  </data>
+  <data name="MdlStatError_Quantite" xml:space="preserve">
+    <value>Veuillez renseigner la quantité</value>
+  </data>
+  <data name="Menu_Declarations" xml:space="preserve">
+    <value>Les Déclarations</value>
+  </data>
+  <data name="NatureAideCombo" xml:space="preserve">
+    <value>Veuillez sélectionner la nature de l'aide</value>
+  </data>
+  <data name="ReceptionDemande" xml:space="preserve">
+    <value>Réceptionner une demande</value>
+  </data>
+  <data name="RejetDemande" xml:space="preserve">
+    <value>Rejeter une demande</value>
+  </data>
+  <data name="SelectDemandeId" xml:space="preserve">
+    <value>Veuillez sélectionner une demande valide</value>
+  </data>
+  <data name="SelectedDetailsId" xml:space="preserve">
+    <value>Veuillez séléctionner un élément valide</value>
+  </data>
+  <data name="StatutDemandeCombo" xml:space="preserve">
+    <value>Veuillez sélectionner le statut</value>
+  </data>
+  <data name="StatutDemande_Approuvee" xml:space="preserve">
+    <value>Approuvée</value>
+  </data>
+  <data name="StatutDemande_EnCours" xml:space="preserve">
+    <value>En Cours</value>
+  </data>
+  <data name="StatutDemande_Rejetee" xml:space="preserve">
+    <value>Rejetée</value>
+  </data>
+  <data name="SuccessReception" xml:space="preserve">
+    <value>La demande a été réceptionnée avec succès</value>
+  </data>
+  <data name="SuccessRejet" xml:space="preserve">
+    <value>La demande a été rejetée avec succès</value>
+  </data>
+  <data name="SuccessTransfert" xml:space="preserve">
+    <value>La demande a été transférée avec succès</value>
+  </data>
+  <data name="SuccessValidation" xml:space="preserve">
+    <value>La demande a été validée avec succès</value>
+  </data>
+  <data name="TransfertDemande" xml:space="preserve">
+    <value>Transférer une demande</value>
+  </data>
+  <data name="ValiderDemande" xml:space="preserve">
+    <value>Valider une demande</value>
+  </data>
+  <data name="ValiderModification" xml:space="preserve">
+    <value>Valider les modifications</value>
+  </data>
+  <data name="BtnInfoIndemnisation" xml:space="preserve">
+    <value>Aperçu des détails de l'indemnisation</value>
+  </data>
+  <data name="FindReferenceDemande" xml:space="preserve">
+    <value>VEUILLEZ RENSEIGNER LA RÉFÉRENCE DE LA DEMANDE</value>
+  </data>
+  <data name="ReferenceDemande" xml:space="preserve">
+    <value>REFERENCE DE LA DEMANDE</value>
   </data>
 </root>

@@ -4,6 +4,7 @@ Partial Public Class Departement
 
     Public Sub New()
         Commune = New HashSet(Of Commune)()
+        User = New HashSet(Of ApplicationUser)()
     End Sub
 
     Public Property ChefLieu As String
@@ -11,4 +12,5 @@ Partial Public Class Departement
 
     Public Overridable Property Commune As ICollection(Of Commune)
     Public Overridable Property Region As Region
+    Public Overridable Property User As ICollection(Of ApplicationUser)
 End Class

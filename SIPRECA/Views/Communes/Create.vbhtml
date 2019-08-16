@@ -1,13 +1,13 @@
 ﻿@ModelType CommuneViewModel
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.CreateDepartement
+    ViewBag.Title = Resource.CreateCommune
 End Code
 
 
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageDepartement</h1>
+    <h1 class="page-title">@Resource.ManageCommune</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Communes")>@Resource.ManageCommune</a></li>
@@ -37,6 +37,20 @@ End Code
                         @Html.DropDownListFor(Function(m) m.DepartementId, New SelectList(Model.Departements, "Value", "Text"), Resource.ComboDepartement,
            New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboDepartement})
                         @Html.ValidationMessageFor(Function(m) m.DepartementId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Superficie, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Superficie, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.SuperficiePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Superficie, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.Population, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Population, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.PopulationPlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Population, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 

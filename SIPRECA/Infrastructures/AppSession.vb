@@ -63,6 +63,15 @@
         End Set
     End Property
 
+    Shared Property Niveau As Long
+        Get
+            Return HttpContext.Current.Session("Niveau")
+        End Get
+        Set(value As Long)
+            HttpContext.Current.Session("Niveau") = value
+        End Set
+    End Property
+
     Shared Property UserId As String
         Get
             Return HttpContext.Current.Session("UserId")

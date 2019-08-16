@@ -1,6 +1,6 @@
 Partial Public Class Demande
     Public Sub New()
-        'Indemmisation = New HashSet(Of Indemmisation)()
+        Indemnisation = New HashSet(Of Indemnisation)()
         PieceJointe = New HashSet(Of PieceJointe)()
         Suivi = New HashSet(Of Suivi)()
     End Sub
@@ -23,7 +23,7 @@ Partial Public Class Demande
     Public Overridable Property Sinistrer As Sinistrer
     Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
 
-    'Public Overridable Property Indemmisation As ICollection(Of Indemmisation)
+    Public Overridable Property Indemnisation As ICollection(Of Indemnisation)
     Public Overridable Property PieceJointe As ICollection(Of PieceJointe)
     Public Overridable Property Suivi As ICollection(Of Suivi)
 

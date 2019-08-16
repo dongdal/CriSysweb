@@ -38,11 +38,11 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CollectiviteId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.CollectiviteId, New SelectList(Model.LesCollectivites, "Value", "Text"), Resource.ComboLocalite,
-          New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboLocalite})
-                        @Html.ValidationMessageFor(Function(m) m.CollectiviteId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCollectivites, "Value", "Text"), Resource.ComboLocalite,
+       New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboLocalite})
+                        @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.DateSinistre, New With {.class = "col-sm-2 col-form-label required_field"})

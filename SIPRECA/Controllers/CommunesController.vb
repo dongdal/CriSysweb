@@ -32,6 +32,8 @@ Namespace Controllers
             ViewBag.DepartementSort = If(sortOrder = "Departement", "Departement_desc", "Departement")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
+            ViewBag.SuperficieSort = If(sortOrder = "Superficie", "Superficie_desc", "Superficie")
+            ViewBag.SuperficieSortSort = If(sortOrder = "Population", "Population_desc", "Population")
 
             If Not String.IsNullOrEmpty(searchString) Then
                 page = 1
@@ -58,6 +60,16 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.Departement.Libelle)
                 Case "Departement_desc"
                     entities = entities.OrderByDescending(Function(e) e.Departement.Libelle)
+
+                Case "Superficie"
+                    entities = entities.OrderBy(Function(e) e.Superficie)
+                Case "Superficie_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Superficie)
+
+                Case "Population"
+                    entities = entities.OrderBy(Function(e) e.Population)
+                Case "Population_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Population)
 
                 Case Else
                     entities = entities.OrderBy(Function(e) e.Libelle)
