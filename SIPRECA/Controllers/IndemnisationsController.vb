@@ -280,7 +280,7 @@ Namespace Controllers
                     .IndemnisationId = entityVM.Id,
                     .NatureAideId = entityVM.NatureAideId,
                     .Quantite = Quantite,
-                    .Description = entityVM.Description,
+                    .Description = entityVM.DescriptionAide,
                     .DateCreation = entityVM.DateCreation,
                     .AspNetUserId = GetCurrentUser.Id,
                     .StatutExistant = entityVM.StatutExistant

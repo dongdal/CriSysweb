@@ -64,7 +64,7 @@ Namespace Controllers
                     entities = entities.OrderByDescending(Function(e) e.TypeSuivi.Libelle)
 
                 Case Else
-                    entities = entities.OrderBy(Function(e) e.Libelle)
+                    entities = entities.OrderBy(Function(e) e.TypeSuiviId)
                     Exit Select
             End Select
 

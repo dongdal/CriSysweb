@@ -38,6 +38,10 @@ Public Class IndemnisationViewModel
     <StringLength(4000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Description As String
 
+    <Display(Name:="Description", ResourceType:=GetType(Resource))>
+    <StringLength(4000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property DescriptionAide As String
+
     <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
     Public Property Quantite As String = "0.0"
 

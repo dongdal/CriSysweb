@@ -199,13 +199,19 @@
     <Compile Include="Controllers\RegionsController.vb" />
     <Compile Include="Controllers\SinistrersController.vb" />
     <Compile Include="Controllers\TypeAidesController.vb" />
+    <Compile Include="Controllers\SecteursController.vb" />
+    <Compile Include="Controllers\OrganisationsController.vb" />
+    <Compile Include="Controllers\TypeOrganisationsController.vb" />
     <Compile Include="Controllers\TypeSinistresController.vb" />
     <Compile Include="Controllers\CollectivitesController.vb" />
+    <Compile Include="Controllers\TypeOfficesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
     <Compile Include="DAL\Config\DetailsIndemnisationCfg.vb" />
     <Compile Include="DAL\Config\IndemnisationCfg.vb" />
     <Compile Include="DAL\Config\NatureAideCfg.vb" />
+    <Compile Include="DAL\Config\VilleCfg.vb" />
+    <Compile Include="DAL\Config\PaysCfg.vb" />
     <Compile Include="DAL\Config\PropositionCfg.vb" />
     <Compile Include="DAL\Config\QuartierCfg.vb" />
     <Compile Include="DAL\Config\TypeAideCfg.vb" />
@@ -249,20 +255,35 @@
       <DependentUpon>201908141108598_Alter_Table_CollectiviteSinistree_Set_ForeignKey_On_Commune.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908141108598_Alter_Table_CollectiviteSinistree_Set_ForeignKey_On_Commune.vb" />
+    <Compile Include="Migrations\201908200941594_Add_Tables_Pays_And_Ville.Designer.vb">
+      <DependentUpon>201908200941594_Add_Tables_Pays_And_Ville.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908200941594_Add_Tables_Pays_And_Ville.vb" />
+    <Compile Include="Migrations\201908201010448_Remove_Fields_On_Table_Pays.Designer.vb">
+      <DependentUpon>201908201010448_Remove_Fields_On_Table_Pays.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201010448_Remove_Fields_On_Table_Pays.vb" />
+    <Compile Include="Migrations\201908201141505_Update_Table_Orgaisation.Designer.vb">
+      <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201141505_Update_Table_Orgaisation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\CollectiviteSinistree.vb" />
     <Compile Include="Models\DetailsIndemnisation.vb" />
     <Compile Include="Models\Indemnisation.vb" />
     <Compile Include="Models\NatureAide.vb" />
+    <Compile Include="Models\Pays.vb" />
     <Compile Include="Models\Proposition.vb" />
     <Compile Include="Models\Quartier.vb" />
     <Compile Include="Models\TypeAide.vb" />
+    <Compile Include="Models\Ville.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
     <Compile Include="ViewModels\DetailsIndemnisationViewModel.vb" />
     <Compile Include="ViewModels\IndemnisationViewModel.vb" />
     <Compile Include="ViewModels\NatureAideViewModel.vb" />
     <Compile Include="ViewModels\QuartierViewModel.vb" />
+    <Compile Include="ViewModels\OrganisationViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
@@ -270,10 +291,13 @@
     <Compile Include="ViewModels\CommuneViewModel.vb" />
     <Compile Include="ViewModels\RegionViewModel.vb" />
     <Compile Include="ViewModels\TypeAideViewModel.vb" />
+    <Compile Include="ViewModels\SecteurViewModel.vb" />
+    <Compile Include="ViewModels\TypeOfficeViewModel.vb" />
     <Compile Include="ViewModels\TypeSinistreViewModel.vb" />
     <Compile Include="ViewModels\TypeAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteViewModel.vb" />
     <Compile Include="ViewModels\SinistrerViewModel.vb" />
+    <Compile Include="ViewModels\TypeOrganisationViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Content Include="App_Code\IPrincipalExtensionModule.vb" />
     <Compile Include="App_GlobalResources\Resource.designer.vb">
@@ -469,6 +493,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908141108598_Alter_Table_CollectiviteSinistree_Set_ForeignKey_On_Commune.resx">
       <DependentUpon>201908141108598_Alter_Table_CollectiviteSinistree_Set_ForeignKey_On_Commune.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908200941594_Add_Tables_Pays_And_Ville.resx">
+      <DependentUpon>201908200941594_Add_Tables_Pays_And_Ville.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201010448_Remove_Fields_On_Table_Pays.resx">
+      <DependentUpon>201908201010448_Remove_Fields_On_Table_Pays.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201141505_Update_Table_Orgaisation.resx">
+      <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1444,6 +1477,23 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\TypeOrganisations\Create.vbhtml" />
+    <Content Include="Views\TypeOrganisations\Delete.vbhtml" />
+    <Content Include="Views\TypeOrganisations\Details.vbhtml" />
+    <Content Include="Views\TypeOrganisations\Edit.vbhtml" />
+    <Content Include="Views\TypeOrganisations\Index.vbhtml" />
+    <Content Include="Views\Secteurs\Create.vbhtml" />
+    <Content Include="Views\Secteurs\Delete.vbhtml" />
+    <Content Include="Views\Secteurs\Edit.vbhtml" />
+    <Content Include="Views\Secteurs\Index.vbhtml" />
+    <Content Include="Views\TypeOffices\Create.vbhtml" />
+    <Content Include="Views\TypeOffices\Delete.vbhtml" />
+    <Content Include="Views\TypeOffices\Edit.vbhtml" />
+    <Content Include="Views\TypeOffices\Index.vbhtml" />
+    <Content Include="Views\Organisations\Create.vbhtml" />
+    <Content Include="Views\Organisations\Delete.vbhtml" />
+    <Content Include="Views\Organisations\Edit.vbhtml" />
+    <Content Include="Views\Organisations\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

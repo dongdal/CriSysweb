@@ -51,6 +51,7 @@ Public Class ApplicationDbContext
         modelBuilder.Configurations.Add(New NatureAideCfg())
         modelBuilder.Configurations.Add(New NiveauDeRepresentationCfg())
         modelBuilder.Configurations.Add(New OrganisationCfg())
+        modelBuilder.Configurations.Add(New PaysCfg())
         modelBuilder.Configurations.Add(New PersonnelCfg())
         modelBuilder.Configurations.Add(New PieceJointeCfg())
         modelBuilder.Configurations.Add(New PrioriteCfg())
@@ -74,6 +75,7 @@ Public Class ApplicationDbContext
         modelBuilder.Configurations.Add(New TypeSinistreCfg())
         modelBuilder.Configurations.Add(New TypeSuiviCfg())
         modelBuilder.Configurations.Add(New ValeurChampsCfg())
+        modelBuilder.Configurations.Add(New VilleCfg())
         modelBuilder.Configurations.Add(New ZoneCfg())
     End Sub
 
@@ -108,6 +110,7 @@ Public Class ApplicationDbContext
     Public Property NatureAide() As DbSet(Of NatureAide)
     Public Property NiveauDeRepresentation() As DbSet(Of NiveauDeRepresentation)
     Public Property Organisation() As DbSet(Of Organisation)
+    Public Property Pays() As DbSet(Of Pays)
     Public Property Personnel() As DbSet(Of Personnel)
     Public Property PieceJointe() As DbSet(Of PieceJointe)
     Public Property Priorite() As DbSet(Of Priorite)
@@ -131,5 +134,6 @@ Public Class ApplicationDbContext
     Public Property TypeSinistre() As DbSet(Of TypeSinistre)
     Public Property TypeSuivi() As DbSet(Of TypeSuivi)
     Public Property ValeurChamps() As DbSet(Of ValeurChamps)
+    Public Property Ville() As DbSet(Of Ville)
     Public Property Zone() As DbSet(Of Zone)
 End Class

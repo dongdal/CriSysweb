@@ -92,6 +92,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Sigle.
+        '''</summary>
+        Public Shared ReadOnly Property Acronyme() As String
+            Get
+                Return ResourceManager.GetString("Acronyme", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez entrer le sigle de l&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property AcronymePlaceholder() As String
+            Get
+                Return ResourceManager.GetString("AcronymePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Action(s).
         '''</summary>
         Public Shared ReadOnly Property ActionList() As String
@@ -101,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Ajouter un élément.
+        '''  Recherche une chaîne localisée semblable à Ajouter l&apos;élément.
         '''</summary>
         Public Shared ReadOnly Property AddItem() As String
             Get
@@ -160,6 +178,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property AppTitle() As String
             Get
                 Return ResourceManager.GetString("AppTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Boîte postale.
+        '''</summary>
+        Public Shared ReadOnly Property BoitePostale() As String
+            Get
+                Return ResourceManager.GetString("BoitePostale", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez saisir l&apos;adresse postale.
+        '''</summary>
+        Public Shared ReadOnly Property BoitePostalePlaceholder() As String
+            Get
+                Return ResourceManager.GetString("BoitePostalePlaceholder", resourceCulture)
             End Get
         End Property
         
@@ -794,6 +830,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter une nouvelle organisation.
+        '''</summary>
+        Public Shared ReadOnly Property CreateOrganisation() As String
+            Get
+                Return ResourceManager.GetString("CreateOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un quartier.
         '''</summary>
         Public Shared ReadOnly Property CreateQuartier() As String
@@ -808,6 +853,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CreateRegion() As String
             Get
                 Return ResourceManager.GetString("CreateRegion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter un nouveau Secteur.
+        '''</summary>
+        Public Shared ReadOnly Property CreateSecteur() As String
+            Get
+                Return ResourceManager.GetString("CreateSecteur", resourceCulture)
             End Get
         End Property
         
@@ -1019,6 +1073,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Date Opération.
+        '''</summary>
+        Public Shared ReadOnly Property DateOperation() As String
+            Get
+                Return ResourceManager.GetString("DateOperation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Date du sinistre.
         '''</summary>
         Public Shared ReadOnly Property DateSinistre() As String
@@ -1109,6 +1172,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer une organisation.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteOrganisation() As String
+            Get
+                Return ResourceManager.GetString("DeleteOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un quartier.
         '''</summary>
         Public Shared ReadOnly Property DeleteQuartier() As String
@@ -1123,6 +1195,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property DeleteRegion() As String
             Get
                 Return ResourceManager.GetString("DeleteRegion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer un Secteur.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteSecteur() As String
+            Get
+                Return ResourceManager.GetString("DeleteSecteur", resourceCulture)
             End Get
         End Property
         
@@ -1289,6 +1370,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Informations détaillées sur l&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property DetailsOrganisation() As String
+            Get
+                Return ResourceManager.GetString("DetailsOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Informations détaillées sur le secteur.
+        '''</summary>
+        Public Shared ReadOnly Property DetailsSecteur() As String
+            Get
+                Return ResourceManager.GetString("DetailsSecteur", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Informations détaillées sur le type d&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property DetailsTypeOrganisation() As String
+            Get
+                Return ResourceManager.GetString("DetailsTypeOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Deconnexion.
         '''</summary>
         Public Shared ReadOnly Property Disconnect() As String
@@ -1361,6 +1469,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier une organisation.
+        '''</summary>
+        Public Shared ReadOnly Property EditOrganisation() As String
+            Get
+                Return ResourceManager.GetString("EditOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un quartier.
         '''</summary>
         Public Shared ReadOnly Property EditQuartier() As String
@@ -1375,6 +1492,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditRegion() As String
             Get
                 Return ResourceManager.GetString("EditRegion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un Secteur.
+        '''</summary>
+        Public Shared ReadOnly Property EditSecteur() As String
+            Get
+                Return ResourceManager.GetString("EditSecteur", resourceCulture)
             End Get
         End Property
         
@@ -2063,6 +2189,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des organisations.
+        '''</summary>
+        Public Shared ReadOnly Property ListOrganisation() As String
+            Get
+                Return ResourceManager.GetString("ListOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des quartiers.
         '''</summary>
         Public Shared ReadOnly Property ListQuartier() As String
@@ -2077,6 +2212,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ListRegion() As String
             Get
                 Return ResourceManager.GetString("ListRegion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des secteurs.
+        '''</summary>
+        Public Shared ReadOnly Property ListSecteur() As String
+            Get
+                Return ResourceManager.GetString("ListSecteur", resourceCulture)
             End Get
         End Property
         
@@ -2288,6 +2432,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des organisations.
+        '''</summary>
+        Public Shared ReadOnly Property ManageOrganisation() As String
+            Get
+                Return ResourceManager.GetString("ManageOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des quartiers.
         '''</summary>
         Public Shared ReadOnly Property ManageQuartier() As String
@@ -2302,6 +2455,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ManageRegion() As String
             Get
                 Return ResourceManager.GetString("ManageRegion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des secteurs.
+        '''</summary>
+        Public Shared ReadOnly Property ManageSecteur() As String
+            Get
+                Return ResourceManager.GetString("ManageSecteur", resourceCulture)
             End Get
         End Property
         
@@ -2774,6 +2936,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom de l&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property NomPaceholder() As String
+            Get
+                Return ResourceManager.GetString("NomPaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom(s).
         '''</summary>
         Public Shared ReadOnly Property Noms() As String
@@ -3053,6 +3224,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Enregistré par.
+        '''</summary>
+        Public Shared ReadOnly Property SaveBy() As String
+            Get
+                Return ResourceManager.GetString("SaveBy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Secteur.
+        '''</summary>
+        Public Shared ReadOnly Property Secteur() As String
+            Get
+                Return ResourceManager.GetString("Secteur", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un secteur.
+        '''</summary>
+        Public Shared ReadOnly Property SecteurCombo() As String
+            Get
+                Return ResourceManager.GetString("SecteurCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un élément.
+        '''</summary>
+        Public Shared ReadOnly Property SelectCombo() As String
+            Get
+                Return ResourceManager.GetString("SelectCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une demande valide.
         '''</summary>
         Public Shared ReadOnly Property SelectDemandeId() As String
@@ -3121,6 +3328,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property SIPRECA_Text() As String
             Get
                 Return ResourceManager.GetString("SIPRECA_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Site Web.
+        '''</summary>
+        Public Shared ReadOnly Property SiteWeb() As String
+            Get
+                Return ResourceManager.GetString("SiteWeb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez saisir l&apos;adresse du site web.
+        '''</summary>
+        Public Shared ReadOnly Property SiteWebPlaceholder() As String
+            Get
+                Return ResourceManager.GetString("SiteWebPlaceholder", resourceCulture)
             End Get
         End Property
         
@@ -3341,6 +3566,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez saisir le N° de téléphone.
+        '''</summary>
+        Public Shared ReadOnly Property TelephonePlaceholder() As String
+            Get
+                Return ResourceManager.GetString("TelephonePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Transférer une demande.
         '''</summary>
         Public Shared ReadOnly Property TransfertDemande() As String
@@ -3355,6 +3589,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property TypeAideCombo() As String
             Get
                 Return ResourceManager.GetString("TypeAideCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Type d&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property TypeOrganisation() As String
+            Get
+                Return ResourceManager.GetString("TypeOrganisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type d&apos;organisation.
+        '''</summary>
+        Public Shared ReadOnly Property TypeOrganisationCombo() As String
+            Get
+                Return ResourceManager.GetString("TypeOrganisationCombo", resourceCulture)
             End Get
         End Property
         
@@ -3409,6 +3661,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property ValiderModification() As String
             Get
                 Return ResourceManager.GetString("ValiderModification", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ville.
+        '''</summary>
+        Public Shared ReadOnly Property Ville() As String
+            Get
+                Return ResourceManager.GetString("Ville", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une ville.
+        '''</summary>
+        Public Shared ReadOnly Property VilleCombo() As String
+            Get
+                Return ResourceManager.GetString("VilleCombo", resourceCulture)
             End Get
         End Property
         

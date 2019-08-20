@@ -25,13 +25,13 @@ End Code
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
                         @*<div Class="col-sm-8">
-                        <div Class="form-group">
-                            <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                <i Class="fa fa-plus" aria-hidden="true"></i>
-                                @Resource.Btn_nouveau
-                            </a>
-                        </div>
-                    </div>*@
+                                <div Class="form-group">
+                                    <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                </div>
+                            </div>*@
 
                         <div class="col-sm-12 text-right">
                             <div class="input-group mb-3">
@@ -60,7 +60,10 @@ End Code
                             @Html.ActionLink(Resource.TypeSuivi, "Index", New With {.sortOrder = ViewBag.TypeSuiviSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.Utilisateur, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.DateOperation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
 
                     </tr>
@@ -77,6 +80,9 @@ End Code
                             </td>
                             <td class="sorting_asc text-center" style="height: 30px;">
                                 @Html.DisplayFor(Function(modelItem) item.TypeSuivi.Libelle)
+                            </td>
+                            <td class="sorting_asc text-center" style="height: 30px;">
+                                @item.AspNetUser.Nom @item.AspNetUser.Prenom
                             </td>
                             <td class="sorting_asc text-center" style="height: 30px;">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
