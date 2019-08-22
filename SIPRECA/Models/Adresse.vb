@@ -2,9 +2,7 @@ Imports System.Data.Entity.Spatial
 
 Partial Public Class Adresse
     Public Sub New()
-        Bureau = New HashSet(Of Bureau)()
-        Entrepots = New HashSet(Of Entrepots)()
-        Installation = New HashSet(Of Installation)()
+        Infrastructure = New HashSet(Of Infrastructure)()
         Projet = New HashSet(Of Projet)()
     End Sub
 
@@ -21,8 +19,6 @@ Partial Public Class Adresse
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Bureau As ICollection(Of Bureau)
-    Public Overridable Property Entrepots As ICollection(Of Entrepots)
-    Public Overridable Property Installation As ICollection(Of Installation)
+    Public Overridable Property Infrastructure As ICollection(Of Infrastructure)
     Public Overridable Property Projet As ICollection(Of Projet)
 End Class

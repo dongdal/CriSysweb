@@ -289,10 +289,14 @@
       <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908201141505_Update_Table_Orgaisation.vb" />
-    <Compile Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.Designer.vb">
-      <DependentUpon>201908220944109_MiseAJourDuModelPourSahana.vb</DependentUpon>
+    <Compile Include="Migrations\201908221319232_Mise_A_Jour_Fichier_Cfg_Entrepots_Installation_Immobilisation.Designer.vb">
+      <DependentUpon>201908221319232_Mise_A_Jour_Fichier_Cfg_Entrepots_Installation_Immobilisation.vb</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.vb" />
+    <Compile Include="Migrations\201908221319232_Mise_A_Jour_Fichier_Cfg_Entrepots_Installation_Immobilisation.vb" />
+    <Compile Include="Migrations\201908221331341_Rename_Oganisation_To_Organisation.Designer.vb">
+      <DependentUpon>201908221331341_Rename_Oganisation_To_Organisation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221331341_Rename_Oganisation_To_Organisation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Element.vb" />
     <Compile Include="Models\Immobilisation.vb" />
@@ -551,8 +555,11 @@
     <EmbeddedResource Include="Migrations\201908201141505_Update_Table_Orgaisation.resx">
       <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.resx">
-      <DependentUpon>201908220944109_MiseAJourDuModelPourSahana.vb</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908221319232_Mise_A_Jour_Fichier_Cfg_Entrepots_Installation_Immobilisation.resx">
+      <DependentUpon>201908221319232_Mise_A_Jour_Fichier_Cfg_Entrepots_Installation_Immobilisation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221331341_Rename_Oganisation_To_Organisation.resx">
+      <DependentUpon>201908221331341_Rename_Oganisation_To_Organisation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

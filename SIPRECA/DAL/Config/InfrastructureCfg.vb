@@ -3,7 +3,7 @@
 Public Class InfrastructureCfg
     Inherits EntityTypeConfiguration(Of Infrastructure)
     Public Sub New()
-        Me.ToTable("Entrepots")
+        Me.ToTable("Infrastructure")
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.Code).IsRequired().HasMaxLength(5)
         Me.Property(Function(p) p.Telephone).IsOptional().HasMaxLength(20)

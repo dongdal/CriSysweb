@@ -2,9 +2,7 @@
 Partial Public Class Organisation
     Public Sub New()
         Abris = New HashSet(Of Abris)()
-        Bureau = New HashSet(Of Bureau)()
-        Entrepots = New HashSet(Of Entrepots)()
-        Installation = New HashSet(Of Installation)()
+        Infrastructure = New HashSet(Of Infrastructure)()
         Moyen = New HashSet(Of Moyen)()
         Personnel = New HashSet(Of Personnel)()
         Projet = New HashSet(Of Projet)()
@@ -29,9 +27,7 @@ Partial Public Class Organisation
     Public Overridable Property Ville As Ville
 
     Public Overridable Property Abris As ICollection(Of Abris)
-    Public Overridable Property Bureau As ICollection(Of Bureau)
-    Public Overridable Property Entrepots As ICollection(Of Entrepots)
-    Public Overridable Property Installation As ICollection(Of Installation)
+    Public Overridable Property Infrastructure As ICollection(Of Infrastructure)
     Public Overridable Property Moyen As ICollection(Of Moyen)
     Public Overridable Property TypeOrganisation As TypeOrganisation
     Public Overridable Property Secteur As Secteur

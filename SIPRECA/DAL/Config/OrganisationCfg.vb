@@ -3,7 +3,7 @@
 Public Class OrganisationCfg
     Inherits EntityTypeConfiguration(Of Organisation)
     Public Sub New()
-        Me.ToTable("Oganisation")
+        Me.ToTable("Organisation")
         Me.Property(Function(p) p.Id).IsRequired()
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.Telephone).IsRequired().HasMaxLength(250)
