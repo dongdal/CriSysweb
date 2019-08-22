@@ -1,25 +1,13 @@
 
 Partial Public Class Bureau
+    Inherits Infrastructure
 
-    Public Property Id As Long
-    Public Property OganisationId As Long
+    Public Sub New()
+        PersonnelBureau = New HashSet(Of PersonnelBureau)()
+    End Sub
+
     Public Property TypeOfficeId As Long
-    Public Property AdresseId As Long
 
-    Public Property Libelle As String
-    Public Property CodePostale As String
-    Public Property Telephone As String
-    Public Property Email As String
-    Public Property HeureDOuverture As String
-    Public Property HeureFermeture As String
-
-    Public Property DateCreation As DateTime=Now
-    Public Property StatutExistant As Short=1
-
-    Public Property AspNetUserId As String
-    Public Overridable Property AspNetUser As ApplicationUser
-
-    Public Overridable Property Adresse As Adresse
-    Public Overridable Property Oganisation As Organisation
     Public Overridable Property TypeOffice As TypeOffice
+    Public Overridable Property PersonnelBureau As ICollection(Of PersonnelBureau)
 End Class

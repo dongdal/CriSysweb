@@ -10,13 +10,13 @@ Partial Public Class Adresse
 
     Public Property Id As Long
 
-    Public Property CollectiviteId As Long
+    Public Property VilleId As Long
     Public Property Libelle As String
     Public Property Location As DbGeography
     Public Property DateCreation As DateTime=Now
     Public Property StatutExistant As Short=1
 
-    Public Overridable Property Collectivite As Collectivite
+    Public Overridable Property Ville As Ville
 
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser

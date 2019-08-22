@@ -206,10 +206,32 @@
     <Compile Include="Controllers\CollectivitesController.vb" />
     <Compile Include="Controllers\TypeOfficesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
+    <Compile Include="DAL\Config\ElementCfg.vb" />
+    <Compile Include="DAL\Config\ImmobilisationCfg.vb" />
+    <Compile Include="DAL\Config\InfrastructureCfg.vb" />
+    <Compile Include="DAL\Config\PortDeMerCfg.vb" />
+    <Compile Include="DAL\Config\HeliportCfg.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
     <Compile Include="DAL\Config\DetailsIndemnisationCfg.vb" />
+    <Compile Include="DAL\Config\AeroportCfg.vb" />
     <Compile Include="DAL\Config\IndemnisationCfg.vb" />
+    <Compile Include="DAL\Config\HopitauxCfg.vb" />
     <Compile Include="DAL\Config\NatureAideCfg.vb" />
+    <Compile Include="DAL\Config\HopitauxPuissanceCfg.vb" />
+    <Compile Include="DAL\Config\PersonnelInstallationCfg.vb" />
+    <Compile Include="DAL\Config\PersonnelBureauCfg.vb" />
+    <Compile Include="DAL\Config\PersonnelAbrisCfg.vb" />
+    <Compile Include="DAL\Config\MarqueElementCfg.vb" />
+    <Compile Include="DAL\Config\TypeImmobilisationCfg.vb" />
+    <Compile Include="DAL\Config\CategorieElementCfg.vb" />
+    <Compile Include="DAL\Config\TypeVehiculeCfg.vb" />
+    <Compile Include="DAL\Config\VehiculeCfg.vb" />
+    <Compile Include="DAL\Config\TailleDeAeronefCfg.vb" />
+    <Compile Include="DAL\Config\SurfaceDePisteCfg.vb" />
+    <Compile Include="DAL\Config\TypeHopitauxCfg.vb" />
+    <Compile Include="DAL\Config\PuissanceCfg.vb" />
+    <Compile Include="DAL\Config\TypeEntrepotCfg.vb" />
+    <Compile Include="DAL\Config\UsageHumanitaireCfg.vb" />
     <Compile Include="DAL\Config\VilleCfg.vb" />
     <Compile Include="DAL\Config\PaysCfg.vb" />
     <Compile Include="DAL\Config\PropositionCfg.vb" />
@@ -267,15 +289,41 @@
       <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908201141505_Update_Table_Orgaisation.vb" />
+    <Compile Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.Designer.vb">
+      <DependentUpon>201908220944109_MiseAJourDuModelPourSahana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\Element.vb" />
+    <Compile Include="Models\Immobilisation.vb" />
+    <Compile Include="Models\TypeImmobilisation.vb" />
+    <Compile Include="Models\CategorieElement.vb" />
+    <Compile Include="Models\MarqueElement.vb" />
+    <Compile Include="Models\TypeVehicule.vb" />
+    <Compile Include="Models\Vehicule.vb" />
+    <Compile Include="Models\Infrastructure.vb" />
+    <Compile Include="Models\Heliport.vb" />
+    <Compile Include="Models\Aeroport.vb" />
+    <Compile Include="Models\Hopitaux.vb" />
     <Compile Include="Models\CollectiviteSinistree.vb" />
     <Compile Include="Models\DetailsIndemnisation.vb" />
     <Compile Include="Models\Indemnisation.vb" />
     <Compile Include="Models\NatureAide.vb" />
     <Compile Include="Models\Pays.vb" />
+    <Compile Include="Models\PersonnelAbris.vb" />
+    <Compile Include="Models\HopitauxPuissance.vb" />
+    <Compile Include="Models\PersonnelInstallation.vb" />
+    <Compile Include="Models\PersonnelBureau.vb" />
     <Compile Include="Models\Proposition.vb" />
     <Compile Include="Models\Quartier.vb" />
+    <Compile Include="Models\Puissance.vb" />
+    <Compile Include="Models\PortDeMer.vb" />
+    <Compile Include="Models\TypeEntrepot.vb" />
+    <Compile Include="Models\TypeHopitaux.vb" />
     <Compile Include="Models\TypeAide.vb" />
+    <Compile Include="Models\SurfaceDePiste.vb" />
+    <Compile Include="Models\TailleDeAeronef.vb" />
+    <Compile Include="Models\UsageHumanitaire.vb" />
     <Compile Include="Models\Ville.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
@@ -502,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908201141505_Update_Table_Orgaisation.resx">
       <DependentUpon>201908201141505_Update_Table_Orgaisation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908220944109_MiseAJourDuModelPourSahana.resx">
+      <DependentUpon>201908220944109_MiseAJourDuModelPourSahana.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

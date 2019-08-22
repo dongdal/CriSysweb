@@ -1,21 +1,13 @@
 
 Partial Public Class Installation
+    Inherits Infrastructure
 
-    Public Property Id As Long
-    Public Property OganisationId As Long
-    Public Property AdresseId As Long
-    Public Property Libelle As String
-    Public Property CodePostale As String
-    Public Property Telephone As String
-    Public Property HeureDOuverture As String
-    Public Property HeureFermeture As String
-    Public Property Email As String
-    Public Property DateCreation As DateTime=Now
-    Public Property StatutExistant As Short=1
+    Public Sub New()
+        PersonnelInstallation = New HashSet(Of PersonnelInstallation)()
 
-    Public Property AspNetUserId As String
-    Public Overridable Property AspNetUser As ApplicationUser
+    End Sub
+    Public Property HeureDOuverture As DateTime
+    Public Property HeureFermeture As DateTime
 
-    Public Overridable Property Adresse As Adresse
-    Public Overridable Property Oganisation As Organisation
+    Public Overridable Property PersonnelInstallation As ICollection(Of PersonnelInstallation)
 End Class

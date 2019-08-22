@@ -4,6 +4,9 @@ Partial Public Class Personnel
         Competance = New HashSet(Of Competance)()
         DemandeDArticle = New HashSet(Of DemandeDArticle)()
         PersonnelProjet = New HashSet(Of PersonnelProjet)()
+        PersonnelBureau = New HashSet(Of PersonnelBureau)()
+        PersonnelInstallation = New HashSet(Of PersonnelInstallation)()
+        PersonnelAbris = New HashSet(Of PersonnelAbris)()
         Taches = New HashSet(Of Tache)()
     End Sub
 
@@ -28,6 +31,9 @@ Partial Public Class Personnel
     Public Overridable Property DemandeDArticle As ICollection(Of DemandeDArticle)
     Public Overridable Property Oganisation As Organisation
     Public Overridable Property PersonnelProjet As ICollection(Of PersonnelProjet)
+    Public Overridable Property PersonnelBureau As ICollection(Of PersonnelBureau)
+    Public Overridable Property PersonnelInstallation As ICollection(Of PersonnelInstallation)
+    Public Overridable Property PersonnelAbris As ICollection(Of PersonnelAbris)
     Public Overridable Property TypePersonnel As TypePersonnel
     Public Overridable Property Taches As ICollection(Of Tache)
 End Class
