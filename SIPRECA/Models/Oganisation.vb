@@ -6,11 +6,11 @@ Partial Public Class Organisation
         Moyen = New HashSet(Of Moyen)()
         Personnel = New HashSet(Of Personnel)()
         Projet = New HashSet(Of Projet)()
+        Hopitaux = New HashSet(Of Hopitaux)()
     End Sub
 
     Public Property Id As Long
     Public Property TypeOrganisationId As Long
-    Public Property SecteurId As Long
     Public Property Nom As String
     Public Property Acronyme As String
     Public Property SiteWeb As String
@@ -30,7 +30,7 @@ Partial Public Class Organisation
     Public Overridable Property Infrastructure As ICollection(Of Infrastructure)
     Public Overridable Property Moyen As ICollection(Of Moyen)
     Public Overridable Property TypeOrganisation As TypeOrganisation
-    Public Overridable Property Secteur As Secteur
     Public Overridable Property Personnel As ICollection(Of Personnel)
     Public Overridable Property Projet As ICollection(Of Projet)
+    Public Overridable Property Hopitaux As ICollection(Of Hopitaux)
 End Class

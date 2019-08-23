@@ -57,9 +57,9 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.TypeOrganisation, "Index", New With {.sortOrder = ViewBag.TypeOrganisationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                        @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Secteur, "Index", New With {.sortOrder = ViewBag.SecteurSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
+                        </th>*@
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Ville, "Index", New With {.sortOrder = ViewBag.VilleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
@@ -87,9 +87,9 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeOrganisation.Libelle)
                             </td>
-                            <td class="sorting_asc text-center">
+                            @*<td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Secteur.Libelle)
-                            </td>
+                            </td>*@
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Ville.Libelle)
                             </td>
@@ -139,11 +139,11 @@ End Code
                                                         </div>
                                                         <br />
 
-                                                        <div class="form-group">
-                                                            <label for="Secteur" class="col-form-label">@Resource.Secteur : </label>
-                                                            @Html.DisplayFor(Function(m) item.Secteur.Libelle, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
+                                                        @*<div class="form-group">
+                                                                <label for="Secteur" class="col-form-label">@Resource.Secteur : </label>
+                                                                @Html.DisplayFor(Function(m) item.Secteur.Libelle, New With {.class = "form-control", .disabled = "disabled"})
+                                                            </div>
+                                                            <br />*@
 
                                                         <div class="form-group">
                                                             <label for="Ville" class="col-form-label">@Resource.Ville : </label>
@@ -157,16 +157,16 @@ End Code
                                                         </div>
                                                         <br />
 
-
-                                                    </div>
-
-                                                    <div class="col-sm-6 form-group">
-
                                                         <div class="form-group">
                                                             <label for="SiteWeb" class="col-form-label">@Resource.SiteWeb : </label>
                                                             @Html.DisplayFor(Function(m) item.SiteWeb, New With {.class = "form-control", .disabled = "disabled"})
                                                         </div>
                                                         <br />
+
+
+                                                    </div>
+
+                                                    <div class="col-sm-6 form-group">
 
                                                         <div class="form-group">
                                                             <label for="Email" class="col-form-label">@Resource.Email : </label>

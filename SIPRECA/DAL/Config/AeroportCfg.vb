@@ -5,14 +5,14 @@ Public Class AeroportCfg
     Public Sub New()
         Me.ToTable("Aeroport")
         Me.Property(Function(p) p.OganisationId).IsRequired()
-        Me.Property(Function(p) p.AdresseId).IsRequired()
+        Me.Property(Function(p) p.AdresseId).IsOptional()
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.Email).IsOptional().HasMaxLength(250)
-        Me.Property(Function(p) p.Telephone).IsRequired().HasMaxLength(20)
+        Me.Property(Function(p) p.Telephone).IsOptional().HasMaxLength(20)
         Me.Property(Function(p) p.DateCreation).IsRequired()
         Me.Property(Function(p) p.StatutExistant).IsRequired()
-        Me.Property(Function(p) p.IATA).IsRequired()
-        Me.Property(Function(p) p.ICAO).IsRequired()
+        Me.Property(Function(p) p.IATA).IsOptional()
+        Me.Property(Function(p) p.ICAO).IsOptional()
         Me.Property(Function(p) p.AspNetUserId).IsRequired()
     End Sub
 End Class

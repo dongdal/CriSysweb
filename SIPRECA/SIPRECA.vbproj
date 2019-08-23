@@ -222,6 +222,7 @@
     <Compile Include="DAL\Config\PersonnelBureauCfg.vb" />
     <Compile Include="DAL\Config\PersonnelAbrisCfg.vb" />
     <Compile Include="DAL\Config\MarqueElementCfg.vb" />
+    <Compile Include="DAL\Config\SecteurProjetCfg.vb" />
     <Compile Include="DAL\Config\TypeImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\CategorieElementCfg.vb" />
     <Compile Include="DAL\Config\TypeVehiculeCfg.vb" />
@@ -297,9 +298,18 @@
       <DependentUpon>201908221331341_Rename_Oganisation_To_Organisation.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908221331341_Rename_Oganisation_To_Organisation.vb" />
+    <Compile Include="Migrations\201908221352048_Add-Table-SecteurProjet.Designer.vb">
+      <DependentUpon>201908221352048_Add-Table-SecteurProjet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221352048_Add-Table-SecteurProjet.vb" />
+    <Compile Include="Migrations\201908230827512_Mise_A_Jour_De_La_Base_De_Données.Designer.vb">
+      <DependentUpon>201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Element.vb" />
     <Compile Include="Models\Immobilisation.vb" />
+    <Compile Include="Models\SecteurProjet.vb" />
     <Compile Include="Models\TypeImmobilisation.vb" />
     <Compile Include="Models\CategorieElement.vb" />
     <Compile Include="Models\MarqueElement.vb" />
@@ -560,6 +570,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908221331341_Rename_Oganisation_To_Organisation.resx">
       <DependentUpon>201908221331341_Rename_Oganisation_To_Organisation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221352048_Add-Table-SecteurProjet.resx">
+      <DependentUpon>201908221352048_Add-Table-SecteurProjet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908230827512_Mise_A_Jour_De_La_Base_De_Données.resx">
+      <DependentUpon>201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

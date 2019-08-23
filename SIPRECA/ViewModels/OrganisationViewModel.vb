@@ -10,11 +10,11 @@ Public Class OrganisationViewModel
     Public Overridable Property LesTypeOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property TypeOrganisation As TypeOrganisation
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Secteur", ResourceType:=GetType(Resource))>
-    Public Property SecteurId As Long
-    Public Overridable Property LesSecteurs As ICollection(Of SelectListItem)
-    Public Overridable Property Secteur As Secteur
+    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    '<Display(Name:="Secteur", ResourceType:=GetType(Resource))>
+    'Public Property SecteurId As Long
+    'Public Overridable Property LesSecteurs As ICollection(Of SelectListItem)
+    'Public Overridable Property Secteur As Secteur
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Ville", ResourceType:=GetType(Resource))>
@@ -86,8 +86,8 @@ Public Class OrganisationViewModel
             .TypeOrganisation = entity.TypeOrganisation
             .VilleId = entity.VilleId
             .Ville = entity.Ville
-            .Secteur = entity.Secteur
-            .SecteurId = entity.SecteurId
+            '.Secteur = entity.Secteur
+            '.SecteurId = entity.SecteurId
         End With
     End Sub
 
@@ -106,7 +106,7 @@ Public Class OrganisationViewModel
             .AspNetUserId = AspNetUserId
             .TypeOrganisationId = TypeOrganisationId
             .VilleId = VilleId
-            .SecteurId = SecteurId
+            '.SecteurId = SecteurId
         End With
         Return entity
     End Function

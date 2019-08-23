@@ -50,7 +50,7 @@ Namespace Controllers
                 entities = entities.Where(Function(e) e.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or e.Acronyme.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.Telephone.ToUpper.Contains(value:=searchString.ToUpper) Or e.Ville.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.TypeOrganisation.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Email.ToUpper.Contains(value:=searchString.ToUpper) Or
-                                               e.BoitePostale.ToUpper.Contains(value:=searchString.ToUpper) Or e.Secteur.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                                               e.BoitePostale.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -81,10 +81,10 @@ Namespace Controllers
                 Case "TypeOrganisation_desc"
                     entities = entities.OrderByDescending(Function(e) e.TypeOrganisation.Libelle)
 
-                Case "Secteur"
-                    entities = entities.OrderBy(Function(e) e.Secteur.Libelle)
-                Case "Secteur_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Secteur.Libelle)
+                    'Case "Secteur"
+                    '    entities = entities.OrderBy(Function(e) e.Secteur.Libelle)
+                    'Case "Secteur_desc"
+                    '    entities = entities.OrderByDescending(Function(e) e.Secteur.Libelle)
 
                 Case Else
                     entities = entities.OrderBy(Function(e) e.Nom)
@@ -128,7 +128,7 @@ Namespace Controllers
 
             entityVM.LesTypeOrganisations = LesTypeOrganisations
             entityVM.LesVilles = LesVilles
-            entityVM.LesSecteurs = LesSecteurs
+            'entityVM.LesSecteurs = LesSecteurs
             entityVM.LesUtilisateurs = LesUtilisateurs
         End Sub
 

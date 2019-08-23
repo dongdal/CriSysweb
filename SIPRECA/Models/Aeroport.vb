@@ -6,10 +6,10 @@ Partial Public Class Aeroport
 
     Public Property Id As Long
     Public Property OganisationId As Long
-    Public Property AdresseId As Long
-    Public Property SurfaceDePisteId As Long
-    Public Property TailleDeAeronefId As Long
-    Public Property UsageHumanitaireId As Long
+    Public Property AdresseId As Long?
+    Public Property SurfaceDePisteId As Long?
+    Public Property TailleDeAeronefId As Long?
+    Public Property UsageHumanitaireId As Long?
 
     Public Property Nom As String
     Public Property ICAO As String

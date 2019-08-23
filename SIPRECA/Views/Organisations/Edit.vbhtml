@@ -47,43 +47,30 @@ End Code
                     @Html.LabelFor(Function(m) m.TypeOrganisationId, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.TypeOrganisationId, New SelectList(Model.LesTypeOrganisations, "Value", "Text"), Resource.TypeOrganisationCombo,
-                New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.TypeOrganisationCombo})
+                       New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.TypeOrganisationCombo})
                         @Html.ValidationMessageFor(Function(m) m.TypeOrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.SecteurId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.SecteurId, New SelectList(Model.LesSecteurs, "Value", "Text"), Resource.SecteurCombo,
-                                       New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.SecteurCombo})
-                        @Html.ValidationMessageFor(Function(m) m.SecteurId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesTypeOrganisations, "Value", "Text"), Resource.VilleCombo,
+                       New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.VilleCombo})
+                        @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesTypeOrganisations, "Value", "Text"), Resource.VilleCombo,
-             New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.VilleCombo})
-                        @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
-                    </div>
 
                     @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.TelephonePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                     </div>
-                </div>
 
-                @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.SiteWebPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.BoitePostale, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.BoitePostalePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.BoitePostale, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
@@ -93,6 +80,12 @@ End Code
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "9", .Placeholder = Resource.EmailPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.BoitePostale, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.BoitePostale, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.BoitePostalePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.BoitePostale, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
