@@ -1329,4 +1329,253 @@
   <data name="VilleCombo" xml:space="preserve">
     <value>Veuillez sélectionner une ville</value>
   </data>
+  <data name="CreateTypeVehicule" xml:space="preserve">
+    <value>Ajouter un type de vehicule</value>
+  </data>
+  <data name="CreateUsageHumanitaire" xml:space="preserve">
+    <value>Ajouter un usage humanitaire</value>
+  </data>
+  <data name="DeleteTypeVehicule" xml:space="preserve">
+    <value>Supprimer un type de vehicule</value>
+  </data>
+  <data name="DeleteUsageHumanitaire" xml:space="preserve">
+    <value>Supprimer un usage humanitaire</value>
+  </data>
+  <data name="EditTypeVehicule" xml:space="preserve">
+    <value>Modifier un type de vehicule</value>
+  </data>
+  <data name="EditUsageHumanitaire" xml:space="preserve">
+    <value>Modifier un usage humanitaire</value>
+  </data>
+  <data name="ListTypeVehicule" xml:space="preserve">
+    <value>Liste des types de vehicules</value>
+  </data>
+  <data name="ListUsageHumanitaire" xml:space="preserve">
+    <value>Liste des usages humanitaires</value>
+  </data>
+  <data name="ManageTypeVehicule" xml:space="preserve">
+    <value>Gestion des types de vehicule</value>
+  </data>
+  <data name="ManageUsageHumanitaire" xml:space="preserve">
+    <value>Gestion des usages humanitaire</value>
+  </data>
+  <data name="CreateTypeEntrepot" xml:space="preserve">
+    <value>Ajouter un type d'entrepot</value>
+  </data>
+  <data name="CreateTypeHopitaux" xml:space="preserve">
+    <value>Ajouter un type d'hopital</value>
+  </data>
+  <data name="CreateTypeImmobilisation" xml:space="preserve">
+    <value>Ajouter un type d'immobilisation</value>
+  </data>
+  <data name="DeleteTypeEntrepot" xml:space="preserve">
+    <value>Supprimer un type d'entrepot</value>
+  </data>
+  <data name="DeleteTypeHopitaux" xml:space="preserve">
+    <value>Supprimer un type d'hopital</value>
+  </data>
+  <data name="DeleteTypeImmobilisation" xml:space="preserve">
+    <value>Supprimer un type d'immobilisation</value>
+  </data>
+  <data name="EditTypeEntrepot" xml:space="preserve">
+    <value>Modifier un type d'entrepot</value>
+  </data>
+  <data name="EditTypeHopitaux" xml:space="preserve">
+    <value>Modifier un type d'hopital</value>
+  </data>
+  <data name="EditTypeImmobilisation" xml:space="preserve">
+    <value>Modifier un type d'immobilisation</value>
+  </data>
+  <data name="ListTypeEntrepot" xml:space="preserve">
+    <value>Liste des types d'entrepot</value>
+  </data>
+  <data name="ListTypeHopitaux" xml:space="preserve">
+    <value>Liste des types d'hopitaux</value>
+  </data>
+  <data name="ListTypeImmobilisation" xml:space="preserve">
+    <value>Liste des types d'immobilisation</value>
+  </data>
+  <data name="ManageTypeEntrepot" xml:space="preserve">
+    <value>Gestion des types d'entrepot</value>
+  </data>
+  <data name="ManageTypeHopitaux" xml:space="preserve">
+    <value>Gestion des types d'hopitaux</value>
+  </data>
+  <data name="ManageTypeImmobilisation" xml:space="preserve">
+    <value>Gestion des types d'immobilisation</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CODEPlaceholder" xml:space="preserve">
+    <value>Veuillez entrer le code</value>
+  </data>
+  <data name="ComboOrganisation" xml:space="preserve">
+    <value>Veuillez selectionner l'organisation</value>
+  </data>
+  <data name="CreateHeliport" xml:space="preserve">
+    <value>Ajouter un héliport</value>
+  </data>
+  <data name="DeleteHeliport" xml:space="preserve">
+    <value>Supprimer un héliport</value>
+  </data>
+  <data name="EditHeliport" xml:space="preserve">
+    <value>Modifier un héliport</value>
+  </data>
+  <data name="ListHeliport" xml:space="preserve">
+    <value>Liste des héliports</value>
+  </data>
+  <data name="ManageHeliport" xml:space="preserve">
+    <value>Gestion des héliports</value>
+  </data>
+  <data name="Organisation" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="CreateCategorieDArticle" xml:space="preserve">
+    <value>Ajouter une catégorie d'article</value>
+  </data>
+  <data name="CreateCategorieElement" xml:space="preserve">
+    <value>Ajouter une catégorie </value>
+  </data>
+  <data name="CreateDevise" xml:space="preserve">
+    <value>Ajouter une devise</value>
+  </data>
+  <data name="CreateMarqueElement" xml:space="preserve">
+    <value>Ajouter une marque</value>
+  </data>
+  <data name="CreatePuissance" xml:space="preserve">
+    <value>Ajouter une puissance</value>
+  </data>
+  <data name="CreateSurfaceDePiste" xml:space="preserve">
+    <value>Ajouter une surface de piste</value>
+  </data>
+  <data name="CreateTailleDeAeronef" xml:space="preserve">
+    <value>Ajouter une taille d'aéronef</value>
+  </data>
+  <data name="DeleteCategorieDArticle" xml:space="preserve">
+    <value>Supprimer une catégorie d'article</value>
+  </data>
+  <data name="DeleteCategorieElement" xml:space="preserve">
+    <value>Supprimer une catégorie</value>
+  </data>
+  <data name="DeleteDevise" xml:space="preserve">
+    <value>Supprimer une devise</value>
+  </data>
+  <data name="DeleteMarqueElement" xml:space="preserve">
+    <value>Supprimer une marque</value>
+  </data>
+  <data name="DeletePuissance" xml:space="preserve">
+    <value>Supprimer une puissance</value>
+  </data>
+  <data name="DeleteSurfaceDePiste" xml:space="preserve">
+    <value>Supprimer une surface de piste</value>
+  </data>
+  <data name="DeleteTailleDeAeronef" xml:space="preserve">
+    <value>Supprimer une taille d'aéronef</value>
+  </data>
+  <data name="EditCategorieDArticle" xml:space="preserve">
+    <value>Modifier une catégorie d'article</value>
+  </data>
+  <data name="EditCategorieElement" xml:space="preserve">
+    <value>Modifier une catégorie</value>
+  </data>
+  <data name="EditDevise" xml:space="preserve">
+    <value>Modifier une devise</value>
+  </data>
+  <data name="EditMarqueElement" xml:space="preserve">
+    <value>Modifier une marque</value>
+  </data>
+  <data name="EditPuissance" xml:space="preserve">
+    <value>Modifier une puissance</value>
+  </data>
+  <data name="EditSurfaceDePiste" xml:space="preserve">
+    <value>Modifier une surface de piste</value>
+  </data>
+  <data name="EditTailleDeAeronef" xml:space="preserve">
+    <value>Modifier une taille d'aéronef</value>
+  </data>
+  <data name="ListCategorieDArticle" xml:space="preserve">
+    <value>Liste des catégories d'articles</value>
+  </data>
+  <data name="ListCategorieElement" xml:space="preserve">
+    <value>Liste des catégories </value>
+  </data>
+  <data name="ListDevise" xml:space="preserve">
+    <value>Liste des devise</value>
+  </data>
+  <data name="ListMarqueElement" xml:space="preserve">
+    <value>Liste des marques</value>
+  </data>
+  <data name="ListPuissance" xml:space="preserve">
+    <value>Liste des puissances</value>
+  </data>
+  <data name="ListSurfaceDePiste" xml:space="preserve">
+    <value>Liste des surfaces de piste</value>
+  </data>
+  <data name="ListTailleDeAeronef" xml:space="preserve">
+    <value>Liste des tailles d'aéronef</value>
+  </data>
+  <data name="ManageCategorieDArticle" xml:space="preserve">
+    <value>Gestion des catégories d'article</value>
+  </data>
+  <data name="ManageCategorieElement" xml:space="preserve">
+    <value>Gestion des catégories</value>
+  </data>
+  <data name="ManageDevise" xml:space="preserve">
+    <value>Gestion des devise</value>
+  </data>
+  <data name="ManageMarqueElement" xml:space="preserve">
+    <value>Gestion des marques</value>
+  </data>
+  <data name="ManagePuissance" xml:space="preserve">
+    <value>Gestion des puissances</value>
+  </data>
+  <data name="ManageSurfaceDePiste" xml:space="preserve">
+    <value>Gestion des surfaces de piste</value>
+  </data>
+  <data name="ManageTailleDeAeronef" xml:space="preserve">
+    <value>Gestion des tailles d'aéronef</value>
+  </data>
+  <data name="MenuCategoriArticle" xml:space="preserve">
+    <value>Les catégories d'article</value>
+  </data>
+  <data name="MenuCategorieElement" xml:space="preserve">
+    <value>Les catégories d'éléments</value>
+  </data>
+  <data name="MenuDevises" xml:space="preserve">
+    <value>Les devises</value>
+  </data>
+  <data name="MenuHeliport" xml:space="preserve">
+    <value>Les héliports</value>
+  </data>
+  <data name="MenuMarqueElement" xml:space="preserve">
+    <value>Les marques </value>
+  </data>
+  <data name="MenuPuissance" xml:space="preserve">
+    <value>Les puissances</value>
+  </data>
+  <data name="MenuSurfaceDePiste" xml:space="preserve">
+    <value>Les surfaces de piste</value>
+  </data>
+  <data name="MenuTailleDeAeronef" xml:space="preserve">
+    <value>Les tailles d'aéronef</value>
+  </data>
+  <data name="MenuTypeEntrepot" xml:space="preserve">
+    <value>Les types d'entrepots</value>
+  </data>
+  <data name="MenuTypeHopitaux" xml:space="preserve">
+    <value>Les types d'hopitaux</value>
+  </data>
+  <data name="MenuTypeImmobilisation" xml:space="preserve">
+    <value>Les types d'immobilidation</value>
+  </data>
+  <data name="MenuTypePersonnel" xml:space="preserve">
+    <value>Les types de Personnel</value>
+  </data>
+  <data name="MenuTypeVehicule" xml:space="preserve">
+    <value>Les types de vehicule</value>
+  </data>
+  <data name="MenuUsageHumanitaire" xml:space="preserve">
+    <value>Les usages hummanitaire</value>
+  </data>
 </root>

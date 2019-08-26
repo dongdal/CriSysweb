@@ -1,5 +1,4 @@
 
-Imports System.ComponentModel.DataAnnotations.Schema
 
 Partial Public Class Immobilisation
 

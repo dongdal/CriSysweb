@@ -1,9 +1,9 @@
 
 Imports System.ComponentModel.DataAnnotations.Schema
+Imports System.Data.Entity.Spatial
 
 Partial Public Class Hopitaux
     Public Sub New()
-
         HopitauxPuissance = New HashSet(Of HopitauxPuissance)()
     End Sub
 
@@ -11,7 +11,8 @@ Partial Public Class Hopitaux
     Public Property Id As Long
     Public Property OganisationId As Long
     Public Property TypeHopitauxId As Long
-    Public Property AdresseId As Long
+    Public Property VilleId As Long
+
 
     Public Property Nom As String
     Public Property Code As String
@@ -24,6 +25,7 @@ Partial Public Class Hopitaux
     Public Property TelephoneUrgence As String
     Public Property SiteWeb As String
     Public Property Email As String
+    Public Property Location As DbGeography
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
@@ -32,7 +34,7 @@ Partial Public Class Hopitaux
     Public Overridable Property AspNetUser As ApplicationUser
 
 
-    Public Overridable Property Adresse As Adresse
+    Public Overridable Property Ville As Ville
     Public Overridable Property TypeHopitaux As TypeHopitaux
     Public Overridable Property Oganisation As Organisation
 

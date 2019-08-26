@@ -1,4 +1,6 @@
 
+Imports System.Data.Entity.Spatial
+
 Partial Public Class Abris
     Public Sub New()
         MaladieSinistre = New HashSet(Of MaladieSinistre)()
@@ -10,20 +12,22 @@ Partial Public Class Abris
 
     Public Property OganisationId As Long
     Public Property TypeAbrisId As Long
-    Public Property AdresseId As Long
+    Public Property VilleId As Long
     Public Property Nom As String
     Public Property EstimationPopulation As Long
     Public Property Capacite As Long
+    Public Property Location As DbGeography
+
 
     Public Property DateCreation As DateTime = Now
-    Public Property StatutExistant As Short=1
+    Public Property StatutExistant As Short = 1
 
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
 
     Public Overridable Property Oganisation As Organisation
-    Public Overridable Property Adresse As Adresse
+    Public Overridable Property Ville As Ville
     Public Overridable Property TypeAbris As TypeAbris
 
     Public Overridable Property MaladieSinistre As ICollection(Of MaladieSinistre)

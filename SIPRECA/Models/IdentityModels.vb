@@ -8,7 +8,6 @@ Public Class ApplicationUser
 
     Public Sub New()
         Abris = New HashSet(Of Abris)()
-        Adresse = New HashSet(Of Adresse)()
         AnneeBudgetaire = New HashSet(Of AnneeBudgetaire)()
         Article = New HashSet(Of Article)()
         BudgetCollectivite = New HashSet(Of BudgetCollectivite)()
@@ -82,7 +81,6 @@ Public Class ApplicationUser
     Public Property Niveau As String
 
     Public Overridable Property Abris As ICollection(Of Abris)
-    Public Overridable Property Adresse As ICollection(Of Adresse)
     Public Overridable Property AnneeBudgetaire As ICollection(Of AnneeBudgetaire)
     Public Overridable Property Article As ICollection(Of Article)
     Public Overridable Property BudgetCollectivite As ICollection(Of BudgetCollectivite)

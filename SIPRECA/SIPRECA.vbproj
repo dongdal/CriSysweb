@@ -191,6 +191,7 @@
     <Compile Include="Controllers\IndemnisationsController.vb" />
     <Compile Include="Controllers\NatureAidesController.vb" />
     <Compile Include="Controllers\QuartiersController.vb" />
+    <Compile Include="Controllers\HeliportsController.vb" />
     <Compile Include="Controllers\SinistresController.vb" />
     <Compile Include="Controllers\SuivisController.vb" />
     <Compile Include="Controllers\DemandesController.vb" />
@@ -201,11 +202,24 @@
     <Compile Include="Controllers\TypeAidesController.vb" />
     <Compile Include="Controllers\SecteursController.vb" />
     <Compile Include="Controllers\OrganisationsController.vb" />
+    <Compile Include="Controllers\TypeEntrepotsController.vb" />
+    <Compile Include="Controllers\TypeHopitauxController.vb" />
+    <Compile Include="Controllers\TypeImmobilisationsController.vb" />
     <Compile Include="Controllers\TypeOrganisationsController.vb" />
+    <Compile Include="Controllers\TypePersonnelsController.vb" />
     <Compile Include="Controllers\TypeSinistresController.vb" />
     <Compile Include="Controllers\CollectivitesController.vb" />
     <Compile Include="Controllers\TypeOfficesController.vb" />
+    <Compile Include="Controllers\TailleDeAeronefsController.vb" />
+    <Compile Include="Controllers\SurfaceDePistesController.vb" />
+    <Compile Include="Controllers\PuissancesController.vb" />
+    <Compile Include="Controllers\MarqueElementsController.vb" />
+    <Compile Include="Controllers\DevisesController.vb" />
+    <Compile Include="Controllers\CategorieElementsController.vb" />
+    <Compile Include="Controllers\CategorieDArticlesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
+    <Compile Include="Controllers\TypeVehiculesController.vb" />
+    <Compile Include="Controllers\UsageHumanitairesController.vb" />
     <Compile Include="DAL\Config\ElementCfg.vb" />
     <Compile Include="DAL\Config\ImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\InfrastructureCfg.vb" />
@@ -306,6 +320,10 @@
       <DependentUpon>201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb" />
+    <Compile Include="Migrations\201908261712449_Mise ajour des adresse.Designer.vb">
+      <DependentUpon>201908261712449_Mise ajour des adresse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908261712449_Mise ajour des adresse.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Element.vb" />
     <Compile Include="Models\Immobilisation.vb" />
@@ -346,6 +364,7 @@
     <Compile Include="ViewModels\NatureAideViewModel.vb" />
     <Compile Include="ViewModels\QuartierViewModel.vb" />
     <Compile Include="ViewModels\OrganisationViewModel.vb" />
+    <Compile Include="ViewModels\HeliportViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
@@ -354,13 +373,26 @@
     <Compile Include="ViewModels\RegionViewModel.vb" />
     <Compile Include="ViewModels\TypeAideViewModel.vb" />
     <Compile Include="ViewModels\SecteurViewModel.vb" />
+    <Compile Include="ViewModels\TypeEntrepotViewModel.vb" />
+    <Compile Include="ViewModels\TypeHopitauxViewModel.vb" />
+    <Compile Include="ViewModels\TypeImmobilisationViewModel.vb" />
     <Compile Include="ViewModels\TypeOfficeViewModel.vb" />
+    <Compile Include="ViewModels\TypePersonnelViewModel.vb" />
     <Compile Include="ViewModels\TypeSinistreViewModel.vb" />
     <Compile Include="ViewModels\TypeAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteViewModel.vb" />
     <Compile Include="ViewModels\SinistrerViewModel.vb" />
     <Compile Include="ViewModels\TypeOrganisationViewModel.vb" />
+    <Compile Include="ViewModels\TailleDeAeronefViewModel.vb" />
+    <Compile Include="ViewModels\SurfaceDePisteViewModel.vb" />
+    <Compile Include="ViewModels\PuissanceViewModel.vb" />
+    <Compile Include="ViewModels\MarqueElementViewModel.vb" />
+    <Compile Include="ViewModels\DeviseViewModel.vb" />
+    <Compile Include="ViewModels\CategorieElementViewModel.vb" />
+    <Compile Include="ViewModels\CategorieDArticleViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
+    <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
+    <Compile Include="ViewModels\UsageHumanitaireViewModel.vb" />
     <Content Include="App_Code\IPrincipalExtensionModule.vb" />
     <Compile Include="App_GlobalResources\Resource.designer.vb">
       <AutoGen>True</AutoGen>
@@ -382,7 +414,6 @@
     <Compile Include="Controllers\TypeAbrisController.vb" />
     <Compile Include="DAL\ApplicationDbContext.vb" />
     <Compile Include="DAL\Config\AbrisCfg.vb" />
-    <Compile Include="DAL\Config\AdresseCfg.vb" />
     <Compile Include="DAL\Config\AnneeBudgetaireCfg.vb" />
     <Compile Include="DAL\Config\ArticleCfg.vb" />
     <Compile Include="DAL\Config\BudgetCollectiviteCfg.vb" />
@@ -448,7 +479,6 @@
     <Compile Include="Infrastructures\Utils.vb" />
     <Compile Include="Models\Abris.vb" />
     <Compile Include="ViewModels\AccountViewModels.vb" />
-    <Compile Include="Models\Adresse.vb" />
     <Compile Include="Models\AnneeBudgetaire.vb" />
     <Compile Include="Models\Article.vb" />
     <Compile Include="Models\BudgetCollectivite.vb" />
@@ -576,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908230827512_Mise_A_Jour_De_La_Base_De_Données.resx">
       <DependentUpon>201908230827512_Mise_A_Jour_De_La_Base_De_Données.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908261712449_Mise ajour des adresse.resx">
+      <DependentUpon>201908261712449_Mise ajour des adresse.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1568,6 +1601,76 @@
     <Content Include="Views\Organisations\Delete.vbhtml" />
     <Content Include="Views\Organisations\Edit.vbhtml" />
     <Content Include="Views\Organisations\Index.vbhtml" />
+    <Content Include="Views\Heliports\Create.vbhtml" />
+    <Content Include="Views\Heliports\Delete.vbhtml" />
+    <Content Include="Views\Heliports\Details.vbhtml" />
+    <Content Include="Views\Heliports\Edit.vbhtml" />
+    <Content Include="Views\Heliports\Index.vbhtml" />
+    <Content Include="Views\TypeEntrepots\Create.vbhtml" />
+    <Content Include="Views\TypeEntrepots\Delete.vbhtml" />
+    <Content Include="Views\TypeEntrepots\Details.vbhtml" />
+    <Content Include="Views\TypeEntrepots\Edit.vbhtml" />
+    <Content Include="Views\TypeEntrepots\Index.vbhtml" />
+    <Content Include="Views\TypeHopitaux\Create.vbhtml" />
+    <Content Include="Views\TypeHopitaux\Delete.vbhtml" />
+    <Content Include="Views\TypeHopitaux\Details.vbhtml" />
+    <Content Include="Views\TypeHopitaux\Edit.vbhtml" />
+    <Content Include="Views\TypeHopitaux\Index.vbhtml" />
+    <Content Include="Views\TypeImmobilisations\Create.vbhtml" />
+    <Content Include="Views\TypeImmobilisations\Delete.vbhtml" />
+    <Content Include="Views\TypeImmobilisations\Details.vbhtml" />
+    <Content Include="Views\TypeImmobilisations\Edit.vbhtml" />
+    <Content Include="Views\TypeImmobilisations\Index.vbhtml" />
+    <Content Include="Views\TypePersonnels\Create.vbhtml" />
+    <Content Include="Views\TypePersonnels\Delete.vbhtml" />
+    <Content Include="Views\TypePersonnels\Details.vbhtml" />
+    <Content Include="Views\TypePersonnels\Edit.vbhtml" />
+    <Content Include="Views\TypePersonnels\Index.vbhtml" />
+    <Content Include="Views\TypeVehicules\Create.vbhtml" />
+    <Content Include="Views\TypeVehicules\Delete.vbhtml" />
+    <Content Include="Views\TypeVehicules\Details.vbhtml" />
+    <Content Include="Views\TypeVehicules\Edit.vbhtml" />
+    <Content Include="Views\TypeVehicules\Index.vbhtml" />
+    <Content Include="Views\UsageHumanitaires\Create.vbhtml" />
+    <Content Include="Views\UsageHumanitaires\Delete.vbhtml" />
+    <Content Include="Views\UsageHumanitaires\Details.vbhtml" />
+    <Content Include="Views\UsageHumanitaires\Edit.vbhtml" />
+    <Content Include="Views\UsageHumanitaires\Index.vbhtml" />
+    <Content Include="Views\TailleDeAeronefs\Create.vbhtml" />
+    <Content Include="Views\TailleDeAeronefs\Delete.vbhtml" />
+    <Content Include="Views\TailleDeAeronefs\Details.vbhtml" />
+    <Content Include="Views\TailleDeAeronefs\Edit.vbhtml" />
+    <Content Include="Views\TailleDeAeronefs\Index.vbhtml" />
+    <Content Include="Views\SurfaceDePistes\Create.vbhtml" />
+    <Content Include="Views\SurfaceDePistes\Delete.vbhtml" />
+    <Content Include="Views\SurfaceDePistes\Details.vbhtml" />
+    <Content Include="Views\SurfaceDePistes\Edit.vbhtml" />
+    <Content Include="Views\SurfaceDePistes\Index.vbhtml" />
+    <Content Include="Views\Puissances\Create.vbhtml" />
+    <Content Include="Views\Puissances\Delete.vbhtml" />
+    <Content Include="Views\Puissances\Details.vbhtml" />
+    <Content Include="Views\Puissances\Edit.vbhtml" />
+    <Content Include="Views\Puissances\Index.vbhtml" />
+    <Content Include="Views\MarqueElements\Create.vbhtml" />
+    <Content Include="Views\MarqueElements\Delete.vbhtml" />
+    <Content Include="Views\MarqueElements\Details.vbhtml" />
+    <Content Include="Views\MarqueElements\Edit.vbhtml" />
+    <Content Include="Views\MarqueElements\Index.vbhtml" />
+    <Content Include="Views\Devises\Create.vbhtml" />
+    <Content Include="Views\Devises\Delete.vbhtml" />
+    <Content Include="Views\Devises\Details.vbhtml" />
+    <Content Include="Views\Devises\Edit.vbhtml" />
+    <Content Include="Views\Devises\Index.vbhtml" />
+    <Content Include="Views\CategorieElements\Create.vbhtml" />
+    <Content Include="Views\CategorieElements\Delete.vbhtml" />
+    <Content Include="Views\CategorieElements\Details.vbhtml" />
+    <Content Include="Views\CategorieElements\Edit.vbhtml" />
+    <Content Include="Views\CategorieElements\Index.vbhtml" />
+    <Content Include="Views\CategorieDArticles\Create.vbhtml" />
+    <Content Include="Views\CategorieDArticles\Delete.vbhtml" />
+    <Content Include="Views\CategorieDArticles\Details.vbhtml" />
+    <Content Include="Views\CategorieDArticles\Edit.vbhtml" />
+    <Content Include="Views\CategorieDArticles\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

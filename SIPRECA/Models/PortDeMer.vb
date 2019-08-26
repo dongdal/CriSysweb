@@ -1,10 +1,11 @@
 
 Imports System.ComponentModel.DataAnnotations.Schema
+Imports System.Data.Entity.Spatial
 
 Partial Public Class PortDeMer
 
     Public Property Id As Long
-    Public Property AdresseId As Long
+    Public Property VilleId As Long
     Public Property OganisationId As Long
 
     Public Property Nom As String
@@ -37,7 +38,7 @@ Partial Public Class PortDeMer
     Public Property ProfondeurMareBasseUnites As String
     Public Property ProfondeurInondation As Double
     Public Property ProfondeurInondationUnites As String
-
+    Public Property Location As DbGeography
     Public Property Telephone As String
     Public Property Telephone2 As String
     Public Property SiteWeb As String
@@ -49,6 +50,6 @@ Partial Public Class PortDeMer
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Adresse As Adresse
+    Public Overridable Property Ville As Ville
     Public Overridable Property Oganisation As Organisation
 End Class

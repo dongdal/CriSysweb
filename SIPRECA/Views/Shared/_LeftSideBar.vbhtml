@@ -60,6 +60,20 @@
                 <li><a href="@Url.Action("Index", "TypeAides")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
                 <li><a href="@Url.Action("Index", "TypeSinistres")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
                 <li><a href="@Url.Action("Index", "TypeSuivis")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
+                <li><a href="@Url.Action("Index", "CategorieDArticles")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategoriArticle</a></li>
+                <li><a href="@Url.Action("Index", "CategorieElements")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
+                <li><a href="@Url.Action("Index", "Heliports")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHeliport</a></li>
+                <li><a href="@Url.Action("Index", "Devises")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
+                <li><a href="@Url.Action("Index", "MarqueElements")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMarqueElement</a></li>
+                <li><a href="@Url.Action("Index", "Puissances")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPuissance</a></li>
+                <li><a href="@Url.Action("Index", "SurfaceDePistes")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
+                <li><a href="@Url.Action("Index", "TailleDeAeronefs")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTailleDeAeronef</a></li>
+                <li><a href="@Url.Action("Index", "TypeEntrepots")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>
+                <li><a href="@Url.Action("Index", "TypeHopitaux")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeHopitaux</a></li>
+                <li><a href="@Url.Action("Index", "TypeImmobilisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeImmobilisation</a></li>
+                <li><a href="@Url.Action("Index", "TypePersonnels")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypePersonnel</a></li>
+                <li><a href="@Url.Action("Index", "TypeVehicules")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeVehicule</a></li>
+                <li><a href="@Url.Action("Index", "UsageHumanitaires")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuUsageHumanitaire</a></li>
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>

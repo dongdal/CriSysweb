@@ -2,8 +2,8 @@ Partial Public Class Competance
 
     Public Property Id As Long
     Public Property PersonnelId As Long
-    Public Property Libelle As String
 
+    Public Property Libelle As String
     Public Property DateCreation As DateTime=Now
     Public Property StatutExistant As Short=1
 
