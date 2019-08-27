@@ -614,11 +614,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Selectionner la devise .
+        '''</summary>
+        Public Shared ReadOnly Property ComboDevise() As String
+            Get
+                Return ResourceManager.GetString("ComboDevise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Selectionnez l&apos;élément.
+        '''</summary>
+        Public Shared ReadOnly Property ComboElement() As String
+            Get
+                Return ResourceManager.GetString("ComboElement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Selectionnez le fournisseur.
+        '''</summary>
+        Public Shared ReadOnly Property ComboFournisseur() As String
+            Get
+                Return ResourceManager.GetString("ComboFournisseur", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnnez la collectivité.
         '''</summary>
         Public Shared ReadOnly Property ComboIndemnisation() As String
             Get
                 Return ResourceManager.GetString("ComboIndemnisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Selectionner l&apos;infrastructure.
+        '''</summary>
+        Public Shared ReadOnly Property ComboInfrastructure() As String
+            Get
+                Return ResourceManager.GetString("ComboInfrastructure", resourceCulture)
             End Get
         End Property
         
@@ -673,6 +709,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ComboSinistrer() As String
             Get
                 Return ResourceManager.GetString("ComboSinistrer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Selectionner le type d&apos;immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property ComboTypeImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("ComboTypeImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -862,6 +907,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CreateHeliport() As String
             Get
                 Return ResourceManager.GetString("CreateHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter une immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property CreateImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("CreateImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -1114,6 +1168,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property CreateUsageHumanitaire() As String
             Get
                 Return ResourceManager.GetString("CreateUsageHumanitaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Date d&apos;achat.
+        '''</summary>
+        Public Shared ReadOnly Property DateAchat() As String
+            Get
+                Return ResourceManager.GetString("DateAchat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Entrer la date d&apos;achat.
+        '''</summary>
+        Public Shared ReadOnly Property DateAchatPlaceholder() As String
+            Get
+                Return ResourceManager.GetString("DateAchatPlaceholder", resourceCulture)
             End Get
         End Property
         
@@ -1658,6 +1730,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Devise.
+        '''</summary>
+        Public Shared ReadOnly Property Devise() As String
+            Get
+                Return ResourceManager.GetString("Devise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Deconnexion.
         '''</summary>
         Public Shared ReadOnly Property Disconnect() As String
@@ -1744,6 +1825,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditHeliport() As String
             Get
                 Return ResourceManager.GetString("EditHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier une immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property EditImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("EditImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -2009,6 +2099,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Element.
+        '''</summary>
+        Public Shared ReadOnly Property Element() As String
+            Get
+                Return ResourceManager.GetString("Element", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à E-mail.
         '''</summary>
         Public Shared ReadOnly Property Email() As String
@@ -2149,6 +2248,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property FindReferenceDemande() As String
             Get
                 Return ResourceManager.GetString("FindReferenceDemande", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Fournisseur.
+        '''</summary>
+        Public Shared ReadOnly Property Fournisseur() As String
+            Get
+                Return ResourceManager.GetString("Fournisseur", resourceCulture)
             End Get
         End Property
         
@@ -2441,6 +2549,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Infrastructure.
+        '''</summary>
+        Public Shared ReadOnly Property Infrastructure() As String
+            Get
+                Return ResourceManager.GetString("Infrastructure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre login/mot de passe est invalide. veuillez réessayer svp..
         '''</summary>
         Public Shared ReadOnly Property InvalidParam() As String
@@ -2581,6 +2698,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ListHeliport() As String
             Get
                 Return ResourceManager.GetString("ListHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property ListImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("ListImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -2941,6 +3067,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ManageHeliport() As String
             Get
                 Return ResourceManager.GetString("ManageHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des immobilisations.
+        '''</summary>
+        Public Shared ReadOnly Property ManageImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("ManageImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -3319,6 +3454,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property MenuHeliport() As String
             Get
                 Return ResourceManager.GetString("MenuHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les immobilisations.
+        '''</summary>
+        Public Shared ReadOnly Property MenuImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("MenuImmobilisation", resourceCulture)
             End Get
         End Property
         
@@ -3710,6 +3854,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Numéro de serie.
+        '''</summary>
+        Public Shared ReadOnly Property NumeroDeSerie() As String
+            Get
+                Return ResourceManager.GetString("NumeroDeSerie", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Entrer le numéro de série.
+        '''</summary>
+        Public Shared ReadOnly Property NumeroDeSeriePlaceholder() As String
+            Get
+                Return ResourceManager.GetString("NumeroDeSeriePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Numéro d&apos;immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property NumeroImobilisation() As String
+            Get
+                Return ResourceManager.GetString("NumeroImobilisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Entrer le numéro d&apos;immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property NumeroImobilisationPlaceholder() As String
+            Get
+                Return ResourceManager.GetString("NumeroImobilisationPlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Organisation.
         '''</summary>
         Public Shared ReadOnly Property Organisation() As String
@@ -3805,6 +3985,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property Prenoms() As String
             Get
                 Return ResourceManager.GetString("Prenoms", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Prix d&apos;achat.
+        '''</summary>
+        Public Shared ReadOnly Property PrixAchat() As String
+            Get
+                Return ResourceManager.GetString("PrixAchat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Entrer le prix d&apos;achat.
+        '''</summary>
+        Public Shared ReadOnly Property PrixAchatPlaceholder() As String
+            Get
+                Return ResourceManager.GetString("PrixAchatPlaceholder", resourceCulture)
             End Get
         End Property
         
@@ -4336,6 +4534,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property TypeAideCombo() As String
             Get
                 Return ResourceManager.GetString("TypeAideCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Type immobilisation.
+        '''</summary>
+        Public Shared ReadOnly Property TypeImmobilisation() As String
+            Get
+                Return ResourceManager.GetString("TypeImmobilisation", resourceCulture)
             End Get
         End Property
         

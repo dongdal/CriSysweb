@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel.DataAnnotations
+Imports System.Data.Entity.Spatial
 Imports SIPRECA.My.Resources
 
 Public Class HeliportViewModel
@@ -9,7 +10,7 @@ Public Class HeliportViewModel
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Nom As String
 
-    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Code", ResourceType:=GetType(Resource))>
     <StringLength(5, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Code As String
@@ -19,17 +20,14 @@ Public Class HeliportViewModel
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Telephone As String
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Telephone", ResourceType:=GetType(Resource))>
+    <Display(Name:="Telephone2", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Telephone2 As String
 
-    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Email", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Email As String
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="SiteWeb", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property SiteWeb As String
@@ -48,6 +46,17 @@ Public Class HeliportViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Display(Name:="Location", ResourceType:=GetType(Resource))>
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    Public Property Location As DbGeography
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Ville", ResourceType:=GetType(Resource))>
+    Public Property VilleId As Long
+    Public Overridable Property LesVilles As ICollection(Of SelectListItem)
+    Public Overridable Property Ville As Ville
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Organisation", ResourceType:=GetType(Resource))>
     Public Property OrganisationId As Long
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
@@ -64,6 +73,9 @@ Public Class HeliportViewModel
             .SiteWeb = entity.SiteWeb
             .Telephone = entity.Telephone
             .Email = entity.Email
+            .VilleId = entity.VilleId
+            .Ville = entity.Ville
+            .Location = entity.Location
             .Telephone2 = entity.Telephone2
             .OrganisationId = entity.OganisationId
             .Organisation = entity.Oganisation
@@ -83,6 +95,8 @@ Public Class HeliportViewModel
             .SiteWeb = SiteWeb
             .Telephone = Telephone
             .Telephone2 = Telephone2
+            .VilleId = entity.VilleId
+            .Location = Location
             .Email = Email
             .OganisationId = OrganisationId
             .StatutExistant = StatutExistant
@@ -91,7 +105,6 @@ Public Class HeliportViewModel
         End With
         Return entity
     End Function
-
 
 End Class
 

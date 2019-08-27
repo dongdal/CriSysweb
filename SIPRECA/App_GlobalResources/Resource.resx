@@ -1431,6 +1431,21 @@
   <data name="Organisation" xml:space="preserve">
     <value>Organisation</value>
   </data>
+  <data name="ComboDevise" xml:space="preserve">
+    <value>Selectionner la devise </value>
+  </data>
+  <data name="ComboElement" xml:space="preserve">
+    <value>Selectionnez l'élément</value>
+  </data>
+  <data name="ComboFournisseur" xml:space="preserve">
+    <value>Selectionnez le fournisseur</value>
+  </data>
+  <data name="ComboInfrastructure" xml:space="preserve">
+    <value>Selectionner l'infrastructure</value>
+  </data>
+  <data name="ComboTypeImmobilisation" xml:space="preserve">
+    <value>Selectionner le type d'immobilisation</value>
+  </data>
   <data name="CreateCategorieDArticle" xml:space="preserve">
     <value>Ajouter une catégorie d'article</value>
   </data>
@@ -1439,6 +1454,9 @@
   </data>
   <data name="CreateDevise" xml:space="preserve">
     <value>Ajouter une devise</value>
+  </data>
+  <data name="CreateImmobilisation" xml:space="preserve">
+    <value>Ajouter une immobilisation</value>
   </data>
   <data name="CreateMarqueElement" xml:space="preserve">
     <value>Ajouter une marque</value>
@@ -1451,6 +1469,12 @@
   </data>
   <data name="CreateTailleDeAeronef" xml:space="preserve">
     <value>Ajouter une taille d'aéronef</value>
+  </data>
+  <data name="DateAchat" xml:space="preserve">
+    <value>Date d'achat</value>
+  </data>
+  <data name="DateAchatPlaceholder" xml:space="preserve">
+    <value>Entrer la date d'achat</value>
   </data>
   <data name="DeleteCategorieDArticle" xml:space="preserve">
     <value>Supprimer une catégorie d'article</value>
@@ -1473,6 +1497,9 @@
   <data name="DeleteTailleDeAeronef" xml:space="preserve">
     <value>Supprimer une taille d'aéronef</value>
   </data>
+  <data name="Devise" xml:space="preserve">
+    <value>Devise</value>
+  </data>
   <data name="EditCategorieDArticle" xml:space="preserve">
     <value>Modifier une catégorie d'article</value>
   </data>
@@ -1481,6 +1508,9 @@
   </data>
   <data name="EditDevise" xml:space="preserve">
     <value>Modifier une devise</value>
+  </data>
+  <data name="EditImmobilisation" xml:space="preserve">
+    <value>Modifier une immobilisation</value>
   </data>
   <data name="EditMarqueElement" xml:space="preserve">
     <value>Modifier une marque</value>
@@ -1494,6 +1524,15 @@
   <data name="EditTailleDeAeronef" xml:space="preserve">
     <value>Modifier une taille d'aéronef</value>
   </data>
+  <data name="Element" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="Fournisseur" xml:space="preserve">
+    <value>Fournisseur</value>
+  </data>
+  <data name="Infrastructure" xml:space="preserve">
+    <value>Infrastructure</value>
+  </data>
   <data name="ListCategorieDArticle" xml:space="preserve">
     <value>Liste des catégories d'articles</value>
   </data>
@@ -1502,6 +1541,9 @@
   </data>
   <data name="ListDevise" xml:space="preserve">
     <value>Liste des devise</value>
+  </data>
+  <data name="ListImmobilisation" xml:space="preserve">
+    <value>Liste des immobilisation</value>
   </data>
   <data name="ListMarqueElement" xml:space="preserve">
     <value>Liste des marques</value>
@@ -1523,6 +1565,9 @@
   </data>
   <data name="ManageDevise" xml:space="preserve">
     <value>Gestion des devise</value>
+  </data>
+  <data name="ManageImmobilisation" xml:space="preserve">
+    <value>Gestion des immobilisations</value>
   </data>
   <data name="ManageMarqueElement" xml:space="preserve">
     <value>Gestion des marques</value>
@@ -1547,6 +1592,9 @@
   </data>
   <data name="MenuHeliport" xml:space="preserve">
     <value>Les héliports</value>
+  </data>
+  <data name="MenuImmobilisation" xml:space="preserve">
+    <value>Les immobilisations</value>
   </data>
   <data name="MenuMarqueElement" xml:space="preserve">
     <value>Les marques </value>
@@ -1577,5 +1625,26 @@
   </data>
   <data name="MenuUsageHumanitaire" xml:space="preserve">
     <value>Les usages hummanitaire</value>
+  </data>
+  <data name="NumeroDeSerie" xml:space="preserve">
+    <value>Numéro de serie</value>
+  </data>
+  <data name="NumeroDeSeriePlaceholder" xml:space="preserve">
+    <value>Entrer le numéro de série</value>
+  </data>
+  <data name="NumeroImobilisation" xml:space="preserve">
+    <value>Numéro d'immobilisation</value>
+  </data>
+  <data name="NumeroImobilisationPlaceholder" xml:space="preserve">
+    <value>Entrer le numéro d'immobilisation</value>
+  </data>
+  <data name="PrixAchat" xml:space="preserve">
+    <value>Prix d'achat</value>
+  </data>
+  <data name="PrixAchatPlaceholder" xml:space="preserve">
+    <value>Entrer le prix d'achat</value>
+  </data>
+  <data name="TypeImmobilisation" xml:space="preserve">
+    <value>Type immobilisation</value>
   </data>
 </root>

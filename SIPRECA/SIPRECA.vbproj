@@ -192,6 +192,7 @@
     <Compile Include="Controllers\NatureAidesController.vb" />
     <Compile Include="Controllers\QuartiersController.vb" />
     <Compile Include="Controllers\HeliportsController.vb" />
+    <Compile Include="Controllers\ImmobilisationsController.vb" />
     <Compile Include="Controllers\SinistresController.vb" />
     <Compile Include="Controllers\SuivisController.vb" />
     <Compile Include="Controllers\DemandesController.vb" />
@@ -360,6 +361,7 @@
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
     <Compile Include="ViewModels\DetailsIndemnisationViewModel.vb" />
+    <Compile Include="ViewModels\ImmobilisationViewModel.vb" />
     <Compile Include="ViewModels\IndemnisationViewModel.vb" />
     <Compile Include="ViewModels\NatureAideViewModel.vb" />
     <Compile Include="ViewModels\QuartierViewModel.vb" />
@@ -1671,6 +1673,11 @@
     <Content Include="Views\CategorieDArticles\Details.vbhtml" />
     <Content Include="Views\CategorieDArticles\Edit.vbhtml" />
     <Content Include="Views\CategorieDArticles\Index.vbhtml" />
+    <Content Include="Views\Immobilisations\Create.vbhtml" />
+    <Content Include="Views\Immobilisations\Delete.vbhtml" />
+    <Content Include="Views\Immobilisations\Details.vbhtml" />
+    <Content Include="Views\Immobilisations\Edit.vbhtml" />
+    <Content Include="Views\Immobilisations\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

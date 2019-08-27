@@ -7,12 +7,12 @@ Partial Public Class Immobilisation
     Public Property InfrastructureId As Long
     Public Property FournisseurId As Long
     Public Property ElementId As Long
+    Public Property DeviseId As Long
 
     Public Property NumeroImobilisation As String
     Public Property NumeroDeSerie As String
     Public Property DateAchat As Date
     Public Property PrixAchat As Double
-    Public Property DeviseId As Long
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

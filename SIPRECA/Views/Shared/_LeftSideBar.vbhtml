@@ -74,6 +74,7 @@
                 <li><a href="@Url.Action("Index", "TypePersonnels")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypePersonnel</a></li>
                 <li><a href="@Url.Action("Index", "TypeVehicules")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeVehicule</a></li>
                 <li><a href="@Url.Action("Index", "UsageHumanitaires")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuUsageHumanitaire</a></li>
+                <li><a href="@Url.Action("Index", "Immobilisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuImmobilisation</a></li>
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>
