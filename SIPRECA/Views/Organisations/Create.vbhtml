@@ -49,8 +49,8 @@ End Code
 
                     @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesTypeOrganisations, "Value", "Text"), Resource.VilleCombo,
-                          New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.VilleCombo})
+                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
+                       New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.VilleCombo})
                         @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

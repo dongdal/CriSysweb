@@ -47,8 +47,8 @@ Public Class HeliportViewModel
     Public Overridable Property AspNetUser As ApplicationUser
 
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    Public Property Location As DbGeography
+    Public Property Location As DbGeometry
+    'Public Property Location As DbGeography
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Ville", ResourceType:=GetType(Resource))>
@@ -95,7 +95,7 @@ Public Class HeliportViewModel
             .SiteWeb = SiteWeb
             .Telephone = Telephone
             .Telephone2 = Telephone2
-            .VilleId = entity.VilleId
+            .VilleId = VilleId
             .Location = Location
             .Email = Email
             .OganisationId = OrganisationId

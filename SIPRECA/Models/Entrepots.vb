@@ -8,7 +8,6 @@ Partial Public Class Entrepots
     End Sub
 
     Public Property TypeEntrepotId As Long
-
     Public Property Capacite As Double
     Public Property CapaciteDisponible As Double
 

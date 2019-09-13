@@ -1,4 +1,6 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Entity.Spatial
+Imports System.Data.SqlClient
+Imports System.Globalization
 
 Public Class Util
 
@@ -237,5 +239,12 @@ Public Class Util
         ''' </summary>
         Approuvee = 3
     End Enum
+
+    Public Shared Function CreatePoint(latitude As Double, longitude As Double) As DbGeometry
+        Dim point As Object = String.Format(CultureInfo.InvariantCulture.NumberFormat, "POINT({0} {1})", longitude, latitude)
+        ' 4326 is most common coordinate system used by GPS/Maps
+        Return DbGeometry.PointFromText(point, 4326)
+        'Return DbGeography.PointFromText(point, 4326)
+    End Function
 
 End Class

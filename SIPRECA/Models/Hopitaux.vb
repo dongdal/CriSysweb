@@ -25,7 +25,7 @@ Partial Public Class Hopitaux
     Public Property TelephoneUrgence As String
     Public Property SiteWeb As String
     Public Property Email As String
-    Public Property Location As DbGeography
+    Public Property Location As DbGeometry
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

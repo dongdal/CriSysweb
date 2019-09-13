@@ -187,12 +187,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\ElementsController.vb" />
+    <Compile Include="Controllers\ProjetsController.vb" />
+    <Compile Include="Controllers\PortDeMersController.vb" />
+    <Compile Include="Controllers\InstallationsController.vb" />
+    <Compile Include="Controllers\EntrepotsController.vb" />
+    <Compile Include="Controllers\CartesController.vb" />
     <Compile Include="Controllers\CollectiviteSinistreesController.vb" />
+    <Compile Include="Controllers\AbrisController.vb" />
+    <Compile Include="Controllers\AeroportController.vb" />
+    <Compile Include="Controllers\BureauxController.vb" />
+    <Compile Include="Controllers\HopitauxController.vb" />
     <Compile Include="Controllers\IndemnisationsController.vb" />
     <Compile Include="Controllers\NatureAidesController.vb" />
     <Compile Include="Controllers\QuartiersController.vb" />
     <Compile Include="Controllers\HeliportsController.vb" />
     <Compile Include="Controllers\ImmobilisationsController.vb" />
+    <Compile Include="Controllers\PersonnelsController.vb" />
     <Compile Include="Controllers\SinistresController.vb" />
     <Compile Include="Controllers\SuivisController.vb" />
     <Compile Include="Controllers\DemandesController.vb" />
@@ -218,6 +229,7 @@
     <Compile Include="Controllers\DevisesController.vb" />
     <Compile Include="Controllers\CategorieElementsController.vb" />
     <Compile Include="Controllers\CategorieDArticlesController.vb" />
+    <Compile Include="Controllers\VillesController.vb" />
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
@@ -325,6 +337,18 @@
       <DependentUpon>201908261712449_Mise ajour des adresse.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908261712449_Mise ajour des adresse.vb" />
+    <Compile Include="Migrations\201908301149262_Alter_Table_Heliports_Change_Column_Location_From_DbGeography_to_DbGeometry.Designer.vb">
+      <DependentUpon>201908301149262_Alter_Table_Heliports_Change_Column_Location_From_DbGeography_to_DbGeometry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908301149262_Alter_Table_Heliports_Change_Column_Location_From_DbGeography_to_DbGeometry.vb" />
+    <Compile Include="Migrations\201908301354579_Alter_table_to_add_DbGeometry.Designer.vb">
+      <DependentUpon>201908301354579_Alter_table_to_add_DbGeometry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908301354579_Alter_table_to_add_DbGeometry.vb" />
+    <Compile Include="Migrations\201909051541570_ajout de Timespan a installation.Designer.vb">
+      <DependentUpon>201909051541570_ajout de Timespan a installation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909051541570_ajout de Timespan a installation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Element.vb" />
     <Compile Include="Models\Immobilisation.vb" />
@@ -359,14 +383,24 @@
     <Compile Include="Models\UsageHumanitaire.vb" />
     <Compile Include="Models\Ville.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
+    <Compile Include="ViewModels\ElementViewModel.vb" />
+    <Compile Include="ViewModels\ProjetViewModel.vb" />
+    <Compile Include="ViewModels\PortDeMerViewModel.vb" />
+    <Compile Include="ViewModels\InstallationViewModel.vb" />
+    <Compile Include="ViewModels\EntrepotsViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteSinistreeViewModel.vb" />
     <Compile Include="ViewModels\DetailsIndemnisationViewModel.vb" />
+    <Compile Include="ViewModels\AbrisViewModel.vb" />
+    <Compile Include="ViewModels\AeroportViewModel.vb" />
+    <Compile Include="ViewModels\BureauViewModel.vb" />
+    <Compile Include="ViewModels\HopitauxViewModel.vb" />
     <Compile Include="ViewModels\ImmobilisationViewModel.vb" />
     <Compile Include="ViewModels\IndemnisationViewModel.vb" />
     <Compile Include="ViewModels\NatureAideViewModel.vb" />
     <Compile Include="ViewModels\QuartierViewModel.vb" />
     <Compile Include="ViewModels\OrganisationViewModel.vb" />
     <Compile Include="ViewModels\HeliportViewModel.vb" />
+    <Compile Include="ViewModels\PersonnelViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
@@ -380,6 +414,7 @@
     <Compile Include="ViewModels\TypeImmobilisationViewModel.vb" />
     <Compile Include="ViewModels\TypeOfficeViewModel.vb" />
     <Compile Include="ViewModels\TypePersonnelViewModel.vb" />
+    <Compile Include="ViewModels\CompetanceViewModel.vb" />
     <Compile Include="ViewModels\TypeSinistreViewModel.vb" />
     <Compile Include="ViewModels\TypeAbrisViewModel.vb" />
     <Compile Include="ViewModels\CollectiviteViewModel.vb" />
@@ -392,6 +427,7 @@
     <Compile Include="ViewModels\DeviseViewModel.vb" />
     <Compile Include="ViewModels\CategorieElementViewModel.vb" />
     <Compile Include="ViewModels\CategorieDArticleViewModel.vb" />
+    <Compile Include="ViewModels\VilleViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
     <Compile Include="ViewModels\UsageHumanitaireViewModel.vb" />
@@ -612,6 +648,15 @@
     <EmbeddedResource Include="Migrations\201908261712449_Mise ajour des adresse.resx">
       <DependentUpon>201908261712449_Mise ajour des adresse.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908301149262_Alter_Table_Heliports_Change_Column_Location_From_DbGeography_to_DbGeometry.resx">
+      <DependentUpon>201908301149262_Alter_Table_Heliports_Change_Column_Location_From_DbGeography_to_DbGeometry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908301354579_Alter_table_to_add_DbGeometry.resx">
+      <DependentUpon>201908301354579_Alter_table_to_add_DbGeometry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909051541570_ajout de Timespan a installation.resx">
+      <DependentUpon>201909051541570_ajout de Timespan a installation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -623,6 +668,7 @@
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\app-style.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\gijgo.min.css" />
     <Content Include="assets\css\icons.css" />
     <Content Include="assets\css\jquery-confirm.min.css" />
     <Content Include="assets\css\PagedList.css" />
@@ -1198,6 +1244,14 @@
     <Content Include="assets\images\gallery\carousel-img-8.png" />
     <Content Include="assets\images\gallery\carousel-img-9.png" />
     <Content Include="assets\images\gallery\modal-img.jpg" />
+    <Content Include="assets\images\leafIcon\heliport.jpg" />
+    <Content Include="assets\images\leafIcon\hopital.jpg" />
+    <Content Include="assets\images\leafIcon\iconfinder_Artboard_16_3874675.png" />
+    <Content Include="assets\images\leafIcon\iconfinder_Hospital1_2315963.png" />
+    <Content Include="assets\images\leafIcon\iconfinder_hospital_44773.png" />
+    <Content Include="assets\images\leafIcon\iconfinder_hospital_88327.png" />
+    <Content Include="assets\images\leafIcon\iconfinder.png" />
+    <Content Include="assets\images\leafIcon\icons8-clinique-64.png" />
     <Content Include="assets\images\lightboxgallery\big\1.jpg" />
     <Content Include="assets\images\lightboxgallery\big\10.jpg" />
     <Content Include="assets\images\lightboxgallery\big\11.jpg" />
@@ -1248,9 +1302,11 @@
     <Content Include="assets\images\users\avatar-9.html" />
     <Content Include="assets\js\app-script.js" />
     <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\gijgo.min.js" />
     <Content Include="assets\js\index.js" />
     <Content Include="assets\js\index2.js" />
     <Content Include="assets\js\index3.js" />
+    <Content Include="assets\js\jquery-3.3.1.min.js" />
     <Content Include="assets\js\jquery-confirm.min.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\popper.min.js" />
@@ -1322,6 +1378,10 @@
     <Content Include="assets\plugins\jquery.steps\css\jquery.steps.css" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.steps.min.js" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.wizard-init.js" />
+    <Content Include="assets\plugins\leaflet\leaflet-src.esm.js" />
+    <Content Include="assets\plugins\leaflet\leaflet-src.js" />
+    <Content Include="assets\plugins\leaflet\leaflet.css" />
+    <Content Include="assets\plugins\leaflet\leaflet.js" />
     <Content Include="assets\plugins\lightboxgallery\css\lightboxgallery-min.css" />
     <Content Include="assets\plugins\lightboxgallery\js\lightboxgallery-min.js" />
     <Content Include="assets\plugins\morris\css\morris.css" />
@@ -1678,6 +1738,64 @@
     <Content Include="Views\Immobilisations\Details.vbhtml" />
     <Content Include="Views\Immobilisations\Edit.vbhtml" />
     <Content Include="Views\Immobilisations\Index.vbhtml" />
+    <Content Include="Views\Cartes\Index.vbhtml" />
+    <Content Include="Views\Villes\Create.vbhtml" />
+    <Content Include="Views\Villes\Delete.vbhtml" />
+    <Content Include="Views\Villes\Details.vbhtml" />
+    <Content Include="Views\Villes\Edit.vbhtml" />
+    <Content Include="Views\Villes\Index.vbhtml" />
+    <Content Include="Views\Hopitaux\Create.vbhtml" />
+    <Content Include="Views\Hopitaux\Delete.vbhtml" />
+    <Content Include="Views\Hopitaux\Details.vbhtml" />
+    <Content Include="Views\Hopitaux\Edit.vbhtml" />
+    <Content Include="Views\Hopitaux\Index.vbhtml" />
+    <Content Include="Views\Shared\_MyMapPartial.vbhtml" />
+    <Content Include="Views\Shared\_MyMapEnterPartial.vbhtml" />
+    <Content Include="Views\Abris\Create.vbhtml" />
+    <Content Include="Views\Abris\Delete.vbhtml" />
+    <Content Include="Views\Abris\Details.vbhtml" />
+    <Content Include="Views\Abris\Edit.vbhtml" />
+    <Content Include="Views\Abris\Index.vbhtml" />
+    <Content Include="Views\Aeroport\Create.vbhtml" />
+    <Content Include="Views\Aeroport\Delete.vbhtml" />
+    <Content Include="Views\Aeroport\Details.vbhtml" />
+    <Content Include="Views\Aeroport\Edit.vbhtml" />
+    <Content Include="Views\Aeroport\Index.vbhtml" />
+    <Content Include="Views\Bureaux\Create.vbhtml" />
+    <Content Include="Views\Bureaux\Delete.vbhtml" />
+    <Content Include="Views\Bureaux\Details.vbhtml" />
+    <Content Include="Views\Bureaux\Edit.vbhtml" />
+    <Content Include="Views\Bureaux\Index.vbhtml" />
+    <Content Include="Views\Entrepots\Create.vbhtml" />
+    <Content Include="Views\Entrepots\Delete.vbhtml" />
+    <Content Include="Views\Entrepots\Details.vbhtml" />
+    <Content Include="Views\Entrepots\Edit.vbhtml" />
+    <Content Include="Views\Entrepots\Index.vbhtml" />
+    <Content Include="Views\Installations\Create.vbhtml" />
+    <Content Include="Views\Installations\Delete.vbhtml" />
+    <Content Include="Views\Installations\Details.vbhtml" />
+    <Content Include="Views\Installations\Edit.vbhtml" />
+    <Content Include="Views\Installations\Index.vbhtml" />
+    <Content Include="Views\PortDeMers\Create.vbhtml" />
+    <Content Include="Views\PortDeMers\Delete.vbhtml" />
+    <Content Include="Views\PortDeMers\Details.vbhtml" />
+    <Content Include="Views\PortDeMers\Edit.vbhtml" />
+    <Content Include="Views\PortDeMers\Index.vbhtml" />
+    <Content Include="Views\Elements\Create.vbhtml" />
+    <Content Include="Views\Elements\Delete.vbhtml" />
+    <Content Include="Views\Elements\Details.vbhtml" />
+    <Content Include="Views\Elements\Edit.vbhtml" />
+    <Content Include="Views\Elements\Index.vbhtml" />
+    <Content Include="Views\Personnels\Create.vbhtml" />
+    <Content Include="Views\Personnels\Delete.vbhtml" />
+    <Content Include="Views\Personnels\Details.vbhtml" />
+    <Content Include="Views\Personnels\Edit.vbhtml" />
+    <Content Include="Views\Personnels\Index.vbhtml" />
+    <Content Include="Views\Projets\Create.vbhtml" />
+    <Content Include="Views\Projets\Delete.vbhtml" />
+    <Content Include="Views\Projets\Details.vbhtml" />
+    <Content Include="Views\Projets\Edit.vbhtml" />
+    <Content Include="Views\Projets\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

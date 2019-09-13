@@ -1435,16 +1435,16 @@
     <value>Selectionner la devise </value>
   </data>
   <data name="ComboElement" xml:space="preserve">
-    <value>Selectionnez l'élément</value>
+    <value>Veuillez selectionnez l'élément</value>
   </data>
   <data name="ComboFournisseur" xml:space="preserve">
-    <value>Selectionnez le fournisseur</value>
+    <value>Veuillez selectionnez le fournisseur</value>
   </data>
   <data name="ComboInfrastructure" xml:space="preserve">
-    <value>Selectionner l'infrastructure</value>
+    <value>Veuillez selectionner l'infrastructure</value>
   </data>
   <data name="ComboTypeImmobilisation" xml:space="preserve">
-    <value>Selectionner le type d'immobilisation</value>
+    <value>Veuillez selectionner le type d'immobilisation</value>
   </data>
   <data name="CreateCategorieDArticle" xml:space="preserve">
     <value>Ajouter une catégorie d'article</value>
@@ -1469,6 +1469,9 @@
   </data>
   <data name="CreateTailleDeAeronef" xml:space="preserve">
     <value>Ajouter une taille d'aéronef</value>
+  </data>
+  <data name="CreateVille" xml:space="preserve">
+    <value>Ajouter une ville</value>
   </data>
   <data name="DateAchat" xml:space="preserve">
     <value>Date d'achat</value>
@@ -1524,6 +1527,9 @@
   <data name="EditTailleDeAeronef" xml:space="preserve">
     <value>Modifier une taille d'aéronef</value>
   </data>
+  <data name="EditVille" xml:space="preserve">
+    <value>Modifier une ville</value>
+  </data>
   <data name="Element" xml:space="preserve">
     <value>Element</value>
   </data>
@@ -1557,6 +1563,12 @@
   <data name="ListTailleDeAeronef" xml:space="preserve">
     <value>Liste des tailles d'aéronef</value>
   </data>
+  <data name="ListVille" xml:space="preserve">
+    <value>Liste des villes</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
   <data name="ManageCategorieDArticle" xml:space="preserve">
     <value>Gestion des catégories d'article</value>
   </data>
@@ -1580,6 +1592,9 @@
   </data>
   <data name="ManageTailleDeAeronef" xml:space="preserve">
     <value>Gestion des tailles d'aéronef</value>
+  </data>
+  <data name="ManageVille" xml:space="preserve">
+    <value>Gestion des villes</value>
   </data>
   <data name="MenuCategoriArticle" xml:space="preserve">
     <value>Les catégories d'article</value>
@@ -1638,6 +1653,9 @@
   <data name="NumeroImobilisationPlaceholder" xml:space="preserve">
     <value>Entrer le numéro d'immobilisation</value>
   </data>
+  <data name="PaysCombo" xml:space="preserve">
+    <value>Veuillez selectionner le pays</value>
+  </data>
   <data name="PrixAchat" xml:space="preserve">
     <value>Prix d'achat</value>
   </data>
@@ -1646,5 +1664,506 @@
   </data>
   <data name="TypeImmobilisation" xml:space="preserve">
     <value>Type immobilisation</value>
+  </data>
+  <data name="CreateHopitaux" xml:space="preserve">
+    <value>Ajouter un hopital</value>
+  </data>
+  <data name="ListHopitaux" xml:space="preserve">
+    <value>Liste des hopitaux</value>
+  </data>
+  <data name="ManageHopitaux" xml:space="preserve">
+    <value>Gestion des hopitaux</value>
+  </data>
+  <data name="NombreDeLitMax" xml:space="preserve">
+    <value>Nombre max de lit</value>
+  </data>
+  <data name="NombreDeLitMaxPlaceholder" xml:space="preserve">
+    <value>Entrez le nombre maximum de lit</value>
+  </data>
+  <data name="NombreDeLitMin" xml:space="preserve">
+    <value>Nombre min de lit</value>
+  </data>
+  <data name="NombreDeLitMinPlaceholder" xml:space="preserve">
+    <value>Entrez le nombre minimum de lit</value>
+  </data>
+  <data name="NombreDeMedecin" xml:space="preserve">
+    <value>Nombre de médécin</value>
+  </data>
+  <data name="NombreDeMedecinPlaceholder" xml:space="preserve">
+    <value>Entrez le nombre de médécin</value>
+  </data>
+  <data name="NombreDePersonnelNonMedical" xml:space="preserve">
+    <value>Personnel non médical</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalPlaceholder" xml:space="preserve">
+    <value>Entrez le nombre de personnel nom médical</value>
+  </data>
+  <data name="NombreDInfimiere" xml:space="preserve">
+    <value>Nombre d'infimière</value>
+  </data>
+  <data name="NombreDInfimierePlaceholder" xml:space="preserve">
+    <value>Entrez le nombre d'infirmiére</value>
+  </data>
+  <data name="TelephoneUrgence" xml:space="preserve">
+    <value>Téléphone d'urgence </value>
+  </data>
+  <data name="TelephoneUrgencePlaceholder" xml:space="preserve">
+    <value>Entrez le numéro de téléphone d'urgence</value>
+  </data>
+  <data name="TypeHopitaux" xml:space="preserve">
+    <value>Type d'hopitaux</value>
+  </data>
+  <data name="TypeHopitauxCombo" xml:space="preserve">
+    <value>Veuillez selectionnez un type d'hopital</value>
+  </data>
+  <data name="Capacite" xml:space="preserve">
+    <value>Capacité</value>
+  </data>
+  <data name="CapaciteDisponible" xml:space="preserve">
+    <value>Capacité disponible</value>
+  </data>
+  <data name="CapaciteDisponiblePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité disponible</value>
+  </data>
+  <data name="CapacitePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité</value>
+  </data>
+  <data name="CodePostale" xml:space="preserve">
+    <value>Code postale</value>
+  </data>
+  <data name="CodePostalePlaceholder" xml:space="preserve">
+    <value>Entrer le code postale</value>
+  </data>
+  <data name="CreateAbris" xml:space="preserve">
+    <value>Ajouter un abris</value>
+  </data>
+  <data name="CreateAeroport" xml:space="preserve">
+    <value>Ajouter un aéroport</value>
+  </data>
+  <data name="CreateBureau" xml:space="preserve">
+    <value>Ajouter un bureau</value>
+  </data>
+  <data name="CreateEntrepot" xml:space="preserve">
+    <value>Ajouter un entrepôt</value>
+  </data>
+  <data name="CreateInstallation" xml:space="preserve">
+    <value>Ajouter une installation</value>
+  </data>
+  <data name="EstimationPopulation" xml:space="preserve">
+    <value>Estimation de la population</value>
+  </data>
+  <data name="EstimationPopulationPlaceholder" xml:space="preserve">
+    <value>Entrer l'estimation de la population</value>
+  </data>
+  <data name="HeureDOuverture" xml:space="preserve">
+    <value>Heure d'ouverture</value>
+  </data>
+  <data name="HeureDOuverturePlaceholder" xml:space="preserve">
+    <value>Entrer l'heure d'ouverture</value>
+  </data>
+  <data name="HeureFermeture" xml:space="preserve">
+    <value>Heure de fermeture</value>
+  </data>
+  <data name="HeureFermeturePlaceholder" xml:space="preserve">
+    <value>Entrer l'heure de fermeture</value>
+  </data>
+  <data name="IATA" xml:space="preserve">
+    <value>IATA</value>
+  </data>
+  <data name="IATAPlaceholder" xml:space="preserve">
+    <value>Entrer l' IATA</value>
+  </data>
+  <data name="ICAO" xml:space="preserve">
+    <value>ICAO</value>
+  </data>
+  <data name="ICAOPlaceholder" xml:space="preserve">
+    <value>Entrer l' ICAO</value>
+  </data>
+  <data name="LargeurDePiste" xml:space="preserve">
+    <value>Largeur de piste</value>
+  </data>
+  <data name="LargeurDePistePlaceholder" xml:space="preserve">
+    <value>Entrer la largeur de la piste</value>
+  </data>
+  <data name="ListAbris" xml:space="preserve">
+    <value>Liste des abris</value>
+  </data>
+  <data name="ListAeroport" xml:space="preserve">
+    <value>Liste des aéroports</value>
+  </data>
+  <data name="ListBureau" xml:space="preserve">
+    <value>Liste des bureaux</value>
+  </data>
+  <data name="ListEntrepot" xml:space="preserve">
+    <value>Liste des entrepôts</value>
+  </data>
+  <data name="ListInstallation" xml:space="preserve">
+    <value>Liste des installations</value>
+  </data>
+  <data name="LongueurDePiste" xml:space="preserve">
+    <value>Longeur de piste</value>
+  </data>
+  <data name="LongueurDePistePlaceholder" xml:space="preserve">
+    <value>Entrer la longeur de la piste</value>
+  </data>
+  <data name="ManageAbris" xml:space="preserve">
+    <value>Gestion des abris</value>
+  </data>
+  <data name="ManageAeroport" xml:space="preserve">
+    <value>Gestion des aéroports</value>
+  </data>
+  <data name="ManageBureau" xml:space="preserve">
+    <value>Gestion des bureaux</value>
+  </data>
+  <data name="ManageEntrepot" xml:space="preserve">
+    <value>Gestion des entrepôts</value>
+  </data>
+  <data name="ManageInstallation" xml:space="preserve">
+    <value>Gestion des installations</value>
+  </data>
+  <data name="MenuAbris" xml:space="preserve">
+    <value>Les abris</value>
+  </data>
+  <data name="MenuAeroport" xml:space="preserve">
+    <value>Les aéroports</value>
+  </data>
+  <data name="MenuBureau" xml:space="preserve">
+    <value>Les bureaux</value>
+  </data>
+  <data name="MenuCartes" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="SurfaceDePiste" xml:space="preserve">
+    <value>Surface de piste</value>
+  </data>
+  <data name="SurfaceDePisteCombo" xml:space="preserve">
+    <value>Veuillez selectionner la surface de la piste</value>
+  </data>
+  <data name="TailleDeAeronef" xml:space="preserve">
+    <value>Taille de l'aéronef</value>
+  </data>
+  <data name="TailleDeAeronefCombo" xml:space="preserve">
+    <value>Veuillez selectionnez la taille de l'aéronef</value>
+  </data>
+  <data name="TypeAbris" xml:space="preserve">
+    <value>Type d'abris</value>
+  </data>
+  <data name="TypeAbrisCombo" xml:space="preserve">
+    <value>Veillez selectionner le type d'abris</value>
+  </data>
+  <data name="TypeEntrepotIdCombo" xml:space="preserve">
+    <value>Veuiller selectionner le type d'entrepôt</value>
+  </data>
+  <data name="TypeEntrepots" xml:space="preserve">
+    <value>Type d'entrepôt</value>
+  </data>
+  <data name="TypeOffice" xml:space="preserve">
+    <value>Type de bureau</value>
+  </data>
+  <data name="TypeOfficeCombo" xml:space="preserve">
+    <value>Veuillez selectionner le type de bureau</value>
+  </data>
+  <data name="UsageHumanitaire" xml:space="preserve">
+    <value>Usage humanitaire</value>
+  </data>
+  <data name="UsageHumanitaireCombo" xml:space="preserve">
+    <value>Veuillez selectionnez l'usage humanitaire</value>
+  </data>
+  <data name="Abri" xml:space="preserve">
+    <value>Abri</value>
+  </data>
+  <data name="AbriPlaceholder" xml:space="preserve">
+    <value>Entrer l'abri</value>
+  </data>
+  <data name="AnneeFabrication" xml:space="preserve">
+    <value>Annee de fabrication</value>
+  </data>
+  <data name="AnneeFabricationPlaceholder" xml:space="preserve">
+    <value>Entrer l'année de fabrication de l'élément</value>
+  </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="BudgetPlaceholder" xml:space="preserve">
+    <value>Entrer le montant budget </value>
+  </data>
+  <data name="CaleSeche" xml:space="preserve">
+    <value>Cale seche</value>
+  </data>
+  <data name="CaleSechePlaceholder" xml:space="preserve">
+    <value>Entrer la cale seche </value>
+  </data>
+  <data name="CapacietBarge" xml:space="preserve">
+    <value>Capacité de la barge </value>
+  </data>
+  <data name="CapacietBargePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité de badge</value>
+  </data>
+  <data name="CapaciteDouaniere" xml:space="preserve">
+    <value>Capacité douaniere</value>
+  </data>
+  <data name="CapaciteDouanierePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité douanière</value>
+  </data>
+  <data name="CapaciteRemorqueur" xml:space="preserve">
+    <value>Capacité Rémorqueur</value>
+  </data>
+  <data name="CapaciteRemorqueurPlaceholder" xml:space="preserve">
+    <value>Entrer la capacité du remorqueur </value>
+  </data>
+  <data name="CapaciteStockageEntreposage" xml:space="preserve">
+    <value>Capacité de stockage entreposage</value>
+  </data>
+  <data name="CapaciteStockageEntreposagePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité de stockage de l'entreposage</value>
+  </data>
+  <data name="CapaciteStockageEntrepotDouanier" xml:space="preserve">
+    <value>Capacité stockage entrepot douanier</value>
+  </data>
+  <data name="CapaciteStockageEntrepotDouanierPlaceholder" xml:space="preserve">
+    <value>Entrer la capacité de stockage de l'entrepot douanier</value>
+  </data>
+  <data name="CapaciteStockageSecurise" xml:space="preserve">
+    <value>Capacité  de stockage sécurisé</value>
+  </data>
+  <data name="CapaciteStockageSecurisePlaceholder" xml:space="preserve">
+    <value>Entrer la capacité de stockage de l'entreposage securisé </value>
+  </data>
+  <data name="CategorieElement" xml:space="preserve">
+    <value>Catégorie d'élément</value>
+  </data>
+  <data name="ComboCategorieElement" xml:space="preserve">
+    <value>Veillez selectionner une catégorie d'élément</value>
+  </data>
+  <data name="ComboMarqueElement" xml:space="preserve">
+    <value>Veillez selectionner la marque de l'élément</value>
+  </data>
+  <data name="CreateElement" xml:space="preserve">
+    <value>Ajouter un élément</value>
+  </data>
+  <data name="CreatePersonnel" xml:space="preserve">
+    <value>Ajouter un personnel</value>
+  </data>
+  <data name="CreatePortDeMer" xml:space="preserve">
+    <value>Ajouter un port de mer</value>
+  </data>
+  <data name="CreateProjet" xml:space="preserve">
+    <value>Ajouter un projet</value>
+  </data>
+  <data name="EditElement" xml:space="preserve">
+    <value>Modofier un élément</value>
+  </data>
+  <data name="EditPersonnel" xml:space="preserve">
+    <value>Modifier le personnel</value>
+  </data>
+  <data name="EditProjet" xml:space="preserve">
+    <value>Modifier un projet</value>
+  </data>
+  <data name="EquipementChargement" xml:space="preserve">
+    <value>Equipement de chargement</value>
+  </data>
+  <data name="EquipementChargementPlaceholder" xml:space="preserve">
+    <value>Entrer l'équipement de chargement</value>
+  </data>
+  <data name="Hauteur" xml:space="preserve">
+    <value>Hauteur</value>
+  </data>
+  <data name="HauteurMaximum" xml:space="preserve">
+    <value>Hauteur maximum</value>
+  </data>
+  <data name="HauteurMaximumPlaceholder" xml:space="preserve">
+    <value>Entrer la hauteur maximum</value>
+  </data>
+  <data name="HauteurMaximumUnites" xml:space="preserve">
+    <value>Unités de la hauteur</value>
+  </data>
+  <data name="HauteurMaximumUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la hauteur maximum</value>
+  </data>
+  <data name="HauteurPlaceholder" xml:space="preserve">
+    <value>Entrer la hauteur de l'élément</value>
+  </data>
+  <data name="Largeur" xml:space="preserve">
+    <value>Largeur</value>
+  </data>
+  <data name="LargeurPlaceholder" xml:space="preserve">
+    <value>Entrer la largeur de l'élément</value>
+  </data>
+  <data name="ListElement" xml:space="preserve">
+    <value>Liste des éléments</value>
+  </data>
+  <data name="ListPersonnel" xml:space="preserve">
+    <value>Liste du personnel</value>
+  </data>
+  <data name="ListPortDeMer" xml:space="preserve">
+    <value>Liste des port de mer</value>
+  </data>
+  <data name="ListProjet" xml:space="preserve">
+    <value>Liste des projets</value>
+  </data>
+  <data name="Longueur" xml:space="preserve">
+    <value>Longueur</value>
+  </data>
+  <data name="LongueurMaximaleNavire" xml:space="preserve">
+    <value>Longueur maximale du navire</value>
+  </data>
+  <data name="LongueurMaximaleNavirePlaceholder" xml:space="preserve">
+    <value>Entrer la longeur maximale native</value>
+  </data>
+  <data name="LongueurMaximaleNavireUnites" xml:space="preserve">
+    <value>Unités de la longueur maximale du navire </value>
+  </data>
+  <data name="LongueurMaximaleNavireUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la longeur maximale native</value>
+  </data>
+  <data name="LongueurPlaceholder" xml:space="preserve">
+    <value>Entrer la longueur de l'élément</value>
+  </data>
+  <data name="ManageElement" xml:space="preserve">
+    <value>Gestion des éléments</value>
+  </data>
+  <data name="ManagePersonnel" xml:space="preserve">
+    <value>Gesttion du personnel</value>
+  </data>
+  <data name="ManagePortDeMer" xml:space="preserve">
+    <value>Gestion des port de mer</value>
+  </data>
+  <data name="ManageProjet" xml:space="preserve">
+    <value>Gestion des projets</value>
+  </data>
+  <data name="MarqueElement" xml:space="preserve">
+    <value>Marque d'élément</value>
+  </data>
+  <data name="Modele" xml:space="preserve">
+    <value>Modèle</value>
+  </data>
+  <data name="ModelePlaceholder" xml:space="preserve">
+    <value>Entrer le modèle de l'élément</value>
+  </data>
+  <data name="NombreBarge" xml:space="preserve">
+    <value>Nombre de barge</value>
+  </data>
+  <data name="NombreBargePlaceholder" xml:space="preserve">
+    <value>Entrer le nombre de bardge</value>
+  </data>
+  <data name="NombreRemorqueur" xml:space="preserve">
+    <value>Nombre de remorqueur</value>
+  </data>
+  <data name="NombreRemorqueurPlaceholder" xml:space="preserve">
+    <value>Entrer le nombre de remorqueur</value>
+  </data>
+  <data name="Poids" xml:space="preserve">
+    <value>Poids</value>
+  </data>
+  <data name="PoidsPlaceholder" xml:space="preserve">
+    <value>Entrer le poids de l'élément</value>
+  </data>
+  <data name="Possession" xml:space="preserve">
+    <value>Possession</value>
+  </data>
+  <data name="PossessionPlaceholder" xml:space="preserve">
+    <value>Entrer la possession</value>
+  </data>
+  <data name="ProfondeurInondation" xml:space="preserve">
+    <value>Unité de la profondeur de l'inondation</value>
+  </data>
+  <data name="ProfondeurInondationPlaceholder" xml:space="preserve">
+    <value>Entrer la profondeur de l'inondation</value>
+  </data>
+  <data name="ProfondeurInondationUnites" xml:space="preserve">
+    <value>Unité de la profondeur de l' inondation</value>
+  </data>
+  <data name="ProfondeurInondationUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la profondeur de l'inondation</value>
+  </data>
+  <data name="ProfondeurMareBasse" xml:space="preserve">
+    <value>Profondeur marée basse</value>
+  </data>
+  <data name="ProfondeurMareBassePlaceholder" xml:space="preserve">
+    <value>Entrer la profondeur de la maré basse</value>
+  </data>
+  <data name="ProfondeurMareBasseUnites" xml:space="preserve">
+    <value>Unité de la profondeur de la marée basse</value>
+  </data>
+  <data name="ProfondeurMareBasseUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la profondeur de la maré basse</value>
+  </data>
+  <data name="ProfondeurMareHaute" xml:space="preserve">
+    <value> Profondeur de la marée haute</value>
+  </data>
+  <data name="ProfondeurMareHautePlaceholder" xml:space="preserve">
+    <value>Entrer la profondeur de la maré haute</value>
+  </data>
+  <data name="ProfondeurMareHauteUnites" xml:space="preserve">
+    <value>Unité de la profondeur de la marée haute</value>
+  </data>
+  <data name="ProfondeurMareHauteUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la profondeur de la maré haute</value>
+  </data>
+  <data name="ProfondeurQuaiChargement" xml:space="preserve">
+    <value>Profondeur du quai de chargement </value>
+  </data>
+  <data name="ProfondeurQuaiChargementPlaceholder" xml:space="preserve">
+    <value>Entrer la profondeur du quai de chargement </value>
+  </data>
+  <data name="ProfondeurQuaiChargementUnites" xml:space="preserve">
+    <value>Unités de la profondeur du quai de chargement</value>
+  </data>
+  <data name="ProfondeurQuaiChargementUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la profondeur du quai de chargement</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolier" xml:space="preserve">
+    <value>Profondeur du terminal pétrolier </value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierPlaceholder" xml:space="preserve">
+    <value>Entrer la profondeur du terminal pétrolier</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierUnites" xml:space="preserve">
+    <value>Unités de la profondeur du terminal pétrolier</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierUnitesPlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de la profondeur du terminal pétrolier</value>
+  </data>
+  <data name="Referencelaceholder" xml:space="preserve">
+    <value>Entrer la reference</value>
+  </data>
+  <data name="Reparations" xml:space="preserve">
+    <value>Réparations</value>
+  </data>
+  <data name="ReparationsPlaceholder" xml:space="preserve">
+    <value>Entrer les réparations</value>
+  </data>
+  <data name="Securite" xml:space="preserve">
+    <value>Securité</value>
+  </data>
+  <data name="SecuritePlaceholder" xml:space="preserve">
+    <value>Entrer les informations de securité </value>
+  </data>
+  <data name="TypePersonnel" xml:space="preserve">
+    <value>Type de personnel</value>
+  </data>
+  <data name="TypePersonnelCombo" xml:space="preserve">
+    <value>Veuillez selectionner le type de personnel</value>
+  </data>
+  <data name="UniteMesure" xml:space="preserve">
+    <value>Unité de mesure</value>
+  </data>
+  <data name="UniteMesurePlaceholder" xml:space="preserve">
+    <value>Entrer l'unité de mesure</value>
+  </data>
+  <data name="ValeurParUnite" xml:space="preserve">
+    <value>Valeur par unité</value>
+  </data>
+  <data name="ValeurParUnitePlaceholder" xml:space="preserve">
+    <value>Entrer la valeur par unité </value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="ComboPersonnel" xml:space="preserve">
+    <value>Selectionnez le personnel</value>
+  </data>
+  <data name="PersonnelProjet" xml:space="preserve">
+    <value>Personnel</value>
   </data>
 </root>

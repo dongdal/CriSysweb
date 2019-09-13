@@ -16,7 +16,7 @@ Partial Public Class Abris
     Public Property Nom As String
     Public Property EstimationPopulation As Long
     Public Property Capacite As Long
-    Public Property Location As DbGeography
+    Public Property Location As DbGeometry
 
 
     Public Property DateCreation As DateTime = Now

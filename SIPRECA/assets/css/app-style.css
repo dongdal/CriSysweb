@@ -5152,7 +5152,8 @@ table.grid {
     color: #272727;
     text-align: center;
     padding: 12px 30px;
-    position: absolute;
+    position: fixed;
+    /*position: absolute;*/
     bottom: 0px;
     right: 0;
     left: 240px;

@@ -38,7 +38,7 @@ Partial Public Class PortDeMer
     Public Property ProfondeurMareBasseUnites As String
     Public Property ProfondeurInondation As Double
     Public Property ProfondeurInondationUnites As String
-    Public Property Location As DbGeography
+    Public Property Location As DbGeometry
     Public Property Telephone As String
     Public Property Telephone2 As String
     Public Property SiteWeb As String

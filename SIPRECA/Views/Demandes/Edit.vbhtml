@@ -42,8 +42,6 @@ End Code
                         <div class="tab-content">
                             <div id="tabe-1" class="container tab-pane active">
 
-
-
                                 <div Class="form-group row">
                                     @Html.LabelFor(Function(m) m.Reference, New With {.class = "col-sm-2 col-form-label required_field"})
                                     <div class="col-sm-4">

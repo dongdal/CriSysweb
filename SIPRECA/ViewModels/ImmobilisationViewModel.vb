@@ -102,7 +102,7 @@ Public Class ImmobilisationViewModel
             .DateAchat = DateAchat
             .PrixAchat = PrixAchat
             .TypeImmobilisationId = TypeImmobilisationId
-            .InfrastructureId = entity.InfrastructureId
+            .InfrastructureId = InfrastructureId
             .FournisseurId = FournisseurId
             .ElementId = ElementId
             .DeviseId = DeviseId
