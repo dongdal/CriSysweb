@@ -53,6 +53,15 @@ Public Class AbrisViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="TitreDuPoste", ResourceType:=GetType(Resource))>
+    <StringLength(80, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property TitreDuPoste As String
+
+    <Display(Name:="PersonnelAbris", ResourceType:=GetType(Resource))>
+    Public Property PersonnelAbrisId As Long?
+    Public Overridable Property LesPersonnelAbris As ICollection(Of SelectListItem)
+    Public Overridable Property PersonnelAbris As ICollection(Of PersonnelAbris)
+
     Public Sub New()
     End Sub
 

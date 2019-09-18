@@ -2166,4 +2166,43 @@
   <data name="PersonnelProjet" xml:space="preserve">
     <value>Personnel</value>
   </data>
+  <data name="TitreDuPoste" xml:space="preserve">
+    <value>Titre du poste</value>
+  </data>
+  <data name="TitreDuPostePlaceholder" xml:space="preserve">
+    <value>Entrez le titre du poste</value>
+  </data>
+  <data name="ComboPuissance" xml:space="preserve">
+    <value>Veillez selectionnez un élément</value>
+  </data>
+  <data name="ComboSecteur" xml:space="preserve">
+    <value>Veuillez selectionner un secteur</value>
+  </data>
+  <data name="EditAbris" xml:space="preserve">
+    <value>Modifier un abris</value>
+  </data>
+  <data name="EditBureau" xml:space="preserve">
+    <value>Modifier un bureau</value>
+  </data>
+  <data name="EditHopitaux" xml:space="preserve">
+    <value>Modifier un hopital</value>
+  </data>
+  <data name="EditInstallation" xml:space="preserve">
+    <value>Modifier une installation</value>
+  </data>
+  <data name="HopitauxPuissance" xml:space="preserve">
+    <value>Puissance</value>
+  </data>
+  <data name="PersonnelAbris" xml:space="preserve">
+    <value>Personnel</value>
+  </data>
+  <data name="PersonnelBureaux" xml:space="preserve">
+    <value>Personnel</value>
+  </data>
+  <data name="PersonnelInstallation" xml:space="preserve">
+    <value>Personnel</value>
+  </data>
+  <data name="SecteurProjet" xml:space="preserve">
+    <value>Secteur du projet</value>
+  </data>
 </root>

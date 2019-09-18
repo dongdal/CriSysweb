@@ -1,5 +1,6 @@
 ﻿Imports System.Data.Entity
 Imports System.Data.Entity.Validation
+Imports System.IO
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
@@ -113,21 +114,6 @@ Namespace Controllers
         '    Return View(Projet)
         'End Function
 
-        Private Sub LoadComboBox1(entityVM As ProjetViewModel)
-
-            Dim PersonnelProjet = (From e In Db.PersonnelProjet Where e.ProjetId = entityVM.Id Select e.Personnel).ToList
-            Dim PersonnelProjets = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
-            Dim LesPersonnelProjets As New List(Of SelectListItem)
-
-            For Each item In PersonnelProjets
-
-                LesPersonnelProjets.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
-
-            Next
-
-            entityVM.PersonnelProjets = PersonnelProjet
-            entityVM.LesPersonnelProjets = LesPersonnelProjets
-        End Sub
 
         Private Sub LoadComboBox(entityVM As ProjetViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)
@@ -137,6 +123,45 @@ Namespace Controllers
             Dim Organisation = (From e In Db.Organisation Where e.StatutExistant = 1 Select e)
             Dim LesOrganisations As New List(Of SelectListItem)
 
+            Dim PersonnelProjet = (From e In Db.PersonnelProjet Where e.ProjetId = entityVM.Id Select e).ToList
+            Dim PersonnelProjets = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
+            Dim LesPersonnelProjets As New List(Of SelectListItem)
+
+            Dim SecteurProjet = (From e In Db.SecteurProjet Where e.ProjetId = entityVM.Id Select e).ToList
+            Dim SecteurProjets = (From e In Db.Secteur Where e.StatutExistant = 1 Select e).ToList
+            Dim LesSecteurProjets As New List(Of SelectListItem)
+
+            Dim Piecesjointes = (From e In Db.PieceJointe Where e.StatutExistant = 1 And e.ProjetId = entityVM.Id Select e).ToList()
+
+            For Each item In PersonnelProjets
+
+                Dim re As Boolean = True
+
+                For Each item2 In PersonnelProjet
+                    If item.Id = item2.PersonnelId Then
+                        re = False
+                    End If
+                Next
+
+                If re = True Then
+                    LesPersonnelProjets.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
+                End If
+            Next
+
+            For Each item In SecteurProjets
+
+                Dim se As Boolean = True
+
+                For Each item2 In SecteurProjet
+                    If item.Id = item2.SecteurId Then
+                        se = False
+                    End If
+                Next
+
+                If se = True Then
+                    LesSecteurProjets.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
 
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
@@ -158,6 +183,11 @@ Namespace Controllers
 
             Next
 
+            entityVM.PersonnelProjets = PersonnelProjet
+            entityVM.LesPersonnelProjets = LesPersonnelProjets
+            entityVM.SecteurProjets = SecteurProjet
+            entityVM.LesSecteurProjets = LesSecteurProjets
+            entityVM.PiecesJointes = Piecesjointes
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesOrganisations = LesOrganisations
             entityVM.LesDevises = LesDevises
@@ -203,7 +233,6 @@ Namespace Controllers
             End If
             Dim entityVM As New ProjetViewModel(Projet)
             LoadComboBox(entityVM)
-            LoadComboBox1(entityVM)
             Return View(entityVM)
         End Function
 
@@ -213,9 +242,12 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As ProjetViewModel) As ActionResult
-            If Request.Form("AddAttachement") IsNot Nothing Then
+            If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
             ElseIf Request.Form("AddAttachement") IsNot Nothing Then
+                Return UploadFile(entityVM)
+            ElseIf Request.Form("AddSecteur") IsNot Nothing Then
+                Return AddSecteur(entityVM)
             Else
                 If ModelState.IsValid Then
                     Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -249,6 +281,8 @@ Namespace Controllers
 
                     PersonnelProjet.PersonnelId = entityVM.PersonnelProjetId
                     PersonnelProjet.ProjetId = entityVM.Id
+                    PersonnelProjet.AspNetUserId = GetCurrentUser.Id
+                    PersonnelProjet.TitreDuPoste = entityVM.TitreDuPoste
 
                     Db.PersonnelProjet.Add(PersonnelProjet)
                     Try
@@ -262,14 +296,95 @@ Namespace Controllers
                 End If
                 Return RedirectToAction("Edit", New With {entityVM.Id})
             End If
-            LoadComboBox1(entityVM)
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function UploadFile(ByVal entityVM As ProjetViewModel) As ActionResult
+
+            If IsNothing(entityVM.Fichiers.FirstOrDefault) Then
+                ModelState.AddModelError("Fichiers", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim leChemin = Path.Combine(Server.MapPath("~/Upload/Projets/" & entityVM.Id & "/" & entityVM.Reference))
+                Dim RealPath = "/Upload/Projets/" & entityVM.Id & "/" & entityVM.Reference
+
+                If Not Directory.Exists(leChemin) Then
+                    Directory.CreateDirectory(leChemin)
+                End If
+                Dim piecesjointes As New PieceJointe()
+                For Each files In entityVM.Fichiers
+                    If files.ContentLength > 0 Then
+                        'Checking file is available to save.  
+                        Dim fileExtension As String = Path.GetExtension(files.FileName)
+                        Dim fileName As String = files.FileName
+                        With piecesjointes
+                            .DateCreation = Now
+                            .StatutExistant = 1
+                            .ProjetId = entityVM.Id
+                            .Libelle = Now.Date.ToString("dd-MM-yyyy") & "_A_" & Now.Hour & "h" & Now.Minute & "min" & Now.Second & "s" & Now.Millisecond & "ms _" & Path.GetFileName(files.FileName.Replace(" ", "_").ToLower) ' & extension
+                            .Lien = RealPath & "/" & .Libelle
+                            '.filePath = Path.Combine(leChemin, .Libelle
+                            .AspNetUserId = GetCurrentUser.Id
+                        End With
+                        files.SaveAs(Path.Combine(leChemin, piecesjointes.Libelle))
+                        Db.PieceJointe.Add(piecesjointes)
+                        Try
+                            Db.SaveChanges()
+                        Catch ex As DbEntityValidationException
+                            Util.GetError(ex, ModelState)
+                        Catch ex As Exception
+                            Util.GetError(ex, ModelState)
+                        End Try
+
+                    End If
+                Next
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddSecteur(ByVal entityVM As ProjetViewModel) As ActionResult
+
+            If IsNothing(entityVM.SecteurProjetId) Then
+                ModelState.AddModelError("Secteur", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim SecteurProjet As New SecteurProjet()
+
+                If entityVM.SecteurProjetId > 0 Then
+
+                    SecteurProjet.SecteurId = entityVM.SecteurProjetId
+                    SecteurProjet.ProjetId = entityVM.Id
+
+                    Db.SecteurProjet.Add(SecteurProjet)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)
         End Function
 
 
         <HttpPost>
-        Public Function DeleteFile(id As String) As JsonResult
+        Public Function DeletePersonnel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
@@ -282,6 +397,74 @@ Namespace Controllers
                 End If
 
                 Db.PersonnelProjet.Remove(PersonnelProjet)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <HttpPost>
+        Public Function DeleteSecteur(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim SecteurProjet = (From p In Db.SecteurProjet Where p.Id = id Select p).ToList.FirstOrDefault
+                If SecteurProjet Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.SecteurProjet.Remove(SecteurProjet)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <HttpPost>
+        Public Function DeleteFile(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                'Dim guid As New Guid(id)
+                Dim piecesjointes = (From p In Db.PieceJointe Where p.Id = id Select p).ToList.FirstOrDefault
+                'Dim piecesjointes As PiecesJointes = db.PiecesJointes.Find(id)
+                If piecesjointes Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+                Dim leCheminDB = "~" & piecesjointes.Lien
+                Dim leFichier = Path.Combine(Server.MapPath(leCheminDB))
+
+                'Delete file from the file system
+                If System.IO.File.Exists(leFichier) Then
+                    System.IO.File.Delete(leFichier)
+                End If
+
+                'Remove from database
+                Db.PieceJointe.Remove(piecesjointes)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException

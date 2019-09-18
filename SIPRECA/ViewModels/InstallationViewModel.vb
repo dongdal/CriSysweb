@@ -69,6 +69,15 @@ Public Class InstallationViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="TitreDuPoste", ResourceType:=GetType(Resource))>
+    <StringLength(80, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property TitreDuPoste As String
+
+    <Display(Name:="PersonnelInstallation", ResourceType:=GetType(Resource))>
+    Public Property PersonnelInstallationId As Long?
+    Public Overridable Property LesPersonnelInstallations As ICollection(Of SelectListItem)
+    Public Overridable Property PersonnelInstallations As ICollection(Of PersonnelInstallation)
+
     Public Sub New()
     End Sub
 

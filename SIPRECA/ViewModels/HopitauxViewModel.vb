@@ -84,6 +84,11 @@ Public Class HopitauxViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="HopitauxPuissance", ResourceType:=GetType(Resource))>
+    Public Property HopitauxPuissanceId As Long?
+    Public Overridable Property LesHopitauxPuissances As ICollection(Of SelectListItem)
+    Public Overridable Property HopitauxPuissances As ICollection(Of HopitauxPuissance)
+
     Public Sub New()
     End Sub
 

@@ -60,7 +60,26 @@ Public Class ProjetViewModel
     <Display(Name:="PersonnelProjet", ResourceType:=GetType(Resource))>
     Public Property PersonnelProjetId As Long?
     Public Overridable Property LesPersonnelProjets As ICollection(Of SelectListItem)
-    Public Overridable Property PersonnelProjets As ICollection(Of Personnel)
+    Public Overridable Property PersonnelProjets As ICollection(Of PersonnelProjet)
+
+    <Display(Name:="SecteurProjet", ResourceType:=GetType(Resource))>
+    Public Property SecteurProjetId As Long?
+    Public Overridable Property LesSecteurProjets As ICollection(Of SelectListItem)
+    Public Overridable Property SecteurProjets As ICollection(Of SecteurProjet)
+
+    <Display(Name:="TitreDuPoste", ResourceType:=GetType(Resource))>
+    <StringLength(80, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property TitreDuPoste As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="SelectFile")>
+    <Display(Name:="PieceJointe", ResourceType:=GetType(Resource))>
+    Public Property Fichiers As New List(Of HttpPostedFileBase)
+    'Public Property Fichiers As HttpPostedFileBase = Nothing
+
+    <Display(Name:="PiecesJointeMenu", ResourceType:=GetType(Resource))>
+    Public Property PiecesJointesId As Long?
+    Public Overridable Property LesPiecesJointes As ICollection(Of SelectListItem)
+    Public Overridable Property PiecesJointes As ICollection(Of PieceJointe)
 
     Public Sub New()
     End Sub

@@ -4,6 +4,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class AbrisController
@@ -118,6 +119,25 @@ Namespace Controllers
             Dim TypeAbris = (From e In Db.TypeAbris Where e.StatutExistant = 1 Select e)
             Dim LesTypeAbris As New List(Of SelectListItem)
 
+            Dim PersonnelAbri = (From e In Db.PersonnelAbris Where e.AbrisId = entityVM.Id Select e).ToList
+            Dim PersonnelAbris = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
+            Dim LesPersonnelAbris As New List(Of SelectListItem)
+
+            For Each item In PersonnelAbris
+
+                Dim re As Boolean = True
+
+                For Each item2 In PersonnelAbri
+                    If item.Id = item2.PersonnelId Then
+                        re = False
+                    End If
+                Next
+
+                If re = True Then
+                    LesPersonnelAbris.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -138,6 +158,8 @@ Namespace Controllers
                 LesTypeAbris.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
+            entityVM.PersonnelAbris = PersonnelAbri
+            entityVM.LesPersonnelAbris = LesPersonnelAbris
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesTypeAbris = LesTypeAbris
             entityVM.LesVilles = LesVilles
@@ -218,19 +240,87 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As AbrisViewModel) As ActionResult
+            If Request.Form("AddPersonnel") IsNot Nothing Then
+                Return AddPersonnel(entityVM)
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddPersonnel(ByVal entityVM As AbrisViewModel) As ActionResult
+
+            If IsNothing(entityVM.PersonnelAbrisId) Then
+                ModelState.AddModelError("Personnel", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+
+                Dim PersonnelAbris As New PersonnelAbris()
+
+                If entityVM.PersonnelAbrisId > 0 Then
+
+                    PersonnelAbris.PersonnelId = entityVM.PersonnelAbrisId
+                    PersonnelAbris.AbrisId = entityVM.Id
+                    PersonnelAbris.AspNetUserId = GetCurrentUser.Id
+                    PersonnelAbris.TitreDuPoste = entityVM.TitreDuPoste
+
+                    Db.PersonnelAbris.Add(PersonnelAbris)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeletePersonnel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim PersonnelAbris = (From p In Db.PersonnelAbris Where p.Id = id Select p).ToList.FirstOrDefault
+                If PersonnelAbris Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.PersonnelAbris.Remove(PersonnelAbris)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
-            End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
         ' GET: Abris/Delete/5

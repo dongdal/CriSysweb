@@ -4,6 +4,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class BureauxController
@@ -134,6 +135,25 @@ Namespace Controllers
             Dim TypeOffice = (From e In Db.TypeOffice Where e.StatutExistant = 1 Select e)
             Dim LesTypeOffices As New List(Of SelectListItem)
 
+            Dim PersonnelBureau = (From e In Db.PersonnelBureau Where e.BureauId = entityVM.Id Select e).ToList
+            Dim PersonnelBureaux = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
+            Dim LesPersonnelBureaux As New List(Of SelectListItem)
+
+            For Each item In PersonnelBureaux
+
+                Dim re As Boolean = True
+
+                For Each item2 In PersonnelBureau
+                    If item.Id = item2.PersonnelId Then
+                        re = False
+                    End If
+                Next
+
+                If re = True Then
+                    LesPersonnelBureaux.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -154,6 +174,8 @@ Namespace Controllers
                 LesTypeOffices.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
+            entityVM.PersonnelBureaux = PersonnelBureau
+            entityVM.LesPersonnelBureaux = LesPersonnelBureaux
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesTypeOffices = LesTypeOffices
             entityVM.LesVilles = LesVilles
@@ -236,19 +258,87 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As BureauViewModel) As ActionResult
+            If Request.Form("AddPersonnel") IsNot Nothing Then
+                Return AddPersonnel(entityVM)
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddPersonnel(ByVal entityVM As BureauViewModel) As ActionResult
+
+            If IsNothing(entityVM.PersonnelBureauxId) Then
+                ModelState.AddModelError("Personnel", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+
+                Dim PersonnelBureau As New PersonnelBureau()
+
+                If entityVM.PersonnelBureauxId > 0 Then
+
+                    PersonnelBureau.PersonnelId = entityVM.PersonnelBureauxId
+                    PersonnelBureau.BureauId = entityVM.Id
+                    PersonnelBureau.AspNetUserId = GetCurrentUser.Id
+                    PersonnelBureau.TitreDuPoste = entityVM.TitreDuPoste
+
+                    Db.PersonnelBureau.Add(PersonnelBureau)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeletePersonnel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim PersonnelBureau = (From p In Db.PersonnelBureau Where p.Id = id Select p).ToList.FirstOrDefault
+                If PersonnelBureau Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.PersonnelBureau.Remove(PersonnelBureau)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
-            End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
         ' GET: Bureau/Delete/5

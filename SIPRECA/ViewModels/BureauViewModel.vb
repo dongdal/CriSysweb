@@ -69,6 +69,15 @@ Public Class BureauViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="TitreDuPoste", ResourceType:=GetType(Resource))>
+    <StringLength(80, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property TitreDuPoste As String
+
+    <Display(Name:="PersonnelBureaux", ResourceType:=GetType(Resource))>
+    Public Property PersonnelBureauxId As Long?
+    Public Overridable Property LesPersonnelBureaux As ICollection(Of SelectListItem)
+    Public Overridable Property PersonnelBureaux As ICollection(Of PersonnelBureau)
+
     Public Sub New()
     End Sub
 
