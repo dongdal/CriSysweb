@@ -1,6 +1,7 @@
-Partial Public Class CategorieDArticle
+
+Partial Public Class NiveauDAlert
     Public Sub New()
-        Article = New HashSet(Of Article)()
+        RisqueZone = New HashSet(Of RisqueZone)()
     End Sub
 
     Public Property Id As Long
@@ -11,5 +12,5 @@ Partial Public Class CategorieDArticle
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Article As ICollection(Of Article)
+    Public Overridable Property RisqueZone As ICollection(Of RisqueZone)
 End Class

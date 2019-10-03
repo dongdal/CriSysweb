@@ -1,5 +1,3 @@
-
-Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class Heliport

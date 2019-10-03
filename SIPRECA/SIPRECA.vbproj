@@ -350,8 +350,26 @@
     </Compile>
     <Compile Include="Migrations\201909051541570_ajout de Timespan a installation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\AutreImpactHumainEtEconomique.vb" />
+    <Compile Include="Models\CibleDServicesPublique.vb" />
+    <Compile Include="Models\CibleCPerteBetail.vb" />
+    <Compile Include="Models\ZoneLocalisation.vb" />
+    <Compile Include="Models\ServicesPubliquePertube.vb" />
+    <Compile Include="Models\PerteBetail.vb" />
+    <Compile Include="Models\DesagregationRecoltesAgricole.vb" />
+    <Compile Include="Models\CardreSendaiCibleD.vb" />
+    <Compile Include="Models\CardreSendaiCibleC.vb" />
+    <Compile Include="Models\CardreSendaiCibleB.vb" />
     <Compile Include="Models\Element.vb" />
+    <Compile Include="Models\Evenement.vb" />
+    <Compile Include="Models\CibleCDesagregationAgricole.vb" />
+    <Compile Include="Models\Facteur.vb" />
+    <Compile Include="Models\FacteurEvenement.vb" />
+    <Compile Include="Models\CardreSendaiCibleA.vb" />
     <Compile Include="Models\Immobilisation.vb" />
+    <Compile Include="Models\NiveauDAlert.vb" />
+    <Compile Include="Models\Risque.vb" />
+    <Compile Include="Models\RisqueZone.vb" />
     <Compile Include="Models\SecteurProjet.vb" />
     <Compile Include="Models\TypeImmobilisation.vb" />
     <Compile Include="Models\CategorieElement.vb" />
@@ -382,6 +400,8 @@
     <Compile Include="Models\TailleDeAeronef.vb" />
     <Compile Include="Models\UsageHumanitaire.vb" />
     <Compile Include="Models\Ville.vb" />
+    <Compile Include="Models\EvenementZone.vb" />
+    <Compile Include="Models\ZoneARisque.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\ElementViewModel.vb" />
     <Compile Include="ViewModels\ProjetViewModel.vb" />

@@ -1,15 +1,18 @@
-Partial Public Class CategorieDArticle
+Imports System.Data.Entity.Spatial
+
+Partial Public Class ServicesPubliquePertube
     Public Sub New()
-        Article = New HashSet(Of Article)()
+        CibleDServicesPublique = New HashSet(Of CibleDServicesPublique)()
     End Sub
 
     Public Property Id As Long
     Public Property Libelle As String
+
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
 
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Article As ICollection(Of Article)
+    Public Overridable Property CibleDServicesPublique As ICollection(Of CibleDServicesPublique)
 End Class
