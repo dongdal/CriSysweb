@@ -3,6 +3,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.ListMarqueElement
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <div class="page-header">
@@ -80,8 +81,8 @@ End Code
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>*@
 
                             </td>
                         </tr>

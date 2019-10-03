@@ -282,26 +282,50 @@ Namespace Controllers
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        <ValidateAntiForgeryToken()>
-        Function Edit(ByVal entityVM As HopitauxViewModel) As ActionResult
-            If Request.Form("AddPuissance") IsNot Nothing Then
-                Return AddPuissance(entityVM)
-            Else
-                If ModelState.IsValid Then
-                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                    Try
-                        Db.SaveChanges()
-                        Return RedirectToAction("Index")
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
-                End If
+        Function Edit(ByVal entityVM As HopitauxJS) As ActionResult
+            Dim Ent As New Hopitaux
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+            If ModelState.IsValid Then
+                Db.Entry(Ent).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return Json(New With {.Result = "OK"})
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
         End Function
+
+        '<HttpPost()>
+        '<ValidateAntiForgeryToken()>
+        'Function Edit(ByVal entityVM As HopitauxViewModel) As ActionResult
+        '    If Request.Form("AddPuissance") IsNot Nothing Then
+        '        Return AddPuissance(entityVM)
+        '    Else
+        '        If ModelState.IsValid Then
+        '            Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+        '            Try
+        '                Db.SaveChanges()
+        '                Return RedirectToAction("Index")
+        '            Catch ex As DbEntityValidationException
+        '                Util.GetError(ex, ModelState)
+        '            Catch ex As Exception
+        '                Util.GetError(ex, ModelState)
+        '            End Try
+        '        End If
+        '    End If
+        '    LoadComboBox(entityVM)
+        '    Return View(entityVM)
+        'End Function
 
         <ValidateAntiForgeryToken()>
         <HttpPost>
@@ -407,6 +431,7 @@ Namespace Controllers
 
     Public Class HopitauxJS
 
+        Public Property Id As Long
         Public Property Code As String
         Public Property Nom As String
         Public Property VilleId As String
@@ -427,7 +452,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As Hopitaux
             Dim entity As New Hopitaux
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .Code = Code
                 .NombreDeLitMin = NombreDeLitMin

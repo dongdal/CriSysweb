@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateAeroport
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -45,7 +46,7 @@ End Code
                         @Html.TextBoxFor(Function(m) m.IATA, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.IATAPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.IATA, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    
+
                     @Html.LabelFor(Function(m) m.OganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.OganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
@@ -53,7 +54,7 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.OganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    
+
                 </div>
 
                 @<div Class="form-group row">
@@ -264,7 +265,7 @@ End Code
                     });
                 }
 
-                                
+
             }
 
     </script>

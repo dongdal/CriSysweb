@@ -1244,6 +1244,7 @@
     <Content Include="assets\images\gallery\carousel-img-8.png" />
     <Content Include="assets\images\gallery\carousel-img-9.png" />
     <Content Include="assets\images\gallery\modal-img.jpg" />
+    <Content Include="assets\images\gallery\Module_Sahana.jpg" />
     <Content Include="assets\images\leafIcon\heliport.jpg" />
     <Content Include="assets\images\leafIcon\hopital.jpg" />
     <Content Include="assets\images\leafIcon\iconfinder_Artboard_16_3874675.png" />
@@ -1284,6 +1285,7 @@
     <Content Include="assets\images\lightboxgallery\small\8.jpg" />
     <Content Include="assets\images\lightboxgallery\small\9.jpg" />
     <Content Include="assets\images\logo-icon.png" />
+    <Content Include="assets\images\gallery\module_sahana.png" />
     <Content Include="assets\images\payment-icons\american-dark.png" />
     <Content Include="assets\images\payment-icons\mastro-dark.png" />
     <Content Include="assets\images\payment-icons\paypal-dark.png" />
@@ -1796,6 +1798,9 @@
     <Content Include="Views\Projets\Details.vbhtml" />
     <Content Include="Views\Projets\Edit.vbhtml" />
     <Content Include="Views\Projets\Index.vbhtml" />
+    <Content Include="Views\Home\IndexSahana.vbhtml" />
+    <Content Include="Views\Shared\_LayoutSahana.vbhtml" />
+    <Content Include="Views\Shared\_LeftSideBarSahana.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

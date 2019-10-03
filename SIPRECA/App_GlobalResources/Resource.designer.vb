@@ -2153,6 +2153,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un aéroport.
+        '''</summary>
+        Public Shared ReadOnly Property EditAeroport() As String
+            Get
+                Return ResourceManager.GetString("EditAeroport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un bureau.
         '''</summary>
         Public Shared ReadOnly Property EditBureau() As String
@@ -2234,6 +2243,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un entrepot.
+        '''</summary>
+        Public Shared ReadOnly Property EditEntrepot() As String
+            Get
+                Return ResourceManager.GetString("EditEntrepot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un héliport.
         '''</summary>
         Public Shared ReadOnly Property EditHeliport() As String
@@ -2311,6 +2329,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditPersonnel() As String
             Get
                 Return ResourceManager.GetString("EditPersonnel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un port de mer.
+        '''</summary>
+        Public Shared ReadOnly Property EditPortDeMer() As String
+            Get
+                Return ResourceManager.GetString("EditPortDeMer", resourceCulture)
             End Get
         End Property
         
@@ -4448,7 +4475,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les immobilisations.
+        '''  Recherche une chaîne localisée semblable à Les Immobilisations.
         '''</summary>
         Public Shared ReadOnly Property MenuImmobilisation() As String
             Get
@@ -4457,11 +4484,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les indemnisations.
+        '''  Recherche une chaîne localisée semblable à Les Indemnisations.
         '''</summary>
         Public Shared ReadOnly Property MenuIndemnisation() As String
             Get
                 Return ResourceManager.GetString("MenuIndemnisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les Installations.
+        '''</summary>
+        Public Shared ReadOnly Property MenuInstallation() As String
+            Get
+                Return ResourceManager.GetString("MenuInstallation", resourceCulture)
             End Get
         End Property
         
@@ -4700,7 +4736,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Gestion des sinistrés.
+        '''  Recherche une chaîne localisée semblable à Module de gestion des moyens de réponse.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleSahana() As String
+            Get
+                Return ResourceManager.GetString("ModuleSahana", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Module de gestion des sinistrés.
         '''</summary>
         Public Shared ReadOnly Property ModuleSinistrer() As String
             Get

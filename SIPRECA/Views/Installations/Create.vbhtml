@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateInstallation
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <script src="~/assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -107,6 +108,7 @@ End Code
                 @Html.Partial("_MyMapEnterPartial")
 
             End Using
+            <br/>
             <div Class="form-group row">
                 <Label Class="col-sm-2 col-form-label"></Label>
                 <div Class="col-sm-10">

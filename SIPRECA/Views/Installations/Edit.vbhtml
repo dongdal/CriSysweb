@@ -2,6 +2,8 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.EditInstallation
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
+    Dim Libelle = Model.Nom
 End Code
 
 <script src="~/assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -26,6 +28,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
+        @Html.HiddenFor(Function(m) m.Location)
 
         @<div Class="col-lg-12">
             <div Class="card">
@@ -121,112 +124,118 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                             @Html.Partial("_MyMapEnterPartial")
 
+                            <br/>
                             <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
                                 <div Class="col-sm-10">
-                                    <Button type="submit" onclick="CreateInstallation();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                                    <Button type="submit" onclick="EditInstallation();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                                 </div>
                             </div>
-                            </div>
-                            <div id="tabe-2" class="container tab-pane fade">
+                        </div>
+                        <div id="tabe-2" class="container tab-pane fade">
 
-                                <div Class="form-group row">
-                                    @Html.LabelFor(Function(m) m.PersonnelInstallationId, New With {.class = "col-sm-2 col-form-label required_field"})
-                                    <div class="col-sm-4 form-group">
-                                        @Html.DropDownListFor(Function(m) m.PersonnelInstallationId, New SelectList(Model.LesPersonnelInstallations, "Value", "Text"), Resource.ComboPersonnel,
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.PersonnelInstallationId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.PersonnelInstallationId, New SelectList(Model.LesPersonnelInstallations, "Value", "Text"), Resource.ComboPersonnel,
 New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboPersonnel})
-                                        @Html.ValidationMessageFor(Function(m) m.PersonnelInstallationId, "", New With {.style = "color: #da0b0b"})
-                                    </div>
-
-                                    @Html.LabelFor(Function(m) m.TitreDuPoste, New With {.class = "col-sm-2 col-form-label required_field"})
-                                    <div class="col-sm-4">
-                                        @Html.TextBoxFor(Function(m) m.TitreDuPoste, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TitreDuPostePlaceholder})
-                                        @Html.ValidationMessageFor(Function(m) m.TitreDuPoste, "", New With {.style = "color: #da0b0b"})
-                                    </div>
-                                </div>
-                                <div Class="form-group row">
-                                    <Label Class="col-sm-2 col-form-label"></Label>
-                                    <div Class="col-sm-10">
-                                        <input type="submit" value="@Resource.BtnSave" name="AddPersonnel" class="btn btn-primary btn-sm" />
-                                    </div>
-                                </div>
+                                    @Html.ValidationMessageFor(Function(m) m.PersonnelInstallationId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
-                                <br />
-
-                                <table id="zero_config" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.Nom
-                                            </th>
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.Prenom
-                                            </th>
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.Sexe
-                                            </th>
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.TitreDuPoste
-                                            </th>
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.Organisation
-                                            </th>
-                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                                @Resource.ActionList
-                                            </th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        @For Each item In Model.PersonnelInstallations
-                                            @<tr>
-
-                                                <td>
-                                                    @item.Personnel.Nom
-                                                </td>
-
-                                                <td class="text-center">
-
-                                                    @item.Personnel.Prenom
-
-                                                </td>
-
-                                                <td class="text-center">
-
-                                                    @item.Personnel.Sexe
-
-                                                </td>
-
-                                                <td class="text-center">
-
-                                                    @item.TitreDuPoste
-
-                                                </td>
-
-                                                <td class="text-center">
-
-                                                    @item.Personnel.Oganisation.Nom
-
-                                                </td>
-
-                                                <td>
-                                                    <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeletePersonnel" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        Next
-                                    </tbody>
-
-                                </table>
-                        </div>
+                                @Html.LabelFor(Function(m) m.TitreDuPoste, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.TitreDuPoste, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TitreDuPostePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.TitreDuPoste, "", New With {.style = "color: #da0b0b"})
+                                </div>
                             </div>
+                            <div Class="form-group row">
+                                <Label Class="col-sm-2 col-form-label"></Label>
+                                <div Class="col-sm-10">
+                                    <Button type="submit" onclick="EditInstallation();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                                </div>
+                            </div>
+
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Nom
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Prenom
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Sexe
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.TitreDuPoste
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Organisation
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.ActionList
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @For Each item In Model.PersonnelInstallations
+                                        @<tr>
+
+                                            <td>
+                                                @item.Personnel.Nom
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                @item.Personnel.Prenom
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                @item.Personnel.Sexe
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                @item.TitreDuPoste
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                @item.Personnel.Oganisation.Nom
+
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeletePersonnel" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    Next
+                                </tbody>
+
+                            </table>
+
                         </div>
+
+                        <br />
+
+                        
                     </div>
+                </div>
+            </div>
+        </div>
 
     End Using
 
@@ -245,6 +254,124 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 </script>
 
 @Section Scripts
+    <script>
+    var oldLatitude = '@Model.Location.YCoordinate.ToString().Replace(",", ".")';
+    var oldLongitude = '@Model.Location.XCoordinate.ToString().Replace(",", ".")';
+    L.marker([oldLatitude, oldLongitude]).addTo(mymap)
+        .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
+        .openPopup();
+    </script>
+
+    <script>
+        var Latitude = oldLatitude;
+        var Longitude = oldLongitude;
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(mymap);
+        }
+
+
+        //mymap.on('click', onMapClick);
+        var theMarker = {};
+
+        mymap.on('click', function (e) {
+            lat = e.latlng.lat;
+            lon = e.latlng.lng;
+            //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
+            //Clear existing marker,
+
+            if (theMarker != undefined) {
+                mymap.removeLayer(theMarker);
+            };
+            Longitude = lon;
+            Latitude = lat;
+
+            //Add a marker to show where you clicked.
+            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude + '</h6></p>').openPopup();
+            //theMarker = L.polygon([lat, lon]).addTo(mymap).bindPopup("You clicked the map at LAT: " + lat + " and LONG: " + lon).openPopup();
+
+        });
+
+
+        function EditInstallation() {
+            var Id = '#Id';
+		        var Code= '#Code';
+		        var Nom= '#Nom';
+		        var VilleId= '#VilleId';
+                var OrganisationId = '#OrganisationId';
+                var HeureDOuverture = '#HeureDOuverture';
+                var HeureFermeture = '#HeureFermeture';
+                var CodePostale = '#CodePostale';
+		        var Telephone= '#Telephone';
+                var Telephone2 = '#Telephone2';
+		        var Email= '#Email';
+                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
+                //alert("DateNaissance= " + DateNaissance);
+
+                if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" ||typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
+                    //alert("Veuillez renseigner tous les champs obligatoires.");
+                    $.alert('"Veuillez renseigner tous les champs obligatoires."');
+                }
+                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
+                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        }
+		        else{
+
+                    var dataRow = {
+                        'Id': $(Id).val(),
+                        'Code': $(Code).val(),
+                        'Nom': $(Nom).val(),
+                        'VilleId': $(VilleId).val(),
+                        'OrganisationId': $(OrganisationId).val(),
+                        'HeureDOuverture': $(HeureDOuverture).val(),
+                        'HeureFermeture': $(HeureFermeture).val(),
+                        'CodePostale': $(CodePostale).val(),
+                        'Telephone': $(Telephone).val(),
+                        'Telephone2': $(Telephone2).val(),
+                        'Email': $(Email).val(),
+                        'Latitude': Latitude,
+                        'Longitude': Longitude
+                    }
+
+                    //alert("c'est moi le createPatient avant ajax");
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("EditInstallation", "Installations")',
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: JSON.stringify(dataRow),
+
+                        // here we are get value of selected country and passing same value as inputto json method GetStates.
+
+                        success: function (response) {
+                            if (response.Result == "OK") {
+
+                                //$.alert(response.Result);
+                                window.location.href = '@Url.Action("Index", "Installations")';
+                            }
+                            //else {
+                            //    //$.alert(data[0]);
+                            //}
+                        },
+                        error: function (theResponse) {
+                            $.alert(theResponse.responseText);
+
+                        }
+
+
+                    });
+                }
+
+
+            }
+
+    </script>
 
     <script>
 

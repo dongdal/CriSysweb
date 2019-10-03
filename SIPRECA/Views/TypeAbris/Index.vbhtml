@@ -3,6 +3,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.ListTypeAbris
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <div class="page-header">
@@ -67,13 +68,13 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
-                            <td class="sorting_asc text-center" >
+                            <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>
-                            <td class="sorting_asc text-center" >
+                            <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.StatutExistant)
                             </td>
-                            <td class="sorting_asc text-center" >
+                            <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
                             </td>
                             <td class="text-center">

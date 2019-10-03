@@ -250,21 +250,47 @@ Namespace Controllers
             If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
             Else
-                If ModelState.IsValid Then
-                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                    Try
-                        Db.SaveChanges()
-                        Return RedirectToAction("Index")
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
-                End If
+                'If ModelState.IsValid Then
+                '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                '    Try
+                '        Db.SaveChanges()
+                '        Return RedirectToAction("Index")
+                '    Catch ex As DbEntityValidationException
+                '        Util.GetError(ex, ModelState)
+                '    Catch ex As Exception
+                '        Util.GetError(ex, ModelState)
+                '    End Try
+                'End If
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
+
+        'POST: Heliport/Installation/5
+        <HttpPost()>
+        Function EditInstallation(ByVal entityVM As InstallationsJS) As ActionResult
+            Dim Ent As New Installation
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
+            If ModelState.IsValid Then
+                Db.Entry(Ent).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return Json(New With {.Result = "OK"})
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
+        End Function
+
 
         <ValidateAntiForgeryToken()>
         <HttpPost>
@@ -372,6 +398,7 @@ Namespace Controllers
 
     Public Class InstallationsJS
 
+        Public Property Id As Long
         Public Property Code As String
         Public Property Nom As String
         Public Property VilleId As String
@@ -388,7 +415,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As Installation
             Dim entity As New Installation
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .Code = Code
                 .HeureDOuverture = HeureDOuverture

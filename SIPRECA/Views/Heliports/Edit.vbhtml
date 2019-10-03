@@ -2,6 +2,8 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.EditHeliport
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
+    Dim Libelle = Model.Nom
 End Code
 
 
@@ -26,6 +28,7 @@ End Code
                 @Html.HiddenFor(Function(m) m.Id)
                 @Html.HiddenFor(Function(m) m.StatutExistant)
                 @Html.HiddenFor(Function(m) m.DateCreation)
+                @Html.HiddenFor(Function(m) m.Location)
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
 
                 @<div Class="form-group row">
@@ -46,14 +49,14 @@ End Code
                     @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
-                       New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
+                    New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
                         @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                                      New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+                                   New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
                         @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -90,29 +93,36 @@ End Code
 
                 @Html.Partial("_MyMapEnterPartial")
 
-                @<div Class="form-group row">
-                    <Label Class="col-sm-2 col-form-label"></Label>
-                    <div Class="col-sm-10">
-                        <Button type="submit" Class="btn btn-link btn-square bg-warning text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
-                    </div>
-                </div>
-
             End Using
+            <br />
+            <div Class="form-group row">
+                <Label Class="col-sm-2 col-form-label"></Label>
+                <div Class="col-sm-10">
+                    <Button type="submit" onclick="EditHeliport();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
+                    &nbsp;&nbsp;&nbsp;
+                    @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
 
 
-
 @Section Scripts
 
     <script>
-        var Latitude;
-        var Longitude;
-        
+    var oldLatitude = '@Model.Location.YCoordinate.ToString().Replace(",", ".")';
+    var oldLongitude = '@Model.Location.XCoordinate.ToString().Replace(",", ".")';
+    L.marker([oldLatitude, oldLongitude]).addTo(mymap)
+        .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '.</h6><br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
+        .openPopup();
+    </script>
+
+    <script>
+        var Latitude = oldLatitude;
+        var Longitude = oldLongitude;
+
         var popup = L.popup();
 
         function onMapClick(e) {
@@ -122,14 +132,12 @@ End Code
                 .openOn(mymap);
         }
 
-
-        
         var theMarker = {};
 
         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
-            
+
 
             if (theMarker != undefined) {
                 mymap.removeLayer(theMarker);
@@ -138,12 +146,13 @@ End Code
             Latitude = lat;
 
             //Add a marker to show where you clicked.
-            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude).openPopup();
+            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude +'</h6></p>').openPopup();
+            //theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup("Nouvel emplacement de "+'@Libelle.ToUpper'+". Latitude: " + Latitude + " et Longitude: " + Longitude).openPopup();
 
         });
 
 
-        function CreateHeliport() {
+        function EditHeliport() {
                 var Id = '#Id';
 		        var Code= '#Code';
 		        var Nom= '#Nom';
@@ -183,7 +192,7 @@ End Code
 
                     $.ajax({
                         type: 'POST',
-                        url: '@Url.Action("Create", "Heliports")',
+                        url: '@Url.Action("Edit", "Heliports")',
                         dataType: "json",
                         contentType: "application/json",
                         data: JSON.stringify(dataRow),
@@ -191,32 +200,15 @@ End Code
                         // here we are get value of selected country and passing same value as inputto json method GetStates.
 
                         success: function (response) {
-                            //for (var i = 0; i < data.length; i++) {
-                            //    //patient[i] = data[i].prenom + ' ' + data[i].nom;
-                            //    alert(data[i]);
-                            //}
                             if (response.Result == "OK") {
-
-                                //$.alert(response.Result);
-                                @*var Link = '@Url.Action("Index", "Heliports")';*@
                                 window.location.href = '@Url.Action("Index", "Heliports")';
-                            //    //$('#myModal').modal('hide');
-                            //    //document.getElementById('PatientName').value = data[1];
-                            //    //document.getElementById('PatientId').value = data[2];
                             }
-                            //else {
-                            //    //$.alert(data[0]);
-                            //}
                         },
                         error: function (theResponse) {
                             $.alert(theResponse.responseText);
-
                         }
-
-
                     });
                 }
-
             }
 
     </script>

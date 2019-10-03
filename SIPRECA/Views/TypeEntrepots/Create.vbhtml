@@ -1,6 +1,7 @@
 ﻿@ModelType TypeEntrepotViewModel
 @Imports SIPRECA.My.Resources
 @Code
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
     ViewBag.Title = Resource.CreateTypeEntrepot
 End Code
 

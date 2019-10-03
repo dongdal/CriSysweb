@@ -802,7 +802,7 @@
     <value>Suivi des indemnisations</value>
   </data>
   <data name="MenuIndemnisation" xml:space="preserve">
-    <value>Les indemnisations</value>
+    <value>Les Indemnisations</value>
   </data>
   <data name="MenuSuivi" xml:space="preserve">
     <value>Les Suivis</value>
@@ -868,7 +868,7 @@
     <value>Liste des modules</value>
   </data>
   <data name="ModuleSinistrer" xml:space="preserve">
-    <value>Gestion des sinistrés</value>
+    <value>Module de gestion des sinistrés</value>
   </data>
   <data name="SIPRECA_Text" xml:space="preserve">
     <value>Système de gestion et de prévention des risques</value>
@@ -1609,7 +1609,7 @@
     <value>Les héliports</value>
   </data>
   <data name="MenuImmobilisation" xml:space="preserve">
-    <value>Les immobilisations</value>
+    <value>Les Immobilisations</value>
   </data>
   <data name="MenuMarqueElement" xml:space="preserve">
     <value>Les marques </value>
@@ -2204,5 +2204,20 @@
   </data>
   <data name="SecteurProjet" xml:space="preserve">
     <value>Secteur du projet</value>
+  </data>
+  <data name="ModuleSahana" xml:space="preserve">
+    <value>Module de gestion des moyens de réponse</value>
+  </data>
+  <data name="EditAeroport" xml:space="preserve">
+    <value>Modifier un aéroport</value>
+  </data>
+  <data name="EditEntrepot" xml:space="preserve">
+    <value>Modifier un entrepot</value>
+  </data>
+  <data name="EditPortDeMer" xml:space="preserve">
+    <value>Modifier un port de mer</value>
+  </data>
+  <data name="MenuInstallation" xml:space="preserve">
+    <value>Les Installations</value>
   </data>
 </root>

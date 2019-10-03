@@ -45,42 +45,22 @@
                 <i class="icon-home"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Account")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
-                <li><a href="@Url.Action("Index", "AnneeBudgetaires")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_AnneeBudgetaire</a></li>
-                <li><a href="@Url.Action("Index", "Communes")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Communes</a></li>
-                <li><a href="@Url.Action("Index", "CollectiviteSinistrees")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Declarations</a></li>
-                <li><a href="@Url.Action("Index", "Demandes")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Demande</a></li>
-                <li><a href="@Url.Action("Index", "Departements")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Departements</a></li>
-                <li><a href="@Url.Action("Index", "Indemnisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>
-                <li><a href="@Url.Action("Index", "NatureAides")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNatureAide</a></li>
-                <li><a href="@Url.Action("Index", "Quartiers")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
-                <li><a href="@Url.Action("Index", "Regions")"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
-                <li><a href="@Url.Action("Index", "Suivis")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSuivi</a></li>
-                <li><a href="@Url.Action("Index", "TypeAbris")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAbris</a></li>
-                <li><a href="@Url.Action("Index", "TypeAides")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
-                <li><a href="@Url.Action("Index", "TypeSinistres")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
-                <li><a href="@Url.Action("Index", "TypeSuivis")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
-                <li><a href="@Url.Action("Index", "CategorieDArticles")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategoriArticle</a></li>
-                <li><a href="@Url.Action("Index", "CategorieElements")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
-                <li><a href="@Url.Action("Index", "Heliports")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHeliport</a></li>
-                <li><a href="@Url.Action("Index", "Devises")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
-                <li><a href="@Url.Action("Index", "MarqueElements")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMarqueElement</a></li>
-                <li><a href="@Url.Action("Index", "Puissances")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPuissance</a></li>
-                <li><a href="@Url.Action("Index", "SurfaceDePistes")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
-                <li><a href="@Url.Action("Index", "TailleDeAeronefs")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTailleDeAeronef</a></li>
-                <li><a href="@Url.Action("Index", "TypeEntrepots")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>
-                <li><a href="@Url.Action("Index", "TypeHopitaux")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeHopitaux</a></li>
-                <li><a href="@Url.Action("Index", "TypeImmobilisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeImmobilisation</a></li>
-                <li><a href="@Url.Action("Index", "TypePersonnels")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypePersonnel</a></li>
-                <li><a href="@Url.Action("Index", "TypeVehicules")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeVehicule</a></li>
-                <li><a href="@Url.Action("Index", "UsageHumanitaires")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuUsageHumanitaire</a></li>
-                <li><a href="@Url.Action("Index", "Immobilisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuImmobilisation</a></li>
-                <li><a href="@Url.Action("Index", "Abris")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAbris</a></li>
-                <li><a href="@Url.Action("Index", "Cartes")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
-                <li><a href="@Url.Action("Index", "Aeroport")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAeroport</a></li>
-                <li><a href="@Url.Action("Index", "Bureaux")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuBureau</a></li>
-                @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
-
+                <li><a href="@Url.Action("Index", "Account")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
+                <li><a href="@Url.Action("Index", "AnneeBudgetaires")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_AnneeBudgetaire</a></li>
+                <li><a href="@Url.Action("Index", "Communes")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_Communes</a></li>
+                <li><a href="@Url.Action("Index", "CollectiviteSinistrees")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_Declarations</a></li>
+                <li><a href="@Url.Action("Index", "Demandes")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_Demande</a></li>
+                <li><a href="@Url.Action("Index", "Departements")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_Departements</a></li>
+                <li><a href="@Url.Action("Index", "Indemnisations")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>
+                <li><a href="@Url.Action("Index", "NatureAides")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuNatureAide</a></li>
+                <li><a href="@Url.Action("Index", "Quartiers")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
+                <li><a href="@Url.Action("Index", "Regions")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
+                <li><a href="@Url.Action("Index", "Suivis")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuSuivi</a></li>
+                <li><a href="@Url.Action("Index", "TypeAbris")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAbris</a></li>
+                <li><a href="@Url.Action("Index", "TypeAides")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
+                <li><a href="@Url.Action("Index", "TypeSinistres")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
+                <li><a href="@Url.Action("Index", "TypeSuivis")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
+                <li><a href="@Url.Action("Index", "Cartes")"style="font-size: 12px;"><i  class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
             </ul>
         </li>
         <li>

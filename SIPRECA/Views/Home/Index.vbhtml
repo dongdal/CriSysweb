@@ -23,7 +23,15 @@ End Code
             <div class="card card-success">
                 <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title text-primary">@Resource.ModuleSinistrer</h5>
+                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-success">
+                <a href="@Url.Action("IndexSahana")"><img src="~/assets/images/gallery/Module_Sahana.jpg" class="card-img-top" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSahana</h5>
                 </div>
             </div>
         </div>
@@ -31,7 +39,7 @@ End Code
             <div class="card card-success">
                 <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title text-primary">Gestion des sinistrés</h5>
+                    <h5 class="card-title text-primary" style="text-align:center">Module de gestion des risques</h5>
                 </div>
             </div>
         </div>
@@ -39,15 +47,7 @@ End Code
             <div class="card card-success">
                 <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title text-primary">Gestion des sinistrés</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Gestion des sinistrés</h5>
+                    <h5 class="card-title text-primary" style="text-align:center">Module de gestion des alertes</h5>
                 </div>
             </div>
         </div>

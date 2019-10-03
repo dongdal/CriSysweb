@@ -3,6 +3,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.ListIndemnisation
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <div class="page-header">
@@ -27,9 +28,9 @@ End Code
                         <div Class="col-sm-8">
                             <div Class="form-group">
                                 @*<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>*@
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>*@
                             </div>
                         </div>
 

@@ -246,21 +246,27 @@ Namespace Controllers
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        <ValidateAntiForgeryToken()>
-        Function Edit(ByVal entityVM As PortDeMerViewModel) As ActionResult
+        Function Edit(ByVal entityVM As PortDeMerJS) As ActionResult
+            Dim Ent As New PortDeMer
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                Db.Entry(Ent).State = EntityState.Modified
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    Return Json(New With {.Result = "OK"})
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
         End Function
 
         ' GET: PortDeMer/Delete/5
@@ -305,6 +311,7 @@ Namespace Controllers
 
     Public Class PortDeMerJS
 
+        Public Property Id As Long
         Public Property Code As String
         Public Property Nom As String
         Public Property VilleId As String
@@ -347,7 +354,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As PortDeMer
             Dim entity As New PortDeMer
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .Code = Code
                 .Possession = Possession

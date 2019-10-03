@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateHeliport
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -88,6 +89,7 @@ End Code
 
 
             End Using
+            <br/>
             <div Class="form-group row">
                 <Label Class="col-sm-2 col-form-label"></Label>
                 <div Class="col-sm-10">

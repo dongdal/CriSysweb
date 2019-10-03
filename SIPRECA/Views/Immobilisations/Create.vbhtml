@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateImmobilisation
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -83,7 +84,7 @@ End Code
                            New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboFournisseur})
                         @Html.ValidationMessageFor(Function(m) m.FournisseurId, "", New With {.style = "color: #da0b0b"})
                     </div>
-    
+
                 </div>
 
                 @<div Class="form-group row">

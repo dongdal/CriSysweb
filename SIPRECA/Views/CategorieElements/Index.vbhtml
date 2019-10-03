@@ -2,6 +2,7 @@
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
     ViewBag.Title = Resource.ListCategorieElement
 End Code
 

@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateBureau
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -88,7 +89,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 </div>
 
                 @<div Class="form-group row">
-                   
+
                     @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-10">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
@@ -219,7 +220,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                     });
                 }
 
-                                
+
             }
 
     </script>

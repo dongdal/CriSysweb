@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreatePortDeMer
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -459,7 +460,7 @@ End Code
                     });
                 }
 
-                                
+
             }
 
     </script>

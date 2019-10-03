@@ -1,6 +1,7 @@
 ﻿@ModelType SIPRECA.TypeImmobilisation
 @Code
     ViewData("Title") = "Details"
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <h2>Details</h2>
@@ -44,6 +45,6 @@ End Code
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", New With { .id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", New With {.id = Model.Id}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

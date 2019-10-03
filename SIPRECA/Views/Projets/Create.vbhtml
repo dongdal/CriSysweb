@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateProjet
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -66,7 +67,7 @@ End Code
         New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboDevise})
                         @Html.ValidationMessageFor(Function(m) m.DeviseId, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    </div>
+                </div>
 
 
                 @<div Class="form-group row">

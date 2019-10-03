@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateEntrepot
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -236,7 +237,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                     });
                 }
 
-                                
+
             }
 
     </script>

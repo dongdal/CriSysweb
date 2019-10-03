@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateAbris
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 
@@ -31,8 +32,8 @@ End Code
                         @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    
-                     @Html.LabelFor(Function(m) m.TypeAbrisId, New With {.class = "col-sm-2 col-form-label required_field"})
+
+                    @Html.LabelFor(Function(m) m.TypeAbrisId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.TypeAbrisId, New SelectList(Model.LesTypeAbris, "Value", "Text"), Resource.TypeAbrisCombo,
                          New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.TypeAbrisCombo})
@@ -138,7 +139,7 @@ End Code
                 var TypeAbrisId = '#TypeAbrisId';
                 var EstimationPopulation = '#EstimationPopulation';
                 var Capacite = '#Capacite';
-               
+
             if (typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" || typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(TypeAbrisId).val() == "undefined" || $(TypeAbrisId).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
@@ -168,7 +169,7 @@ End Code
                         dataType: "json",
                         contentType: "application/json",
                         data: JSON.stringify(dataRow),
-                        
+
                         // here we are get value of selected country and passing same value as inputto json method GetStates.
 
                         success: function (response) {
@@ -190,7 +191,7 @@ End Code
                     });
                 }
 
-                                
+
             }
 
     </script>

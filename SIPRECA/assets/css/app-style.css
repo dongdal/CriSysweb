@@ -5153,6 +5153,7 @@ table.grid {
     text-align: center;
     padding: 12px 30px;
     position: fixed;
+    z-index:5000;
     /*position: absolute;*/
     bottom: 0px;
     right: 0;

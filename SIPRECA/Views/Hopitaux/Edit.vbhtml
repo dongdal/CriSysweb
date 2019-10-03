@@ -2,6 +2,8 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.EditHopitaux
+    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
+    Dim Libelle = Model.Nom
 End Code
 
 
@@ -24,6 +26,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
+        @Html.HiddenFor(Function(m) m.Location)
 
         @<div Class="col-lg-12">
             <div Class="card">
@@ -146,14 +149,16 @@ End Code
                             @Html.Partial("_MyMapEnterPartial")
 
 
+                            <br />
                             <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
                                 <div Class="col-sm-10">
-                                    <Button type="submit" onclick="CreateHopitaux();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                                    <Button type="submit" onclick="EditHopitaux();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                                 </div>
                             </div>
+
                         </div>
 
                         <div id="tabe-2" class="container tab-pane fade">
@@ -181,7 +186,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                                             @Resource.Nom
                                         </th>
-                                        
+
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                                             @Resource.ActionList
                                         </th>
@@ -215,6 +220,131 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
 </div>
 @Section Scripts
+
+    <script>
+    var oldLatitude = '@Model.Location.YCoordinate.ToString().Replace(",", ".")';
+    var oldLongitude = '@Model.Location.XCoordinate.ToString().Replace(",", ".")';
+    L.marker([oldLatitude, oldLongitude]).addTo(mymap)
+        .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
+        .openPopup();
+    </script>
+
+    <script>
+        var Latitude = oldLatitude;
+        var Longitude = oldLongitude;
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(mymap);
+        }
+
+        var theMarker = {};
+
+        mymap.on('click', function (e) {
+            lat = e.latlng.lat;
+            lon = e.latlng.lng;
+
+
+            if (theMarker != undefined) {
+                mymap.removeLayer(theMarker);
+            };
+            Longitude = lon;
+            Latitude = lat;
+
+            //Add a marker to show where you clicked.
+            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude +'</h6></p>').openPopup();
+            //theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup("Nouvel emplacement de "+'@Libelle.ToUpper'+". Latitude: " + Latitude + " et Longitude: " + Longitude).openPopup();
+
+        });
+
+
+
+        function EditHopitaux() {
+            var Id = '#Id';
+		        var Code= '#Code';
+		        var Nom= '#Nom';
+		        var VilleId= '#VilleId';
+                var OrganisationId = '#OrganisationId';
+                var TypeHopitauxId = '#TypeHopitauxId';
+                var NombreDeLitMin = '#NombreDeLitMin';
+                var NombreDeLitMax = '#NombreDeLitMax';
+                var NombreDeMedecin = '#NombreDeMedecin';
+                var NombreDInfimiere = '#NombreDInfimiere';
+                var NombreDePersonnelNonMedical = '#NombreDePersonnelNonMedical';
+		        var Telephone= '#Telephone';
+                var TelephoneUrgence = '#TelephoneUrgence';
+		        var SiteWeb= '#SiteWeb';
+		        var Email= '#Email';
+                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
+                //alert("DateNaissance= " + DateNaissance);
+
+                if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" ||typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
+                    //alert("Veuillez renseigner tous les champs obligatoires.");
+                    $.alert('"Veuillez renseigner tous les champs obligatoires."');
+                }
+                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
+                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        }
+		        else{
+
+                    var dataRow = {
+                        'Id': $(Id).val(),
+                        'Code': $(Code).val(),
+                        'Nom': $(Nom).val(),
+                        'VilleId': $(VilleId).val(),
+                        'OrganisationId': $(OrganisationId).val(),
+                        'TypeHopitauxId': $(TypeHopitauxId).val(),
+                        'NombreDeLitMin': $(NombreDeLitMin).val(),
+                        'NombreDeLitMax': $(NombreDeLitMax).val(),
+                        'NombreDeMedecin': $(NombreDeMedecin).val(),
+                        'NombreDInfimiere': $(NombreDInfimiere).val(),
+                        'NombreDePersonnelNonMedical': $(NombreDePersonnelNonMedical).val(),
+                        'Telephone': $(Telephone).val(),
+                        'TelephoneUrgence': $(TelephoneUrgence).val(),
+                        'SiteWeb': $(SiteWeb).val(),
+                        'Email': $(Email).val(),
+                        'Latitude': Latitude,
+                        'Longitude': Longitude
+                    }
+
+                    //alert("c'est moi le createPatient avant ajax");
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("Edit", "Hopitaux")',
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: JSON.stringify(dataRow),
+
+                        // here we are get value of selected country and passing same value as inputto json method GetStates.
+
+                        success: function (response) {
+                            if (response.Result == "OK") {
+
+                                //$.alert(response.Result);
+                                window.location.href = '@Url.Action("Index", "Hopitaux")';
+                            }
+                            //else {
+                            //    //$.alert(data[0]);
+                            //}
+                        },
+                        error: function (theResponse) {
+                            $.alert(theResponse.responseText);
+
+                        }
+
+
+                    });
+                }
+
+
+            }
+
+    </script>
 
     <script>
 

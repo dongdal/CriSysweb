@@ -229,22 +229,44 @@ Namespace Controllers
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        <ValidateAntiForgeryToken()>
-        Function Edit(ByVal entityVM As HeliportViewModel) As ActionResult
+        Function Edit(ByVal entityVM As HeliportJS) As ActionResult
+            Dim Ent As New Heliport
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                Db.Entry(Ent).State = EntityState.Modified
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    Return Json(New With {.Result = "OK"})
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
         End Function
+        '<ValidateAntiForgeryToken()>
+        'Function Edit(ByVal entityVM As HeliportViewModel) As ActionResult
+        '    If ModelState.IsValid Then
+        '        Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+        '        Try
+        '            Db.SaveChanges()
+        '            Return RedirectToAction("Index")
+        '        Catch ex As DbEntityValidationException
+        '            Util.GetError(ex, ModelState)
+        '        Catch ex As Exception
+        '            Util.GetError(ex, ModelState)
+        '        End Try
+        '    End If
+        '    LoadComboBox(entityVM)
+        '    Return View(entityVM)
+        'End Function
 
         ' GET: Heliport/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult

@@ -277,6 +277,32 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+
+        'POST: Heliport/EditBureaux/5
+        <HttpPost()>
+        Function EditBureaux(ByVal entityVM As BureauxJS) As ActionResult
+            Dim Ent As New Bureau
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
+            If ModelState.IsValid Then
+                Db.Entry(Ent).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return Json(New With {.Result = "OK"})
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
+        End Function
+
         <ValidateAntiForgeryToken()>
         <HttpPost>
         Public Function AddPersonnel(ByVal entityVM As BureauViewModel) As ActionResult
@@ -383,6 +409,7 @@ Namespace Controllers
 
     Public Class BureauxJS
 
+        Public Property Id As Long
         Public Property Code As String
         Public Property Nom As String
         Public Property VilleId As String
@@ -398,7 +425,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As Bureau
             Dim entity As New Bureau
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .Code = Code
                 .CodePostale = CodePostale
