@@ -6,6 +6,7 @@ Partial Public Class EvenementZone
         CardreSendaiCibleC = New HashSet(Of CardreSendaiCibleC)()
         CardreSendaiCibleD = New HashSet(Of CardreSendaiCibleD)()
         AutreImpactHumainEtEconomique = New HashSet(Of AutreImpactHumainEtEconomique)()
+        Solution = New HashSet(Of Solution)()
     End Sub
 
     Public Property Id As Long
@@ -26,4 +27,5 @@ Partial Public Class EvenementZone
     Public Overridable Property CardreSendaiCibleC As ICollection(Of CardreSendaiCibleC)
     Public Overridable Property CardreSendaiCibleD As ICollection(Of CardreSendaiCibleD)
     Public Overridable Property AutreImpactHumainEtEconomique As ICollection(Of AutreImpactHumainEtEconomique)
+    Public Overridable Property Solution As ICollection(Of Solution)
 End Class
