@@ -233,31 +233,31 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
-    <Compile Include="DAL\Config\SolutionCfg.vb" />
-    <Compile Include="DAL\Config\TypeSolutionCfg.vb" />
-    <Compile Include="DAL\Config\ZoneLocalisationCfg.vb" />
-    <Compile Include="DAL\Config\ZoneARisqueCfg.vb" />
-    <Compile Include="DAL\Config\FacteurEvenementCfg.vb" />
-    <Compile Include="DAL\Config\FacteurCfg.vb" />
-    <Compile Include="DAL\Config\EvenementCfg.vb" />
-    <Compile Include="DAL\Config\EvenementZoneCfg.vb" />
-    <Compile Include="DAL\Config\ServicesPubliquePertubeCfg.vb" />
-    <Compile Include="DAL\Config\RisqueZoneCfg.vb" />
-    <Compile Include="DAL\Config\RisqueCfg.vb" />
-    <Compile Include="DAL\Config\PerteBetailCfg.vb" />
-    <Compile Include="DAL\Config\DesagregationRecoltesAgricoleCfg.vb" />
-    <Compile Include="DAL\Config\CibleDServicesPubliqueCfg.vb" />
-    <Compile Include="DAL\Config\CibleCPerteBetailCfg.vb" />
-    <Compile Include="DAL\Config\CibleCDesagregationAgricoleCfg.vb" />
-    <Compile Include="DAL\Config\CardreSendaiCibleCDfg.vb" />
-    <Compile Include="DAL\Config\CardreSendaiCibleCCfg.vb" />
-    <Compile Include="DAL\Config\CardreSendaiCibleBCfg.vb" />
-    <Compile Include="DAL\Config\CardreSendaiCibleACfg.vb" />
-    <Compile Include="DAL\Config\AutreImpactHumainEtEconomiqueCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\SolutionCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\TypeSolutionCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\ZoneLocalisationCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\ZoneARisqueCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\FacteurEvenementCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\FacteurCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\EvenementCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\EvenementZoneCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\ServicesPubliquePertubeCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\RisqueZoneCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\RisqueCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\PerteBetailCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\DesagregationRecoltesAgricoleCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CibleDServicesPubliqueCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CibleCPerteBetailCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CibleCDesagregationAgricoleCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CardreSendaiCibleCDfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CardreSendaiCibleCCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CardreSendaiCibleBCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\CardreSendaiCibleACfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\AutreImpactHumainEtEconomiqueCfg.vb" />
     <Compile Include="DAL\Config\ElementCfg.vb" />
     <Compile Include="DAL\Config\ImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\InfrastructureCfg.vb" />
-    <Compile Include="DAL\Config\NiveauDAlertCfg.vb" />
+    <Compile Include="DAL\Config\DesInventar\NiveauDAlertCfg.vb" />
     <Compile Include="DAL\Config\PortDeMerCfg.vb" />
     <Compile Include="DAL\Config\HeliportCfg.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
@@ -371,29 +371,33 @@
       <DependentUpon>201909051541570_ajout de Timespan a installation.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201909051541570_ajout de Timespan a installation.vb" />
+    <Compile Include="Migrations\201910071209333_IncludeClassForDesInventar.Designer.vb">
+      <DependentUpon>201910071209333_IncludeClassForDesInventar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910071209333_IncludeClassForDesInventar.vb" />
     <Compile Include="Migrations\Configuration.vb" />
-    <Compile Include="Models\AutreImpactHumainEtEconomique.vb" />
-    <Compile Include="Models\CibleDServicesPublique.vb" />
-    <Compile Include="Models\CibleCPerteBetail.vb" />
-    <Compile Include="Models\Solution.vb" />
-    <Compile Include="Models\TypeSolution.vb" />
-    <Compile Include="Models\ZoneLocalisation.vb" />
-    <Compile Include="Models\ServicesPubliquePertube.vb" />
-    <Compile Include="Models\PerteBetail.vb" />
-    <Compile Include="Models\DesagregationRecoltesAgricole.vb" />
-    <Compile Include="Models\CardreSendaiCibleD.vb" />
-    <Compile Include="Models\CardreSendaiCibleC.vb" />
-    <Compile Include="Models\CardreSendaiCibleB.vb" />
+    <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
+    <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
+    <Compile Include="Models\DesInventar\CibleCPerteBetail.vb" />
+    <Compile Include="Models\DesInventar\Solution.vb" />
+    <Compile Include="Models\DesInventar\TypeSolution.vb" />
+    <Compile Include="Models\DesInventar\ZoneLocalisation.vb" />
+    <Compile Include="Models\DesInventar\ServicesPubliquePertube.vb" />
+    <Compile Include="Models\DesInventar\PerteBetail.vb" />
+    <Compile Include="Models\DesInventar\DesagregationRecoltesAgricole.vb" />
+    <Compile Include="Models\DesInventar\CardreSendaiCibleD.vb" />
+    <Compile Include="Models\DesInventar\CardreSendaiCibleC.vb" />
+    <Compile Include="Models\DesInventar\CardreSendaiCibleB.vb" />
     <Compile Include="Models\Element.vb" />
-    <Compile Include="Models\Evenement.vb" />
-    <Compile Include="Models\CibleCDesagregationAgricole.vb" />
-    <Compile Include="Models\Facteur.vb" />
-    <Compile Include="Models\FacteurEvenement.vb" />
-    <Compile Include="Models\CardreSendaiCibleA.vb" />
+    <Compile Include="Models\DesInventar\Evenement.vb" />
+    <Compile Include="Models\DesInventar\CibleCDesagregationAgricole.vb" />
+    <Compile Include="Models\DesInventar\Facteur.vb" />
+    <Compile Include="Models\DesInventar\FacteurEvenement.vb" />
+    <Compile Include="Models\DesInventar\CardreSendaiCibleA.vb" />
     <Compile Include="Models\Immobilisation.vb" />
-    <Compile Include="Models\NiveauDAlert.vb" />
-    <Compile Include="Models\Risque.vb" />
-    <Compile Include="Models\RisqueZone.vb" />
+    <Compile Include="Models\DesInventar\NiveauDAlert.vb" />
+    <Compile Include="Models\DesInventar\Risque.vb" />
+    <Compile Include="Models\DesInventar\RisqueZone.vb" />
     <Compile Include="Models\SecteurProjet.vb" />
     <Compile Include="Models\TypeImmobilisation.vb" />
     <Compile Include="Models\CategorieElement.vb" />
@@ -424,8 +428,8 @@
     <Compile Include="Models\TailleDeAeronef.vb" />
     <Compile Include="Models\UsageHumanitaire.vb" />
     <Compile Include="Models\Ville.vb" />
-    <Compile Include="Models\EvenementZone.vb" />
-    <Compile Include="Models\ZoneARisque.vb" />
+    <Compile Include="Models\DesInventar\EvenementZone.vb" />
+    <Compile Include="Models\DesInventar\ZoneARisque.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\ElementViewModel.vb" />
     <Compile Include="ViewModels\ProjetViewModel.vb" />
@@ -700,6 +704,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909051541570_ajout de Timespan a installation.resx">
       <DependentUpon>201909051541570_ajout de Timespan a installation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071209333_IncludeClassForDesInventar.resx">
+      <DependentUpon>201910071209333_IncludeClassForDesInventar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -6,10 +6,10 @@ Partial Public Class PerteBetail
     End Sub
 
     Public Property Id As Long
-    Public Property PerteEconomique As Double
-    Public Property NombreTotalAfecter As Long
-    Public Property NombreTotalEndomager As Long
-    Public Property NombreDetruitDetruit As Long
+    Public Property PerteEconomique As Double?
+    Public Property NombreTotalAfecter As Long?
+    Public Property NombreTotalEndomager As Long?
+    Public Property NombreDetruitDetruit As Long?
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

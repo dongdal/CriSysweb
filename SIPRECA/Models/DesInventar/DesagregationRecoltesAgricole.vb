@@ -6,10 +6,10 @@ Partial Public Class DesagregationRecoltesAgricole
     End Sub
 
     Public Property Id As Long
-    Public Property PerteEconomique As Double
-    Public Property NombreHectarAfecter As Double
-    Public Property NombreHectarEndomager As Double
-    Public Property NombreHectarDetruit As Double
+    Public Property PerteEconomique As Double?
+    Public Property NombreHectarAfecter As Double?
+    Public Property NombreHectarEndomager As Double?
+    Public Property NombreHectarDetruit As Double?
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

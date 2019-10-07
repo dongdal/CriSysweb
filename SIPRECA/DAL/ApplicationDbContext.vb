@@ -101,6 +101,32 @@ Public Class ApplicationDbContext
         modelBuilder.Configurations.Add(New VehiculeCfg())
         modelBuilder.Configurations.Add(New VilleCfg())
         modelBuilder.Configurations.Add(New ZoneCfg())
+
+        '-----------------------------------------------------------------------------START DESINVENTAR-----------------------------------------------------------------------------
+        modelBuilder.Configurations.Add(New AutreImpactHumainEtEconomiqueCfg())
+        modelBuilder.Configurations.Add(New CardreSendaiCibleACfg())
+        modelBuilder.Configurations.Add(New CardreSendaiCibleBCfg())
+        modelBuilder.Configurations.Add(New CardreSendaiCibleCCfg())
+        modelBuilder.Configurations.Add(New CardreSendaiCibleCDfg())
+        modelBuilder.Configurations.Add(New CibleCDesagregationAgricoleCfg())
+        modelBuilder.Configurations.Add(New CibleCPerteBetailCfg())
+        modelBuilder.Configurations.Add(New CibleDServicesPubliqueCfg())
+        modelBuilder.Configurations.Add(New DesagregationRecoltesAgricoleCfg())
+        modelBuilder.Configurations.Add(New EvenementCfg())
+        modelBuilder.Configurations.Add(New EvenementZoneCfg())
+        modelBuilder.Configurations.Add(New FacteurCfg())
+        modelBuilder.Configurations.Add(New FacteurEvenementCfg())
+        modelBuilder.Configurations.Add(New NiveauDAlertCfg())
+        modelBuilder.Configurations.Add(New PerteBetailCfg())
+        modelBuilder.Configurations.Add(New RisqueCfg())
+        modelBuilder.Configurations.Add(New RisqueZoneCfg())
+        modelBuilder.Configurations.Add(New ServicesPubliquePertubeCfg())
+        modelBuilder.Configurations.Add(New SolutionCfg())
+        modelBuilder.Configurations.Add(New TypeSolutionCfg())
+        modelBuilder.Configurations.Add(New ZoneARisqueCfg())
+        modelBuilder.Configurations.Add(New ZoneLocalisationCfg())
+
+        '-----------------------------------------------------------------------------END DESINVENTAR-----------------------------------------------------------------------------
     End Sub
 
     Public Property Abris() As DbSet(Of Abris)
@@ -184,4 +210,30 @@ Public Class ApplicationDbContext
     Public Property Vehicule() As DbSet(Of Vehicule)
     Public Property Ville() As DbSet(Of Ville)
     Public Property Zone() As DbSet(Of Zone)
+
+    '-----------------------------------------------------------------------------START DESINVENTAR-----------------------------------------------------------------------------
+    Public Property AutreImpactHumainEtEconomique() As DbSet(Of AutreImpactHumainEtEconomique)
+    Public Property CardreSendaiCibleA() As DbSet(Of CardreSendaiCibleA)
+    Public Property CardreSendaiCibleB() As DbSet(Of CardreSendaiCibleB)
+    Public Property CardreSendaiCibleC() As DbSet(Of CardreSendaiCibleC)
+    Public Property CardreSendaiCibleD() As DbSet(Of CardreSendaiCibleD)
+    Public Property CibleCDesagregationAgricole() As DbSet(Of CibleCDesagregationAgricole)
+    Public Property CibleCPerteBetail() As DbSet(Of CibleCPerteBetail)
+    Public Property CibleDServicesPublique() As DbSet(Of CibleDServicesPublique)
+    Public Property DesagregationRecoltesAgricole() As DbSet(Of DesagregationRecoltesAgricole)
+    Public Property Evenement() As DbSet(Of Evenement)
+    Public Property EvenementZone() As DbSet(Of EvenementZone)
+    Public Property Facteur() As DbSet(Of Facteur)
+    Public Property FacteurEvenement() As DbSet(Of FacteurEvenement)
+    Public Property NiveauDAlert() As DbSet(Of NiveauDAlert)
+    Public Property PerteBetail() As DbSet(Of PerteBetail)
+    Public Property Risque() As DbSet(Of Risque)
+    Public Property RisqueZone() As DbSet(Of RisqueZone)
+    Public Property ServicesPubliquePertube() As DbSet(Of ServicesPubliquePertube)
+    Public Property Solution() As DbSet(Of Solution)
+    Public Property TypeSolution() As DbSet(Of TypeSolution)
+    Public Property ZoneARisque() As DbSet(Of ZoneARisque)
+    Public Property ZoneLocalisation() As DbSet(Of ZoneLocalisation)
+    '-----------------------------------------------------------------------------END DESINVENTAR-----------------------------------------------------------------------------
+
 End Class
