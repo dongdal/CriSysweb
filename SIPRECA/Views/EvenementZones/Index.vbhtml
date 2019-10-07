@@ -1,17 +1,17 @@
-﻿@ModelType PagedList.IPagedList(Of Projet)
+﻿@ModelType PagedList.IPagedList(Of EvenementZone)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListProjet
-    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
+    ViewBag.Title = Resource.ListEvenementZone
+    Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageProjet</h1>
+    <h1 class="page-title">@Resource.ManageEvenementZone</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Projets")>@Resource.ManageProjet</a></li>
-        <li class="breadcrumb-item active">@Resource.ListProjet</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "EvenementZones")>@Resource.ManageEvenementZone</a></li>
+        <li class="breadcrumb-item active">@Resource.ListEvenementZone</li>
     </ol>
 </div>
 
@@ -19,9 +19,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListProjet</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListEvenementZone</div>
             <hr>
-            @Using Html.BeginForm("Index", "Projets", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
@@ -49,26 +49,12 @@ End Code
             <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
                 <thead>
                     <tr>
+                        
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Nom, "Index", New With {.sortOrder = ViewBag.NomSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.ZoneARisque, "Index", New With {.sortOrder = ViewBag.DateDeNaissanceSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Reference, "Index", New With {.sortOrder = ViewBag.PrenomSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Budget, "Index", New With {.sortOrder = ViewBag.CNISort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Devise, "Index", New With {.sortOrder = ViewBag.CNISort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateDebut, "Index", New With {.sortOrder = ViewBag.SexeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateFin, "Index", New With {.sortOrder = ViewBag.DateDeNaissanceSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Organisation, "Index", New With {.sortOrder = ViewBag.TelephoneSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.Evenement, "Index", New With {.sortOrder = ViewBag.TelephoneSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
 
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -80,25 +66,12 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
+                            
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Nom)
+                                @Html.DisplayFor(Function(modelItem) item.ZoneARisque.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Reference)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Budget)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Devise.Libelle)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateDebut)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateFin)
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Oganisation.Nom)
+                                @Html.DisplayFor(Function(modelItem) item.Evenement.Libelle)
                             </td>
 
                             <td class="text-center">

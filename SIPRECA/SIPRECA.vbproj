@@ -188,6 +188,10 @@
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
     <Compile Include="Controllers\ElementsController.vb" />
+    <Compile Include="Controllers\EvenementZonesController.vb" />
+    <Compile Include="Controllers\ZoneARisquesController.vb" />
+    <Compile Include="Controllers\RisquesController.vb" />
+    <Compile Include="Controllers\NiveauDAlertsController.vb" />
     <Compile Include="Controllers\ProjetsController.vb" />
     <Compile Include="Controllers\PortDeMersController.vb" />
     <Compile Include="Controllers\InstallationsController.vb" />
@@ -218,6 +222,9 @@
     <Compile Include="Controllers\TypeHopitauxController.vb" />
     <Compile Include="Controllers\TypeImmobilisationsController.vb" />
     <Compile Include="Controllers\TypeOrganisationsController.vb" />
+    <Compile Include="Controllers\FacteursController.vb" />
+    <Compile Include="Controllers\EvenementsController.vb" />
+    <Compile Include="Controllers\TypeSolutionsController.vb" />
     <Compile Include="Controllers\TypePersonnelsController.vb" />
     <Compile Include="Controllers\TypeSinistresController.vb" />
     <Compile Include="Controllers\CollectivitesController.vb" />
@@ -375,6 +382,10 @@
       <DependentUpon>201910071209333_IncludeClassForDesInventar.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201910071209333_IncludeClassForDesInventar.vb" />
+    <Compile Include="Migrations\201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.Designer.vb">
+      <DependentUpon>201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
@@ -432,6 +443,11 @@
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\ElementViewModel.vb" />
+    <Compile Include="ViewModels\EvenementZoneViewModel.vb" />
+    <Compile Include="ViewModels\ZoneARisqueViewModel.vb" />
+    <Compile Include="ViewModels\RisqueViewModel.vb" />
+    <Compile Include="ViewModels\NiveauDAlertViewModel.vb" />
+    <Compile Include="ViewModels\EvenementViewModel.vb" />
     <Compile Include="ViewModels\ProjetViewModel.vb" />
     <Compile Include="ViewModels\PortDeMerViewModel.vb" />
     <Compile Include="ViewModels\InstallationViewModel.vb" />
@@ -475,6 +491,8 @@
     <Compile Include="ViewModels\DeviseViewModel.vb" />
     <Compile Include="ViewModels\CategorieElementViewModel.vb" />
     <Compile Include="ViewModels\CategorieDArticleViewModel.vb" />
+    <Compile Include="ViewModels\FacteurViewModel.vb" />
+    <Compile Include="ViewModels\TypeSolutionViewModel.vb" />
     <Compile Include="ViewModels\VilleViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
@@ -707,6 +725,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910071209333_IncludeClassForDesInventar.resx">
       <DependentUpon>201910071209333_IncludeClassForDesInventar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.resx">
+      <DependentUpon>201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1852,6 +1873,41 @@
     <Content Include="Views\Home\IndexSahana.vbhtml" />
     <Content Include="Views\Shared\_LayoutSahana.vbhtml" />
     <Content Include="Views\Shared\_LeftSideBarSahana.vbhtml" />
+    <Content Include="Views\TypeSolutions\Create.vbhtml" />
+    <Content Include="Views\TypeSolutions\Delete.vbhtml" />
+    <Content Include="Views\TypeSolutions\Details.vbhtml" />
+    <Content Include="Views\TypeSolutions\Edit.vbhtml" />
+    <Content Include="Views\TypeSolutions\Index.vbhtml" />
+    <Content Include="Views\Facteurs\Create.vbhtml" />
+    <Content Include="Views\Facteurs\Delete.vbhtml" />
+    <Content Include="Views\Facteurs\Details.vbhtml" />
+    <Content Include="Views\Facteurs\Edit.vbhtml" />
+    <Content Include="Views\Facteurs\Index.vbhtml" />
+    <Content Include="Views\Evenements\Create.vbhtml" />
+    <Content Include="Views\Evenements\Delete.vbhtml" />
+    <Content Include="Views\Evenements\Details.vbhtml" />
+    <Content Include="Views\Evenements\Edit.vbhtml" />
+    <Content Include="Views\Evenements\Index.vbhtml" />
+    <Content Include="Views\NiveauDAlerts\Create.vbhtml" />
+    <Content Include="Views\NiveauDAlerts\Delete.vbhtml" />
+    <Content Include="Views\NiveauDAlerts\Details.vbhtml" />
+    <Content Include="Views\NiveauDAlerts\Edit.vbhtml" />
+    <Content Include="Views\NiveauDAlerts\Index.vbhtml" />
+    <Content Include="Views\Risques\Create.vbhtml" />
+    <Content Include="Views\Risques\Delete.vbhtml" />
+    <Content Include="Views\Risques\Details.vbhtml" />
+    <Content Include="Views\Risques\Edit.vbhtml" />
+    <Content Include="Views\Risques\Index.vbhtml" />
+    <Content Include="Views\ZoneARisques\Create.vbhtml" />
+    <Content Include="Views\ZoneARisques\Delete.vbhtml" />
+    <Content Include="Views\ZoneARisques\Details.vbhtml" />
+    <Content Include="Views\ZoneARisques\Edit.vbhtml" />
+    <Content Include="Views\ZoneARisques\Index.vbhtml" />
+    <Content Include="Views\EvenementZones\Create.vbhtml" />
+    <Content Include="Views\EvenementZones\Delete.vbhtml" />
+    <Content Include="Views\EvenementZones\Details.vbhtml" />
+    <Content Include="Views\EvenementZones\Edit.vbhtml" />
+    <Content Include="Views\EvenementZones\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

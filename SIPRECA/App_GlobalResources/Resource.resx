@@ -2220,4 +2220,103 @@
   <data name="MenuInstallation" xml:space="preserve">
     <value>Les Installations</value>
   </data>
+  <data name="CreateTypeSolution" xml:space="preserve">
+    <value>Ajouter un type de solution</value>
+  </data>
+  <data name="EditTypeSolution" xml:space="preserve">
+    <value>Modifier un type de solution</value>
+  </data>
+  <data name="ListTypeSolution" xml:space="preserve">
+    <value>Liste des types de solution</value>
+  </data>
+  <data name="ManageTypeSolution" xml:space="preserve">
+    <value>Gestion des types de solutions</value>
+  </data>
+  <data name="ComboEvenement" xml:space="preserve">
+    <value>Veillez selectionner l'évènement</value>
+  </data>
+  <data name="ComboZoneARisque" xml:space="preserve">
+    <value>Veillez selectionner la zone</value>
+  </data>
+  <data name="CreateEvenement" xml:space="preserve">
+    <value>Ajouter un évènement </value>
+  </data>
+  <data name="CreateEvenementZone" xml:space="preserve">
+    <value>Ajouter une zone</value>
+  </data>
+  <data name="CreateFacteur" xml:space="preserve">
+    <value>Ajouter un facteur</value>
+  </data>
+  <data name="CreateNiveauDAlert" xml:space="preserve">
+    <value>Ajouter un niveau d'alèrte</value>
+  </data>
+  <data name="CreateRisque" xml:space="preserve">
+    <value>Ajouter un risque</value>
+  </data>
+  <data name="CreateZoneARisque" xml:space="preserve">
+    <value>Ajouter une zone à risque</value>
+  </data>
+  <data name="EditEvenement" xml:space="preserve">
+    <value>Modifier un évènement</value>
+  </data>
+  <data name="EditEvenementZone" xml:space="preserve">
+    <value>Modifier une zone</value>
+  </data>
+  <data name="EditFacteur" xml:space="preserve">
+    <value>Modifier un facteur</value>
+  </data>
+  <data name="EditNiveauDAlert" xml:space="preserve">
+    <value>Modifier un niveau d'alèrte</value>
+  </data>
+  <data name="EditRisque" xml:space="preserve">
+    <value>Modifier un risque</value>
+  </data>
+  <data name="EditZoneARisque" xml:space="preserve">
+    <value>Modifier une zone à risque</value>
+  </data>
+  <data name="Evenement" xml:space="preserve">
+    <value>Evenement</value>
+  </data>
+  <data name="Facteur" xml:space="preserve">
+    <value>Facteur</value>
+  </data>
+  <data name="ListEvenement" xml:space="preserve">
+    <value>Liste des évènements</value>
+  </data>
+  <data name="ListEvenementZone" xml:space="preserve">
+    <value>Liste des Zones</value>
+  </data>
+  <data name="ListFacteur" xml:space="preserve">
+    <value>Listes des facteurs</value>
+  </data>
+  <data name="ListNiveauDAlert" xml:space="preserve">
+    <value>Liste des niveaux d'alèrte</value>
+  </data>
+  <data name="ListRisque" xml:space="preserve">
+    <value>Liste des risques</value>
+  </data>
+  <data name="ListZoneARisque" xml:space="preserve">
+    <value>Liste des zones à risque</value>
+  </data>
+  <data name="ManageEvenement" xml:space="preserve">
+    <value>Gestion des évènements</value>
+  </data>
+  <data name="ManageEvenementZone" xml:space="preserve">
+    <value>Gestion des zones</value>
+  </data>
+  <data name="ManageFacteur" xml:space="preserve">
+    <value>Gestion des facteurs</value>
+  </data>
+  <data name="ManageNiveauDAlert" xml:space="preserve">
+    <value>Gestion des niveaux d'alète</value>
+  </data>
+  <data name="ManageRisque" xml:space="preserve">
+    <value>Gestion des risques</value>
+  </data>
+  <data name="ManageZoneARisque" xml:space="preserve">
+    <value>Gestion des zones à risque</value>
+  </data>
+  <data name="ZoneARisque" xml:space="preserve">
+    <value>Zone à risque</value>
+  </data>
 </root>
