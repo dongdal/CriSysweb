@@ -23,6 +23,11 @@ Public Class ZoneARisqueViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Display(Name:="Quartier", ResourceType:=GetType(Resource))>
+    Public Property QuartierId As Long?
+    Public Overridable Property LesQuartiers As ICollection(Of SelectListItem)
+    Public Overridable Property ZoneLocalisations As ICollection(Of ZoneLocalisation)
+
     Public Sub New()
     End Sub
 

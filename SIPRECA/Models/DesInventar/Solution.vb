@@ -12,6 +12,6 @@ Partial Public Class Solution
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property TypeMoyen As TypeSolution
+    Public Overridable Property TypeSolution As TypeSolution
     Public Overridable Property EvenementZone As EvenementZone
 End Class

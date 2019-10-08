@@ -2232,8 +2232,18 @@
   <data name="ManageTypeSolution" xml:space="preserve">
     <value>Gestion des types de solutions</value>
   </data>
+  <data name="*" xml:space="preserve">
+    <value />
+  </data>
   <data name="ComboEvenement" xml:space="preserve">
     <value>Veillez selectionner l'évènement</value>
+  </data>
+  <data name="ComboFacteur" xml:space="preserve">
+    <value>Veillez selectionnez un facteur</value>
+    <comment> </comment>
+  </data>
+  <data name="ComboQuartier" xml:space="preserve">
+    <value>Veillez selectionnez un quartier</value>
   </data>
   <data name="ComboZoneARisque" xml:space="preserve">
     <value>Veillez selectionner la zone</value>
@@ -2253,6 +2263,12 @@
   <data name="CreateRisque" xml:space="preserve">
     <value>Ajouter un risque</value>
   </data>
+  <data name="CreateRisqueZone" xml:space="preserve">
+    <value>Ajouter un risque</value>
+  </data>
+  <data name="CreateSolution" xml:space="preserve">
+    <value>Ajouter une solution</value>
+  </data>
   <data name="CreateZoneARisque" xml:space="preserve">
     <value>Ajouter une zone à risque</value>
   </data>
@@ -2271,11 +2287,23 @@
   <data name="EditRisque" xml:space="preserve">
     <value>Modifier un risque</value>
   </data>
+  <data name="EditRisqueZone" xml:space="preserve">
+    <value>Modifier un risque</value>
+  </data>
+  <data name="EditSolution" xml:space="preserve">
+    <value>Modifier une solution</value>
+  </data>
   <data name="EditZoneARisque" xml:space="preserve">
     <value>Modifier une zone à risque</value>
   </data>
   <data name="Evenement" xml:space="preserve">
     <value>Evenement</value>
+  </data>
+  <data name="EvenementCombo" xml:space="preserve">
+    <value>Veillez selectionner un évènement</value>
+  </data>
+  <data name="EvenementZone" xml:space="preserve">
+    <value>Evènement</value>
   </data>
   <data name="Facteur" xml:space="preserve">
     <value>Facteur</value>
@@ -2295,8 +2323,17 @@
   <data name="ListRisque" xml:space="preserve">
     <value>Liste des risques</value>
   </data>
+  <data name="ListRisqueZone" xml:space="preserve">
+    <value>Liste des risques</value>
+  </data>
+  <data name="ListSolution" xml:space="preserve">
+    <value>Liste des solutions</value>
+  </data>
   <data name="ListZoneARisque" xml:space="preserve">
     <value>Liste des zones à risque</value>
+  </data>
+  <data name="MainNavigation" xml:space="preserve">
+    <value>MENU PRINCIPAL</value>
   </data>
   <data name="ManageEvenement" xml:space="preserve">
     <value>Gestion des évènements</value>
@@ -2313,10 +2350,70 @@
   <data name="ManageRisque" xml:space="preserve">
     <value>Gestion des risques</value>
   </data>
+  <data name="ManageRisqueZone" xml:space="preserve">
+    <value>Gestion des risques</value>
+  </data>
+  <data name="ManageSolution" xml:space="preserve">
+    <value>Gestion des solutions</value>
+  </data>
   <data name="ManageZoneARisque" xml:space="preserve">
     <value>Gestion des zones à risque</value>
   </data>
+  <data name="MenuEvenements" xml:space="preserve">
+    <value>Les évènements</value>
+  </data>
+  <data name="MenuFacteurs" xml:space="preserve">
+    <value>Les facteurs</value>
+  </data>
+  <data name="MenuManageEvents" xml:space="preserve">
+    <value>Gestion des évènements</value>
+  </data>
+  <data name="MenuManageRisks" xml:space="preserve">
+    <value>Gestion des risques</value>
+  </data>
+  <data name="MenuNiveauDAlert" xml:space="preserve">
+    <value>Les niveaux d'alerte</value>
+  </data>
+  <data name="MenuRisques" xml:space="preserve">
+    <value>Les risques</value>
+  </data>
+  <data name="MenuSolutions" xml:space="preserve">
+    <value>Les solutions</value>
+  </data>
+  <data name="MenuTypeSolutions" xml:space="preserve">
+    <value>Les types de solutions</value>
+  </data>
+  <data name="MenuZoneARisques" xml:space="preserve">
+    <value>Les zones à risque</value>
+  </data>
+  <data name="ModuleDesinventar" xml:space="preserve">
+    <value>Module de gestion des risques</value>
+  </data>
+  <data name="NiveauDAlert" xml:space="preserve">
+    <value>Niveau d'alerte</value>
+  </data>
+  <data name="NiveauDAlertCombo" xml:space="preserve">
+    <value>Veillez selectionner un niveau d'alerte</value>
+  </data>
+  <data name="Quartier" xml:space="preserve">
+    <value>Quartier</value>
+  </data>
+  <data name="Risque" xml:space="preserve">
+    <value>Risque</value>
+  </data>
+  <data name="RisqueCombo" xml:space="preserve">
+    <value>Veillez selectionner un risque</value>
+  </data>
+  <data name="TypeSolution" xml:space="preserve">
+    <value>Type de solution</value>
+  </data>
+  <data name="TypeSolutionCombo" xml:space="preserve">
+    <value>Veillez selectionner un type de solution</value>
+  </data>
   <data name="ZoneARisque" xml:space="preserve">
     <value>Zone à risque</value>
+  </data>
+  <data name="ZoneARisqueCombo" xml:space="preserve">
+    <value>Veillez selectionner une zone</value>
   </data>
 </root>

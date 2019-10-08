@@ -1,17 +1,17 @@
-﻿@ModelType PagedList.IPagedList(Of Facteur)
+﻿@ModelType PagedList.IPagedList(Of Solution)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListFacteur
+    ViewBag.Title = Resource.ListSolution
     Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageFacteur</h1>
+    <h1 class="page-title">@Resource.ManageSolution</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Facteurs")>@Resource.ManageFacteur</a></li>
-        <li class="breadcrumb-item active">@Resource.ListFacteur</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Solutions")>@Resource.ManageSolution</a></li>
+        <li class="breadcrumb-item active">@Resource.ListSolution</li>
     </ol>
 </div>
 
@@ -19,9 +19,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListFacteur</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListSolution</div>
             <hr>
-            @Using Html.BeginForm("Index", "Facteurs", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "Solutions", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
@@ -53,7 +53,13 @@ End Code
                             @Html.ActionLink(Resource.Libelle, "Index", New With {.sortOrder = ViewBag.LibelleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.TypeSolution, "Index", New With {.sortOrder = ViewBag.TypeSolutionSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.Evenement, "Index", New With {.sortOrder = ViewBag.EvenementSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.Description, "Index", New With {.sortOrder = ViewBag.DescriptionSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
@@ -71,8 +77,15 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
+                                @Html.DisplayFor(Function(modelItem) item.TypeSolution.Libelle)
                             </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.EvenementZone.Evenement.Libelle)
+                            </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.Description)
+                            </td>
+                            
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
                             </td>
