@@ -28,6 +28,17 @@ Public Class ZoneARisqueViewModel
     Public Overridable Property LesQuartiers As ICollection(Of SelectListItem)
     Public Overridable Property ZoneLocalisations As ICollection(Of ZoneLocalisation)
 
+
+    <Display(Name:="Risque", ResourceType:=GetType(Resource))>
+    Public Property RisqueId As Long?
+    Public Overridable Property LesRisques As ICollection(Of SelectListItem)
+
+
+    <Display(Name:="NiveauDAlert", ResourceType:=GetType(Resource))>
+    Public Property NiveauDAlertId As Long?
+    Public Overridable Property LesNiveauDAlerts As ICollection(Of SelectListItem)
+    Public Overridable Property RisqueZones As ICollection(Of RisqueZone)
+
     Public Sub New()
     End Sub
 

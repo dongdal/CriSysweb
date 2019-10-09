@@ -189,7 +189,6 @@
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
     <Compile Include="Controllers\ElementsController.vb" />
     <Compile Include="Controllers\EvenementZonesController.vb" />
-    <Compile Include="Controllers\RisqueZonesController.vb" />
     <Compile Include="Controllers\SolutionsController.vb" />
     <Compile Include="Controllers\ZoneARisquesController.vb" />
     <Compile Include="Controllers\RisquesController.vb" />
@@ -446,7 +445,6 @@
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\ElementViewModel.vb" />
     <Compile Include="ViewModels\EvenementZoneViewModel.vb" />
-    <Compile Include="ViewModels\RisqueZoneViewModel.vb" />
     <Compile Include="ViewModels\SolutionViewModel.vb" />
     <Compile Include="ViewModels\ZoneARisqueViewModel.vb" />
     <Compile Include="ViewModels\RisqueViewModel.vb" />
@@ -1919,11 +1917,6 @@
     <Content Include="Views\Solutions\Details.vbhtml" />
     <Content Include="Views\Solutions\Edit.vbhtml" />
     <Content Include="Views\Solutions\Index.vbhtml" />
-    <Content Include="Views\RisqueZones\Create.vbhtml" />
-    <Content Include="Views\RisqueZones\Delete.vbhtml" />
-    <Content Include="Views\RisqueZones\Details.vbhtml" />
-    <Content Include="Views\RisqueZones\Edit.vbhtml" />
-    <Content Include="Views\RisqueZones\Index.vbhtml" />
     <Content Include="Views\Home\IndexDesinventar.vbhtml" />
   </ItemGroup>
   <ItemGroup>

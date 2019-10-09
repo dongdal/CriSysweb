@@ -81,12 +81,31 @@ Namespace Controllers
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)
             Dim LesUtilisateurs As New List(Of SelectListItem)
 
-            Dim Quartirs = (From e In Db.ZoneLocalisation Where e.ZoneARisqueId = entityVM.Id Select e.Quartier).ToList
+            Dim Risqus = (From e In Db.RisqueZone Where e.ZoneARisqueId = entityVM.Id Select e.Risque).ToList
+            Dim RisqueZones = (From e In Db.RisqueZone Where e.ZoneARisqueId = entityVM.Id Select e).ToList
+            Dim Risques = (From e In Db.Risque Where e.StatutExistant = 1 Select e)
+            Dim LesRisques As New List(Of SelectListItem)
 
+            For Each item In Risques
+                If Not Risqus.Contains(item) Then
+                    LesRisques.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
+            Dim NiveauDAlets = (From e In Db.RisqueZone Where e.ZoneARisqueId = entityVM.Id Select e.NiveauDAlert).ToList
+            Dim NiveauDAlerts = (From e In Db.NiveauDAlert Where e.StatutExistant = 1 Select e)
+            Dim LesNiveauDAlerts As New List(Of SelectListItem)
+
+            For Each item In NiveauDAlerts
+                If Not NiveauDAlets.Contains(item) Then
+                    LesNiveauDAlerts.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
+            Dim Quartirs = (From e In Db.ZoneLocalisation Where e.ZoneARisqueId = entityVM.Id Select e.Quartier).ToList
             Dim ZoneLocalisations = (From e In Db.ZoneLocalisation Where e.ZoneARisqueId = entityVM.Id Select e).ToList
             Dim Quartiers = (From e In Db.Quartier Where e.StatutExistant = 1 Select e)
             Dim LesQuartiers As New List(Of SelectListItem)
-
 
             For Each item In Quartiers
                 If Not Quartirs.Contains(item) Then
@@ -104,6 +123,9 @@ Namespace Controllers
             Next
 
             entityVM.ZoneLocalisations = ZoneLocalisations
+            entityVM.RisqueZones = RisqueZones
+            entityVM.LesNiveauDAlerts = LesNiveauDAlerts
+            entityVM.LesRisques = LesRisques
             entityVM.LesQuartiers = LesQuartiers
             entityVM.LesUtilisateurs = LesUtilisateurs
         End Sub
@@ -159,6 +181,8 @@ Namespace Controllers
         Function Edit(ByVal entityVM As ZoneARisqueViewModel) As ActionResult
             If Request.Form("AddQuartier") IsNot Nothing Then
                 Return AddQuartier(entityVM)
+            ElseIf Request.Form("AddRisqueZone") IsNot Nothing Then
+                Return AddRisqueZone(entityVM)
             Else
                 If ModelState.IsValid Then
                     Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -181,7 +205,7 @@ Namespace Controllers
         Public Function AddQuartier(ByVal entityVM As ZoneARisqueViewModel) As ActionResult
 
             If IsNothing(entityVM.QuartierId) Then
-                ModelState.AddModelError("Quartier", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("QuartierId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -224,6 +248,72 @@ Namespace Controllers
                 End If
 
                 Db.ZoneLocalisation.Remove(ZoneLocalisation)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddRisqueZone(ByVal entityVM As ZoneARisqueViewModel) As ActionResult
+
+            If IsNothing(entityVM.RisqueId) Then
+                ModelState.AddModelError("RisqueId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            ElseIf IsNothing(entityVM.NiveauDAlertId) Then
+                ModelState.AddModelError("NiveauDAlertId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim RisqueZone As New RisqueZone()
+
+                If entityVM.RisqueId > 0 And entityVM.NiveauDAlertId > 0 Then
+
+                    RisqueZone.RisqueId = entityVM.RisqueId
+                    RisqueZone.NiveauDAlertId = entityVM.NiveauDAlertId
+                    RisqueZone.ZoneARisqueId = entityVM.Id
+                    RisqueZone.AspNetUserId = GetCurrentUser.Id
+
+                    Db.RisqueZone.Add(RisqueZone)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteRisqueZone(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim RisqueZone = (From p In Db.RisqueZone Where p.Id = id Select p).ToList.FirstOrDefault
+                If RisqueZone Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.RisqueZone.Remove(RisqueZone)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException

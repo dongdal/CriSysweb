@@ -81,14 +81,14 @@ Namespace Controllers
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)
             Dim LesUtilisateurs As New List(Of SelectListItem)
 
-            Dim Facteur = (From e In Db.FacteurEvenement Where e.EvenementId = entityVM.Id Select e.Facteur).ToList
+            Dim Facteu = (From e In Db.FacteurEvenement Where e.EvenementId = entityVM.Id Select e.Facteur).ToList
             Dim FacteurEvenements = (From e In Db.FacteurEvenement Where e.EvenementId = entityVM.Id Select e).ToList
 
             Dim Facteurs = (From e In Db.Facteur Where e.StatutExistant = 1 Select e).ToList
             Dim LesFacteurs As New List(Of SelectListItem)
 
             For Each item In Facteurs
-                If Not Facteur.Contains(item) Then
+                If Not Facteu.Contains(item) Then
                     LesFacteurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
                 End If
             Next
