@@ -387,6 +387,10 @@
       <DependentUpon>201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb" />
+    <Compile Include="Migrations\201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.Designer.vb">
+      <DependentUpon>201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
@@ -443,13 +447,17 @@
     <Compile Include="Models\DesInventar\EvenementZone.vb" />
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\CardreSendaiCibleAViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\CardreSendaiCibleBViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\CardreSendaiCibleCViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\CardreSendaiCibleDViewModel.vb" />
     <Compile Include="ViewModels\ElementViewModel.vb" />
-    <Compile Include="ViewModels\EvenementZoneViewModel.vb" />
-    <Compile Include="ViewModels\SolutionViewModel.vb" />
-    <Compile Include="ViewModels\ZoneARisqueViewModel.vb" />
-    <Compile Include="ViewModels\RisqueViewModel.vb" />
-    <Compile Include="ViewModels\NiveauDAlertViewModel.vb" />
-    <Compile Include="ViewModels\EvenementViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\EvenementZoneViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\SolutionViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\ZoneARisqueViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\RisqueViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\NiveauDAlertViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\EvenementViewModel.vb" />
     <Compile Include="ViewModels\ProjetViewModel.vb" />
     <Compile Include="ViewModels\PortDeMerViewModel.vb" />
     <Compile Include="ViewModels\InstallationViewModel.vb" />
@@ -493,8 +501,8 @@
     <Compile Include="ViewModels\DeviseViewModel.vb" />
     <Compile Include="ViewModels\CategorieElementViewModel.vb" />
     <Compile Include="ViewModels\CategorieDArticleViewModel.vb" />
-    <Compile Include="ViewModels\FacteurViewModel.vb" />
-    <Compile Include="ViewModels\TypeSolutionViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\FacteurViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\TypeSolutionViewModel.vb" />
     <Compile Include="ViewModels\VilleViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
@@ -730,6 +738,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.resx">
       <DependentUpon>201910071422040_mise_a_jour_du_model_desinventar_zone_a_risque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.resx">
+      <DependentUpon>201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

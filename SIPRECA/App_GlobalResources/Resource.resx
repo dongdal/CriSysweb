@@ -2240,7 +2240,6 @@
   </data>
   <data name="ComboFacteur" xml:space="preserve">
     <value>Veillez selectionnez un facteur</value>
-    <comment> </comment>
   </data>
   <data name="ComboQuartier" xml:space="preserve">
     <value>Veillez selectionnez un quartier</value>
@@ -2415,5 +2414,383 @@
   </data>
   <data name="ZoneARisqueCombo" xml:space="preserve">
     <value>Veillez selectionner une zone</value>
+  </data>
+  <data name="BetailDestroyed" xml:space="preserve">
+    <value>Total détruit</value>
+  </data>
+  <data name="BetailPerteEconomique" xml:space="preserve">
+    <value>Pertes économiques</value>
+  </data>
+  <data name="BetailTotalAffected" xml:space="preserve">
+    <value>Total Affecté</value>
+  </data>
+  <data name="BetailTotalDamaged" xml:space="preserve">
+    <value>Total touché</value>
+  </data>
+  <data name="CibleCDesagregationAgricoleCombo" xml:space="preserve">
+    <value>Veuillez sélectionner un type de culture</value>
+  </data>
+  <data name="CibleCDesagregationAgricoleId" xml:space="preserve">
+    <value>Cultures désagrégées</value>
+  </data>
+  <data name="CibleCPerteBetail" xml:space="preserve">
+    <value>Perte en bétail</value>
+  </data>
+  <data name="CibleCPerteBetailCombo" xml:space="preserve">
+    <value>Veuillez sélectionner un type de bétail</value>
+  </data>
+  <data name="CibleDServicesPublique" xml:space="preserve">
+    <value>Services publics perturbés</value>
+  </data>
+  <data name="CibleDServicesPubliqueCombo" xml:space="preserve">
+    <value>Veuillez sélectionner les services publics pertubés</value>
+  </data>
+  <data name="CoutDeLaReabilitationHeritageCulturel" xml:space="preserve">
+    <value>Coût de la réhabilitation/reconstruction des atouts affectées (C-6a)</value>
+  </data>
+  <data name="CoutDeLaReabilitationMobileDetruit" xml:space="preserve">
+    <value>Pertes économiques deux aux actifs mobiles détruits (C-6c)</value>
+  </data>
+  <data name="CultureDestroyed" xml:space="preserve">
+    <value>Total détruit</value>
+  </data>
+  <data name="CulturePerteEconomique" xml:space="preserve">
+    <value>Pertes économiques</value>
+  </data>
+  <data name="CultureTotalAffected" xml:space="preserve">
+    <value>Total Affecté</value>
+  </data>
+  <data name="CultureTotalDamaged" xml:space="preserve">
+    <value>Total touché</value>
+  </data>
+  <data name="EvenementZoneId" xml:space="preserve">
+    <value>Evènement Concerné</value>
+  </data>
+  <data name="EvenementZoneIdCombo" xml:space="preserve">
+    <value>Veuillez sélectionner l'évènement concerné</value>
+  </data>
+  <data name="HectaresDetruits" xml:space="preserve">
+    <value>Heactares détruits</value>
+  </data>
+  <data name="HectaresEndomages" xml:space="preserve">
+    <value>Hectares endomagés</value>
+  </data>
+  <data name="HectaresTautauxDesCulturesTouche" xml:space="preserve">
+    <value>Total Ha cultures touchées</value>
+  </data>
+  <data name="NombreActifsProductifAfricoleDetruit" xml:space="preserve">
+    <value>Nombre d'actifs productifs détruits</value>
+  </data>
+  <data name="NombreActifsProductifAfricoleEndomager" xml:space="preserve">
+    <value>Nombre d'actifs productifs endommagés</value>
+  </data>
+  <data name="NombreAutreInfrastructureDetruits" xml:space="preserve">
+    <value>Nombre d'infrastructures détruites</value>
+  </data>
+  <data name="NombreAutreInfrastructureEndommager" xml:space="preserve">
+    <value>Nombre d'infrastructures endommagées</value>
+  </data>
+  <data name="NombreBlesseAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreBlesseEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreBlesseFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreBlesseHandicape" xml:space="preserve">
+    <value>Avec handicaps</value>
+  </data>
+  <data name="NombreBlesseHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreBlessePauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreBlesseVieux" xml:space="preserve">
+    <value>Personnes âgées</value>
+  </data>
+  <data name="NombreDanimauxPerdu" xml:space="preserve">
+    <value>Bétail perdu</value>
+  </data>
+  <data name="NombreDanimauxToucheOuPerdu" xml:space="preserve">
+    <value>Animaux touchés ou perdus</value>
+  </data>
+  <data name="NombreDanimauxToucher" xml:space="preserve">
+    <value>Animaux touchés</value>
+  </data>
+  <data name="NombreDeBiensCulturelMobileDetruits" xml:space="preserve">
+    <value>Nombre de biens culturels mobiles détruits (C-6g)</value>
+  </data>
+  <data name="NombreDeBiensCulturelMobileEndomager" xml:space="preserve">
+    <value>Nombre de biens culturels mobiles endommagés (C-6f)</value>
+  </data>
+  <data name="NombreDecesAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreDecesEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreDecesFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreDecesHandicape" xml:space="preserve">
+    <value>Avec handicapes</value>
+  </data>
+  <data name="NombreDecesHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreDecesPauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreDecesVieux" xml:space="preserve">
+    <value>Peronnes âgées</value>
+  </data>
+  <data name="NombreDeMonumentImmobiliersEndomager" xml:space="preserve">
+    <value>Nombre de biens culturels mobiles endommagés (C-6f)</value>
+  </data>
+  <data name="NombreDesEtablissementsdeSantedetruits" xml:space="preserve">
+    <value>Nombre des établissements de santé détruits</value>
+  </data>
+  <data name="NombreDesEtablissementsdeSanteEndommager" xml:space="preserve">
+    <value>Nombre des établissements de santé endommagés</value>
+  </data>
+  <data name="NombreDesEtablissementsEducationDetruits" xml:space="preserve">
+    <value>Nombre d'installations détruites</value>
+  </data>
+  <data name="NombreDesEtablissementsEducationEndommager" xml:space="preserve">
+    <value>Nombre d'installations endommagées</value>
+  </data>
+  <data name="NombreDinstallationStockAgricoleDetruit" xml:space="preserve">
+    <value>NombreDinstallationStockAgricoleDetruit</value>
+  </data>
+  <data name="NombreDinstallationStockAgricoleEndomager" xml:space="preserve">
+    <value>Nombre d'actifs productifs endommagés</value>
+  </data>
+  <data name="NombreDisparueAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreDisparueEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreDisparueFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreDisparueHandicape" xml:space="preserve">
+    <value>Avec handicaps</value>
+  </data>
+  <data name="NombreDisparueHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreDisparuePauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreDisparueVieux" xml:space="preserve">
+    <value>Personnes âgées</value>
+  </data>
+  <data name="NombreHectarAquacultureDetruit" xml:space="preserve">
+    <value>Nombre d'hectares détruits</value>
+  </data>
+  <data name="NombreHectarAquacultureEndomager" xml:space="preserve">
+    <value>Nombre d'hectares endommagés</value>
+  </data>
+  <data name="NombreHectarForetDetruit" xml:space="preserve">
+    <value>Nombre d'hectares détruits</value>
+  </data>
+  <data name="NombreHectarForetEndomager" xml:space="preserve">
+    <value>Nombre d'hectares endommagés</value>
+  </data>
+  <data name="NombreInstallationActifsProductifsDetruit" xml:space="preserve">
+    <value>Nombre d'installations d'actifs productifs détruits</value>
+  </data>
+  <data name="NombreInstallationActifsProductifsEndomager" xml:space="preserve">
+    <value>Nombre d'installations d'actifs productifs endommagées</value>
+  </data>
+  <data name="NombreMaisonDetruiteAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreMaisonDetruiteEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreMaisonDetruiteFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreMaisonDetruiteHandicape" xml:space="preserve">
+    <value>Avec handicaps</value>
+  </data>
+  <data name="NombreMaisonDetruiteHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreMaisonDetruitePauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreMaisonDetruiteVieux" xml:space="preserve">
+    <value>Personnes âgées</value>
+  </data>
+  <data name="NombreMaisonEndomageAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreMaisonEndomageEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreMaisonEndomageFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreMaisonEndomageHandicape" xml:space="preserve">
+    <value>Avec handicaps</value>
+  </data>
+  <data name="NombreMaisonEndomageHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreMaisonEndomagePauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreMaisonEndomageVieux" xml:space="preserve">
+    <value>Personnes âgées</value>
+  </data>
+  <data name="NombreMonumentImmobilierDetruits" xml:space="preserve">
+    <value>Nombre de monuments/atouts immobiliers détruits (C-6e)</value>
+  </data>
+  <data name="NombreMoyenSubsistanceAdult" xml:space="preserve">
+    <value>Adultes</value>
+  </data>
+  <data name="NombreMoyenSubsistanceEnfant" xml:space="preserve">
+    <value>Enfants</value>
+  </data>
+  <data name="NombreMoyenSubsistanceFemme" xml:space="preserve">
+    <value>Femmes</value>
+  </data>
+  <data name="NombreMoyenSubsistanceHandicape" xml:space="preserve">
+    <value>Avec handicaps</value>
+  </data>
+  <data name="NombreMoyenSubsistanceHomme" xml:space="preserve">
+    <value>Hommes</value>
+  </data>
+  <data name="NombreMoyenSubsistancePauvre" xml:space="preserve">
+    <value>Sous seuil de pauvreté</value>
+  </data>
+  <data name="NombreMoyenSubsistanceVieux" xml:space="preserve">
+    <value>Personnes âgées</value>
+  </data>
+  <data name="NombreNavireDetruit" xml:space="preserve">
+    <value>Nombre de navires détruits</value>
+  </data>
+  <data name="NombreNavireEndomager" xml:space="preserve">
+    <value>Nombre de navires endommagés</value>
+  </data>
+  <data name="NombreRoutesDetruits" xml:space="preserve">
+    <value>Total routes détruites</value>
+  </data>
+  <data name="NombreRoutesEndommager" xml:space="preserve">
+    <value>Total routes endommagées</value>
+  </data>
+  <data name="NombreTotalActifsProductifAfricoleToucher" xml:space="preserve">
+    <value>Nombre total des actifs productifs agricoles touchés</value>
+  </data>
+  <data name="NombreTotalAutreInfrastructureTouche" xml:space="preserve">
+    <value>Nombre d'autres infrastructures touchées (D-4)</value>
+  </data>
+  <data name="NombreTotalBlesse" xml:space="preserve">
+    <value>Total blessés</value>
+  </data>
+  <data name="NombreTotalDeces" xml:space="preserve">
+    <value>Total décès</value>
+  </data>
+  <data name="NombreTotaldesEtablissementDeSanteTouche" xml:space="preserve">
+    <value>Nombre total des établissements de santé touchées (D-2)</value>
+  </data>
+  <data name="NombreTotaldesEtablissementEducationTouche" xml:space="preserve">
+    <value>Nombre total des installations touchées (D-3)</value>
+  </data>
+  <data name="NombreTotalDinstallationStockAgricoleToucher" xml:space="preserve">
+    <value>Nombre total des actifs productifs agricoles touchés</value>
+  </data>
+  <data name="NombreTotalDisparue" xml:space="preserve">
+    <value>Total disparus</value>
+  </data>
+  <data name="NombreTotalHectarAquacultureToucher" xml:space="preserve">
+    <value>Nombre total d'hectares d'aquaculture affectés</value>
+  </data>
+  <data name="NombreTotalHectarForetToucher" xml:space="preserve">
+    <value>Total Ha forêts touchés</value>
+  </data>
+  <data name="NombreTotalInstallationActifsProductifsToucher" xml:space="preserve">
+    <value>Nombre d'installations d'actifs productifs (C-3A)</value>
+  </data>
+  <data name="NombreTotalLogementEndommagerOuDetruit" xml:space="preserve">
+    <value>Nombre total de logements endommagés ou détruits (de la cible B):</value>
+  </data>
+  <data name="NombreTotalMaisonDetruite" xml:space="preserve">
+    <value>Total maisons détruites</value>
+  </data>
+  <data name="NombreTotalMaisonEndomage" xml:space="preserve">
+    <value>Maisons endomagées</value>
+  </data>
+  <data name="NombreTotalMoyenSubsistance" xml:space="preserve">
+    <value>Total moyens de subsistance</value>
+  </data>
+  <data name="NombreTotalNavireToucher" xml:space="preserve">
+    <value>Nombre total de navires affectés</value>
+  </data>
+  <data name="NombreTotalRoutesTouche" xml:space="preserve">
+    <value>Total routes touchées</value>
+  </data>
+  <data name="PerteEconomiqueActifsProductifAfricole" xml:space="preserve">
+    <value>Perte économique liée aux actifs productifs agricoles</value>
+  </data>
+  <data name="PerteEconomiqueActifsProductifs" xml:space="preserve">
+    <value>Perte économique liée aux actifs productifs</value>
+  </data>
+  <data name="PerteEconomiqueAquaculture" xml:space="preserve">
+    <value>Pertes économiques aquaculture touchée</value>
+  </data>
+  <data name="PerteEconomiqueDesCultureTouche" xml:space="preserve">
+    <value>Pertes économiques cultures touchées</value>
+  </data>
+  <data name="PerteEconomiqueDesNaviresAffecter" xml:space="preserve">
+    <value>Perte économique des navires affectés</value>
+  </data>
+  <data name="PerteEconomiqueDesStockAgricole" xml:space="preserve">
+    <value>Perte économique liée aux actifs productifs agricoles</value>
+  </data>
+  <data name="PerteEconomiqueDuAuActifsMobileDetruit" xml:space="preserve">
+    <value>Pertes économiques deux aux actifs mobiles détruits (C-6c)</value>
+  </data>
+  <data name="PerteEconomiqueDuAuRoutes" xml:space="preserve">
+    <value>Pertes économique en route</value>
+  </data>
+  <data name="PerteEconomiqueInfrastructureToucher" xml:space="preserve">
+    <value>Perte économique des infrastructures touchées (pour C-5)</value>
+  </data>
+  <data name="PerteEconomiqueSecteurEducation" xml:space="preserve">
+    <value>Pertes économiques dans le secteur de l'éducation (pour C-5)</value>
+  </data>
+  <data name="PerteEconomiqueSecteurSante" xml:space="preserve">
+    <value>Perte économique dans le secteur de la santé (C-5</value>
+  </data>
+  <data name="PerteEconomiqueSurForet" xml:space="preserve">
+    <value>Pertes économiques forêts touchées</value>
+  </data>
+  <data name="PerteTotalDeBetailTouche" xml:space="preserve">
+    <value>Total bétail touché</value>
+  </data>
+  <data name="TabLocalisation" xml:space="preserve">
+    <value>Localisation</value>
+  </data>
+  <data name="TabRisques" xml:space="preserve">
+    <value>Risques</value>
+  </data>
+  <data name="TabZoneARisque" xml:space="preserve">
+    <value>Zone à risque</value>
+  </data>
+  <data name="TotalEconomiqueLogementEndomagerOuDetruit" xml:space="preserve">
+    <value>Pertes économique logements endommagés / détruits</value>
+  </data>
+  <data name="ValeurEconomiqueDesMaisonsDetruites" xml:space="preserve">
+    <value>Valeur économique des maisons détruites</value>
+  </data>
+  <data name="ValeurEconomiqueDesMaisonsEndomager" xml:space="preserve">
+    <value>Valeur économique des maisons endommagées</value>
   </data>
 </root>

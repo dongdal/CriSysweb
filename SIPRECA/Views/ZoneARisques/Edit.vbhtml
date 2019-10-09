@@ -31,13 +31,13 @@ End Code
                     <div Class="card-body">
                         <ul class="nav nav-tabs nav-tabs-primary">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Zone à risque</span></a>
+                                <a class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">@Resource.TabZoneARisque</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-location-pin"></i> <span class="hidden-xs">Localisation</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-location-pin"></i> <span class="hidden-xs">@Resource.TabLocalisation</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabe-3"><i class="icon-event"></i> <span class="hidden-xs">Risques</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#tabe-3"><i class="icon-event"></i> <span class="hidden-xs">@Resource.TabRisques</span></a>
                             </li>
                         </ul>
                         <div class="tab-content">
