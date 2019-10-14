@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\CardreSendaiCibleAController.vb" />
     <Compile Include="Controllers\ElementsController.vb" />
     <Compile Include="Controllers\EvenementZonesController.vb" />
     <Compile Include="Controllers\SolutionsController.vb" />
@@ -1929,6 +1930,11 @@
     <Content Include="Views\Solutions\Edit.vbhtml" />
     <Content Include="Views\Solutions\Index.vbhtml" />
     <Content Include="Views\Home\IndexDesinventar.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleA\Create.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleA\Delete.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleA\Details.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleA\Edit.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleA\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

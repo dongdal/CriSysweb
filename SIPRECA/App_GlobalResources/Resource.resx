@@ -2793,4 +2793,46 @@
   <data name="ValeurEconomiqueDesMaisonsEndomager" xml:space="preserve">
     <value>Valeur économique des maisons endommagées</value>
   </data>
+  <data name="AutreDesagregation" xml:space="preserve">
+    <value>Autre désagrégation</value>
+  </data>
+  <data name="CadreSendai" xml:space="preserve">
+    <value>Remplir les infos sur le cadre sendai</value>
+  </data>
+  <data name="CadreSendaiA" xml:space="preserve">
+    <value>Cadre Sendai A</value>
+  </data>
+  <data name="CadreSendaiB" xml:space="preserve">
+    <value>Cadre Sendai B</value>
+  </data>
+  <data name="CadreSendaiC" xml:space="preserve">
+    <value>Cadre Sendai C</value>
+  </data>
+  <data name="CadreSendaiD" xml:space="preserve">
+    <value>Cadre Sendai D</value>
+  </data>
+  <data name="EditIndicateursCibleA" xml:space="preserve">
+    <value>Modifier les indicateurs de la cible A</value>
+  </data>
+  <data name="FaireSomme" xml:space="preserve">
+    <value>Faire la somme</value>
+  </data>
+  <data name="MenuEvenementZones" xml:space="preserve">
+    <value>Les Déclarations</value>
+  </data>
+  <data name="NombrePersonnesDecedees" xml:space="preserve">
+    <value>Nombre de personnes décédées</value>
+  </data>
+  <data name="NombrePersonnesDisparues" xml:space="preserve">
+    <value>Nombre de personnes disparues</value>
+  </data>
+  <data name="ParAge" xml:space="preserve">
+    <value>Par âge</value>
+  </data>
+  <data name="ParSexe" xml:space="preserve">
+    <value>Par sexe</value>
+  </data>
+  <data name="Valeur" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
 </root>

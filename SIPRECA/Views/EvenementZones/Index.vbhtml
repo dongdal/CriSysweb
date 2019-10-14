@@ -78,9 +78,62 @@ End Code
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
+
+                                <a class="btn btn-round btn-info waves-effect waves-light m-1 nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" 
+                                   title="@Resource.CadreSendai" href="javascript:void();"  data-toggle="dropdown">
+                                    <i class="icon-list" aria-hidden="true"></i>
+                                </a>
+                                <div Class="dropdown-menu dropdown-menu-right animated fadeIn">
+                                    <ul Class="list-group list-group-flush">
+                                        <li Class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 12px;">
+                                            @Resource.CadreSendai
+                                        </li>
+                                        <li Class="list-group-item">
+                                            <a href="@Url.Action("Edit", "CardreSendaiCibleA", New With {.EvenementZoneId = item.Id})">
+                                                <div class="media">
+                                                    <i class="icon-note mr-3 text-info"></i>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiA</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li Class="list-group-item">
+                                            <a href="@Url.Action("Edit", "CardreSendaiCibleB", New With {.EvenementZoneId = item.Id})">
+                                                <div class="media">
+                                                    <i class="icon-note mr-3 text-info"></i>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiB</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li Class="list-group-item">
+                                            <a href="@Url.Action("Edit", "CardreSendaiCibleC", New With {.EvenementZoneId = item.Id})">
+                                                <div class="media">
+                                                    <i class="icon-note mr-3 text-info"></i>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiC</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li Class="list-group-item">
+                                            <a href="@Url.Action("Edit", "CardreSendaiCibleD", New With {.EvenementZoneId = item.Id})">
+                                                <div class="media">
+                                                    <i class="icon-note mr-3 text-info"></i>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiD</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </a>*@
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>*@
 
                             </td>
                         </tr>
@@ -90,7 +143,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                                    New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>

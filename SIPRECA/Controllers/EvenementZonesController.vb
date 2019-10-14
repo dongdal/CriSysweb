@@ -136,10 +136,39 @@ Namespace Controllers
         Function Create(ByVal entityVM As EvenementZoneViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
-                Db.EvenementZone.Add(entityVM.GetEntity)
+                Dim evenementZone = entityVM.GetEntity()
+                Db.EvenementZone.Add(evenementZone)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    Dim cardreSendaiCibleA As New CardreSendaiCibleA With {
+                        .EvenementZoneId = evenementZone.Id,
+                        .AspNetUserId = evenementZone.AspNetUserId
+                    }
+                    Dim cardreSendaiCibleB As New CardreSendaiCibleB With {
+                        .EvenementZoneId = evenementZone.Id,
+                        .AspNetUserId = evenementZone.AspNetUserId
+                    }
+                    Dim cardreSendaiCibleC As New CardreSendaiCibleC With {
+                        .EvenementZoneId = evenementZone.Id,
+                        .AspNetUserId = evenementZone.AspNetUserId
+                    }
+                    Dim cardreSendaiCibleD As New CardreSendaiCibleD With {
+                        .EvenementZoneId = evenementZone.Id,
+                        .AspNetUserId = evenementZone.AspNetUserId
+                    }
+
+                    Db.CardreSendaiCibleA.Add(cardreSendaiCibleA)
+                    Db.CardreSendaiCibleB.Add(cardreSendaiCibleB)
+                    Db.CardreSendaiCibleC.Add(cardreSendaiCibleC)
+                    Db.CardreSendaiCibleD.Add(cardreSendaiCibleD)
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception

@@ -41,24 +41,24 @@
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
         <li>
-            <a href="index.html" class="waves-effect">
+            <a href="index.html" class="waves-effect"  style="font-size: 11px;">
                 <i class="icon-home"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
-                <li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
-                <li><a href="@Url.Action("Index", "Risques")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
-                <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
-                <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
-                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
-                <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
-                <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
+                <li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
+                <li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
+                <li><a href="@Url.Action("Index", "Risques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
+                <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
+                <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
+                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
+                <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
+                <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>
         </li>
         <li>
-            <a href="javaScript:void();" class="waves-effect">
+            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
                 <i class="icon-handbag"></i><span> @Resource.MenuManageRisks</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
@@ -82,20 +82,12 @@
         </li>
 
         <li>
-            <a href="javaScript:void();" class="waves-effect">
+            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
                 <i class="icon-diamond"></i><span>@Resource.MenuManageEvents</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="components-grid-layouts.html"><i class="fa fa-long-arrow-right"></i> Grid Layouts</a></li>
-                <li><a href="components-nestable.html"><i class="fa fa-long-arrow-right"></i> Nesteble</a></li>
-                <li><a href="components-tree-view-menu.html"><i class="fa fa-long-arrow-right"></i> Tree View</a></li>
-                <li><a href="components-switcher-buttons.html"><i class="fa fa-long-arrow-right"></i> Switcher Buttons</a></li>
-                <li><a href="components-range-slider.html"><i class="fa fa-long-arrow-right"></i> Range Sliders</a></li>
-                <li><a href="components-vertical-timeline.html"><i class="fa fa-long-arrow-right"></i> Vertical Timeline</a></li>
-                <li><a href="components-horizontal-timeline.html"><i class="fa fa-long-arrow-right"></i> Horizontal Timeline</a></li>
-                <li><a href="components-pricing-table.html"><i class="fa fa-long-arrow-right"></i> Pricing Tables</a></li>
-                <li><a href="components-image-carousel.html"><i class="fa fa-long-arrow-right"></i> Image Carousels</a></li>
+                <li><a href="@Url.Action("Index", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenementZones</a></li>
             </ul>
         </li>
         <li>
