@@ -2835,4 +2835,106 @@
   <data name="Valeur" xml:space="preserve">
     <value>Valeur</value>
   </data>
+  <data name="Artichauts" xml:space="preserve">
+    <value>Artichauts</value>
+  </data>
+  <data name="CoutDesLogementsEndommagesDetruits" xml:space="preserve">
+    <value>Coût des logements endommagés / détruits</value>
+  </data>
+  <data name="Disaggregation" xml:space="preserve">
+    <value>Disaggregation</value>
+  </data>
+  <data name="DommagesPertesAutresActifsProductifs" xml:space="preserve">
+    <value>Dommages et pertes sur tous les autres actifs productifs (C-3)</value>
+  </data>
+  <data name="DommagesPertesCausesPatrimoineCulturel" xml:space="preserve">
+    <value>Dommages et pertes causés au patrimoine culturel (C-6)</value>
+  </data>
+  <data name="DommagesPertesSecteurSante" xml:space="preserve">
+    <value>Dommages et pertes dans les infrastructures critiques (C-5)</value>
+  </data>
+  <data name="DommagesPhysiquesBetail" xml:space="preserve">
+    <value>Dommages physiques au bétail (C-2La)</value>
+  </data>
+  <data name="EditIndicateursCibleB" xml:space="preserve">
+    <value>Modifier les indicateurs de la cible B</value>
+  </data>
+  <data name="EditIndicateursCibleC" xml:space="preserve">
+    <value>Modifier les indicateurs de la cible C</value>
+  </data>
+  <data name="HeritageCulturel" xml:space="preserve">
+    <value>Héritage culturel</value>
+  </data>
+  <data name="LogementsTouchesEndommagésDetruits" xml:space="preserve">
+    <value>Logements touchés (endommagés ou détruits)</value>
+  </data>
+  <data name="NombreImpactSurLesMoyensDeSubsistance" xml:space="preserve">
+    <value>Impact sur les moyens de subsistance</value>
+  </data>
+  <data name="NombrePersonnesBlesseesOuMalades" xml:space="preserve">
+    <value>Nombre de personnes blessées ou malades</value>
+  </data>
+  <data name="NombrePersonnesLogementDetruits" xml:space="preserve">
+    <value>Nombre de personnes dont les logements ont été détruits</value>
+  </data>
+  <data name="NombrePersonnesLogementEndommagees" xml:space="preserve">
+    <value>Nombre de personnes dont les logements ont été endommagés</value>
+  </data>
+  <data name="NombreTotalPersonneMaisonDetruite" xml:space="preserve">
+    <value>Personnes vivant dans ces logements (Indicateur B-4)</value>
+  </data>
+  <data name="NombreTotalPersonneMaisonEndomage" xml:space="preserve">
+    <value>Nombre de personnes vivantes dans les logements qui ont été endommagés (Indicateur B-3)</value>
+  </data>
+  <data name="PerteDeRecolteAgricole" xml:space="preserve">
+    <value>Perte de récolte agricole (C-2C)</value>
+  </data>
+  <data name="PerteEconomique" xml:space="preserve">
+    <value>Perte économique</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesActifsProductionAgricoles" xml:space="preserve">
+    <value>Perte économique et dommages causés aux actifs de production agricoles (C-2LAa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesAutresActifsProductifs" xml:space="preserve">
+    <value>Perte économique et dommages causés à tous les autres actifs productifs (C-3)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesEtablissementsSante" xml:space="preserve">
+    <value>Perte économique et dommages causés aux établissements de santé, d'enseignement et autres infrastructures</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesAquaculture" xml:space="preserve">
+    <value>Perte économique et dommages physiques à l'aquaculture (C-2Aa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesCultures" xml:space="preserve">
+    <value>Perte économique et dommages physiques aux cultures (C-2Ca)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesForets" xml:space="preserve">
+    <value>Perte économique et dommages physiques aux forêts (C-2FOa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesPecheries" xml:space="preserve">
+    <value>Perte économique et dommages physiques aux pêcheries (C-2FIa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesStocksAgricoles" xml:space="preserve">
+    <value>Perte économique et dommages causés aux stocks agricoles (C-2LBa)</value>
+  </data>
+  <data name="PertesAquaculture" xml:space="preserve">
+    <value>Pertes en aquaculture (C-2A)</value>
+  </data>
+  <data name="PertesBetail" xml:space="preserve">
+    <value>Pertes de bétail (C-2L)</value>
+  </data>
+  <data name="PertesForetsSylviculture" xml:space="preserve">
+    <value>Pertes de forêts et en sylviculture (C-2FO)</value>
+  </data>
+  <data name="PertesPecheries" xml:space="preserve">
+    <value>Pertes en pêcheries (C-2FI)</value>
+  </data>
+  <data name="PertesProductionAgricole" xml:space="preserve">
+    <value>Pertes de production agricole (C-2LA)</value>
+  </data>
+  <data name="PerteStockAgricole" xml:space="preserve">
+    <value>Perte de stock agricole (C-2LB)</value>
+  </data>
+  <data name="SecteurLogement" xml:space="preserve">
+    <value>Secteur du logement (C-4)</value>
+  </data>
 </root>

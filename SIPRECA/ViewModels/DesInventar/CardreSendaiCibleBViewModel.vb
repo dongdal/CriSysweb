@@ -10,6 +10,12 @@ Public Class CardreSendaiCibleBViewModel
     Public Overridable Property EvenementZone As EvenementZone
     Public Overridable Property LesEvenementsZone As ICollection(Of SelectListItem)
 
+    <Display(Name:="NombreTotalPersonneMaisonDetruite", ResourceType:=GetType(Resource))>
+    Public Property NombreTotalPersonneMaisonDetruite As Long?
+
+    <Display(Name:="NombreTotalPersonneMaisonEndomage", ResourceType:=GetType(Resource))>
+    Public Property NombreTotalPersonneMaisonEndomage As Long?
+
     <Display(Name:="NombreTotalBlesse", ResourceType:=GetType(Resource))>
     Public Property NombreTotalBlesse As Long?
 
@@ -157,6 +163,8 @@ Public Class CardreSendaiCibleBViewModel
             .NombreMoyenSubsistanceVieux = entity.NombreMoyenSubsistanceVieux
             .NombreMoyenSubsistanceHandicape = entity.NombreMoyenSubsistanceHandicape
             .NombreMoyenSubsistancePauvre = entity.NombreMoyenSubsistancePauvre
+            .NombreTotalPersonneMaisonDetruite = entity.NombreTotalPersonneMaisonDetruite
+            .NombreTotalPersonneMaisonEndomage = entity.NombreTotalPersonneMaisonEndomage
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
@@ -201,6 +209,8 @@ Public Class CardreSendaiCibleBViewModel
             .NombreMoyenSubsistanceVieux = NombreMoyenSubsistanceVieux
             .NombreMoyenSubsistanceHandicape = NombreMoyenSubsistanceHandicape
             .NombreMoyenSubsistancePauvre = NombreMoyenSubsistancePauvre
+            .NombreTotalPersonneMaisonDetruite = NombreTotalPersonneMaisonDetruite
+            .NombreTotalPersonneMaisonEndomage = NombreTotalPersonneMaisonEndomage
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
         End With

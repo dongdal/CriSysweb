@@ -12,6 +12,7 @@ Partial Public Class CardreSendaiCibleB
     Public Property NombreBlesseHandicape As Long?
     Public Property NombreBlessePauvre As Long?
     Public Property NombreTotalMaisonEndomage As Long?
+    Public Property NombreTotalPersonneMaisonEndomage As Long?
     Public Property NombreMaisonEndomageFemme As Long?
     Public Property NombreMaisonEndomageHomme As Long?
     Public Property NombreMaisonEndomageEnfant As Long?
@@ -20,6 +21,7 @@ Partial Public Class CardreSendaiCibleB
     Public Property NombreMaisonEndomageHandicape As Long?
     Public Property NombreMaisonEndomagePauvre As Long?
     Public Property NombreTotalMaisonDetruite As Long?
+    Public Property NombreTotalPersonneMaisonDetruite As Long?
     Public Property NombreMaisonDetruiteFemme As Long?
     Public Property NombreMaisonDetruiteHomme As Long?
     Public Property NombreMaisonDetruiteEnfant As Long?

@@ -187,6 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\CardreSendaiCibleCController.vb" />
+    <Compile Include="Controllers\CardreSendaiCibleBController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleAController.vb" />
     <Compile Include="Controllers\ElementsController.vb" />
     <Compile Include="Controllers\EvenementZonesController.vb" />
@@ -392,6 +394,10 @@
       <DependentUpon>201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb" />
+    <Compile Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.Designer.vb">
+      <DependentUpon>201910151515426_Mise a jour cardre sendai cible b.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
@@ -742,6 +748,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.resx">
       <DependentUpon>201910091527267_Alter_Tables_PerteDeBetail_CibleCPerteBetail_DesagregationRecoltesAgricole_And_CibleCDesagregationRecolte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.resx">
+      <DependentUpon>201910151515426_Mise a jour cardre sendai cible b.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1935,6 +1944,16 @@
     <Content Include="Views\CardreSendaiCibleA\Details.vbhtml" />
     <Content Include="Views\CardreSendaiCibleA\Edit.vbhtml" />
     <Content Include="Views\CardreSendaiCibleA\Index.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleB\Create.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleB\Delete.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleB\Details.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleB\Edit.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleB\Index.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleC\Create.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleC\Delete.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleC\Details.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleC\Edit.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleC\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

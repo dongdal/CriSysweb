@@ -227,6 +227,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Artichauts.
+        '''</summary>
+        Public Shared ReadOnly Property Artichauts() As String
+            Get
+                Return ResourceManager.GetString("Artichauts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Autre désagrégation.
         '''</summary>
         Public Shared ReadOnly Property AutreDesagregation() As String
@@ -1321,6 +1330,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CoutDeLaReabilitationMobileDetruit() As String
             Get
                 Return ResourceManager.GetString("CoutDeLaReabilitationMobileDetruit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Coût des logements endommagés / détruits.
+        '''</summary>
+        Public Shared ReadOnly Property CoutDesLogementsEndommagesDetruits() As String
+            Get
+                Return ResourceManager.GetString("CoutDesLogementsEndommagesDetruits", resourceCulture)
             End Get
         End Property
         
@@ -2450,11 +2468,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Disaggregation.
+        '''</summary>
+        Public Shared ReadOnly Property Disaggregation() As String
+            Get
+                Return ResourceManager.GetString("Disaggregation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Deconnexion.
         '''</summary>
         Public Shared ReadOnly Property Disconnect() As String
             Get
                 Return ResourceManager.GetString("Disconnect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Dommages et pertes sur tous les autres actifs productifs (C-3).
+        '''</summary>
+        Public Shared ReadOnly Property DommagesPertesAutresActifsProductifs() As String
+            Get
+                Return ResourceManager.GetString("DommagesPertesAutresActifsProductifs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Dommages et pertes causés au patrimoine culturel (C-6).
+        '''</summary>
+        Public Shared ReadOnly Property DommagesPertesCausesPatrimoineCulturel() As String
+            Get
+                Return ResourceManager.GetString("DommagesPertesCausesPatrimoineCulturel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Dommages et pertes dans les infrastructures critiques (C-5).
+        '''</summary>
+        Public Shared ReadOnly Property DommagesPertesSecteurSante() As String
+            Get
+                Return ResourceManager.GetString("DommagesPertesSecteurSante", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Dommages physiques au bétail (C-2La).
+        '''</summary>
+        Public Shared ReadOnly Property DommagesPhysiquesBetail() As String
+            Get
+                Return ResourceManager.GetString("DommagesPhysiquesBetail", resourceCulture)
             End Get
         End Property
         
@@ -2644,6 +2707,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditIndicateursCibleA() As String
             Get
                 Return ResourceManager.GetString("EditIndicateursCibleA", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible B.
+        '''</summary>
+        Public Shared ReadOnly Property EditIndicateursCibleB() As String
+            Get
+                Return ResourceManager.GetString("EditIndicateursCibleB", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible C.
+        '''</summary>
+        Public Shared ReadOnly Property EditIndicateursCibleC() As String
+            Get
+                Return ResourceManager.GetString("EditIndicateursCibleC", resourceCulture)
             End Get
         End Property
         
@@ -3593,6 +3674,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Héritage culturel.
+        '''</summary>
+        Public Shared ReadOnly Property HeritageCulturel() As String
+            Get
+                Return ResourceManager.GetString("HeritageCulturel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Heure d&apos;ouverture.
         '''</summary>
         Public Shared ReadOnly Property HeureDOuverture() As String
@@ -4363,6 +4453,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property LockScreenMsgOther() As String
             Get
                 Return ResourceManager.GetString("LockScreenMsgOther", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Logements touchés (endommagés ou détruits).
+        '''</summary>
+        Public Shared ReadOnly Property LogementsTouchesEndommagésDetruits() As String
+            Get
+                Return ResourceManager.GetString("LogementsTouchesEndommagésDetruits", resourceCulture)
             End Get
         End Property
         
@@ -6140,6 +6239,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Impact sur les moyens de subsistance.
+        '''</summary>
+        Public Shared ReadOnly Property NombreImpactSurLesMoyensDeSubsistance() As String
+            Get
+                Return ResourceManager.GetString("NombreImpactSurLesMoyensDeSubsistance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations d&apos;actifs productifs détruits.
         '''</summary>
         Public Shared ReadOnly Property NombreInstallationActifsProductifsDetruit() As String
@@ -6374,6 +6482,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes blessées ou malades.
+        '''</summary>
+        Public Shared ReadOnly Property NombrePersonnesBlesseesOuMalades() As String
+            Get
+                Return ResourceManager.GetString("NombrePersonnesBlesseesOuMalades", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes décédées.
         '''</summary>
         Public Shared ReadOnly Property NombrePersonnesDecedees() As String
@@ -6388,6 +6505,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property NombrePersonnesDisparues() As String
             Get
                 Return ResourceManager.GetString("NombrePersonnesDisparues", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes dont les logements ont été détruits.
+        '''</summary>
+        Public Shared ReadOnly Property NombrePersonnesLogementDetruits() As String
+            Get
+                Return ResourceManager.GetString("NombrePersonnesLogementDetruits", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes dont les logements ont été endommagés.
+        '''</summary>
+        Public Shared ReadOnly Property NombrePersonnesLogementEndommagees() As String
+            Get
+                Return ResourceManager.GetString("NombrePersonnesLogementEndommagees", resourceCulture)
             End Get
         End Property
         
@@ -6572,6 +6707,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Personnes vivant dans ces logements (Indicateur B-4).
+        '''</summary>
+        Public Shared ReadOnly Property NombreTotalPersonneMaisonDetruite() As String
+            Get
+                Return ResourceManager.GetString("NombreTotalPersonneMaisonDetruite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes vivantes dans les logements qui ont été endommagés (Indicateur B-3).
+        '''</summary>
+        Public Shared ReadOnly Property NombreTotalPersonneMaisonEndomage() As String
+            Get
+                Return ResourceManager.GetString("NombreTotalPersonneMaisonEndomage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Total routes touchées.
         '''</summary>
         Public Shared ReadOnly Property NombreTotalRoutesTouche() As String
@@ -6743,6 +6896,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte de récolte agricole (C-2C).
+        '''</summary>
+        Public Shared ReadOnly Property PerteDeRecolteAgricole() As String
+            Get
+                Return ResourceManager.GetString("PerteDeRecolteAgricole", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique.
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomique() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomique", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique liée aux actifs productifs agricoles.
         '''</summary>
         Public Shared ReadOnly Property PerteEconomiqueActifsProductifAfricole() As String
@@ -6797,6 +6968,78 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux actifs de production agricoles (C-2LAa).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesCausesActifsProductionAgricoles() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesCausesActifsProductionAgricoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés à tous les autres actifs productifs (C-3).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesCausesAutresActifsProductifs() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesCausesAutresActifsProductifs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux établissements de santé, d&apos;enseignement et autres infrastructures.
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesCausesEtablissementsSante() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesCausesEtablissementsSante", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques à l&apos;aquaculture (C-2Aa).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesPhysiquesAquaculture() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesAquaculture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux cultures (C-2Ca).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesPhysiquesCultures() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesCultures", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux forêts (C-2FOa).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesPhysiquesForets() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesForets", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux pêcheries (C-2FIa).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesPhysiquesPecheries() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesPecheries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux stocks agricoles (C-2LBa).
+        '''</summary>
+        Public Shared ReadOnly Property PerteEconomiqueDommagesStocksAgricoles() As String
+            Get
+                Return ResourceManager.GetString("PerteEconomiqueDommagesStocksAgricoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques deux aux actifs mobiles détruits (C-6c).
         '''</summary>
         Public Shared ReadOnly Property PerteEconomiqueDuAuActifsMobileDetruit() As String
@@ -6847,6 +7090,60 @@ Namespace My.Resources
         Public Shared ReadOnly Property PerteEconomiqueSurForet() As String
             Get
                 Return ResourceManager.GetString("PerteEconomiqueSurForet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pertes en aquaculture (C-2A).
+        '''</summary>
+        Public Shared ReadOnly Property PertesAquaculture() As String
+            Get
+                Return ResourceManager.GetString("PertesAquaculture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pertes de bétail (C-2L).
+        '''</summary>
+        Public Shared ReadOnly Property PertesBetail() As String
+            Get
+                Return ResourceManager.GetString("PertesBetail", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pertes de forêts et en sylviculture (C-2FO).
+        '''</summary>
+        Public Shared ReadOnly Property PertesForetsSylviculture() As String
+            Get
+                Return ResourceManager.GetString("PertesForetsSylviculture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pertes en pêcheries (C-2FI).
+        '''</summary>
+        Public Shared ReadOnly Property PertesPecheries() As String
+            Get
+                Return ResourceManager.GetString("PertesPecheries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pertes de production agricole (C-2LA).
+        '''</summary>
+        Public Shared ReadOnly Property PertesProductionAgricole() As String
+            Get
+                Return ResourceManager.GetString("PertesProductionAgricole", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte de stock agricole (C-2LB).
+        '''</summary>
+        Public Shared ReadOnly Property PerteStockAgricole() As String
+            Get
+                Return ResourceManager.GetString("PerteStockAgricole", resourceCulture)
             End Get
         End Property
         
@@ -7405,6 +7702,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property SecteurCombo() As String
             Get
                 Return ResourceManager.GetString("SecteurCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Secteur du logement (C-4).
+        '''</summary>
+        Public Shared ReadOnly Property SecteurLogement() As String
+            Get
+                Return ResourceManager.GetString("SecteurLogement", resourceCulture)
             End Get
         End Property
         
