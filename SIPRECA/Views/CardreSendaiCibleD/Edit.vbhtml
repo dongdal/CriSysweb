@@ -332,9 +332,7 @@ New With {.class = "form-control single-select", .tabindex = "1", .Placeholder =
 
         </div>
     </div>
-
-
-@Section Scripts
+</div>
 
     <script>
 
@@ -418,5 +416,3 @@ New With {.class = "form-control single-select", .tabindex = "1", .Placeholder =
     </script>
 
 
-
-End Section
