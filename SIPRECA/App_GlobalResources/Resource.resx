@@ -2232,8 +2232,8 @@
   <data name="ManageTypeSolution" xml:space="preserve">
     <value>Gestion des types de solutions</value>
   </data>
-  <data name="*" xml:space="preserve">
-    <value />
+  <data name="btn_Add" xml:space="preserve">
+    <value>Ajouter</value>
   </data>
   <data name="ComboEvenement" xml:space="preserve">
     <value>Veillez selectionner l'évènement</value>
@@ -2512,10 +2512,10 @@
     <value>Personnes âgées</value>
   </data>
   <data name="NombreDanimauxPerdu" xml:space="preserve">
-    <value>Bétail perdu</value>
+    <value>Animaux perdus</value>
   </data>
   <data name="NombreDanimauxToucheOuPerdu" xml:space="preserve">
-    <value>Animaux touchés ou perdus</value>
+    <value>Animaux affectés</value>
   </data>
   <data name="NombreDanimauxToucher" xml:space="preserve">
     <value>Animaux touchés</value>
@@ -2767,7 +2767,7 @@
     <value>Pertes économiques dans le secteur de l'éducation (pour C-5)</value>
   </data>
   <data name="PerteEconomiqueSecteurSante" xml:space="preserve">
-    <value>Perte économique dans le secteur de la santé (C-5</value>
+    <value>Perte économique dans le secteur de la santé (C-5)</value>
   </data>
   <data name="PerteEconomiqueSurForet" xml:space="preserve">
     <value>Pertes économiques forêts touchées</value>
@@ -2838,8 +2838,17 @@
   <data name="Artichauts" xml:space="preserve">
     <value>Artichauts</value>
   </data>
+  <data name="BetailCombo" xml:space="preserve">
+    <value>Veuillez selectionner l'animal</value>
+  </data>
   <data name="CoutDesLogementsEndommagesDetruits" xml:space="preserve">
     <value>Coût des logements endommagés / détruits</value>
+  </data>
+  <data name="CultureCombo" xml:space="preserve">
+    <value>Veuillez selectionner la culture</value>
+  </data>
+  <data name="DesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Cultures</value>
   </data>
   <data name="Disaggregation" xml:space="preserve">
     <value>Disaggregation</value>
@@ -2851,7 +2860,7 @@
     <value>Dommages et pertes causés au patrimoine culturel (C-6)</value>
   </data>
   <data name="DommagesPertesSecteurSante" xml:space="preserve">
-    <value>Dommages et pertes dans les infrastructures critiques (C-5)</value>
+    <value>Dommages et pertes dans les infrastructures critiques</value>
   </data>
   <data name="DommagesPhysiquesBetail" xml:space="preserve">
     <value>Dommages physiques au bétail (C-2La)</value>
@@ -2868,6 +2877,18 @@
   <data name="LogementsTouchesEndommagésDetruits" xml:space="preserve">
     <value>Logements touchés (endommagés ou détruits)</value>
   </data>
+  <data name="NombreDetruitDetruit" xml:space="preserve">
+    <value>Nombre d'animaux perdus</value>
+  </data>
+  <data name="NombreHectarAfecter" xml:space="preserve">
+    <value>Hectares  cultures touchées</value>
+  </data>
+  <data name="NombreHectarDetruit" xml:space="preserve">
+    <value>Hectares détruits</value>
+  </data>
+  <data name="NombreHectarEndomager" xml:space="preserve">
+    <value>Hectares endommagés</value>
+  </data>
   <data name="NombreImpactSurLesMoyensDeSubsistance" xml:space="preserve">
     <value>Impact sur les moyens de subsistance</value>
   </data>
@@ -2880,11 +2901,20 @@
   <data name="NombrePersonnesLogementEndommagees" xml:space="preserve">
     <value>Nombre de personnes dont les logements ont été endommagés</value>
   </data>
+  <data name="NombreTotalAfecter" xml:space="preserve">
+    <value>Nombre d'animaux affectés</value>
+  </data>
+  <data name="NombreTotalEndomager" xml:space="preserve">
+    <value>Nombre d'animaux touchés</value>
+  </data>
   <data name="NombreTotalPersonneMaisonDetruite" xml:space="preserve">
     <value>Personnes vivant dans ces logements (Indicateur B-4)</value>
   </data>
   <data name="NombreTotalPersonneMaisonEndomage" xml:space="preserve">
     <value>Nombre de personnes vivantes dans les logements qui ont été endommagés (Indicateur B-3)</value>
+  </data>
+  <data name="PerteBetail" xml:space="preserve">
+    <value>Animal</value>
   </data>
   <data name="PerteDeRecolteAgricole" xml:space="preserve">
     <value>Perte de récolte agricole (C-2C)</value>
@@ -2936,5 +2966,32 @@
   </data>
   <data name="SecteurLogement" xml:space="preserve">
     <value>Secteur du logement (C-4)</value>
+  </data>
+  <data name="DommagesCausesAutresInfrastructures" xml:space="preserve">
+    <value>Dommages et pertes causés à d'autres infrastructures (D-4)</value>
+  </data>
+  <data name="DommagesPertesCausesAutresInfrastructures" xml:space="preserve">
+    <value>Dommages et pertes causés à d'autres infrastructures (D-4)</value>
+  </data>
+  <data name="DommagesPertesInfrastructuresCritiques" xml:space="preserve">
+    <value>Dommages et pertes dans les infrastructures critiques (D-2, D-3, D-4)</value>
+  </data>
+  <data name="DommagesPertesSecteurEducation" xml:space="preserve">
+    <value>Dommages et pertes dans le secteur de l'éducation (D-3)</value>
+  </data>
+  <data name="EditIndicateursCibleD" xml:space="preserve">
+    <value>Modifier les indicateurs de la cible D</value>
+  </data>
+  <data name="InterruptionsServicesBase" xml:space="preserve">
+    <value>Interruptions des services de base (D-6)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesEtablissementsEnseignement" xml:space="preserve">
+    <value>Perte économique et dommages causés aux établissements d'enseignement (D-3)</value>
+  </data>
+  <data name="PerteEconomiqueNombreInstallationsUnitesAutresInfrastructures" xml:space="preserve">
+    <value>Perte économique et nombre d'installations / unités d'autres infrastructures (D-4)</value>
+  </data>
+  <data name="ServicePubliqueCombo" xml:space="preserve">
+    <value>Veillez selectionner un service publique</value>
   </data>
 </root>

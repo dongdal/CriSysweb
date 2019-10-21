@@ -1,13 +1,8 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Data
-Imports System.Data.Entity
+﻿Imports System.Data.Entity
 Imports System.Data.Entity.Validation
-Imports System.Linq
 Imports System.Net
-Imports System.Web
-Imports System.Web.Mvc
-Imports SIPRECA
+Imports Microsoft.AspNet.Identity
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class CardreSendaiCibleCController
@@ -23,6 +18,12 @@ Namespace Controllers
                 _db = value
             End Set
         End Property
+
+        Private Function GetCurrentUser() As ApplicationUser
+            Dim id = User.Identity.GetUserId
+            Dim aspuser = Db.Users.Find(id)
+            Return aspuser
+        End Function
 
         ' GET: cardreSendaiCibleC
         Function Index() As ActionResult
@@ -58,8 +59,33 @@ Namespace Controllers
             For Each item In EvenementZone
                 LesEvenementsZone.Add(New SelectListItem With {.Value = item.Id, .Text = item.Evenement.Libelle & " | " & item.ZoneARisque.Libelle})
             Next
+
+            Dim CibleCDesagregationAgricole = (From e In Db.CibleCDesagregationAgricole Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
+            Dim DesagregationAgricoles = (From e In Db.CibleCDesagregationAgricole Where e.CardreSendaiCibleCId = entityVM.Id Select e.DesagregationRecoltesAgricole).ToList
+            Dim DesagregationRecoltesAgricoles = (From e In Db.DesagregationRecoltesAgricole Where e.StatutExistant = 1 Select e).ToList
+            Dim LesDesagregationRecoltesAgricoles As New List(Of SelectListItem)
+            For Each item In DesagregationRecoltesAgricoles
+                If Not DesagregationAgricoles.Contains(item) Then
+                    LesDesagregationRecoltesAgricoles.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libellle})
+                End If
+            Next
+
+            Dim CibleCPerteBetail = (From e In Db.CibleCPerteBetail Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
+            Dim PerteBetails = (From e In Db.CibleCPerteBetail Where e.CardreSendaiCibleCId = entityVM.Id Select e.PerteBetail).ToList
+            Dim PerteBetai = (From e In Db.PerteBetail Where e.StatutExistant = 1 Select e).ToList
+            Dim LesPerteBetails As New List(Of SelectListItem)
+            For Each item In PerteBetai
+                If Not PerteBetails.Contains(item) Then
+                    LesPerteBetails.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             entityVM.LesEvenementsZone = LesEvenementsZone
+            entityVM.CibleCDesagregationAgricole = CibleCDesagregationAgricole
+            entityVM.CibleCPerteBetail = CibleCPerteBetail
             entityVM.LesUtilisateurs = LesUtilisateurs
+            entityVM.LesPerteBetails = LesPerteBetails
+            entityVM.LesDesagregationRecoltesAgricoles = LesDesagregationRecoltesAgricoles
         End Sub
 
         ' GET: cardreSendaiCibleC/Create
@@ -107,22 +133,163 @@ Namespace Controllers
         ' POST: cardreSendaiCibleC/Edit/5
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
+
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(entityVM As CardreSendaiCibleCViewModel) As ActionResult
+            If Request.Form("AddDsagregationAgricole") IsNot Nothing Then
+                Return AddDsagregationAgricole(entityVM)
+            ElseIf Request.Form("AddDsagregationBetail") IsNot Nothing Then
+                Return AddDsagregationBetail(entityVM)
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity()).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index", "EvenementZones")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddDsagregationAgricole(ByVal entityVM As CardreSendaiCibleCViewModel) As ActionResult
+
+            If IsNothing(entityVM.DesagregationRecoltesAgricoleId) Then
+                ModelState.AddModelError("DesagregationRecoltesAgricoleId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity()).State = EntityState.Modified
+
+                Dim CibleCDesagregationAgricole As New CibleCDesagregationAgricole()
+
+                If entityVM.DesagregationRecoltesAgricoleId > 0 Then
+
+                    CibleCDesagregationAgricole.DesagregationRecoltesAgricoleId = entityVM.DesagregationRecoltesAgricoleId
+                    CibleCDesagregationAgricole.CardreSendaiCibleCId = entityVM.Id
+                    CibleCDesagregationAgricole.AspNetUserId = GetCurrentUser.Id
+                    CibleCDesagregationAgricole.PerteEconomique = entityVM.PerteEconomique
+                    CibleCDesagregationAgricole.NombreHectarAfecter = entityVM.NombreHectarAfecter
+                    CibleCDesagregationAgricole.NombreHectarEndomager = entityVM.NombreHectarEndomager
+                    CibleCDesagregationAgricole.NombreHectarDetruit = entityVM.NombreHectarDetruit
+
+                    Db.CibleCDesagregationAgricole.Add(CibleCDesagregationAgricole)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddDsagregationBetail(ByVal entityVM As CardreSendaiCibleCViewModel) As ActionResult
+
+            If IsNothing(entityVM.CibleCPerteBetailId) Then
+                ModelState.AddModelError("CibleCPerteBetailId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim CibleCPerteBetail As New CibleCPerteBetail()
+
+                If entityVM.PerteBetailId > 0 Then
+
+                    CibleCPerteBetail.PerteBetailId = entityVM.PerteBetailId
+                    CibleCPerteBetail.CardreSendaiCibleCId = entityVM.Id
+                    CibleCPerteBetail.PerteEconomique = entityVM.PerteEconomiqueBetail
+                    CibleCPerteBetail.AspNetUserId = GetCurrentUser.Id
+                    CibleCPerteBetail.NombreTotalAfecter = entityVM.NombreTotalAfecter
+                    CibleCPerteBetail.NombreTotalEndomager = entityVM.NombreTotalEndomager
+                    CibleCPerteBetail.NombreDetruitDetruit = entityVM.NombreDetruitDetruit
+
+                    Db.CibleCPerteBetail.Add(CibleCPerteBetail)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteDsagregationAgricole(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim CibleCDesagregationAgricole = (From p In Db.CibleCDesagregationAgricole Where p.Id = id Select p).ToList.FirstOrDefault
+                If CibleCDesagregationAgricole Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.CibleCDesagregationAgricole.Remove(CibleCDesagregationAgricole)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index", "EvenementZones")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <HttpPost>
+        Public Function DeleteDsagregationBetail(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+            Try
+                Dim CibleCPerteBetail = (From p In Db.CibleCPerteBetail Where p.Id = id Select p).ToList.FirstOrDefault
+                If CibleCPerteBetail Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.CibleCPerteBetail.Remove(CibleCPerteBetail)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
         ' GET: cardreSendaiCibleC/Delete/5

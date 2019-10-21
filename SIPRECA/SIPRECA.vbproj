@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\CardreSendaiCibleDController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleCController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleBController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleAController.vb" />
@@ -1954,6 +1955,11 @@
     <Content Include="Views\CardreSendaiCibleC\Details.vbhtml" />
     <Content Include="Views\CardreSendaiCibleC\Edit.vbhtml" />
     <Content Include="Views\CardreSendaiCibleC\Index.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleD\Create.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleD\Delete.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleD\Details.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleD\Edit.vbhtml" />
+    <Content Include="Views\CardreSendaiCibleD\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

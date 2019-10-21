@@ -9,7 +9,7 @@ End Code
     <h1 class="page-title">@Resource.ManageEvenementZone</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "EvenementZones")>@Resource.ManageEvenementZone</a></li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "CardreSendaiCibleC")>@Resource.ManageEvenementZone</a></li>
         <li class="breadcrumb-item active">@Resource.EditIndicateursCibleC</li>
     </ol>
 </div>
@@ -21,7 +21,7 @@ End Code
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditIndicateursCibleC</div>
             <hr>
-            @Using Html.BeginForm("Edit", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Edit", "CardreSendaiCibleC", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(model) model.Id)
                 @Html.HiddenFor(Function(model) model.AspNetUserId)
@@ -32,7 +32,7 @@ End Code
                     @Html.LabelFor(Function(m) m.EvenementZoneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.EvenementZoneId, New SelectList(Model.LesEvenementsZone, "Value", "Text"), Resource.ComboEvenement,
-                    New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
+              New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
                         @Html.ValidationMessageFor(Function(m) m.EvenementZoneId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <p style="text-indent: 25px; text-align:justify; font-style:italic; font-size: 10px; color: red">
@@ -67,7 +67,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                         @Html.ValidationMessageFor(Function(m) m.HectaresTautauxDesCulturesTouche, "", New With {.style = "color: #da0b0b"})
                                         &nbsp;&nbsp;&nbsp;
-                                        <button onclick="SommeBlesses();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                        <button onclick="SommeCultures();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
                                     </div>
                                 </div>
 
@@ -98,12 +98,136 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", 
                         <br />
 
                     </div>
+
+                    <div Class="form-group row">
+                        <fieldset style="border:ridge;" Class="col-md-12">
+                            <legend style="font-size: 14px">@Resource.Disaggregation</legend>
+
+                            <div Class="row">
+                                @Html.LabelFor(Function(m) m.DesagregationRecoltesAgricoleId, New With {.class = "col-md-2 col-form-label required_field"})
+                                <div class="col-md-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.DesagregationRecoltesAgricoleId, New SelectList(Model.LesDesagregationRecoltesAgricoles, "Value", "Text"), Resource.CultureCombo,
+New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.CultureCombo})
+                                    @Html.ValidationMessageFor(Function(m) m.DesagregationRecoltesAgricoleId, "", New With {.style = "color: #da0b0b"})
+
+                                </div>
+                                <button type="button" name="AddDsagregationAgricole" class="btn btn-round btn-primary waves-effect waves-light m-1"> @Resource.btn_Add</button>
+                            </div>
+                            <br />
+                            <div Class="form-group row">
+
+                                <div Class="col-md-3">
+
+                                    @Html.LabelFor(Function(m) m.PerteEconomique, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.PerteEconomique,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.PerteEconomique, "", New With {.style = "color: #da0b0b"})
+                                        &nbsp;&nbsp;&nbsp;
+                                        <button onclick="SommeStockAgricoleToucher();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                    </div>
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreHectarAfecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreHectarAfecter,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreHectarAfecter, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreHectarEndomager, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreHectarEndomager,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreHectarEndomager, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreHectarDetruit, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreHectarDetruit,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreHectarDetruit, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+
+                            <div Class="form-group row">
+                                <table style="margin:10px;" id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.Libelle
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.PerteEconomique
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreHectarAfecter
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreHectarEndomager
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreHectarDetruit
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.ActionList
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @For Each item In Model.CibleCDesagregationAgricole
+                                            @<tr>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.DesagregationRecoltesAgricole.Libellle)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.PerteEconomique)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreHectarAfecter)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreHectarEndomager)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreHectarDetruit)
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteDsagregationAgricole" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        Next
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </fieldset>
+                        <br />
+                        <br />
+
+                    </div>
                 </fieldset>
                 @<br />
                 @<br />
 
                 @<fieldset style="border:ridge;" Class="col-md-12">
-                     <legend style="font-size: 14px">@Resource.PertesBetail</legend>
+                    <legend style="font-size: 14px">@Resource.PertesBetail</legend>
                     <div Class="form-group row">
                         <fieldset style="border:ridge;" Class="col-md-12">
                             <legend style="font-size: 14px">@Resource.DommagesPhysiquesBetail </legend>
@@ -128,7 +252,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                         @Html.ValidationMessageFor(Function(m) m.NombreDanimauxToucheOuPerdu, "", New With {.style = "color: #da0b0b"})
                                         &nbsp;&nbsp;&nbsp;
-                                        <button onclick="SommeBlesses();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                        <button onclick="SommeBetails();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
                                     </div>
                                 </div>
 
@@ -151,6 +275,131 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", 
                                     </div>
                                     <br />
                                 </div>
+
+                            </div>
+
+                        </fieldset>
+                        <br />
+                        <br />
+
+                    </div>
+
+                    <div Class="form-group row">
+                        <fieldset style="border:ridge;" Class="col-md-12">
+                            <legend style="font-size: 14px">@Resource.Disaggregation</legend>
+
+                            <div Class="row">
+                                @Html.LabelFor(Function(m) m.PerteBetailId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.PerteBetailId, New SelectList(Model.LesPerteBetails, "Value", "Text"), Resource.BetailCombo,
+New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.BetailCombo})
+                                    @Html.ValidationMessageFor(Function(m) m.PerteBetailId, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                                <button type="button" name="AddDsagregationBetail" class="btn btn-round btn-primary waves-effect waves-light m-1"> @Resource.btn_Add</button>
+                            </div>
+                            <br />
+
+                            <div Class="form-group row">
+
+                                <div Class="col-md-3">
+
+                                    @Html.LabelFor(Function(m) m.PerteEconomiqueBetail, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.PerteEconomiqueBetail,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.PerteEconomiqueBetail, "", New With {.style = "color: #da0b0b"})
+                                        &nbsp;&nbsp;&nbsp;
+                                        <button onclick="SommeBlesses();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                    </div>
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreTotalAfecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreTotalAfecter,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreTotalAfecter, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreTotalEndomager, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreTotalEndomager,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreTotalEndomager, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                                <div Class="col-md-3">
+                                    @Html.LabelFor(Function(m) m.NombreDetruitDetruit, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                    <div class="col-sm-8" style="max-width: 100%">
+                                        @Html.EditorFor(Function(model) model.NombreDetruitDetruit,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                        @Html.ValidationMessageFor(Function(m) m.NombreDetruitDetruit, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+
+
+                            <div Class="form-group row">
+                                <table style="margin:10px;" id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.Libelle
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.PerteEconomique
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreTotalAfecter
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreTotalEndomager
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.NombreDetruitDetruit
+                                            </th>
+                                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                                @Resource.ActionList
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @For Each item In Model.CibleCPerteBetail
+                                            @<tr>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.PerteBetail.Libelle)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.PerteEconomique)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreTotalAfecter)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreTotalEndomager)
+                                                </td>
+                                                <td class="sorting_asc text-center">
+                                                    @Html.DisplayFor(Function(modelItem) item.NombreDetruitDetruit)
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteDsagregationBetail" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        Next
+                                    </tbody>
+
+                                </table>
 
                             </div>
 
@@ -307,7 +556,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                         @Html.ValidationMessageFor(Function(m) m.NombreTotalNavireToucher, "", New With {.style = "color: #da0b0b"})
                                         &nbsp;&nbsp;&nbsp;
-                                        <button onclick="SommeAquacultureToucher();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                        <button onclick="SommeNavireToucher();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
                                     </div>
                                 </div>
 
@@ -557,7 +806,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                             @Html.ValidationMessageFor(Function(m) m.TotalEconomiqueLogementEndomagerOuDetruit, "", New With {.style = "color: #da0b0b"})
                                             &nbsp;&nbsp;&nbsp;
-                                            <button onclick="SommeActifsProductifs();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
+                                            <button onclick="SommeLogementsEndommagesDetruits();" type="button" class="btn btn-round btn-success waves-effect waves-light m-1"><i Class="icon-calculator"></i> @Resource.FaireSomme</button>
                                         </div>
                                     </div>
                                     <br />
@@ -638,7 +887,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
                 @<br />
                 @<br />
 
-                @<fieldset style="border:ridge; margin:10px;" Class="col-md-4">
+                @<fieldset style="border:ridge; margin:10px;" Class="col-md-6">
                     <legend style="font-size: 14px">@Resource.DommagesPertesCausesPatrimoineCulturel</legend>
                     <div Class="form-group row">
                         <fieldset style="border:ridge;" Class="col-md-12">
@@ -745,3 +994,465 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
         </div>
     </div>
 </div>
+
+    <script>
+
+        $('.DeleteDsagregationBetail').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            var Id = $(this).data("id");
+            //$.alert("Identifiant= " + Id);
+            $.confirm({
+                title: '@Resource.Btn_Delete',
+                content: '@Resource.ConfirmDelete',
+                animationSpeed: 1000,
+                animationBounce: 3,
+                animation: 'rotatey',
+                closeAnimation: 'scaley',
+                theme: 'supervan',
+                buttons: {
+                    Confirmer: function () {
+                        $.ajax({
+                            url: '@Url.Action("DeleteDsagregationBetail")',
+                            type: 'POST',
+                            data: { id: Id }
+                        }).done(function (data) {
+                            if (data.Result == "OK") {
+                                //$ctrl.closest('li').remove();
+                                $.confirm({
+                                    title: '@Resource.SuccessTitle',
+                                    content: '@Resource.SuccessProcess',
+                                    animationSpeed: 1000,
+                                    animationBounce: 3,
+                                    animation: 'rotatey',
+                                    closeAnimation: 'scaley',
+                                    theme: 'supervan',
+                                    buttons: {
+                                        OK: function () {
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                            else if (data.Result.Message) {
+                                alert(data.Result.Message);
+                            }
+                        }).fail(function () {
+                            @*//$.alert('@Resource.ErrorProcess');*@
+                            $.confirm({
+                                title: '@Resource.ErreurTitle',
+                                content: '@Resource.ErrorProcess',
+                                animationSpeed: 1000,
+                                animationBounce: 3,
+                                animation: 'rotatey',
+                                closeAnimation: 'scaley',
+                                theme: 'supervan',
+                                buttons: {
+                                    OK: function () {
+                                    }
+                                }
+                            });
+                        })
+                    },
+                    Annuler: function () {
+                        $.confirm({
+                            title: '@Resource.CancelingProcess',
+                            content: '@Resource.CancelingConfirmed',
+                            animationSpeed: 1000,
+                            animationBounce: 3,
+                            animation: 'rotatey',
+                            closeAnimation: 'scaley',
+                            theme: 'supervan',
+                            buttons: {
+                                OK: function () {
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+
+        $('.DeleteDsagregationAgricole').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            var Id = $(this).data("id");
+            //$.alert("Identifiant= " + Id);
+            $.confirm({
+                title: '@Resource.Btn_Delete',
+                content: '@Resource.ConfirmDelete',
+                animationSpeed: 1000,
+                animationBounce: 3,
+                animation: 'rotatey',
+                closeAnimation: 'scaley',
+                theme: 'supervan',
+                buttons: {
+                    Confirmer: function () {
+                        $.ajax({
+                            url: '@Url.Action("DeleteDsagregationAgricole")',
+                            type: 'POST',
+                            data: { id: Id }
+                        }).done(function (data) {
+                            if (data.Result == "OK") {
+                                //$ctrl.closest('li').remove();
+                                $.confirm({
+                                    title: '@Resource.SuccessTitle',
+                                    content: '@Resource.SuccessProcess',
+                                    animationSpeed: 1000,
+                                    animationBounce: 3,
+                                    animation: 'rotatey',
+                                    closeAnimation: 'scaley',
+                                    theme: 'supervan',
+                                    buttons: {
+                                        OK: function () {
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                            else if (data.Result.Message) {
+                                alert(data.Result.Message);
+                            }
+                        }).fail(function () {
+                            @*//$.alert('@Resource.ErrorProcess');*@
+                            $.confirm({
+                                title: '@Resource.ErreurTitle',
+                                content: '@Resource.ErrorProcess',
+                                animationSpeed: 1000,
+                                animationBounce: 3,
+                                animation: 'rotatey',
+                                closeAnimation: 'scaley',
+                                theme: 'supervan',
+                                buttons: {
+                                    OK: function () {
+                                    }
+                                }
+                            });
+                        })
+                    },
+                    Annuler: function () {
+                        $.confirm({
+                            title: '@Resource.CancelingProcess',
+                            content: '@Resource.CancelingConfirmed',
+                            animationSpeed: 1000,
+                            animationBounce: 3,
+                            animation: 'rotatey',
+                            closeAnimation: 'scaley',
+                            theme: 'supervan',
+                            buttons: {
+                                OK: function () {
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        var HectaresTautauxDesCulturesTouche = '#HectaresTautauxDesCulturesTouche';
+        var HectaresEndomages = '#HectaresEndomages';
+        var HectaresDetruits = '#HectaresDetruits';
+        var totalHectaresTouches = null;
+
+        var NombreDanimauxToucheOuPerdu = '#NombreDanimauxToucheOuPerdu';
+        var NombreDanimauxToucher = '#NombreDanimauxToucher';
+        var NombreDanimauxPerdu = '#NombreDanimauxPerdu';
+        var totalAnimauxTouches = null;
+
+        var NombreTotalHectarForetToucher = '#NombreTotalHectarForetToucher';
+        var NombreHectarForetEndomager = '#NombreHectarForetEndomager';
+        var NombreHectarForetDetruit = '#NombreHectarForetDetruit';
+        var totalForetTouches = null;
+
+        var NombreTotalHectarAquacultureToucher = '#NombreTotalHectarAquacultureToucher';
+        var NombreHectarAquacultureEndomager = '#NombreHectarAquacultureEndomager';
+        var NombreHectarAquacultureDetruit = '#NombreHectarAquacultureDetruit';
+        var totalHectaresAquaculturesTouches = null;
+
+        var NombreTotalNavireToucher = '#NombreTotalNavireToucher';
+        var NombreNavireEndomager = '#NombreNavireEndomager';
+        var NombreNavireDetruit = '#NombreNavireDetruit';
+        var totalNavireDetruits = null;
+
+        var NombreTotalDinstallationStockAgricoleToucher = '#NombreTotalDinstallationStockAgricoleToucher';
+        var NombreDinstallationStockAgricoleEndomager = '#NombreDinstallationStockAgricoleEndomager';
+        var NombreDinstallationStockAgricoleDetruit = '#NombreDinstallationStockAgricoleDetruit';
+        var totalStockAgricoleDetruit = null;
+
+        var NombreTotalActifsProductifAfricoleToucher = '#NombreTotalActifsProductifAfricoleToucher';
+        var NombreActifsProductifAfricoleEndomager = '#NombreActifsProductifAfricoleEndomager';
+        var NombreActifsProductifAfricoleDetruit = '#NombreActifsProductifAfricoleDetruit';
+        var totalActifsProductifAfricole = null;
+
+        var NombreTotalInstallationActifsProductifsToucher = '#NombreTotalInstallationActifsProductifsToucher';
+        var NombreInstallationActifsProductifsEndomager = '#NombreInstallationActifsProductifsEndomager';
+        var NombreInstallationActifsProductifsDetruit = '#NombreInstallationActifsProductifsDetruit';
+        var totalActifsProductifs = null;
+
+        var TotalEconomiqueLogementEndomagerOuDetruit = '#TotalEconomiqueLogementEndomagerOuDetruit';
+        var ValeurEconomiqueDesMaisonsEndomager = '#ValeurEconomiqueDesMaisonsEndomager';
+        var ValeurEconomiqueDesMaisonsDetruites = '#ValeurEconomiqueDesMaisonsDetruites';
+        var totalLogementEndomagerDetruit = null;
+
+
+        function SommeCultures() {
+            initalisationPourCultures();
+            var totalHectaresTautauxDesCulturesTouche = $(HectaresTautauxDesCulturesTouche).val();
+            //alert("totalHectaresTouches =" + totalHectaresTouches);
+            if (+totalHectaresTouches > 0) {
+                if (+totalHectaresTautauxDesCulturesTouche > 0) {
+                    if (+totalHectaresTautauxDesCulturesTouche !== totalHectaresTouches) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("HectaresTautauxDesCulturesTouche").value = null;
+                    } else {
+                        document.getElementById("HectaresTautauxDesCulturesTouche").value = totalHectaresTautauxDesCulturesTouche;
+                    }
+                } else {
+                    document.getElementById("HectaresTautauxDesCulturesTouche").value = totalHectaresTouches;
+                }
+            }
+            //else {
+            //    document.getElementById("HectaresTautauxDesCulturesTouche").value = null;
+            //}
+        }
+
+        function SommeBetails() {
+            initalisationPourBetails();
+            var totalNombreDanimauxToucheOuPerdu = $(NombreDanimauxToucheOuPerdu).val();
+            //alert("totalAnimauxTouches =" + totalAnimauxTouches);
+            if (+totalAnimauxTouches > 0) {
+                if (+totalNombreDanimauxToucheOuPerdu > 0) {
+                    if (+totalNombreDanimauxToucheOuPerdu !== totalAnimauxTouches) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreDanimauxToucheOuPerdu").value = null;
+                    } else {
+                        document.getElementById("NombreDanimauxToucheOuPerdu").value = totalNombreDanimauxToucheOuPerdu;
+                    }
+                } else {
+                    document.getElementById("NombreDanimauxToucheOuPerdu").value = totalAnimauxTouches;
+                }
+            }
+
+        }
+
+        function SommeForetToucher() {
+            initalisationPourForetToucher();
+            var totalNombreTotalHectarForetToucher = $(NombreTotalHectarForetToucher).val();
+
+            if (+totalForetTouches > 0) {
+                if (+totalNombreTotalHectarForetToucher > 0) {
+                    if (+totalNombreTotalHectarForetToucher !== totalForetTouches) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalHectarForetToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalHectarForetToucher").value = totalNombreTotalHectarForetToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalHectarForetToucher").value = totalForetTouches;
+                }
+            }
+
+        }
+
+        function SommeAquacultureToucher() {
+            initalisationPourAquacultures();
+            var totalNombreTotalHectarAquacultureToucher = $(NombreTotalHectarAquacultureToucher).val();
+
+            if (+totalHectaresAquaculturesTouches > 0) {
+                if (+totalNombreTotalHectarAquacultureToucher > 0) {
+                    if (+totalNombreTotalHectarAquacultureToucher !== totalHectaresAquaculturesTouches) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalHectarAquacultureToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalHectarAquacultureToucher").value = totalNombreTotalHectarAquacultureToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalHectarAquacultureToucher").value = totalHectaresAquaculturesTouches;
+                }
+            }
+
+        }
+
+        function SommeNavireToucher() {
+            initalisationPourNavires();
+            var totalNombreTotalNavireToucher = $(NombreTotalNavireToucher).val();
+
+            if (+totalNavireDetruits > 0) {
+                if (+totalNombreTotalNavireToucher > 0) {
+                    if (+totalNombreTotalNavireToucher !== totalNavireDetruits) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalNavireToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalNavireToucher").value = totalNombreTotalNavireToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalNavireToucher").value = totalNavireDetruits;
+                }
+            }
+
+        }
+
+        function SommeStockAgricoleToucher() {
+            initalisationPourStockAgricole();
+            var totalNombreTotalDinstallationStockAgricoleToucher = $(NombreTotalDinstallationStockAgricoleToucher).val();
+
+            if (+totalStockAgricoleDetruit > 0) {
+                if (+totalNombreTotalDinstallationStockAgricoleToucher > 0) {
+                    if (+totalNombreTotalDinstallationStockAgricoleToucher !== totalStockAgricoleDetruit) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalDinstallationStockAgricoleToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalDinstallationStockAgricoleToucher").value = totalNombreTotalDinstallationStockAgricoleToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalDinstallationStockAgricoleToucher").value = totalStockAgricoleDetruit;
+                }
+            }
+
+        }
+
+        function SommeActifsProductifAfricole() {
+            initalisationPourActifsProductifAfricole();
+            var totalNombreTotalActifsProductifAfricoleToucher = $(NombreTotalActifsProductifAfricoleToucher).val();
+
+            if (+totalActifsProductifAfricole > 0) {
+                if (+totalNombreTotalActifsProductifAfricoleToucher > 0) {
+                    if (+totalNombreTotalActifsProductifAfricoleToucher !== totalActifsProductifAfricole) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalActifsProductifAfricoleToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalActifsProductifAfricoleToucher").value = totalNombreTotalActifsProductifAfricoleToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalActifsProductifAfricoleToucher").value = totalActifsProductifAfricole;
+                }
+            }
+
+        }
+
+        function SommeActifsProductifs() {
+            initalisationPourActifsProductifs();
+            var totalNombreTotalInstallationActifsProductifsToucher = $(NombreTotalInstallationActifsProductifsToucher).val();
+
+            if (+totalActifsProductifs > 0) {
+                if (+totalNombreTotalInstallationActifsProductifsToucher > 0) {
+                    if (+totalNombreTotalInstallationActifsProductifsToucher !== totalActifsProductifs) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("NombreTotalInstallationActifsProductifsToucher").value = null;
+                    } else {
+                        document.getElementById("NombreTotalInstallationActifsProductifsToucher").value = totalNombreTotalInstallationActifsProductifsToucher;
+                    }
+                } else {
+                    document.getElementById("NombreTotalInstallationActifsProductifsToucher").value = totalActifsProductifs;
+                }
+            }
+
+        }
+
+        function SommeLogementsEndommagesDetruits() {
+            initalisationPourLogementsEndommagesDetruits();
+            var totalTotalEconomiqueLogementEndomagerOuDetruit = $(TotalEconomiqueLogementEndomagerOuDetruit).val();
+
+            if (+totalLogementEndomagerDetruit > 0) {
+                if (+totalTotalEconomiqueLogementEndomagerOuDetruit > 0) {
+                    if (+totalTotalEconomiqueLogementEndomagerOuDetruit !== totalLogementEndomagerDetruit) {
+                        $.alert("Veuillez vous assurer que la somme des élements touchés et détruits donne le total entré en amont.");
+                        document.getElementById("TotalEconomiqueLogementEndomagerOuDetruit").value = null;
+                    } else {
+                        document.getElementById("TotalEconomiqueLogementEndomagerOuDetruit").value = totalTotalEconomiqueLogementEndomagerOuDetruit;
+                    }
+                } else {
+                    document.getElementById("TotalEconomiqueLogementEndomagerOuDetruit").value = totalLogementEndomagerDetruit;
+                }
+            }
+
+        }
+
+        function initalisationPourBetails() {
+            animauxTouches = $(NombreDanimauxToucher).val().replace(",", ".");
+            animauxPerdus = $(NombreDanimauxPerdu).val().replace(",", ".");
+            var arrayBetails = [animauxTouches, animauxPerdus];
+            totalAnimauxTouches = checkItems(arrayBetails);
+        }
+
+        function initalisationPourCultures() {
+            //var totalHectaresTautauxDesCulturesTouche = $(NombreTotalDeces).val();
+
+            culturesEndomagees = $(HectaresEndomages).val().replace(",", ".");
+            culturesDetruites = $(HectaresDetruits).val().replace(",", ".");
+            var arrayCultures = [culturesEndomagees, culturesDetruites];
+            totalHectaresTouches = checkItems(arrayCultures);
+
+        }
+
+        function initalisationPourForetToucher() {
+            foretsTouchees = $(NombreHectarForetEndomager).val().replace(",", ".");
+            foretsPerdues = $(NombreHectarForetDetruit).val().replace(",", ".");
+            var arrayForets = [foretsTouchees, foretsPerdues];
+            totalForetTouches = checkItems(arrayForets);
+        }
+
+        function initalisationPourAquacultures() {
+            AquaculturesEndomagees = $(NombreHectarAquacultureEndomager).val().replace(",", ".");
+            AquaculturesDetruites = $(NombreHectarAquacultureDetruit).val().replace(",", ".");
+            var arrayAquacultures = [AquaculturesEndomagees, AquaculturesDetruites];
+            totalHectaresAquaculturesTouches = checkItems(arrayAquacultures);
+
+        }
+
+        function initalisationPourNavires() {
+            naviresEndomagees = $(NombreNavireEndomager).val().replace(",", ".");
+            naviresDetruites = $(NombreNavireDetruit).val().replace(",", ".");
+            var arrayNavires = [naviresEndomagees, naviresDetruites];
+            totalNavireDetruits = checkItems(arrayNavires);
+
+        }
+
+        function initalisationPourStockAgricole() {
+            stockAgricoleEndomage = $(NombreDinstallationStockAgricoleEndomager).val().replace(",", ".");
+            stockAgricoleDetruit = $(NombreDinstallationStockAgricoleDetruit).val().replace(",", ".");
+            var arrayStockAgricole = [stockAgricoleEndomage, stockAgricoleDetruit];
+            totalStockAgricoleDetruit = checkItems(arrayStockAgricole);
+
+        }
+
+        function initalisationPourActifsProductifAfricole() {
+            stockActifsProductifEndomage = $(NombreActifsProductifAfricoleEndomager).val().replace(",", ".");
+            stockActifsProductifDetruit = $(NombreActifsProductifAfricoleDetruit).val().replace(",", ".");
+            var arrayActifsProductif = [stockActifsProductifEndomage, stockActifsProductifDetruit];
+            totalActifsProductifAfricole = checkItems(arrayActifsProductif);
+
+        }
+
+        function initalisationPourActifsProductifs() {
+            ActifsProductifsEndomages = $(NombreInstallationActifsProductifsEndomager).val().replace(",", ".");
+            ActifsProductifsDetruits = $(NombreInstallationActifsProductifsDetruit).val().replace(",", ".");
+            var arrayActifsProductifs = [ActifsProductifsEndomages, ActifsProductifsDetruits];
+            totalActifsProductifs = checkItems(arrayActifsProductifs);
+
+        }
+
+        function initalisationPourLogementsEndommagesDetruits() {
+            maisonsEndomagees = $(ValeurEconomiqueDesMaisonsEndomager).val().replace(",", ".");
+            maisonsDetruites = $(ValeurEconomiqueDesMaisonsDetruites).val().replace(",", ".");
+            var arrayLogements = [maisonsEndomagees, maisonsDetruites];
+            totalLogementEndomagerDetruit = checkItems(arrayLogements);
+
+        }
+
+        function checkItems(array) {
+            var result = null;
+            array.forEach(function (item) {
+                if (item !== null && typeof (item) !== undefined) {
+                    result = (result === null) ? +item : (+result + +item);
+                }
+            });
+            return result;
+        }
+
+
+    </script>

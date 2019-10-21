@@ -9,7 +9,7 @@ End Code
     <h1 class="page-title">@Resource.ManageEvenementZone</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "EvenementZones")>@Resource.ManageEvenementZone</a></li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "CardreSendaiCibleB")>@Resource.ManageEvenementZone</a></li>
         <li class="breadcrumb-item active">@Resource.EditIndicateursCibleB</li>
     </ol>
 </div>
@@ -21,7 +21,7 @@ End Code
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditIndicateursCibleB</div>
             <hr>
-            @Using Html.BeginForm("Edit", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Edit", "CardreSendaiCibleB", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(model) model.Id)
                 @Html.HiddenFor(Function(model) model.AspNetUserId)
@@ -32,7 +32,7 @@ End Code
                     @Html.LabelFor(Function(m) m.EvenementZoneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.EvenementZoneId, New SelectList(Model.LesEvenementsZone, "Value", "Text"), Resource.ComboEvenement,
-                    New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
+           New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
                         @Html.ValidationMessageFor(Function(m) m.EvenementZoneId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <p style="text-indent: 25px; text-align:justify; font-style:italic; font-size: 10px; color: red">
@@ -449,3 +449,399 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "17",
         </div>
     </div>
 </div>
+
+
+<script>
+    var NombreTotalBlesse = '#NombreTotalBlesse';
+    var NombreBlesseFemme = '#NombreBlesseFemme';
+    var NombreBlesseHomme = '#NombreBlesseHomme';
+    var totalBlessesParSexe = null;
+    var NombreBlesseEnfant = '#NombreBlesseEnfant';
+    var NombreBlesseAdult = '#NombreBlesseAdult';
+    var NombreBlesseVieux = '#NombreBlesseVieux';
+    var totalBlessesParAge = null;
+    var NombreBlesseHandicape = '#NombreBlesseHandicape';
+    var NombreBlessePauvre = '#NombreBlessePauvre';
+    var totalBlessesAutreDesagregation = null;
+
+    var NombreTotalPersonneMaisonEndomage = '#NombreTotalPersonneMaisonEndomage';
+    var NombreMaisonEndomageFemme = '#NombreMaisonEndomageFemme';
+    var NombreMaisonEndomageHomme = '#NombreMaisonEndomageHomme';
+    var totalMaisonEndommageParSexe = null;
+    var NombreMaisonEndomageEnfant = '#NombreMaisonEndomageEnfant';
+    var NombreMaisonEndomageAdult = '#NombreMaisonEndomageAdult';
+    var NombreMaisonEndomageVieux = '#NombreMaisonEndomageVieux';
+    var totalMaisonEndommageParAge = null;
+    var NombreMaisonEndomageHandicape = '#NombreMaisonEndomageHandicape';
+    var NombreMaisonEndomagePauvre = '#NombreMaisonEndomagePauvre';
+    var totalMaisonEndommageParAutreDesagregation = null;
+
+    var NombreTotalPersonneMaisonDetruite = '#NombreTotalPersonneMaisonDetruite';
+    var NombreMaisonDetruiteFemme = '#NombreMaisonDetruiteFemme';
+    var NombreMaisonDetruiteHomme = '#NombreMaisonDetruiteHomme';
+    var totalMaisonDetruiteParSexe = null;
+    var NombreMaisonDetruiteEnfant = '#NombreMaisonDetruiteEnfant';
+    var NombreMaisonDetruiteAdult = '#NombreMaisonDetruiteAdult';
+    var NombreMaisonDetruiteVieux = '#NombreMaisonDetruiteVieux';
+    var totalMaisonDetruiteParAge = null;
+    var NombreMaisonDetruiteHandicape = '#NombreMaisonDetruiteHandicape';
+    var NombreMaisonDetruitePauvre = '#NombreMaisonDetruitePauvre';
+    var totalMaisonDetruitesParAutreDesagregation = null;
+
+    var NombreTotalMoyenSubsistance = '#NombreTotalMoyenSubsistance';
+    var NombreMoyenSubsistanceFemme = '#NombreMoyenSubsistanceFemme';
+    var NombreMoyenSubsistanceHomme = '#NombreMoyenSubsistanceHomme';
+    var totalMoyenSubsistanceParSexe = null;
+    var NombreMoyenSubsistanceEnfant = '#NombreMoyenSubsistanceEnfant';
+    var NombreMoyenSubsistanceAdult = '#NombreMoyenSubsistanceAdult';
+    var NombreMoyenSubsistanceVieux = '#NombreMoyenSubsistanceVieux';
+    var totalMoyenSubsistanceParAge = null;
+    var NombreMoyenSubsistanceHandicape = '#NombreMoyenSubsistanceHandicape';
+    var NombreMoyenSubsistancePauvre = '#NombreMoyenSubsistancePauvre';
+    var totalMoyenSubsistanceParAutreDesagregation = null;
+
+    function SommeMoyenSubsistances() {
+        initalisationPourMoyenSubsistance();
+        var totalMoyenSubsistance = $(NombreTotalMoyenSubsistance).val();
+        var arrayMoyenSubsistance = [totalMoyenSubsistanceParSexe, totalMoyenSubsistanceParAge, totalMoyenSubsistanceParAutreDesagregation, totalMoyenSubsistance];
+        var result = null;
+        var i = 0;
+        arrayMoyenSubsistance.forEach(function (item) {
+            if (item !== null && typeof (item) === 'number' && item > 0) {
+                result = (result === null) ? +item : (+result + +item);
+                i++;
+            }
+        });
+        var ratio = (result / i);
+        var nbre_error = 0;
+        if (totalMoyenSubsistance === null || typeof (totalMoyenSubsistance) === undefined) {
+            nbre_error = 0;
+            arrayMoyenSubsistance.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    alert(nbre_error);
+                }
+            });
+            if (nbre_error > 0) {
+                $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                document.getElementById("NombreTotalMoyenSubsistance").value = null;
+            }
+            else {
+                document.getElementById("NombreTotalMoyenSubsistance").value = ratio;
+            }
+        }
+        else {
+            nbre_error = 0;
+            if (totalMoyenSubsistance !== null & typeof (totalMoyenSubsistance) !== undefined) {
+                arrayMoyenSubsistance.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                    document.getElementById("NombreTotalMoyenSubsistance").value = null;
+                }
+                else if (nbre_error === 0) {
+                    if (ratio == totalMoyenSubsistance) {
+                        document.getElementById("NombreTotalMoyenSubsistance").value = ratio;
+                    } else if (typeof (totalMoyenSubsistance) != 'number' && typeof (totalMoyenSubsistance) != undefined && (+totalMoyenSubsistance) == 0) {
+                        document.getElementById("NombreTotalMoyenSubsistance").value = ratio;
+                    } else {
+                        $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalMoyenSubsistance").value = null;
+                    }
+                }
+            }
+
+        }
+    }
+
+    function SommeDetruite() {
+        initalisationPourMaisonDetruites();
+        var totalMaisonDetruites = $(NombreTotalPersonneMaisonDetruite).val();
+        var arrayMaisonDetruite = [totalMaisonDetruiteParSexe, totalMaisonDetruiteParAge, totalMaisonDetruitesParAutreDesagregation, totalMaisonDetruites];
+        var result = null;
+        var i = 0;
+        arrayMaisonDetruite.forEach(function (item) {
+            if (item !== null && typeof (item) === 'number' && item > 0) {
+                result = (result === null) ? +item : (+result + +item);
+                i++;
+            }
+        });
+        var ratio = (result / i);
+        var nbre_error = 0;
+        if (totalMaisonDetruites === null || typeof (totalMaisonDetruites) === undefined) {
+            nbre_error = 0;
+            arrayMaisonDetruite.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    alert(nbre_error);
+                }
+            });
+            if (nbre_error > 0) {
+                $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                document.getElementById("NombreTotalPersonneMaisonDetruite").value = null;
+            }
+            else {
+                document.getElementById("NombreTotalPersonneMaisonDetruite").value = ratio;
+            }
+        }
+        else {
+            nbre_error = 0;
+            if (totalMaisonDetruites !== null & typeof (totalMaisonDetruites) !== undefined) {
+                arrayMaisonDetruite.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                    document.getElementById("NombreTotalPersonneMaisonDetruite").value = null;
+                }
+                else if (nbre_error === 0) {
+                    if (ratio == totalMaisonDetruites) {
+                        document.getElementById("NombreTotalPersonneMaisonDetruite").value = ratio;
+                    } else if (typeof (totalMaisonDetruites) != 'number' && typeof (totalMaisonDetruites) != undefined && (+totalMaisonDetruites) == 0) {
+                        document.getElementById("NombreTotalPersonneMaisonDetruite").value = ratio;
+                    } else {
+                        $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalPersonneMaisonDetruite").value = null;
+                    }
+                }
+            }
+
+        }
+    }
+
+    function SommeBlesses() {
+        initalisationPourBlesses();
+        var totalBlesses = $(NombreTotalBlesse).val();
+        var arrayBlesses = [totalBlessesParSexe, totalBlessesParAge, totalBlessesAutreDesagregation, totalBlesses];
+        var result = null;
+
+        var i = 0;
+        arrayBlesses.forEach(function (item) {
+            if (item !== null && typeof (item) === 'number' && item > 0) {
+                result = (result === null) ? +item : (+result + +item);
+                i++;
+            }
+        });
+        var ratio = (result / i);
+        var nbre_error = 0;
+        if (totalBlesses === null || typeof (totalBlesses) === undefined) {
+            nbre_error = 0;
+            arrayBlesses.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    alert(nbre_error);
+                }
+            });
+            if (nbre_error > 0) {
+                $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                document.getElementById("NombreTotalBlesse").value = null;
+            }
+            else {
+                document.getElementById("NombreTotalBlesse").value = ratio;
+            }
+        }
+        else {
+            nbre_error = 0;
+            if (totalBlesses !== null & typeof (totalBlesses) !== undefined) {
+                arrayBlesses.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                    document.getElementById("NombreTotalBlesse").value = null;
+                }
+                else if (nbre_error === 0) {
+                    if (ratio == totalBlesses) {
+                        document.getElementById("NombreTotalBlesse").value = ratio;
+                    } else if (typeof (totalBlesses) != 'number' && typeof (totalBlesses) != undefined && (+totalBlesses) == 0) {
+                        document.getElementById("NombreTotalBlesse").value = ratio;
+                    } else {
+                        $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalBlesse").value = null;
+                    }
+                }
+            }
+
+        }
+    }
+
+    function SommeEndommagees() {
+        initalisationPourEndommagees();
+        var totalEndommages = $(NombreTotalPersonneMaisonEndomage).val();
+        var arrayDisparus = [totalMaisonEndommageParSexe, totalMaisonEndommageParAge, totalMaisonEndommageParAutreDesagregation, totalEndommages];
+        var result = null;
+        var i = 0;
+        arrayDisparus.forEach(function (item) {
+            if (item !== null && typeof (item) === 'number' && item > 0) {
+                result = (result === null) ? +item : (+result + +item);
+                i++;
+            }
+        });
+        var ratio = (result / i);
+        var nbre_error = 0;
+        if (totalEndommages === null || typeof (totalEndommages) === undefined) {
+            nbre_error = 0;
+            arrayDisparus.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    alert(nbre_error);
+                }
+            });
+            if (nbre_error > 0) {
+                $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                document.getElementById("NombreTotalPersonneMaisonEndomage").value = null;
+            }
+            else {
+                document.getElementById("NombreTotalPersonneMaisonEndomage").value = ratio;
+            }
+        }
+        else {
+            nbre_error = 0;
+            if (totalEndommages !== null & typeof (totalEndommages) !== undefined) {
+                arrayDisparus.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                    document.getElementById("NombreTotalPersonneMaisonEndomage").value = null;
+                }
+                else if (nbre_error === 0) {
+                    if (ratio == totalEndommages) {
+                        document.getElementById("NombreTotalDisparue").value = ratio;
+                    } else if (typeof (totalEndommages) != 'number' && typeof (totalEndommages) != undefined && (+totalEndommages) == 0) {
+                        document.getElementById("NombreTotalPersonneMaisonEndomage").value = ratio;
+                    } else {
+                        $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalPersonneMaisonEndomage").value = null;
+                    }
+                }
+            }
+
+        }
+    }
+
+    function initalisationPourMoyenSubsistance() {
+        //var totalMoyenSubsistance = $(NombreTotalDeces).val();
+
+        sexeMaisonDetruiteFemale = $(NombreMoyenSubsistanceFemme).val();
+        sexeMaisonDetruiteMale = $(NombreMoyenSubsistanceHomme).val();
+        var arrayMoyenSubsistanceParSexe = [sexeMaisonDetruiteFemale, sexeMaisonDetruiteMale];
+        totalMoyenSubsistanceParSexe = checkByGender(arrayMoyenSubsistanceParSexe);
+
+        ageMaisonDetruiteEnfant = $(NombreMoyenSubsistanceEnfant).val();
+        ageMaisonDetruiteAdulte = $(NombreMoyenSubsistanceAdult).val();
+        ageMaisonDetruiteAges = $(NombreMoyenSubsistanceVieux).val();
+        var arrayMoyenSubsistancesParAge = [ageMaisonDetruiteEnfant, ageMaisonDetruiteAdulte, ageMaisonDetruiteAges];
+        totalMoyenSubsistanceParAge = checkByAge(arrayMoyenSubsistancesParAge);
+
+
+        handicapMaisonDetruite = $(NombreMoyenSubsistanceHandicape).val();
+        pauvreMaisonDetruite = $(NombreMoyenSubsistancePauvre).val();
+        var arrayMoyenSubsistancesParAutreDesagregation = [handicapMaisonDetruite, pauvreMaisonDetruite];
+        totalMoyenSubsistanceParAutreDesagregation = checkByAutreDesagregation(arrayMoyenSubsistancesParAutreDesagregation);
+    }
+
+    function initalisationPourMaisonDetruites() {
+        //var totalMaisonDetruites = $(NombreTotalDeces).val();
+
+        sexeMaisonDetruiteFemale = $(NombreMaisonDetruiteFemme).val();
+        sexeMaisonDetruiteMale = $(NombreMaisonDetruiteHomme).val();
+        var arrayMaisonDetruiteParSexe = [sexeMaisonDetruiteFemale, sexeMaisonDetruiteMale];
+        totalMaisonDetruiteParSexe = checkByGender(arrayMaisonDetruiteParSexe);
+
+        ageMaisonDetruiteEnfant = $(NombreMaisonDetruiteEnfant).val();
+        ageMaisonDetruiteAdulte = $(NombreMaisonDetruiteAdult).val();
+        ageMaisonDetruiteAges = $(NombreMaisonDetruiteVieux).val();
+        var arrayMaisonDetruitesParAge = [ageMaisonDetruiteEnfant, ageMaisonDetruiteAdulte, ageMaisonDetruiteAges];
+        totalMaisonDetruiteParAge = checkByAge(arrayMaisonDetruitesParAge);
+
+
+        handicapMaisonDetruite = $(NombreMaisonDetruiteHandicape).val();
+        pauvreMaisonDetruite = $(NombreMaisonDetruitePauvre).val();
+        var arrayMaisonDetruitesParAutreDesagregation = [handicapMaisonDetruite, pauvreMaisonDetruite];
+        totalMaisonDetruitesParAutreDesagregation = checkByAutreDesagregation(arrayMaisonDetruitesParAutreDesagregation);
+    }
+
+    function initalisationPourEndommagees() {
+        //var totalBlesses = $(NombreTotalDeces).val();
+
+        sexeBlessesFemale = $(NombreMaisonEndomageFemme).val();
+        sexeBlessesMale = $(NombreMaisonEndomageHomme).val();
+        var arrayBlessesSexe = [sexeBlessesFemale, sexeBlessesMale];
+        totalMaisonEndommageParSexe = checkByGender(arrayBlessesSexe);
+
+        ageBlessesEnfant = $(NombreMaisonEndomageEnfant).val();
+        ageBlessesAdulte = $(NombreMaisonEndomageAdult).val();
+        ageBlessesAges = $(NombreMaisonEndomageVieux).val();
+        var arrayBlessesAge = [ageBlessesEnfant, ageBlessesAdulte, ageBlessesAges];
+        totalMaisonEndommageParAge = checkByAge(arrayBlessesAge);
+
+
+        handicapBlesses = $(NombreMaisonEndomageHandicape).val();
+        pauvreBlesses = $(NombreMaisonEndomagePauvre).val();
+        var arrayBlessesAutreDesagregation = [handicapBlesses, pauvreBlesses];
+        totalMaisonEndommageParAutreDesagregation = checkByAutreDesagregation(arrayBlessesAutreDesagregation);
+    }
+
+    function initalisationPourBlesses() {
+        //var totalBlesses = $(NombreTotalDeces).val();
+
+        sexeBlessesFemale = $(NombreBlesseFemme).val();
+        sexeBlessesMale = $(NombreBlesseHomme).val();
+        var arrayBlessesSexe = [sexeBlessesFemale, sexeBlessesMale];
+        totalBlessesParSexe = checkByGender(arrayBlessesSexe);
+
+        ageBlessesEnfant = $(NombreBlesseEnfant).val();
+        ageBlessesAdulte = $(NombreBlesseAdult).val();
+        ageBlessesAges = $(NombreBlesseVieux).val();
+        var arrayBlessesAge = [ageBlessesEnfant, ageBlessesAdulte, ageBlessesAges];
+        totalBlessesParAge = checkByAge(arrayBlessesAge);
+
+
+        handicapBlesses = $(NombreBlesseHandicape).val();
+        pauvreBlesses = $(NombreBlessePauvre).val();
+        var arrayBlessesAutreDesagregation = [handicapBlesses, pauvreBlesses];
+        totalBlessesAutreDesagregation = checkByAutreDesagregation(arrayBlessesAutreDesagregation);
+    }
+
+    function checkByGender(array) {
+        var result = null;
+        array.forEach(function (item) {
+            if (item !== null && typeof (item) !== undefined) {
+                result = (result === null) ? +item : (+result + +item);
+            }
+        });
+        return result;
+    }
+
+    function checkByAge(array) {
+        var result = null;
+        array.forEach(function (item) {
+            if (item !== null && typeof (item) !== undefined) {
+                result = (result === null) ? +item : (+result + +item);
+            }
+        });
+        return result;
+    }
+
+    function checkByAutreDesagregation(array) {
+        var result = null;
+        array.forEach(function (item) {
+            if (item !== null && typeof (item) !== undefined) {
+                result = (result === null) ? +item : (+result + +item);
+            }
+        });
+        return result;
+    }
+
+
+</script>

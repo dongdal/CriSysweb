@@ -9,7 +9,7 @@ End Code
     <h1 class="page-title">@Resource.ManageEvenementZone</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "EvenementZones")>@Resource.ManageEvenementZone</a></li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "CardreSendaiCibleA")>@Resource.ManageEvenementZone</a></li>
         <li class="breadcrumb-item active">@Resource.EditIndicateursCibleA</li>
     </ol>
 </div>
@@ -21,7 +21,7 @@ End Code
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditIndicateursCibleA</div>
             <hr>
-            @Using Html.BeginForm("Edit", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Edit", "CardreSendaiCibleA", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(model) model.Id)
                 @Html.HiddenFor(Function(model) model.AspNetUserId)
@@ -32,7 +32,7 @@ End Code
                     @Html.LabelFor(Function(m) m.EvenementZoneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.EvenementZoneId, New SelectList(Model.LesEvenementsZone, "Value", "Text"), Resource.ComboEvenement,
-                    New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
+              New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
                         @Html.ValidationMessageFor(Function(m) m.EvenementZoneId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <p style="text-indent: 25px; text-align:justify; font-style:italic; font-size: 10px; color: red">
@@ -51,7 +51,7 @@ End Code
                             @Html.LabelFor(Function(m) m.NombreTotalDeces, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 8px;  height: 25px; width:100%"}) (A-2)
                             <div class="col-sm-8" style="max-width: 100%">
                                 @Html.EditorFor(Function(model) model.NombreTotalDeces,
-      New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                 @Html.ValidationMessageFor(Function(m) m.NombreTotalDeces, "", New With {.style = "color: #da0b0b"})
                             </div>
                             <br />
@@ -69,14 +69,14 @@ End Code
                                 @Html.LabelFor(Function(m) m.NombreDecesFemme, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 8px;  height: 25px; width:100%"})
                                 <div class="col-sm-8" style="max-width: 100%">
                                     @Html.EditorFor(Function(model) model.NombreDecesFemme,
-    New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDecesFemme, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.NombreDecesHomme, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 8px;  height: 25px; width:100%"})
                                 <div class="col-sm-8" style="max-width: 100%">
                                     @Html.EditorFor(Function(model) model.NombreDecesHomme,
-    New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "4", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "4", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDecesHomme, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </fieldset>
@@ -244,3 +244,223 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "17",
         </div>
     </div>
 </div>
+
+    <script>
+        var NombreTotalDeces = '#NombreTotalDeces';
+        var NombreDecesFemme = '#NombreDecesFemme';
+        var NombreDecesHomme = '#NombreDecesHomme';
+        var totalDecesParSexe = null;
+        var NombreDecesEnfant = '#NombreDecesEnfant';
+        var NombreDecesAdult = '#NombreDecesAdult';
+        var NombreDecesVieux = '#NombreDecesVieux';
+        var totalDecesParAge = null;
+        var NombreDecesHandicape = '#NombreDecesHandicape';
+        var NombreDecesPauvre = '#NombreDecesPauvre';
+        var totalDecesAutreDesagregation = null;
+
+        var NombreTotalDisparue = '#NombreTotalDisparue';
+        var NombreDisparueFemme = '#NombreDisparueFemme';
+        var NombreDisparueHomme = '#NombreDisparueHomme';
+        var totalDisparuParSexe = null;
+        var NombreDisparueEnfant = '#NombreDisparueEnfant';
+        var NombreDisparueAdult = '#NombreDisparueAdult';
+        var NombreDisparueVieux = '#NombreDisparueVieux';
+        var totalDisparusParAge = null;
+        var NombreDisparueHandicape = '#NombreDisparueHandicape';
+        var NombreDisparuePauvre = '#NombreDisparuePauvre';
+        var totalDisparusAutreDesagregation = null;
+
+
+
+
+        function SommeDecedes() {
+            initalisationPourDecedes();
+            var totalDeces = $(NombreTotalDeces).val();
+            var arrayDeces = [totalDecesParSexe, totalDecesParAge, totalDecesAutreDesagregation, totalDeces];
+            var result = null;
+
+            var i = 0;
+            arrayDeces.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    result = (result === null) ? +item : (+result + +item);
+                    i++;
+                }
+            });
+            var ratio = (result / i);
+            var nbre_error = 0;
+            if (totalDeces === null || typeof (totalDeces) === undefined) {
+                nbre_error = 0;
+                arrayDeces.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                        alert(nbre_error);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                    document.getElementById("NombreTotalDeces").value = null;
+                }
+                else {
+                    document.getElementById("NombreTotalDeces").value = ratio;
+                }
+            }
+            else {
+                nbre_error = 0;
+                if (totalDeces !== null & typeof (totalDeces) !== undefined) {
+                    arrayDeces.forEach(function (item) {
+                        if (item !== null && typeof (item) === 'number' && item > 0) {
+                            nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                        }
+                    });
+                    if (nbre_error > 0) {
+                        $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalDeces").value = null;
+                    }
+                    else if (nbre_error === 0) {
+                        if (ratio == totalDeces) {
+                            document.getElementById("NombreTotalDeces").value = ratio;
+                        } else if (typeof (totalDeces) != 'number' && typeof (totalDeces) != undefined && (+totalDeces) == 0) {
+                            document.getElementById("NombreTotalDeces").value = ratio;
+                        } else {
+                            $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                            document.getElementById("NombreTotalDeces").value = null;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        function SommeDisparus() {
+            initalisationPourDisparus();
+            var totalDisparus = $(NombreTotalDisparue).val();
+            var arrayDisparus = [totalDisparuParSexe, totalDisparusParAge, totalDisparusAutreDesagregation, totalDisparus];
+            var result = null;
+
+            var i = 0;
+            arrayDisparus.forEach(function (item) {
+                if (item !== null && typeof (item) === 'number' && item > 0) {
+                    result = (result === null) ? +item : (+result + +item);
+                    i++;
+                }
+            });
+            var ratio = (result / i);
+            var nbre_error = 0;
+            if (totalDisparus === null || typeof (totalDisparus) === undefined) {
+                nbre_error = 0;
+                arrayDisparus.forEach(function (item) {
+                    if (item !== null && typeof (item) === 'number' && item > 0) {
+                        nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                        alert(nbre_error);
+                    }
+                });
+                if (nbre_error > 0) {
+                    $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne la même valeur.");
+                    document.getElementById("NombreTotalDisparue").value = null;
+                }
+                else {
+                    document.getElementById("NombreTotalDisparue").value = ratio;
+                }
+            }
+            else {
+                nbre_error = 0;
+                if (totalDisparus !== null & typeof (totalDisparus) !== undefined) {
+                    arrayDisparus.forEach(function (item) {
+                        if (item !== null && typeof (item) === 'number' && item > 0) {
+                            nbre_error = (item === ratio) ? nbre_error : (+nbre_error + +1);
+                        }
+                    });
+                    if (nbre_error > 0) {
+                        $.alert("Rassurez-vous que la somme de chaque sous groupe donne le même résultat.");
+                        document.getElementById("NombreTotalDisparue").value = null;
+                    }
+                    else if (nbre_error === 0) {
+                        if (ratio == totalDisparus) {
+                            document.getElementById("NombreTotalDisparue").value = ratio;
+                        } else if (typeof (totalDisparus) != 'number' && typeof (totalDisparus) != undefined && (+totalDisparus) == 0) {
+                            document.getElementById("NombreTotalDisparue").value = ratio;
+                        } else {
+                            $.alert("Veuillez vous assurer que la somme de chaque sous groupe donne le même résultat.");
+                            document.getElementById("NombreTotalDisparue").value = null;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+        function initalisationPourDisparus() {
+            //var totalDeces = $(NombreTotalDeces).val();
+
+            sexeDisparueFemale = $(NombreDisparueFemme).val();
+            sexeDisparueMale = $(NombreDisparueHomme).val();
+            var arrayDisparueSexe = [sexeDisparueFemale, sexeDisparueMale];
+            totalDisparuParSexe = checkByGender(arrayDisparueSexe);
+
+            ageDisparueEnfant = $(NombreDisparueEnfant).val();
+            ageDisparueAdulte = $(NombreDisparueAdult).val();
+            ageDisparueAges = $(NombreDisparueVieux).val();
+            var arrayDisparueAge = [ageDisparueEnfant, ageDisparueAdulte, ageDisparueAges];
+            totalDisparusParAge = checkByAge(arrayDisparueAge);
+
+
+            handicapDisparue = $(NombreDisparueHandicape).val();
+            pauvreDisparue = $(NombreDisparuePauvre).val();
+            var arrayDisparusAutreDesagregation = [handicapDisparue, pauvreDisparue];
+            totalDisparusAutreDesagregation = checkByAutreDesagregation(arrayDisparusAutreDesagregation);
+        }
+
+        function initalisationPourDecedes() {
+            //var totalDeces = $(NombreTotalDeces).val();
+
+            sexeDecedeFemale = $(NombreDecesFemme).val();
+            sexeDecedeMale = $(NombreDecesHomme).val();
+            var arrayDecesSexe = [sexeDecedeFemale, sexeDecedeMale];
+            totalDecesParSexe = checkByGender(arrayDecesSexe);
+
+            ageDecedeEnfant = $(NombreDecesEnfant).val();
+            ageDecedeAdulte = $(NombreDecesAdult).val();
+            ageDecedeAges = $(NombreDecesVieux).val();
+            var arrayDecesAge = [ageDecedeEnfant, ageDecedeAdulte, ageDecedeAges];
+            totalDecesParAge = checkByAge(arrayDecesAge);
+
+
+            handicapDecede = $(NombreDecesHandicape).val();
+            pauvreDecede = $(NombreDecesPauvre).val();
+            var arrayDecesAutreDesagregation = [handicapDecede, pauvreDecede];
+            totalDecesAutreDesagregation = checkByAutreDesagregation(arrayDecesAutreDesagregation);
+        }
+
+        function checkByGender(array) {
+            var result = null;
+            array.forEach(function (item) {
+                if (item !== null && typeof (item) !== undefined) {
+                    result = (result === null) ? +item : (+result + +item);
+                }
+            });
+            return result;
+        }
+
+        function checkByAge(array) {
+            var result = null;
+            array.forEach(function (item) {
+                if (item !== null && typeof (item) !== undefined) {
+                    result = (result === null) ? +item : (+result + +item);
+                }
+            });
+            return result;
+        }
+
+        function checkByAutreDesagregation(array) {
+            var result = null;
+            array.forEach(function (item) {
+                if (item !== null && typeof (item) !== undefined) {
+                    result = (result === null) ? +item : (+result + +item);
+                }
+            });
+            return result;
+        }
+
+
+    </script>

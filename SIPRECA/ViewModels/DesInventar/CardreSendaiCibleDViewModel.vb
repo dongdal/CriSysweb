@@ -64,6 +64,11 @@ Public Class CardreSendaiCibleDViewModel
     Public Property AspNetUserId As String
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
+
+    <Display(Name:="CibleDServicesPublique", ResourceType:=GetType(Resource))>
+    Public Property ServicesPubliqueId As Long
+    Public Overridable Property LesServicesPubliques As ICollection(Of SelectListItem)
+
     Public Sub New()
     End Sub
 

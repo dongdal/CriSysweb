@@ -170,6 +170,38 @@ Public Class CardreSendaiCibleCViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Display(Name:="PerteEconomique", ResourceType:=GetType(Resource))>
+    Public Property PerteEconomique As Double?
+
+    <Display(Name:="NombreHectarAfecter", ResourceType:=GetType(Resource))>
+    Public Property NombreHectarAfecter As Double?
+
+    <Display(Name:="NombreHectarEndomager", ResourceType:=GetType(Resource))>
+    Public Property NombreHectarEndomager As Double?
+
+    <Display(Name:="NombreHectarDetruit", ResourceType:=GetType(Resource))>
+    Public Property NombreHectarDetruit As Double?
+
+    <Display(Name:="PerteEconomique", ResourceType:=GetType(Resource))>
+    Public Property PerteEconomiqueBetail As Double?
+
+    <Display(Name:="NombreTotalAfecter", ResourceType:=GetType(Resource))>
+    Public Property NombreTotalAfecter As Long?
+
+    <Display(Name:="NombreTotalEndomager", ResourceType:=GetType(Resource))>
+    Public Property NombreTotalEndomager As Long?
+
+    <Display(Name:="NombreDetruitDetruit", ResourceType:=GetType(Resource))>
+    Public Property NombreDetruitDetruit As Long?
+
+    <Display(Name:="PerteBetail", ResourceType:=GetType(Resource))>
+    Public Property PerteBetailId As Long
+    Public Overridable Property LesPerteBetails As ICollection(Of SelectListItem)
+
+    <Display(Name:="DesagregationRecoltesAgricole", ResourceType:=GetType(Resource))>
+    Public Property DesagregationRecoltesAgricoleId As Long
+    Public Overridable Property LesDesagregationRecoltesAgricoles As ICollection(Of SelectListItem)
+
     Public Sub New()
     End Sub
 
