@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
+    <Compile Include="Controllers\AutreImpactHumainEtEconomiqueController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleDController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleCController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleBController.vb" />
@@ -455,6 +456,7 @@
     <Compile Include="Models\DesInventar\EvenementZone.vb" />
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
+    <Compile Include="ViewModels\DesInventar\AutreImpactHumainEtEconomiqueViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleAViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleBViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleCViewModel.vb" />
@@ -1960,6 +1962,11 @@
     <Content Include="Views\CardreSendaiCibleD\Details.vbhtml" />
     <Content Include="Views\CardreSendaiCibleD\Edit.vbhtml" />
     <Content Include="Views\CardreSendaiCibleD\Index.vbhtml" />
+    <Content Include="Views\AutreImpactHumainEtEconomique\Create.vbhtml" />
+    <Content Include="Views\AutreImpactHumainEtEconomique\Delete.vbhtml" />
+    <Content Include="Views\AutreImpactHumainEtEconomique\Details.vbhtml" />
+    <Content Include="Views\AutreImpactHumainEtEconomique\Edit.vbhtml" />
+    <Content Include="Views\AutreImpactHumainEtEconomique\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

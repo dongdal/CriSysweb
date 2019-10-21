@@ -156,11 +156,16 @@ Namespace Controllers
                         .EvenementZoneId = evenementZone.Id,
                         .AspNetUserId = evenementZone.AspNetUserId
                     }
+                    Dim AutreImpactHumainEtEconomique As New AutreImpactHumainEtEconomique With {
+                        .EvenementZoneId = evenementZone.Id,
+                        .AspNetUserId = evenementZone.AspNetUserId
+                    }
 
                     Db.CardreSendaiCibleA.Add(cardreSendaiCibleA)
                     Db.CardreSendaiCibleB.Add(cardreSendaiCibleB)
                     Db.CardreSendaiCibleC.Add(cardreSendaiCibleC)
                     Db.CardreSendaiCibleD.Add(cardreSendaiCibleD)
+                    Db.AutreImpactHumainEtEconomique.Add(AutreImpactHumainEtEconomique)
                     Try
                         Db.SaveChanges()
                         Return RedirectToAction("Index")

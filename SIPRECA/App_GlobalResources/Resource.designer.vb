@@ -173,6 +173,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ampleur du danger.
+        '''</summary>
+        Public Shared ReadOnly Property AmpleurDuDanger() As String
+            Get
+                Return ResourceManager.GetString("AmpleurDuDanger", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Année budgétaire.
         '''</summary>
         Public Shared ReadOnly Property AnneeBudgetaire() As String
@@ -232,6 +241,33 @@ Namespace My.Resources
         Public Shared ReadOnly Property AutreDesagregation() As String
             Get
                 Return ResourceManager.GetString("AutreDesagregation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Autres impacts humains et économiques.
+        '''</summary>
+        Public Shared ReadOnly Property AutreImpactHumainEtEconomique() As String
+            Get
+                Return ResourceManager.GetString("AutreImpactHumainEtEconomique", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Autres pertes (description).
+        '''</summary>
+        Public Shared ReadOnly Property AutrePerte() As String
+            Get
+                Return ResourceManager.GetString("AutrePerte", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Autres impacts humains et économiques (DesInventar).
+        '''</summary>
+        Public Shared ReadOnly Property AutresImpactsHumainsEconomiques() As String
+            Get
+                Return ResourceManager.GetString("AutresImpactsHumainsEconomiques", resourceCulture)
             End Get
         End Property
         
@@ -2761,6 +2797,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditIndemnisation() As String
             Get
                 Return ResourceManager.GetString("EditIndemnisation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier les indicateurs des autres Impact humain et economique.
+        '''</summary>
+        Public Shared ReadOnly Property EditIndicateursAutreImpactHumainEtEconomique() As String
+            Get
+                Return ResourceManager.GetString("EditIndicateursAutreImpactHumainEtEconomique", resourceCulture)
             End Get
         End Property
         
@@ -6131,6 +6176,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Estimation du nombre de personnes touchées.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonneAffecter() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonneAffecter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Estimation des personnes directement affectées.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonneDirrectementAffecter() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonneDirrectementAffecter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes évacuées.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonneEvacue() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonneEvacue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel non médical.
         '''</summary>
         Public Shared ReadOnly Property NombreDePersonnelNonMedical() As String
@@ -6145,6 +6217,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property NombreDePersonnelNonMedicalPlaceholder() As String
             Get
                 Return ResourceManager.GetString("NombreDePersonnelNonMedicalPlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnes relocalisés.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonneRelocaliser() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonneRelocaliser", resourceCulture)
             End Get
         End Property
         
@@ -8341,6 +8422,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property TotalEconomiqueLogementEndomagerOuDetruit() As String
             Get
                 Return ResourceManager.GetString("TotalEconomiqueLogementEndomagerOuDetruit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique totale (USD$).
+        '''</summary>
+        Public Shared ReadOnly Property TotalPerteEconomiqueDolar() As String
+            Get
+                Return ResourceManager.GetString("TotalPerteEconomiqueDolar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Perte économique totale (monnaie locale).
+        '''</summary>
+        Public Shared ReadOnly Property TotalPerteEconomiqueLocalDevise() As String
+            Get
+                Return ResourceManager.GetString("TotalPerteEconomiqueLocalDevise", resourceCulture)
             End Get
         End Property
         

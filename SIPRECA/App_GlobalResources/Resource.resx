@@ -2967,6 +2967,18 @@
   <data name="SecteurLogement" xml:space="preserve">
     <value>Secteur du logement (C-4)</value>
   </data>
+  <data name="AmpleurDuDanger" xml:space="preserve">
+    <value>Ampleur du danger</value>
+  </data>
+  <data name="AutreImpactHumainEtEconomique" xml:space="preserve">
+    <value>Autres impacts humains et économiques</value>
+  </data>
+  <data name="AutrePerte" xml:space="preserve">
+    <value>Autres pertes (description)</value>
+  </data>
+  <data name="AutresImpactsHumainsEconomiques" xml:space="preserve">
+    <value>Autres impacts humains et économiques (DesInventar)</value>
+  </data>
   <data name="DommagesCausesAutresInfrastructures" xml:space="preserve">
     <value>Dommages et pertes causés à d'autres infrastructures (D-4)</value>
   </data>
@@ -2979,11 +2991,26 @@
   <data name="DommagesPertesSecteurEducation" xml:space="preserve">
     <value>Dommages et pertes dans le secteur de l'éducation (D-3)</value>
   </data>
+  <data name="EditIndicateursAutreImpactHumainEtEconomique" xml:space="preserve">
+    <value>Modifier les indicateurs des autres Impact humain et economique</value>
+  </data>
   <data name="EditIndicateursCibleD" xml:space="preserve">
     <value>Modifier les indicateurs de la cible D</value>
   </data>
   <data name="InterruptionsServicesBase" xml:space="preserve">
     <value>Interruptions des services de base (D-6)</value>
+  </data>
+  <data name="NombreDePersonneAffecter" xml:space="preserve">
+    <value>Estimation du nombre de personnes touchées</value>
+  </data>
+  <data name="NombreDePersonneDirrectementAffecter" xml:space="preserve">
+    <value>Estimation des personnes directement affectées</value>
+  </data>
+  <data name="NombreDePersonneEvacue" xml:space="preserve">
+    <value>Nombre de personnes évacuées</value>
+  </data>
+  <data name="NombreDePersonneRelocaliser" xml:space="preserve">
+    <value>Nombre de personnes relocalisés</value>
   </data>
   <data name="PerteEconomiqueDommagesCausesEtablissementsEnseignement" xml:space="preserve">
     <value>Perte économique et dommages causés aux établissements d'enseignement (D-3)</value>
@@ -2993,5 +3020,11 @@
   </data>
   <data name="ServicePubliqueCombo" xml:space="preserve">
     <value>Veillez selectionner un service publique</value>
+  </data>
+  <data name="TotalPerteEconomiqueDolar" xml:space="preserve">
+    <value>Perte économique totale (USD$)</value>
+  </data>
+  <data name="TotalPerteEconomiqueLocalDevise" xml:space="preserve">
+    <value>Perte économique totale (monnaie locale)</value>
   </data>
 </root>

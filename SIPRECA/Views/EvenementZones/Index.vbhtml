@@ -128,6 +128,16 @@ End Code
                                                 </div>
                                             </a>
                                         </li>
+                                        <li Class="list-group-item">
+                                            <a href="@Url.Action("Edit", "AutreImpactHumainEtEconomique", New With {.EvenementZoneId = item.Id})">
+                                                <div class="media">
+                                                    <i class="icon-note mr-3 text-info"></i>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.AutreImpactHumainEtEconomique</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
 
