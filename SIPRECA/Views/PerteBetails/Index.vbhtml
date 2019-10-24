@@ -1,16 +1,17 @@
-﻿@ModelType PagedList.IPagedList(Of TypeSuivi)
+﻿@ModelType PagedList.IPagedList(Of PerteBetail)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListTypeSuivi
+    ViewBag.Title = Resource.ListPerteBetail
+    Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageTypeSuivi</h1>
+    <h1 class="page-title">@Resource.ManagePerteBetail</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "TypeSuivis")>@Resource.ManageTypeSuivi</a></li>
-        <li class="breadcrumb-item active">@Resource.ListTypeSuivi</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "PerteBetails")>@Resource.ManagePerteBetail</a></li>
+        <li class="breadcrumb-item active">@Resource.ListPerteBetail</li>
     </ol>
 </div>
 
@@ -18,18 +19,18 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeSuivi</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListPerteBetail</div>
             <hr>
-            @Using Html.BeginForm("Index", "TypeSuivis", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "PerteBetails", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
                                 <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
                             </div>
                         </div>
 
@@ -80,8 +81,8 @@ End Code
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>*@
 
                             </td>
                         </tr>
@@ -91,7 +92,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                                    New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>

@@ -1,18 +1,18 @@
-﻿@ModelType TypeSolutionViewModel
+﻿@ModelType DesagregationRecoltesAgricoleViewModel
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.DeleteTypeSolution
+    ViewBag.Title = Resource.DeleteDesagregationRecoltesAgricole
     Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageTypeSolution</h1>
+    <h1 class="page-title">@Resource.ManageDesagregationRecoltesAgricole</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "TypeSolutions")>@Resource.ManageTypeSolution</a></li>
-        <li class="breadcrumb-item active">@Resource.DeleteTypeSolution</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "DesagregationRecoltesAgricoles")>@Resource.ManageDesagregationRecoltesAgricole</a></li>
+        <li class="breadcrumb-item active">@Resource.DeleteDesagregationRecoltesAgricole</li>
     </ol>
 </div>
 
@@ -22,7 +22,7 @@ End Code
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ConfirmDelete</div>
             <hr>
-            @Using Html.BeginForm("Delete", "TypeSolutions", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Delete", "DesagregationRecoltesAgricoles", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(m) m.Id)
                 @Html.HiddenFor(Function(m) m.StatutExistant)
@@ -30,9 +30,9 @@ End Code
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Libelle, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.Libellle, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Libelle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.Libellle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.DateCreation, New With {.class = "col-sm-2 col-form-label"})

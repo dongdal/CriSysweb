@@ -1,10 +1,8 @@
 ﻿Imports System.Data.Entity
 Imports System.Data.Entity.Validation
-Imports System.IO
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
-Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class EvenementZonesController
@@ -121,6 +119,58 @@ Namespace Controllers
             entityVM.LesZoneARisques = LesZoneARisques
         End Sub
 
+        Private Sub LoadQueryComboBox(entityVM As QueryViewModel)
+
+            Dim Evenement = (From e In Db.Evenement Where e.StatutExistant = 1 Select e)
+            Dim LesEvenements As New List(Of SelectListItem)
+
+            Dim Region = (From e In Db.Region Where e.StatutExistant = 1 Select e).ToList
+            Dim LesRegions As New List(Of SelectListItem)
+
+            Dim Departement = (From e In Db.Departement Where e.StatutExistant = 1 Select e).ToList
+            Dim LesDepartements As New List(Of SelectListItem)
+
+            Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Select e).ToList
+            Dim LesCommunes As New List(Of SelectListItem)
+
+            Dim Quartier = (From e In Db.Quartier Where e.StatutExistant = 1 Select e).ToList
+            Dim LesQuartiers As New List(Of SelectListItem)
+
+            Dim Facteur = (From e In Db.Facteur Where e.StatutExistant = 1 Select e).ToList
+            Dim LesFacteurs As New List(Of SelectListItem)
+
+            For Each item In Evenement
+                LesEvenements.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            For Each item In Region
+                LesRegions.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            For Each item In Departement
+                LesDepartements.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            For Each item In Commune
+                LesCommunes.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            For Each item In Quartier
+                LesQuartiers.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            For Each item In Facteur
+                LesFacteurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            entityVM.LesEvenements = LesEvenements
+            entityVM.LesRegions = LesRegions
+            entityVM.LesDepartements = LesDepartements
+            entityVM.LesCommunes = LesCommunes
+            entityVM.LesQuartiers = LesQuartiers
+            entityVM.LesFacteurs = LesFacteurs
+        End Sub
+
         ' GET: EvenementZone/Create
         Function Create() As ActionResult
             Dim entityVM As New EvenementZoneViewModel
@@ -206,18 +256,25 @@ Namespace Controllers
         Function Edit(ByVal entityVM As EvenementZoneViewModel) As ActionResult
 
             If ModelState.IsValid Then
-                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                    Try
-                        Db.SaveChanges()
-                        Return RedirectToAction("Index")
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
-                End If
+                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return RedirectToAction("Index")
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
 
             LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        ' GET: EvenementZone/Query
+        Function Query() As ActionResult
+            Dim entityVM As New QueryViewModel
+            LoadQueryComboBox(entityVM)
             Return View(entityVM)
         End Function
 

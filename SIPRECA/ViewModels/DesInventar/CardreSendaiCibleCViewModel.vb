@@ -12,14 +12,24 @@ Public Class CardreSendaiCibleCViewModel
     Public Overridable Property EvenementZone As EvenementZone
 
     <Display(Name:="CibleCPerteBetail", ResourceType:=GetType(Resource))>
-    Public Property CibleCPerteBetailId As New List(Of Long)
+    Public Property CibleCPerteBetailId As Long?
     Public Overridable Property LesCibleCPerteBetail As ICollection(Of SelectListItem)
     Public Overridable Property CibleCPerteBetail As ICollection(Of CibleCPerteBetail)
 
+    <Display(Name:="PerteBetail", ResourceType:=GetType(Resource))>
+    Public Property PerteBetailId As Long?
+    Public Overridable Property LesPerteBetails As ICollection(Of SelectListItem) ' Bétails non sélectionnés
+    Public Overridable Property PerteBetail As ICollection(Of PerteBetail) ' Bétails déjà sélectionnés
+
     <Display(Name:="CibleCDesagregationAgricole", ResourceType:=GetType(Resource))>
-    Public Property CibleCDesagregationAgricoleId As New List(Of Long)
+    Public Property CibleCDesagregationAgricoleId As Long?
     Public Overridable Property LesCibleCDesagregationAgricoles As ICollection(Of SelectListItem)
     Public Overridable Property CibleCDesagregationAgricole As ICollection(Of CibleCDesagregationAgricole)
+
+    <Display(Name:="DesagregationRecoltesAgricole", ResourceType:=GetType(Resource))>
+    Public Property DesagregationRecoltesAgricoleId As Long?
+    Public Overridable Property LesDesagregationRecoltesAgricoles As ICollection(Of SelectListItem) ' Les cultures non sélectionnées
+    Public Overridable Property DesagregationRecoltesAgricole As ICollection(Of DesagregationRecoltesAgricole) ' cultures déjà sélectionnées
 
     <Display(Name:="PerteTotalDeBetailTouche", ResourceType:=GetType(Resource))>
     Public Property PerteTotalDeBetailTouche As Long?
@@ -194,13 +204,6 @@ Public Class CardreSendaiCibleCViewModel
     <Display(Name:="NombreDetruitDetruit", ResourceType:=GetType(Resource))>
     Public Property NombreDetruitDetruit As Long?
 
-    <Display(Name:="PerteBetail", ResourceType:=GetType(Resource))>
-    Public Property PerteBetailId As Long
-    Public Overridable Property LesPerteBetails As ICollection(Of SelectListItem)
-
-    <Display(Name:="DesagregationRecoltesAgricole", ResourceType:=GetType(Resource))>
-    Public Property DesagregationRecoltesAgricoleId As Long
-    Public Overridable Property LesDesagregationRecoltesAgricoles As ICollection(Of SelectListItem)
 
     Public Sub New()
     End Sub

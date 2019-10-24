@@ -60,29 +60,52 @@ Namespace Controllers
                 LesEvenementsZone.Add(New SelectListItem With {.Value = item.Id, .Text = item.Evenement.Libelle & " | " & item.ZoneARisque.Libelle})
             Next
 
-            Dim CibleCDesagregationAgricole = (From e In Db.CibleCDesagregationAgricole Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
-            Dim DesagregationAgricoles = (From e In Db.CibleCDesagregationAgricole Where e.CardreSendaiCibleCId = entityVM.Id Select e.DesagregationRecoltesAgricole).ToList
+            Dim CibleCDesagregationAgricoles = (From e In Db.CibleCDesagregationAgricole Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
+            Dim LesCibleCDesagregationAgricoles As New List(Of SelectListItem)
+            For Each item In CibleCDesagregationAgricoles
+                LesCibleCDesagregationAgricoles.Add(New SelectListItem With {.Value = item.Id, .Text = item.CardreSendaiCibleC.EvenementZone.Evenement.Libelle & " -- " & item.CardreSendaiCibleC.EvenementZone.ZoneARisque.Libelle})
+            Next
+            entityVM.LesCibleCDesagregationAgricoles = LesCibleCDesagregationAgricoles
+
+            Dim CibleCDesagregationAgricole = (From o In Db.CibleCDesagregationAgricole Where o.CardreSendaiCibleCId = entityVM.Id Select o).ToList
+            entityVM.CibleCDesagregationAgricole = CibleCDesagregationAgricole
+
+            Dim LaDesagregationRecoltesAgricole = (From o In Db.CardreSendaiCibleC Where o.Id = entityVM.Id From a In o.CibleCDesagregationAgricole Select a.DesagregationRecoltesAgricole).ToList
+
+            entityVM.DesagregationRecoltesAgricole = LaDesagregationRecoltesAgricole
+
             Dim DesagregationRecoltesAgricoles = (From e In Db.DesagregationRecoltesAgricole Where e.StatutExistant = 1 Select e).ToList
             Dim LesDesagregationRecoltesAgricoles As New List(Of SelectListItem)
             For Each item In DesagregationRecoltesAgricoles
-                If Not DesagregationAgricoles.Contains(item) Then
+                If Not LaDesagregationRecoltesAgricole.Contains(item) Then
                     LesDesagregationRecoltesAgricoles.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libellle})
                 End If
             Next
 
-            Dim CibleCPerteBetail = (From e In Db.CibleCPerteBetail Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
-            Dim PerteBetails = (From e In Db.CibleCPerteBetail Where e.CardreSendaiCibleCId = entityVM.Id Select e.PerteBetail).ToList
-            Dim PerteBetai = (From e In Db.PerteBetail Where e.StatutExistant = 1 Select e).ToList
+
+            Dim CibleCPerteBetails = (From e In Db.CibleCPerteBetail Where e.StatutExistant = 1 And e.CardreSendaiCibleCId = entityVM.Id Select e).ToList
+            Dim LesCibleCPerteBetail As New List(Of SelectListItem)
+            For Each item In CibleCPerteBetails
+                LesCibleCPerteBetail.Add(New SelectListItem With {.Value = item.Id, .Text = item.CardreSendaiCibleC.EvenementZone.Evenement.Libelle & " -- " & item.CardreSendaiCibleC.EvenementZone.ZoneARisque.Libelle})
+            Next
+            entityVM.LesCibleCPerteBetail = LesCibleCPerteBetail
+
+            Dim CibleCPerteBetail = (From o In Db.CibleCPerteBetail Where o.CardreSendaiCibleCId = entityVM.Id Select o).ToList
+            entityVM.CibleCPerteBetail = CibleCPerteBetail
+
+            Dim LaPerteBetail = (From o In Db.CardreSendaiCibleC Where o.Id = entityVM.Id From a In o.CibleCPerteBetail Select a.PerteBetail).ToList
+
+            entityVM.PerteBetail = LaPerteBetail
+
+            Dim PerteBetails = (From e In Db.PerteBetail Where e.StatutExistant = 1 Select e).ToList
             Dim LesPerteBetails As New List(Of SelectListItem)
-            For Each item In PerteBetai
-                If Not PerteBetails.Contains(item) Then
+            For Each item In PerteBetails
+                If Not LaPerteBetail.Contains(item) Then
                     LesPerteBetails.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
                 End If
             Next
 
             entityVM.LesEvenementsZone = LesEvenementsZone
-            entityVM.CibleCDesagregationAgricole = CibleCDesagregationAgricole
-            entityVM.CibleCPerteBetail = CibleCPerteBetail
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesPerteBetails = LesPerteBetails
             entityVM.LesDesagregationRecoltesAgricoles = LesDesagregationRecoltesAgricoles
@@ -162,8 +185,24 @@ Namespace Controllers
         <HttpPost>
         Public Function AddDsagregationAgricole(ByVal entityVM As CardreSendaiCibleCViewModel) As ActionResult
 
-            If IsNothing(entityVM.DesagregationRecoltesAgricoleId) Then
-                ModelState.AddModelError("DesagregationRecoltesAgricoleId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            Dim NombreHectarDetruit As Long = 0
+            Dim NombreHectarEndomager As Long = 0
+            Dim NombreHectarAfecter As Long = 0
+
+            If (entityVM.NombreHectarAfecter.HasValue) Then
+                NombreHectarAfecter = entityVM.NombreHectarAfecter.Value
+            End If
+
+            If (entityVM.NombreHectarDetruit.HasValue) Then
+                NombreHectarDetruit = entityVM.NombreHectarDetruit.Value
+            End If
+
+            If (entityVM.NombreHectarEndomager.HasValue) Then
+                NombreHectarEndomager = entityVM.NombreHectarEndomager.Value
+            End If
+
+            If NombreHectarAfecter <> (NombreHectarEndomager + NombreHectarDetruit) Then
+                ModelState.AddModelError("NombreHectarAfecter", Resource.SommeError) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -190,7 +229,7 @@ Namespace Controllers
                     End Try
 
                 End If
-                Return RedirectToAction("Edit", New With {entityVM.Id})
+                Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)
@@ -199,9 +238,24 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         <HttpPost>
         Public Function AddDsagregationBetail(ByVal entityVM As CardreSendaiCibleCViewModel) As ActionResult
+            Dim NombreDetruitDetruit As Long = 0
+            Dim NombreTotalEndomager As Long = 0
+            Dim NombreTotalAfecter As Long = 0
 
-            If IsNothing(entityVM.CibleCPerteBetailId) Then
-                ModelState.AddModelError("CibleCPerteBetailId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            If (entityVM.NombreTotalAfecter.HasValue) Then
+                NombreTotalAfecter = entityVM.NombreTotalAfecter.Value
+            End If
+
+            If (entityVM.NombreDetruitDetruit.HasValue) Then
+                NombreDetruitDetruit = entityVM.NombreDetruitDetruit.Value
+            End If
+
+            If (entityVM.NombreTotalEndomager.HasValue) Then
+                NombreTotalEndomager = entityVM.NombreTotalEndomager.Value
+            End If
+
+            If NombreTotalAfecter <> (NombreTotalEndomager + NombreDetruitDetruit) Then
+                ModelState.AddModelError("NombreTotalAfecter", Resource.SommeError) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -228,7 +282,7 @@ Namespace Controllers
                     End Try
 
                 End If
-                Return RedirectToAction("Edit", New With {entityVM.Id})
+                Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)

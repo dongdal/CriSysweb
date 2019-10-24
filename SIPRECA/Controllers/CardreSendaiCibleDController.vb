@@ -60,19 +60,30 @@ Namespace Controllers
                 LesEvenementsZone.Add(New SelectListItem With {.Value = item.Id, .Text = item.Evenement.Libelle & " | " & item.ZoneARisque.Libelle})
             Next
 
-            Dim CibleDServicesPublique = (From e In Db.CibleDServicesPublique Where e.StatutExistant = 1 And e.CardreSendaiCibleDId = entityVM.Id Select e).ToList
-            Dim ServicesPublique = (From e In Db.CibleDServicesPublique Where e.CardreSendaiCibleDId = entityVM.Id Select e.ServicesPubliquePertube).ToList
-            Dim ServicesPubliques = (From e In Db.ServicesPubliquePertube Where e.StatutExistant = 1 Select e).ToList
+            Dim CibleDServicesPubliques = (From e In Db.CibleDServicesPublique Where e.StatutExistant = 1 And e.CardreSendaiCibleDId = entityVM.Id Select e).ToList
+            Dim LesCibleDServicesPublique As New List(Of SelectListItem)
+            For Each item In CibleDServicesPubliques
+                LesCibleDServicesPublique.Add(New SelectListItem With {.Value = item.Id, .Text = item.CardreSendaiCibleD.EvenementZone.Evenement.Libelle & " -- " & item.CardreSendaiCibleD.EvenementZone.ZoneARisque.Libelle})
+            Next
+            entityVM.LesCibleDServicesPublique = LesCibleDServicesPublique
+
+            Dim CibleDServicesPublique = (From o In Db.CibleDServicesPublique Where o.CardreSendaiCibleDId = entityVM.Id Select o).ToList
+            entityVM.CibleDServicesPublique = CibleDServicesPublique
+
+            Dim LaCibleDServicesPublique = (From o In Db.CardreSendaiCibleD Where o.Id = entityVM.Id From a In o.CibleDServicesPublique Select a.ServicesPubliquePertube).ToList
+
+            entityVM.ServicesPubliquePertube = LaCibleDServicesPublique
+
+            Dim ServicesPubliquePertubes = (From e In Db.ServicesPubliquePertube Where e.StatutExistant = 1 Select e).ToList
             Dim LesServicesPubliques As New List(Of SelectListItem)
-            For Each item In ServicesPubliques
-                If Not ServicesPublique.Contains(item) Then
+            For Each item In ServicesPubliquePertubes
+                If Not LaCibleDServicesPublique.Contains(item) Then
                     LesServicesPubliques.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
                 End If
             Next
 
             entityVM.LesEvenementsZone = LesEvenementsZone
             entityVM.LesUtilisateurs = LesUtilisateurs
-            entityVM.CibleDServicesPublique = CibleDServicesPublique
             entityVM.LesServicesPubliques = LesServicesPubliques
         End Sub
 
@@ -132,7 +143,7 @@ Namespace Controllers
                     Db.Entry(entityVM.GetEntity()).State = EntityState.Modified
                     Try
                         Db.SaveChanges()
-                        Return RedirectToAction("Index", "EvenementZones")
+                        Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
                     Catch ex As DbEntityValidationException
                         Util.GetError(ex, ModelState)
                     Catch ex As Exception
@@ -173,7 +184,7 @@ Namespace Controllers
                     End Try
 
                 End If
-                Return RedirectToAction("Edit", New With {entityVM.Id})
+                Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)

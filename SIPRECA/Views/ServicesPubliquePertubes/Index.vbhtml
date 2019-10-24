@@ -1,16 +1,17 @@
-﻿@ModelType PagedList.IPagedList(Of TypeSuivi)
+﻿@ModelType PagedList.IPagedList(Of ServicesPubliquePertube)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListTypeSuivi
+    ViewBag.Title = Resource.ListServicesPubliquePertube
+    Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageTypeSuivi</h1>
+    <h1 class="page-title">@Resource.ManageServicesPubliquePertube</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "TypeSuivis")>@Resource.ManageTypeSuivi</a></li>
-        <li class="breadcrumb-item active">@Resource.ListTypeSuivi</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "ServicesPubliquePertubes")>@Resource.ManageServicesPubliquePertube</a></li>
+        <li class="breadcrumb-item active">@Resource.ListServicesPubliquePertube</li>
     </ol>
 </div>
 
@@ -18,9 +19,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeSuivi</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListServicesPubliquePertube</div>
             <hr>
-            @Using Html.BeginForm("Index", "TypeSuivis", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "ServicesPubliquePertubes", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
@@ -80,8 +81,8 @@ End Code
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>*@
 
                             </td>
                         </tr>

@@ -11,9 +11,14 @@ Public Class CardreSendaiCibleDViewModel
     Public Overridable Property LesEvenementsZone As ICollection(Of SelectListItem)
 
     <Display(Name:="CibleDServicesPublique", ResourceType:=GetType(Resource))>
-    Public Property CibleDServicesPubliqueId As New List(Of Long)
+    Public Property CibleDServicesPubliqueId As Long?
     Public Overridable Property LesCibleDServicesPublique As ICollection(Of SelectListItem)
     Public Overridable Property CibleDServicesPublique As ICollection(Of CibleDServicesPublique)
+
+    <Display(Name:="CibleDServicesPublique", ResourceType:=GetType(Resource))>
+    Public Property ServicesPubliqueId As Long
+    Public Overridable Property LesServicesPubliques As ICollection(Of SelectListItem) ' ServicesPublique non sélectionnés
+    Public Overridable Property ServicesPubliquePertube As ICollection(Of ServicesPubliquePertube) ' ServicesPublique déjà sélectionnés
 
     <Display(Name:="NombreTotaldesEtablissementDeSanteTouche", ResourceType:=GetType(Resource))>
     Public Property NombreTotaldesEtablissementDeSanteTouche As Long?
@@ -65,9 +70,6 @@ Public Class CardreSendaiCibleDViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
-    <Display(Name:="CibleDServicesPublique", ResourceType:=GetType(Resource))>
-    Public Property ServicesPubliqueId As Long
-    Public Overridable Property LesServicesPubliques As ICollection(Of SelectListItem)
 
     Public Sub New()
     End Sub

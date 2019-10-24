@@ -3027,4 +3027,157 @@
   <data name="TotalPerteEconomiqueLocalDevise" xml:space="preserve">
     <value>Perte économique totale (monnaie locale)</value>
   </data>
+  <data name="AffecteAgriculture" xml:space="preserve">
+    <value>Agriculture</value>
+  </data>
+  <data name="AffecteEducation" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="AffecteesIndirectment" xml:space="preserve">
+    <value>Affectées indirectment</value>
+  </data>
+  <data name="AffecteSante" xml:space="preserve">
+    <value>Santé</value>
+  </data>
+  <data name="AffectesDirectment" xml:space="preserve">
+    <value>Affectes directment</value>
+  </data>
+  <data name="AffecteTransport" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="AutresSecteurs" xml:space="preserve">
+    <value>Autres secteurs</value>
+  </data>
+  <data name="BetailPerdu" xml:space="preserve">
+    <value>Betail perdu</value>
+  </data>
+  <data name="Blesse" xml:space="preserve">
+    <value>Blésse</value>
+  </data>
+  <data name="CentresEducationnels" xml:space="preserve">
+    <value>Centres éducationnels</value>
+  </data>
+  <data name="Commune" xml:space="preserve">
+    <value>Commune</value>
+  </data>
+  <data name="CreateDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Ajouter une nouvelle culture</value>
+  </data>
+  <data name="CreatePerteBetail" xml:space="preserve">
+    <value>Ajouter un nouveau bétail</value>
+  </data>
+  <data name="CreateServicesPubliquePertube" xml:space="preserve">
+    <value>Ajouter un nouveau service</value>
+  </data>
+  <data name="CulturesBoisEndomages" xml:space="preserve">
+    <value>Cultures/bois endomages (ha)</value>
+  </data>
+  <data name="DateA" xml:space="preserve">
+    <value>A : </value>
+  </data>
+  <data name="DateDe" xml:space="preserve">
+    <value>De :</value>
+  </data>
+  <data name="Deces" xml:space="preserve">
+    <value>Décès</value>
+  </data>
+  <data name="DeleteDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Supprimer une culture</value>
+  </data>
+  <data name="DeletePerteBetail" xml:space="preserve">
+    <value>Supprimer le bétail</value>
+  </data>
+  <data name="DeleteServicesPubliquePertube" xml:space="preserve">
+    <value>Supprimer le service</value>
+  </data>
+  <data name="DeleteTypeSolution" xml:space="preserve">
+    <value>Supprimer un type de solution</value>
+  </data>
+  <data name="Deplacees" xml:space="preserve">
+    <value>Deplacées</value>
+  </data>
+  <data name="DetailsDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Informations sur la culture</value>
+  </data>
+  <data name="DetailsPerteBetail" xml:space="preserve">
+    <value>Informations sur le bétail</value>
+  </data>
+  <data name="DetailsServicesPubliquePertube" xml:space="preserve">
+    <value>Informations sur le service</value>
+  </data>
+  <data name="Disparus" xml:space="preserve">
+    <value>Disparus</value>
+  </data>
+  <data name="EditDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Modifier une culture</value>
+  </data>
+  <data name="EditPerteBetail" xml:space="preserve">
+    <value>Modifier un bétail</value>
+  </data>
+  <data name="EditServicesPubliquePertube" xml:space="preserve">
+    <value>Modifier un service</value>
+  </data>
+  <data name="Hopitaux" xml:space="preserve">
+    <value>Hopitaux</value>
+  </data>
+  <data name="ListDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Liste des cultures</value>
+  </data>
+  <data name="ListPerteBetail" xml:space="preserve">
+    <value>Liste des différents bétails</value>
+  </data>
+  <data name="ListServicesPubliquePertube" xml:space="preserve">
+    <value>Liste des services</value>
+  </data>
+  <data name="Logique" xml:space="preserve">
+    <value>Logique</value>
+  </data>
+  <data name="MaisonDetruite" xml:space="preserve">
+    <value>Maison détruite</value>
+  </data>
+  <data name="MaisonEndommages" xml:space="preserve">
+    <value>Maison endommages</value>
+  </data>
+  <data name="ManageDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Gestion des cultures</value>
+  </data>
+  <data name="ManagePerteBetail" xml:space="preserve">
+    <value>Gestion des bétails</value>
+  </data>
+  <data name="ManageServicesPubliquePertube" xml:space="preserve">
+    <value>Gestion des services</value>
+  </data>
+  <data name="MenuPerteBetail" xml:space="preserve">
+    <value>Les bétails</value>
+  </data>
+  <data name="MenuRecoltesAgricoles" xml:space="preserve">
+    <value>Les cultures</value>
+  </data>
+  <data name="MenuServicesPubliquePertube" xml:space="preserve">
+    <value>Les services publique</value>
+  </data>
+  <data name="NombreRaportsPage" xml:space="preserve">
+    <value>Nombre de raports par page</value>
+  </data>
+  <data name="RoutesEndomages" xml:space="preserve">
+    <value>Routes endomagés</value>
+  </data>
+  <data name="Sinistrees" xml:space="preserve">
+    <value>Sinistrées</value>
+  </data>
+  <data name="SommeError" xml:space="preserve">
+    <value>Veuillez vous rassurer que la sommes des éléments désagrégés donne la même valeur que celle de {0}</value>
+  </data>
+  <data name="LogiqueET" xml:space="preserve">
+    <value>ET</value>
+  </data>
+  <data name="LogiqueOU" xml:space="preserve">
+    <value>OU</value>
+  </data>
+  <data name="SelectionEvenementAffecte" xml:space="preserve">
+    <value>Sélectionner les événements qu'on affecté</value>
+  </data>
+  <data name="SelectionEvenementAvec" xml:space="preserve">
+    <value>Sélectionner seulement les évènements avec</value>
+  </data>
 </root>

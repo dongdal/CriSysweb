@@ -1,18 +1,18 @@
-﻿@ModelType TypeSolutionViewModel
+﻿@ModelType ServicesPubliquePertubeViewModel
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.DeleteTypeSolution
+    ViewBag.Title = Resource.DeleteServicesPubliquePertube
     Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 
 
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageTypeSolution</h1>
+    <h1 class="page-title">@Resource.ManageServicesPubliquePertube</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "TypeSolutions")>@Resource.ManageTypeSolution</a></li>
-        <li class="breadcrumb-item active">@Resource.DeleteTypeSolution</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "ServicesPubliquePertubes")>@Resource.ManageServicesPubliquePertube</a></li>
+        <li class="breadcrumb-item active">@Resource.DeleteServicesPubliquePertube</li>
     </ol>
 </div>
 
@@ -22,7 +22,7 @@ End Code
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ConfirmDelete</div>
             <hr>
-            @Using Html.BeginForm("Delete", "TypeSolutions", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Delete", "ServicesPubliquePertubes", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(m) m.Id)
                 @Html.HiddenFor(Function(m) m.StatutExistant)
