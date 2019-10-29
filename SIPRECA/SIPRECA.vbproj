@@ -463,6 +463,7 @@
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleDViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\DesagregationRecoltesAgricoleViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\PerteBetailViewModel.vb" />
+    <Compile Include="ViewModels\FiltreViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\QueryViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\AutreImpactHumainEtEconomiqueViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleAViewModel.vb" />

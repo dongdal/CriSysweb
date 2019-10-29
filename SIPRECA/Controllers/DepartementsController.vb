@@ -25,6 +25,17 @@ Namespace Controllers
             Return aspuser
         End Function
 
+        <HttpPost()>
+        Public Function LoadDepartements(ListOfRegion As List(Of Integer)) As ActionResult
+            Dim results As New List(Of SelectListItem)
+            For Each item In ListOfRegion
+                Dim LesDepatements = (From e In Db.Departement Where e.StatutExistant = 1 And e.RegionId = item Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle}).ToList()
+                results.AddRange(LesDepatements)
+            Next
+            results.Sort(Function(a, b) a.Text < b.Text)
+            Return Json(results, JsonRequestBehavior.AllowGet)
+        End Function
+
         ' GET: Departement
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder

@@ -25,6 +25,17 @@ Namespace Controllers
             Return aspuser
         End Function
 
+        <HttpPost()>
+        Public Function LoadCommunes(ListOfDepartements As List(Of Integer)) As ActionResult
+            Dim results As New List(Of SelectListItem)
+            For Each item In ListOfDepartements
+                Dim LesCommunes = (From e In Db.Commune Where e.StatutExistant = 1 And e.DepartementId = item Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle})
+                results.AddRange(LesCommunes)
+            Next
+            results.Sort(Function(a, b) a.Text < b.Text)
+            Return Json(results, JsonRequestBehavior.AllowGet)
+        End Function
+
         ' GET: Commune
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder

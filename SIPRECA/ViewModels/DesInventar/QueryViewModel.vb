@@ -120,8 +120,11 @@ Public Class QueryViewModel
     <Display(Name:="AutresSecteurs", ResourceType:=GetType(Resource))>
     Public Property AutresSecteurs As Boolean
 
-    <Display(Name:="NombreRaportsPage", ResourceType:=GetType(Resource))>
-    Public Property NombreRaportsPage As Long
+    <Display(Name:="TrierLesResultats", ResourceType:=GetType(Resource))>
+    Public Property TrierLesResultats As Long
+
+    <Display(Name:="NombreGLIDE", ResourceType:=GetType(Resource))>
+    Public Property NombreGLIDE As Long
 
     <Display(Name:="DateDe", ResourceType:=GetType(Resource))>
     Public Property DateDe As Date?
@@ -130,29 +133,68 @@ Public Class QueryViewModel
     Public Property DateA As Date?
 
     <Display(Name:="Evenement", ResourceType:=GetType(Resource))>
-    Public Property EvenementId As Long?
+    Public Property EvenementId As ICollection(Of Long)
     Public Overridable Property LesEvenements As ICollection(Of SelectListItem)
 
     <Display(Name:="Facteur", ResourceType:=GetType(Resource))>
-    Public Property FacteurId As Long?
+    Public Property FacteurId As ICollection(Of Long)
     Public Overridable Property LesFacteurs As ICollection(Of SelectListItem)
 
     <Display(Name:="Region", ResourceType:=GetType(Resource))>
-    Public Property RegionId As Long?
+    Public Property RegionId As ICollection(Of Long)
     Public Overridable Property LesRegions As ICollection(Of SelectListItem)
 
     <Display(Name:="Commune", ResourceType:=GetType(Resource))>
-    Public Property CommuneId As Long?
+    Public Property CommuneId As ICollection(Of Long)
     Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
 
 
     <Display(Name:="Departement", ResourceType:=GetType(Resource))>
-    Public Property DepartementId As Long?
+    Public Property DepartementId As ICollection(Of Long)
     Public Overridable Property LesDepartements As ICollection(Of SelectListItem)
 
     <Display(Name:="Quartier", ResourceType:=GetType(Resource))>
-    Public Property QuartiersId As Long?
+    Public Property QuartiersId As ICollection(Of Long)
     Public Overridable Property LesQuartiers As ICollection(Of SelectListItem)
+
+    Public ReadOnly Property TypeList As IEnumerable(Of SelectListItem)
+        Get
+            Return New List(Of SelectListItem) From {
+                New SelectListItem With {
+                    .Text = Resource.Ordrentree,
+                    .Value = "0"
+                },
+                New SelectListItem With {
+                    .Text = Resource.SerielCarteDonnees,
+                    .Value = "1"
+                },
+                New SelectListItem With {
+                    .Text = Resource.GeographieEvenementsDate,
+                    .Value = "2"
+                },
+                New SelectListItem With {
+                    .Text = Resource.GeographieDateEvenements,
+                    .Value = "3"
+                },
+                New SelectListItem With {
+                    .Text = Resource.EvenementsGeographieDate,
+                    .Value = "4"
+                },
+                New SelectListItem With {
+                    .Text = Resource.EvenementsDateGeographie,
+                    .Value = "5"
+                },
+                New SelectListItem With {
+                    .Text = Resource.DateGeographieEvenements,
+                    .Value = "6"
+                },
+                New SelectListItem With {
+                    .Text = Resource.DateEvenementsGeographie,
+                    .Value = "7"
+                }
+            }
+        End Get
+    End Property
 
 End Class
 

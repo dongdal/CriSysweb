@@ -278,6 +278,63 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function Query(ByVal entityVM As QueryViewModel) As ActionResult
+            Dim CadreSendaiCibleA = (From e In Db.CardreSendaiCibleA Where e.StatutExistant = 1)
+            Dim CadreSendaiCibleB = (From e In Db.CardreSendaiCibleB Where e.StatutExistant = 1)
+            Dim CadreSendaiCibleC = (From e In Db.CardreSendaiCibleC Where e.StatutExistant = 1)
+            Dim CadreSendaiCibleD = (From e In Db.CardreSendaiCibleD Where e.StatutExistant = 1)
+            Dim entities = (From e In Db.EvenementZone Where e.StatutExistant = 1)
+
+            If (entityVM.Deces And entityVM.DecesMAx.HasValue And entityVM.DecesMin.HasValue) Then
+                CadreSendaiCibleA = CadreSendaiCibleA.Where(Function(e) (entityVM.DecesMin.Value <= IIf(e.NombreTotalDeces.HasValue, e.NombreTotalDeces.Value, 0) And IIf(e.NombreTotalDeces.HasValue, e.NombreTotalDeces.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesFemme.HasValue, e.NombreDecesFemme.Value, 0) And IIf(e.NombreDecesFemme.HasValue, e.NombreDecesFemme.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesHomme.HasValue, e.NombreDecesHomme.Value, 0) And IIf(e.NombreDecesHomme.HasValue, e.NombreDecesHomme.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesEnfant.HasValue, e.NombreDecesEnfant.Value, 0) And IIf(e.NombreDecesEnfant.HasValue, e.NombreDecesEnfant.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesAdult.HasValue, e.NombreDecesAdult.Value, 0) And IIf(e.NombreDecesAdult.HasValue, e.NombreDecesAdult.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesVieux.HasValue, e.NombreDecesVieux.Value, 0) And IIf(e.NombreDecesVieux.HasValue, e.NombreDecesVieux.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesPauvre.HasValue, e.NombreDecesPauvre.Value, 0) And IIf(e.NombreDecesPauvre.HasValue, e.NombreDecesPauvre.Value, 0) <= entityVM.DecesMAx.Value) Or
+                                                                (entityVM.DecesMin.Value <= IIf(e.NombreDecesHandicape.HasValue, e.NombreDecesHandicape.Value, 0) And IIf(e.NombreDecesHandicape.HasValue, e.NombreDecesHandicape.Value, 0) <= entityVM.DecesMAx.Value))
+            End If
+
+            If (entityVM.Disparus And entityVM.DisparusMAx.HasValue And entityVM.DisparusMin.HasValue) Then
+                CadreSendaiCibleA = CadreSendaiCibleA.Where(Function(e) (entityVM.DisparusMin.Value <= IIf(e.NombreTotalDisparue.HasValue, e.NombreTotalDisparue.Value, 0) And IIf(e.NombreTotalDisparue.HasValue, e.NombreTotalDisparue.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueFemme.HasValue, e.NombreDisparueFemme.Value, 0) And IIf(e.NombreDisparueFemme.HasValue, e.NombreDisparueFemme.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueHomme.HasValue, e.NombreDisparueHomme.Value, 0) And IIf(e.NombreDisparueHomme.HasValue, e.NombreDisparueHomme.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueEnfant.HasValue, e.NombreDisparueEnfant.Value, 0) And IIf(e.NombreDisparueEnfant.HasValue, e.NombreDisparueEnfant.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueAdult.HasValue, e.NombreDisparueAdult.Value, 0) And IIf(e.NombreDisparueAdult.HasValue, e.NombreDisparueAdult.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueVieux.HasValue, e.NombreDisparueVieux.Value, 0) And IIf(e.NombreDisparueVieux.HasValue, e.NombreDisparueVieux.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparuePauvre.HasValue, e.NombreDisparuePauvre.Value, 0) And IIf(e.NombreDisparuePauvre.HasValue, e.NombreDisparuePauvre.Value, 0) <= entityVM.DisparusMAx.Value) Or
+                                                                (entityVM.DisparusMin.Value <= IIf(e.NombreDisparueHandicape.HasValue, e.NombreDisparueHandicape.Value, 0) And IIf(e.NombreDisparueHandicape.HasValue, e.NombreDisparueHandicape.Value, 0) <= entityVM.DisparusMAx.Value))
+            End If
+
+            If (entityVM.MaisonEndommages And entityVM.MaisonEndommagesMAx.HasValue And entityVM.MaisonEndommagesMin.HasValue) Then
+                CadreSendaiCibleB = CadreSendaiCibleB.Where(Function(e) (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreTotalMaisonEndomage.HasValue, e.NombreTotalMaisonEndomage.Value, 0) And IIf(e.NombreTotalMaisonEndomage.HasValue, e.NombreTotalMaisonEndomage.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageFemme.HasValue, e.NombreMaisonEndomageFemme.Value, 0) And IIf(e.NombreMaisonEndomageFemme.HasValue, e.NombreMaisonEndomageFemme.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageHomme.HasValue, e.NombreMaisonEndomageHomme.Value, 0) And IIf(e.NombreMaisonEndomageHomme.HasValue, e.NombreMaisonEndomageHomme.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageEnfant.HasValue, e.NombreMaisonEndomageEnfant.Value, 0) And IIf(e.NombreMaisonEndomageEnfant.HasValue, e.NombreMaisonEndomageEnfant.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageAdult.HasValue, e.NombreMaisonEndomageAdult.Value, 0) And IIf(e.NombreMaisonEndomageAdult.HasValue, e.NombreMaisonEndomageAdult.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageVieux.HasValue, e.NombreMaisonEndomageVieux.Value, 0) And IIf(e.NombreMaisonEndomageVieux.HasValue, e.NombreMaisonEndomageVieux.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomagePauvre.HasValue, e.NombreMaisonEndomagePauvre.Value, 0) And IIf(e.NombreMaisonEndomagePauvre.HasValue, e.NombreMaisonEndomagePauvre.Value, 0) <= entityVM.MaisonEndommagesMAx.Value) Or
+                                                                (entityVM.MaisonEndommagesMin.Value <= IIf(e.NombreMaisonEndomageHandicape.HasValue, e.NombreMaisonEndomageHandicape.Value, 0) And IIf(e.NombreMaisonEndomageHandicape.HasValue, e.NombreMaisonEndomageHandicape.Value, 0) <= entityVM.MaisonEndommagesMAx.Value))
+            End If
+
+            If (entityVM.MaisonDetruite And entityVM.MaisonDetruiteMAx.HasValue And entityVM.MaisonDetruiteMin.HasValue) Then
+                CadreSendaiCibleB = CadreSendaiCibleB.Where(Function(e) (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreTotalMaisonEndomage.HasValue, e.NombreTotalMaisonEndomage.Value, 0) And IIf(e.NombreTotalMaisonEndomage.HasValue, e.NombreTotalMaisonEndomage.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteFemme.HasValue, e.NombreMaisonDetruiteFemme.Value, 0) And IIf(e.NombreMaisonDetruiteFemme.HasValue, e.NombreMaisonDetruiteFemme.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteHomme.HasValue, e.NombreMaisonDetruiteHomme.Value, 0) And IIf(e.NombreMaisonDetruiteHomme.HasValue, e.NombreMaisonDetruiteHomme.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteEnfant.HasValue, e.NombreMaisonDetruiteEnfant.Value, 0) And IIf(e.NombreMaisonDetruiteEnfant.HasValue, e.NombreMaisonDetruiteEnfant.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteAdult.HasValue, e.NombreMaisonDetruiteAdult.Value, 0) And IIf(e.NombreMaisonDetruiteAdult.HasValue, e.NombreMaisonDetruiteAdult.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteVieux.HasValue, e.NombreMaisonDetruiteVieux.Value, 0) And IIf(e.NombreMaisonDetruiteVieux.HasValue, e.NombreMaisonDetruiteVieux.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruitePauvre.HasValue, e.NombreMaisonDetruitePauvre.Value, 0) And IIf(e.NombreMaisonDetruitePauvre.HasValue, e.NombreMaisonDetruitePauvre.Value, 0) <= entityVM.MaisonDetruiteMAx.Value) Or
+                                                                (entityVM.MaisonDetruiteMin.Value <= IIf(e.NombreMaisonDetruiteHandicape.HasValue, e.NombreMaisonDetruiteHandicape.Value, 0) And IIf(e.NombreMaisonDetruiteHandicape.HasValue, e.NombreMaisonDetruiteHandicape.Value, 0) <= entityVM.MaisonDetruiteMAx.Value))
+            End If
+
+            LoadQueryComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
 
         ' GET: EvenementZone/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult

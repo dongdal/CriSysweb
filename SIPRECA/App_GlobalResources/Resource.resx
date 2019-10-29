@@ -3156,8 +3156,8 @@
   <data name="MenuServicesPubliquePertube" xml:space="preserve">
     <value>Les services publique</value>
   </data>
-  <data name="NombreRaportsPage" xml:space="preserve">
-    <value>Nombre de raports par page</value>
+  <data name="TrierLesResultats" xml:space="preserve">
+    <value>Treir les résultats par</value>
   </data>
   <data name="RoutesEndomages" xml:space="preserve">
     <value>Routes endomagés</value>
@@ -3168,16 +3168,52 @@
   <data name="SommeError" xml:space="preserve">
     <value>Veuillez vous rassurer que la sommes des éléments désagrégés donne la même valeur que celle de {0}</value>
   </data>
+  <data name="DateDePlaceholder" xml:space="preserve">
+    <value>Veillez entrer la date</value>
+  </data>
+  <data name="ListMoyenDereponse" xml:space="preserve">
+    <value> les moyens de reponses</value>
+  </data>
   <data name="LogiqueET" xml:space="preserve">
     <value>ET</value>
   </data>
   <data name="LogiqueOU" xml:space="preserve">
     <value>OU</value>
   </data>
+  <data name="ManageMoyen" xml:space="preserve">
+    <value>Gestion des moyens</value>
+  </data>
   <data name="SelectionEvenementAffecte" xml:space="preserve">
     <value>Sélectionner les événements qu'on affecté</value>
   </data>
   <data name="SelectionEvenementAvec" xml:space="preserve">
     <value>Sélectionner seulement les évènements avec</value>
+  </data>
+  <data name="DateEvenementsGeographie" xml:space="preserve">
+    <value>Date, Evenements, Géographie</value>
+  </data>
+  <data name="DateGeographieEvenements" xml:space="preserve">
+    <value>Date, Géographie, Evenements</value>
+  </data>
+  <data name="EvenementsDateGeographie" xml:space="preserve">
+    <value>Evenements, Date, Géographie</value>
+  </data>
+  <data name="EvenementsGeographieDate" xml:space="preserve">
+    <value>Evenements, Géographie, Date</value>
+  </data>
+  <data name="GeographieDateEvenements" xml:space="preserve">
+    <value>Géographie, Date, Evenements</value>
+  </data>
+  <data name="GeographieEvenementsDate" xml:space="preserve">
+    <value>Géographie, Evenements, Date</value>
+  </data>
+  <data name="NombreGLIDE" xml:space="preserve">
+    <value>Nombre du GLIDE</value>
+  </data>
+  <data name="Ordrentree" xml:space="preserve">
+    <value>Ordre d'entrée</value>
+  </data>
+  <data name="SerielCarteDonnees" xml:space="preserve">
+    <value>Seriel de la carte de données</value>
   </data>
 </root>

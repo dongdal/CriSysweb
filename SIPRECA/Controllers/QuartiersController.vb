@@ -25,6 +25,17 @@ Namespace Controllers
             Return aspuser
         End Function
 
+        <HttpPost()>
+        Public Function LoadQuartiers(ListOfCommunes As List(Of Integer)) As ActionResult
+            Dim results As New List(Of SelectListItem)
+            For Each item In ListOfCommunes
+                Dim LesQuartiers = (From e In Db.Quartier Where e.StatutExistant = 1 And e.CommuneId = item Select New SelectListItem With {.Value = e.Id, .Text = e.Libelle})
+                results.AddRange(LesQuartiers)
+            Next
+            results.Sort(Function(a, b) a.Text < b.Text)
+            Return Json(results, JsonRequestBehavior.AllowGet)
+        End Function
+
         ' GET: Quartier
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder
