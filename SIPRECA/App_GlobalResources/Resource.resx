@@ -3216,4 +3216,106 @@
   <data name="SerielCarteDonnees" xml:space="preserve">
     <value>Seriel de la carte de données</value>
   </data>
+  <data name="Abris" xml:space="preserve">
+    <value>Abris</value>
+  </data>
+  <data name="AbrisCapaciteMAx" xml:space="preserve">
+    <value>Capacité max</value>
+  </data>
+  <data name="AbrisCapaciteMin" xml:space="preserve">
+    <value>Capacité min</value>
+  </data>
+  <data name="AbrisEstimationPopulationMAx" xml:space="preserve">
+    <value>Population max</value>
+  </data>
+  <data name="AbrisEstimationPopulationMin" xml:space="preserve">
+    <value>Population min</value>
+  </data>
+  <data name="Aeroport" xml:space="preserve">
+    <value>Aéroport</value>
+  </data>
+  <data name="AeroportLargeurDePisteMAx" xml:space="preserve">
+    <value>Largeur de piste max</value>
+  </data>
+  <data name="AeroportLargeurDePisteMin" xml:space="preserve">
+    <value>Largeur de piste min</value>
+  </data>
+  <data name="AeroportLongueurDePisteMAx" xml:space="preserve">
+    <value>Longueur de piste max</value>
+  </data>
+  <data name="AeroportLongueurDePisteMin" xml:space="preserve">
+    <value>Longueur de piste min</value>
+  </data>
+  <data name="Bureau" xml:space="preserve">
+    <value>Bureau</value>
+  </data>
+  <data name="Entrepot" xml:space="preserve">
+    <value>Entrepot</value>
+  </data>
+  <data name="EntrepotCapaciteDisponibleMAx" xml:space="preserve">
+    <value>Capacité disponible max</value>
+  </data>
+  <data name="EntrepotCapaciteDisponibleMin" xml:space="preserve">
+    <value>Capacité disponible min</value>
+  </data>
+  <data name="EntrepotCapaciteMAx" xml:space="preserve">
+    <value>Capacité max</value>
+  </data>
+  <data name="EntrepotCapaciteMin" xml:space="preserve">
+    <value>Capacité min</value>
+  </data>
+  <data name="Heliport" xml:space="preserve">
+    <value>Héliport</value>
+  </data>
+  <data name="Instalation" xml:space="preserve">
+    <value>Instalation</value>
+  </data>
+  <data name="NombreDeMedecinMax" xml:space="preserve">
+    <value>Nombre de médecin max</value>
+  </data>
+  <data name="NombreDeMedecinMin" xml:space="preserve">
+    <value>Nombre de médecin min</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalMAx" xml:space="preserve">
+    <value>Nombre de personnel non medical max</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalMin" xml:space="preserve">
+    <value>Nombre de personnel non medical min</value>
+  </data>
+  <data name="NombreDInfimiereMAx" xml:space="preserve">
+    <value>Nombre d'infirmière max</value>
+  </data>
+  <data name="NombreDInfimiereMin" xml:space="preserve">
+    <value>Nombre d'infirmière min</value>
+  </data>
+  <data name="PortDeMer" xml:space="preserve">
+    <value>Port de mer</value>
+  </data>
+  <data name="PortDeMerHauteurMaximumMAx" xml:space="preserve">
+    <value>Hauteur maximum max</value>
+  </data>
+  <data name="PortDeMerHauteurMaximumMin" xml:space="preserve">
+    <value>Hauteur maximum min</value>
+  </data>
+  <data name="PortDeMerLongueurMaximaleNavireMAx" xml:space="preserve">
+    <value>Longueur maximale navire max</value>
+  </data>
+  <data name="PortDeMerLongueurMaximaleNavireMin" xml:space="preserve">
+    <value>Longueur maximale navire min</value>
+  </data>
+  <data name="PortDeMerProfondeurQuaiChargementMAx" xml:space="preserve">
+    <value>Profondeur quai chargement max</value>
+  </data>
+  <data name="PortDeMerProfondeurQuaiChargementMin" xml:space="preserve">
+    <value>Profondeur quai chargement min</value>
+  </data>
+  <data name="PortDeMerProfondeurTerminalPetrolierMin" xml:space="preserve">
+    <value>Profondeur terminal petrolier min</value>
+  </data>
+  <data name="PortDeProfondeurTerminalPetrolierMAx" xml:space="preserve">
+    <value>Profondeur terminal petrolier min</value>
+  </data>
+  <data name="TypeEntrepot" xml:space="preserve">
+    <value>Type d'entrepot</value>
+  </data>
 </root>

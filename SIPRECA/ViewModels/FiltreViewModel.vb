@@ -49,8 +49,8 @@ Public Class FiltreViewModel
     <Display(Name:="EntrepotCapaciteMin", ResourceType:=GetType(Resource))>
     Public Property EntrepotCapaciteMin As Double?
 
-    <Display(Name:="EntrepotCapaciteMinMAx", ResourceType:=GetType(Resource))>
-    Public Property EntrepotCapaciteMinMAx As Double?
+    <Display(Name:="EntrepotCapaciteMAx", ResourceType:=GetType(Resource))>
+    Public Property EntrepotCapaciteMAx As Double?
 
     <Display(Name:="Heliport", ResourceType:=GetType(Resource))>
     Public Property Heliport As Boolean
@@ -67,14 +67,14 @@ Public Class FiltreViewModel
     <Display(Name:="NombreDeMedecinMin", ResourceType:=GetType(Resource))>
     Public Property NombreDeMedecinMin As Long?
 
-    <Display(Name:="NombreDeMedecinMAx", ResourceType:=GetType(Resource))>
-    Public Property NombreDeMedecinMAx As Long?
+    <Display(Name:="NombreDeMedecinMax", ResourceType:=GetType(Resource))>
+    Public Property NombreDeMedecinMax As Long?
 
     <Display(Name:="NombreDeLitMin", ResourceType:=GetType(Resource))>
     Public Property NombreDeLitMin As Long?
 
-    <Display(Name:="NombreDeLitMAx", ResourceType:=GetType(Resource))>
-    Public Property NombreDeLitMAx As Long?
+    <Display(Name:="NombreDeLitMax", ResourceType:=GetType(Resource))>
+    Public Property NombreDeLitMax As Long?
 
     <Display(Name:="NombreDePersonnelNonMedicalMin", ResourceType:=GetType(Resource))>
     Public Property NombreDePersonnelNonMedicalMin As Long?
@@ -131,10 +131,6 @@ Public Class FiltreViewModel
     <Display(Name:="TypeOffice", ResourceType:=GetType(Resource))>
     Public Property TypeOfficeId As ICollection(Of Long)
     Public Overridable Property LesTypeOffices As ICollection(Of SelectListItem)
-
-    <Display(Name:="SurfaceDePiste", ResourceType:=GetType(Resource))>
-    Public Property SurfaceDePisteId As ICollection(Of Long)
-    Public Overridable Property LesSurfaceDePistes As ICollection(Of SelectListItem)
 
     <Display(Name:="TypeHopitaux", ResourceType:=GetType(Resource))>
     Public Property TypeHopitauxId As ICollection(Of Long)

@@ -83,6 +83,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Abris.
+        '''</summary>
+        Public Shared ReadOnly Property Abris() As String
+            Get
+                Return ResourceManager.GetString("Abris", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité max.
+        '''</summary>
+        Public Shared ReadOnly Property AbrisCapaciteMAx() As String
+            Get
+                Return ResourceManager.GetString("AbrisCapaciteMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité min.
+        '''</summary>
+        Public Shared ReadOnly Property AbrisCapaciteMin() As String
+            Get
+                Return ResourceManager.GetString("AbrisCapaciteMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Population max.
+        '''</summary>
+        Public Shared ReadOnly Property AbrisEstimationPopulationMAx() As String
+            Get
+                Return ResourceManager.GetString("AbrisEstimationPopulationMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Population min.
+        '''</summary>
+        Public Shared ReadOnly Property AbrisEstimationPopulationMin() As String
+            Get
+                Return ResourceManager.GetString("AbrisEstimationPopulationMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre compte a été bloqué après plusieurs tentatives de connexion erronées..
         '''</summary>
         Public Shared ReadOnly Property AccountLockedMessage() As String
@@ -169,6 +214,51 @@ Namespace My.Resources
         Public Shared ReadOnly Property AdresseUser() As String
             Get
                 Return ResourceManager.GetString("AdresseUser", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Aéroport.
+        '''</summary>
+        Public Shared ReadOnly Property Aeroport() As String
+            Get
+                Return ResourceManager.GetString("Aeroport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Largeur de piste max.
+        '''</summary>
+        Public Shared ReadOnly Property AeroportLargeurDePisteMAx() As String
+            Get
+                Return ResourceManager.GetString("AeroportLargeurDePisteMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Largeur de piste min.
+        '''</summary>
+        Public Shared ReadOnly Property AeroportLargeurDePisteMin() As String
+            Get
+                Return ResourceManager.GetString("AeroportLargeurDePisteMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Longueur de piste max.
+        '''</summary>
+        Public Shared ReadOnly Property AeroportLongueurDePisteMAx() As String
+            Get
+                Return ResourceManager.GetString("AeroportLongueurDePisteMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Longueur de piste min.
+        '''</summary>
+        Public Shared ReadOnly Property AeroportLongueurDePisteMin() As String
+            Get
+                Return ResourceManager.GetString("AeroportLongueurDePisteMin", resourceCulture)
             End Get
         End Property
         
@@ -646,6 +736,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property BudgetPlaceholder() As String
             Get
                 Return ResourceManager.GetString("BudgetPlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Bureau.
+        '''</summary>
+        Public Shared ReadOnly Property Bureau() As String
+            Get
+                Return ResourceManager.GetString("Bureau", resourceCulture)
             End Get
         End Property
         
@@ -3530,6 +3629,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Entrepot.
+        '''</summary>
+        Public Shared ReadOnly Property Entrepot() As String
+            Get
+                Return ResourceManager.GetString("Entrepot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité disponible max.
+        '''</summary>
+        Public Shared ReadOnly Property EntrepotCapaciteDisponibleMAx() As String
+            Get
+                Return ResourceManager.GetString("EntrepotCapaciteDisponibleMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité disponible min.
+        '''</summary>
+        Public Shared ReadOnly Property EntrepotCapaciteDisponibleMin() As String
+            Get
+                Return ResourceManager.GetString("EntrepotCapaciteDisponibleMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité max.
+        '''</summary>
+        Public Shared ReadOnly Property EntrepotCapaciteMAx() As String
+            Get
+                Return ResourceManager.GetString("EntrepotCapaciteMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Capacité min.
+        '''</summary>
+        Public Shared ReadOnly Property EntrepotCapaciteMin() As String
+            Get
+                Return ResourceManager.GetString("EntrepotCapaciteMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Equipement de chargement.
         '''</summary>
         Public Shared ReadOnly Property EquipementChargement() As String
@@ -4124,6 +4268,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Héliport.
+        '''</summary>
+        Public Shared ReadOnly Property Heliport() As String
+            Get
+                Return ResourceManager.GetString("Heliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Héritage culturel.
         '''</summary>
         Public Shared ReadOnly Property HeritageCulturel() As String
@@ -4264,6 +4417,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property Infrastructure() As String
             Get
                 Return ResourceManager.GetString("Infrastructure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Instalation.
+        '''</summary>
+        Public Shared ReadOnly Property Instalation() As String
+            Get
+                Return ResourceManager.GetString("Instalation", resourceCulture)
             End Get
         End Property
         
@@ -6644,6 +6806,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de médecin max.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDeMedecinMax() As String
+            Get
+                Return ResourceManager.GetString("NombreDeMedecinMax", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de médecin min.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDeMedecinMin() As String
+            Get
+                Return ResourceManager.GetString("NombreDeMedecinMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre de médécin.
         '''</summary>
         Public Shared ReadOnly Property NombreDeMedecinPlaceholder() As String
@@ -6694,6 +6874,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property NombreDePersonnelNonMedical() As String
             Get
                 Return ResourceManager.GetString("NombreDePersonnelNonMedical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnel non medical max.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonnelNonMedicalMAx() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonnelNonMedicalMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre de personnel non medical min.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDePersonnelNonMedicalMin() As String
+            Get
+                Return ResourceManager.GetString("NombreDePersonnelNonMedicalMin", resourceCulture)
             End Get
         End Property
         
@@ -6766,6 +6964,24 @@ Namespace My.Resources
         Public Shared ReadOnly Property NombreDInfimiere() As String
             Get
                 Return ResourceManager.GetString("NombreDInfimiere", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre d&apos;infirmière max.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDInfimiereMAx() As String
+            Get
+                Return ResourceManager.GetString("NombreDInfimiereMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nombre d&apos;infirmière min.
+        '''</summary>
+        Public Shared ReadOnly Property NombreDInfimiereMin() As String
+            Get
+                Return ResourceManager.GetString("NombreDInfimiereMin", resourceCulture)
             End Get
         End Property
         
@@ -7958,6 +8174,87 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Port de mer.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMer() As String
+            Get
+                Return ResourceManager.GetString("PortDeMer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Hauteur maximum max.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerHauteurMaximumMAx() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerHauteurMaximumMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Hauteur maximum min.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerHauteurMaximumMin() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerHauteurMaximumMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Longueur maximale navire max.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerLongueurMaximaleNavireMAx() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerLongueurMaximaleNavireMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Longueur maximale navire min.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerLongueurMaximaleNavireMin() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerLongueurMaximaleNavireMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Profondeur quai chargement max.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerProfondeurQuaiChargementMAx() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerProfondeurQuaiChargementMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Profondeur quai chargement min.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerProfondeurQuaiChargementMin() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerProfondeurQuaiChargementMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Profondeur terminal petrolier min.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeMerProfondeurTerminalPetrolierMin() As String
+            Get
+                Return ResourceManager.GetString("PortDeMerProfondeurTerminalPetrolierMin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Profondeur terminal petrolier min.
+        '''</summary>
+        Public Shared ReadOnly Property PortDeProfondeurTerminalPetrolierMAx() As String
+            Get
+                Return ResourceManager.GetString("PortDeProfondeurTerminalPetrolierMAx", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Possession.
         '''</summary>
         Public Shared ReadOnly Property Possession() As String
@@ -9043,6 +9340,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property TypeAideCombo() As String
             Get
                 Return ResourceManager.GetString("TypeAideCombo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Type d&apos;entrepot.
+        '''</summary>
+        Public Shared ReadOnly Property TypeEntrepot() As String
+            Get
+                Return ResourceManager.GetString("TypeEntrepot", resourceCulture)
             End Get
         End Property
         
