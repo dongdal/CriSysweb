@@ -20,7 +20,7 @@ End Code
         <div class="card-body">
 
             <hr>
-            @Using Html.BeginForm("Create", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Query", "EvenementZones", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
 
                 @<div Class="form-group row">
@@ -28,38 +28,38 @@ End Code
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.EvenementId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.EvenementId, New SelectList(Model.LesEvenements, "Value", "Text"),
-                         New With {.class = "form-control", .multiple = "multiple", .tabindex = "1", .style = "font-size: 12px;  height: 200px; "})
+          New With {.class = "form-control", .multiple = "multiple", .tabindex = "0", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.EvenementId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.RegionId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.RegionId, New SelectList(Model.LesRegions, "Value", "Text"),
-                         New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;  height: 200px; "})
+             New With {.class = "form-control", .multiple = "multiple", .tabindex = "0", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.RegionId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.DepartementId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.DepartementId, New SelectList(Model.LesDepartements, "Value", "Text"),
-                         New With {.class = "form-control", .tabindex = "3", .multiple = "multiple", .style = "font-size: 12px;  height: 200px; "})
+             New With {.class = "form-control", .tabindex = "0", .multiple = "multiple", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.DepartementId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"),
-                         New With {.class = "form-control ", .multiple = "multiple", .tabindex = "4", .style = "font-size: 12px;  height: 200px; "})
+             New With {.class = "form-control ", .multiple = "multiple", .tabindex = "0", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.QuartiersId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.QuartiersId, New SelectList(Model.LesQuartiers, "Value", "Text"),
-                         New With {.class = "form-control", .multiple = "multiple", .tabindex = "5", .style = "font-size: 12px;  height: 200px; "})
+             New With {.class = "form-control", .multiple = "multiple", .tabindex = "0", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.QuartiersId, "", New With {.style = "color: #da0b0b"})
                     </div>
                     <div class="col-sm-2 form-group">
                         @Html.LabelFor(Function(m) m.FacteurId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.FacteurId, New SelectList(Model.LesFacteurs, "Value", "Text"),
-                         New With {.class = "form-control", .multiple = "multiple", .tabindex = "6", .style = "font-size: 12px;  height: 200px; "})
+                New With {.class = "form-control", .multiple = "multiple", .tabindex = "0", .style = "font-size: 12px;  height: 200px; "})
                         @Html.ValidationMessageFor(Function(m) m.FacteurId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -73,7 +73,7 @@ End Code
                                     <div class="row">
                                         <div class="col-sm-3">
                                             @Html.CheckBoxFor(Function(model) model.Deces,
-                New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "})
+New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "})
                                             @Html.LabelFor(Function(m) m.Deces, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                         </div>
 
@@ -84,7 +84,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
                                         </div>
                                         <div class="col-sm-4">
                                             @Html.EditorFor(Function(model) model.DecesMAx,
-   New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                             @Html.ValidationMessageFor(Function(m) m.DecesMAx, "", New With {.style = "color: #da0b0b"})
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
                                     <div class="row">
                                         <div class="col-sm-3">
                                             @Html.CheckBoxFor(Function(model) model.MaisonDetruite,
-                New With {.class = "form-control", .tabindex = "4", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "})
+New With {.class = "form-control", .tabindex = "4", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "})
                                             @Html.LabelFor(Function(m) m.MaisonDetruite, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                         </div>
 

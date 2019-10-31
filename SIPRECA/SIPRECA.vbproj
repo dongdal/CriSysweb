@@ -1991,6 +1991,7 @@
     <Content Include="Views\Shared\_LeftSideBarDesinventar.vbhtml" />
     <Content Include="Views\TypeSolutions\Delete.vbhtml" />
     <Content Include="Views\EvenementZones\Query.vbhtml" />
+    <Content Include="Views\EvenementZones\QueryResult.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

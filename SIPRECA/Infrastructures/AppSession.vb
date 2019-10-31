@@ -126,5 +126,14 @@
         End Set
     End Property
 
+    Shared Property ListEvenementZone As List(Of EvenementZone)
+        Get
+            Return HttpContext.Current.Session("ListEvenementZone")
+        End Get
+        Set(value As List(Of EvenementZone))
+            HttpContext.Current.Session("ListEvenementZone") = value
+        End Set
+    End Property
+
 
 End Class
