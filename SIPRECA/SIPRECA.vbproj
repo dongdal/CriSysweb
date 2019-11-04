@@ -274,6 +274,14 @@
     <Compile Include="DAL\Config\ImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\InfrastructureCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\NiveauDAlertCfg.vb" />
+    <Compile Include="DAL\Config\MaterielEntrepotsCfg.vb" />
+    <Compile Include="DAL\Config\MaterielInstallationCfg.vb" />
+    <Compile Include="DAL\Config\MaterielBureauCfg.vb" />
+    <Compile Include="DAL\Config\MaterielAeroportCfg.vb" />
+    <Compile Include="DAL\Config\MaterielPortDeMerCfg.vb" />
+    <Compile Include="DAL\Config\MaterielHeliportCfg.vb" />
+    <Compile Include="DAL\Config\MaterielHopitauxCfg.vb" />
+    <Compile Include="DAL\Config\MaterielAbrisCfg.vb" />
     <Compile Include="DAL\Config\PortDeMerCfg.vb" />
     <Compile Include="DAL\Config\HeliportCfg.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
@@ -288,6 +296,7 @@
     <Compile Include="DAL\Config\PersonnelAbrisCfg.vb" />
     <Compile Include="DAL\Config\MarqueElementCfg.vb" />
     <Compile Include="DAL\Config\SecteurProjetCfg.vb" />
+    <Compile Include="DAL\Config\MaterielCfg.vb" />
     <Compile Include="DAL\Config\TypeImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\CategorieElementCfg.vb" />
     <Compile Include="DAL\Config\TypeVehiculeCfg.vb" />
@@ -404,6 +413,14 @@
     </Compile>
     <Compile Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\MaterielEntrepots.vb" />
+    <Compile Include="Models\MaterielInstallation.vb" />
+    <Compile Include="Models\MaterielBureau.vb" />
+    <Compile Include="Models\MaterielAeroport.vb" />
+    <Compile Include="Models\MaterielPortDeMer.vb" />
+    <Compile Include="Models\MaterielHeliport.vb" />
+    <Compile Include="Models\MaterielHopitaux.vb" />
+    <Compile Include="Models\MaterielAbris.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
     <Compile Include="Models\DesInventar\CibleCPerteBetail.vb" />
@@ -430,6 +447,7 @@
     <Compile Include="Models\TypeImmobilisation.vb" />
     <Compile Include="Models\CategorieElement.vb" />
     <Compile Include="Models\MarqueElement.vb" />
+    <Compile Include="Models\Materiel.vb" />
     <Compile Include="Models\TypeVehicule.vb" />
     <Compile Include="Models\Vehicule.vb" />
     <Compile Include="Models\Infrastructure.vb" />

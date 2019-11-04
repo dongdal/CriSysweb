@@ -5,6 +5,7 @@ Partial Public Class Abris
     Public Sub New()
         MaladieSinistre = New HashSet(Of MaladieSinistre)()
         PersonnelAbris = New HashSet(Of PersonnelAbris)()
+        MaterielAbris = New HashSet(Of MaterielAbris)()
     End Sub
 
 
@@ -32,4 +33,5 @@ Partial Public Class Abris
 
     Public Overridable Property MaladieSinistre As ICollection(Of MaladieSinistre)
     Public Overridable Property PersonnelAbris As ICollection(Of PersonnelAbris)
+    Public Overridable Property MaterielAbris As ICollection(Of MaterielAbris)
 End Class

@@ -5,6 +5,7 @@ Imports System.Data.Entity.Spatial
 Partial Public Class Hopitaux
     Public Sub New()
         HopitauxPuissance = New HashSet(Of HopitauxPuissance)()
+        MaterielHopitaux = New HashSet(Of MaterielHopitaux)()
     End Sub
 
 
@@ -39,4 +40,5 @@ Partial Public Class Hopitaux
     Public Overridable Property Oganisation As Organisation
 
     Public Overridable Property HopitauxPuissance As ICollection(Of HopitauxPuissance)
+    Public Overridable Property MaterielHopitaux As ICollection(Of MaterielHopitaux)
 End Class
