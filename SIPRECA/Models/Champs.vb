@@ -1,15 +1,15 @@
 
 Partial Public Class Champs
     Public Sub New()
-        'ChampsSection = New HashSet(Of ChampsSection)()
+        Proposition = New HashSet(Of Proposition)()
     End Sub
 
     Public Property Id As Long
     Public Property TypeChampsId As Long
     Public Property SectionId As Long
     Public Property Titre As String
-    Public Property DateCreation As DateTime=Now
-    Public Property StatutExistant As Short=1
+    Public Property DateCreation As DateTime = Now
+    Public Property StatutExistant As Short = 1
 
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
@@ -18,5 +18,5 @@ Partial Public Class Champs
 
     Public Overridable Property Section As Section
 
-    'Public Overridable Property ChampsSection As ICollection(Of ChampsSection)
+    Public Overridable Property Proposition As ICollection(Of Proposition)
 End Class

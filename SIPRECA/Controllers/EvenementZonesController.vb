@@ -498,11 +498,34 @@ Namespace Controllers
                 End Select
 
                 'Une fois que la liste des évènements est composée, on peut désormais la filtrer en fonction des localités sélectionnées par l'utilisateur
-                'If (entityVM.QuartiersId.Count > 0) Then
-                '    For Each quartier In entityVM.QuartiersId
-                '        ListEvenementZone = ListEvenementZone.Where(Function(e) e.ZoneARisque.)
-                '    Next
-                'End If
+                'If (Not IsNothing(entityVM.QuartiersId) And entityVM.QuartiersId.Count > 0) Then
+                If (entityVM.QuartiersId IsNot Nothing) AndAlso (entityVM.QuartiersId.Any()) Then
+                    For Each IdQuartier In entityVM.QuartiersId
+                        'Dim ListZoneLocalisation = (From e In Db.ZoneLocalisation Where e.QuartierId = IdQuartier From evntZon In e.ZoneARisque.EvenementZone Select evntZon).ToList()
+                        Dim ListEvenementZoneFiltree = (From e In ListEvenementZone From evntZon In e.ZoneARisque.ZoneLocalisation Where evntZon.QuartierId = IdQuartier Select e).ToList()
+                        ListEvenementZone = IIf(ListEvenementZoneFiltree.Count > 0, ListEvenementZoneFiltree.Intersect(ListEvenementZone).ToList(), ListEvenementZone)
+                    Next
+                ElseIf (entityVM.CommuneId IsNot Nothing) AndAlso (entityVM.CommuneId.Any()) Then
+                    For Each IdCommune In entityVM.CommuneId
+                        'Dim ListZoneLocalisation = (From e In Db.ZoneLocalisation Where e.QuartierId = IdQuartier From evntZon In e.ZoneARisque.EvenementZone Select evntZon).ToList()
+                        Dim ListEvenementZoneFiltree = (From e In ListEvenementZone From evntZon In e.ZoneARisque.ZoneLocalisation Where evntZon.Quartier.CommuneId = IdCommune Select e).ToList()
+                        ListEvenementZone = IIf(ListEvenementZoneFiltree.Count > 0, ListEvenementZoneFiltree.Intersect(ListEvenementZone).ToList(), ListEvenementZone)
+                    Next
+                ElseIf (entityVM.DepartementId IsNot Nothing) AndAlso (entityVM.DepartementId.Any()) Then
+                    For Each IdDepartement In entityVM.DepartementId
+                        'Dim ListZoneLocalisation = (From e In Db.ZoneLocalisation Where e.QuartierId = IdQuartier From evntZon In e.ZoneARisque.EvenementZone Select evntZon).ToList()
+                        Dim ListEvenementZoneFiltree = (From e In ListEvenementZone From evntZon In e.ZoneARisque.ZoneLocalisation Where
+                                                                                                                                       evntZon.Quartier.Commune.DepartementId = IdDepartement Select e).ToList()
+                        ListEvenementZone = IIf(ListEvenementZoneFiltree.Count > 0, ListEvenementZoneFiltree.Intersect(ListEvenementZone).ToList(), ListEvenementZone)
+                    Next
+                ElseIf (entityVM.RegionId IsNot Nothing) AndAlso (entityVM.RegionId.Any()) Then
+                    For Each IdRegion In entityVM.RegionId
+                        'Dim ListZoneLocalisation = (From e In Db.ZoneLocalisation Where e.QuartierId = IdQuartier From evntZon In e.ZoneARisque.EvenementZone Select evntZon).ToList()
+                        Dim ListEvenementZoneFiltree = (From e In ListEvenementZone From evntZon In e.ZoneARisque.ZoneLocalisation Where
+                                                                                                                                       evntZon.Quartier.Commune.Departement.RegionId = IdRegion Select e).ToList()
+                        ListEvenementZone = IIf(ListEvenementZoneFiltree.Count > 0, ListEvenementZoneFiltree.Intersect(ListEvenementZone).ToList(), ListEvenementZone)
+                    Next
+                End If
 
                 AppSession.ListEvenementZone = ListEvenementZone
                     Return RedirectToAction("QueryResult", New With {.sortOrder = "", .currentFilter = "", .searchString = "", .page = 1})

@@ -3318,4 +3318,61 @@
   <data name="TypeEntrepot" xml:space="preserve">
     <value>Type d'entrepot</value>
   </data>
+  <data name="CreateCollecte" xml:space="preserve">
+    <value>Ajouter une collecte</value>
+  </data>
+  <data name="CreateEnquete" xml:space="preserve">
+    <value>Ajouter une enquête</value>
+  </data>
+  <data name="CreateFormulaire" xml:space="preserve">
+    <value>Ajouter un nouveau formulaire</value>
+  </data>
+  <data name="CreateProposition" xml:space="preserve">
+    <value>Ajouter une proposition</value>
+  </data>
+  <data name="CreateQuestion" xml:space="preserve">
+    <value>Ajouter une question</value>
+  </data>
+  <data name="DeleteCollecte" xml:space="preserve">
+    <value>Supprimer une collecte</value>
+  </data>
+  <data name="DeleteEnquete" xml:space="preserve">
+    <value>Supprimer une enquête</value>
+  </data>
+  <data name="DeleteFormulaire" xml:space="preserve">
+    <value>Supprimer un formulaire</value>
+  </data>
+  <data name="DeleteProposition" xml:space="preserve">
+    <value>Supprimer une proposition</value>
+  </data>
+  <data name="DeleteQuestion" xml:space="preserve">
+    <value>Supprimer une question</value>
+  </data>
+  <data name="DetailsCollecte" xml:space="preserve">
+    <value>Informations sur la collecte</value>
+  </data>
+  <data name="DetailsFormulaires" xml:space="preserve">
+    <value>Informations détaillées sur le fomulaire</value>
+  </data>
+  <data name="DetailsProposition" xml:space="preserve">
+    <value>Information détaillées sur la proposition</value>
+  </data>
+  <data name="DetailsQuestion" xml:space="preserve">
+    <value>Informations détaillées sur la question</value>
+  </data>
+  <data name="EditCollecte" xml:space="preserve">
+    <value>Modifier une collecte</value>
+  </data>
+  <data name="EditEnquete" xml:space="preserve">
+    <value>Modifier une enquête</value>
+  </data>
+  <data name="EditFormulaire" xml:space="preserve">
+    <value>Modifier le formulaire</value>
+  </data>
+  <data name="EditProposition" xml:space="preserve">
+    <value>Modifier une proposition</value>
+  </data>
+  <data name="EditQuestion" xml:space="preserve">
+    <value>Modifier la question</value>
+  </data>
 </root>

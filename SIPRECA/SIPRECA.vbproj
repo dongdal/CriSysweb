@@ -249,6 +249,7 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
+    <Compile Include="DAL\Config\CollecteCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\SolutionCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\TypeSolutionCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\ZoneLocalisationCfg.vb" />
@@ -412,15 +413,11 @@
       <DependentUpon>201910151515426_Mise a jour cardre sendai cible b.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.vb" />
+    <Compile Include="Migrations\201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.Designer.vb">
+      <DependentUpon>201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb" />
     <Compile Include="Migrations\Configuration.vb" />
-    <Compile Include="Models\MaterielEntrepots.vb" />
-    <Compile Include="Models\MaterielInstallation.vb" />
-    <Compile Include="Models\MaterielBureau.vb" />
-    <Compile Include="Models\MaterielAeroport.vb" />
-    <Compile Include="Models\MaterielPortDeMer.vb" />
-    <Compile Include="Models\MaterielHeliport.vb" />
-    <Compile Include="Models\MaterielHopitaux.vb" />
-    <Compile Include="Models\MaterielAbris.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
     <Compile Include="Models\DesInventar\CibleCPerteBetail.vb" />
@@ -780,6 +777,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910151515426_Mise a jour cardre sendai cible b.resx">
       <DependentUpon>201910151515426_Mise a jour cardre sendai cible b.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.resx">
+      <DependentUpon>201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
