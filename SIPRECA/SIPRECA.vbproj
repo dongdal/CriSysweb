@@ -194,6 +194,7 @@
     <Compile Include="Controllers\CardreSendaiCibleDController.vb" />
     <Compile Include="Controllers\DesagregationRecoltesAgricolesController.vb" />
     <Compile Include="Controllers\ElementsController.vb" />
+    <Compile Include="Controllers\EnquetesController.vb" />
     <Compile Include="Controllers\EvenementZonesController.vb" />
     <Compile Include="Controllers\PerteBetailsController.vb" />
     <Compile Include="Controllers\ServicesPubliquePertubesController.vb" />
@@ -2001,6 +2002,11 @@
     <Content Include="Views\TypeSolutions\Delete.vbhtml" />
     <Content Include="Views\EvenementZones\Query.vbhtml" />
     <Content Include="Views\EvenementZones\QueryResult.vbhtml" />
+    <Content Include="Views\Enquetes\Create.vbhtml" />
+    <Content Include="Views\Enquetes\Delete.vbhtml" />
+    <Content Include="Views\Enquetes\Details.vbhtml" />
+    <Content Include="Views\Enquetes\Edit.vbhtml" />
+    <Content Include="Views\Enquetes\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
