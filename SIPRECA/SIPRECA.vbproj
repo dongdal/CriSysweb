@@ -2034,6 +2034,11 @@
     <Content Include="Views\Enquetes\Details.vbhtml" />
     <Content Include="Views\Enquetes\Edit.vbhtml" />
     <Content Include="Views\Enquetes\Index.vbhtml" />
+    <Content Include="Views\Materiels\Create.vbhtml" />
+    <Content Include="Views\Materiels\Delete.vbhtml" />
+    <Content Include="Views\Materiels\Details.vbhtml" />
+    <Content Include="Views\Materiels\Edit.vbhtml" />
+    <Content Include="Views\Materiels\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
