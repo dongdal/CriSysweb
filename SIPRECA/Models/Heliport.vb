@@ -1,6 +1,9 @@
 Imports System.Data.Entity.Spatial
 
 Partial Public Class Heliport
+    Public Sub New()
+        MaterielHeliport = New HashSet(Of MaterielHeliport)()
+    End Sub
 
     Public Property Id As Long
     Public Property OganisationId As Long
@@ -23,4 +26,5 @@ Partial Public Class Heliport
 
     Public Overridable Property Ville As Ville
     Public Overridable Property Oganisation As Organisation
+    Public Overridable Property MaterielHeliport As ICollection(Of MaterielHeliport)
 End Class

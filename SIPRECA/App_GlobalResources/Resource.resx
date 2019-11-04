@@ -3157,7 +3157,7 @@
     <value>Les services publique</value>
   </data>
   <data name="TrierLesResultats" xml:space="preserve">
-    <value>Treir les résultats par</value>
+    <value>Trier les résultats par</value>
   </data>
   <data name="RoutesEndomages" xml:space="preserve">
     <value>Routes endomagés</value>
@@ -3374,5 +3374,29 @@
   </data>
   <data name="EditQuestion" xml:space="preserve">
     <value>Modifier la question</value>
+  </data>
+  <data name="Cible" xml:space="preserve">
+    <value>Cible</value>
+  </data>
+  <data name="CibleCombo" xml:space="preserve">
+    <value>Veuillez sélectionner la cible</value>
+  </data>
+  <data name="ComboCibleMateriel" xml:space="preserve">
+    <value>Veuillez selectionner la cible</value>
+  </data>
+  <data name="CreateMateriel" xml:space="preserve">
+    <value>Ajouter un équipement</value>
+  </data>
+  <data name="EditMateriel" xml:space="preserve">
+    <value>Modifier l'équipement</value>
+  </data>
+  <data name="ListMateriel" xml:space="preserve">
+    <value>Liste des équipements</value>
+  </data>
+  <data name="ManageMateriel" xml:space="preserve">
+    <value>Gestion des équipements</value>
+  </data>
+  <data name="Materiel" xml:space="preserve">
+    <value>Equipements</value>
   </data>
 </root>

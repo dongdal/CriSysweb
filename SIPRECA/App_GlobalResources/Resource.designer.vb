@@ -1082,6 +1082,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Cible.
+        '''</summary>
+        Public Shared ReadOnly Property Cible() As String
+            Get
+                Return ResourceManager.GetString("Cible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type de culture.
         '''</summary>
         Public Shared ReadOnly Property CibleCDesagregationAgricoleCombo() As String
@@ -1096,6 +1105,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CibleCDesagregationAgricoleId() As String
             Get
                 Return ResourceManager.GetString("CibleCDesagregationAgricoleId", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la cible.
+        '''</summary>
+        Public Shared ReadOnly Property CibleCombo() As String
+            Get
+                Return ResourceManager.GetString("CibleCombo", resourceCulture)
             End Get
         End Property
         
@@ -1231,6 +1249,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ComboCategorieElement() As String
             Get
                 Return ResourceManager.GetString("ComboCategorieElement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez selectionner la cible.
+        '''</summary>
+        Public Shared ReadOnly Property ComboCibleMateriel() As String
+            Get
+                Return ResourceManager.GetString("ComboCibleMateriel", resourceCulture)
             End Get
         End Property
         
@@ -1825,6 +1852,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property CreateMarqueElement() As String
             Get
                 Return ResourceManager.GetString("CreateMarqueElement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter un équipement.
+        '''</summary>
+        Public Shared ReadOnly Property CreateMateriel() As String
+            Get
+                Return ResourceManager.GetString("CreateMateriel", resourceCulture)
             End Get
         End Property
         
@@ -3395,6 +3431,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier l&apos;équipement.
+        '''</summary>
+        Public Shared ReadOnly Property EditMateriel() As String
+            Get
+                Return ResourceManager.GetString("EditMateriel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une nature d&apos;aide.
         '''</summary>
         Public Shared ReadOnly Property EditNatureAide() As String
@@ -4916,6 +4961,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des équipements.
+        '''</summary>
+        Public Shared ReadOnly Property ListMateriel() As String
+            Get
+                Return ResourceManager.GetString("ListMateriel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à  les moyens de reponses.
         '''</summary>
         Public Shared ReadOnly Property ListMoyenDereponse() As String
@@ -5645,6 +5699,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des équipements.
+        '''</summary>
+        Public Shared ReadOnly Property ManageMateriel() As String
+            Get
+                Return ResourceManager.GetString("ManageMateriel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des moyens.
         '''</summary>
         Public Shared ReadOnly Property ManageMoyen() As String
@@ -5992,6 +6055,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property MarqueElement() As String
             Get
                 Return ResourceManager.GetString("MarqueElement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Equipements.
+        '''</summary>
+        Public Shared ReadOnly Property Materiel() As String
+            Get
+                Return ResourceManager.GetString("Materiel", resourceCulture)
             End Get
         End Property
         
@@ -9479,7 +9551,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Treir les résultats par.
+        '''  Recherche une chaîne localisée semblable à Trier les résultats par.
         '''</summary>
         Public Shared ReadOnly Property TrierLesResultats() As String
             Get

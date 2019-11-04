@@ -199,6 +199,7 @@
     <Compile Include="Controllers\PerteBetailsController.vb" />
     <Compile Include="Controllers\ServicesPubliquePertubesController.vb" />
     <Compile Include="Controllers\SolutionsController.vb" />
+    <Compile Include="Controllers\MaterielsController.vb" />
     <Compile Include="Controllers\ZoneARisquesController.vb" />
     <Compile Include="Controllers\RisquesController.vb" />
     <Compile Include="Controllers\NiveauDAlertsController.vb" />
@@ -276,6 +277,14 @@
     <Compile Include="DAL\Config\ImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\InfrastructureCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\NiveauDAlertCfg.vb" />
+    <Compile Include="DAL\Config\MaterielEntrepotsCfg.vb" />
+    <Compile Include="DAL\Config\MaterielInstallationCfg.vb" />
+    <Compile Include="DAL\Config\MaterielBureauCfg.vb" />
+    <Compile Include="DAL\Config\MaterielAeroportCfg.vb" />
+    <Compile Include="DAL\Config\MaterielPortDeMerCfg.vb" />
+    <Compile Include="DAL\Config\MaterielHeliportCfg.vb" />
+    <Compile Include="DAL\Config\MaterielHopitauxCfg.vb" />
+    <Compile Include="DAL\Config\MaterielAbrisCfg.vb" />
     <Compile Include="DAL\Config\PortDeMerCfg.vb" />
     <Compile Include="DAL\Config\HeliportCfg.vb" />
     <Compile Include="DAL\Config\CollectiviteSinistreeCfg.vb" />
@@ -290,6 +299,7 @@
     <Compile Include="DAL\Config\PersonnelAbrisCfg.vb" />
     <Compile Include="DAL\Config\MarqueElementCfg.vb" />
     <Compile Include="DAL\Config\SecteurProjetCfg.vb" />
+    <Compile Include="DAL\Config\MaterielCfg.vb" />
     <Compile Include="DAL\Config\TypeImmobilisationCfg.vb" />
     <Compile Include="DAL\Config\CategorieElementCfg.vb" />
     <Compile Include="DAL\Config\TypeVehiculeCfg.vb" />
@@ -409,6 +419,10 @@
       <DependentUpon>201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb" />
+    <Compile Include="Migrations\201911041139435_Modification du model pour ajout du plateau technique.Designer.vb">
+      <DependentUpon>201911041139435_Modification du model pour ajout du plateau technique.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911041139435_Modification du model pour ajout du plateau technique.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Collecte.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
@@ -433,10 +447,19 @@
     <Compile Include="Models\DesInventar\NiveauDAlert.vb" />
     <Compile Include="Models\DesInventar\Risque.vb" />
     <Compile Include="Models\DesInventar\RisqueZone.vb" />
+    <Compile Include="Models\MaterielAbris.vb" />
+    <Compile Include="Models\MaterielAeroport.vb" />
+    <Compile Include="Models\MaterielBureau.vb" />
+    <Compile Include="Models\MaterielEntrepots.vb" />
+    <Compile Include="Models\MaterielHeliport.vb" />
+    <Compile Include="Models\MaterielHopitaux.vb" />
+    <Compile Include="Models\MaterielInstallation.vb" />
+    <Compile Include="Models\MaterielPortDeMer.vb" />
     <Compile Include="Models\SecteurProjet.vb" />
     <Compile Include="Models\TypeImmobilisation.vb" />
     <Compile Include="Models\CategorieElement.vb" />
     <Compile Include="Models\MarqueElement.vb" />
+    <Compile Include="Models\Materiel.vb" />
     <Compile Include="Models\TypeVehicule.vb" />
     <Compile Include="Models\Vehicule.vb" />
     <Compile Include="Models\Infrastructure.vb" />
@@ -506,6 +529,7 @@
     <Compile Include="ViewModels\DepartementViewModel.vb" />
     <Compile Include="ViewModels\CommuneViewModel.vb" />
     <Compile Include="ViewModels\RegionViewModel.vb" />
+    <Compile Include="ViewModels\MaterielViewModel.vb" />
     <Compile Include="ViewModels\TypeAideViewModel.vb" />
     <Compile Include="ViewModels\SecteurViewModel.vb" />
     <Compile Include="ViewModels\TypeEntrepotViewModel.vb" />
@@ -772,6 +796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.resx">
       <DependentUpon>201911041000070_Mise_A_Jour_Module_Gestion_Formulaire_AJout_Table_Collecte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911041139435_Modification du model pour ajout du plateau technique.resx">
+      <DependentUpon>201911041139435_Modification du model pour ajout du plateau technique.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

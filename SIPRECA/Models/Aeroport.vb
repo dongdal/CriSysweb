@@ -3,7 +3,9 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class Aeroport
-
+    Public Sub New()
+        MaterielAeroport = New HashSet(Of MaterielAeroport)()
+    End Sub
 
     Public Property Id As Long
     Public Property OganisationId As Long
@@ -36,4 +38,6 @@ Partial Public Class Aeroport
     Public Overridable Property TailleDeAeronef As TailleDeAeronef
     Public Overridable Property UsageHumanitaire As UsageHumanitaire
     Public Overridable Property Oganisation As Organisation
+    Public Overridable Property MaterielAeroport As ICollection(Of MaterielAeroport)
+
 End Class
