@@ -140,5 +140,37 @@ Public Class FiltreViewModel
     Public Property TypeEntrepotId As ICollection(Of Long)
     Public Overridable Property LesTypeEntrepots As ICollection(Of SelectListItem)
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielHopitauxId As ICollection(Of Long)
+    Public Overridable Property LesMaterielHopitaux As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielAbrisId As ICollection(Of Long)
+    Public Overridable Property LesMaterielsAbris As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielHeliportId As ICollection(Of Long)
+    Public Overridable Property LesMaterielHeliport As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielPortDeMerId As ICollection(Of Long)
+    Public Overridable Property LesMaterielPortDeMer As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielAeroportId As ICollection(Of Long)
+    Public Overridable Property LesMaterielAeroport As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielBureauId As ICollection(Of Long)
+    Public Overridable Property LesMaterielBureau As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielInstallationId As ICollection(Of Long)
+    Public Overridable Property LesMaterielInstallation As ICollection(Of SelectListItem)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielEntrepotsId As ICollection(Of Long)
+    Public Overridable Property LesMaterielEntrepots As ICollection(Of SelectListItem)
+
 End Class
 
