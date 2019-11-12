@@ -1,17 +1,17 @@
-﻿@ModelType PagedList.IPagedList(Of Enquete)
+﻿@ModelType PagedList.IPagedList(Of TypeChamps)
 @Imports PagedList.Mvc
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.ListEnquete
+    ViewBag.Title = Resource.ListTypeChamps
     Layout = "~/Views/Shared/_LayoutCollecte.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageEnquete</h1>
+    <h1 class="page-title">@Resource.ManageTypeChamps</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Enquetes")>@Resource.ManageEnquete</a></li>
-        <li class="breadcrumb-item active">@Resource.ListEnquete</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "TypeChamps")>@Resource.ManageTypeChamps</a></li>
+        <li class="breadcrumb-item active">@Resource.ListTypeChamps</li>
     </ol>
 </div>
 
@@ -19,9 +19,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListEnquete</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeChamps</div>
             <hr>
-            @Using Html.BeginForm("Index", "Enquetes", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Index", "TypeChamps", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @<div Class="form-inline padding-bottom-1">
                     <div Class="row col-sm-12">
@@ -50,13 +50,7 @@ End Code
                 <thead>
                     <tr>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Titre, "Index", New With {.sortOrder = ViewBag.TitreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.SinistreId, "Index", New With {.sortOrder = ViewBag.SinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Description, "Index", New With {.sortOrder = ViewBag.DescriptionSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.Libelle, "Index", New With {.sortOrder = ViewBag.LibelleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
@@ -74,13 +68,7 @@ End Code
                     @For Each item In Model
                         @<tr>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Titre)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Sinistre.Libelle)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Description)
+                                @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.StatutExistant)
@@ -92,9 +80,9 @@ End Code
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>
+                                @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>*@
 
                             </td>
                         </tr>
@@ -104,7 +92,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                                    New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>

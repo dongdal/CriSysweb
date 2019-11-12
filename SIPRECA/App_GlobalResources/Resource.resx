@@ -3399,4 +3399,148 @@
   <data name="Materiel" xml:space="preserve">
     <value>Equipements</value>
   </data>
+  <data name="btn_Previous" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="ComboEnquete" xml:space="preserve">
+    <value>Veuillez sélectionnerl'enquête</value>
+  </data>
+  <data name="ComboFormulaire" xml:space="preserve">
+    <value>Veuillez sélectionner un formulaire</value>
+  </data>
+  <data name="ComboSection" xml:space="preserve">
+    <value>Veuillez sélectionner une section</value>
+  </data>
+  <data name="CreateChamps" xml:space="preserve">
+    <value>Ajouter un champ</value>
+  </data>
+  <data name="CreateEnqueteRequiredField" xml:space="preserve">
+    <value>Veuillez remplir renseigner le champ {0}</value>
+  </data>
+  <data name="CreateFormulaireRequiredField" xml:space="preserve">
+    <value>Veuillez remplir renseigner le champ {0}</value>
+  </data>
+  <data name="CreateSection" xml:space="preserve">
+    <value>Ajouter une nouvelle section</value>
+  </data>
+  <data name="CreateSectionRequiredField" xml:space="preserve">
+    <value>Veuillez remplir renseigner le champ {0}</value>
+  </data>
+  <data name="CreateTypeChamp" xml:space="preserve">
+    <value>Ajouter un type de champ</value>
+  </data>
+  <data name="CrisisTitle" xml:space="preserve">
+    <value>CRISIS</value>
+  </data>
+  <data name="DeleteChamps" xml:space="preserve">
+    <value>Supprimer un champ</value>
+  </data>
+  <data name="DeleteSection" xml:space="preserve">
+    <value>Supprimer la section</value>
+  </data>
+  <data name="DeleteTypeChamp" xml:space="preserve">
+    <value>Supprimer un type de champ</value>
+  </data>
+  <data name="DetailsChamps" xml:space="preserve">
+    <value>Informations sur le champs</value>
+  </data>
+  <data name="DetailsSection" xml:space="preserve">
+    <value>Informations détaillées sur la section</value>
+  </data>
+  <data name="DetailsTypeChamp" xml:space="preserve">
+    <value>Informations détaillées sur le type de champ</value>
+  </data>
+  <data name="EditChamps" xml:space="preserve">
+    <value>Modifier un champ</value>
+  </data>
+  <data name="EditSection" xml:space="preserve">
+    <value>Modifier une section</value>
+  </data>
+  <data name="EditTypeChamp" xml:space="preserve">
+    <value>Modifier un type de champ</value>
+  </data>
+  <data name="EnqueteId" xml:space="preserve">
+    <value>Enquête concernée</value>
+  </data>
+  <data name="FormulaireId" xml:space="preserve">
+    <value>Formulaire concerné</value>
+  </data>
+  <data name="ListCollecte" xml:space="preserve">
+    <value>Liste des collectes</value>
+  </data>
+  <data name="ListEnquete" xml:space="preserve">
+    <value>Liste des enquêtes</value>
+  </data>
+  <data name="ListFormulaire" xml:space="preserve">
+    <value>Liste des formulaires</value>
+  </data>
+  <data name="ListProposition" xml:space="preserve">
+    <value>Liste de propositions</value>
+  </data>
+  <data name="ListSection" xml:space="preserve">
+    <value>Liste des sections</value>
+  </data>
+  <data name="ListTypeChamp" xml:space="preserve">
+    <value>Liste des types de champ</value>
+  </data>
+  <data name="ManageChamps" xml:space="preserve">
+    <value>Gestion des champs</value>
+  </data>
+  <data name="ManageCollecte" xml:space="preserve">
+    <value>Gestion des collectes</value>
+  </data>
+  <data name="ManageEnquete" xml:space="preserve">
+    <value>Gestion des enquêtes</value>
+  </data>
+  <data name="ManageFormulaire" xml:space="preserve">
+    <value>Gestion des formulaires</value>
+  </data>
+  <data name="ManageProposition" xml:space="preserve">
+    <value>Gestion des propositions</value>
+  </data>
+  <data name="ManageSection" xml:space="preserve">
+    <value>Gestion des sections</value>
+  </data>
+  <data name="ManageTypeChamp" xml:space="preserve">
+    <value>Gestion des types de champ</value>
+  </data>
+  <data name="MenuEnquete" xml:space="preserve">
+    <value>Les enquêtes</value>
+  </data>
+  <data name="MenuManageEnquete" xml:space="preserve">
+    <value>Gestion des enquêtes</value>
+  </data>
+  <data name="MenuSinistre" xml:space="preserve">
+    <value>Les Sinistres</value>
+  </data>
+  <data name="MenuTypeChamps" xml:space="preserve">
+    <value>Les types de champs</value>
+  </data>
+  <data name="ModuleCollecte" xml:space="preserve">
+    <value>Module de gestion des collectes</value>
+  </data>
+  <data name="SectionId" xml:space="preserve">
+    <value>Section concernée</value>
+  </data>
+  <data name="SinistreCombo" xml:space="preserve">
+    <value>Veuillez sélectionner le sinistre</value>
+  </data>
+  <data name="SinistreId" xml:space="preserve">
+    <value>Le Sinistre</value>
+  </data>
+  <data name="Titre" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="TypeChampsCombo" xml:space="preserve">
+    <value>Veuillez sélectionner un type de champ</value>
+  </data>
+  <data name="TypeChampsId" xml:space="preserve">
+    <value>Type de champ</value>
+  </data>
+  <data name="ChampsId" xml:space="preserve">
+    <value>Champ concerné</value>
+  </data>
+  <data name="ConfirmDeleteBis" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer cet élément ainsi que tous les éléments qui dépendent de lui?</value>
+  </data>
 </root>

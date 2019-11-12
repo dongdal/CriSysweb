@@ -200,6 +200,7 @@
     <Compile Include="Controllers\ServicesPubliquePertubesController.vb" />
     <Compile Include="Controllers\SolutionsController.vb" />
     <Compile Include="Controllers\MaterielsController.vb" />
+    <Compile Include="Controllers\TypeChampsController.vb" />
     <Compile Include="Controllers\ZoneARisquesController.vb" />
     <Compile Include="Controllers\RisquesController.vb" />
     <Compile Include="Controllers\NiveauDAlertsController.vb" />
@@ -523,6 +524,7 @@
     <Compile Include="ViewModels\OrganisationViewModel.vb" />
     <Compile Include="ViewModels\HeliportViewModel.vb" />
     <Compile Include="ViewModels\PersonnelViewModel.vb" />
+    <Compile Include="ViewModels\EnqueteViewModel.vb" />
     <Compile Include="ViewModels\SinistreViewModel.vb" />
     <Compile Include="ViewModels\SuiviViewModel.vb" />
     <Compile Include="ViewModels\DemandeViewModel.vb" />
@@ -532,6 +534,7 @@
     <Compile Include="ViewModels\MaterielViewModel.vb" />
     <Compile Include="ViewModels\TypeAideViewModel.vb" />
     <Compile Include="ViewModels\SecteurViewModel.vb" />
+    <Compile Include="ViewModels\PropositionViewModel.vb" />
     <Compile Include="ViewModels\TypeEntrepotViewModel.vb" />
     <Compile Include="ViewModels\TypeHopitauxViewModel.vb" />
     <Compile Include="ViewModels\TypeImmobilisationViewModel.vb" />
@@ -552,6 +555,7 @@
     <Compile Include="ViewModels\CategorieDArticleViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\FacteurViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\TypeSolutionViewModel.vb" />
+    <Compile Include="ViewModels\TypeChampsViewModel.vb" />
     <Compile Include="ViewModels\VilleViewModel.vb" />
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
@@ -2039,6 +2043,18 @@
     <Content Include="Views\Materiels\Details.vbhtml" />
     <Content Include="Views\Materiels\Edit.vbhtml" />
     <Content Include="Views\Materiels\Index.vbhtml" />
+    <Content Include="Views\Shared\_LayoutCollecte.vbhtml" />
+    <Content Include="Views\Shared\_LeftSideBarCollecte.vbhtml" />
+    <Content Include="Views\TypeChamps\Create.vbhtml" />
+    <Content Include="Views\TypeChamps\Delete.vbhtml" />
+    <Content Include="Views\TypeChamps\Edit.vbhtml" />
+    <Content Include="Views\TypeChamps\Index.vbhtml" />
+    <Content Include="Views\Home\IndexCollecte.vbhtml" />
+    <Content Include="Views\Enquetes\CreateFromulaire.vbhtml" />
+    <Content Include="Views\Enquetes\CreateSection.vbhtml" />
+    <Content Include="Views\Enquetes\CreateChamps.vbhtml" />
+    <Content Include="Views\Enquetes\EditFormulaire.vbhtml" />
+    <Content Include="Views\Enquetes\EditSection.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

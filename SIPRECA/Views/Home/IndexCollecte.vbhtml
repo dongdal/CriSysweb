@@ -1,7 +1,7 @@
 ﻿@Imports SIPRECA.My.Resources
 @Code
-    ViewData("Title") = Resource.HomePage
-    Layout = "~/Views/Shared/_LayoutPrincipal.vbhtml"
+    ViewData("Title") = Resource.ModuleCollecte
+    Layout = "~/Views/Shared/_LayoutCollecte.vbhtml"
 End Code
 
 <div class="container-fluid">
@@ -16,83 +16,44 @@ End Code
     </div>
 
     <!-- End Breadcrumb-->
-    <h6 class="text-uppercase">@Resource.ModuleList</h6>
+    <h6 class="text-uppercase">@Resource.ModuleCollecte</h6>
     <hr>
     <div class="row">
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
+        @*<div class="col-lg-4">
+                <div class="card card-success">
+                    <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@Resource.ModuleSinistrer</h5>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexSahana")"><img src="~/assets/images/gallery/Module_Sahana.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSahana</h5>
+            <div class="col-lg-4">
+                <div class="card card-success">
+                    <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Gestion des sinistrés</h5>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexDesinventar")"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleDesinventar</h5>
+            <div class="col-lg-4">
+                <div class="card card-success">
+                    <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Gestion des sinistrés</h5>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexCollecte")"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleCollecte</h5>
+            <div class="col-lg-4">
+                <div class="card card-success">
+                    <a href="javascript:void();"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Gestion des sinistrés</h5>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
-                </div>
-            </div>
-        </div>
+            </div>*@
     </div>
 </div>
 <!-- End container-fluid-->
-<!--Primary Modal -->
-<div class="modal fade" id="primarymodal">
-    <div class="modal-dialog">
-        @Using Html.BeginForm("IndexSinistre", "Home", FormMethod.Post, New With {.autocomplete = "off"})
-            @Html.AntiForgeryToken()
-            @<div class="modal-content border-primary">
-                <div class="modal-header bg-primary">
-                    <h5 class="modal-title text-white"><i class="fa fa-star"></i> @Resource.ComboAnneeBudgetaire</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    @Html.DropDownList("AnneeBudgetaireId", DirectCast(ViewBag.LesAnneesBudgetaires,
-                                             IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
-
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> @Resource.BtnValidate</button>
-                    <button type="button" class="btn btn-inverse-primary" data-dismiss="modal"><i class="fa fa-times"></i> @Resource.BtnClose</button>
-                </div>
-            </div>
-        End Using
-    </div>
-</div>
-
-<!--End Modal -->
 @*<div class="container-fluid">
         <!--Start Dashboard Content-->
 

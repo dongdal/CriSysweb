@@ -1,6 +1,6 @@
 ﻿@Imports SIPRECA.My.Resources
 @Code
-    ViewData("Title") = Resource.ModuleSahana
+    ViewData("Title") = Resource.ModuleDesinventar
     Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
 End Code
 

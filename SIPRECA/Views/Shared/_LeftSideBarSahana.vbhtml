@@ -4,7 +4,7 @@
     <div class="brand-logo">
         <a href="@Url.Action("Index", "Home")">
             <img src="~/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-            <h5 class="logo-text"> DashRock</h5>
+            <h5 class="logo-text">  @Resource.CrisisTitle.ToUpper()</h5>
         </a>
     </div>
     <div class="user-details">

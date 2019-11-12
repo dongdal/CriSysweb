@@ -229,7 +229,7 @@ Namespace Controllers
                     End Try
 
                 End If
-                Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
+                Return RedirectToAction("Edit", New With {entityVM.EvenementZoneId})
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)
@@ -282,7 +282,7 @@ Namespace Controllers
                     End Try
 
                 End If
-                Return RedirectToAction("Edit", New With {.EvenementZoneId = entityVM.EvenementZoneId})
+                Return RedirectToAction("Edit", New With {entityVM.EvenementZoneId})
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)
