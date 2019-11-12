@@ -93,6 +93,11 @@ Public Class AeroportViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielAeroportId As Long?
+    Public Overridable Property LesMaterielAeroport As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielAeroport As ICollection(Of MaterielAeroport)
+
     Public Sub New()
     End Sub
 

@@ -192,22 +192,29 @@ End Code
         function CreateAeroport() {
                 var ICAO = '#ICAO';
                 var IATA = '#IATA';
-		        var Nom= '#Nom';
-		        var VilleId= '#VilleId';
-                var OrganisationId = '#OrganisationId';
+		        var Nom = '#Nom';
+		        var VilleId = '#VilleId';
+            var OrganisationId = '#OganisationId';
                 var SurfaceDePisteId = '#SurfaceDePisteId';
                 var LongueurDePiste = '#LongueurDePiste';
                 var LargeurDePiste = '#LargeurDePiste';
                 var TailleDeAeronefId = '#TailleDeAeronefId';
                 var UsageHumanitaireId = '#UsageHumanitaireId';
-		        var Telephone= '#Telephone';
+		        var Telephone = '#Telephone';
                 var Telephone2 = '#Telephone2';
-		        var SiteWeb= '#SiteWeb';
-		        var Email= '#Email';
+		        var SiteWeb = '#SiteWeb';
+		        var Email = '#Email';
                 //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
                 //alert("DateNaissance= " + DateNaissance);
 
-                if (typeof $(ICAO).val() == "undefined" || $(ICAO).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" ||typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
+            //alert($(ICAO).val());
+            //alert($(IATA).val());
+            //alert($(Nom).val());
+            //alert($(VilleId).val());
+            //alert($(OrganisationId).val());
+            //alert($(Telephone).val());
+
+            if (typeof $(ICAO).val() == "undefined" || $(ICAO).val() == "" || $(IATA).val() == "undefined" || $(IATA).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" ||typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
@@ -221,7 +228,7 @@ End Code
                         'IATA': $(IATA).val(),
                         'Nom': $(Nom).val(),
                         'VilleId': $(VilleId).val(),
-                        'OrganisationId': $(OrganisationId).val(),
+                        'OganisationId': $(OrganisationId).val(),
                         'SurfaceDePisteId': $(SurfaceDePisteId).val(),
                         'LongueurDePiste': $(LongueurDePiste).val(),
                         'LargeurDePiste': $(LargeurDePiste).val(),

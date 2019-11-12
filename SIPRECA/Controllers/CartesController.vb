@@ -151,5 +151,68 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function Query(ByVal entityVM As FiltreViewModel) As ActionResult
+            If (ModelState.IsValid) Then
+                Dim QueryFieldsResult As New QueryCartesResult()
+                Dim Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e)
+                Dim Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e)
+                Dim Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e)
+                Dim Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e)
+                Dim Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e)
+                Dim Installation = (From e In Db.Installation Where e.StatutExistant = 1 Select e)
+                Dim Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e)
+                Dim PortDeMers = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e)
+
+                If (entityVM.Abris And entityVM.AbrisCapaciteMin.HasValue And entityVM.AbrisCapaciteMAx.HasValue And entityVM.AbrisEstimationPopulationMin.HasValue And entityVM.AbrisEstimationPopulationMAx.HasValue) Then
+                    QueryFieldsResult.Abris = Abris.Where(Function(e) (entityVM.AbrisCapaciteMin.Value <= e.Capacite And e.Capacite <= entityVM.AbrisCapaciteMAx.Value) And
+                                                                    (entityVM.AbrisEstimationPopulationMin.Value <= e.EstimationPopulation And e.EstimationPopulation <= entityVM.AbrisEstimationPopulationMin.Value)).Select(Function(e) e).ToList()
+                End If
+
+                If (entityVM.Aeroport And entityVM.AeroportLargeurDePisteMin.HasValue And entityVM.AeroportLargeurDePisteMAx.HasValue And entityVM.AeroportLongueurDePisteMin.HasValue And entityVM.AeroportLongueurDePisteMAx.HasValue) Then
+                    QueryFieldsResult.Aeroport = Aeroports.Where(Function(e) (entityVM.AeroportLargeurDePisteMin.Value <= e.LargeurDePiste And e.LargeurDePiste <= entityVM.AeroportLargeurDePisteMAx.Value) And
+                                                                    (entityVM.AeroportLongueurDePisteMin.Value <= e.LongueurDePiste And e.LongueurDePiste <= entityVM.AeroportLongueurDePisteMAx.Value)).Select(Function(e) e).ToList()
+                End If
+
+                If (entityVM.Entrepot And entityVM.EntrepotCapaciteDisponibleMin.HasValue And entityVM.EntrepotCapaciteDisponibleMAx.HasValue And entityVM.EntrepotCapaciteMin.HasValue And entityVM.EntrepotCapaciteMAx.HasValue) Then
+                    QueryFieldsResult.Entrepots = Entrepots.Where(Function(e) (entityVM.EntrepotCapaciteDisponibleMin.Value <= e.CapaciteDisponible And e.CapaciteDisponible <= entityVM.EntrepotCapaciteDisponibleMAx.Value) And
+                                                                    (entityVM.EntrepotCapaciteMin.Value <= e.Capacite And e.Capacite <= entityVM.EntrepotCapaciteMAx.Value)).Select(Function(e) e).ToList()
+                End If
+
+                If (entityVM.Hopitaux And entityVM.NombreDInfimiereMin.HasValue And entityVM.NombreDInfimiereMAx.HasValue And entityVM.NombreDeMedecinMin.HasValue And entityVM.NombreDeMedecinMax.HasValue And
+                    entityVM.NombreDePersonnelNonMedicalMin.HasValue And entityVM.NombreDePersonnelNonMedicalMAx.HasValue And entityVM.NombreDeLitMin.HasValue And entityVM.NombreDeLitMax.HasValue) Then
+                    QueryFieldsResult.Hopitaux = Hopitaux.Where(Function(e) (entityVM.NombreDInfimiereMin.Value <= e.NombreDInfimiere And e.NombreDInfimiere <= entityVM.NombreDInfimiereMAx.Value) And
+                                                                    (entityVM.NombreDeMedecinMin.Value <= e.NombreDeMedecin And e.NombreDeMedecin <= entityVM.NombreDeMedecinMax.Value) And
+                                                                    (entityVM.NombreDePersonnelNonMedicalMin.Value <= e.NombreDePersonnelNonMedical And e.NombreDePersonnelNonMedical <= entityVM.NombreDePersonnelNonMedicalMAx.Value) And
+                                                                    (entityVM.NombreDeLitMin.Value <= e.NombreDeLitMin And e.NombreDeLitMax <= entityVM.NombreDeLitMax.Value)).Select(Function(e) e).ToList()
+                End If
+
+                If (entityVM.PortDeMer And entityVM.PortDeMerHauteurMaximumMin.HasValue And entityVM.PortDeMerHauteurMaximumMAx.HasValue And entityVM.PortDeMerProfondeurQuaiChargementMin.HasValue And entityVM.PortDeMerProfondeurQuaiChargementMAx.HasValue And
+                    entityVM.PortDeMerProfondeurTerminalPetrolierMin.HasValue And entityVM.PortDeProfondeurTerminalPetrolierMAx.HasValue And entityVM.PortDeMerLongueurMaximaleNavireMin.HasValue And entityVM.PortDeMerLongueurMaximaleNavireMAx.HasValue) Then
+                    QueryFieldsResult.PortDeMer = PortDeMers.Where(Function(e) (entityVM.PortDeMerHauteurMaximumMin.Value <= e.HauteurMaximum And e.HauteurMaximum <= entityVM.PortDeMerHauteurMaximumMAx.Value) And
+                                                                    (entityVM.PortDeMerProfondeurQuaiChargementMin.Value <= e.ProfondeurQuaiChargement And e.ProfondeurQuaiChargement <= entityVM.PortDeMerProfondeurQuaiChargementMAx.Value) And
+                                                                    (entityVM.PortDeMerProfondeurTerminalPetrolierMin.Value <= e.ProfondeurTerminalPetrolier And e.ProfondeurTerminalPetrolier <= entityVM.PortDeProfondeurTerminalPetrolierMAx.Value) And
+                                                                    (entityVM.PortDeMerLongueurMaximaleNavireMin.Value <= e.LongueurMaximaleNavire And e.LongueurMaximaleNavire <= entityVM.PortDeMerLongueurMaximaleNavireMAx.Value)).Select(Function(e) e).ToList()
+                End If
+
+            End If
+
+            Return View(entityVM)
+        End Function
+
     End Class
+
+    Public Class QueryCartesResult
+        Public Property Abris As New List(Of Abris)
+        Public Property Aeroport As New List(Of Aeroport)
+        Public Property Hopitaux As New List(Of Hopitaux)
+        Public Property Heliport As New List(Of Heliport)
+        Public Property Bureau As New List(Of Bureau)
+        Public Property Installation As New List(Of Installation)
+        Public Property Entrepots As New List(Of Entrepots)
+        Public Property PortDeMer As New List(Of PortDeMer)
+
+    End Class
+
 End Namespace

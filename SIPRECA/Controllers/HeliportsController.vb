@@ -5,6 +5,7 @@ Imports System.Globalization
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class HeliportsController
@@ -128,6 +129,17 @@ Namespace Controllers
             Dim Ville = (From e In Db.Ville Where e.StatutExistant = 1 Select e)
             Dim LesVilles As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 3 Select e).ToList
+            Dim MaterielHeliport = (From e In Db.MaterielHeliport Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielHeliports = (From e In Db.MaterielHeliport Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielHeliports As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielHeliport.Contains(item) Then
+                    LesMaterielHeliports.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -147,6 +159,8 @@ Namespace Controllers
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielHeliports = LesMaterielHeliports
+            entityVM.MaterielHeliports = MaterielHeliports
         End Sub
 
         ' GET: Heliport/Create
@@ -223,13 +237,34 @@ Namespace Controllers
             Dim entityVM As New HeliportViewModel(Heliport)
             LoadComboBox(entityVM)
             Return View(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
         End Function
 
-        'POST: Heliport/Edit/5
-        'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        Function Edit(ByVal entityVM As HeliportJS) As ActionResult
+        <ValidateAntiForgeryToken()>
+        Function Edit(ByVal entityVM As HeliportViewModel) As ActionResult
+            If Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
+            Else
+                'If ModelState.IsValid Then
+                '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                '    Try
+                '        Db.SaveChanges()
+                '        Return RedirectToAction("Index")
+                '    Catch ex As DbEntityValidationException
+                '        Util.GetError(ex, ModelState)
+                '    Catch ex As Exception
+                '        Util.GetError(ex, ModelState)
+                '    End Try
+                'End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        <HttpPost()>
+        Function EditHeliport(ByVal entityVM As HeliportJS) As ActionResult
             Dim Ent As New Heliport
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -251,22 +286,69 @@ Namespace Controllers
             Return Json(New With {.Result = "Error"})
             'Return View(entityVM)
         End Function
-        '<ValidateAntiForgeryToken()>
-        'Function Edit(ByVal entityVM As HeliportViewModel) As ActionResult
-        '    If ModelState.IsValid Then
-        '        Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-        '        Try
-        '            Db.SaveChanges()
-        '            Return RedirectToAction("Index")
-        '        Catch ex As DbEntityValidationException
-        '            Util.GetError(ex, ModelState)
-        '        Catch ex As Exception
-        '            Util.GetError(ex, ModelState)
-        '        End Try
-        '    End If
-        '    LoadComboBox(entityVM)
-        '    Return View(entityVM)
-        'End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As HeliportViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielHeliportId) Then
+                ModelState.AddModelError("MaterielHeliportId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielHeliport As New MaterielHeliport()
+
+                If entityVM.MaterielHeliportId > 0 Then
+
+                    MaterielHeliport.MaterielId = entityVM.MaterielHeliportId
+                    MaterielHeliport.HeliportId = entityVM.Id
+                    MaterielHeliport.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielHeliport.Add(MaterielHeliport)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielHeliport = (From p In Db.MaterielHeliport Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielHeliport Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielHeliport.Remove(MaterielHeliport)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
 
         ' GET: Heliport/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult

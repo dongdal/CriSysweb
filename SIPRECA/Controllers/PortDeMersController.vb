@@ -4,6 +4,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class PortDeMersController
@@ -151,6 +152,17 @@ Namespace Controllers
             Dim Ville = (From e In Db.Ville Where e.StatutExistant = 1 Select e)
             Dim LesVilles As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 4 Select e).ToList
+            Dim MaterielPortDeMer = (From e In Db.MaterielPortDeMer Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielPortDeMers = (From e In Db.MaterielPortDeMer Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielPortDeMers As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielPortDeMer.Contains(item) Then
+                    LesMaterielPortDeMers.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -170,6 +182,8 @@ Namespace Controllers
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielPortDeMers = LesMaterielPortDeMers
+            entityVM.MaterielPortDeMers = MaterielPortDeMers
         End Sub
 
         ' GET: PortDeMer/Create
@@ -240,13 +254,37 @@ Namespace Controllers
             Dim entityVM As New PortDeMerViewModel(PortDeMer)
             LoadComboBox(entityVM)
             Return View(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+        End Function
+
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function Edit(ByVal entityVM As PortDeMerViewModel) As ActionResult
+            If Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
+            Else
+                'If ModelState.IsValid Then
+                '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                '    Try
+                '        Db.SaveChanges()
+                '        Return RedirectToAction("Index")
+                '    Catch ex As DbEntityValidationException
+                '        Util.GetError(ex, ModelState)
+                '    Catch ex As Exception
+                '        Util.GetError(ex, ModelState)
+                '    End Try
+                'End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
         End Function
 
         ' POST: PortDeMer/Edit/5
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        Function Edit(ByVal entityVM As PortDeMerJS) As ActionResult
+        Function EditPortdeMer(ByVal entityVM As PortDeMerJS) As ActionResult
             Dim Ent As New PortDeMer
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -267,6 +305,69 @@ Namespace Controllers
             'LoadComboBox(entityVM)
             Return Json(New With {.Result = "Error"})
             'Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As PortDeMerViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielPortDeMerId) Then
+                ModelState.AddModelError("MaterielPortDeMerId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielPortDeMer As New MaterielPortDeMer()
+
+                If entityVM.MaterielPortDeMerId > 0 Then
+
+                    MaterielPortDeMer.MaterielId = entityVM.MaterielPortDeMerId
+                    MaterielPortDeMer.PortDeMerId = entityVM.Id
+                    MaterielPortDeMer.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielPortDeMer.Add(MaterielPortDeMer)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielPortDeMer = (From p In Db.MaterielPortDeMer Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielPortDeMer Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielPortDeMer.Remove(MaterielPortDeMer)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
         ' GET: PortDeMer/Delete/5

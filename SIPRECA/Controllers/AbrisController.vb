@@ -119,21 +119,24 @@ Namespace Controllers
             Dim TypeAbris = (From e In Db.TypeAbris Where e.StatutExistant = 1 Select e)
             Dim LesTypeAbris As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 2 Select e).ToList
+            Dim MaterielAbris = (From e In Db.MaterielMaterielAbris Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielAbri = (From e In Db.MaterielMaterielAbris Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielAbris As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielAbris.Contains(item) Then
+                    LesMaterielAbris.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
+            Dim PersonnelAbris = (From e In Db.PersonnelAbris Where e.AbrisId = entityVM.Id Select e.Personnel).ToList
             Dim PersonnelAbri = (From e In Db.PersonnelAbris Where e.AbrisId = entityVM.Id Select e).ToList
-            Dim PersonnelAbris = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
+            Dim Personnels = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
             Dim LesPersonnelAbris As New List(Of SelectListItem)
 
-            For Each item In PersonnelAbris
-
-                Dim re As Boolean = True
-
-                For Each item2 In PersonnelAbri
-                    If item.Id = item2.PersonnelId Then
-                        re = False
-                    End If
-                Next
-
-                If re = True Then
+            For Each item In Personnels
+                If Not PersonnelAbris.Contains(item) Then
                     LesPersonnelAbris.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
                 End If
             Next
@@ -164,6 +167,8 @@ Namespace Controllers
             entityVM.LesTypeAbris = LesTypeAbris
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielAbris = LesMaterielAbris
+            entityVM.MaterielAbris = MaterielAbri
         End Sub
 
         ' GET: Abris/Create
@@ -232,6 +237,8 @@ Namespace Controllers
             Dim entityVM As New AbrisViewModel(Abris)
             LoadComboBox(entityVM)
             Return View(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
         End Function
 
         ' POST: Abris/Edit/5
@@ -242,6 +249,8 @@ Namespace Controllers
         Function Edit(ByVal entityVM As AbrisViewModel) As ActionResult
             If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
+            ElseIf Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
             Else
                 If ModelState.IsValid Then
                     Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -264,7 +273,7 @@ Namespace Controllers
         Public Function AddPersonnel(ByVal entityVM As AbrisViewModel) As ActionResult
 
             If IsNothing(entityVM.PersonnelAbrisId) Then
-                ModelState.AddModelError("Personnel", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("PersonnelAbrisId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -308,6 +317,69 @@ Namespace Controllers
                 End If
 
                 Db.PersonnelAbris.Remove(PersonnelAbris)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As AbrisViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielAbrisId) Then
+                ModelState.AddModelError("MaterielAbrisId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielAbris As New MaterielAbris()
+
+                If entityVM.MaterielAbrisId > 0 Then
+
+                    MaterielAbris.AbrisId = entityVM.MaterielAbrisId
+                    MaterielAbris.AbrisId = entityVM.Id
+                    MaterielAbris.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielMaterielAbris.Add(MaterielAbris)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielAbris = (From p In Db.MaterielMaterielAbris Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielAbris Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielMaterielAbris.Remove(MaterielAbris)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException

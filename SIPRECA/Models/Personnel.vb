@@ -1,4 +1,6 @@
 
+Imports SIPRECA
+
 Partial Public Class Personnel
     Public Sub New()
         Competance = New HashSet(Of Competance)()
@@ -36,4 +38,6 @@ Partial Public Class Personnel
     Public Overridable Property PersonnelAbris As ICollection(Of PersonnelAbris)
     Public Overridable Property TypePersonnel As TypePersonnel
     Public Overridable Property Taches As ICollection(Of Tache)
+
+
 End Class

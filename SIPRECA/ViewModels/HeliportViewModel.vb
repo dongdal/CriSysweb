@@ -62,6 +62,11 @@ Public Class HeliportViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielHeliportId As Long?
+    Public Overridable Property LesMaterielHeliports As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielHeliports As ICollection(Of MaterielHeliport)
+
     Public Sub New()
     End Sub
 

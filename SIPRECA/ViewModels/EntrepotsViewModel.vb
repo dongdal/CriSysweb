@@ -75,6 +75,11 @@ Public Class EntrepotsViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielEntrepotId As Long?
+    Public Overridable Property LesMaterielEntrepots As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielEntrepots As ICollection(Of MaterielEntrepots)
+
     Public Sub New()
     End Sub
 

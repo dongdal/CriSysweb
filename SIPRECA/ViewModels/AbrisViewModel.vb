@@ -57,6 +57,11 @@ Public Class AbrisViewModel
     <StringLength(80, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property TitreDuPoste As String
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielAbrisId As Long?
+    Public Overridable Property LesMaterielAbris As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielAbris As ICollection(Of MaterielAbris)
+
     <Display(Name:="PersonnelAbris", ResourceType:=GetType(Resource))>
     Public Property PersonnelAbrisId As Long?
     Public Overridable Property LesPersonnelAbris As ICollection(Of SelectListItem)

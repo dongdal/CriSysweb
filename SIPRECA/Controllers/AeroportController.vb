@@ -4,6 +4,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class AeroportController
@@ -152,6 +153,17 @@ Namespace Controllers
             Dim UsageHumanitaire = (From e In Db.UsageHumanitaire Where e.StatutExistant = 1 Select e)
             Dim LesUsageHumanitaires As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 5 Select e).ToList
+            Dim MaterielAeroports = (From e In Db.MaterielAeroport Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielAeroport = (From e In Db.MaterielAeroport Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielAeroport As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielAeroports.Contains(item) Then
+                    LesMaterielAeroport.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -186,6 +198,8 @@ Namespace Controllers
             entityVM.LesUsageHumanitaires = LesUsageHumanitaires
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielAeroport = LesMaterielAeroport
+            entityVM.MaterielAeroport = MaterielAeroport
         End Sub
 
         ' GET: Aeroport/Create
@@ -258,11 +272,34 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function Edit(ByVal entityVM As AeroportViewModel) As ActionResult
+            If Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         ' POST: Aeroport/Edit/5
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        Function Edit(ByVal entityVM As AeroportJS) As ActionResult
+        Function EditAeroport(ByVal entityVM As AeroportJS) As ActionResult
             Dim Ent As New Aeroport
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -283,6 +320,69 @@ Namespace Controllers
             'LoadComboBox(entityVM)
             Return Json(New With {.Result = "Error"})
             'Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As AeroportViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielAeroportId) Then
+                ModelState.AddModelError("MaterielAeroportId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielAeroport As New MaterielAeroport()
+
+                If entityVM.MaterielAeroportId > 0 Then
+
+                    MaterielAeroport.MaterielId = entityVM.MaterielAeroportId
+                    MaterielAeroport.AeroportId = entityVM.Id
+                    MaterielAeroport.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielAeroport.Add(MaterielAeroport)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielAeroport = (From p In Db.MaterielAeroport Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielAeroport Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielAeroport.Remove(MaterielAeroport)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
         '<HttpPost()>

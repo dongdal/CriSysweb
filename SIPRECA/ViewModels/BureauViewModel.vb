@@ -33,7 +33,6 @@ Public Class BureauViewModel
     Public Property Email As String
 
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Location As DbGeometry
 
 
@@ -77,6 +76,11 @@ Public Class BureauViewModel
     Public Property PersonnelBureauxId As Long?
     Public Overridable Property LesPersonnelBureaux As ICollection(Of SelectListItem)
     Public Overridable Property PersonnelBureaux As ICollection(Of PersonnelBureau)
+
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielBureauId As Long?
+    Public Overridable Property LesMaterielBureaux As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielBureaux As ICollection(Of MaterielBureau)
 
     Public Sub New()
     End Sub

@@ -18,300 +18,367 @@ End Code
 </div>
 
 <div class="container-fluid">
+    <h6 class="text-uppercase">@Resource.EditPortDeMer</h6>
+    <hr>
+    @Using Html.BeginForm("Edit", "PortDeMers", FormMethod.Post, New With {.autocomplete = "off"})
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(Function(m) m.Id)
+        @Html.HiddenFor(Function(m) m.StatutExistant)
+        @Html.HiddenFor(Function(m) m.DateCreation)
+        @Html.HiddenFor(Function(m) m.AspNetUserId)
+        @Html.HiddenFor(Function(m) m.Location)
 
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditPortDeMer</div>
-            <hr>
-            @Using Html.BeginForm("Edit", "PortDeMers", FormMethod.Post, New With {.autocomplete = "off"})
-                @Html.AntiForgeryToken()
-                @Html.HiddenFor(Function(m) m.Id)
-                @Html.HiddenFor(Function(m) m.StatutExistant)
-                @Html.HiddenFor(Function(m) m.DateCreation)
-                @Html.HiddenFor(Function(m) m.AspNetUserId)
-                @Html.HiddenFor(Function(m) m.Location)
+        @<div Class="col-lg-12">
+            <div Class="card">
+                <div Class="card-body">
+                    <ul Class="nav nav-tabs nav-tabs-primary">
+                        <li Class="nav-item">
+                            <a Class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Port</span></a>
+                        </li>
+                        <li Class="nav-item">
+                            <a Class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-cup"></i> <span class="hidden-xs">Equipements</span></a>
+                        </li>
 
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CODEPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tabe-1" class="container tab-pane active">
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CODEPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.Nom, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+
+                                @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
+                               New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+                                    @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
+                          New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
+                                    @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                            </div>
+
+                            <div Class="form-group row">
+
+                                @Html.LabelFor(Function(m) m.Possession, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Possession, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.PossessionPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Possession, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.HauteurMaximum, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.HauteurMaximum, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.HauteurMaximumPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.HauteurMaximum, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.HauteurMaximumUnites, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.HauteurMaximumUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.HauteurMaximumUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.HauteurMaximumUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurQuaiChargementPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargement, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurQuaiChargementUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargementUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurTerminalPetrolierPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolier, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "col-sm-2 col-form-label "})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurTerminalPetrolierUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolierUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.CaleSeche, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CaleSeche, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CaleSechePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CaleSeche, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.LongueurMaximaleNavirePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavire, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LongueurMaximaleNavireUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavireUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.Reparations, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Reparations, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ReparationsPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Reparations, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.Abri, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Abri, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.AbriPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Abri, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntreposagePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntreposage, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CapaciteStockageSecurisePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapaciteStockageSecurise, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntrepotDouanierPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntrepotDouanier, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.NombreRemorqueur, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.NombreRemorqueur, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreRemorqueurPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.NombreRemorqueur, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.CapaciteRemorqueur, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapaciteRemorqueur, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteRemorqueurPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapaciteRemorqueur, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.NombreBarge, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.NombreBarge, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreBargePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.NombreBarge, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.CapacietBarge, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapacietBarge, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapacietBargePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapacietBarge, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.EquipementChargement, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.EquipementChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EquipementChargementPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.EquipementChargement, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.CapaciteDouaniere, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.CapaciteDouaniere, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteDouanierePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.CapaciteDouaniere, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.Securite, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Securite, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SecuritePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Securite, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.ProfondeurMareHaute, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurMareHaute, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareHautePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHaute, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareHauteUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHauteUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.ProfondeurMareBasse, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurMareBasse, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareBassePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasse, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareBasseUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasseUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.ProfondeurInondation, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurInondation, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurInondationPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurInondation, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurInondationUnitesPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.ProfondeurInondationUnites, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.TelephonePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.Telephone2, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TelephoneUrgencePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Telephone2, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.SiteWebPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            @Html.Partial("_MyMapEnterPartial")
+
+
+                            <div Class="form-group row">
+                                <Label Class="col-sm-2 col-form-label"></Label>
+                                <div Class="col-sm-10">
+                                    <Button type="submit" onclick="EditPortdeMer();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="tabe-2" class="container tab-pane fade">
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.MaterielPortDeMerId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4 form-group">
+                                    @Html.DropDownListFor(Function(m) m.MaterielPortDeMerId, New SelectList(Model.LesMaterielPortDeMers, "Value", "Text"), Resource.ComboMateriel,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboMateriel})
+                                    @Html.ValidationMessageFor(Function(m) m.MaterielPortDeMerId, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                            </div>
+                            <div Class="form-group row">
+                                <Label Class="col-sm-2 col-form-label"></Label>
+                                <div Class="col-sm-10">
+                                    <input type="submit" value="@Resource.BtnSave" name="AddMateriel" class="btn btn-primary btn-sm" />
+                                </div>
+                            </div>
+                            <br />
+
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Libelle
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.ActionList
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @For Each item In Model.MaterielPortDeMers
+                                        @<tr>
+
+                                            <td>
+                                                @item.Materiel.Libelle
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteMateriel" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    Next
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <br />
                     </div>
-
-                    @Html.LabelFor(Function(m) m.Nom, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-
-                    @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                             New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
-                        @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
-                        New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
-                        @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                </div>
-
-                @<div Class="form-group row">
-
-                    @Html.LabelFor(Function(m) m.Possession, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Possession, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.PossessionPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Possession, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.HauteurMaximum, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.HauteurMaximum, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.HauteurMaximumPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.HauteurMaximum, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.HauteurMaximumUnites, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.HauteurMaximumUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.HauteurMaximumUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.HauteurMaximumUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurQuaiChargementPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargement, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurQuaiChargementUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargementUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurTerminalPetrolierPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolier, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "col-sm-2 col-form-label "})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurTerminalPetrolierUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolierUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.CaleSeche, New With {.class = "col-sm-2 col-form-label required_field"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CaleSeche, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CaleSechePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CaleSeche, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.LongueurMaximaleNavirePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavire, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LongueurMaximaleNavireUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavireUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Reparations, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Reparations, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ReparationsPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Reparations, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.Abri, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Abri, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.AbriPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Abri, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntreposagePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntreposage, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CapaciteStockageSecurisePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapaciteStockageSecurise, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntrepotDouanierPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntrepotDouanier, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.NombreRemorqueur, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.NombreRemorqueur, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreRemorqueurPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.NombreRemorqueur, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CapaciteRemorqueur, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteRemorqueur, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteRemorqueurPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapaciteRemorqueur, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.NombreBarge, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.NombreBarge, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreBargePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.NombreBarge, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CapacietBarge, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapacietBarge, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapacietBargePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapacietBarge, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.EquipementChargement, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.EquipementChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EquipementChargementPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.EquipementChargement, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.CapaciteDouaniere, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteDouaniere, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteDouanierePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.CapaciteDouaniere, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.Securite, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Securite, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SecuritePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Securite, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.ProfondeurMareHaute, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHaute, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareHautePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHaute, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareHauteUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHauteUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.ProfondeurMareBasse, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasse, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareBassePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasse, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareBasseUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasseUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.ProfondeurInondation, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurInondation, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurInondationPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurInondation, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurInondationUnitesPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.ProfondeurInondationUnites, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.TelephonePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.Telephone2, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TelephoneUrgencePlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Telephone2, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.SiteWebPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
-                    </div>
-
-                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
-                        @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
-                    </div>
-                </div>
-
-                @Html.Partial("_MyMapEnterPartial")
-
-
-
-            End Using
-            <div Class="form-group row">
-                <Label Class="col-sm-2 col-form-label"></Label>
-                <div Class="col-sm-10">
-                    <Button type="submit" onclick="EditPortdeMer();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
-                    &nbsp;&nbsp;&nbsp;
-                    @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                 </div>
             </div>
-
         </div>
-    </div>
+    End Using
+
 </div>
 
 @Section Scripts
     <script>
-    var oldLatitude = '@Model.Location.YCoordinate.ToString().Replace(",", ".")';
-    var oldLongitude = '@Model.Location.XCoordinate.ToString().Replace(",", ".")';
+    var oldLatitude = '@ViewBag.Latitude';
+    var oldLongitude = '@ViewBag.Longitude';
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
         .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
         .openPopup();
@@ -448,7 +515,7 @@ End Code
 
                     $.ajax({
                         type: 'POST',
-                        url: '@Url.Action("Edit", "PortDeMers")',
+                        url: '@Url.Action("EditPortdeMer", "PortDeMers")',
                         dataType: "json",
                         contentType: "application/json",
                         data: JSON.stringify(dataRow),
@@ -476,6 +543,86 @@ End Code
 
 
             }
+
+    </script>
+
+    <script>
+
+        $('.DeleteMateriel').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            var Id = $(this).data("id");
+            //$.alert("Identifiant= " + Id);
+            $.confirm({
+                title: '@Resource.Btn_Delete',
+                content: '@Resource.ConfirmDelete',
+                animationSpeed: 1000,
+                animationBounce: 3,
+                animation: 'rotatey',
+                closeAnimation: 'scaley',
+                theme: 'supervan',
+                buttons: {
+                    Confirmer: function () {
+                        $.ajax({
+                            url: '@Url.Action("DeleteMateriel")',
+                            type: 'POST',
+                            data: { id: Id }
+                        }).done(function (data) {
+                            if (data.Result == "OK") {
+                                //$ctrl.closest('li').remove();
+                                $.confirm({
+                                    title: '@Resource.SuccessTitle',
+                                    content: '@Resource.SuccessProcess',
+                                    animationSpeed: 1000,
+                                    animationBounce: 3,
+                                    animation: 'rotatey',
+                                    closeAnimation: 'scaley',
+                                    theme: 'supervan',
+                                    buttons: {
+                                        OK: function () {
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                            else if (data.Result.Message) {
+                                alert(data.Result.Message);
+                            }
+                        }).fail(function () {
+                            @*//$.alert('@Resource.ErrorProcess');*@
+                            $.confirm({
+                                title: '@Resource.ErreurTitle',
+                                content: '@Resource.ErrorProcess',
+                                animationSpeed: 1000,
+                                animationBounce: 3,
+                                animation: 'rotatey',
+                                closeAnimation: 'scaley',
+                                theme: 'supervan',
+                                buttons: {
+                                    OK: function () {
+                                    }
+                                }
+                            });
+                        })
+                    },
+                    Annuler: function () {
+                        $.confirm({
+                            title: '@Resource.CancelingProcess',
+                            content: '@Resource.CancelingConfirmed',
+                            animationSpeed: 1000,
+                            animationBounce: 3,
+                            animation: 'rotatey',
+                            closeAnimation: 'scaley',
+                            theme: 'supervan',
+                            buttons: {
+                                OK: function () {
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
 
     </script>
 

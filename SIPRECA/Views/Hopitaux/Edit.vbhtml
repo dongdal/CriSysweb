@@ -33,10 +33,10 @@ End Code
                 <div Class="card-body">
                     <ul Class="nav nav-tabs nav-tabs-primary">
                         <li Class="nav-item">
-                            <a Class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Projet</span></a>
+                            <a Class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Hopitaux</span></a>
                         </li>
                         <li Class="nav-item">
-                            <a Class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-cup"></i> <span class="hidden-xs">Puissance</span></a>
+                            <a Class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-cup"></i> <span class="hidden-xs">Equipements</span></a>
                         </li>
 
                     </ul>
@@ -163,18 +163,19 @@ End Code
 
                         <div id="tabe-2" class="container tab-pane fade">
 
-
                             <div Class="form-group row">
-                                @Html.LabelFor(Function(m) m.HopitauxPuissanceId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                @Html.LabelFor(Function(m) m.MaterielHopitauxId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
-                                    @Html.DropDownListFor(Function(m) m.HopitauxPuissanceId, New SelectList(Model.LesHopitauxPuissances, "Value", "Text"), Resource.ComboPuissance,
-New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboPuissance})
-                                    @Html.ValidationMessageFor(Function(m) m.HopitauxPuissanceId, "", New With {.style = "color: #da0b0b"})
+                                    @Html.DropDownListFor(Function(m) m.MaterielHopitauxId, New SelectList(Model.LesMaterielHopitaux, "Value", "Text"), Resource.ComboMateriel,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboMateriel})
+                                    @Html.ValidationMessageFor(Function(m) m.MaterielHopitauxId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
+                            </div>
+                            <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
-                                <div Class="col-sm-4">
-                                    <input type="submit" value="@Resource.BtnSave" name="AddPuissance" class="btn btn-primary btn-sm" />
+                                <div Class="col-sm-10">
+                                    <input type="submit" value="@Resource.BtnSave" name="AddMateriel" class="btn btn-primary btn-sm" />
                                 </div>
                             </div>
                             <br />
@@ -182,11 +183,9 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                            @Resource.Nom
+                                            @Resource.Libelle
                                         </th>
-
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                                             @Resource.ActionList
                                         </th>
@@ -194,15 +193,15 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                 </thead>
 
                                 <tbody>
-                                    @For Each item In Model.HopitauxPuissances
+                                    @For Each item In Model.MaterielHopitaux
                                         @<tr>
 
                                             <td>
-                                                @item.Puissance.Libelle
+                                                @item.Materiel.Libelle
                                             </td>
 
                                             <td>
-                                                <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeletePuissance" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteMateriel" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
@@ -212,6 +211,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                             </table>
                         </div>
+                        <br/>
                     </div>
                 </div>
             </div>
@@ -222,8 +222,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 @Section Scripts
 
     <script>
-    var oldLatitude = '@Model.Location.YCoordinate.ToString().Replace(",", ".")';
-    var oldLongitude = '@Model.Location.XCoordinate.ToString().Replace(",", ".")';
+    var oldLatitude = '@ViewBag.Latitude';
+    var oldLongitude = '@ViewBag.Longitude';
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
         .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
         .openPopup();
@@ -315,7 +315,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                     $.ajax({
                         type: 'POST',
-                        url: '@Url.Action("Edit", "Hopitaux")',
+                        url: '@Url.Action("EditHopitaux", "Hopitaux")',
                         dataType: "json",
                         contentType: "application/json",
                         data: JSON.stringify(dataRow),
@@ -348,7 +348,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
     <script>
 
-        $('.DeletePuissance').click(function (e) {
+        $('.DeleteMateriel').click(function (e) {
             e.preventDefault();
             var $ctrl = $(this);
             var Id = $(this).data("id");
@@ -364,7 +364,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 buttons: {
                     Confirmer: function () {
                         $.ajax({
-                            url: '@Url.Action("DeletePuissance")',
+                            url: '@Url.Action("DeleteMateriel")',
                             type: 'POST',
                             data: { id: Id }
                         }).done(function (data) {
