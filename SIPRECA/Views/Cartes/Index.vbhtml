@@ -28,14 +28,14 @@ End Code
 
                 @<div Class="form-group row">
 
-                    <div class="col-sm-2 form-group">
+                    <div class="col-sm-4 form-group">
                         @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"),
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
                         @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    <div class="col-sm-2 form-group">
+                    <div class="col-sm-4 form-group">
                         @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-form-label"})<br />
                         @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"),
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
@@ -45,79 +45,82 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                 </div>
 
                 @<div Class="form-group row">
-                     <div class="row col-md-12">
-                         <fieldset style="border: ridge;">
-                             <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
-                             <div class="row">
-                                 <div class="col-md-12">
-                                     <div class="row">
+                    <div class="row col-md-12">
+                        <fieldset style="border: ridge;" class="col-md-12">
+                            <legend style="font-size: 14px">@Resource.SelectionAbris</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
 
-                                         <div class="col-sm-2 form-group">
-                                             @Html.EditorFor(Function(model) model.Abris,
-             New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                             @Html.ValidationMessageFor(Function(m) m.Abris, "", New With {.style = "color: #da0b0b"})
-                                             @Html.LabelFor(Function(m) m.Abris, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                         </div>
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.TypeAbrisId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />
-                                             @Html.DropDownListFor(Function(m) m.TypeAbrisId, New SelectList(Model.LesTypeAbris, "Value", "Text"),
+                                        <div class="col-sm-2 form-group">
+                                            @Html.CheckBoxFor(Function(model) model.Abris,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
+                                            <br/>
+                                            @Html.LabelFor(Function(m) m.Abris, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
+                                        </div>
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.TypeAbrisId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />
+                                            @Html.DropDownListFor(Function(m) m.TypeAbrisId, New SelectList(Model.LesTypeAbris, "Value", "Text"),
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
-                                             @Html.ValidationMessageFor(Function(m) m.TypeAbrisId, "", New With {.style = "color: #da0b0b"})
-                                         </div>
+                                            @Html.ValidationMessageFor(Function(m) m.TypeAbrisId, "", New With {.style = "color: #da0b0b"})
+                                        </div>
 
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.MaterielAbrisId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />
-                                             @Html.DropDownListFor(Function(m) m.MaterielAbrisId, New SelectList(Model.LesMaterielsAbris, "Value", "Text"),
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.MaterielAbrisId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />
+                                            @Html.DropDownListFor(Function(m) m.MaterielAbrisId, New SelectList(Model.LesMaterielsAbris, "Value", "Text"),
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
-                                             @Html.ValidationMessageFor(Function(m) m.MaterielAbrisId, "", New With {.style = "color: #da0b0b"})
-                                         </div>
+                                            @Html.ValidationMessageFor(Function(m) m.MaterielAbrisId, "", New With {.style = "color: #da0b0b"})
+                                        </div>
 
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.AbrisCapaciteMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                             @Html.EditorFor(Function(model) model.AbrisCapaciteMin,
-             New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                             @Html.ValidationMessageFor(Function(m) m.AbrisCapaciteMin, "", New With {.style = "color: #da0b0b"})
-                                         </div>
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.AbrisCapaciteMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                             @Html.EditorFor(Function(model) model.AbrisCapaciteMAx,
-             New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                             @Html.ValidationMessageFor(Function(m) m.AbrisCapaciteMAx, "", New With {.style = "color: #da0b0b"})
-                                         </div>
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.AbrisEstimationPopulationMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                             @Html.EditorFor(Function(model) model.AbrisEstimationPopulationMin,
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.AbrisCapaciteMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
+                                            @Html.EditorFor(Function(model) model.AbrisCapaciteMin,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                            @Html.ValidationMessageFor(Function(m) m.AbrisCapaciteMin, "", New With {.style = "color: #da0b0b"})
+                                        </div>
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.AbrisCapaciteMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
+                                            @Html.EditorFor(Function(model) model.AbrisCapaciteMAx,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
+                                            @Html.ValidationMessageFor(Function(m) m.AbrisCapaciteMAx, "", New With {.style = "color: #da0b0b"})
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2 form-group">
+
+                                        </div>
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.AbrisEstimationPopulationMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
+                                            @Html.EditorFor(Function(model) model.AbrisEstimationPopulationMin,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; "}})
-                                             @Html.ValidationMessageFor(Function(m) m.AbrisEstimationPopulationMin, "", New With {.style = "color: #da0b0b"})
+                                            @Html.ValidationMessageFor(Function(m) m.AbrisEstimationPopulationMin, "", New With {.style = "color: #da0b0b"})
 
-                                         </div>
-
-                                     </div>
-                                     <div class="row">
-                                         <div class="col-sm-2 form-group">
-                                             @Html.LabelFor(Function(m) m.AbrisEstimationPopulationMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                             @Html.EditorFor(Function(model) model.AbrisEstimationPopulationMAx,
+                                        </div>
+                                        <div class="col-sm-2 form-group">
+                                            @Html.LabelFor(Function(m) m.AbrisEstimationPopulationMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
+                                            @Html.EditorFor(Function(model) model.AbrisEstimationPopulationMAx,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; "}})
-                                             @Html.ValidationMessageFor(Function(m) m.AbrisEstimationPopulationMAx, "", New With {.style = "color: #da0b0b"})
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </fieldset>
-                     </div>
+                                            @Html.ValidationMessageFor(Function(m) m.AbrisEstimationPopulationMAx, "", New With {.style = "color: #da0b0b"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
 
 
                 @<div Class="form-group row">
 
-                    <fieldset style="border: ridge;">
-                        <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionAeroport</legend>
                         <div class="row">
 
                             <div class="col-sm-2">
-                                @Html.EditorFor(Function(model) model.Aeroport,
+                                @Html.CheckBoxFor(Function(model) model.Aeroport,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.Aeroport, "", New With {.style = "color: #da0b0b"})
+                                <br />
                                 @Html.LabelFor(Function(m) m.Aeroport, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                             </div>
                             <div class="col-sm-2">
@@ -144,6 +147,11 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                 @Html.ValidationMessageFor(Function(m) m.AeroportLargeurDePisteMAx, "", New With {.style = "color: #da0b0b"})
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+
+                            </div>
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.AeroportLongueurDePisteMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.AeroportLongueurDePisteMin,
@@ -151,9 +159,6 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
                                 @Html.ValidationMessageFor(Function(m) m.AeroportLongueurDePisteMin, "", New With {.style = "color: #da0b0b"})
 
                             </div>
-
-                        </div>
-                        <div class="row">
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.AeroportLongueurDePisteMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.AeroportLongueurDePisteMAx,
@@ -167,14 +172,14 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
 
                 @<div Class="form-group row">
 
-                    <fieldset style="border: ridge;">
-                        <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionEntrepot</legend>
                         <div class="row">
 
                             <div class="col-sm-2">
-                                @Html.EditorFor(Function(model) model.Entrepot,
+                                @Html.CheckBoxFor(Function(model) model.Entrepot,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.Entrepot, "", New With {.style = "color: #da0b0b"})
+                                <br />
                                 @Html.LabelFor(Function(m) m.Entrepot, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                             </div>
                             <div class="col-sm-2">
@@ -201,6 +206,11 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                 @Html.ValidationMessageFor(Function(m) m.EntrepotCapaciteDisponibleMAx, "", New With {.style = "color: #da0b0b"})
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+
+                            </div>
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.EntrepotCapaciteMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.EntrepotCapaciteMin,
@@ -208,9 +218,6 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
                                 @Html.ValidationMessageFor(Function(m) m.EntrepotCapaciteMin, "", New With {.style = "color: #da0b0b"})
 
                             </div>
-
-                        </div>
-                        <div class="row">
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.EntrepotCapaciteMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.EntrepotCapaciteMAx,
@@ -224,13 +231,13 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
 
                 @<div Class="form-group row">
 
-                    <fieldset style="border: ridge;">
-                        <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionHopitaux</legend>
                         <div class="row">
                             <div class="col-sm-2">
-                                @Html.EditorFor(Function(model) model.Hopitaux,
+                                @Html.CheckBoxFor(Function(model) model.Hopitaux,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.Hopitaux, "", New With {.style = "color: #da0b0b"})
+                                <br />
                                 @Html.LabelFor(Function(m) m.Hopitaux, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                             </div>
                             <div class="col-sm-2">
@@ -264,9 +271,7 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", 
                                 @Html.EditorFor(Function(model) model.NombreDeMedecinMin,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; "}})
                                 @Html.ValidationMessageFor(Function(m) m.NombreDeMedecinMin, "", New With {.style = "color: #da0b0b"})
-
                             </div>
-
                         </div>
 
                         <div class="row">
@@ -277,14 +282,13 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
                                 @Html.LabelFor(Function(m) m.NombreDeMedecinMax, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.NombreDeMedecinMax,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.NombreDeMedecinMAx, "", New With {.style = "color: #da0b0b"})
+                                @Html.ValidationMessageFor(Function(m) m.NombreDeMedecinMax, "", New With {.style = "color: #da0b0b"})
                             </div>
                             <div class="col-md-offset-2 col-sm-2">
                                 @Html.LabelFor(Function(m) m.NombreDePersonnelNonMedicalMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.NombreDePersonnelNonMedicalMin,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; "}})
                                 @Html.ValidationMessageFor(Function(m) m.NombreDePersonnelNonMedicalMin, "", New With {.style = "color: #da0b0b"})
-
                             </div>
 
                             <div class="col-sm-2">
@@ -313,13 +317,13 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
 
                 @<div Class="form-group row">
 
-                    <fieldset style="border: ridge;">
-                        <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionPortDeMer</legend>
                         <div class="row">
                             <div class="col-sm-2">
-                                @Html.EditorFor(Function(model) model.PortDeMer,
+                                @Html.CheckBoxFor(Function(model) model.PortDeMer,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.PortDeMer, "", New With {.style = "color: #da0b0b"})
+                                <br/>
                                 @Html.LabelFor(Function(m) m.PortDeMer, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                             </div>
 
@@ -348,13 +352,6 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
                                 @Html.ValidationMessageFor(Function(m) m.PortDeMerProfondeurQuaiChargementMin, "", New With {.style = "color: #da0b0b"})
                             </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-2">
-
-                            </div>
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.PortDeMerProfondeurQuaiChargementMAx, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.PortDeMerProfondeurQuaiChargementMAx,
@@ -362,6 +359,13 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
                                 @Html.ValidationMessageFor(Function(m) m.PortDeMerProfondeurQuaiChargementMAx, "", New With {.style = "color: #da0b0b"})
 
                             </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+
+                            </div>
+                            
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.PortDeMerProfondeurTerminalPetrolierMin, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                                 @Html.EditorFor(Function(model) model.PortDeMerProfondeurTerminalPetrolierMin,
@@ -395,14 +399,14 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
 
                 @<div Class="form-group row">
 
-                    <fieldset style="border: ridge;">
-                        <legend style="font-size: 14px">@Resource.SelectionEvenementAvec</legend>
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionBureau</legend>
                         <div class="row">
 
                             <div class="col-sm-2">
-                                @Html.EditorFor(Function(model) model.Bureau,
+                                @Html.CheckBoxFor(Function(model) model.Bureau,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
-                                @Html.ValidationMessageFor(Function(m) m.Bureau, "", New With {.style = "color: #da0b0b"})
+                                <br/>
                                 @Html.LabelFor(Function(m) m.Bureau, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
                             </div>
                             <div class="col-sm-2">
@@ -417,11 +421,22 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
                                 @Html.ValidationMessageFor(Function(m) m.MaterielBureauId, "", New With {.style = "color: #da0b0b"})
                             </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                @<div Class="form-group row">
+
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionInstallation</legend>
+                        <div class="row">
+
                             <div class="col-sm-2">
+                                @Html.CheckBoxFor(Function(model) model.Instalation,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
+                                <br/>
                                 @Html.LabelFor(Function(m) m.Instalation, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                @Html.EditorFor(Function(model) model.Instalation,
-New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; width:100%"}})
-                                @Html.ValidationMessageFor(Function(m) m.Instalation, "", New With {.style = "color: #da0b0b"})
                             </div>
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.MaterielInstallationId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />
@@ -429,16 +444,20 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", 
 New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .style = "font-size: 12px;"})
                                 @Html.ValidationMessageFor(Function(m) m.MaterielInstallationId, "", New With {.style = "color: #da0b0b"})
                             </div>
-                            
-                           
-
                         </div>
+                    </fieldset>
+                </div>
+
+                @<div Class="form-group row">
+
+                    <fieldset style="border: ridge;" class="col-md-12">
+                        <legend style="font-size: 14px">@Resource.SelectionHeliport</legend>
                         <div class="row">
                             <div class="col-sm-2">
+                                @Html.CheckBoxFor(Function(model) model.Heliport,
+New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; "}})
+                                <br/>
                                 @Html.LabelFor(Function(m) m.Heliport, New With {.class = "", .style = "font-size: 8px;  height: 25px;"})
-                                @Html.EditorFor(Function(model) model.Heliport,
-New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 10px; width:100%"}})
-                                @Html.ValidationMessageFor(Function(m) m.Heliport, "", New With {.style = "color: #da0b0b"})
                             </div>
                             <div class="col-sm-2">
                                 @Html.LabelFor(Function(m) m.MaterielHeliportId, New With {.class = "col-form-label", .style = "font-size: 8px;  height: 25px; "})<br />

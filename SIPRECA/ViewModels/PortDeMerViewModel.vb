@@ -162,6 +162,11 @@ Public Class PortDeMerViewModel
     Public Overridable Property LesOrganisations As ICollection(Of SelectListItem)
     Public Overridable Property Organisation As Organisation
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielPortDeMerId As Long?
+    Public Overridable Property LesMaterielPortDeMers As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielPortDeMers As ICollection(Of MaterielPortDeMer)
+
     Public Sub New()
     End Sub
 

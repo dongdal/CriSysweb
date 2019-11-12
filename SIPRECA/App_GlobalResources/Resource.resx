@@ -3247,7 +3247,7 @@
     <value>Longueur de piste min</value>
   </data>
   <data name="Bureau" xml:space="preserve">
-    <value>Bureau</value>
+    <value>Bureaux</value>
   </data>
   <data name="Entrepot" xml:space="preserve">
     <value>Entrepot</value>
@@ -3398,5 +3398,32 @@
   </data>
   <data name="Materiel" xml:space="preserve">
     <value>Equipements</value>
+  </data>
+  <data name="ComboMateriel" xml:space="preserve">
+    <value>Veillez selectionner l'équipement</value>
+  </data>
+  <data name="SelectionAbris" xml:space="preserve">
+    <value>Les abris</value>
+  </data>
+  <data name="SelectionAeroport" xml:space="preserve">
+    <value>Les aéroports</value>
+  </data>
+  <data name="SelectionBureau" xml:space="preserve">
+    <value>Les bureaux</value>
+  </data>
+  <data name="SelectionEntrepot" xml:space="preserve">
+    <value>Les entrepots</value>
+  </data>
+  <data name="SelectionHeliport" xml:space="preserve">
+    <value>Les héliport</value>
+  </data>
+  <data name="SelectionHopitaux" xml:space="preserve">
+    <value>Les hopitaux</value>
+  </data>
+  <data name="SelectionInstallation" xml:space="preserve">
+    <value>Les installations</value>
+  </data>
+  <data name="SelectionPortDeMer" xml:space="preserve">
+    <value>Les ports de mer</value>
   </data>
 </root>

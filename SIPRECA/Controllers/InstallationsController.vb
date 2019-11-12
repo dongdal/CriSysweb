@@ -130,20 +130,23 @@ Namespace Controllers
             Dim LesVilles As New List(Of SelectListItem)
 
             Dim PersonnelInstallation = (From e In Db.PersonnelInstallation Where e.InstallationId = entityVM.Id Select e).ToList
+            Dim PersonnelInstallatio = (From e In Db.PersonnelInstallation Where e.InstallationId = entityVM.Id Select e.Personnel).ToList
             Dim PersonnelInstallations = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
             Dim LesPersonnelInstallations As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 7 Select e).ToList
+            Dim MaterielInstallation = (From e In Db.MaterielInstallation Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielInstallations = (From e In Db.MaterielInstallation Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielInstallations As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielInstallation.Contains(item) Then
+                    LesMaterielInstallations.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In PersonnelInstallations
-
-                Dim re As Boolean = True
-
-                For Each item2 In PersonnelInstallation
-                    If item.Id = item2.PersonnelId Then
-                        re = False
-                    End If
-                Next
-
-                If re = True Then
+                If Not PersonnelInstallatio.Contains(item) Then
                     LesPersonnelInstallations.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
                 End If
             Next
@@ -169,6 +172,8 @@ Namespace Controllers
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielInstallations = LesMaterielInstallations
+            entityVM.MaterielInstallations = MaterielInstallations
         End Sub
 
         ' GET: Installation/Create
@@ -238,6 +243,8 @@ Namespace Controllers
             End If
             Dim entityVM As New InstallationViewModel(Installation)
             LoadComboBox(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
             Return View(entityVM)
         End Function
 
@@ -249,6 +256,8 @@ Namespace Controllers
         Function Edit(ByVal entityVM As InstallationViewModel) As ActionResult
             If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
+            ElseIf Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
             Else
                 'If ModelState.IsValid Then
                 '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -297,7 +306,7 @@ Namespace Controllers
         Public Function AddPersonnel(ByVal entityVM As InstallationViewModel) As ActionResult
 
             If IsNothing(entityVM.PersonnelInstallationId) Then
-                ModelState.AddModelError("Personnel", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("PersonnelInstallationId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -341,6 +350,69 @@ Namespace Controllers
                 End If
 
                 Db.PersonnelInstallation.Remove(PersonnelInstallation)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As InstallationViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielInstallationId) Then
+                ModelState.AddModelError("MaterielInstallationId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielInstallation As New MaterielInstallation()
+
+                If entityVM.MaterielInstallationId > 0 Then
+
+                    MaterielInstallation.MaterielId = entityVM.MaterielInstallationId
+                    MaterielInstallation.InstallationId = entityVM.Id
+                    MaterielInstallation.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielInstallation.Add(MaterielInstallation)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielInstallation = (From p In Db.MaterielInstallation Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielInstallation Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielInstallation.Remove(MaterielInstallation)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException

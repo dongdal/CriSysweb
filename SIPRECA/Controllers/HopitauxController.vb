@@ -165,6 +165,17 @@ Namespace Controllers
             Dim HopitauxPuissances = (From e In Db.Puissance Where e.StatutExistant = 1 Select e).ToList
             Dim LesHopitauxPuissances As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 1 Select e).ToList
+            Dim MaterielHopitau = (From e In Db.MaterielHopitaux Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielHopitaux = (From e In Db.MaterielHopitaux Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielHopitaux As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielHopitau.Contains(item) Then
+                    LesMaterielHopitaux.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -206,6 +217,8 @@ Namespace Controllers
             entityVM.LesTypeHopitauxs = LesTypeHopitaux
             entityVM.LesVilles = LesVilles
             entityVM.LesOrganisations = LesOrganisations
+            entityVM.LesMaterielHopitaux = LesMaterielHopitaux
+            entityVM.MaterielHopitaux = MaterielHopitaux
         End Sub
 
         ' GET: Hopitaux/Create
@@ -276,13 +289,15 @@ Namespace Controllers
             Dim entityVM As New HopitauxViewModel(Hopitaux)
             LoadComboBox(entityVM)
             Return View(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
         End Function
 
         ' POST: Hopitaux/Edit/5
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        Function Edit(ByVal entityVM As HopitauxJS) As ActionResult
+        Function EditHopitaux(ByVal entityVM As HopitauxJS) As ActionResult
             Dim Ent As New Hopitaux
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -305,46 +320,109 @@ Namespace Controllers
             'Return View(entityVM)
         End Function
 
-        '<HttpPost()>
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function Edit(ByVal entityVM As HopitauxViewModel) As ActionResult
+            If Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
+            Else
+                'If ModelState.IsValid Then
+                '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                '    Try
+                '        Db.SaveChanges()
+                '        Return RedirectToAction("Index")
+                '    Catch ex As DbEntityValidationException
+                '        Util.GetError(ex, ModelState)
+                '    Catch ex As Exception
+                '        Util.GetError(ex, ModelState)
+                '    End Try
+                'End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         '<ValidateAntiForgeryToken()>
-        'Function Edit(ByVal entityVM As HopitauxViewModel) As ActionResult
-        '    If Request.Form("AddPuissance") IsNot Nothing Then
-        '        Return AddPuissance(entityVM)
-        '    Else
-        '        If ModelState.IsValid Then
-        '            Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+        '<HttpPost>
+        'Public Function AddPuissance(ByVal entityVM As HopitauxViewModel) As ActionResult
+
+        '    If IsNothing(entityVM.HopitauxPuissanceId) Then
+        '        ModelState.AddModelError("Puissance", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+        '    End If
+
+        '    If ModelState.IsValid Then
+
+        '        Dim HopitauxPuissance As New HopitauxPuissance()
+
+        '        If entityVM.HopitauxPuissanceId > 0 Then
+
+        '            HopitauxPuissance.PuissanceId = entityVM.HopitauxPuissanceId
+        '            HopitauxPuissance.HopitauxId = entityVM.Id
+
+        '            Db.HopitauxPuissance.Add(HopitauxPuissance)
         '            Try
         '                Db.SaveChanges()
-        '                Return RedirectToAction("Index")
         '            Catch ex As DbEntityValidationException
         '                Util.GetError(ex, ModelState)
         '            Catch ex As Exception
         '                Util.GetError(ex, ModelState)
         '            End Try
+
         '        End If
+        '        Return RedirectToAction("Edit", New With {entityVM.Id})
         '    End If
         '    LoadComboBox(entityVM)
-        '    Return View(entityVM)
+        '    Return View("Edit", entityVM)
+        'End Function
+
+        '<HttpPost>
+        'Public Function DeletePuissance(id As String) As JsonResult
+        '    If [String].IsNullOrEmpty(id) Then
+        '        Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+        '        Return Json(New With {.Result = "Error"})
+        '    End If
+        '    Try
+        '        Dim HopitauxPuissance = (From p In Db.HopitauxPuissance Where p.Id = id Select p).ToList.FirstOrDefault
+        '        If HopitauxPuissance Is Nothing Then
+        '            Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+        '            Return Json(New With {.Result = "Error"})
+        '        End If
+
+        '        Db.HopitauxPuissance.Remove(HopitauxPuissance)
+        '        Try
+        '            Db.SaveChanges()
+        '        Catch ex As DbEntityValidationException
+        '            Util.GetError(ex, ModelState)
+        '        Catch ex As Exception
+        '            Util.GetError(ex, ModelState)
+        '        End Try
+
+        '        Return Json(New With {.Result = "OK"})
+        '    Catch ex As Exception
+        '        'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+        '        Return Json(New With {.Result = "Error"})
+        '    End Try
         'End Function
 
         <ValidateAntiForgeryToken()>
         <HttpPost>
-        Public Function AddPuissance(ByVal entityVM As HopitauxViewModel) As ActionResult
+        Public Function AddMateriel(ByVal entityVM As HopitauxViewModel) As ActionResult
 
-            If IsNothing(entityVM.HopitauxPuissanceId) Then
-                ModelState.AddModelError("Puissance", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            If IsNothing(entityVM.MaterielHopitauxId) Then
+                ModelState.AddModelError("MaterielHopitauxId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
 
-                Dim HopitauxPuissance As New HopitauxPuissance()
+                Dim MaterielHopitaux As New MaterielHopitaux()
 
-                If entityVM.HopitauxPuissanceId > 0 Then
+                If entityVM.MaterielHopitauxId > 0 Then
 
-                    HopitauxPuissance.PuissanceId = entityVM.HopitauxPuissanceId
-                    HopitauxPuissance.HopitauxId = entityVM.Id
+                    MaterielHopitaux.MaterielId = entityVM.MaterielHopitauxId
+                    MaterielHopitaux.HopitauxId = entityVM.Id
+                    MaterielHopitaux.AspNetUserId = GetCurrentUser.Id
 
-                    Db.HopitauxPuissance.Add(HopitauxPuissance)
+                    Db.MaterielHopitaux.Add(MaterielHopitaux)
                     Try
                         Db.SaveChanges()
                     Catch ex As DbEntityValidationException
@@ -361,19 +439,19 @@ Namespace Controllers
         End Function
 
         <HttpPost>
-        Public Function DeletePuissance(id As String) As JsonResult
+        Public Function DeleteMateriel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
             End If
             Try
-                Dim HopitauxPuissance = (From p In Db.HopitauxPuissance Where p.Id = id Select p).ToList.FirstOrDefault
-                If HopitauxPuissance Is Nothing Then
+                Dim MaterielHopitaux = (From p In Db.MaterielHopitaux Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielHopitaux Is Nothing Then
                     Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
                     Return Json(New With {.Result = "Error"})
                 End If
 
-                Db.HopitauxPuissance.Remove(HopitauxPuissance)
+                Db.MaterielHopitaux.Remove(MaterielHopitaux)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException

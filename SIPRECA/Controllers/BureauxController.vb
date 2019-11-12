@@ -136,20 +136,23 @@ Namespace Controllers
             Dim LesTypeOffices As New List(Of SelectListItem)
 
             Dim PersonnelBureau = (From e In Db.PersonnelBureau Where e.BureauId = entityVM.Id Select e).ToList
+            Dim PersonnelBurea = (From e In Db.PersonnelBureau Where e.BureauId = entityVM.Id Select e.Personnel).ToList
             Dim PersonnelBureaux = (From e In Db.Personnel Where e.StatutExistant = 1 Select e)
             Dim LesPersonnelBureaux As New List(Of SelectListItem)
 
+            Dim Materiels = (From e In Db.Materiel Where e.Cible = 6 Select e).ToList
+            Dim MaterielBureau = (From e In Db.MaterielBureau Where e.StatutExistant = 1 Select e.Materiel).ToList
+            Dim MaterielBureaux = (From e In Db.MaterielBureau Where e.StatutExistant = 1 Select e).ToList
+            Dim LesMaterielBureau As New List(Of SelectListItem)
+
+            For Each item In Materiels
+                If Not MaterielBureau.Contains(item) Then
+                    LesMaterielBureau.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                End If
+            Next
+
             For Each item In PersonnelBureaux
-
-                Dim re As Boolean = True
-
-                For Each item2 In PersonnelBureau
-                    If item.Id = item2.PersonnelId Then
-                        re = False
-                    End If
-                Next
-
-                If re = True Then
+                If Not PersonnelBurea.Contains(item) Then
                     LesPersonnelBureaux.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
                 End If
             Next
@@ -179,6 +182,8 @@ Namespace Controllers
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesTypeOffices = LesTypeOffices
             entityVM.LesVilles = LesVilles
+            entityVM.LesMaterielBureaux = LesMaterielBureau
+            entityVM.MaterielBureaux = MaterielBureaux
             entityVM.LesOrganisations = LesOrganisations
         End Sub
 
@@ -249,6 +254,8 @@ Namespace Controllers
             End If
             Dim entityVM As New BureauViewModel(Bureau)
             LoadComboBox(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
             Return View(entityVM)
         End Function
 
@@ -260,6 +267,8 @@ Namespace Controllers
         Function Edit(ByVal entityVM As BureauViewModel) As ActionResult
             If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
+            ElseIf Request.Form("AddMateriel") IsNot Nothing Then
+                Return AddMateriel(entityVM)
             Else
                 If ModelState.IsValid Then
                     Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -275,6 +284,69 @@ Namespace Controllers
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
+        End Function
+
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function AddMateriel(ByVal entityVM As BureauViewModel) As ActionResult
+
+            If IsNothing(entityVM.MaterielBureauId) Then
+                ModelState.AddModelError("MaterielBureauId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim MaterielBureau As New MaterielBureau()
+
+                If entityVM.MaterielBureauId > 0 Then
+
+                    MaterielBureau.MaterielId = entityVM.MaterielBureauId
+                    MaterielBureau.BureauId = entityVM.Id
+                    MaterielBureau.AspNetUserId = GetCurrentUser.Id
+
+                    Db.MaterielBureau.Add(MaterielBureau)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
+                End If
+                Return RedirectToAction("Edit", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("Edit", entityVM)
+        End Function
+
+        <HttpPost>
+        Public Function DeleteMateriel(id As String) As JsonResult
+            If [String].IsNullOrEmpty(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim MaterielBureau = (From p In Db.MaterielBureau Where p.Id = id Select p).ToList.FirstOrDefault
+                If MaterielBureau Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+
+                Db.MaterielBureau.Remove(MaterielBureau)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
         End Function
 
 
@@ -308,7 +380,7 @@ Namespace Controllers
         Public Function AddPersonnel(ByVal entityVM As BureauViewModel) As ActionResult
 
             If IsNothing(entityVM.PersonnelBureauxId) Then
-                ModelState.AddModelError("Personnel", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("PersonnelBureauxId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then

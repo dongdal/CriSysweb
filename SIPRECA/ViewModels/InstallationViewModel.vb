@@ -78,6 +78,11 @@ Public Class InstallationViewModel
     Public Overridable Property LesPersonnelInstallations As ICollection(Of SelectListItem)
     Public Overridable Property PersonnelInstallations As ICollection(Of PersonnelInstallation)
 
+    <Display(Name:="Materiel", ResourceType:=GetType(Resource))>
+    Public Property MaterielInstallationId As Long?
+    Public Overridable Property LesMaterielInstallations As ICollection(Of SelectListItem)
+    Public Overridable Property MaterielInstallations As ICollection(Of MaterielInstallation)
+
     Public Sub New()
     End Sub
 
