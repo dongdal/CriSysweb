@@ -16,8 +16,8 @@ Public Class AbrisViewModel
     <Display(Name:="Capacite", ResourceType:=GetType(Resource))>
     Public Property Capacite As Long
 
+    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Location As DbGeometry
 
 

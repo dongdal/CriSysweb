@@ -3594,4 +3594,7 @@
   <data name="SelectionPortDeMer" xml:space="preserve">
     <value>Les ports</value>
   </data>
+  <data name="MenuGestionDesSinistre" xml:space="preserve">
+    <value>Gestion des sinistrés</value>
+  </data>
 </root>

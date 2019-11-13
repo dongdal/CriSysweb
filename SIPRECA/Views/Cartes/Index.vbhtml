@@ -538,9 +538,45 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "1", 
             transparent: true,
         });
 
+        var Aeroport = L.tileLayer.wms("http://localhost:8080/geoserver/cite/wms", {
+            layers: 'Aeroport',
+            format: 'image/png',
+            transparent: true,
+        });
+
+        var Abris = L.tileLayer.wms("http://localhost:8080/geoserver/cite/wms", {
+            layers: 'Abris',
+            format: 'image/png',
+            transparent: true,
+        });
+
+        var Infrastructure = L.tileLayer.wms("http://localhost:8080/geoserver/cite/wms", {
+            layers: 'Infrastructure',
+            format: 'image/png',
+            icon: heliportIcon,
+            transparent: true,
+        });
+
+        var PortDeMer = L.tileLayer.wms("http://localhost:8080/geoserver/cite/wms", {
+            layers: 'PortDeMer',
+            format: 'image/png',
+            transparent: true,
+        });
+
+        var ZoneARisque = L.tileLayer.wms("http://localhost:8080/geoserver/cite/wms", {
+            layers: 'ZoneARisque',
+            format: 'image/png',
+            transparent: true,
+        });
+
         var overlayMaps = {
             "Hopitaux": Hopitaux,
-            "Héliports": heliports
+            "Héliports": heliports,
+            "Aeroports": Aeroport,
+            "Abris": Abris,
+            "Infrastructures": Infrastructure,
+            "Ports": PortDeMer,
+            "Zones à risque": ZoneARisque
         };
 
         //center: [51.505, -0.09],

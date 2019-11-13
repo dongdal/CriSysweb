@@ -11,7 +11,6 @@ Public Class ZoneARisqueViewModel
     Public Property Libelle As String
 
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Location As DbGeometry
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>

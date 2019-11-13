@@ -26,6 +26,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
+        @Html.HiddenFor(Function(m) m.AspNetUserId)
 
         @<div Class="col-lg-12">
             <div Class="card">

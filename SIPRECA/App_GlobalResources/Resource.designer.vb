@@ -6635,6 +6635,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des sinistrés.
+        '''</summary>
+        Public Shared ReadOnly Property MenuGestionDesSinistre() As String
+            Get
+                Return ResourceManager.GetString("MenuGestionDesSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les héliports.
         '''</summary>
         Public Shared ReadOnly Property MenuHeliport() As String

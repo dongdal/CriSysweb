@@ -297,7 +297,15 @@ Namespace Controllers
         Public Function AddPersonnel(ByVal entityVM As AbrisViewModel) As ActionResult
 
             If IsNothing(entityVM.PersonnelAbrisId) Then
-                ModelState.AddModelError("PersonnelAbrisId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("PersonnelAbrisId", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If IsNothing(entityVM.Id) Then
+                ModelState.AddModelError("Id", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If String.IsNullOrEmpty(entityVM.TitreDuPoste) Then
+                ModelState.AddModelError("TitreDuPoste", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then

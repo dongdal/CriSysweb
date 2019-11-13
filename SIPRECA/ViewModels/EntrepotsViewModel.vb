@@ -39,7 +39,6 @@ Public Class EntrepotsViewModel
     Public Property Email As String
 
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Location As DbGeometry
 
 
