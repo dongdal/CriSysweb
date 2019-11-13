@@ -3543,4 +3543,55 @@
   <data name="ConfirmDeleteBis" xml:space="preserve">
     <value>Voulez-vous vraiment supprimer cet élément ainsi que tous les éléments qui dépendent de lui?</value>
   </data>
+  <data name="ComboMateriel" xml:space="preserve">
+    <value>Veuillez selectionnez l'équipement</value>
+  </data>
+  <data name="MenuElements" xml:space="preserve">
+    <value>Les éléments</value>
+  </data>
+  <data name="MenuEntrepots" xml:space="preserve">
+    <value>Les entrepots</value>
+  </data>
+  <data name="MenuGestionDesMoyens" xml:space="preserve">
+    <value>Gestion des moyens</value>
+  </data>
+  <data name="MenuHopitaux" xml:space="preserve">
+    <value>Les hopitaux</value>
+  </data>
+  <data name="MenuMateriels" xml:space="preserve">
+    <value>Les équipements</value>
+  </data>
+  <data name="MenuPersonnel" xml:space="preserve">
+    <value>Le personnel</value>
+  </data>
+  <data name="MenuPortDeMer" xml:space="preserve">
+    <value>Les ports</value>
+  </data>
+  <data name="MenuProjet" xml:space="preserve">
+    <value>Les projets</value>
+  </data>
+  <data name="SelectionAbris" xml:space="preserve">
+    <value>Les Abris</value>
+  </data>
+  <data name="SelectionAeroport" xml:space="preserve">
+    <value>Les aéroports</value>
+  </data>
+  <data name="SelectionBureau" xml:space="preserve">
+    <value>Les bureaux</value>
+  </data>
+  <data name="SelectionEntrepot" xml:space="preserve">
+    <value>Les entrepots</value>
+  </data>
+  <data name="SelectionHeliport" xml:space="preserve">
+    <value>Les héliports</value>
+  </data>
+  <data name="SelectionHopitaux" xml:space="preserve">
+    <value>Les hopitaux</value>
+  </data>
+  <data name="SelectionInstallation" xml:space="preserve">
+    <value>Les installations</value>
+  </data>
+  <data name="SelectionPortDeMer" xml:space="preserve">
+    <value>Les ports</value>
+  </data>
 </root>

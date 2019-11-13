@@ -424,6 +424,10 @@
       <DependentUpon>201911041139435_Modification du model pour ajout du plateau technique.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911041139435_Modification du model pour ajout du plateau technique.vb" />
+    <Compile Include="Migrations\201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.Designer.vb">
+      <DependentUpon>201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Collecte.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
@@ -803,6 +807,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911041139435_Modification du model pour ajout du plateau technique.resx">
       <DependentUpon>201911041139435_Modification du model pour ajout du plateau technique.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.resx">
+      <DependentUpon>201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1657,6 +1664,11 @@
     <Content Include="Views\Account\Login.vbhtml" />
     <Content Include="Views\Account\Manage.vbhtml" />
     <Content Include="Views\Account\Register.vbhtml" />
+    <Content Include="Views\Puissances\Create.vbhtml" />
+    <Content Include="Views\Puissances\Delete.vbhtml" />
+    <Content Include="Views\Puissances\Details.vbhtml" />
+    <Content Include="Views\Puissances\Edit.vbhtml" />
+    <Content Include="Views\Puissances\Index.vbhtml" />
     <Content Include="Views\Shared\_LoginPartial.vbhtml" />
     <Content Include="Views\Shared\_Header.vbhtml" />
     <Content Include="Views\Shared\_LeftSideBar.vbhtml" />
@@ -1857,11 +1869,6 @@
     <Content Include="Views\SurfaceDePistes\Details.vbhtml" />
     <Content Include="Views\SurfaceDePistes\Edit.vbhtml" />
     <Content Include="Views\SurfaceDePistes\Index.vbhtml" />
-    <Content Include="Views\Puissances\Create.vbhtml" />
-    <Content Include="Views\Puissances\Delete.vbhtml" />
-    <Content Include="Views\Puissances\Details.vbhtml" />
-    <Content Include="Views\Puissances\Edit.vbhtml" />
-    <Content Include="Views\Puissances\Index.vbhtml" />
     <Content Include="Views\MarqueElements\Create.vbhtml" />
     <Content Include="Views\MarqueElements\Delete.vbhtml" />
     <Content Include="Views\MarqueElements\Details.vbhtml" />

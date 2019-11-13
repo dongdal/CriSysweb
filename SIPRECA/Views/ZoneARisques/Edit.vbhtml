@@ -3,6 +3,7 @@
 @Code
     ViewBag.Title = Resource.EditZoneARisque
     Layout = "~/Views/Shared/_LayoutDesinventar.vbhtml"
+    Dim Libelle = Model.Libelle
 End Code
 
 
@@ -51,10 +52,12 @@ End Code
                                     </div>
                                 </div>
 
+                                @Html.Partial("_MyMapEnterPartial")
+
                                 <div Class="form-group row">
                                     <Label Class="col-sm-2 col-form-label"></Label>
                                     <div Class="col-sm-10">
-                                        <Button type="submit" Class="btn btn-link btn-square bg-warning text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
+                                        <Button type="submit" onclick="EditZoneARisque();" Class="btn btn-link btn-square bg-warning text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
                                         &nbsp;&nbsp;&nbsp;
                                         @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                                     </div>
@@ -193,6 +196,107 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
 
 @Section Scripts
+
+    <script>
+    var oldLatitude = '@ViewBag.Latitude';
+    var oldLongitude = '@ViewBag.Longitude';
+    L.marker([oldLatitude, oldLongitude]).addTo(mymap)
+        .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
+        .openPopup();
+    //$.alert('Longitude= ' + oldLongitude + ' Latitude= ' + oldLatitude);
+        @*L.marker(['@Latitude', '@Longitude'])
+            .bindPopup('<a href="' +'@Libelle' + '" target="_blank">' + '@Libelle' + '</a>')
+            .addTo(mymap);*@
+
+        @*$.alert('<a href="' +'@Libelle' + '" target="_blank">' + '@Libelle' + '</a>');*@
+    </script>
+
+    <script>
+        var Latitude = oldLatitude.replace("." , ",");
+        var Longitude = oldLongitude.replace(".", ",");
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(mymap);
+        }
+
+        var theMarker = {};
+
+        mymap.on('click', function (e) {
+            lat = e.latlng.lat;
+            lon = e.latlng.lng;
+
+
+            if (theMarker != undefined) {
+                mymap.removeLayer(theMarker);
+            };
+            Longitude = lon;
+            Latitude = lat;
+
+            //Add a marker to show where you clicked.
+            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude +'</h6></p>').openPopup();
+            //theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup("Nouvel emplacement de "+'@Libelle.ToUpper'+". Latitude: " + Latitude + " et Longitude: " + Longitude).openPopup();
+
+        });
+
+
+        function EditZoneARisque() {
+                var Id = '#Id';
+                var Libelle = '#Libelle';
+		        
+
+                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
+                //alert("DateNaissance= " + DateNaissance);
+
+            if (typeof $(Libelle).val() == "undefined" || $(Libelle).val() == "") {
+                    //alert("Veuillez renseigner tous les champs obligatoires.");
+                    $.alert('"Veuillez renseigner tous les champs obligatoires."');
+                }
+                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
+                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        }
+		        else{
+
+                    var dataRow = {
+                        'Id': $(Id).val(),
+                        'Libelle': $(Libelle).val(),
+                        'Latitude': Latitude,
+                        'Longitude': Longitude
+                    }
+
+                    //alert("c'est moi le createPatient avant ajax");
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("EditZoneARisque", "ZoneARisques")',
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: JSON.stringify(dataRow),
+
+                        // here we are get value of selected country and passing same value as inputto json method GetStates.
+
+                        success: function (response) {
+                            if (response.Result == "OK") {
+                                window.location.href = '@Url.Action("Index", "ZoneARisques")';
+                            }
+                        },
+                        error: function (theResponse) {
+                            $.alert(theResponse.responseText);
+
+                        }
+
+
+                    });
+                }
+
+
+            }
+
+    </script>
 
     <script>
 
@@ -351,6 +455,6 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
     </script>
 
-   
+
 
 End Section

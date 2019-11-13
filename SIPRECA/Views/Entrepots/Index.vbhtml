@@ -59,13 +59,7 @@ End Code
                             @Html.ActionLink(Resource.Ville, "Index", New With {.sortOrder = ViewBag.VilleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Organisation, "Index", New With {.sortOrder = ViewBag.OrganisationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.TypeEntrepots, "Index", New With {.sortOrder = ViewBag.TypeEntrepots, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Capacite, "Index", New With {.sortOrder = ViewBag.Capacitepots, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.CapaciteDisponible, "Index", New With {.sortOrder = ViewBag.TypeCapaciteDisponible, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
@@ -93,12 +87,7 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Ville.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Oganisation.Nom)
-                            <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeEntrepot.Libelle)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Capacite)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.CapaciteDisponible)
@@ -106,8 +95,6 @@ End Code
                             <td>
                                 @Html.DisplayFor(Function(modelItem) item.Telephone)
                             </td>
-
-
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>

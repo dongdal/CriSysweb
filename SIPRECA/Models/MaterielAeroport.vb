@@ -3,6 +3,7 @@ Partial Public Class MaterielAeroport
     Public Property Id As Long
     Public Property AeroportId As Long
     Public Property MaterielId As Long
+    Public Property Quantite As Long
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

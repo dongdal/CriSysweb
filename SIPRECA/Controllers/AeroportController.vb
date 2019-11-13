@@ -269,6 +269,8 @@ Namespace Controllers
             End If
             Dim entityVM As New AeroportViewModel(Aeroport)
             LoadComboBox(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
             Return View(entityVM)
         End Function
 
@@ -445,6 +447,7 @@ Namespace Controllers
 
     Public Class AeroportJS
 
+        Public Property Id As Long
         Public Property Nom As String
         Public Property ICAO As String
         Public Property IATA As String
@@ -465,7 +468,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As Aeroport
             Dim entity As New Aeroport
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .ICAO = ICAO
                 .IATA = IATA
@@ -487,6 +490,10 @@ Namespace Controllers
                 .AspNetUserId = Str
             End With
             Return entity
+        End Function
+
+        Friend Function Location() As Object
+            Throw New NotImplementedException()
         End Function
     End Class
 End Namespace

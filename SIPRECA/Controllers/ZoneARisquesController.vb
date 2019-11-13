@@ -141,22 +141,26 @@ Namespace Controllers
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
-        <ValidateAntiForgeryToken()>
-        Function Create(ByVal entityVM As ZoneARisqueViewModel) As ActionResult
-            entityVM.AspNetUserId = GetCurrentUser.Id
+        Function Create(ByVal entityVM As ZoneARisqueJS) As ActionResult
+            Dim Ent As New ZoneARisque
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location")
+            End If
+            ' DbGeography.FromText("POINT(-122.336106 47.605049)")
             If ModelState.IsValid Then
-                Db.ZoneARisque.Add(entityVM.GetEntity)
+                Db.ZoneARisque.Add(Ent)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    Return Json(New With {.Result = "OK"})
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
                 End Try
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
+            Return Json(New With {.Result = "Error"})
         End Function
 
         ' GET: ZoneARisque/Edit/5
@@ -170,6 +174,8 @@ Namespace Controllers
             End If
             Dim entityVM As New ZoneARisqueViewModel(ZoneARisque)
             LoadComboBox(entityVM)
+            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
             Return View(entityVM)
         End Function
 
@@ -198,6 +204,30 @@ Namespace Controllers
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
+        End Function
+
+        <HttpPost()>
+        Function EditZoneARisque(ByVal entityVM As ZoneARisqueJS) As ActionResult
+            Dim Ent As New ZoneARisque
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
+            If ModelState.IsValid Then
+                Db.Entry(Ent).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return Json(New With {.Result = "OK"})
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
         End Function
 
         <ValidateAntiForgeryToken()>
@@ -367,5 +397,25 @@ Namespace Controllers
             End If
             MyBase.Dispose(disposing)
         End Sub
+    End Class
+
+    Public Class ZoneARisqueJS
+        Public Property Id As Long
+        Public Property Libelle As String
+        Public Property Latitude As String
+        Public Property Longitude As String
+
+        Public Function GetEntity(Str As String) As ZoneARisque
+            Dim entity As New ZoneARisque
+            With entity
+                .Id = Id
+                .Libelle = Libelle
+                .Location = Util.CreatePoint(latitude:=Latitude, longitude:=Longitude)
+                .StatutExistant = 1
+                .DateCreation = Now
+                .AspNetUserId = Str
+            End With
+            Return entity
+        End Function
     End Class
 End Namespace

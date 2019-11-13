@@ -291,8 +291,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
     </script>
 
     <script>
-        var Latitude = oldLatitude;
-        var Longitude = oldLongitude;
+        var Latitude = oldLatitude.replace(".", ",");
+        var Longitude = oldLongitude.replace(".", ",");
 
         var popup = L.popup();
 

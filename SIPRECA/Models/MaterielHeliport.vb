@@ -3,6 +3,7 @@ Partial Public Class MaterielHeliport
     Public Property Id As Long
     Public Property HeliportId As Long
     Public Property MaterielId As Long
+    Public Property Quantite As Long
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

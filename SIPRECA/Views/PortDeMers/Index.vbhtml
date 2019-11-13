@@ -62,16 +62,6 @@ End Code
                             @Html.ActionLink(Resource.Organisation, "Index", New With {.sortOrder = ViewBag.OrganisationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.HauteurMaximum, "Index", New With {.sortOrder = ViewBag.TypeHopitauxSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.ProfondeurQuaiChargement, "Index", New With {.sortOrder = ViewBag.NombreDeLitMinSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.ProfondeurTerminalPetrolier, "Index", New With {.sortOrder = ViewBag.NombreDeLitMaxSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Telephone, "Index", New With {.sortOrder = ViewBag.NombreDePersonnelNonMedicalSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -94,13 +84,6 @@ End Code
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Oganisation.Nom)
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.HauteurMaximum)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.ProfondeurQuaiChargement)
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.ProfondeurTerminalPetrolier)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Telephone)

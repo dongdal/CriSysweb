@@ -1406,7 +1406,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veillez selectionner l&apos;équipement.
+        '''  Recherche une chaîne localisée semblable à Veuillez selectionnez l&apos;équipement.
         '''</summary>
         Public Shared ReadOnly Property ComboMateriel() As String
             Get
@@ -6572,11 +6572,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les éléments.
+        '''</summary>
+        Public Shared ReadOnly Property MenuElements() As String
+            Get
+                Return ResourceManager.GetString("MenuElements", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les enquêtes.
         '''</summary>
         Public Shared ReadOnly Property MenuEnquete() As String
             Get
                 Return ResourceManager.GetString("MenuEnquete", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les entrepots.
+        '''</summary>
+        Public Shared ReadOnly Property MenuEntrepots() As String
+            Get
+                Return ResourceManager.GetString("MenuEntrepots", resourceCulture)
             End Get
         End Property
         
@@ -6608,11 +6626,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des moyens.
+        '''</summary>
+        Public Shared ReadOnly Property MenuGestionDesMoyens() As String
+            Get
+                Return ResourceManager.GetString("MenuGestionDesMoyens", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les héliports.
         '''</summary>
         Public Shared ReadOnly Property MenuHeliport() As String
             Get
                 Return ResourceManager.GetString("MenuHeliport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les hopitaux.
+        '''</summary>
+        Public Shared ReadOnly Property MenuHopitaux() As String
+            Get
+                Return ResourceManager.GetString("MenuHopitaux", resourceCulture)
             End Get
         End Property
         
@@ -6680,6 +6716,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les équipements.
+        '''</summary>
+        Public Shared ReadOnly Property MenuMateriels() As String
+            Get
+                Return ResourceManager.GetString("MenuMateriels", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Natures d&apos;aide.
         '''</summary>
         Public Shared ReadOnly Property MenuNatureAide() As String
@@ -6698,11 +6743,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Le personnel.
+        '''</summary>
+        Public Shared ReadOnly Property MenuPersonnel() As String
+            Get
+                Return ResourceManager.GetString("MenuPersonnel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les bétails.
         '''</summary>
         Public Shared ReadOnly Property MenuPerteBetail() As String
             Get
                 Return ResourceManager.GetString("MenuPerteBetail", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les ports.
+        '''</summary>
+        Public Shared ReadOnly Property MenuPortDeMer() As String
+            Get
+                Return ResourceManager.GetString("MenuPortDeMer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les projets.
+        '''</summary>
+        Public Shared ReadOnly Property MenuProjet() As String
+            Get
+                Return ResourceManager.GetString("MenuProjet", resourceCulture)
             End Get
         End Property
         
@@ -9461,7 +9533,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les abris.
+        '''  Recherche une chaîne localisée semblable à Les Abris.
         '''</summary>
         Public Shared ReadOnly Property SelectionAbris() As String
             Get
@@ -9515,7 +9587,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les héliport.
+        '''  Recherche une chaîne localisée semblable à Les héliports.
         '''</summary>
         Public Shared ReadOnly Property SelectionHeliport() As String
             Get
@@ -9542,7 +9614,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les ports de mer.
+        '''  Recherche une chaîne localisée semblable à Les ports.
         '''</summary>
         Public Shared ReadOnly Property SelectionPortDeMer() As String
             Get

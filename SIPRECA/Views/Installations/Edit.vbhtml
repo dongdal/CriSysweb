@@ -28,7 +28,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
-        @Html.HiddenFor(Function(m) m.Location)
+        @*@Html.HiddenFor(Function(m) m.Location)*@
 
         @<div Class="col-lg-12">
             <div Class="card">
@@ -317,8 +317,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
     </script>
 
     <script>
-        var Latitude = oldLatitude;
-        var Longitude = oldLongitude;
+        var Latitude = oldLatitude.replace(".", ",");
+        var Longitude = oldLongitude.replace(".", ",");
 
         var popup = L.popup();
 

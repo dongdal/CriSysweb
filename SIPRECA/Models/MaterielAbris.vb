@@ -3,6 +3,7 @@ Partial Public Class MaterielAbris
     Public Property Id As Long
     Public Property AbrisId As Long
     Public Property MaterielId As Long
+    Public Property Quantite As Long
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
