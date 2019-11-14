@@ -244,9 +244,9 @@ Namespace Controllers
             End If
             Dim entityVM As New EntrepotsViewModel(Entrepots)
             LoadComboBox(entityVM)
-            Return View(entityVM)
             ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
             ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            Return View(entityVM)
         End Function
 
         <HttpPost()>

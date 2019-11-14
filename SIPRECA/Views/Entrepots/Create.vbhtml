@@ -118,7 +118,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
             <div Class="form-group row">
                 <Label Class="col-sm-2 col-form-label"></Label>
                 <div Class="col-sm-10">
-                    <Button type="submit" onclick="CreateEntrepot();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                    <Button type="button" onclick="CreateEntrepot();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
                     &nbsp;&nbsp;&nbsp;
                     @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                 </div>

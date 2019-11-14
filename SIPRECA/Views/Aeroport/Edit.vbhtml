@@ -26,7 +26,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
-        @Html.HiddenFor(Function(m) m.Location)
+        @*@Html.HiddenFor(Function(m) m.Location)*@
 
         @<div Class="col-lg-12">
             <div Class="card">
@@ -155,7 +155,7 @@ End Code
                             <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
                                 <div Class="col-sm-10">
-                                    <Button type="submit" onclick="EditAeroport();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                                    <Button type="button" onclick="EditAeroport();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                                 </div>
@@ -218,9 +218,11 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
             </div>
         </div>
     End Using
+    </div>
+
     @Section Scripts
 
-        <script>
+         <script>
     var oldLatitude = '@ViewBag.Latitude';
     var oldLongitude = '@ViewBag.Longitude';
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
@@ -232,11 +234,11 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
             .addTo(mymap);*@
 
         @*$.alert('<a href="' +'@Libelle' + '" target="_blank">' + '@Libelle' + '</a>');*@
-        </script>
+         </script>
 
         <script>
-        var Latitude = oldLatitude;
-        var Longitude = oldLongitude;
+        var Latitude = oldLatitude.replace("." , ",");
+        var Longitude = oldLongitude.replace(".", ",");
 
         var popup = L.popup();
 
@@ -273,7 +275,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 var IATA = '#IATA';
 		        var Nom= '#Nom';
 		        var VilleId= '#VilleId';
-                var OrganisationId = '#OrganisationId';
+                var OrganisationId = '#OganisationId';
                 var SurfaceDePisteId = '#SurfaceDePisteId';
                 var LongueurDePiste = '#LongueurDePiste';
                 var LargeurDePiste = '#LargeurDePiste';
@@ -301,7 +303,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                         'IATA': $(IATA).val(),
                         'Nom': $(Nom).val(),
                         'VilleId': $(VilleId).val(),
-                        'OrganisationId': $(OrganisationId).val(),
+                        'OganisationId': $(OrganisationId).val(),
                         'SurfaceDePisteId': $(SurfaceDePisteId).val(),
                         'LongueurDePiste': $(LongueurDePiste).val(),
                         'LargeurDePiste': $(LargeurDePiste).val(),

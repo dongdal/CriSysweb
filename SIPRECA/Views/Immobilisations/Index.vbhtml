@@ -53,18 +53,6 @@ End Code
                             @Html.ActionLink(Resource.NumeroImobilisation, "Index", New With {.sortOrder = ViewBag.NumeroImobilisationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.NumeroDeSerie, "Index", New With {.sortOrder = ViewBag.NumeroDeSerieSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateAchat, "Index", New With {.sortOrder = ViewBag.DateAchatSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.PrixAchat, "Index", New With {.sortOrder = ViewBag.PrixAchatSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Devise, "Index", New With {.sortOrder = ViewBag.DeviseSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.TypeImmobilisation, "Index", New With {.sortOrder = ViewBag.TypeImmobilisationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -88,18 +76,7 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.NumeroImobilisation)
                             </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.NumeroDeSerie)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateAchat)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.PrixAchat)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Devise.Libelle)
-                            </td>
+                           
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeImmobilisation.Libelle)
                             </td>

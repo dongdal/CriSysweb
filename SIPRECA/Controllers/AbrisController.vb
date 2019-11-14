@@ -236,9 +236,9 @@ Namespace Controllers
             End If
             Dim entityVM As New AbrisViewModel(Abris)
             LoadComboBox(entityVM)
-            Return View(entityVM)
             ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
             ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            Return View(entityVM)
         End Function
 
         ' POST: Abris/Edit/5
@@ -268,12 +268,44 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+        <HttpPost()>
+        Function EditAbris(ByVal entityVM As AbrisJS) As ActionResult
+            Dim Ent As New Abris
+            Ent = entityVM.GetEntity(GetCurrentUser.Id)
+
+            If (IsNothing(Ent.Location)) Then
+                ModelState.AddModelError("", "Veuillez remplir le champ location.")
+            End If
+            If ModelState.IsValid Then
+                Db.Entry(Ent).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return Json(New With {.Result = "OK"})
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            'LoadComboBox(entityVM)
+            Return Json(New With {.Result = "Error"})
+            'Return View(entityVM)
+        End Function
+
         <ValidateAntiForgeryToken()>
         <HttpPost>
         Public Function AddPersonnel(ByVal entityVM As AbrisViewModel) As ActionResult
 
             If IsNothing(entityVM.PersonnelAbrisId) Then
-                ModelState.AddModelError("PersonnelAbrisId", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+                ModelState.AddModelError("PersonnelAbrisId", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If IsNothing(entityVM.Id) Then
+                ModelState.AddModelError("Id", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If String.IsNullOrEmpty(entityVM.TitreDuPoste) Then
+                ModelState.AddModelError("TitreDuPoste", Resource.RequiredField) 'Le champ {0} est obligatoire: veuillez le remplir.
             End If
 
             If ModelState.IsValid Then
@@ -436,7 +468,7 @@ Namespace Controllers
     End Class
 
     Public Class AbrisJS
-
+        Public Property Id As Long
         Public Property Nom As String
         Public Property VilleId As String
         Public Property OrganisationId As String
@@ -449,7 +481,7 @@ Namespace Controllers
         Public Function GetEntity(Str As String) As Abris
             Dim entity As New Abris
             With entity
-                .Id = 0
+                .Id = Id
                 .Nom = Nom
                 .EstimationPopulation = EstimationPopulation
                 .Capacite = Capacite

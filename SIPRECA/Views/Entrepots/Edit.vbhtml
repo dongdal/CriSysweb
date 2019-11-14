@@ -26,7 +26,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
-        @Html.HiddenFor(Function(m) m.Location)
+        @*@Html.HiddenFor(Function(m) m.Location)*@
 
         @<div Class="col-lg-12">
             <div Class="card">
@@ -133,7 +133,7 @@ End Code
                             <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
                                 <div Class="col-sm-10">
-                                    <Button type="submit" onclick="EditEntrepot();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
+                                    <Button type="button" onclick="EditEntrepot();" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                                 </div>
@@ -210,8 +210,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
     </script>
 
     <script>
-        var Latitude = oldLatitude;
-        var Longitude = oldLongitude;
+        var Latitude = oldLatitude.replace("." , ",");
+        var Longitude = oldLongitude.replace(".", ",");
 
         var popup = L.popup();
 

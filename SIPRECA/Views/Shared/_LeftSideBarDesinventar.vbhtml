@@ -49,12 +49,10 @@
                 <li><a href="@Url.Action("Index", "DesagregationRecoltesAgricoles")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRecoltesAgricoles</a></li>
                 <li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
                 <li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
-                <li><a href="@Url.Action("Index", "Risques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
                 <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
                 <li><a href="@Url.Action("Index", "ServicesPubliquePertubes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuServicesPubliquePertube</a></li>
                 <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
                 <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
-                <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
                 <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
@@ -66,7 +64,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="ui-lightbox-gallery.html"><i class="fa fa-long-arrow-right"></i> Lightbox gallery</a></li>
+                <li><a href="@Url.Action("Index", "Risques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
+                <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
             </ul>
         </li>
 

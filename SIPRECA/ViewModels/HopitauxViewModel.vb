@@ -48,7 +48,6 @@ Public Class HopitauxViewModel
     Public Property SiteWeb As String
 
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Location As DbGeometry
 
 

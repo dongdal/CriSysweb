@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel.DataAnnotations
+Imports System.Data.Entity.Spatial
 Imports SIPRECA.My.Resources
 
 Public Class ZoneARisqueViewModel
@@ -8,6 +9,9 @@ Public Class ZoneARisqueViewModel
     <Display(Name:="Libelle", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Libelle As String
+
+    <Display(Name:="Location", ResourceType:=GetType(Resource))>
+    Public Property Location As DbGeometry
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -46,6 +50,7 @@ Public Class ZoneARisqueViewModel
         With Me
             .Id = entity.Id
             .Libelle = entity.Libelle
+            .Location = entity.Location
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
@@ -58,6 +63,7 @@ Public Class ZoneARisqueViewModel
         With entity
             .Id = Id
             .Libelle = Libelle
+            .Location = Location
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId

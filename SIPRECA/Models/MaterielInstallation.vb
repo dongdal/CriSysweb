@@ -3,6 +3,7 @@ Partial Public Class MaterielInstallation
     Public Property Id As Long
     Public Property InstallationId As Long
     Public Property MaterielId As Long
+    Public Property Quantite As Long
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

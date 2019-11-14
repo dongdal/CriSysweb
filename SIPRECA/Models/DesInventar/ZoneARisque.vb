@@ -1,4 +1,6 @@
 
+Imports System.Data.Entity.Spatial
+
 Partial Public Class ZoneARisque
     Public Sub New()
         EvenementZone = New HashSet(Of EvenementZone)()
@@ -7,6 +9,7 @@ Partial Public Class ZoneARisque
 
     Public Property Id As Long
     Public Property Libelle As String
+    Public Property Location As DbGeometry
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
 
