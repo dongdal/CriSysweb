@@ -8,7 +8,7 @@ Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class EnquetesController
-        Inherits System.Web.Mvc.Controller
+        Inherits BaseController
 
         Private _db As New ApplicationDbContext
 
@@ -199,11 +199,11 @@ Namespace Controllers
         Function Create(entityVM As EnqueteViewModel) As ActionResult
 
             If IsNothing(entityVM.Titre) Then
-                ModelState.AddModelError("Titre", Resource.CreateEnqueteRequiredField)
+                ModelState.AddModelError("Titre", Resource.TheRequiredField)
             End If
 
             If IsNothing(entityVM.SinistreId) Then
-                ModelState.AddModelError("SinistreId", Resource.CreateEnqueteRequiredField)
+                ModelState.AddModelError("SinistreId", Resource.TheRequiredField)
             End If
             entityVM.AspNetUserId = GetCurrentUser().Id
             If ModelState.IsValid Then
@@ -251,14 +251,14 @@ Namespace Controllers
 
             If (BtnNext IsNot Nothing) Then
                 If IsNothing(entityVM.TitreFormulaire) Then
-                    ModelState.AddModelError("TitreFormulaire", Resource.CreateFormulaireRequiredField)
+                    ModelState.AddModelError("TitreFormulaire", Resource.TheRequiredField)
                 End If
 
                 If IsNothing(entityVM.EnqueteId) Then
-                    ModelState.AddModelError("EnqueteId", Resource.CreateFormulaireRequiredField)
+                    ModelState.AddModelError("EnqueteId", Resource.TheRequiredField)
                 End If
 
-                entityVM.AspNetUserId = GetCurrentUser().Id
+                entityVM.AspNetUserIdFormulaire = GetCurrentUser().Id
                 If ModelState.IsValid Then
                     Dim entity = entityVM.GetEntityFormulaire()
                     Db.Formulaire.Add(entity)
@@ -311,14 +311,14 @@ Namespace Controllers
             If (BtnSave IsNot Nothing) Then
 
                 If IsNothing(entityVM.TitreSection) Then
-                    ModelState.AddModelError("TitreSection", Resource.CreateSectionRequiredField)
+                    ModelState.AddModelError("TitreSection", Resource.TheRequiredField)
                 End If
 
                 If IsNothing(entityVM.FormulaireId) Then
-                    ModelState.AddModelError("FormulaireId", Resource.CreateSectionRequiredField)
+                    ModelState.AddModelError("FormulaireId", Resource.TheRequiredField)
                 End If
 
-                entityVM.AspNetUserId = GetCurrentUser().Id
+                entityVM.AspNetUserIdSection = GetCurrentUser().Id
                 If ModelState.IsValid Then
                     Dim entity = entityVM.GetEntitySection()
                     Db.Section.Add(entity)
@@ -373,15 +373,15 @@ Namespace Controllers
             If (BtnSave IsNot Nothing) Then
 
                 If IsNothing(entityVM.TitreChamps) Then
-                    ModelState.AddModelError("TitreChamps", Resource.RequiredField)
+                    ModelState.AddModelError("TitreChamps", Resource.TheRequiredField)
                 End If
 
                 If IsNothing(entityVM.SectionId) Then
-                    ModelState.AddModelError("SectionId", Resource.RequiredField)
+                    ModelState.AddModelError("SectionId", Resource.TheRequiredField)
                 End If
 
 
-                entityVM.AspNetUserId = GetCurrentUser().Id
+                entityVM.AspNetUserIdChamps = GetCurrentUser().Id
                 If ModelState.IsValid Then
                     Dim entity = entityVM.GetEntityChamps()
                     Db.Champs.Add(entity)
@@ -406,10 +406,10 @@ Namespace Controllers
         Function CreatePoposition(ByVal Libelle As String, ChampsId As Long) As ActionResult
 
             If (IsNothing(Libelle)) Then
-                ModelState.AddModelError("Libelle", Resource.RequiredField)
+                ModelState.AddModelError("Libelle", Resource.TheRequiredField)
             End If
             If (IsNothing(ChampsId)) Then
-                ModelState.AddModelError("ChampsId", Resource.RequiredField)
+                ModelState.AddModelError("ChampsId", Resource.TheRequiredField)
             End If
             If ModelState.IsValid Then
                 Dim proposition As New Proposition With {
@@ -460,11 +460,11 @@ Namespace Controllers
 
             If (BtnNext IsNot Nothing) Then
                 If String.IsNullOrEmpty(entityVM.TitreFormulaire) Then
-                    ModelState.AddModelError("TitreFormulaire", Resource.RequiredField)
+                    ModelState.AddModelError("TitreFormulaire", Resource.TheRequiredField)
                 End If
 
                 If entityVM.EnqueteId <= 0 Or IsNothing(entityVM.EnqueteId) Then
-                    ModelState.AddModelError("EnqueteId", Resource.RequiredField)
+                    ModelState.AddModelError("EnqueteId", Resource.TheRequiredField)
                 End If
 
                 If ModelState.IsValid Then
@@ -519,11 +519,11 @@ Namespace Controllers
             If (BtnSave IsNot Nothing) Then
 
                 If String.IsNullOrEmpty(entityVM.TitreSection) Then
-                    ModelState.AddModelError("FormulaireId", Resource.RequiredField)
+                    ModelState.AddModelError("TitreSection", Resource.TheRequiredField)
                 End If
 
                 If entityVM.FormulaireId <= 0 Or IsNothing(entityVM.FormulaireId) Then
-                    ModelState.AddModelError("EnqueteId", Resource.RequiredField)
+                    ModelState.AddModelError("FormulaireId", Resource.TheRequiredField)
                 End If
 
                 If ModelState.IsValid Then
@@ -531,7 +531,7 @@ Namespace Controllers
                     Db.Entry(entity).State = EntityState.Modified
                     Try
                         Db.SaveChanges()
-                        Return RedirectToAction("CreateSection", New With {.FormulaireId = entity.Id})
+                        Return RedirectToAction("CreateSection", New With {.FormulaireId = entity.FormulaireId})
                     Catch ex As DbEntityValidationException
                         Util.GetError(ex, ModelState)
                     Catch ex As Exception

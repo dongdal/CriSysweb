@@ -1406,15 +1406,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veillez selectionner l&apos;équipement.
-        '''</summary>
-        Public Shared ReadOnly Property ComboMateriel() As String
-            Get
-                Return ResourceManager.GetString("ComboMateriel", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Recherche une chaîne localisée semblable à Selectionnez la nature de l&apos;indemnisation.
         '''</summary>
         Public Shared ReadOnly Property ComboNatureAide() As String
@@ -9461,42 +9452,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les abris.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionAbris() As String
-            Get
-                Return ResourceManager.GetString("SelectionAbris", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les aéroports.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionAeroport() As String
-            Get
-                Return ResourceManager.GetString("SelectionAeroport", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les bureaux.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionBureau() As String
-            Get
-                Return ResourceManager.GetString("SelectionBureau", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les entrepots.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionEntrepot() As String
-            Get
-                Return ResourceManager.GetString("SelectionEntrepot", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Recherche une chaîne localisée semblable à Sélectionner les événements qu&apos;on affecté.
         '''</summary>
         Public Shared ReadOnly Property SelectionEvenementAffecte() As String
@@ -9511,42 +9466,6 @@ Namespace My.Resources
         Public Shared ReadOnly Property SelectionEvenementAvec() As String
             Get
                 Return ResourceManager.GetString("SelectionEvenementAvec", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les héliport.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionHeliport() As String
-            Get
-                Return ResourceManager.GetString("SelectionHeliport", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les hopitaux.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionHopitaux() As String
-            Get
-                Return ResourceManager.GetString("SelectionHopitaux", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les installations.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionInstallation() As String
-            Get
-                Return ResourceManager.GetString("SelectionInstallation", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les ports de mer.
-        '''</summary>
-        Public Shared ReadOnly Property SelectionPortDeMer() As String
-            Get
-                Return ResourceManager.GetString("SelectionPortDeMer", resourceCulture)
             End Get
         End Property
         
@@ -9979,6 +9898,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property TelephoneUrgencePlaceholder() As String
             Get
                 Return ResourceManager.GetString("TelephoneUrgencePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ce champ est requis..
+        '''</summary>
+        Public Shared ReadOnly Property TheRequiredField() As String
+            Get
+                Return ResourceManager.GetString("TheRequiredField", resourceCulture)
             End Get
         End Property
         

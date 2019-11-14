@@ -196,12 +196,12 @@ Public Class EnqueteViewModel
             .TitreChamps = entity.Titre
             .TypeChamps = entity.TypeChamps
             .TypeChampsId = entity.TypeChampsId
-            .StatutExistantSection = entity.StatutExistant
+            .StatutExistantChamps = entity.StatutExistant
             .Section = entity.Section
             .SectionId = entity.SectionId
-            .DateCreationSection = entity.DateCreation
+            .DateCreationChamps = entity.DateCreation
             .AspNetUser = entity.AspNetUser
-            .AspNetUserIdSection = entity.AspNetUserId
+            .AspNetUserIdChamps = entity.AspNetUserId
         End With
     End Sub
 
@@ -211,10 +211,10 @@ Public Class EnqueteViewModel
             .Id = IdChamps
             .Titre = TitreChamps
             .TypeChampsId = TypeChampsId
-            .StatutExistant = StatutExistantSection
+            .StatutExistant = StatutExistantChamps
             .SectionId = SectionId
-            .DateCreation = DateCreationSection
-            .AspNetUserId = AspNetUserIdSection
+            .DateCreation = DateCreationChamps
+            .AspNetUserId = AspNetUserIdChamps
         End With
         Return entity
     End Function
