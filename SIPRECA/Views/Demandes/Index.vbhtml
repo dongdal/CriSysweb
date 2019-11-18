@@ -84,7 +84,6 @@ End Code
                     </div>
                 </div>
 
-
             End Using
 
             <br />
@@ -92,19 +91,22 @@ End Code
                 <thead>
                     <tr>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Reference, "Index", New With {.sortOrder = ViewBag.ReferenceSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                            @Html.ActionLink(Resource.Ordre, "Index", New With {.sortOrder = ViewBag.IDSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DemandeCollectiviteSinistree, "Index", New With {.sortOrder = ViewBag.CollectiviteSinistreeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                            @Html.ActionLink(Resource.Sinistre, "Index", New With {.sortOrder = ViewBag.CollectiviteSinistreeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.LeSinistrer, "Index", New With {.sortOrder = ViewBag.SinistrerSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
                         @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
-                            </th>*@
+            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+        </th>*@
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                            @Html.ActionLink(Resource.DateDeclaration, "Index", New With {.sortOrder = ViewBag.DateDeclarationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
@@ -116,7 +118,7 @@ End Code
                     @For Each item In Model
                         @<tr>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Reference)
+                                @Html.DisplayFor(Function(modelItem) item.Id)
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.CollectiviteSinistree.Libelle)
@@ -128,7 +130,47 @@ End Code
                                     @Html.DisplayFor(Function(modelItem) item.StatutExistant)
                                 </td>*@
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateCreation)
+                                @Html.DisplayFor(Function(modelItem) item.DateDeclaration)
+                            </td>
+                            <td class="sorting_asc text-center">
+                                @if item.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal Or
+item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental Or
+item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional Or
+item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
+
+                            @Resource.StatutEnCour
+
+                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ValidationCommunal Or
+                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationDepartemental Or
+                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationRegional Or
+                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationNational Then
+
+                            @Resource.StatutEnCour
+
+                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.RejetCommunal Or
+                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetDepartemental Or
+                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetRegional Or
+                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetNational Then
+
+                            @Resource.StatutRejeter
+
+                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionDepartemental Or
+                                                                                item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or
+                                                                                item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionNational Then
+
+                            @Resource.StatutEnCour
+
+                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal Or
+                                                    item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental Or
+                                                    item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional Then
+
+                            @Resource.StatutEnCour
+
+                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation Then
+
+                            @Resource.StatutIndemniser
+
+                                End If
                             </td>
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">

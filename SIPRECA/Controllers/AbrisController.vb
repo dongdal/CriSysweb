@@ -236,8 +236,12 @@ Namespace Controllers
             End If
             Dim entityVM As New AbrisViewModel(Abris)
             LoadComboBox(entityVM)
-            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
-            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            ViewBag.Latitude = 0
+            ViewBag.Longitude = 0
+            If Not IsNothing(entityVM.Location) Then
+                ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+                ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            End If
             Return View(entityVM)
         End Function
 
@@ -379,6 +383,7 @@ Namespace Controllers
                 If entityVM.MaterielAbrisId > 0 Then
 
                     MaterielAbris.AbrisId = entityVM.MaterielAbrisId
+                    MaterielAbris.Quantite = entityVM.Quantite
                     MaterielAbris.AbrisId = entityVM.Id
                     MaterielAbris.AspNetUserId = GetCurrentUser.Id
 

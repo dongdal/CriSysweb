@@ -82,6 +82,9 @@ Public Class BureauViewModel
     Public Overridable Property LesMaterielBureaux As ICollection(Of SelectListItem)
     Public Overridable Property MaterielBureaux As ICollection(Of MaterielBureau)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

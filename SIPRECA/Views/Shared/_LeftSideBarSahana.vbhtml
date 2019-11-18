@@ -50,6 +50,7 @@
                 <li><a href="@Url.Action("Index", "Devises")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
                 <li><a href="@Url.Action("Index", "Materiels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMateriels</a></li>
                 <li><a href="@Url.Action("Index", "MarqueElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMarqueElement</a></li>
+                <li><a href="@Url.Action("Index", "Organisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuOrganisation</a></li>
                 <li><a href="@Url.Action("Index", "SurfaceDePistes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
                 <li><a href="@Url.Action("Index", "TailleDeAeronefs")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTailleDeAeronef</a></li>
                 <li><a href="@Url.Action("Index", "TypeEntrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>

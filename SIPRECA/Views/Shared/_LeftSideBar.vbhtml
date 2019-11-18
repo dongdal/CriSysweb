@@ -53,6 +53,7 @@
                 <li><a href="@Url.Action("Index", "Quartiers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
                 <li><a href="@Url.Action("Index", "Regions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
                 <li><a href="@Url.Action("Index", "Sinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSinistre</a></li>
+                <li><a href="@Url.Action("Index", "Sinistrers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSinistrees</a></li>
                 <li><a href="@Url.Action("Index", "TypeAides")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
                 <li><a href="@Url.Action("Index", "TypeSinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
                 <li><a href="@Url.Action("Index", "TypeSuivis")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>

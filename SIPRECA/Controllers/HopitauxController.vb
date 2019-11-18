@@ -288,8 +288,12 @@ Namespace Controllers
             End If
             Dim entityVM As New HopitauxViewModel(Hopitaux)
             LoadComboBox(entityVM)
-            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
-            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            ViewBag.Latitude = 0
+            ViewBag.Longitude = 0
+            If Not IsNothing(entityVM.Location) Then
+                ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+                ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            End If
             Return View(entityVM)
         End Function
 
@@ -419,6 +423,7 @@ Namespace Controllers
                 If entityVM.MaterielHopitauxId > 0 Then
 
                     MaterielHopitaux.MaterielId = entityVM.MaterielHopitauxId
+                    MaterielHopitaux.Quantite = entityVM.Quantite
                     MaterielHopitaux.HopitauxId = entityVM.Id
                     MaterielHopitaux.AspNetUserId = GetCurrentUser.Id
 

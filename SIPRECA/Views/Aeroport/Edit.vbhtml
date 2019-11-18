@@ -33,10 +33,10 @@ End Code
                 <div Class="card-body">
                     <ul Class="nav nav-tabs nav-tabs-primary">
                         <li Class="nav-item">
-                            <a Class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">Aéroport</span></a>
+                            <a Class="nav-link active" data-toggle="tab" href="#tabe-1"><i class="icon-home"></i> <span class="hidden-xs">@Resource.Aeroport</span></a>
                         </li>
                         <li Class="nav-item">
-                            <a Class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-wallet"></i> <span class="hidden-xs">Equipements</span></a>
+                            <a Class="nav-link" data-toggle="tab" href="#tabe-2"><i class="icon-wallet"></i> <span class="hidden-xs">@Resource.Materiel</span></a>
                         </li>
 
                     </ul>
@@ -172,7 +172,11 @@ End Code
 New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboMateriel})
                                     @Html.ValidationMessageFor(Function(m) m.MaterielAeroportId, "", New With {.style = "color: #da0b0b"})
                                 </div>
-
+                                @Html.LabelFor(Function(m) m.Quantite, New With {.class = "col-sm-2 col-form-label required_field"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.Quantite, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.QantitePlaceholder})
+                                    @Html.ValidationMessageFor(Function(m) m.Quantite, "", New With {.style = "color: #da0b0b"})
+                                </div>
                             </div>
                             <div Class="form-group row">
                                 <Label Class="col-sm-2 col-form-label"></Label>
@@ -189,6 +193,9 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                             @Resource.Libelle
                                         </th>
                                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                            @Resource.Quantite
+                                        </th>
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                                             @Resource.ActionList
                                         </th>
                                     </tr>
@@ -200,6 +207,9 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                                             <td>
                                                 @item.Materiel.Libelle
+                                            </td>
+                                            <td>
+                                                @item.Quantite
                                             </td>
 
                                             <td>

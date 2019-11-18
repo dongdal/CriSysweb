@@ -82,6 +82,9 @@ Public Class InstallationViewModel
     Public Overridable Property LesMaterielInstallations As ICollection(Of SelectListItem)
     Public Overridable Property MaterielInstallations As ICollection(Of MaterielInstallation)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

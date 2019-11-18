@@ -56,9 +56,6 @@ End Code
                             @Html.ActionLink(Resource.Cible, "Index", New With {.sortOrder = ViewBag.CibleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -91,9 +88,6 @@ End Code
                                 ElseIf item.Cible = 8 Then
                                     @Resource.Entrepot
                                 End If
-                            </td>
-                            <td Class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
                             </td>
                             <td Class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)

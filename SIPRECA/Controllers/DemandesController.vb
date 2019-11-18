@@ -49,10 +49,10 @@ Namespace Controllers
         ' GET: Demande
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?, CommuneId As Long?, DepartementId As Long?, RegionId As Long?, EtatAvancement As String) As ActionResult
             ViewBag.CurrentSort = sortOrder
-            ViewBag.ReferenceSort = If(sortOrder = "Reference", "Reference_desc", "Reference")
+            ViewBag.IDSort = If(sortOrder = "Id", "Id_desc", "Id")
             ViewBag.CollectiviteSinistreeSort = If(sortOrder = "CollectiviteSinistree", "CollectiviteSinistree_desc", "CollectiviteSinistree")
             ViewBag.SinistrerSort = If(sortOrder = "Sinistrer", "Sinistrer_desc", "Sinistrer")
-            ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
+            ViewBag.DateDeclarationSort = If(sortOrder = "DateDeclaration", "DateDeclaration_desc", "DateDeclaration")
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
 
             ViewBag.PageCommuneId = CommuneId
@@ -130,10 +130,10 @@ Namespace Controllers
 
             Select Case sortOrder
 
-                Case "Reference"
-                    entities = entities.OrderBy(Function(e) e.Reference)
-                Case "Reference_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Reference)
+                Case "Id"
+                    entities = entities.OrderBy(Function(e) e.Id)
+                Case "Id_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Id)
                 Case "Sinistrer"
                     entities = entities.OrderBy(Function(e) e.Sinistrer.Nom)
                 Case "Sinistrer_desc"
@@ -142,11 +142,10 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.CollectiviteSinistree.Libelle)
                 Case "CollectiviteSinistree_desc"
                     entities = entities.OrderByDescending(Function(e) e.CollectiviteSinistree.Libelle)
-                Case "DateCreation"
-                    entities = entities.OrderBy(Function(e) e.DateCreation)
-                Case "DateCreation_desc"
-                    entities = entities.OrderByDescending(Function(e) e.DateCreation)
-
+                Case "DateDeclaration"
+                    entities = entities.OrderBy(Function(e) e.DateDeclaration)
+                Case "DateDeclaration_desc"
+                    entities = entities.OrderByDescending(Function(e) e.DateDeclaration)
                 Case Else
                     entities = entities.OrderByDescending(Function(e) e.DateCreation)
                     Exit Select
@@ -172,11 +171,10 @@ Namespace Controllers
             ViewBag.RegionIds = LoadRegions(entitiesRegion)
             Dim StatutDemande As New List(Of SelectListItem) From {
                 New SelectListItem With {.Value = Util.StatutDemande.Approuvee, .Text = Resource.StatutDemande_Approuvee},
-                New SelectListItem With {.Value = Util.StatutDemande.EnCours, .Text = Resource.StatutDemande_EnCours, .Selected = True},
+                New SelectListItem With {.Value = Util.StatutDemande.EnCours, .Text = Resource.StatutDemande_EnCours},
                 New SelectListItem With {.Value = Util.StatutDemande.Rejetee, .Text = Resource.StatutDemande_Rejetee}
             }
             ViewBag.StatutDemande = StatutDemande
-
 
             ViewBag.EnregCount = entities.Count
             Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")

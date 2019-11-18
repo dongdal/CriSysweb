@@ -79,6 +79,9 @@ Public Class EntrepotsViewModel
     Public Overridable Property LesMaterielEntrepots As ICollection(Of SelectListItem)
     Public Overridable Property MaterielEntrepots As ICollection(Of MaterielEntrepots)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

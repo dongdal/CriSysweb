@@ -269,8 +269,12 @@ Namespace Controllers
             End If
             Dim entityVM As New AeroportViewModel(Aeroport)
             LoadComboBox(entityVM)
-            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
-            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            ViewBag.Latitude = 0
+            ViewBag.Longitude = 0
+            If Not IsNothing(entityVM.Location) Then
+                ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+                ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            End If
             Return View(entityVM)
         End Function
 
@@ -339,6 +343,7 @@ Namespace Controllers
                 If entityVM.MaterielAeroportId > 0 Then
 
                     MaterielAeroport.MaterielId = entityVM.MaterielAeroportId
+                    MaterielAeroport.Quantite = entityVM.Quantite
                     MaterielAeroport.AeroportId = entityVM.Id
                     MaterielAeroport.AspNetUserId = GetCurrentUser.Id
 

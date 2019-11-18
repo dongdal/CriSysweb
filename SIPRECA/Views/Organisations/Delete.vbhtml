@@ -45,13 +45,13 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.TypeOrganisationId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.TypeOrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.TextBoxFor(Function(m) m.TypeOrganisation.Libelle, New With {.class = "form-control form-control-square", .tabindex = "3"})
                         @Html.ValidationMessageFor(Function(m) m.TypeOrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label"})
+                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.TextBoxFor(Function(m) m.Ville.Libelle, New With {.class = "form-control form-control-square", .tabindex = "5", .readonly = "true"})
                         @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
@@ -65,7 +65,7 @@ End Code
                         @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square", .tabindex = "6", .readonly = "true"})
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "7", .readonly = "true"})
                         @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
@@ -74,11 +74,12 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.BoitePostale, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.BoitePostale, New With {.class = "form-control form-control-square", .tabindex = "8", .readonly = "true"})
                         @Html.ValidationMessageFor(Function(m) m.BoitePostale, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "9", .readonly = "true"})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})

@@ -62,6 +62,9 @@ Public Class AbrisViewModel
     Public Overridable Property LesMaterielAbris As ICollection(Of SelectListItem)
     Public Overridable Property MaterielAbris As ICollection(Of MaterielAbris)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     <Display(Name:="PersonnelAbris", ResourceType:=GetType(Resource))>
     Public Property PersonnelAbrisId As Long?
     Public Overridable Property LesPersonnelAbris As ICollection(Of SelectListItem)
