@@ -137,8 +137,8 @@ End Code
                                 @If item.Indemnisation.Select(Of Demande)(Function(e) e.Demande).Count >= 1 Then
                                     Dim indem = item.Indemnisation.Select(Of Long)(Function(e) e.Id).FirstOrDefault
                                     @<a Class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnInfoIndemnisation" href="@Url.Action("Details", "Indemnisations", New With {.id = indem})">
-                                    <i Class="fa fa-list" aria-hidden="true"></i>
-                                </a>
+                                        <i Class="fa fa-list" aria-hidden="true"></i>
+                                    </a>
                                 ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental Or
                                     item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational) Then
                                     @<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
@@ -157,7 +157,7 @@ End Code
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationCommunal) Then
 
-                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande"  onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
 
@@ -171,9 +171,13 @@ End Code
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetCommunal) Then
 
-                                        @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
+                                        @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>
+                                        </a>*@
+
+                                        @*@<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </a>*@
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
                                         @*@<a class="btn btn-round btn-inverse-primary waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
@@ -198,7 +202,7 @@ End Code
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationDepartemental) Then
 
-                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande"  onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
 
@@ -237,7 +241,7 @@ End Code
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationRegional) Then
 
-                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande"  onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
 
@@ -275,7 +279,7 @@ End Code
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationNational) Then
 
-                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande"  onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
 
@@ -411,15 +415,15 @@ End Code
 
             var type;
 
-            if (status == '@Util.ElementsSuiviDemandes.CreationCommunal' || status == '@Util.ElementsSuiviDemandes.RejetCommunal')
+            if (status == '@CInt(Util.ElementsSuiviDemandes.CreationCommunal)' @*|| status == '@Util.ElementsSuiviDemandes.RejetCommunal'*@)
             {
-                //alert(status)
+                //alert(status);
                 type = '@CInt(Util.ElementsSuiviDemandes.ValidationCommunal)';
-            } else if (status == '@Util.ElementsSuiviDemandes.CreationDepartemental' || status == '@Util.ElementsSuiviDemandes.RejetDepartemental')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.CreationDepartemental)' @*|| status == '@Util.ElementsSuiviDemandes.RejetDepartemental'*@)
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ValidationDepartemental)';
-            } else if (status == '@Util.ElementsSuiviDemandes.CreationRegional' || status == '@Util.ElementsSuiviDemandes.RejetRegional')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.CreationRegional)' @*|| status == '@Util.ElementsSuiviDemandes.RejetRegional'*@)
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ValidationRegional)';
@@ -508,15 +512,15 @@ End Code
 
             var type;
 
-            if (status == '@Util.ElementsSuiviDemandes.RejetCommunal')
+            if (status == '@CInt(Util.ElementsSuiviDemandes.RejetCommunal)')
             {
 
                 type = '@CInt(Util.ElementsSuiviDemandes.RejetCommunal)';
-            } else if (status == '@Util.ElementsSuiviDemandes.RejetDepartemental')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)';
-            } else if (status == '@Util.ElementsSuiviDemandes.RejetRegional')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.RejetRegional)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ReceptionRegionale)';
@@ -604,16 +608,16 @@ End Code
 
             var type;
 
-            if (status == '@Util.ElementsSuiviDemandes.TransfertCommunal')
+            if (status == '@CInt(Util.ElementsSuiviDemandes.TransfertCommunal)')
             {
 
                 type = '@CInt(Util.ElementsSuiviDemandes.TransfertCommunal)';
-            } else if (status == '@Util.ElementsSuiviDemandes.TransfertDepartemental')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.TransfertDepartemental)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.TransfertDepartemental)';
 
-            } else if (status == '@Util.ElementsSuiviDemandes.TransfertRegional')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.TransfertRegional)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.TransfertRegional)';
@@ -697,15 +701,15 @@ End Code
 
             var type;
 
-            if (status == '@Util.ElementsSuiviDemandes.ReceptionDepartemental')
+            if (status == '@CInt(Util.ElementsSuiviDemandes.ReceptionDepartemental)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ReceptionDepartemental)';
-            } else if (status == '@Util.ElementsSuiviDemandes.ReceptionRegionale')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.ReceptionRegionale)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ValidationCommunal)';
-            } else if (status == '@Util.ElementsSuiviDemandes.ReceptionNational')
+            } else if (status == '@CInt(Util.ElementsSuiviDemandes.ReceptionNational)')
             {
                 //alert(status)
                 type = '@CInt(Util.ElementsSuiviDemandes.ValidationCommunal)';

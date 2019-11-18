@@ -612,22 +612,24 @@ Namespace Controllers
 
                 'Remove from database
                 Db.Entry(Demande).State = EntityState.Modified
-                Try
-                    Db.SaveChanges()
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
-
                 Db.Suivi.Add(Suivi)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
+                    Return Json(New With {.Result = "Error"})
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
+                    Return Json(New With {.Result = "Error"})
                 End Try
+
+                'Try
+                '    Db.SaveChanges()
+                'Catch ex As DbEntityValidationException
+                '    Util.GetError(ex, ModelState)
+                'Catch ex As Exception
+                '    Util.GetError(ex, ModelState)
+                'End Try
 
                 Return Json(New With {.Result = "OK"})
             Catch ex As Exception
