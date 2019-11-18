@@ -93,6 +93,9 @@ Public Class HopitauxViewModel
     Public Overridable Property LesMaterielHopitaux As ICollection(Of SelectListItem)
     Public Overridable Property MaterielHopitaux As ICollection(Of MaterielHopitaux)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

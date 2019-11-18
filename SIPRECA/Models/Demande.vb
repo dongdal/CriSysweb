@@ -11,7 +11,8 @@ Partial Public Class Demande
     Public Property SinistrerId As Long
     Public Property Reference As String
     Public Property Etat As Integer
-    Public Property DateCreation As DateTime=Now
+    Public Property DateDeclaration As Date
+    Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short=1
 
     Public Property CollectiviteSinistreeId As Long

@@ -428,6 +428,10 @@
       <DependentUpon>201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb" />
+    <Compile Include="Migrations\201911180857492_Ajout de la date de declaration de demande d%27indemnisation.Designer.vb">
+      <DependentUpon>201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Collecte.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
@@ -810,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.resx">
       <DependentUpon>201911130839431_Ajout de la localisation sur zoneArisque et de la quantité sur les equipements.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911180857492_Ajout de la date de declaration de demande d%27indemnisation.resx">
+      <DependentUpon>201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -68,9 +68,6 @@ End Code
                             @Html.ActionLink(Resource.Telephone, "Index", New With {.sortOrder = ViewBag.TelephoneSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
                         </th>
                     </tr>
@@ -88,14 +85,12 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeOrganisation.Libelle)
                             </td>
-                            @*<td class="sorting_asc text-center">
-                                    @Html.DisplayFor(Function(modelItem) item.Secteur.Libelle)
-                                </td>*@
+                            
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Ville.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
+                                @Html.DisplayFor(Function(modelItem) item.Telephone)
                             </td>
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
@@ -107,109 +102,6 @@ End Code
                                 <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-
-                                <div class="modal fade" id="@item.Id">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content animated jackInTheBox">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title"><i class="fa fa-star"></i> @Resource.Btn_Detail</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div Class="row col-sm-12">
-
-                                                    <div class="col-sm-6 form-group">
-
-                                                        <div class="form-group">
-                                                            <label for="Nom" class="col-form-label">@Resource.Nom : </label>
-                                                            @Html.DisplayFor(Function(m) item.Nom, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="Acronyme" class="col-form-label">@Resource.Acronyme : </label>
-                                                            @Html.DisplayFor(Function(m) item.Acronyme, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="TypeOrganisation" class="col-form-label">@Resource.TypeOrganisation : </label>
-                                                            @Html.DisplayFor(Function(m) item.TypeOrganisation.Libelle, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        @*<div class="form-group">
-                                                                <label for="Secteur" class="col-form-label">@Resource.Secteur : </label>
-                                                                @Html.DisplayFor(Function(m) item.Secteur.Libelle, New With {.class = "form-control", .disabled = "disabled"})
-                                                            </div>
-                                                            <br />*@
-
-                                                        <div class="form-group">
-                                                            <label for="Ville" class="col-form-label">@Resource.Ville : </label>
-                                                            @Html.DisplayFor(Function(m) item.Ville.Libelle, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="Telephone" class="col-form-label">@Resource.Telephone : </label>
-                                                            @Html.DisplayFor(Function(m) item.Telephone, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="SiteWeb" class="col-form-label">@Resource.SiteWeb : </label>
-                                                            @Html.DisplayFor(Function(m) item.SiteWeb, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-
-                                                    </div>
-
-                                                    <div class="col-sm-6 form-group">
-
-                                                        <div class="form-group">
-                                                            <label for="Email" class="col-form-label">@Resource.Email : </label>
-                                                            @Html.DisplayFor(Function(m) item.Email, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="BoitePostale" class="col-form-label">@Resource.BoitePostale : </label>
-                                                            @Html.DisplayFor(Function(m) item.BoitePostale, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="DateCreation" class="col-form-label">@Resource.DateCreation : </label>
-                                                            @Html.DisplayFor(Function(m) item.DateCreation, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="StatutExistant" class="col-form-label">@Resource.StatutExistant : </label>
-                                                            @Html.DisplayFor(Function(m) item.StatutExistant, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-
-                                                        <div class="form-group">
-                                                            <label for="Utilisateur" class="col-form-label">@Resource.SaveBy : </label>
-                                                            @Html.DisplayFor(Function(m) item.AspNetUser.UserName, New With {.class = "form-control", .disabled = "disabled"})
-                                                        </div>
-                                                        <br />
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </td>
                         </tr>
                     Next

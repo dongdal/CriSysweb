@@ -49,20 +49,25 @@ End Code
                                         @Html.ValidationMessageFor(Function(m) m.Reference, "", New With {.style = "color: #da0b0b"})
                                     </div>
 
-                                    @Html.LabelFor(Function(m) m.CollectiviteSinistreeId, New With {.class = "col-sm-2 col-form-label required_field"})
-                                    <div class="col-sm-4 form-group">
-                                        @Html.DropDownListFor(Function(m) m.CollectiviteSinistreeId, New SelectList(Model.LesCollectiviteSinistrees, "Value", "Text"), Resource.ComboCollectiviteSinistree,
-       New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboSinistre})
-                                        @Html.ValidationMessageFor(Function(m) m.CollectiviteSinistreeId, "", New With {.style = "color: #da0b0b"})
+                                    @Html.LabelFor(Function(m) m.DateDeclaration, New With {.class = "col-sm-2 col-form-label required_field"})
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(Function(m) m.DateDeclaration, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "3", .Placeholder = Resource.DateDeclarationPlaceholder})
+                                        @Html.ValidationMessageFor(Function(m) m.DateDeclaration, "", New With {.style = "color: #da0b0b"})
                                     </div>
                                 </div>
 
                                 <div Class="form-group row">
+                                    @Html.LabelFor(Function(m) m.CollectiviteSinistreeId, New With {.class = "col-sm-2 col-form-label required_field"})
+                                    <div class="col-sm-4 form-group">
+                                        @Html.DropDownListFor(Function(m) m.CollectiviteSinistreeId, New SelectList(Model.LesCollectiviteSinistrees, "Value", "Text"), Resource.ComboCollectiviteSinistree,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboCollectiviteSinistree})
+                                        @Html.ValidationMessageFor(Function(m) m.CollectiviteSinistreeId, "", New With {.style = "color: #da0b0b"})
+                                    </div>
 
                                     @Html.LabelFor(Function(m) m.SinistrerId, New With {.class = "col-sm-2 col-form-label required_field"})
                                     <div class="col-sm-4 form-group">
                                         @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.LesSinistrers, "Value", "Text"), Resource.ComboSinistrer,
-       New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboSinistrer})
+New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboSinistrer})
                                         @Html.ValidationMessageFor(Function(m) m.SinistrerId, "", New With {.style = "color: #da0b0b"})
                                     </div>
                                 </div>

@@ -30,6 +30,11 @@ Public Class DemandeViewModel
     <DataType(DataType.Date, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="DateDataType")>
     Public Property DateCreation As DateTime = Now
 
+    <Display(Name:="DateDeclaration", ResourceType:=GetType(Resource))>
+    <DataType(DataType.Date, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="DateDataType")>
+    Public Property DateDeclaration As Date = Now
+
+
     <Display(Name:="Utilisateur", ResourceType:=GetType(Resource))>
     Public Property AspNetUserId As String
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
@@ -58,6 +63,7 @@ Public Class DemandeViewModel
             .Reference = entity.Reference
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
+            .DateDeclaration = entity.DateDeclaration
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
         End With
@@ -72,6 +78,7 @@ Public Class DemandeViewModel
             .Reference = Reference
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation
+            .DateDeclaration = DateDeclaration
             .AspNetUserId = AspNetUserId
         End With
         Return entity

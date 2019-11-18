@@ -253,8 +253,12 @@ Namespace Controllers
             End If
             Dim entityVM As New PortDeMerViewModel(PortDeMer)
             LoadComboBox(entityVM)
-            ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
-            ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            ViewBag.Latitude = 0
+            ViewBag.Longitude = 0
+            If Not IsNothing(entityVM.Location) Then
+                ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
+                ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
+            End If
             Return View(entityVM)
         End Function
 
@@ -322,6 +326,7 @@ Namespace Controllers
                 If entityVM.MaterielPortDeMerId > 0 Then
 
                     MaterielPortDeMer.MaterielId = entityVM.MaterielPortDeMerId
+                    MaterielPortDeMer.Quantite = entityVM.Quantite
                     MaterielPortDeMer.PortDeMerId = entityVM.Id
                     MaterielPortDeMer.AspNetUserId = GetCurrentUser.Id
 

@@ -97,6 +97,9 @@ Public Class AeroportViewModel
     Public Overridable Property LesMaterielAeroport As ICollection(Of SelectListItem)
     Public Overridable Property MaterielAeroport As ICollection(Of MaterielAeroport)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

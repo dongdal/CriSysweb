@@ -54,9 +54,7 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Pays, "Index", New With {.sortOrder = ViewBag.PaysSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
+                        
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
@@ -75,9 +73,7 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Pays.Nom_Fr_Fr)
                             </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
-                            </td>
+                            
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
                             </td>

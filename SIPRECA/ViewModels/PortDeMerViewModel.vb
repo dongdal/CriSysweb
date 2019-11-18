@@ -166,6 +166,9 @@ Public Class PortDeMerViewModel
     Public Overridable Property LesMaterielPortDeMers As ICollection(Of SelectListItem)
     Public Overridable Property MaterielPortDeMers As ICollection(Of MaterielPortDeMer)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
     Public Sub New()
     End Sub
 

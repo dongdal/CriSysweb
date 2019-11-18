@@ -67,6 +67,10 @@ Public Class HeliportViewModel
     Public Overridable Property LesMaterielHeliports As ICollection(Of SelectListItem)
     Public Overridable Property MaterielHeliports As ICollection(Of MaterielHeliport)
 
+    <Display(Name:="Quantite", ResourceType:=GetType(Resource))>
+    Public Property Quantite As Long?
+
+
     Public Sub New()
     End Sub
 

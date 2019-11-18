@@ -176,7 +176,6 @@ Namespace Controllers
             LoadComboBox(entityVM)
             ViewBag.Latitude = 0
             ViewBag.Longitude = 0
-
             If Not IsNothing(entityVM.Location) Then
                 ViewBag.Latitude = entityVM.Location.YCoordinate.ToString().Replace(",", ".")
                 ViewBag.Longitude = entityVM.Location.XCoordinate.ToString().Replace(",", ".")
