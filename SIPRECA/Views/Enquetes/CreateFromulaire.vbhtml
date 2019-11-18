@@ -26,6 +26,7 @@ End Code
                 <hr>
                 @Using Html.BeginForm("CreateFromulaire", "Enquetes", FormMethod.Post, New With {.autocomplete = "off"})
                     @Html.AntiForgeryToken()
+                    @Html.HiddenFor(Function(m) m.EnqueteId)
 
                     @<div Class="form-group row">
                         @Html.LabelFor(Function(m) m.TitreFormulaire, New With {.class = "col-sm-2 col-form-label required_field"})
