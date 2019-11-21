@@ -3624,4 +3624,70 @@
   <data name="StatutRejeter" xml:space="preserve">
     <value>Rejetée</value>
   </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>Ajouter un groupe</value>
+  </data>
+  <data name="CommuneConcernees" xml:space="preserve">
+    <value>Communes concernées</value>
+  </data>
+  <data name="Contenu" xml:space="preserve">
+    <value>Contenu du message</value>
+  </data>
+  <data name="ContenuPlaceholde" xml:space="preserve">
+    <value>Veuillez saisir le contenu du message</value>
+  </data>
+  <data name="CreateAlert" xml:space="preserve">
+    <value>Créer une alerte</value>
+  </data>
+  <data name="DeleteAlert" xml:space="preserve">
+    <value>Supprimer une alerte</value>
+  </data>
+  <data name="HistoriqueAlerte" xml:space="preserve">
+    <value>Historique des alertes</value>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Importer un fichier</value>
+  </data>
+  <data name="ImportMenu" xml:space="preserve">
+    <value>Les Importations</value>
+  </data>
+  <data name="ManageAlert" xml:space="preserve">
+    <value>Gestion des alertes</value>
+  </data>
+  <data name="ManageAlertCreate" xml:space="preserve">
+    <value>Création des alertes</value>
+  </data>
+  <data name="MenuAlertByGroupExisting" xml:space="preserve">
+    <value>Pour des groupes existants</value>
+  </data>
+  <data name="MenuByImports" xml:space="preserve">
+    <value>Par Importations de fichiers</value>
+  </data>
+  <data name="MenuHistoriqueAlerte" xml:space="preserve">
+    <value>Historique des alertes</value>
+  </data>
+  <data name="ModuleAlerte" xml:space="preserve">
+    <value>Gestion des alertes</value>
+  </data>
+  <data name="ReloadAlert" xml:space="preserve">
+    <value>Relancer une alerte</value>
+  </data>
+  <data name="RequiredFields" xml:space="preserve">
+    <value>Veuillez remplir tous les champs requis</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Envoyer le message</value>
+  </data>
+  <data name="SinistreConcernes" xml:space="preserve">
+    <value>Sinistres concernés</value>
+  </data>
+  <data name="TheRequiredField" xml:space="preserve">
+    <value>Ce champ est requis</value>
+  </data>
+  <data name="TransfertAlert" xml:space="preserve">
+    <value>Transférer une alerte</value>
+  </data>
+  <data name="TypeSinistre" xml:space="preserve">
+    <value>Type de sinistre concerné</value>
+  </data>
 </root>

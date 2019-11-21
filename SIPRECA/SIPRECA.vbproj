@@ -186,6 +186,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AlertesController.vb" />
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
     <Compile Include="Controllers\AutreImpactHumainEtEconomiqueController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleBController.vb" />
@@ -497,6 +498,7 @@
     <Compile Include="Models\Ville.vb" />
     <Compile Include="Models\DesInventar\EvenementZone.vb" />
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
+    <Compile Include="ViewModels\AlertViewModel.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleCViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleDViewModel.vb" />
@@ -1404,6 +1406,13 @@
     <Content Include="assets\images\gallery\carousel-img-7.png" />
     <Content Include="assets\images\gallery\carousel-img-8.png" />
     <Content Include="assets\images\gallery\carousel-img-9.png" />
+    <Content Include="assets\images\gallery\Collect-Form-Picture.png" />
+    <Content Include="assets\images\gallery\iconfinder_alert-b_86076.png" />
+    <Content Include="assets\images\gallery\iconfinder_alert-o_86077.png" />
+    <Content Include="assets\images\gallery\iconfinder_alert_87404.png" />
+    <Content Include="assets\images\gallery\iconfinder_bell-notifications-notice-notify-alert_3993856.png" />
+    <Content Include="assets\images\gallery\iconfinder_emergency_44843.png" />
+    <Content Include="assets\images\gallery\iconfinder_Notification_3387297.png" />
     <Content Include="assets\images\gallery\modal-img.jpg" />
     <Content Include="assets\images\gallery\Module_Sahana.jpg" />
     <Content Include="assets\images\leafIcon\heliport.jpg" />
@@ -2069,6 +2078,10 @@
     <Content Include="Views\Enquetes\CreateChamps.vbhtml" />
     <Content Include="Views\Enquetes\EditFormulaire.vbhtml" />
     <Content Include="Views\Enquetes\EditSection.vbhtml" />
+    <Content Include="Views\Shared\_LeftSideBarAlertes.vbhtml" />
+    <Content Include="Views\Shared\_LayoutAlertes.vbhtml" />
+    <Content Include="Views\Home\IndexAlertes.vbhtml" />
+    <Content Include="Views\Alertes\AlertByGroupExisting.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

@@ -1,6 +1,7 @@
 ﻿Imports System.Data.Entity.Spatial
 Imports System.Data.SqlClient
 Imports System.Globalization
+Imports System.IO.Ports
 
 Public Class Util
 
@@ -12,6 +13,85 @@ Public Class Util
     End Function
 
     ''' <summary>
+    ''' Cette fonction permet d'envoyer le message (msg) passé à paramètre. Ledit message est envoyé à un numéro (num).
+    ''' </summary>
+    ''' <param name="num"></param>
+    ''' <param name="msg"></param>
+    ''' <returns></returns>
+    Public Shared Function SendSms(num As String, msg As String) As Boolean
+        Using serialport1 = New SerialPort With {
+                                                        .PortName = ConfigurationManager.AppSettings("SMSComPort"),
+                                                        .BaudRate = 9600,
+                                                        .Parity = Parity.None,
+                                                        .DataBits = 8,
+                                                        .StopBits = StopBits.One,
+                                                        .Handshake = Handshake.RequestToSend,
+                                                        .DtrEnable = True,
+                                                        .NewLine = vbCrLf,
+                                                        .ReadBufferSize = 10000,
+                                                        .ReadTimeout = 1000,
+                                                        .WriteBufferSize = 10000,
+                                                        .WriteTimeout = 10000,
+                                                        .RtsEnable = True,
+                                                        .Encoding = System.Text.Encoding.UTF8
+                                                    }
+
+
+            Dim quote As String = """"
+
+            Try
+                serialport1.Open()
+                If (serialport1.IsOpen) Then
+                    Trace.WriteLine("ouverture du port")
+
+                    'Thread.Sleep(1000)
+                    serialport1.WriteLine("AT") ' verifi si le modem est ok
+                    'Thread.Sleep(1000)
+                    'tb_console.Text &= "resultat execution cmd AT= " + SerialPort1.ReadExisting.ToString
+                    serialport1.WriteLine("AT+CMGF=1" & vbCrLf) 'changer le mode d'envoie de donné (on passe en mode texe)
+                    'Thread.Sleep(1000)
+                    'tb_console.Text &= "resultat execution cmd AT+CMGF=1= " + SerialPort1.ReadExisting.ToString
+                    serialport1.WriteLine("AT+CMGS=" & quote & num & quote & vbCrLf) ' on indique le munero du destinataire
+                    'Thread.Sleep(1000)
+                    'MessageBox.Show("resultat execution cmd AT+CMGS= " + SerialPort1.ReadExisting.ToString)
+                    serialport1.WriteLine(msg & vbCrLf & Chr(26)) 'on envoie le sms
+                    'Thread.Sleep(1000)
+                    'tb_console.Text &= "resultat execution last cmd = " + SerialPort1.ReadExisting.ToString
+                    Trace.WriteLine(serialport1.ReadExisting.ToString)
+                    serialport1.WriteLine("AT+CMGF=0" & vbCrLf) 'changer le mode d'envoie de donné (on repasse en mode pdu)
+                    'Thread.Sleep(1000)
+
+
+                    serialport1.Close()
+                    Return True
+                Else
+                    Trace.WriteLine("impossible d'ouvrir le port")
+                End If
+            Catch ex As Exception
+                Trace.WriteLine(ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+
+
+    Public Shared Function RemoveAccent(chaine As String) As String
+        ' Déclaration de variables
+        Dim accent As String = "ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÌÍÎÏìíîïÙÚÛÜùúûüÿÑñÇç"
+        Dim sansAccent As String = "AAAAAAaaaaaaOOOOOOooooooEEEEeeeeIIIIiiiiUUUUuuuuyNnCc"
+
+        ' Pour chaque accent
+        For i As Integer = 0 To accent.Length - 1
+            ' Remplacement de l'accent par son équivalent sans accent dans la chaîne de caractères
+            chaine = chaine.Replace(accent(i), sansAccent(i))
+        Next
+
+        ' Retour du résultat
+        Return chaine
+    End Function
+
+    ''' <summary>
     ''' The connection string property that pulls from the web.config
     ''' </summary>
     Public Shared ReadOnly Property ConnectionString() As String
@@ -19,6 +99,8 @@ Public Class Util
             Return ConfigurationManager.ConnectionStrings("DefaultConnection").ConnectionString
         End Get
     End Property
+
+
 
     Shared Sub GetError(cex As Exception, modelState As ModelStateDictionary)
         If TypeOf (cex) Is Entity.Validation.DbEntityValidationException Then

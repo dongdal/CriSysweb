@@ -179,9 +179,10 @@ End Code
 
                     @<div Class="form-group row">
                         <Label Class="col-sm-5 col-form-label"></Label>
-                        <div Class="col-sm-5">
+                        <div Class="col-sm-4">
                             <Button type="submit" name="BtnPrevious" Class="btn btn-link btn-square bg-white text-dark shadow px-5" @*style="color: white !important"*@> <i Class="icon-arrow-left"></i> @Resource.btn_Previous </Button>
-                            @*<Button type="submit" name="BtnNext" Class="btn btn-link btn-square bg-primary text-dark shadow px-5" style="color: white !important"> @Resource.btn_Next <i Class="icon-arrow-right"></i></Button>*@
+                            &nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink(Resource.Btn_Terminer, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                         </div>
                     </div>
 

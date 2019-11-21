@@ -38,6 +38,10 @@ Public Class HomeController
         Return View()
     End Function
 
+    Function IndexAlertes() As ActionResult
+        Return View()
+    End Function
+
     Function IndexSinistre(AnneeBudgetaireId As Long?) As ActionResult
         AppSession.LesAnneeBudgetaires = Db.AnneeBudgetaires.Where(Function(e) e.StatutExistant = 1).ToList
         If IsNothing(AnneeBudgetaireId) Then

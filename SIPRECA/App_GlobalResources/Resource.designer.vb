@@ -14,7 +14,7 @@ Option Explicit On
 Imports System
 
 Namespace My.Resources
-
+    
     'Cette classe a été générée automatiquement par la classe StronglyTypedResourceBuilder
     'à l'aide d'un outil, tel que ResGen ou Visual Studio.
     'Pour ajouter ou supprimer un membre, modifiez votre fichier .ResX, puis réexécutez ResGen
@@ -22,24 +22,24 @@ Namespace My.Resources
     '''<summary>
     '''  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Public Class Resource
-
+        
         Private Shared resourceMan As Global.System.Resources.ResourceManager
-
+        
         Private Shared resourceCulture As Global.System.Globalization.CultureInfo
-
-        <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>
+        
+        <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend Sub New()
             MyBase.New
         End Sub
-
+        
         '''<summary>
         '''  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Public Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
@@ -49,12 +49,12 @@ Namespace My.Resources
                 Return resourceMan
             End Get
         End Property
-
+        
         '''<summary>
         '''  Remplace la propriété CurrentUICulture du thread actuel pour toutes
         '''  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Public Shared Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
@@ -63,7 +63,7 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à .
         '''</summary>
@@ -81,7 +81,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Abri", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;abri.
         '''</summary>
@@ -90,7 +90,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AbriPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Abris.
         '''</summary>
@@ -99,7 +99,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Abris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité max.
         '''</summary>
@@ -108,7 +108,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AbrisCapaciteMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité min.
         '''</summary>
@@ -117,7 +117,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AbrisCapaciteMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Population max.
         '''</summary>
@@ -126,7 +126,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AbrisEstimationPopulationMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Population min.
         '''</summary>
@@ -135,7 +135,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AbrisEstimationPopulationMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre compte a été bloqué après plusieurs tentatives de connexion erronées..
         '''</summary>
@@ -144,7 +144,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AccountLockedMessage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Temps restant avant débloquage du compte: .
         '''</summary>
@@ -153,7 +153,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AccountLockedMessageTimeLeft", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Compte bloqué.
         '''</summary>
@@ -162,7 +162,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AccountLockedTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sigle.
         '''</summary>
@@ -171,7 +171,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Acronyme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le sigle de l&apos;organisation.
         '''</summary>
@@ -180,7 +180,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AcronymePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Action(s).
         '''</summary>
@@ -189,7 +189,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ActionList", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter un groupe.
+        '''</summary>
+        Public Shared ReadOnly Property AddGroup() As String
+            Get
+                Return ResourceManager.GetString("AddGroup", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter l&apos;élément.
         '''</summary>
@@ -198,7 +207,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AddItem", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adresse.
         '''</summary>
@@ -207,7 +216,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Adresse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez renseingner votre adresse.
         '''</summary>
@@ -216,7 +225,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AdressePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adresse.
         '''</summary>
@@ -225,7 +234,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AdresseUser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Aéroport.
         '''</summary>
@@ -234,7 +243,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Aeroport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Largeur de piste max.
         '''</summary>
@@ -243,7 +252,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AeroportLargeurDePisteMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Largeur de piste min.
         '''</summary>
@@ -252,7 +261,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AeroportLargeurDePisteMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur de piste max.
         '''</summary>
@@ -261,7 +270,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AeroportLongueurDePisteMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur de piste min.
         '''</summary>
@@ -270,7 +279,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AeroportLongueurDePisteMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Agriculture.
         '''</summary>
@@ -279,7 +288,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffecteAgriculture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Education.
         '''</summary>
@@ -288,7 +297,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffecteEducation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Affectées indirectment.
         '''</summary>
@@ -297,7 +306,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffecteesIndirectment", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Santé.
         '''</summary>
@@ -306,7 +315,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffecteSante", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Affectes directment.
         '''</summary>
@@ -315,7 +324,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffectesDirectment", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Transport.
         '''</summary>
@@ -324,7 +333,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AffecteTransport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ampleur du danger.
         '''</summary>
@@ -333,7 +342,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AmpleurDuDanger", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Année budgétaire.
         '''</summary>
@@ -342,7 +351,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Années Budgétaires.
         '''</summary>
@@ -351,7 +360,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AnneeBudgetaireListe", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annee de fabrication.
         '''</summary>
@@ -360,7 +369,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AnneeFabrication", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;année de fabrication de l&apos;élément.
         '''</summary>
@@ -369,7 +378,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AnneeFabricationPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à CRISIS PLATEFORM.
         '''</summary>
@@ -378,7 +387,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AppTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Artichauts.
         '''</summary>
@@ -387,7 +396,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Artichauts", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autre désagrégation.
         '''</summary>
@@ -396,7 +405,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AutreDesagregation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autres impacts humains et économiques.
         '''</summary>
@@ -405,7 +414,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AutreImpactHumainEtEconomique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autres pertes (description).
         '''</summary>
@@ -414,7 +423,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AutrePerte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autres impacts humains et économiques (DesInventar).
         '''</summary>
@@ -423,7 +432,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AutresImpactsHumainsEconomiques", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autres secteurs.
         '''</summary>
@@ -432,7 +441,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AutresSecteurs", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner l&apos;animal.
         '''</summary>
@@ -441,7 +450,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total détruit.
         '''</summary>
@@ -450,7 +459,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailDestroyed", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Betail perdu.
         '''</summary>
@@ -459,7 +468,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailPerdu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques.
         '''</summary>
@@ -468,7 +477,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailPerteEconomique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total Affecté.
         '''</summary>
@@ -477,7 +486,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailTotalAffected", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total touché.
         '''</summary>
@@ -486,7 +495,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BetailTotalDamaged", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Blésse.
         '''</summary>
@@ -495,7 +504,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Blesse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Boîte postale.
         '''</summary>
@@ -504,7 +513,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BoitePostale", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir l&apos;adresse postale.
         '''</summary>
@@ -513,7 +522,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BoitePostalePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Boite postale.
         '''</summary>
@@ -522,7 +531,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BP", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter.
         '''</summary>
@@ -531,7 +540,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("btn_Add", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Aperçu.
         '''</summary>
@@ -540,7 +549,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_apercu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un élément.
         '''</summary>
@@ -549,7 +558,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_Delete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Aperçu des informations détaillées.
         '''</summary>
@@ -558,7 +567,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_Detail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les informations.
         '''</summary>
@@ -567,7 +576,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_Edit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier le rôle de l&apos;utilisateur.
         '''</summary>
@@ -576,7 +585,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_GestUserRoles", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Suivant.
         '''</summary>
@@ -585,7 +594,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("btn_Next", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nouveau.
         '''</summary>
@@ -594,7 +603,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_nouveau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Précédent.
         '''</summary>
@@ -603,7 +612,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("btn_Previous", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrer.
         '''</summary>
@@ -612,7 +621,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("btn_Save", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Suivant.
         '''</summary>
@@ -621,7 +630,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_Suivant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Terminer.
         '''</summary>
@@ -630,7 +639,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Btn_Terminer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Payer.
         '''</summary>
@@ -639,7 +648,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnBuy", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annuler.
         '''</summary>
@@ -648,7 +657,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnCancel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Fermer.
         '''</summary>
@@ -657,7 +666,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnClose", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Télécharger.
         '''</summary>
@@ -666,7 +675,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnDownload", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Démarrer le filtre.
         '''</summary>
@@ -675,7 +684,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnFiltrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Finaliser.
         '''</summary>
@@ -684,7 +693,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnFinaliser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Aperçu des détails de l&apos;indemnisation.
         '''</summary>
@@ -693,7 +702,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnInfoIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Se Connecter.
         '''</summary>
@@ -702,7 +711,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnLogIn", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Imprimer.
         '''</summary>
@@ -711,7 +720,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnPrint", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valider.
         '''</summary>
@@ -720,7 +729,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnSave", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Déverrouiller.
         '''</summary>
@@ -729,7 +738,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnUnlock", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valider.
         '''</summary>
@@ -738,7 +747,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BtnValidate", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Budget.
         '''</summary>
@@ -747,7 +756,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Budget", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le montant budget .
         '''</summary>
@@ -756,7 +765,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BudgetPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Bureaux.
         '''</summary>
@@ -765,7 +774,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Bureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Remplir les infos sur le cadre sendai.
         '''</summary>
@@ -774,7 +783,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CadreSendai", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cadre Sendai A.
         '''</summary>
@@ -783,7 +792,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CadreSendaiA", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cadre Sendai B.
         '''</summary>
@@ -792,7 +801,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CadreSendaiB", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cadre Sendai C.
         '''</summary>
@@ -801,7 +810,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CadreSendaiC", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cadre Sendai D.
         '''</summary>
@@ -810,7 +819,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CadreSendaiD", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cale seche.
         '''</summary>
@@ -819,7 +828,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CaleSeche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la cale seche .
         '''</summary>
@@ -828,7 +837,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CaleSechePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Suppression de l&apos;élément annulée..
         '''</summary>
@@ -837,7 +846,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingConfirmed", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Opération de clôture confirmée..
         '''</summary>
@@ -846,7 +855,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingConfirmedCloture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Vous-êtes sur le point d&apos;annuler cette opération..
         '''</summary>
@@ -855,7 +864,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annulation Confirmée!!!.
         '''</summary>
@@ -864,7 +873,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingProcess", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annulation de la réception.
         '''</summary>
@@ -873,7 +882,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingReception", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annulation du rejet.
         '''</summary>
@@ -882,7 +891,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingRejet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annulation du transfert.
         '''</summary>
@@ -891,7 +900,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingTransfert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Annulation de la validation.
         '''</summary>
@@ -900,7 +909,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CancelingValidation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité de la barge .
         '''</summary>
@@ -909,7 +918,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapacietBarge", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité de badge.
         '''</summary>
@@ -918,7 +927,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapacietBargePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité.
         '''</summary>
@@ -927,7 +936,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Capacite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité disponible.
         '''</summary>
@@ -936,7 +945,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteDisponible", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité disponible.
         '''</summary>
@@ -945,7 +954,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteDisponiblePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité douaniere.
         '''</summary>
@@ -954,7 +963,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteDouaniere", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité douanière.
         '''</summary>
@@ -963,7 +972,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteDouanierePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité.
         '''</summary>
@@ -972,7 +981,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapacitePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité Rémorqueur.
         '''</summary>
@@ -981,7 +990,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteRemorqueur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité du remorqueur .
         '''</summary>
@@ -990,7 +999,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteRemorqueurPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité de stockage entreposage.
         '''</summary>
@@ -999,7 +1008,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageEntreposage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité de stockage de l&apos;entreposage.
         '''</summary>
@@ -1008,7 +1017,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageEntreposagePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité stockage entrepot douanier.
         '''</summary>
@@ -1017,7 +1026,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageEntrepotDouanier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité de stockage de l&apos;entrepot douanier.
         '''</summary>
@@ -1026,7 +1035,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageEntrepotDouanierPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité  de stockage sécurisé.
         '''</summary>
@@ -1035,7 +1044,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageSecurise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la capacité de stockage de l&apos;entreposage securisé .
         '''</summary>
@@ -1044,7 +1053,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CapaciteStockageSecurisePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Catégorie d&apos;élément.
         '''</summary>
@@ -1053,7 +1062,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Centres éducationnels.
         '''</summary>
@@ -1062,7 +1071,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CentresEducationnels", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Champ concerné.
         '''</summary>
@@ -1071,7 +1080,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ChampsId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre mot de passe n&apos;a pas pu être changé. Vérifiez les informations entrées ou contactez l&apos;administrateur..
         '''</summary>
@@ -1080,7 +1089,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ChangePasswordImpossible", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Chef lieu.
         '''</summary>
@@ -1089,7 +1098,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ChefLieu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le chef lieu.
         '''</summary>
@@ -1098,7 +1107,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ChefLieuPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Changer mot de passe.
         '''</summary>
@@ -1107,7 +1116,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ChgPwd", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cible.
         '''</summary>
@@ -1116,7 +1125,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Cible", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type de culture.
         '''</summary>
@@ -1125,7 +1134,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleCDesagregationAgricoleCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cultures désagrégées.
         '''</summary>
@@ -1134,7 +1143,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleCDesagregationAgricoleId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la cible.
         '''</summary>
@@ -1143,7 +1152,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte en bétail.
         '''</summary>
@@ -1152,7 +1161,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleCPerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type de bétail.
         '''</summary>
@@ -1161,7 +1170,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleCPerteBetailCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Services publics perturbés.
         '''</summary>
@@ -1170,7 +1179,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleDServicesPublique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner les services publics pertubés.
         '''</summary>
@@ -1179,7 +1188,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CibleDServicesPubliqueCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à CNI.
         '''</summary>
@@ -1188,7 +1197,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CNI", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir le Numéro de CNI.
         '''</summary>
@@ -1197,7 +1206,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CNIPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Code.
         '''</summary>
@@ -1206,7 +1215,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Code", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le code.
         '''</summary>
@@ -1215,7 +1224,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CODEPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Code postale.
         '''</summary>
@@ -1224,7 +1233,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CodePostale", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le code postale.
         '''</summary>
@@ -1233,7 +1242,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CodePostalePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Collectivité.
         '''</summary>
@@ -1242,7 +1251,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Collectivite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Localité.
         '''</summary>
@@ -1251,7 +1260,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CollectiviteSinistreeCollectivite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sinistre.
         '''</summary>
@@ -1260,7 +1269,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CollectiviteSinistreeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner l&apos;année budgétaire.
         '''</summary>
@@ -1269,7 +1278,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner une catégorie d&apos;élément.
         '''</summary>
@@ -1278,7 +1287,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner la cible.
         '''</summary>
@@ -1287,7 +1296,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboCibleMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une déclaration.
         '''</summary>
@@ -1296,7 +1305,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnnez la demande.
         '''</summary>
@@ -1305,7 +1314,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner le département.
         '''</summary>
@@ -1314,7 +1323,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Selectionner la devise .
         '''</summary>
@@ -1323,7 +1332,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez l&apos;élément.
         '''</summary>
@@ -1332,7 +1341,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionnerl&apos;enquête.
         '''</summary>
@@ -1341,7 +1350,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner l&apos;évènement.
         '''</summary>
@@ -1350,7 +1359,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboEvenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnez un facteur.
         '''</summary>
@@ -1359,7 +1368,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboFacteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un formulaire.
         '''</summary>
@@ -1368,7 +1377,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez le fournisseur.
         '''</summary>
@@ -1377,7 +1386,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboFournisseur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnnez la collectivité.
         '''</summary>
@@ -1386,7 +1395,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner l&apos;infrastructure.
         '''</summary>
@@ -1395,7 +1404,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboInfrastructure", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la localité.
         '''</summary>
@@ -1404,7 +1413,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboLocalite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner la marque de l&apos;élément.
         '''</summary>
@@ -1413,7 +1422,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez l&apos;équipement.
         '''</summary>
@@ -1422,7 +1431,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Selectionnez la nature de l&apos;indemnisation.
         '''</summary>
@@ -1431,7 +1440,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner l&apos;organisation.
         '''</summary>
@@ -1440,7 +1449,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Selectionnez le personnel.
         '''</summary>
@@ -1449,7 +1458,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboPersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnez un élément.
         '''</summary>
@@ -1458,7 +1467,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboPuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnez un quartier.
         '''</summary>
@@ -1467,7 +1476,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la région.
         '''</summary>
@@ -1476,7 +1485,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner un secteur.
         '''</summary>
@@ -1485,7 +1494,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une section.
         '''</summary>
@@ -1494,7 +1503,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnnez un sinistre.
         '''</summary>
@@ -1503,7 +1512,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnnez un sinistrer.
         '''</summary>
@@ -1512,7 +1521,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner le type d&apos;immobilisation.
         '''</summary>
@@ -1521,7 +1530,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner le type de sinistre.
         '''</summary>
@@ -1530,7 +1539,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionnner un type de suivi.
         '''</summary>
@@ -1539,7 +1548,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner la zone.
         '''</summary>
@@ -1548,7 +1557,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ComboZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Arrondissement.
         '''</summary>
@@ -1557,7 +1566,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Commune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un arrondissement.
         '''</summary>
@@ -1566,7 +1575,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CommuneCombo", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Communes concernées.
+        '''</summary>
+        Public Shared ReadOnly Property CommuneConcernees() As String
+            Get
+                Return ResourceManager.GetString("CommuneConcernees", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment supprimer cet élément?.
         '''</summary>
@@ -1575,7 +1593,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmDelete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment supprimer cet élément ainsi que tous les éléments qui dépendent de lui?.
         '''</summary>
@@ -1584,7 +1602,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmDeleteBis", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Êtes-vous sûr de vouloir confirmer les moficiations apportée? Si vous choisissez &apos;OUI&apos; il ne vous sera plus possible de modifier cette demande..
         '''</summary>
@@ -1593,7 +1611,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmModification", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez confirmer le mot de passe.
         '''</summary>
@@ -1602,7 +1620,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmPasswordPlacehoder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment réceptionner cette demande?.
         '''</summary>
@@ -1611,7 +1629,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmReception", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment rejeter cette demande?.
         '''</summary>
@@ -1620,7 +1638,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmRejet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment transférer cette demande?.
         '''</summary>
@@ -1629,7 +1647,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmTransfert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Voulez-vous vraiment valider cette demande?.
         '''</summary>
@@ -1638,7 +1656,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConfirmValidation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Formulaire d&apos;authentification.
         '''</summary>
@@ -1647,7 +1665,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConnectForm", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Se Connecter.
         '''</summary>
@@ -1656,7 +1674,25 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConnectTitle", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Contenu du message.
+        '''</summary>
+        Public Shared ReadOnly Property Contenu() As String
+            Get
+                Return ResourceManager.GetString("Contenu", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez saisir le contenu du message.
+        '''</summary>
+        Public Shared ReadOnly Property ContenuPlaceholde() As String
+            Get
+                Return ResourceManager.GetString("ContenuPlaceholde", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Coût de la réhabilitation/reconstruction des atouts affectées (C-6a).
         '''</summary>
@@ -1665,7 +1701,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CoutDeLaReabilitationHeritageCulturel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques deux aux actifs mobiles détruits (C-6c).
         '''</summary>
@@ -1674,7 +1710,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CoutDeLaReabilitationMobileDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Coût des logements endommagés / détruits.
         '''</summary>
@@ -1683,7 +1719,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CoutDesLogementsEndommagesDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un abris.
         '''</summary>
@@ -1692,7 +1728,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un aéroport.
         '''</summary>
@@ -1701,7 +1737,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateAeroport", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Créer une alerte.
+        '''</summary>
+        Public Shared ReadOnly Property CreateAlert() As String
+            Get
+                Return ResourceManager.GetString("CreateAlert", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Création d&apos;une nouvelle année budgetaire.
         '''</summary>
@@ -1710,7 +1755,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un bureau.
         '''</summary>
@@ -1719,7 +1764,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateBureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une catégorie d&apos;article.
         '''</summary>
@@ -1728,7 +1773,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateCategorieDArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une catégorie .
         '''</summary>
@@ -1737,7 +1782,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un champ.
         '''</summary>
@@ -1746,7 +1791,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une collecte.
         '''</summary>
@@ -1755,7 +1800,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Déclarer un sinistre.
         '''</summary>
@@ -1764,7 +1809,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un arrondissement.
         '''</summary>
@@ -1773,7 +1818,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrez une demande d&apos;indemnisation.
         '''</summary>
@@ -1782,7 +1827,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau département.
         '''</summary>
@@ -1791,7 +1836,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une nouvelle culture.
         '''</summary>
@@ -1800,7 +1845,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une devise.
         '''</summary>
@@ -1809,7 +1854,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un élément.
         '''</summary>
@@ -1818,7 +1863,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une enquête.
         '''</summary>
@@ -1827,7 +1872,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez remplir renseigner le champ {0}.
         '''</summary>
@@ -1836,7 +1881,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateEnqueteRequiredField", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un entrepôt.
         '''</summary>
@@ -1845,7 +1890,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un évènement .
         '''</summary>
@@ -1854,7 +1899,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateEvenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une zone.
         '''</summary>
@@ -1863,7 +1908,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateEvenementZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un facteur.
         '''</summary>
@@ -1872,7 +1917,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateFacteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau formulaire.
         '''</summary>
@@ -1881,7 +1926,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez remplir renseigner le champ {0}.
         '''</summary>
@@ -1890,7 +1935,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateFormulaireRequiredField", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un héliport.
         '''</summary>
@@ -1899,7 +1944,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un hopital.
         '''</summary>
@@ -1908,7 +1953,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une immobilisation.
         '''</summary>
@@ -1917,7 +1962,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrer une indemnisation.
         '''</summary>
@@ -1926,7 +1971,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateIndemmisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une indemnisation.
         '''</summary>
@@ -1935,7 +1980,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une installation.
         '''</summary>
@@ -1944,7 +1989,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une marque.
         '''</summary>
@@ -1953,7 +1998,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un équipement.
         '''</summary>
@@ -1962,7 +2007,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une nature d&apos;aide.
         '''</summary>
@@ -1971,7 +2016,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un niveau d&apos;alèrte.
         '''</summary>
@@ -1980,7 +2025,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateNiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une nouvelle organisation.
         '''</summary>
@@ -1989,7 +2034,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un personnel.
         '''</summary>
@@ -1998,7 +2043,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreatePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau bétail.
         '''</summary>
@@ -2007,7 +2052,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreatePerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un port de mer.
         '''</summary>
@@ -2016,7 +2061,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreatePortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un projet.
         '''</summary>
@@ -2025,7 +2070,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une proposition.
         '''</summary>
@@ -2034,7 +2079,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une puissance.
         '''</summary>
@@ -2043,7 +2088,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreatePuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un quartier.
         '''</summary>
@@ -2052,7 +2097,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une question.
         '''</summary>
@@ -2061,7 +2106,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateQuestion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une région.
         '''</summary>
@@ -2070,7 +2115,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un risque.
         '''</summary>
@@ -2079,7 +2124,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateRisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un risque.
         '''</summary>
@@ -2088,7 +2133,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateRisqueZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau secteur.
         '''</summary>
@@ -2097,7 +2142,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une nouvelle section.
         '''</summary>
@@ -2106,7 +2151,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez remplir renseigner le champ {0}.
         '''</summary>
@@ -2115,7 +2160,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSectionRequiredField", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau service.
         '''</summary>
@@ -2124,7 +2169,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un sinistre.
         '''</summary>
@@ -2133,7 +2178,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un sinistrer.
         '''</summary>
@@ -2142,7 +2187,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une solution.
         '''</summary>
@@ -2151,7 +2196,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajoutez un suivi de demande d&apos;indemnisation.
         '''</summary>
@@ -2160,7 +2205,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une surface de piste.
         '''</summary>
@@ -2169,7 +2214,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une taille d&apos;aéronef.
         '''</summary>
@@ -2178,7 +2223,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;abris.
         '''</summary>
@@ -2187,7 +2232,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;aide.
         '''</summary>
@@ -2196,7 +2241,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de champ.
         '''</summary>
@@ -2205,7 +2250,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de champ.
         '''</summary>
@@ -2214,7 +2259,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;entrepot.
         '''</summary>
@@ -2223,7 +2268,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;hopital.
         '''</summary>
@@ -2232,7 +2277,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;immobilisation.
         '''</summary>
@@ -2241,7 +2286,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de moyen.
         '''</summary>
@@ -2250,7 +2295,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de bureau.
         '''</summary>
@@ -2259,7 +2304,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type d&apos;organisation.
         '''</summary>
@@ -2268,7 +2313,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de personnel.
         '''</summary>
@@ -2277,7 +2322,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de sinistre.
         '''</summary>
@@ -2286,7 +2331,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de solution.
         '''</summary>
@@ -2295,7 +2340,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de suivi.
         '''</summary>
@@ -2304,7 +2349,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un type de vehicule.
         '''</summary>
@@ -2313,7 +2358,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un usage humanitaire.
         '''</summary>
@@ -2322,7 +2367,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une ville.
         '''</summary>
@@ -2331,7 +2376,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateVille", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter une zone à risque.
         '''</summary>
@@ -2340,7 +2385,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CreateZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à CRISIS.
         '''</summary>
@@ -2349,7 +2394,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CrisisTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner la culture.
         '''</summary>
@@ -2358,7 +2403,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CultureCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total détruit.
         '''</summary>
@@ -2367,7 +2412,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CultureDestroyed", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques.
         '''</summary>
@@ -2376,7 +2421,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CulturePerteEconomique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cultures/bois endomages (ha).
         '''</summary>
@@ -2385,7 +2430,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CulturesBoisEndomages", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total Affecté.
         '''</summary>
@@ -2394,7 +2439,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CultureTotalAffected", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total touché.
         '''</summary>
@@ -2403,7 +2448,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CultureTotalDamaged", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à A : .
         '''</summary>
@@ -2412,7 +2457,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateA", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date d&apos;achat.
         '''</summary>
@@ -2421,7 +2466,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateAchat", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la date d&apos;achat.
         '''</summary>
@@ -2430,7 +2475,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateAchatPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date Création.
         '''</summary>
@@ -2439,7 +2484,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateCreation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la date de début.
         '''</summary>
@@ -2448,7 +2493,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDabutPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} doit être de type date..
         '''</summary>
@@ -2457,7 +2502,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDataType", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à De :.
         '''</summary>
@@ -2466,7 +2511,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDe", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date de début.
         '''</summary>
@@ -2475,7 +2520,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDebut", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date de déclaration.
         '''</summary>
@@ -2502,7 +2547,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDelivranceCNI", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date de naissance.
         '''</summary>
@@ -2511,7 +2556,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDeNaissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez entrer la date.
         '''</summary>
@@ -2520,7 +2565,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateDePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date, Evenements, Géographie.
         '''</summary>
@@ -2529,7 +2574,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateEvenementsGeographie", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date Expiration CNI.
         '''</summary>
@@ -2538,7 +2583,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateExpirationCNI", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date de fin.
         '''</summary>
@@ -2547,7 +2592,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateFin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la date de fin.
         '''</summary>
@@ -2556,7 +2601,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateFinPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date, Géographie, Evenements.
         '''</summary>
@@ -2565,7 +2610,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateGeographieEvenements", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date Naissance.
         '''</summary>
@@ -2574,7 +2619,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateNaissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer la date de naissance.
         '''</summary>
@@ -2583,7 +2628,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateNaissancePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date Opération.
         '''</summary>
@@ -2592,7 +2637,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateOperation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Date du sinistre.
         '''</summary>
@@ -2601,7 +2646,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuiller entrer la date du sinistre.
         '''</summary>
@@ -2610,7 +2655,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DateSinistrePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Décès.
         '''</summary>
@@ -2619,7 +2664,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Deces", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} doit contenir un nombre (Exemple: 12; 4; 20,15; 0,95, etc.).
         '''</summary>
@@ -2628,7 +2673,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DecimalType", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer une alerte.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteAlert() As String
+            Get
+                Return ResourceManager.GetString("DeleteAlert", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une année budgetaire.
         '''</summary>
@@ -2637,7 +2691,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une catégorie d&apos;article.
         '''</summary>
@@ -2646,7 +2700,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteCategorieDArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une catégorie.
         '''</summary>
@@ -2655,7 +2709,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un champ.
         '''</summary>
@@ -2664,7 +2718,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une collecte.
         '''</summary>
@@ -2673,7 +2727,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une déclaration de sinistre.
         '''</summary>
@@ -2682,7 +2736,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un arrondissement.
         '''</summary>
@@ -2691,7 +2745,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une demande.
         '''</summary>
@@ -2700,7 +2754,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un département.
         '''</summary>
@@ -2709,7 +2763,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une culture.
         '''</summary>
@@ -2718,7 +2772,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une devise.
         '''</summary>
@@ -2727,7 +2781,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une enquête.
         '''</summary>
@@ -2736,7 +2790,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un formulaire.
         '''</summary>
@@ -2745,7 +2799,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un héliport.
         '''</summary>
@@ -2754,7 +2808,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une indemnisation.
         '''</summary>
@@ -2763,7 +2817,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une marque.
         '''</summary>
@@ -2772,7 +2826,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une nature d&apos;aide.
         '''</summary>
@@ -2781,7 +2835,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une organisation.
         '''</summary>
@@ -2790,7 +2844,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer le bétail.
         '''</summary>
@@ -2799,7 +2853,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeletePerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une proposition.
         '''</summary>
@@ -2808,7 +2862,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une puissance.
         '''</summary>
@@ -2817,7 +2871,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeletePuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un quartier.
         '''</summary>
@@ -2826,7 +2880,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une question.
         '''</summary>
@@ -2835,7 +2889,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteQuestion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une région.
         '''</summary>
@@ -2844,7 +2898,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un Secteur.
         '''</summary>
@@ -2853,7 +2907,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer la section.
         '''</summary>
@@ -2862,7 +2916,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer le service.
         '''</summary>
@@ -2871,7 +2925,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un sinistre.
         '''</summary>
@@ -2880,7 +2934,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un suivi.
         '''</summary>
@@ -2889,7 +2943,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une surface de piste.
         '''</summary>
@@ -2898,7 +2952,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer une taille d&apos;aéronef.
         '''</summary>
@@ -2907,7 +2961,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;abris.
         '''</summary>
@@ -2916,7 +2970,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;aide.
         '''</summary>
@@ -2925,7 +2979,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de champ.
         '''</summary>
@@ -2934,7 +2988,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de champ.
         '''</summary>
@@ -2943,7 +2997,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;entrepot.
         '''</summary>
@@ -2952,7 +3006,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;hopital.
         '''</summary>
@@ -2961,7 +3015,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;immobilisation.
         '''</summary>
@@ -2970,7 +3024,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de moyen.
         '''</summary>
@@ -2979,7 +3033,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de bureau.
         '''</summary>
@@ -2988,7 +3042,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type d&apos;organisation.
         '''</summary>
@@ -2997,7 +3051,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de personnel.
         '''</summary>
@@ -3006,7 +3060,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de sinistre.
         '''</summary>
@@ -3015,7 +3069,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de solution.
         '''</summary>
@@ -3024,7 +3078,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de suivi.
         '''</summary>
@@ -3033,7 +3087,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un type de vehicule.
         '''</summary>
@@ -3042,7 +3096,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Supprimer un usage humanitaire.
         '''</summary>
@@ -3051,7 +3105,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir la Date délivrance CNI.
         '''</summary>
@@ -3060,7 +3114,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DelivranceCNIPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Demande.
         '''</summary>
@@ -3069,7 +3123,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Demande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Déclaration sinistre.
         '''</summary>
@@ -3078,7 +3132,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DemandeCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Departement.
         '''</summary>
@@ -3087,7 +3141,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Departement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Deplacées.
         '''</summary>
@@ -3096,7 +3150,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Deplacees", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Cultures.
         '''</summary>
@@ -3105,7 +3159,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Description.
         '''</summary>
@@ -3114,7 +3168,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Description", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez la description.
         '''</summary>
@@ -3123,7 +3177,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DescriptionPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations sur le champs.
         '''</summary>
@@ -3132,7 +3186,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations sur la collecte.
         '''</summary>
@@ -3141,7 +3195,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations sur la culture.
         '''</summary>
@@ -3150,7 +3204,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur le fomulaire.
         '''</summary>
@@ -3159,7 +3213,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsFormulaires", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur l&apos;indemnisation.
         '''</summary>
@@ -3168,7 +3222,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsIndemnisations", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur l&apos;organisation.
         '''</summary>
@@ -3177,7 +3231,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations sur le bétail.
         '''</summary>
@@ -3186,7 +3240,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsPerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Information détaillées sur la proposition.
         '''</summary>
@@ -3195,7 +3249,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur la question.
         '''</summary>
@@ -3204,7 +3258,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsQuestion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur le secteur.
         '''</summary>
@@ -3213,7 +3267,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur la section.
         '''</summary>
@@ -3222,7 +3276,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations sur le service.
         '''</summary>
@@ -3231,7 +3285,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur le type de champ.
         '''</summary>
@@ -3240,7 +3294,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Informations détaillées sur le type d&apos;organisation.
         '''</summary>
@@ -3249,7 +3303,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DetailsTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Devise.
         '''</summary>
@@ -3258,7 +3312,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Devise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Disaggregation.
         '''</summary>
@@ -3267,7 +3321,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Disaggregation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Deconnexion.
         '''</summary>
@@ -3276,7 +3330,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Disconnect", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Disparus.
         '''</summary>
@@ -3285,7 +3339,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Disparus", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes causés à d&apos;autres infrastructures (D-4).
         '''</summary>
@@ -3294,7 +3348,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesCausesAutresInfrastructures", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes sur tous les autres actifs productifs (C-3).
         '''</summary>
@@ -3303,7 +3357,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesAutresActifsProductifs", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes causés à d&apos;autres infrastructures (D-4).
         '''</summary>
@@ -3312,7 +3366,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesCausesAutresInfrastructures", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes causés au patrimoine culturel (C-6).
         '''</summary>
@@ -3321,7 +3375,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesCausesPatrimoineCulturel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes dans les infrastructures critiques (D-2, D-3, D-4).
         '''</summary>
@@ -3330,7 +3384,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesInfrastructuresCritiques", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes dans le secteur de l&apos;éducation (D-3).
         '''</summary>
@@ -3339,7 +3393,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesSecteurEducation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages et pertes dans les infrastructures critiques.
         '''</summary>
@@ -3348,7 +3402,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPertesSecteurSante", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Dommages physiques au bétail (C-2La).
         '''</summary>
@@ -3357,7 +3411,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DommagesPhysiquesBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Telecharger.
         '''</summary>
@@ -3366,7 +3420,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DownloadFile", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un abris.
         '''</summary>
@@ -3375,7 +3429,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un aéroport.
         '''</summary>
@@ -3384,7 +3438,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditAeroport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un bureau.
         '''</summary>
@@ -3393,7 +3447,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditBureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une catégorie d&apos;article.
         '''</summary>
@@ -3402,7 +3456,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditCategorieDArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une catégorie.
         '''</summary>
@@ -3411,7 +3465,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un champ.
         '''</summary>
@@ -3420,7 +3474,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une collecte.
         '''</summary>
@@ -3429,7 +3483,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une déclaration de sinistre.
         '''</summary>
@@ -3438,7 +3492,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier l&apos;arrondissement.
         '''</summary>
@@ -3447,7 +3501,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une demande.
         '''</summary>
@@ -3456,7 +3510,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un département.
         '''</summary>
@@ -3465,7 +3519,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une culture.
         '''</summary>
@@ -3474,7 +3528,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une devise.
         '''</summary>
@@ -3483,7 +3537,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modofier un élément.
         '''</summary>
@@ -3492,7 +3546,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une enquête.
         '''</summary>
@@ -3501,7 +3555,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un entrepot.
         '''</summary>
@@ -3510,7 +3564,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un évènement.
         '''</summary>
@@ -3519,7 +3573,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditEvenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une zone.
         '''</summary>
@@ -3528,7 +3582,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditEvenementZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un facteur.
         '''</summary>
@@ -3537,7 +3591,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditFacteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier le formulaire.
         '''</summary>
@@ -3546,7 +3600,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un héliport.
         '''</summary>
@@ -3555,7 +3609,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un hopital.
         '''</summary>
@@ -3564,7 +3618,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une immobilisation.
         '''</summary>
@@ -3573,7 +3627,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifiez une indemnisation.
         '''</summary>
@@ -3582,7 +3636,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les indicateurs des autres Impact humain et economique.
         '''</summary>
@@ -3591,7 +3645,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndicateursAutreImpactHumainEtEconomique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible A.
         '''</summary>
@@ -3600,7 +3654,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndicateursCibleA", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible B.
         '''</summary>
@@ -3609,7 +3663,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndicateursCibleB", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible C.
         '''</summary>
@@ -3618,7 +3672,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndicateursCibleC", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier les indicateurs de la cible D.
         '''</summary>
@@ -3627,7 +3681,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditIndicateursCibleD", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une installation.
         '''</summary>
@@ -3636,7 +3690,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une marque.
         '''</summary>
@@ -3645,7 +3699,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier l&apos;équipement.
         '''</summary>
@@ -3654,7 +3708,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une nature d&apos;aide.
         '''</summary>
@@ -3663,7 +3717,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un niveau d&apos;alèrte.
         '''</summary>
@@ -3672,7 +3726,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditNiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une organisation.
         '''</summary>
@@ -3681,7 +3735,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier le personnel.
         '''</summary>
@@ -3690,7 +3744,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditPersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un bétail.
         '''</summary>
@@ -3699,7 +3753,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditPerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un port de mer.
         '''</summary>
@@ -3708,7 +3762,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditPortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un projet.
         '''</summary>
@@ -3717,7 +3771,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une proposition.
         '''</summary>
@@ -3726,7 +3780,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une puissance.
         '''</summary>
@@ -3735,7 +3789,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditPuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un quartier.
         '''</summary>
@@ -3744,7 +3798,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier la question.
         '''</summary>
@@ -3753,7 +3807,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditQuestion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une région.
         '''</summary>
@@ -3762,7 +3816,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un risque.
         '''</summary>
@@ -3771,7 +3825,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditRisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un risque.
         '''</summary>
@@ -3780,7 +3834,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditRisqueZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un Secteur.
         '''</summary>
@@ -3789,7 +3843,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une section.
         '''</summary>
@@ -3798,7 +3852,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un service.
         '''</summary>
@@ -3807,7 +3861,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un sinistre.
         '''</summary>
@@ -3816,7 +3870,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un sinistrer.
         '''</summary>
@@ -3825,7 +3879,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une solution.
         '''</summary>
@@ -3834,7 +3888,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un suivi.
         '''</summary>
@@ -3843,7 +3897,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une surface de piste.
         '''</summary>
@@ -3852,7 +3906,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une taille d&apos;aéronef.
         '''</summary>
@@ -3861,7 +3915,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;abris.
         '''</summary>
@@ -3870,7 +3924,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;aide.
         '''</summary>
@@ -3879,7 +3933,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une années budgetaire.
         '''</summary>
@@ -3888,7 +3942,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de champ.
         '''</summary>
@@ -3897,7 +3951,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de champ.
         '''</summary>
@@ -3906,7 +3960,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;entrepot.
         '''</summary>
@@ -3915,7 +3969,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;hopital.
         '''</summary>
@@ -3924,7 +3978,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;immobilisation.
         '''</summary>
@@ -3933,7 +3987,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de moyen.
         '''</summary>
@@ -3942,7 +3996,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de bureau.
         '''</summary>
@@ -3951,7 +4005,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type d&apos;organisation.
         '''</summary>
@@ -3960,7 +4014,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de personnel.
         '''</summary>
@@ -3969,7 +4023,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de sinistre.
         '''</summary>
@@ -3978,7 +4032,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de solution.
         '''</summary>
@@ -3987,7 +4041,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de suivi.
         '''</summary>
@@ -3996,7 +4050,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un type de vehicule.
         '''</summary>
@@ -4005,7 +4059,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un usage humanitaire.
         '''</summary>
@@ -4014,7 +4068,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier un utilisateur.
         '''</summary>
@@ -4023,7 +4077,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditUser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une ville.
         '''</summary>
@@ -4032,7 +4086,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditVille", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier une zone à risque.
         '''</summary>
@@ -4041,7 +4095,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EditZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Element.
         '''</summary>
@@ -4050,7 +4104,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Element", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à E-mail.
         '''</summary>
@@ -4059,7 +4113,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Email", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir l&apos;E-mail de l&apos;utilisateur.
         '''</summary>
@@ -4068,7 +4122,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EmailPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Anglais.
         '''</summary>
@@ -4077,7 +4131,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EnglishLang", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enquête concernée.
         '''</summary>
@@ -4086,7 +4140,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EnqueteId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrepot.
         '''</summary>
@@ -4095,7 +4149,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Entrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité disponible max.
         '''</summary>
@@ -4104,7 +4158,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EntrepotCapaciteDisponibleMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité disponible min.
         '''</summary>
@@ -4113,7 +4167,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EntrepotCapaciteDisponibleMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité max.
         '''</summary>
@@ -4122,7 +4176,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EntrepotCapaciteMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Capacité min.
         '''</summary>
@@ -4131,7 +4185,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EntrepotCapaciteMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Equipement de chargement.
         '''</summary>
@@ -4140,7 +4194,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EquipementChargement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;équipement de chargement.
         '''</summary>
@@ -4149,7 +4203,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EquipementChargementPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Erreur!!!.
         '''</summary>
@@ -4158,7 +4212,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ErreurTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La requête envoyée est erronée. Veuillez executer de nouveau l&apos;opération. Si le problème persiste, veuillez contacter l&apos;administrateur..
         '''</summary>
@@ -4167,7 +4221,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Error400_Explain", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez vous rassurer que vous avez sélectionner l&apos;année budgétaire..
         '''</summary>
@@ -4176,7 +4230,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Error400_SelectAnnee", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Requête incorrecte.
         '''</summary>
@@ -4185,7 +4239,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Error400_SubTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Erreur 400.
         '''</summary>
@@ -4194,7 +4248,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Error400_Title", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à OUPS!!!.
         '''</summary>
@@ -4203,7 +4257,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ErrorAlertTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez remplir les dates correctement..
         '''</summary>
@@ -4212,7 +4266,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ErrorDateAlertBody", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Une erreur est survenue lors du traitement de votre demande..
         '''</summary>
@@ -4221,7 +4275,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ErrorProcess", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Une erreur est survenue pendant le traitment de votre requête..
         '''</summary>
@@ -4230,7 +4284,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ErrorProcessCloture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Estimation de la population.
         '''</summary>
@@ -4239,7 +4293,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EstimationPopulation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;estimation de la population.
         '''</summary>
@@ -4248,7 +4302,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EstimationPopulationPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Etat.
         '''</summary>
@@ -4257,7 +4311,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Etat", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Evenement.
         '''</summary>
@@ -4266,7 +4320,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Evenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner un évènement.
         '''</summary>
@@ -4275,7 +4329,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Evenements, Date, Géographie.
         '''</summary>
@@ -4284,7 +4338,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementsDateGeographie", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Evenements, Géographie, Date.
         '''</summary>
@@ -4293,7 +4347,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementsGeographieDate", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Evènement.
         '''</summary>
@@ -4302,7 +4356,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Evènement Concerné.
         '''</summary>
@@ -4311,7 +4365,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementZoneId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner l&apos;évènement concerné.
         '''</summary>
@@ -4320,7 +4374,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("EvenementZoneIdCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir la Date expiration CNI.
         '''</summary>
@@ -4329,7 +4383,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ExpirationCNIPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Facteur.
         '''</summary>
@@ -4338,7 +4392,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Facteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Faire la somme.
         '''</summary>
@@ -4347,7 +4401,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("FaireSomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Rechercher.
         '''</summary>
@@ -4356,7 +4410,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Find", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à VEUILLEZ RENSEIGNER LA RÉFÉRENCE DE LA DEMANDE.
         '''</summary>
@@ -4365,7 +4419,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("FindReferenceDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Formulaire concerné.
         '''</summary>
@@ -4374,7 +4428,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("FormulaireId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Fournisseur.
         '''</summary>
@@ -4383,7 +4437,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Fournisseur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Français.
         '''</summary>
@@ -4392,7 +4446,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("FrenchLang", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Féminin.
         '''</summary>
@@ -4401,7 +4455,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GenderFemale", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Masculin.
         '''</summary>
@@ -4410,7 +4464,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GenderMale", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Géographie, Date, Evenements.
         '''</summary>
@@ -4419,7 +4473,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GeographieDateEvenements", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Géographie, Evenements, Date.
         '''</summary>
@@ -4428,7 +4482,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GeographieEvenementsDate", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Mot de passe.
         '''</summary>
@@ -4437,7 +4491,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestPassWord", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des utilisateurs.
         '''</summary>
@@ -4446,7 +4500,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La connexion externe a été supprimée..
         '''</summary>
@@ -4455,7 +4509,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser_DeleteConection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Une erreur s&apos;est produite..
         '''</summary>
@@ -4464,7 +4518,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser_ErrorOccured", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Changer mon mot de passe.
         '''</summary>
@@ -4473,7 +4527,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser_ManageAccount", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre mot de passe a été défini..
         '''</summary>
@@ -4482,7 +4536,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser_PwdDefine", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre mot de passe a été modifié..
         '''</summary>
@@ -4491,7 +4545,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUser_PwdModify", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Mot de passe actuel.
         '''</summary>
@@ -4500,7 +4554,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserActualPwd", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des utilisateurs.
         '''</summary>
@@ -4509,7 +4563,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserIndex", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom d’utilisateur.
         '''</summary>
@@ -4518,7 +4572,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserName", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Mot de passe.
         '''</summary>
@@ -4527,7 +4581,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwd", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Confirmer le mot de passe.
         '''</summary>
@@ -4536,7 +4590,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdConf", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à les deux mots de passe ne correspondent pas..
         '''</summary>
@@ -4545,7 +4599,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdConfMatch", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Confirmer le mot de passe.
         '''</summary>
@@ -4554,7 +4608,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdConfNew", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas..
         '''</summary>
@@ -4563,7 +4617,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdConfNewMatch", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} doit être compté entre {2} et {1} caractères..
         '''</summary>
@@ -4572,7 +4626,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdLength", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Se souvenir de moi?.
         '''</summary>
@@ -4581,7 +4635,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdMemo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nouveau mot de passe.
         '''</summary>
@@ -4590,7 +4644,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserPwdNew", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modifier le rôle d&apos;un utilisateur.
         '''</summary>
@@ -4599,7 +4653,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserRoles", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des profils.
         '''</summary>
@@ -4608,7 +4662,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserRolesTilte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Attribuer un(des) rôle(s) à.
         '''</summary>
@@ -4617,7 +4671,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserRolesTo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom d&apos;utilisateur.
         '''</summary>
@@ -4626,7 +4680,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserUserName", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom d&apos;utilisateur.
         '''</summary>
@@ -4635,7 +4689,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GestUserUserName1", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Retourner à la page d&apos;accueil.
         '''</summary>
@@ -4644,7 +4698,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GoToHomePage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Retourner à la page précédente.
         '''</summary>
@@ -4653,7 +4707,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GoToPreviousPage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hauteur.
         '''</summary>
@@ -4662,7 +4716,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Hauteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hauteur maximum.
         '''</summary>
@@ -4671,7 +4725,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HauteurMaximum", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la hauteur maximum.
         '''</summary>
@@ -4680,7 +4734,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HauteurMaximumPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unités de la hauteur.
         '''</summary>
@@ -4689,7 +4743,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HauteurMaximumUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la hauteur maximum.
         '''</summary>
@@ -4698,7 +4752,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HauteurMaximumUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la hauteur de l&apos;élément.
         '''</summary>
@@ -4707,7 +4761,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HauteurPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Heactares détruits.
         '''</summary>
@@ -4716,7 +4770,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HectaresDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hectares endomagés.
         '''</summary>
@@ -4725,7 +4779,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HectaresEndomages", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total Ha cultures touchées.
         '''</summary>
@@ -4734,7 +4788,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HectaresTautauxDesCulturesTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Héliport.
         '''</summary>
@@ -4743,7 +4797,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Heliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Héritage culturel.
         '''</summary>
@@ -4752,7 +4806,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HeritageCulturel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Heure d&apos;ouverture.
         '''</summary>
@@ -4761,7 +4815,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HeureDOuverture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;heure d&apos;ouverture.
         '''</summary>
@@ -4770,7 +4824,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HeureDOuverturePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Heure de fermeture.
         '''</summary>
@@ -4779,7 +4833,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HeureFermeture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;heure de fermeture.
         '''</summary>
@@ -4788,7 +4842,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HeureFermeturePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Historique des alertes.
+        '''</summary>
+        Public Shared ReadOnly Property HistoriqueAlerte() As String
+            Get
+                Return ResourceManager.GetString("HistoriqueAlerte", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Page d&apos;accueil.
         '''</summary>
@@ -4797,7 +4860,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HomePage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hopitaux.
         '''</summary>
@@ -4806,7 +4869,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Hopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Puissance.
         '''</summary>
@@ -4815,7 +4878,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HopitauxPuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à IATA.
         '''</summary>
@@ -4824,7 +4887,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("IATA", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos; IATA.
         '''</summary>
@@ -4833,7 +4896,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("IATAPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à ICAO.
         '''</summary>
@@ -4842,7 +4905,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ICAO", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos; ICAO.
         '''</summary>
@@ -4851,7 +4914,25 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ICAOPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Importer un fichier.
+        '''</summary>
+        Public Shared ReadOnly Property ImportFile() As String
+            Get
+                Return ResourceManager.GetString("ImportFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les Importations.
+        '''</summary>
+        Public Shared ReadOnly Property ImportMenu() As String
+            Get
+                Return ResourceManager.GetString("ImportMenu", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Imprimer.
         '''</summary>
@@ -4860,7 +4941,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Imprimer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une indemnisation.
         '''</summary>
@@ -4869,7 +4950,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("IndemnisationCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Indemniser sinistré.
         '''</summary>
@@ -4878,7 +4959,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("IndemniserSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Infrastructure.
         '''</summary>
@@ -4887,7 +4968,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Infrastructure", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Instalation.
         '''</summary>
@@ -4896,7 +4977,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Instalation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Interruptions des services de base (D-6).
         '''</summary>
@@ -4905,7 +4986,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("InterruptionsServicesBase", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre login/mot de passe est invalide. veuillez réessayer svp..
         '''</summary>
@@ -4914,7 +4995,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("InvalidParam", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Largeur.
         '''</summary>
@@ -4923,7 +5004,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Largeur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Largeur de piste.
         '''</summary>
@@ -4932,7 +5013,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LargeurDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la largeur de la piste.
         '''</summary>
@@ -4941,7 +5022,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LargeurDePistePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la largeur de l&apos;élément.
         '''</summary>
@@ -4950,7 +5031,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LargeurPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Latitude.
         '''</summary>
@@ -4959,7 +5040,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Latitude", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Indemnisation.
         '''</summary>
@@ -4968,7 +5049,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LesIndemnisations", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le sinistré.
         '''</summary>
@@ -4977,7 +5058,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LeSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Intitulé.
         '''</summary>
@@ -4986,7 +5067,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Libelle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le libelle.
         '''</summary>
@@ -4995,7 +5076,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LibellePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Lieu Naissance.
         '''</summary>
@@ -5004,7 +5085,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LieuNaissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le lieu de naissance.
         '''</summary>
@@ -5013,7 +5094,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LieuNaissancePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des abris.
         '''</summary>
@@ -5022,7 +5103,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des aéroports.
         '''</summary>
@@ -5031,7 +5112,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListAeroport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des bureaux.
         '''</summary>
@@ -5040,7 +5121,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListBureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des catégories d&apos;articles.
         '''</summary>
@@ -5049,7 +5130,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListCategorieDArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des catégories .
         '''</summary>
@@ -5058,7 +5139,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des collectes.
         '''</summary>
@@ -5067,7 +5148,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des sinistres déclarés.
         '''</summary>
@@ -5076,7 +5157,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des arrondissements.
         '''</summary>
@@ -5085,7 +5166,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des demandes d&apos;indemnisation.
         '''</summary>
@@ -5094,7 +5175,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des départements.
         '''</summary>
@@ -5103,7 +5184,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des cultures.
         '''</summary>
@@ -5112,7 +5193,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des devise.
         '''</summary>
@@ -5121,7 +5202,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des éléments.
         '''</summary>
@@ -5130,7 +5211,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des enquêtes.
         '''</summary>
@@ -5139,7 +5220,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des entrepôts.
         '''</summary>
@@ -5148,7 +5229,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des évènements.
         '''</summary>
@@ -5157,7 +5238,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListEvenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des Zones.
         '''</summary>
@@ -5166,7 +5247,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListEvenementZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Listes des facteurs.
         '''</summary>
@@ -5175,7 +5256,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListFacteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des formulaires.
         '''</summary>
@@ -5184,7 +5265,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des héliports.
         '''</summary>
@@ -5193,7 +5274,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des hopitaux.
         '''</summary>
@@ -5202,7 +5283,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des immobilisation.
         '''</summary>
@@ -5211,7 +5292,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des indemnisations.
         '''</summary>
@@ -5220,7 +5301,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des installations.
         '''</summary>
@@ -5229,7 +5310,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des marques.
         '''</summary>
@@ -5238,7 +5319,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des équipements.
         '''</summary>
@@ -5247,7 +5328,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à  les moyens de reponses.
         '''</summary>
@@ -5256,7 +5337,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListMoyenDereponse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des natures d&apos;aide.
         '''</summary>
@@ -5265,7 +5346,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des niveaux d&apos;alèrte.
         '''</summary>
@@ -5274,7 +5355,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListNiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des organisations.
         '''</summary>
@@ -5283,7 +5364,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste du personnel.
         '''</summary>
@@ -5292,7 +5373,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListPersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des différents bétails.
         '''</summary>
@@ -5301,7 +5382,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListPerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des port de mer.
         '''</summary>
@@ -5310,7 +5391,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListPortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des projets.
         '''</summary>
@@ -5319,7 +5400,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste de propositions.
         '''</summary>
@@ -5328,7 +5409,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des puissances.
         '''</summary>
@@ -5337,7 +5418,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListPuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des quartiers.
         '''</summary>
@@ -5346,7 +5427,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des régions.
         '''</summary>
@@ -5355,7 +5436,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des risques.
         '''</summary>
@@ -5364,7 +5445,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListRisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des risques.
         '''</summary>
@@ -5373,7 +5454,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListRisqueZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des secteurs.
         '''</summary>
@@ -5382,7 +5463,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des sections.
         '''</summary>
@@ -5391,7 +5472,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des services.
         '''</summary>
@@ -5400,7 +5481,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des sinistres.
         '''</summary>
@@ -5409,7 +5490,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des sinistrers.
         '''</summary>
@@ -5418,7 +5499,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des solutions.
         '''</summary>
@@ -5427,7 +5508,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des suivis.
         '''</summary>
@@ -5436,7 +5517,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des surfaces de piste.
         '''</summary>
@@ -5445,7 +5526,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des tailles d&apos;aéronef.
         '''</summary>
@@ -5454,7 +5535,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;abris.
         '''</summary>
@@ -5463,7 +5544,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;aide.
         '''</summary>
@@ -5472,7 +5553,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des années budgetaire.
         '''</summary>
@@ -5481,7 +5562,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de champ.
         '''</summary>
@@ -5490,7 +5571,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de champ.
         '''</summary>
@@ -5499,7 +5580,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;entrepot.
         '''</summary>
@@ -5508,7 +5589,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;hopitaux.
         '''</summary>
@@ -5517,7 +5598,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;immobilisation.
         '''</summary>
@@ -5526,7 +5607,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de moyen.
         '''</summary>
@@ -5535,7 +5616,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de bureau.
         '''</summary>
@@ -5544,7 +5625,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types d&apos;organisation.
         '''</summary>
@@ -5553,7 +5634,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de personnel.
         '''</summary>
@@ -5562,7 +5643,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de sinistre.
         '''</summary>
@@ -5571,7 +5652,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de solution.
         '''</summary>
@@ -5580,7 +5661,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de suivi.
         '''</summary>
@@ -5589,7 +5670,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des types de vehicules.
         '''</summary>
@@ -5598,7 +5679,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des usages humanitaires.
         '''</summary>
@@ -5607,7 +5688,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des villes.
         '''</summary>
@@ -5616,7 +5697,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListVille", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des zones à risque.
         '''</summary>
@@ -5625,7 +5706,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ListZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Location.
         '''</summary>
@@ -5634,7 +5715,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Location", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer votre mot de passe pour retrouver votre session..
         '''</summary>
@@ -5643,7 +5724,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LockScreenMsg", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ou connectez vous avec un autre compte..
         '''</summary>
@@ -5652,7 +5733,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LockScreenMsgOther", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Logements touchés (endommagés ou détruits).
         '''</summary>
@@ -5661,7 +5742,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LogementsTouchesEndommagésDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Logique.
         '''</summary>
@@ -5670,7 +5751,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Logique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à ET.
         '''</summary>
@@ -5679,7 +5760,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LogiqueET", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à OU.
         '''</summary>
@@ -5688,7 +5769,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LogiqueOU", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longitude.
         '''</summary>
@@ -5697,7 +5778,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Longitude", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur.
         '''</summary>
@@ -5706,7 +5787,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Longueur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longeur de piste.
         '''</summary>
@@ -5715,7 +5796,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la longeur de la piste.
         '''</summary>
@@ -5724,7 +5805,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurDePistePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur maximale du navire.
         '''</summary>
@@ -5733,7 +5814,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurMaximaleNavire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la longeur maximale native.
         '''</summary>
@@ -5742,7 +5823,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurMaximaleNavirePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unités de la longueur maximale du navire .
         '''</summary>
@@ -5751,7 +5832,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurMaximaleNavireUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la longeur maximale native.
         '''</summary>
@@ -5760,7 +5841,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurMaximaleNavireUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la longueur de l&apos;élément.
         '''</summary>
@@ -5769,7 +5850,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LongueurPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à MENU PRINCIPAL.
         '''</summary>
@@ -5778,7 +5859,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MainNavigation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Maison détruite.
         '''</summary>
@@ -5787,7 +5868,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MaisonDetruite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Maison endommages.
         '''</summary>
@@ -5796,7 +5877,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MaisonEndommages", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des abris.
         '''</summary>
@@ -5805,7 +5886,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des aéroports.
         '''</summary>
@@ -5814,7 +5895,25 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageAeroport", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des alertes.
+        '''</summary>
+        Public Shared ReadOnly Property ManageAlert() As String
+            Get
+                Return ResourceManager.GetString("ManageAlert", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Création des alertes.
+        '''</summary>
+        Public Shared ReadOnly Property ManageAlertCreate() As String
+            Get
+                Return ResourceManager.GetString("ManageAlertCreate", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des années budgetaires.
         '''</summary>
@@ -5823,7 +5922,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageAnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des bureaux.
         '''</summary>
@@ -5832,7 +5931,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageBureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des catégories d&apos;article.
         '''</summary>
@@ -5841,7 +5940,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageCategorieDArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des catégories.
         '''</summary>
@@ -5850,7 +5949,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des champs.
         '''</summary>
@@ -5859,7 +5958,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des collectes.
         '''</summary>
@@ -5868,7 +5967,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des déclarations de sinistre.
         '''</summary>
@@ -5877,7 +5976,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageCollectiviteSinistree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des communes.
         '''</summary>
@@ -5886,7 +5985,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des demandes d&apos;indemnisation.
         '''</summary>
@@ -5895,7 +5994,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des départements.
         '''</summary>
@@ -5904,7 +6003,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageDepartement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des cultures.
         '''</summary>
@@ -5913,7 +6012,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageDesagregationRecoltesAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des devise.
         '''</summary>
@@ -5922,7 +6021,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageDevise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des éléments.
         '''</summary>
@@ -5931,7 +6030,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des enquêtes.
         '''</summary>
@@ -5940,7 +6039,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des entrepôts.
         '''</summary>
@@ -5949,7 +6048,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des évènements.
         '''</summary>
@@ -5958,7 +6057,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageEvenement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des zones.
         '''</summary>
@@ -5967,7 +6066,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageEvenementZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des facteurs.
         '''</summary>
@@ -5976,7 +6075,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageFacteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des formulaires.
         '''</summary>
@@ -5985,7 +6084,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageFormulaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des héliports.
         '''</summary>
@@ -5994,7 +6093,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des hopitaux.
         '''</summary>
@@ -6003,7 +6102,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des immobilisations.
         '''</summary>
@@ -6012,7 +6111,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des indemnisations.
         '''</summary>
@@ -6021,7 +6120,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des installations.
         '''</summary>
@@ -6030,7 +6129,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des marques.
         '''</summary>
@@ -6039,7 +6138,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des équipements.
         '''</summary>
@@ -6048,7 +6147,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageMateriel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des moyens.
         '''</summary>
@@ -6057,7 +6156,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des natures d&apos;aide.
         '''</summary>
@@ -6066,7 +6165,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des niveaux d&apos;alète.
         '''</summary>
@@ -6075,7 +6174,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageNiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des organisations.
         '''</summary>
@@ -6084,7 +6183,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gesttion du personnel.
         '''</summary>
@@ -6093,7 +6192,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManagePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des bétails.
         '''</summary>
@@ -6102,7 +6201,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManagePerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des port de mer.
         '''</summary>
@@ -6111,7 +6210,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManagePortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des projets.
         '''</summary>
@@ -6120,7 +6219,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des propositions.
         '''</summary>
@@ -6129,7 +6228,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageProposition", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des puissances.
         '''</summary>
@@ -6138,7 +6237,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManagePuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des quartiers.
         '''</summary>
@@ -6147,7 +6246,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des régions.
         '''</summary>
@@ -6156,7 +6255,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageRegion", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des risques.
         '''</summary>
@@ -6165,7 +6264,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageRisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des risques.
         '''</summary>
@@ -6174,7 +6273,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageRisqueZone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des secteurs.
         '''</summary>
@@ -6183,7 +6282,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSecteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des sections.
         '''</summary>
@@ -6192,7 +6291,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSection", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des services.
         '''</summary>
@@ -6201,7 +6300,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des sinistres.
         '''</summary>
@@ -6210,7 +6309,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des sinistrer.
         '''</summary>
@@ -6219,7 +6318,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des solutions.
         '''</summary>
@@ -6228,7 +6327,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Suivi des indemnisations.
         '''</summary>
@@ -6237,7 +6336,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des surfaces de piste.
         '''</summary>
@@ -6246,7 +6345,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des tailles d&apos;aéronef.
         '''</summary>
@@ -6255,7 +6354,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;abris.
         '''</summary>
@@ -6264,7 +6363,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;aide.
         '''</summary>
@@ -6273,7 +6372,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de champ.
         '''</summary>
@@ -6282,7 +6381,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeChamp", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de champ.
         '''</summary>
@@ -6291,7 +6390,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;entrepot.
         '''</summary>
@@ -6300,7 +6399,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;hopitaux.
         '''</summary>
@@ -6309,7 +6408,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;immobilisation.
         '''</summary>
@@ -6318,7 +6417,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de moyen.
         '''</summary>
@@ -6327,7 +6426,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeMoyen", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de bureau.
         '''</summary>
@@ -6336,7 +6435,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types d&apos;organisation.
         '''</summary>
@@ -6345,7 +6444,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de personnel.
         '''</summary>
@@ -6354,7 +6453,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de sinistre.
         '''</summary>
@@ -6363,7 +6462,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de solutions.
         '''</summary>
@@ -6372,7 +6471,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de suivi.
         '''</summary>
@@ -6381,7 +6480,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des types de vehicule.
         '''</summary>
@@ -6390,7 +6489,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des usages humanitaire.
         '''</summary>
@@ -6399,7 +6498,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des villes.
         '''</summary>
@@ -6408,7 +6507,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageVille", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des zones à risque.
         '''</summary>
@@ -6417,7 +6516,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ManageZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Marque d&apos;élément.
         '''</summary>
@@ -6426,7 +6525,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Equipements.
         '''</summary>
@@ -6435,7 +6534,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Materiel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} est obligatoire: veuillez le remplir..
         '''</summary>
@@ -6444,7 +6543,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MdlError_Fichier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un élément de la liste.
         '''</summary>
@@ -6453,7 +6552,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MdlStatError_NatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez renseigner la quantité.
         '''</summary>
@@ -6462,7 +6561,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MdlStatError_Quantite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Années Budgetaires.
         '''</summary>
@@ -6471,7 +6570,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_AnneeBudgetaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Communes.
         '''</summary>
@@ -6480,7 +6579,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Communes", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Déclarations.
         '''</summary>
@@ -6489,7 +6588,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Declarations", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Demandes.
         '''</summary>
@@ -6498,7 +6597,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Demande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Départements.
         '''</summary>
@@ -6507,7 +6606,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Departements", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Accueil.
         '''</summary>
@@ -6516,7 +6615,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Home", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Regions.
         '''</summary>
@@ -6525,7 +6624,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_Regions", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des utilisateurs.
         '''</summary>
@@ -6534,7 +6633,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Menu_UserManager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les abris.
         '''</summary>
@@ -6543,7 +6642,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les aéroports.
         '''</summary>
@@ -6552,7 +6651,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuAeroport", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Pour des groupes existants.
+        '''</summary>
+        Public Shared ReadOnly Property MenuAlertByGroupExisting() As String
+            Get
+                Return ResourceManager.GetString("MenuAlertByGroupExisting", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les bureaux.
         '''</summary>
@@ -6561,7 +6669,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuBureau", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Par Importations de fichiers.
+        '''</summary>
+        Public Shared ReadOnly Property MenuByImports() As String
+            Get
+                Return ResourceManager.GetString("MenuByImports", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Carte.
         '''</summary>
@@ -6570,7 +6687,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuCartes", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les catégories d&apos;article.
         '''</summary>
@@ -6579,7 +6696,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuCategoriArticle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les catégories d&apos;éléments.
         '''</summary>
@@ -6588,7 +6705,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuCategorieElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les devises.
         '''</summary>
@@ -6597,7 +6714,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuDevises", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les éléments.
         '''</summary>
@@ -6606,7 +6723,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuElements", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les enquêtes.
         '''</summary>
@@ -6615,7 +6732,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les entrepots.
         '''</summary>
@@ -6624,7 +6741,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuEntrepots", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les évènements.
         '''</summary>
@@ -6633,7 +6750,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuEvenements", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Déclarations.
         '''</summary>
@@ -6642,7 +6759,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuEvenementZones", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les facteurs.
         '''</summary>
@@ -6651,7 +6768,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuFacteurs", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des moyens.
         '''</summary>
@@ -6660,7 +6777,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuGestionDesMoyens", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des sinistrés.
         '''</summary>
@@ -6669,7 +6786,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuGestionDesSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les héliports.
         '''</summary>
@@ -6678,7 +6795,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuHeliport", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Historique des alertes.
+        '''</summary>
+        Public Shared ReadOnly Property MenuHistoriqueAlerte() As String
+            Get
+                Return ResourceManager.GetString("MenuHistoriqueAlerte", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les hopitaux.
         '''</summary>
@@ -6687,7 +6813,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Immobilisations.
         '''</summary>
@@ -6696,7 +6822,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Indemnisations.
         '''</summary>
@@ -6705,7 +6831,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuIndemnisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Installations.
         '''</summary>
@@ -6714,7 +6840,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des enquêtes.
         '''</summary>
@@ -6723,7 +6849,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuManageEnquete", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des évènements.
         '''</summary>
@@ -6732,7 +6858,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuManageEvents", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des risques.
         '''</summary>
@@ -6741,7 +6867,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuManageRisks", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les marques .
         '''</summary>
@@ -6750,7 +6876,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuMarqueElement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les équipements.
         '''</summary>
@@ -6759,7 +6885,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuMateriels", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les natures d&apos;aide.
         '''</summary>
@@ -6768,7 +6894,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuNatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les niveaux d&apos;alerte.
         '''</summary>
@@ -6777,7 +6903,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuNiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les organisations.
         '''</summary>
@@ -6795,7 +6921,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuPersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les bétails.
         '''</summary>
@@ -6804,7 +6930,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuPerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les ports.
         '''</summary>
@@ -6813,7 +6939,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuPortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les projets.
         '''</summary>
@@ -6822,7 +6948,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les puissances.
         '''</summary>
@@ -6831,7 +6957,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuPuissance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les quartiers.
         '''</summary>
@@ -6840,7 +6966,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuQuartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les cultures.
         '''</summary>
@@ -6849,7 +6975,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuRecoltesAgricoles", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les risques.
         '''</summary>
@@ -6858,7 +6984,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuRisques", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les services publique.
         '''</summary>
@@ -6867,7 +6993,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuServicesPubliquePertube", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Paramètres.
         '''</summary>
@@ -6876,7 +7002,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuSettings", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Sinistres.
         '''</summary>
@@ -6885,7 +7011,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Sinistrées.
         '''</summary>
@@ -6903,7 +7029,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuSolutions", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Suivis.
         '''</summary>
@@ -6912,7 +7038,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les surfaces de piste.
         '''</summary>
@@ -6921,7 +7047,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuSurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les tailles d&apos;aéronef.
         '''</summary>
@@ -6930,7 +7056,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Types d&apos;Abris.
         '''</summary>
@@ -6939,7 +7065,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Types d&apos;aide.
         '''</summary>
@@ -6948,7 +7074,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types de champs.
         '''</summary>
@@ -6957,7 +7083,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeChamps", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types d&apos;entrepots.
         '''</summary>
@@ -6966,7 +7092,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types d&apos;hopitaux.
         '''</summary>
@@ -6975,7 +7101,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types d&apos;immobilidation.
         '''</summary>
@@ -6984,7 +7110,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types de Personnel.
         '''</summary>
@@ -6993,7 +7119,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Types de Sinistres.
         '''</summary>
@@ -7002,7 +7128,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeSinistres", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types de solutions.
         '''</summary>
@@ -7011,7 +7137,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeSolutions", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Types de Suivi.
         '''</summary>
@@ -7020,7 +7146,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeSuivis", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les types de vehicule.
         '''</summary>
@@ -7029,7 +7155,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuTypeVehicule", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les usages hummanitaire.
         '''</summary>
@@ -7038,7 +7164,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuUsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les zones à risque.
         '''</summary>
@@ -7047,7 +7173,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MenuZoneARisques", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à MINAT.
         '''</summary>
@@ -7056,7 +7182,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Minatd", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ministère de l&apos;Administration Territoriale.
         '''</summary>
@@ -7065,7 +7191,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MINATName", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à #.
         '''</summary>
@@ -7074,7 +7200,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MINATSiteWeb", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Modèle.
         '''</summary>
@@ -7083,7 +7209,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Modele", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le modèle de l&apos;élément.
         '''</summary>
@@ -7092,7 +7218,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModelePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Impossible de supprimer cet élément car des demandes sont liées à celle-ci. Veuillez contacter l&apos;administrateur..
         '''</summary>
@@ -7101,7 +7227,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModelError_SinistreDeclareUtilise", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Désole, ce sinistre a déjà été déclaré pour cette localité et pour l&apos;année budgétaire sélectionnée..
         '''</summary>
@@ -7110,7 +7236,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModelError_SinistreDejaDeclare", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des alertes.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleAlerte() As String
+            Get
+                Return ResourceManager.GetString("ModuleAlerte", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des collectes.
         '''</summary>
@@ -7119,7 +7254,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModuleCollecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des risques.
         '''</summary>
@@ -7128,7 +7263,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModuleDesinventar", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des modules.
         '''</summary>
@@ -7137,7 +7272,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModuleList", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des moyens de réponse.
         '''</summary>
@@ -7146,7 +7281,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModuleSahana", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des sinistrés.
         '''</summary>
@@ -7155,7 +7290,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ModuleSinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Montant.
         '''</summary>
@@ -7164,7 +7299,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Montant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom de l&apos;utilisateur.
         '''</summary>
@@ -7173,7 +7308,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NamePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nature de l&apos;indemnisation.
         '''</summary>
@@ -7182,7 +7317,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NatureAide", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner la nature de l&apos;aide.
         '''</summary>
@@ -7191,7 +7326,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NatureAideCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;aide.
         '''</summary>
@@ -7200,7 +7335,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NatureAideType", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Niveau.
         '''</summary>
@@ -7209,7 +7344,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Niveau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Autre.
         '''</summary>
@@ -7218,7 +7353,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauAutre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez choisir un niveau.
         '''</summary>
@@ -7227,7 +7362,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Niveau Communal.
         '''</summary>
@@ -7236,7 +7371,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauCommunal", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Niveau d&apos;alerte.
         '''</summary>
@@ -7245,7 +7380,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauDAlert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner un niveau d&apos;alerte.
         '''</summary>
@@ -7254,7 +7389,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauDAlertCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Niveau Départemental.
         '''</summary>
@@ -7263,7 +7398,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauDepartemental", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à NiveauNational.
         '''</summary>
@@ -7272,7 +7407,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauNational", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Niveau Régional.
         '''</summary>
@@ -7281,7 +7416,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NiveauRegional", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom.
         '''</summary>
@@ -7290,7 +7425,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Nom", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;actifs productifs détruits.
         '''</summary>
@@ -7299,7 +7434,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreActifsProductifAfricoleDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;actifs productifs endommagés.
         '''</summary>
@@ -7308,7 +7443,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreActifsProductifAfricoleEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;infrastructures détruites.
         '''</summary>
@@ -7317,7 +7452,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreAutreInfrastructureDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;infrastructures endommagées.
         '''</summary>
@@ -7326,7 +7461,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreAutreInfrastructureEndommager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de barge.
         '''</summary>
@@ -7335,7 +7470,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBarge", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le nombre de bardge.
         '''</summary>
@@ -7344,7 +7479,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBargePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -7353,7 +7488,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -7362,7 +7497,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -7371,7 +7506,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicaps.
         '''</summary>
@@ -7380,7 +7515,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -7389,7 +7524,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -7398,7 +7533,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlessePauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes âgées.
         '''</summary>
@@ -7407,7 +7542,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreBlesseVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Animaux perdus.
         '''</summary>
@@ -7416,7 +7551,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDanimauxPerdu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Animaux affectés.
         '''</summary>
@@ -7425,7 +7560,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDanimauxToucheOuPerdu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Animaux touchés.
         '''</summary>
@@ -7434,7 +7569,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDanimauxToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de biens culturels mobiles détruits (C-6g).
         '''</summary>
@@ -7443,7 +7578,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeBiensCulturelMobileDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de biens culturels mobiles endommagés (C-6f).
         '''</summary>
@@ -7452,7 +7587,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeBiensCulturelMobileEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -7461,7 +7596,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -7470,7 +7605,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -7479,7 +7614,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicapes.
         '''</summary>
@@ -7488,7 +7623,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -7497,7 +7632,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -7506,7 +7641,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesPauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Peronnes âgées.
         '''</summary>
@@ -7515,7 +7650,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDecesVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre max de lit.
         '''</summary>
@@ -7524,7 +7659,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeLitMax", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre maximum de lit.
         '''</summary>
@@ -7533,7 +7668,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeLitMaxPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre min de lit.
         '''</summary>
@@ -7542,7 +7677,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeLitMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre minimum de lit.
         '''</summary>
@@ -7551,7 +7686,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeLitMinPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de médécin.
         '''</summary>
@@ -7560,7 +7695,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeMedecin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de médecin max.
         '''</summary>
@@ -7569,7 +7704,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeMedecinMax", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de médecin min.
         '''</summary>
@@ -7578,7 +7713,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeMedecinMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre de médécin.
         '''</summary>
@@ -7587,7 +7722,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeMedecinPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de biens culturels mobiles endommagés (C-6f).
         '''</summary>
@@ -7596,7 +7731,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDeMonumentImmobiliersEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Estimation du nombre de personnes touchées.
         '''</summary>
@@ -7605,7 +7740,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonneAffecter", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Estimation des personnes directement affectées.
         '''</summary>
@@ -7614,7 +7749,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonneDirrectementAffecter", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes évacuées.
         '''</summary>
@@ -7623,7 +7758,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonneEvacue", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel non médical.
         '''</summary>
@@ -7632,7 +7767,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonnelNonMedical", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnel non medical max.
         '''</summary>
@@ -7641,7 +7776,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonnelNonMedicalMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnel non medical min.
         '''</summary>
@@ -7650,7 +7785,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonnelNonMedicalMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre de personnel nom médical.
         '''</summary>
@@ -7659,7 +7794,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonnelNonMedicalPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes relocalisés.
         '''</summary>
@@ -7668,7 +7803,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDePersonneRelocaliser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre des établissements de santé détruits.
         '''</summary>
@@ -7677,7 +7812,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDesEtablissementsdeSantedetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre des établissements de santé endommagés.
         '''</summary>
@@ -7686,7 +7821,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDesEtablissementsdeSanteEndommager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations détruites.
         '''</summary>
@@ -7695,7 +7830,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDesEtablissementsEducationDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations endommagées.
         '''</summary>
@@ -7704,7 +7839,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDesEtablissementsEducationEndommager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;animaux perdus.
         '''</summary>
@@ -7713,7 +7848,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDetruitDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;infimière.
         '''</summary>
@@ -7722,7 +7857,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDInfimiere", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;infirmière max.
         '''</summary>
@@ -7731,7 +7866,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDInfimiereMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;infirmière min.
         '''</summary>
@@ -7740,7 +7875,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDInfimiereMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le nombre d&apos;infirmiére.
         '''</summary>
@@ -7749,7 +7884,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDInfimierePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à NombreDinstallationStockAgricoleDetruit.
         '''</summary>
@@ -7758,7 +7893,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDinstallationStockAgricoleDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;actifs productifs endommagés.
         '''</summary>
@@ -7767,7 +7902,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDinstallationStockAgricoleEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -7776,7 +7911,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -7785,7 +7920,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -7794,7 +7929,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicaps.
         '''</summary>
@@ -7803,7 +7938,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -7812,7 +7947,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -7821,7 +7956,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparuePauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes âgées.
         '''</summary>
@@ -7830,7 +7965,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreDisparueVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre du GLIDE.
         '''</summary>
@@ -7839,7 +7974,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreGLIDE", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hectares  cultures touchées.
         '''</summary>
@@ -7848,7 +7983,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarAfecter", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;hectares détruits.
         '''</summary>
@@ -7857,7 +7992,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarAquacultureDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;hectares endommagés.
         '''</summary>
@@ -7866,7 +8001,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarAquacultureEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hectares détruits.
         '''</summary>
@@ -7875,7 +8010,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hectares endommagés.
         '''</summary>
@@ -7884,7 +8019,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;hectares détruits.
         '''</summary>
@@ -7893,7 +8028,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarForetDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;hectares endommagés.
         '''</summary>
@@ -7902,7 +8037,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreHectarForetEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Impact sur les moyens de subsistance.
         '''</summary>
@@ -7911,7 +8046,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreImpactSurLesMoyensDeSubsistance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations d&apos;actifs productifs détruits.
         '''</summary>
@@ -7920,7 +8055,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreInstallationActifsProductifsDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations d&apos;actifs productifs endommagées.
         '''</summary>
@@ -7929,7 +8064,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreInstallationActifsProductifsEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -7938,7 +8073,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -7947,7 +8082,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -7956,7 +8091,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicaps.
         '''</summary>
@@ -7965,7 +8100,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -7974,7 +8109,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -7983,7 +8118,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruitePauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes âgées.
         '''</summary>
@@ -7992,7 +8127,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonDetruiteVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -8001,7 +8136,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -8010,7 +8145,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -8019,7 +8154,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicaps.
         '''</summary>
@@ -8028,7 +8163,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -8037,7 +8172,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -8046,7 +8181,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomagePauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes âgées.
         '''</summary>
@@ -8055,7 +8190,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMaisonEndomageVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de monuments/atouts immobiliers détruits (C-6e).
         '''</summary>
@@ -8064,7 +8199,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMonumentImmobilierDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Adultes.
         '''</summary>
@@ -8073,7 +8208,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceAdult", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enfants.
         '''</summary>
@@ -8082,7 +8217,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceEnfant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Femmes.
         '''</summary>
@@ -8091,7 +8226,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceFemme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Avec handicaps.
         '''</summary>
@@ -8100,7 +8235,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceHandicape", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hommes.
         '''</summary>
@@ -8109,7 +8244,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceHomme", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sous seuil de pauvreté.
         '''</summary>
@@ -8118,7 +8253,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistancePauvre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes âgées.
         '''</summary>
@@ -8127,7 +8262,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreMoyenSubsistanceVieux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de navires détruits.
         '''</summary>
@@ -8136,7 +8271,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreNavireDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de navires endommagés.
         '''</summary>
@@ -8145,7 +8280,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreNavireEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes blessées ou malades.
         '''</summary>
@@ -8154,7 +8289,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombrePersonnesBlesseesOuMalades", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes décédées.
         '''</summary>
@@ -8163,7 +8298,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombrePersonnesDecedees", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes disparues.
         '''</summary>
@@ -8172,7 +8307,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombrePersonnesDisparues", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes dont les logements ont été détruits.
         '''</summary>
@@ -8181,7 +8316,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombrePersonnesLogementDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes dont les logements ont été endommagés.
         '''</summary>
@@ -8190,7 +8325,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombrePersonnesLogementEndommagees", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de remorqueur.
         '''</summary>
@@ -8199,7 +8334,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreRemorqueur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le nombre de remorqueur.
         '''</summary>
@@ -8208,7 +8343,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreRemorqueurPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total routes détruites.
         '''</summary>
@@ -8217,7 +8352,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreRoutesDetruits", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total routes endommagées.
         '''</summary>
@@ -8226,7 +8361,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreRoutesEndommager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total des actifs productifs agricoles touchés.
         '''</summary>
@@ -8235,7 +8370,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalActifsProductifAfricoleToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;animaux affectés.
         '''</summary>
@@ -8244,7 +8379,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalAfecter", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;autres infrastructures touchées (D-4).
         '''</summary>
@@ -8253,7 +8388,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalAutreInfrastructureTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total blessés.
         '''</summary>
@@ -8262,7 +8397,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalBlesse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total décès.
         '''</summary>
@@ -8271,7 +8406,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalDeces", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total des établissements de santé touchées (D-2).
         '''</summary>
@@ -8280,7 +8415,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotaldesEtablissementDeSanteTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total des installations touchées (D-3).
         '''</summary>
@@ -8289,7 +8424,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotaldesEtablissementEducationTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total des actifs productifs agricoles touchés.
         '''</summary>
@@ -8298,7 +8433,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalDinstallationStockAgricoleToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total disparus.
         '''</summary>
@@ -8307,7 +8442,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalDisparue", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;animaux touchés.
         '''</summary>
@@ -8316,7 +8451,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total d&apos;hectares d&apos;aquaculture affectés.
         '''</summary>
@@ -8325,7 +8460,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalHectarAquacultureToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total Ha forêts touchés.
         '''</summary>
@@ -8334,7 +8469,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalHectarForetToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre d&apos;installations d&apos;actifs productifs (C-3A).
         '''</summary>
@@ -8343,7 +8478,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalInstallationActifsProductifsToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total de logements endommagés ou détruits (de la cible B):.
         '''</summary>
@@ -8352,7 +8487,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalLogementEndommagerOuDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total maisons détruites.
         '''</summary>
@@ -8361,7 +8496,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalMaisonDetruite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Maisons endomagées.
         '''</summary>
@@ -8370,7 +8505,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalMaisonEndomage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total moyens de subsistance.
         '''</summary>
@@ -8379,7 +8514,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalMoyenSubsistance", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre total de navires affectés.
         '''</summary>
@@ -8388,7 +8523,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalNavireToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnes vivant dans ces logements (Indicateur B-4).
         '''</summary>
@@ -8397,7 +8532,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalPersonneMaisonDetruite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nombre de personnes vivantes dans les logements qui ont été endommagés (Indicateur B-3).
         '''</summary>
@@ -8406,7 +8541,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalPersonneMaisonEndomage", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total routes touchées.
         '''</summary>
@@ -8415,7 +8550,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NombreTotalRoutesTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom de l&apos;organisation.
         '''</summary>
@@ -8424,7 +8559,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NomPaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Nom(s).
         '''</summary>
@@ -8433,7 +8568,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Noms", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Non.
         '''</summary>
@@ -8442,7 +8577,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NoResponse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Notifications.
         '''</summary>
@@ -8451,7 +8586,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Notification", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Numéro de serie.
         '''</summary>
@@ -8460,7 +8595,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NumeroDeSerie", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le numéro de série.
         '''</summary>
@@ -8469,7 +8604,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NumeroDeSeriePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Numéro d&apos;immobilisation.
         '''</summary>
@@ -8478,7 +8613,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NumeroImobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le numéro d&apos;immobilisation.
         '''</summary>
@@ -8487,7 +8622,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NumeroImobilisationPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ordre.
         '''</summary>
@@ -8505,7 +8640,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Ordrentree", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Organisation.
         '''</summary>
@@ -8514,7 +8649,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Organisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Par âge.
         '''</summary>
@@ -8523,7 +8658,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ParAge", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Par sexe.
         '''</summary>
@@ -8532,7 +8667,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ParSexe", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le mot de passe.
         '''</summary>
@@ -8541,7 +8676,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PasswordPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pays.
         '''</summary>
@@ -8550,7 +8685,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Pays", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner le pays.
         '''</summary>
@@ -8559,7 +8694,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PaysCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel.
         '''</summary>
@@ -8568,7 +8703,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PersonnelAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel.
         '''</summary>
@@ -8577,7 +8712,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PersonnelBureaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel.
         '''</summary>
@@ -8586,7 +8721,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PersonnelInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Personnel.
         '''</summary>
@@ -8595,7 +8730,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PersonnelProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Animal.
         '''</summary>
@@ -8604,7 +8739,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte de récolte agricole (C-2C).
         '''</summary>
@@ -8613,7 +8748,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteDeRecolteAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique.
         '''</summary>
@@ -8622,7 +8757,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomique", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique liée aux actifs productifs agricoles.
         '''</summary>
@@ -8631,7 +8766,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueActifsProductifAfricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique liée aux actifs productifs.
         '''</summary>
@@ -8640,7 +8775,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueActifsProductifs", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques aquaculture touchée.
         '''</summary>
@@ -8649,7 +8784,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueAquaculture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques cultures touchées.
         '''</summary>
@@ -8658,7 +8793,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDesCultureTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique des navires affectés.
         '''</summary>
@@ -8667,7 +8802,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDesNaviresAffecter", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique liée aux actifs productifs agricoles.
         '''</summary>
@@ -8676,7 +8811,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDesStockAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux actifs de production agricoles (C-2LAa).
         '''</summary>
@@ -8685,7 +8820,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesCausesActifsProductionAgricoles", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés à tous les autres actifs productifs (C-3).
         '''</summary>
@@ -8694,7 +8829,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesCausesAutresActifsProductifs", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux établissements d&apos;enseignement (D-3).
         '''</summary>
@@ -8703,7 +8838,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesCausesEtablissementsEnseignement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux établissements de santé, d&apos;enseignement et autres infrastructures.
         '''</summary>
@@ -8712,7 +8847,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesCausesEtablissementsSante", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques à l&apos;aquaculture (C-2Aa).
         '''</summary>
@@ -8721,7 +8856,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesAquaculture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux cultures (C-2Ca).
         '''</summary>
@@ -8730,7 +8865,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesCultures", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux forêts (C-2FOa).
         '''</summary>
@@ -8739,7 +8874,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesForets", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages physiques aux pêcheries (C-2FIa).
         '''</summary>
@@ -8748,7 +8883,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesPhysiquesPecheries", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et dommages causés aux stocks agricoles (C-2LBa).
         '''</summary>
@@ -8757,7 +8892,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDommagesStocksAgricoles", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques deux aux actifs mobiles détruits (C-6c).
         '''</summary>
@@ -8766,7 +8901,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDuAuActifsMobileDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économique en route.
         '''</summary>
@@ -8775,7 +8910,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueDuAuRoutes", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique des infrastructures touchées (pour C-5).
         '''</summary>
@@ -8784,7 +8919,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueInfrastructureToucher", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique et nombre d&apos;installations / unités d&apos;autres infrastructures (D-4).
         '''</summary>
@@ -8793,7 +8928,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueNombreInstallationsUnitesAutresInfrastructures", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques dans le secteur de l&apos;éducation (pour C-5).
         '''</summary>
@@ -8802,7 +8937,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueSecteurEducation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique dans le secteur de la santé (C-5).
         '''</summary>
@@ -8811,7 +8946,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueSecteurSante", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économiques forêts touchées.
         '''</summary>
@@ -8820,7 +8955,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteEconomiqueSurForet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes en aquaculture (C-2A).
         '''</summary>
@@ -8829,7 +8964,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PertesAquaculture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes de bétail (C-2L).
         '''</summary>
@@ -8838,7 +8973,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PertesBetail", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes de forêts et en sylviculture (C-2FO).
         '''</summary>
@@ -8847,7 +8982,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PertesForetsSylviculture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes en pêcheries (C-2FI).
         '''</summary>
@@ -8856,7 +8991,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PertesPecheries", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes de production agricole (C-2LA).
         '''</summary>
@@ -8865,7 +9000,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PertesProductionAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte de stock agricole (C-2LB).
         '''</summary>
@@ -8874,7 +9009,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteStockAgricole", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Total bétail touché.
         '''</summary>
@@ -8883,7 +9018,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PerteTotalDeBetailTouche", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pièce jointe.
         '''</summary>
@@ -8892,7 +9027,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PieceJointe", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Menu pièce jointe.
         '''</summary>
@@ -8901,7 +9036,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PiecesJointeMenu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Poids.
         '''</summary>
@@ -8910,7 +9045,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Poids", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le poids de l&apos;élément.
         '''</summary>
@@ -8919,7 +9054,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PoidsPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Population.
         '''</summary>
@@ -8928,7 +9063,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Population", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez la population.
         '''</summary>
@@ -8937,7 +9072,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PopulationPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Port de mer.
         '''</summary>
@@ -8946,7 +9081,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hauteur maximum max.
         '''</summary>
@@ -8955,7 +9090,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerHauteurMaximumMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Hauteur maximum min.
         '''</summary>
@@ -8964,7 +9099,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerHauteurMaximumMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur maximale navire max.
         '''</summary>
@@ -8973,7 +9108,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerLongueurMaximaleNavireMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Longueur maximale navire min.
         '''</summary>
@@ -8982,7 +9117,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerLongueurMaximaleNavireMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur quai chargement max.
         '''</summary>
@@ -8991,7 +9126,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerProfondeurQuaiChargementMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur quai chargement min.
         '''</summary>
@@ -9000,7 +9135,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerProfondeurQuaiChargementMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur terminal petrolier min.
         '''</summary>
@@ -9009,7 +9144,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeMerProfondeurTerminalPetrolierMin", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur terminal petrolier min.
         '''</summary>
@@ -9018,7 +9153,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PortDeProfondeurTerminalPetrolierMAx", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Possession.
         '''</summary>
@@ -9027,7 +9162,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Possession", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la possession.
         '''</summary>
@@ -9036,7 +9171,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PossessionPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Powered By.
         '''</summary>
@@ -9045,7 +9180,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PoweredBy", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Prénoms.
         '''</summary>
@@ -9054,7 +9189,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Prenom", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le prénom de l&apos;utilisateur.
         '''</summary>
@@ -9063,7 +9198,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PrenomPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Prénom(s).
         '''</summary>
@@ -9072,7 +9207,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Prenoms", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Prix d&apos;achat.
         '''</summary>
@@ -9081,7 +9216,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PrixAchat", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer le prix d&apos;achat.
         '''</summary>
@@ -9090,7 +9225,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("PrixAchatPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unité de la profondeur de l&apos;inondation.
         '''</summary>
@@ -9099,7 +9234,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurInondation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la profondeur de l&apos;inondation.
         '''</summary>
@@ -9108,7 +9243,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurInondationPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unité de la profondeur de l&apos; inondation.
         '''</summary>
@@ -9117,7 +9252,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurInondationUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la profondeur de l&apos;inondation.
         '''</summary>
@@ -9126,7 +9261,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurInondationUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur marée basse.
         '''</summary>
@@ -9135,7 +9270,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareBasse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la profondeur de la maré basse.
         '''</summary>
@@ -9144,7 +9279,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareBassePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unité de la profondeur de la marée basse.
         '''</summary>
@@ -9153,7 +9288,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareBasseUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la profondeur de la maré basse.
         '''</summary>
@@ -9162,7 +9297,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareBasseUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à  Profondeur de la marée haute.
         '''</summary>
@@ -9171,7 +9306,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareHaute", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la profondeur de la maré haute.
         '''</summary>
@@ -9180,7 +9315,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareHautePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unité de la profondeur de la marée haute.
         '''</summary>
@@ -9189,7 +9324,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareHauteUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la profondeur de la maré haute.
         '''</summary>
@@ -9198,7 +9333,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurMareHauteUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur du quai de chargement .
         '''</summary>
@@ -9207,7 +9342,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurQuaiChargement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la profondeur du quai de chargement .
         '''</summary>
@@ -9216,7 +9351,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurQuaiChargementPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unités de la profondeur du quai de chargement.
         '''</summary>
@@ -9225,7 +9360,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurQuaiChargementUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la profondeur du quai de chargement.
         '''</summary>
@@ -9234,7 +9369,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurQuaiChargementUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Profondeur du terminal pétrolier .
         '''</summary>
@@ -9243,7 +9378,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurTerminalPetrolier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la profondeur du terminal pétrolier.
         '''</summary>
@@ -9252,7 +9387,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurTerminalPetrolierPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unités de la profondeur du terminal pétrolier.
         '''</summary>
@@ -9261,7 +9396,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurTerminalPetrolierUnites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de la profondeur du terminal pétrolier.
         '''</summary>
@@ -9270,7 +9405,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ProfondeurTerminalPetrolierUnitesPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez la quantité.
         '''</summary>
@@ -9279,7 +9414,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("QantitePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Quantité.
         '''</summary>
@@ -9288,7 +9423,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Quantite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Quartier.
         '''</summary>
@@ -9297,7 +9432,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Quartier", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Commune.
         '''</summary>
@@ -9306,7 +9441,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("QuartierCommune", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Raison sociale.
         '''</summary>
@@ -9315,7 +9450,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RaisonSocial", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Raison sociale.
         '''</summary>
@@ -9324,7 +9459,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RaisonSociale", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Réceptionner une demande.
         '''</summary>
@@ -9333,7 +9468,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ReceptionDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrement(s).
         '''</summary>
@@ -9342,7 +9477,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Records", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sur.
         '''</summary>
@@ -9351,7 +9486,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RecordsOn", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Réference.
         '''</summary>
@@ -9360,7 +9495,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Reference", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à REFERENCE DE LA DEMANDE.
         '''</summary>
@@ -9369,7 +9504,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ReferenceDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la reference.
         '''</summary>
@@ -9378,7 +9513,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Referencelaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez la référence.
         '''</summary>
@@ -9387,7 +9522,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ReferencePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Région.
         '''</summary>
@@ -9396,7 +9531,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Region", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Chef Lieu.
         '''</summary>
@@ -9405,7 +9540,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RegionChefLieu", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrer un utilisateur.
         '''</summary>
@@ -9414,7 +9549,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Register", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Formulaire d&apos;enregistrement.
         '''</summary>
@@ -9423,7 +9558,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RegisterForm", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistrer un utilisateur.
         '''</summary>
@@ -9432,7 +9567,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RegisterUser", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Rejeter une demande.
         '''</summary>
@@ -9441,7 +9576,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RejetDemande", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Relancer une alerte.
+        '''</summary>
+        Public Shared ReadOnly Property ReloadAlert() As String
+            Get
+                Return ResourceManager.GetString("ReloadAlert", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Réparations.
         '''</summary>
@@ -9450,7 +9594,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Reparations", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer les réparations.
         '''</summary>
@@ -9459,7 +9603,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ReparationsPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à le champs {0} doit être rempli..
         '''</summary>
@@ -9468,7 +9612,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RequiredField", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez remplir tous les champs requis.
+        '''</summary>
+        Public Shared ReadOnly Property RequiredFields() As String
+            Get
+                Return ResourceManager.GetString("RequiredFields", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Risque.
         '''</summary>
@@ -9477,7 +9630,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Risque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner un risque.
         '''</summary>
@@ -9486,7 +9639,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RisqueCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Routes endomagés.
         '''</summary>
@@ -9495,7 +9648,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RoutesEndomages", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Enregistré par.
         '''</summary>
@@ -9504,7 +9657,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SaveBy", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Secteur.
         '''</summary>
@@ -9513,7 +9666,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Secteur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un secteur.
         '''</summary>
@@ -9522,7 +9675,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SecteurCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Secteur du logement (C-4).
         '''</summary>
@@ -9531,7 +9684,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SecteurLogement", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Secteur du projet.
         '''</summary>
@@ -9540,7 +9693,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SecteurProjet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Section concernée.
         '''</summary>
@@ -9549,7 +9702,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SectionId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Securité.
         '''</summary>
@@ -9558,7 +9711,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Securite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer les informations de securité .
         '''</summary>
@@ -9567,7 +9720,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SecuritePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un élément.
         '''</summary>
@@ -9576,7 +9729,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une demande valide.
         '''</summary>
@@ -9585,7 +9738,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectDemandeId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez séléctionner un élément valide.
         '''</summary>
@@ -9594,7 +9747,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectedDetailsId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Abris.
         '''</summary>
@@ -9603,7 +9756,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les aéroports.
         '''</summary>
@@ -9612,7 +9765,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionAeroport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les bureaux.
         '''</summary>
@@ -9621,7 +9774,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionBureau", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les entrepots.
         '''</summary>
@@ -9630,7 +9783,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sélectionner les événements qu&apos;on affecté.
         '''</summary>
@@ -9639,7 +9792,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionEvenementAffecte", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sélectionner seulement les évènements avec.
         '''</summary>
@@ -9648,7 +9801,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionEvenementAvec", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les héliports.
         '''</summary>
@@ -9657,7 +9810,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionHeliport", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les hopitaux.
         '''</summary>
@@ -9666,7 +9819,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les installations.
         '''</summary>
@@ -9675,7 +9828,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionInstallation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Les ports.
         '''</summary>
@@ -9684,7 +9837,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SelectionPortDeMer", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Envoyer le message.
+        '''</summary>
+        Public Shared ReadOnly Property SendMessage() As String
+            Get
+                Return ResourceManager.GetString("SendMessage", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Seriel de la carte de données.
         '''</summary>
@@ -9693,7 +9855,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SerielCarteDonnees", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner un service publique.
         '''</summary>
@@ -9702,7 +9864,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ServicePubliqueCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Session Expirée.
         '''</summary>
@@ -9711,7 +9873,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SessionExpired", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sexe.
         '''</summary>
@@ -9720,7 +9882,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Sexe", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sinistre.
         '''</summary>
@@ -9729,7 +9891,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Sinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner le sinistre.
         '''</summary>
@@ -9738,7 +9900,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SinistreCombo", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Sinistres concernés.
+        '''</summary>
+        Public Shared ReadOnly Property SinistreConcernes() As String
+            Get
+                Return ResourceManager.GetString("SinistreConcernes", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sinistrées.
         '''</summary>
@@ -9747,7 +9918,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Sinistrees", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Le Sinistre.
         '''</summary>
@@ -9756,7 +9927,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SinistreId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Sinistrer.
         '''</summary>
@@ -9765,7 +9936,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Sinistrer", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de sinistre.
         '''</summary>
@@ -9774,7 +9945,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SinistreTypeSinistre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Système de gestion et de prévention des risques.
         '''</summary>
@@ -9783,7 +9954,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SIPRECA_Text", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Site Web.
         '''</summary>
@@ -9792,7 +9963,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SiteWeb", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir l&apos;adresse du site web.
         '''</summary>
@@ -9801,7 +9972,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SiteWebPlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez vous rassurer que la sommes des éléments désagrégés donne la même valeur que celle de {0}.
         '''</summary>
@@ -9810,7 +9981,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SommeError", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Statut.
         '''</summary>
@@ -9819,7 +9990,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Statut", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Approuvée.
         '''</summary>
@@ -9828,7 +9999,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StatutDemande_Approuvee", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à En Cours.
         '''</summary>
@@ -9837,7 +10008,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StatutDemande_EnCours", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Rejetée.
         '''</summary>
@@ -9846,7 +10017,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StatutDemande_Rejetee", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner le statut.
         '''</summary>
@@ -9855,7 +10026,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StatutDemandeCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à En cours.
         '''</summary>
@@ -9873,7 +10044,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StatutExistant", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Indemnisée.
         '''</summary>
@@ -9900,7 +10071,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("StringLongLength", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à L&apos;opération s&apos;est effectuée avec succès..
         '''</summary>
@@ -9909,7 +10080,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccesAlertBody", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Succès.
         '''</summary>
@@ -9918,7 +10089,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessAlertTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à L&apos;élément sélectionné a été correctement supprimé..
         '''</summary>
@@ -9927,7 +10098,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessProcess", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La directive a été clôturée avec succès..
         '''</summary>
@@ -9936,7 +10107,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessProcessCloture", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La demande a été réceptionnée avec succès.
         '''</summary>
@@ -9945,7 +10116,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessReception", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La demande a été rejetée avec succès.
         '''</summary>
@@ -9954,7 +10125,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessRejet", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Succes!!!.
         '''</summary>
@@ -9963,7 +10134,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La demande a été transférée avec succès.
         '''</summary>
@@ -9972,7 +10143,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessTransfert", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à La demande a été validée avec succès.
         '''</summary>
@@ -9981,7 +10152,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuccessValidation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Superficie.
         '''</summary>
@@ -9990,7 +10161,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Superficie", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez la superficie.
         '''</summary>
@@ -9999,7 +10170,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SuperficiePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Surface de piste.
         '''</summary>
@@ -10008,7 +10179,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SurfaceDePiste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner la surface de la piste.
         '''</summary>
@@ -10017,7 +10188,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SurfaceDePisteCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Localisation.
         '''</summary>
@@ -10026,7 +10197,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TabLocalisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Risques.
         '''</summary>
@@ -10035,7 +10206,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TabRisques", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Zone à risque.
         '''</summary>
@@ -10044,7 +10215,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TabZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Taille de l&apos;aéronef.
         '''</summary>
@@ -10053,7 +10224,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TailleDeAeronef", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez la taille de l&apos;aéronef.
         '''</summary>
@@ -10062,7 +10233,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TailleDeAeronefCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Team Information System SARL.
         '''</summary>
@@ -10071,7 +10242,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TeamisName", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à http://m3pc.isoft-net.com.
         '''</summary>
@@ -10080,7 +10251,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TeamisWebSite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Téléphone.
         '''</summary>
@@ -10089,7 +10260,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Telephone", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir le Téléphone N° 1.
         '''</summary>
@@ -10098,7 +10269,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Telephone1Placeholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Téléphone 2.
         '''</summary>
@@ -10107,7 +10278,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Telephone2", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir le Téléphone N° 2.
         '''</summary>
@@ -10116,7 +10287,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Telephone2Placeholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez saisir le N° de téléphone.
         '''</summary>
@@ -10125,7 +10296,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TelephonePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Téléphone d&apos;urgence .
         '''</summary>
@@ -10134,7 +10305,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TelephoneUrgence", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le numéro de téléphone d&apos;urgence.
         '''</summary>
@@ -10143,16 +10314,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TelephoneUrgencePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Ce champ est requis..
+        '''  Recherche une chaîne localisée semblable à Ce champ est requis.
         '''</summary>
         Public Shared ReadOnly Property TheRequiredField() As String
             Get
                 Return ResourceManager.GetString("TheRequiredField", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Titre.
         '''</summary>
@@ -10161,7 +10332,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Titre", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Titre du poste.
         '''</summary>
@@ -10170,7 +10341,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TitreDuPoste", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrez le titre du poste.
         '''</summary>
@@ -10179,7 +10350,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TitreDuPostePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Pertes économique logements endommagés / détruits.
         '''</summary>
@@ -10188,7 +10359,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TotalEconomiqueLogementEndomagerOuDetruit", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique totale (USD$).
         '''</summary>
@@ -10197,7 +10368,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TotalPerteEconomiqueDolar", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Perte économique totale (monnaie locale).
         '''</summary>
@@ -10206,7 +10377,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TotalPerteEconomiqueLocalDevise", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Transférer une alerte.
+        '''</summary>
+        Public Shared ReadOnly Property TransfertAlert() As String
+            Get
+                Return ResourceManager.GetString("TransfertAlert", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Transférer une demande.
         '''</summary>
@@ -10215,7 +10395,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TransfertDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Trier les résultats par.
         '''</summary>
@@ -10224,7 +10404,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TrierLesResultats", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;abris.
         '''</summary>
@@ -10233,7 +10413,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeAbris", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner le type d&apos;abris.
         '''</summary>
@@ -10242,7 +10422,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeAbrisCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veullez sélectionner un type d&apos;aide.
         '''</summary>
@@ -10251,7 +10431,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeAideCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type de champ.
         '''</summary>
@@ -10260,7 +10440,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeChampsCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de champ.
         '''</summary>
@@ -10269,7 +10449,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeChampsId", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;entrepot.
         '''</summary>
@@ -10278,7 +10458,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeEntrepot", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuiller selectionner le type d&apos;entrepôt.
         '''</summary>
@@ -10287,7 +10467,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeEntrepotIdCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;entrepôt.
         '''</summary>
@@ -10296,7 +10476,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeEntrepots", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;hopitaux.
         '''</summary>
@@ -10305,7 +10485,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeHopitaux", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez un type d&apos;hopital.
         '''</summary>
@@ -10314,7 +10494,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeHopitauxCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type immobilisation.
         '''</summary>
@@ -10323,7 +10503,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeImmobilisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de bureau.
         '''</summary>
@@ -10332,7 +10512,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeOffice", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner le type de bureau.
         '''</summary>
@@ -10341,7 +10521,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeOfficeCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type d&apos;organisation.
         '''</summary>
@@ -10350,7 +10530,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeOrganisation", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un type d&apos;organisation.
         '''</summary>
@@ -10359,7 +10539,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeOrganisationCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de personnel.
         '''</summary>
@@ -10368,7 +10548,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypePersonnel", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionner le type de personnel.
         '''</summary>
@@ -10377,7 +10557,16 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypePersonnelCombo", resourceCulture)
             End Get
         End Property
-
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Type de sinistre concerné.
+        '''</summary>
+        Public Shared ReadOnly Property TypeSinistre() As String
+            Get
+                Return ResourceManager.GetString("TypeSinistre", resourceCulture)
+            End Get
+        End Property
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de solution.
         '''</summary>
@@ -10386,7 +10575,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeSolution", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner un type de solution.
         '''</summary>
@@ -10395,7 +10584,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeSolutionCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Type de suivi.
         '''</summary>
@@ -10404,7 +10593,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TypeSuivi", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Unité de mesure.
         '''</summary>
@@ -10413,7 +10602,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("UniteMesure", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer l&apos;unité de mesure.
         '''</summary>
@@ -10422,7 +10611,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("UniteMesurePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Charger.
         '''</summary>
@@ -10431,7 +10620,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Uploader", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Usage humanitaire.
         '''</summary>
@@ -10440,7 +10629,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("UsageHumanitaire", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez selectionnez l&apos;usage humanitaire.
         '''</summary>
@@ -10449,7 +10638,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("UsageHumanitaireCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom d&apos;utilisateur.
         '''</summary>
@@ -10458,7 +10647,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("UserNamePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Utilisateur.
         '''</summary>
@@ -10467,7 +10656,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Utilisateur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valeur.
         '''</summary>
@@ -10476,7 +10665,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Valeur", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valeur économique des maisons détruites.
         '''</summary>
@@ -10485,7 +10674,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValeurEconomiqueDesMaisonsDetruites", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valeur économique des maisons endommagées.
         '''</summary>
@@ -10494,7 +10683,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValeurEconomiqueDesMaisonsEndomager", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valeur par unité.
         '''</summary>
@@ -10503,7 +10692,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValeurParUnite", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Entrer la valeur par unité .
         '''</summary>
@@ -10512,7 +10701,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValeurParUnitePlaceholder", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valider une demande.
         '''</summary>
@@ -10521,7 +10710,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValiderDemande", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Valider les modifications.
         '''</summary>
@@ -10530,7 +10719,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ValiderModification", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Ville.
         '''</summary>
@@ -10539,7 +10728,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Ville", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner une ville.
         '''</summary>
@@ -10548,7 +10737,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("VilleCombo", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Volume.
         '''</summary>
@@ -10557,7 +10746,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Volume", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à XAF.
         '''</summary>
@@ -10566,7 +10755,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("XAF", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Oui.
         '''</summary>
@@ -10575,7 +10764,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("YesResponse", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Zone à risque.
         '''</summary>
@@ -10584,7 +10773,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ZoneARisque", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Recherche une chaîne localisée semblable à Veillez selectionner une zone.
         '''</summary>

@@ -45,7 +45,7 @@ End Code
         </div>
         <div class="col-lg-3">
             <div class="card card-success">
-                <a href="@Url.Action("IndexCollecte")"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                <a href="@Url.Action("IndexCollecte")"><img src="~/assets/images/gallery/Collect-Form-Picture.png" class="card-img-top" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleCollecte</h5>
                 </div>
@@ -56,9 +56,9 @@ End Code
     <div class="row">
         <div class="col-lg-3">
             <div class="card card-success">
-                <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
+                <a href="@Url.Action("IndexAlertes")"><img src="~/assets/images/gallery/iconfinder_bell-notifications-notice-notify-alert_3993856.png" class="card-img-top" alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
+                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleAlerte</h5>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@ End Code
                 <div class="modal-body">
 
                     @Html.DropDownList("AnneeBudgetaireId", DirectCast(ViewBag.LesAnneesBudgetaires,
-                                             IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
+                                              IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
 
                 </div>
                 <div class="modal-footer">
