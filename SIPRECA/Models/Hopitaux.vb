@@ -12,7 +12,7 @@ Partial Public Class Hopitaux
     Public Property Id As Long
     Public Property OganisationId As Long
     Public Property TypeHopitauxId As Long
-    Public Property VilleId As Long
+    Public Property CommuneId As Long?
 
 
     Public Property Nom As String
@@ -35,7 +35,7 @@ Partial Public Class Hopitaux
     Public Overridable Property AspNetUser As ApplicationUser
 
 
-    Public Overridable Property Ville As Ville
+    Public Overridable Property Commune As Commune
     Public Overridable Property TypeHopitaux As TypeHopitaux
     Public Overridable Property Oganisation As Organisation
 

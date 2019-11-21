@@ -112,6 +112,9 @@ Public Class CardreSendaiCibleBViewModel
     <Display(Name:="NombreMoyenSubsistancePauvre", ResourceType:=GetType(Resource))>
     Public Property NombreMoyenSubsistancePauvre As Long?
 
+    <Display(Name:="Source", ResourceType:=GetType(Resource))>
+    Public Property Source As String
+
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
     Public Property DateCreation As DateTime = Now
 
@@ -168,6 +171,7 @@ Public Class CardreSendaiCibleBViewModel
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
+            .Source = entity.Source
         End With
     End Sub
 
@@ -213,6 +217,7 @@ Public Class CardreSendaiCibleBViewModel
             .NombreTotalPersonneMaisonEndomage = NombreTotalPersonneMaisonEndomage
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
+            .Source = Source
         End With
         Return entity
     End Function

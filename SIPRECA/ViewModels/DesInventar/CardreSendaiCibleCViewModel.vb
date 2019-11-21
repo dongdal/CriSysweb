@@ -169,6 +169,9 @@ Public Class CardreSendaiCibleCViewModel
     <Display(Name:="NombreDeBiensCulturelMobileDetruits", ResourceType:=GetType(Resource))>
     Public Property NombreDeBiensCulturelMobileDetruits As Long?
 
+    <Display(Name:="Source", ResourceType:=GetType(Resource))>
+    Public Property Source As String
+
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
     Public Property DateCreation As DateTime = Now
 
@@ -262,6 +265,7 @@ Public Class CardreSendaiCibleCViewModel
             .DateCreation = entity.DateCreation
             .AspNetUserId = entity.AspNetUserId
             .AspNetUser = entity.AspNetUser
+            .Source = entity.Source
         End With
     End Sub
 
@@ -318,6 +322,7 @@ Public Class CardreSendaiCibleCViewModel
             .NombreDeBiensCulturelMobileDetruits = NombreDeBiensCulturelMobileDetruits
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
+            .Source = Source
         End With
         Return entity
     End Function

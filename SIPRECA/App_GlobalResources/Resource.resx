@@ -793,7 +793,7 @@
     <value>Liste des suivis</value>
   </data>
   <data name="ManageDemande" xml:space="preserve">
-    <value>Gestion des demandes d'indemnisation</value>
+    <value>Gestion des demandes d'aide</value>
   </data>
   <data name="ManageIndemnisation" xml:space="preserve">
     <value>Gestion des indemnisations</value>
@@ -898,7 +898,7 @@
     <value>Supprimer une déclaration de sinistre</value>
   </data>
   <data name="DemandeCollectiviteSinistree" xml:space="preserve">
-    <value>Déclaration sinistre</value>
+    <value>Intitulé du sinistre</value>
   </data>
   <data name="EditCollectiviteSinistree" xml:space="preserve">
     <value>Modifier une déclaration de sinistre</value>
@@ -3689,5 +3689,38 @@
   </data>
   <data name="TypeSinistre" xml:space="preserve">
     <value>Type de sinistre concerné</value>
+  </data>
+  <data name="BtnPieces" xml:space="preserve">
+    <value>Pièces jointes</value>
+  </data>
+  <data name="DateDuSinistre" xml:space="preserve">
+    <value>Date du sinistre</value>
+  </data>
+  <data name="DateDuSinistrePlaceholder" xml:space="preserve">
+    <value>Veuillez entrer la date du sinistre</value>
+  </data>
+  <data name="LesPiecesDemande" xml:space="preserve">
+    <value>Les pièces jointes</value>
+  </data>
+  <data name="LieuDuSinistre" xml:space="preserve">
+    <value>Lieu du sinistre</value>
+  </data>
+  <data name="LieuSinistrePlaceholder" xml:space="preserve">
+    <value>Veuillez entrer le lieu du sinistre</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="ObservationPlaceholder" xml:space="preserve">
+    <value>Veuillez entrer l'observation</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="SourcePlaceholder" xml:space="preserve">
+    <value>Veuillez entrer les sources</value>
+  </data>
+  <data name="TheRequiredField" xml:space="preserve">
+    <value>Ce champ est requit </value>
   </data>
 </root>

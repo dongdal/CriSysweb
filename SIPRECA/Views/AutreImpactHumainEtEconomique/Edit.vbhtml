@@ -35,58 +35,58 @@ End Code
            New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.EvenementCombo})
                         @Html.ValidationMessageFor(Function(m) m.EvenementZoneId, "", New With {.style = "color: #da0b0b"})
                     </div>
-                    
+
                 </div>
 
                 @<fieldset style="border:ridge;" Class="col-md-12">
-                     <legend style="font-size: 14px">@Resource.AutresImpactsHumainsEconomiques</legend>
+                    <legend style="font-size: 14px">@Resource.AutresImpactsHumainsEconomiques</legend>
                     <div Class="form-group row">
-                        
-                            <br />
-                            <br />
-                            <div Class="form-group row">
-                                <div Class="col-md-3">
-                                    @Html.LabelFor(Function(m) m.NombreDePersonneEvacue, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
-                                    <div class="col-sm-8" style="max-width: 100%">
-                                        @Html.EditorFor(Function(model) model.NombreDePersonneEvacue,
+
+                        <br />
+                        <br />
+                        <div Class="form-group row">
+                            <div Class="col-md-3">
+                                @Html.LabelFor(Function(m) m.NombreDePersonneEvacue, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                <div class="col-sm-8" style="max-width: 100%">
+                                    @Html.EditorFor(Function(model) model.NombreDePersonneEvacue,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "2", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                        @Html.ValidationMessageFor(Function(m) m.NombreDePersonneEvacue, "", New With {.style = "color: #da0b0b"})
-                                    </div>
-
+                                    @Html.ValidationMessageFor(Function(m) m.NombreDePersonneEvacue, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
-                                <div Class="col-md-3">
+                            </div>
 
-                                    @Html.LabelFor(Function(m) m.NombreDePersonneAffecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
-                                    <div class="col-sm-8" style="max-width: 100%">
-                                        @Html.EditorFor(Function(model) model.NombreDePersonneAffecter,
+                            <div Class="col-md-3">
+
+                                @Html.LabelFor(Function(m) m.NombreDePersonneAffecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                <div class="col-sm-8" style="max-width: 100%">
+                                    @Html.EditorFor(Function(model) model.NombreDePersonneAffecter,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                        @Html.ValidationMessageFor(Function(m) m.NombreDePersonneAffecter, "", New With {.style = "color: #da0b0b"})
-                                        
-                                    </div>
-                                </div>
+                                    @Html.ValidationMessageFor(Function(m) m.NombreDePersonneAffecter, "", New With {.style = "color: #da0b0b"})
 
-                                <div Class="col-md-3">
-                                    @Html.LabelFor(Function(m) m.NombreDePersonneDirrectementAffecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
-                                    <div class="col-sm-8" style="max-width: 100%">
-                                        @Html.EditorFor(Function(model) model.NombreDePersonneDirrectementAffecter,
+                                </div>
+                            </div>
+
+                            <div Class="col-md-3">
+                                @Html.LabelFor(Function(m) m.NombreDePersonneDirrectementAffecter, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                <div class="col-sm-8" style="max-width: 100%">
+                                    @Html.EditorFor(Function(model) model.NombreDePersonneDirrectementAffecter,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                        @Html.ValidationMessageFor(Function(m) m.NombreDePersonneDirrectementAffecter, "", New With {.style = "color: #da0b0b"})
-                                    </div>
-                                    <br />
+                                    @Html.ValidationMessageFor(Function(m) m.NombreDePersonneDirrectementAffecter, "", New With {.style = "color: #da0b0b"})
                                 </div>
+                                <br />
+                            </div>
 
-                                <div Class="col-md-3">
-                                    @Html.LabelFor(Function(m) m.NombreDePersonneRelocaliser, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
-                                    <div class="col-sm-8" style="max-width: 100%">
-                                        @Html.EditorFor(Function(model) model.NombreDePersonneRelocaliser,
+                            <div Class="col-md-3">
+                                @Html.LabelFor(Function(m) m.NombreDePersonneRelocaliser, New With {.class = "col-sm-4 col-form-label", .style = "font-size: 7px;  height: 25px; width:100%; max-width: 100%"})
+                                <div class="col-sm-8" style="max-width: 100%">
+                                    @Html.EditorFor(Function(model) model.NombreDePersonneRelocaliser,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%"}})
-                                        @Html.ValidationMessageFor(Function(m) m.NombreDePersonneRelocaliser, "", New With {.style = "color: #da0b0b"})
-                                    </div>
-                                    <br />
+                                    @Html.ValidationMessageFor(Function(m) m.NombreDePersonneRelocaliser, "", New With {.style = "color: #da0b0b"})
                                 </div>
+                                <br />
+                            </div>
 
-                            </div>                  
+                        </div>
 
                     </div>
 
@@ -139,6 +139,17 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "3", 
 
                     </div>
                 </fieldset>
+                @<br />
+                @<br />
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Source, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(Function(m) m.Source, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SourcePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Source, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
                 @<br />
                 @<br />
 

@@ -33,7 +33,7 @@ Namespace Controllers
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.EstimationPopulationSort = If(sortOrder = "EstimationPopulation", "EstimationPopulation_desc", "EstimationPopulation")
             ViewBag.CapaciteSort = If(sortOrder = "Capacite", "Capacite_desc", "Capacite")
-            ViewBag.VilleSort = If(sortOrder = "Ville", "Ville_desc", "Ville")
+            ViewBag.CommuneSort = If(sortOrder = "Commune", "Commune_desc", "Commune")
             ViewBag.OrganisationSort = If(sortOrder = "Organisation", "Organisation_desc", "Organisation")
             ViewBag.TypeAbrisSort = If(sortOrder = "TypeAbris", "TypeAbris_desc", "TypeAbris")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
@@ -55,7 +55,7 @@ Namespace Controllers
                                               e.Capacite.Equals(searchString) Or
                                               e.Oganisation.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.TypeAbris.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
-                                              e.Ville.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                                              e.Commune.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -77,10 +77,10 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.Oganisation.Nom)
                 Case "Oganisation_desc"
                     entities = entities.OrderByDescending(Function(e) e.Oganisation.Nom)
-                Case "Ville"
-                    entities = entities.OrderBy(Function(e) e.Ville.Libelle)
-                Case "Ville_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Ville.Libelle)
+                Case "Commune"
+                    entities = entities.OrderBy(Function(e) e.Commune.Libelle)
+                Case "Commune_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Commune.Libelle)
                 Case "TypeAbris"
                     entities = entities.OrderBy(Function(e) e.TypeAbris.Libelle)
                 Case "TypeAbris_desc"
@@ -114,8 +114,8 @@ Namespace Controllers
             Dim LesUtilisateurs As New List(Of SelectListItem)
             Dim Organisation = (From e In Db.Organisation Where e.StatutExistant = 1 Select e)
             Dim LesOrganisations As New List(Of SelectListItem)
-            Dim Ville = (From e In Db.Ville Where e.StatutExistant = 1 Select e)
-            Dim LesVilles As New List(Of SelectListItem)
+            Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Select e)
+            Dim LesCommunes As New List(Of SelectListItem)
             Dim TypeAbris = (From e In Db.TypeAbris Where e.StatutExistant = 1 Select e)
             Dim LesTypeAbris As New List(Of SelectListItem)
 
@@ -153,8 +153,8 @@ Namespace Controllers
                 LesOrganisations.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
             Next
 
-            For Each item In Ville
-                LesVilles.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            For Each item In Commune
+                LesCommunes.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
             For Each item In TypeAbris
@@ -165,7 +165,7 @@ Namespace Controllers
             entityVM.LesPersonnelAbris = LesPersonnelAbris
             entityVM.LesUtilisateurs = LesUtilisateurs
             entityVM.LesTypeAbris = LesTypeAbris
-            entityVM.LesVilles = LesVilles
+            entityVM.LesCommunes = LesCommunes
             entityVM.LesOrganisations = LesOrganisations
             entityVM.LesMaterielAbris = LesMaterielAbris
             entityVM.MaterielAbris = MaterielAbri
@@ -475,7 +475,7 @@ Namespace Controllers
     Public Class AbrisJS
         Public Property Id As Long
         Public Property Nom As String
-        Public Property VilleId As String
+        Public Property CommuneId As String
         Public Property OrganisationId As String
         Public Property TypeAbrisId As Long
         Public Property EstimationPopulation As Long
@@ -490,7 +490,7 @@ Namespace Controllers
                 .Nom = Nom
                 .EstimationPopulation = EstimationPopulation
                 .Capacite = Capacite
-                .VilleId = VilleId
+                .CommuneId = CommuneId
                 .TypeAbrisId = TypeAbrisId
                 .Location = Util.CreatePoint(latitude:=Latitude, longitude:=Longitude)
                 .OganisationId = OrganisationId

@@ -30,7 +30,8 @@ Namespace Controllers
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.TypeSinistreSort = If(sortOrder = "TypeSinistre", "TypeSinistre_desc", "TypeSinistre")
-            'ViewBag.RegionSort = If(sortOrder = "Region", "Region_desc", "Region")
+            ViewBag.DateDuSinistreSort = If(sortOrder = "DateDuSinistre", "DateDuSinistre_desc", "DateDuSinistre")
+            ViewBag.LieuDuSinistreSort = If(sortOrder = "LieuDuSinistre", "LieuDuSinistre_desc", "LieuDuSinistre")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
 
@@ -58,7 +59,14 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.TypeSinistre.Libelle)
                 Case "TypeSinistre_desc"
                     entities = entities.OrderByDescending(Function(e) e.TypeSinistre.Libelle)
-
+                Case "DateDuSinistre"
+                    entities = entities.OrderBy(Function(e) e.DateDuSinistre)
+                Case "DateDuSinistre_desc"
+                    entities = entities.OrderByDescending(Function(e) e.DateDuSinistre)
+                Case "LieuDuSinistre"
+                    entities = entities.OrderBy(Function(e) e.LieuDuSinistre)
+                Case "LieuDuSinistre_desc"
+                    entities = entities.OrderByDescending(Function(e) e.LieuDuSinistre)
                 Case Else
                     entities = entities.OrderBy(Function(e) e.Libelle)
                     Exit Select

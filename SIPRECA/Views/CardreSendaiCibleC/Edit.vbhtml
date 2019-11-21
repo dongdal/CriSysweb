@@ -124,7 +124,7 @@ New With {.class = "form-control single-select", .tabindex = "6", .Placeholder =
                                         @Html.EditorFor(Function(model) model.PerteEconomique,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "7", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%", .type = "number"}})
                                         @Html.ValidationMessageFor(Function(m) m.PerteEconomique, "", New With {.style = "color: #da0b0b"})
-                                       </div>
+                                    </div>
                                 </div>
 
                                 <div Class="col-md-3">
@@ -262,7 +262,8 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "12",
                                     <div class="col-sm-8" style="max-width: 100%">
                                         @Html.EditorFor(Function(model) model.NombreDanimauxToucher,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "13", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%", .type = "number"}})
-                                        @Html.ValidationMessageFor(Function(m) m.NombreDanimauxToucher, "", New With {.style = "color: #da0b0b"}) </div>
+                                        @Html.ValidationMessageFor(Function(m) m.NombreDanimauxToucher, "", New With {.style = "color: #da0b0b"})
+                                    </div>
                                     <br />
                                 </div>
 
@@ -313,7 +314,7 @@ New With {.class = "form-control single-select", .tabindex = "14", .Placeholder 
                                         @Html.EditorFor(Function(model) model.PerteEconomiqueBetail,
 New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "15", .Placeholder = Resource.Valeur, .style = "font-size: 8px;  height: 25px; width:100%", .type = "number"}})
                                         @Html.ValidationMessageFor(Function(m) m.PerteEconomiqueBetail, "", New With {.style = "color: #da0b0b"})
-                                       </div>
+                                    </div>
                                 </div>
 
                                 <div Class="col-md-3">
@@ -981,6 +982,17 @@ New With {.htmlAttributes = New With {.class = "form-control", .tabindex = "53",
 
                     </div>
                 </fieldset>
+
+                @<br />
+                @<br />
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Source, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(Function(m) m.Source, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SourcePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Source, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
 
                 @<div Class="form-group row">
 

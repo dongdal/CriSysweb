@@ -5,7 +5,6 @@ Public Class HeliportCfg
     Public Sub New()
         Me.ToTable("Heliport")
         Me.Property(Function(p) p.OganisationId).IsRequired()
-        Me.Property(Function(p) p.VilleId).IsRequired()
         Me.Property(Function(p) p.Code).IsRequired().HasMaxLength(5)
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.Email).IsOptional().HasMaxLength(250)

@@ -54,9 +54,11 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.SinistreTypeSinistre, "Index", New With {.sortOrder = ViewBag.TypeSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                            @Html.ActionLink(Resource.DateDuSinistre, "Index", New With {.sortOrder = ViewBag.DateDuSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.LieuDuSinistre, "Index", New With {.sortOrder = ViewBag.LieuDuSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
@@ -73,10 +75,13 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeSinistre.Libelle)
                             </td>
-                            
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateCreation)
+                                @Html.DisplayFor(Function(modelItem) item.DateDuSinistre)
                             </td>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.LieuDuSinistre)
+                            </td>
+                           
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>

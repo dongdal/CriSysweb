@@ -53,6 +53,28 @@ Public Class SinistrerViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    '-------------------------------------demande--------------------------------------------------------------------
+
+    <Display(Name:="Observation", ResourceType:=GetType(Resource))>
+    <StringLength(1000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Observation As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="DemandeCollectiviteSinistree", ResourceType:=GetType(Resource))>
+    Public Property CollectiviteSinistreeId As String
+    Public Overridable Property LesCollectiviteSinistrees As ICollection(Of SelectListItem)
+    Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="AnneeBudgetaire", ResourceType:=GetType(Resource))>
+    Public Property AnneeBudgetaireId As Long
+    Public Overridable Property LesAnneeBudgetaires As ICollection(Of SelectListItem)
+    Public Overridable Property AnneeBudgetaire As AnneeBudgetaire
+
+    <Display(Name:="DateDeclaration", ResourceType:=GetType(Resource))>
+    <DataType(DataType.Date, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="DateDataType")>
+    Public Property DateDeclaration As Date = Now
+
     Public Sub New()
     End Sub
 

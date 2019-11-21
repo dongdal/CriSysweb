@@ -45,7 +45,7 @@
                 <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "CategorieDArticles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategoriArticle</a></li>
+                @*<li><a href="@Url.Action("Index", "CategorieDArticles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategoriArticle</a></li>*@
                 <li><a href="@Url.Action("Index", "CategorieElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
                 <li><a href="@Url.Action("Index", "Devises")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
                 <li><a href="@Url.Action("Index", "Materiels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMateriels</a></li>

@@ -32,7 +32,6 @@ Namespace Controllers
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
-            ViewBag.VilleSort = If(sortOrder = "Ville", "Ville_desc", "Ville")
             ViewBag.CodeSort = If(sortOrder = "Code", "Code_desc", "Code")
             ViewBag.TelephoneSort = If(sortOrder = "Telephone", "Telephone_desc", "Telephone")
             ViewBag.Telephone2Sort = If(sortOrder = "Telephone2", "Telephone2_desc", "Telephone2")
@@ -59,7 +58,7 @@ Namespace Controllers
                                               e.Telephone.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.Oganisation.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or
                                               e.Telephone2.ToUpper.Contains(value:=searchString.ToUpper) Or
-                                              e.Ville.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                                              e.Commune.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -93,11 +92,6 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.Oganisation.Nom)
                 Case "Oganisation_desc"
                     entities = entities.OrderByDescending(Function(e) e.Oganisation.Nom)
-                Case "Ville"
-                    entities = entities.OrderBy(Function(e) e.Ville.Libelle)
-                Case "Ville_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Ville.Libelle)
-
                 Case Else
                     entities = entities.OrderBy(Function(e) e.Nom)
                     Exit Select
@@ -126,8 +120,8 @@ Namespace Controllers
             Dim LesUtilisateurs As New List(Of SelectListItem)
             Dim Organisation = (From e In Db.Organisation Where e.StatutExistant = 1 Select e)
             Dim LesOrganisations As New List(Of SelectListItem)
-            Dim Ville = (From e In Db.Ville Where e.StatutExistant = 1 Select e)
-            Dim LesVilles As New List(Of SelectListItem)
+            Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Select e)
+            Dim LesCommunes As New List(Of SelectListItem)
 
             Dim Materiels = (From e In Db.Materiel Where e.Cible = 3 Select e).ToList
             Dim MaterielHeliport = (From e In Db.MaterielHeliport Where e.StatutExistant = 1 Select e.Materiel).ToList
@@ -152,12 +146,12 @@ Namespace Controllers
                 LesOrganisations.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
             Next
 
-            For Each item In Ville
-                LesVilles.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            For Each item In Commune
+                LesCommunes.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
             entityVM.LesUtilisateurs = LesUtilisateurs
-            entityVM.LesVilles = LesVilles
+            entityVM.LesCommunes = LesCommunes
             entityVM.LesOrganisations = LesOrganisations
             entityVM.LesMaterielHeliports = LesMaterielHeliports
             entityVM.MaterielHeliports = MaterielHeliports
@@ -400,7 +394,7 @@ Namespace Controllers
         Public Property Id As Long
         Public Property Code As String
         Public Property Nom As String
-        Public Property VilleId As String
+        Public Property CommuneId As String
         Public Property OrganisationId As String
         Public Property Telephone As String
         Public Property Telephone2 As String
@@ -418,7 +412,7 @@ Namespace Controllers
                 .SiteWeb = SiteWeb
                 .Telephone = Telephone
                 .Telephone2 = Telephone2
-                .VilleId = VilleId
+                .CommuneId = CommuneId
                 .Location = Util.CreatePoint(latitude:=Latitude, longitude:=Longitude)
                 .Email = Email
                 .OganisationId = OrganisationId

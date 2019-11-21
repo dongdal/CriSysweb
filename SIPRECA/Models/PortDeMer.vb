@@ -8,7 +8,7 @@ Partial Public Class PortDeMer
     End Sub
 
     Public Property Id As Long
-    Public Property VilleId As Long
+    Public Property CommuneId As Long?
     Public Property OganisationId As Long
 
     Public Property Nom As String
@@ -53,7 +53,7 @@ Partial Public Class PortDeMer
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
 
-    Public Overridable Property Ville As Ville
+    Public Overridable Property Commune As Commune
     Public Overridable Property Oganisation As Organisation
     Public Overridable Property MaterielPortDeMer As ICollection(Of MaterielPortDeMer)
 End Class

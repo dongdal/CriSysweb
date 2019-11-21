@@ -6,7 +6,6 @@ Public Class AbrisCfg
         Me.ToTable("Abris")
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.EstimationPopulation).IsRequired()
-        Me.Property(Function(p) p.VilleId).IsRequired()
         Me.Property(Function(p) p.Location).IsOptional()
         Me.Property(Function(p) p.TypeAbrisId).IsRequired()
         Me.Property(Function(p) p.OganisationId).IsRequired()

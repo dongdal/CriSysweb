@@ -59,6 +59,9 @@ Public Class CardreSendaiCibleDViewModel
     <Display(Name:="NombreRoutesDetruits", ResourceType:=GetType(Resource))>
     Public Property NombreRoutesDetruits As Long?
 
+    <Display(Name:="Source", ResourceType:=GetType(Resource))>
+    Public Property Source As String
+
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
     Public Property DateCreation As DateTime = Now
 
@@ -95,6 +98,7 @@ Public Class CardreSendaiCibleDViewModel
             .DateCreation = entity.DateCreation
             .AspNetUserId = entity.AspNetUserId
             .AspNetUser = entity.AspNetUser
+            .Source = entity.Source
         End With
     End Sub
 
@@ -118,6 +122,7 @@ Public Class CardreSendaiCibleDViewModel
             .NombreRoutesDetruits = NombreRoutesDetruits
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
+            .Source = Source
         End With
         Return entity
     End Function

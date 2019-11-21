@@ -9,11 +9,21 @@ Public Class DemandeViewModel
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Reference As String
 
+    <Display(Name:="Observation", ResourceType:=GetType(Resource))>
+    <StringLength(1000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Observation As String
+
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="DemandeCollectiviteSinistree", ResourceType:=GetType(Resource))>
     Public Property CollectiviteSinistreeId As String
     Public Overridable Property LesCollectiviteSinistrees As ICollection(Of SelectListItem)
     Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="AnneeBudgetaire", ResourceType:=GetType(Resource))>
+    Public Property AnneeBudgetaireId As Long
+    Public Overridable Property LesAnneeBudgetaires As ICollection(Of SelectListItem)
+    Public Overridable Property AnneeBudgetaire As AnneeBudgetaire
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -59,7 +69,10 @@ Public Class DemandeViewModel
             .CollectiviteSinistree = entity.CollectiviteSinistree
             .CollectiviteSinistreeId = entity.CollectiviteSinistreeId
             .Sinistrer = entity.Sinistrer
+            .Observation = entity.Observation
             .SinistrerId = entity.SinistrerId
+            .AnneeBudgetaire = entity.AnneeBudgetaire
+            .AnneeBudgetaireId = entity.AnneeBudgetaireId
             .Reference = entity.Reference
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
@@ -74,8 +87,10 @@ Public Class DemandeViewModel
         With entity
             .Id = Id
             .CollectiviteSinistreeId = CollectiviteSinistreeId
+            .AnneeBudgetaireId = AnneeBudgetaireId
             .SinistrerId = SinistrerId
             .Reference = Reference
+            .Observation = Observation
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation
             .DateDeclaration = DateDeclaration

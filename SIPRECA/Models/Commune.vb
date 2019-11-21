@@ -14,5 +14,11 @@ Partial Public Class Commune
     Public Overridable Property Quartier As ICollection(Of Quartier)
     Public Overridable Property User As ICollection(Of ApplicationUser)
     Public Overridable Property CollectiviteSinistree As ICollection(Of CollectiviteSinistree)
+    Public Overridable Property Abris As ICollection(Of Abris)
+    Public Overridable Property Aeroport As ICollection(Of Aeroport)
+    Public Overridable Property Infrastructure As ICollection(Of Infrastructure)
+    Public Overridable Property Heliport As ICollection(Of Heliport)
+    Public Overridable Property PortDeMer As ICollection(Of PortDeMer)
+    Public Overridable Property Hopitaux As ICollection(Of Hopitaux)
 
 End Class

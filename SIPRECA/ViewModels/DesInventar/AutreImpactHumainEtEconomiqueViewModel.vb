@@ -35,6 +35,9 @@ Public Class AutreImpactHumainEtEconomiqueViewModel
     <Display(Name:="AmpleurDuDanger", ResourceType:=GetType(Resource))>
     Public Property AmpleurDuDanger As String
 
+    <Display(Name:="Source", ResourceType:=GetType(Resource))>
+    Public Property Source As String
+
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
     Public Property DateCreation As DateTime = Now
 
@@ -62,6 +65,7 @@ Public Class AutreImpactHumainEtEconomiqueViewModel
             .TotalPerteEconomiqueLocalDevise = entity.TotalPerteEconomiqueLocalDevise
             .TotalPerteEconomiqueDolar = entity.TotalPerteEconomiqueDolar
             .AutrePerte = entity.AutrePerte
+            .Source = entity.Source
             .AmpleurDuDanger = entity.AmpleurDuDanger
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
@@ -81,6 +85,7 @@ Public Class AutreImpactHumainEtEconomiqueViewModel
             .TotalPerteEconomiqueLocalDevise = TotalPerteEconomiqueLocalDevise
             .TotalPerteEconomiqueDolar = TotalPerteEconomiqueDolar
             .AutrePerte = AutrePerte
+            .Source = Source
             .AmpleurDuDanger = AmpleurDuDanger
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId

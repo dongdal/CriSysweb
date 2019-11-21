@@ -21,6 +21,7 @@ Public Class ApplicationDbContext
         MyBase.OnModelCreating(modelBuilder)
         modelBuilder.Conventions.Remove(Of OneToManyCascadeDeleteConvention)()
         modelBuilder.Configurations.Add(New AbrisCfg())
+        modelBuilder.Configurations.Add(New AlertCfg())
         modelBuilder.Configurations.Add(New AeroportCfg())
         'modelBuilder.Configurations.Add(New AdresseCfg())
         modelBuilder.Configurations.Add(New AnneeBudgetaireCfg())
@@ -141,6 +142,7 @@ Public Class ApplicationDbContext
 
     Public Property Abris() As DbSet(Of Abris)
     ' Public Property Adresse() As DbSet(Of Adresse)
+    Public Property Alert() As DbSet(Of Alert)
     Public Property Aeroport() As DbSet(Of Aeroport)
     Public Property AnneeBudgetaires() As DbSet(Of AnneeBudgetaire)
     Public Property Article() As DbSet(Of Article)

@@ -25,6 +25,7 @@ End Code
         @Html.HiddenFor(Function(m) m.StatutExistant)
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
+        @Html.HiddenFor(Function(m) m.AnneeBudgetaireId)
         @<div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -69,6 +70,14 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                         @Html.DropDownListFor(Function(m) m.SinistrerId, New SelectList(Model.LesSinistrers, "Value", "Text"), Resource.ComboSinistrer,
 New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboSinistrer})
                                         @Html.ValidationMessageFor(Function(m) m.SinistrerId, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+                                </div>
+
+                                <div Class="form-group row">
+                                    @Html.LabelFor(Function(m) m.Observation, New With {.class = "col-sm-2 col-form-label"})
+                                    <div class="col-sm-10">
+                                        @Html.TextAreaFor(Function(m) m.Observation, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ReferencePlaceholder})
+                                        @Html.ValidationMessageFor(Function(m) m.Observation, "", New With {.style = "color: #da0b0b"})
                                     </div>
                                 </div>
 

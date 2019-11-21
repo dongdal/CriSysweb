@@ -51,10 +51,10 @@ Public Class HeliportViewModel
     'Public Property Location As DbGeography
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Ville", ResourceType:=GetType(Resource))>
-    Public Property VilleId As Long
-    Public Overridable Property LesVilles As ICollection(Of SelectListItem)
-    Public Overridable Property Ville As Ville
+    <Display(Name:="Commune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Organisation", ResourceType:=GetType(Resource))>
@@ -82,8 +82,8 @@ Public Class HeliportViewModel
             .SiteWeb = entity.SiteWeb
             .Telephone = entity.Telephone
             .Email = entity.Email
-            .VilleId = entity.VilleId
-            .Ville = entity.Ville
+            .CommuneId = entity.CommuneId
+            .Commune = entity.Commune
             .Location = entity.Location
             .Telephone2 = entity.Telephone2
             .OrganisationId = entity.OganisationId
@@ -104,7 +104,7 @@ Public Class HeliportViewModel
             .SiteWeb = SiteWeb
             .Telephone = Telephone
             .Telephone2 = Telephone2
-            .VilleId = VilleId
+            .CommuneId = CommuneId
             .Location = Location
             .Email = Email
             .OganisationId = OrganisationId

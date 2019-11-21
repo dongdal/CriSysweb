@@ -81,10 +81,10 @@ Public Class AeroportViewModel
     Public Overridable Property SurfaceDePiste As SurfaceDePiste
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Ville", ResourceType:=GetType(Resource))>
-    Public Property VilleId As Long
-    Public Overridable Property LesVilles As ICollection(Of SelectListItem)
-    Public Overridable Property Ville As Ville
+    <Display(Name:="Commune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Organisation", ResourceType:=GetType(Resource))>
@@ -116,8 +116,8 @@ Public Class AeroportViewModel
             .SiteWeb = entity.SiteWeb
             .Telephone = entity.Telephone
             .Email = entity.Email
-            .VilleId = entity.VilleId
-            .Ville = entity.Ville
+            .CommuneId = entity.CommuneId
+            .Commune = entity.Commune
             .Location = entity.Location
             .TailleDeAeronef = entity.TailleDeAeronef
             .TailleDeAeronefId = entity.TailleDeAeronefId
@@ -145,8 +145,7 @@ Public Class AeroportViewModel
             .SiteWeb = SiteWeb
             .Telephone = Telephone
             .Email = Email
-            .VilleId = VilleId
-            .Ville = Ville
+            .CommuneId = CommuneId
             .Location = Location
             .TailleDeAeronefId = TailleDeAeronefId
             .SurfaceDePisteId = SurfaceDePisteId

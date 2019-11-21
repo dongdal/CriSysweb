@@ -57,10 +57,10 @@ Public Class InstallationViewModel
     Public Overridable Property AspNetUser As ApplicationUser
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Ville", ResourceType:=GetType(Resource))>
-    Public Property VilleId As Long
-    Public Overridable Property LesVilles As ICollection(Of SelectListItem)
-    Public Overridable Property Ville As Ville
+    <Display(Name:="Commune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Organisation", ResourceType:=GetType(Resource))>
@@ -98,8 +98,8 @@ Public Class InstallationViewModel
             .HeureDOuverture = entity.HeureDOuverture
             .HeureFermeture = entity.HeureFermeture
             .Email = entity.Email
-            .VilleId = entity.VilleId
-            .Ville = entity.Ville
+            .CommuneId = entity.CommuneId
+            .Commune = entity.Commune
             .Location = entity.Location
             .Telephone2 = entity.Telephone2
             .OrganisationId = entity.OganisationId
@@ -121,7 +121,7 @@ Public Class InstallationViewModel
             .Telephone2 = Telephone2
             .HeureDOuverture = HeureDOuverture
             .HeureFermeture = HeureFermeture
-            .VilleId = VilleId
+            .CommuneId = CommuneId
             .Location = Location
             .Email = Email
             .CodePostale = CodePostale

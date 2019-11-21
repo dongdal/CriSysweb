@@ -5,8 +5,9 @@ Partial Public Class TypeHopitaux
     End Sub
 
     Public Property Id As Long
-
+    Public Property Code As String
     Public Property Libelle As String
+    Public Property Observation As String
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
 

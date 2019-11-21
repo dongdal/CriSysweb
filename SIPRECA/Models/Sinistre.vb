@@ -10,8 +10,10 @@ Partial Public Class Sinistre
 
     Public Property Id As Long
     Public Property TypeSinistreId As Long
+    Public Property LieuDuSinistre As String
     Public Property Libelle As String
-    Public Property DateCreation As DateTime=Now
+    Public Property DateDuSinistre As Date
+    Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short=1
 
     Public Property AspNetUserId As String

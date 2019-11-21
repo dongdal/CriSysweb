@@ -9,7 +9,9 @@ Partial Public Class Demande
 
     'Public Property SinistreId As Long
     Public Property SinistrerId As Long
+    Public Property AnneeBudgetaireId As Long?
     Public Property Reference As String
+    Public Property Observation As String
     Public Property Etat As Integer
     Public Property DateDeclaration As Date
     Public Property DateCreation As DateTime = Now
@@ -23,6 +25,7 @@ Partial Public Class Demande
     'Public Overridable Property Sinistre As Sinistre
     Public Overridable Property Sinistrer As Sinistrer
     Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
+    Public Overridable Property AnneeBudgetaire As AnneeBudgetaire
 
     Public Overridable Property Indemnisation As ICollection(Of Indemnisation)
     Public Overridable Property PieceJointe As ICollection(Of PieceJointe)
