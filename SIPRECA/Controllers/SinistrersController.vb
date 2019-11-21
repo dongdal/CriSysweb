@@ -117,6 +117,19 @@ Namespace Controllers
                 End If
             Next
 
+            Dim CollectiviteSinistree = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id Select e).ToList()
+            Dim LesCollectiviteSinistrees As New List(Of SelectListItem)
+            For Each item In CollectiviteSinistree
+                LesCollectiviteSinistrees.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle & " | " & item.Sinistre.Libelle & " | " & item.Commune.Libelle})
+            Next
+            Dim AnneeBudgetaire = (From e In Db.AnneeBudgetaires Where e.StatutExistant = 1 Select e)
+            Dim LesAnneeBudgetaires As New List(Of SelectListItem)
+            For Each item In AnneeBudgetaire
+                LesAnneeBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            entityVM.LesCollectiviteSinistrees = LesCollectiviteSinistrees
+            entityVM.LesAnneeBudgetaires = LesAnneeBudgetaires
             entityVM.LesUtilisateurs = LesUtilisateurs
         End Sub
 
@@ -124,7 +137,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New SinistrerViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: Sinistrer/Create
@@ -133,12 +146,20 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As SinistrerViewModel) As ActionResult
+
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
-                Db.Sinistrer.Add(entityVM.GetEntity)
+                Dim entity = entityVM.GetEntity
+                Db.Sinistrer.Add(entity)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    entityVM.Id = entity.Id
+                    If Request.Form("AddPieces") IsNot Nothing Then
+                        Return AddDemandeAndRedirect(entityVM)
+                    Else
+                        Return AddDemande(entityVM)
+                    End If
+                    'Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
@@ -161,6 +182,76 @@ Namespace Controllers
             Dim entityVM As New SinistrerViewModel(Sinistrer)
             LoadComboBox(entityVM)
             Return View(entityVM)
+        End Function
+
+        Function AddDemande(entityVM As SinistrerViewModel) As ActionResult
+
+            Dim Demande = New Demande()
+            Demande.AspNetUserId = GetCurrentUser.Id
+
+            If (AppSession.Niveau.Equals(1)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal
+            ElseIf (AppSession.Niveau.Equals(2)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental
+            ElseIf (AppSession.Niveau.Equals(3)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional
+            ElseIf (AppSession.Niveau.Equals(4)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
+            End If
+
+            Demande.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
+            Demande.Observation = entityVM.Observation
+            Demande.Reference = entityVM.Id
+            Demande.CollectiviteSinistreeId = entityVM.CollectiviteSinistreeId
+            Demande.DateDeclaration = entityVM.DateDeclaration
+            Demande.SinistrerId = entityVM.Id
+            Db.Demande.Add(Demande)
+
+            Try
+                Db.SaveChanges()
+                Return RedirectToAction("Index")
+            Catch ex As DbEntityValidationException
+                Util.GetError(ex, ModelState)
+            Catch ex As Exception
+                Util.GetError(ex, ModelState)
+            End Try
+            LoadComboBox(entityVM)
+            Return View("Create", entityVM)
+        End Function
+
+        Function AddDemandeAndRedirect(entityVM As SinistrerViewModel) As ActionResult
+
+            Dim Demande = New Demande()
+            Demande.AspNetUserId = GetCurrentUser.Id
+
+            If (AppSession.Niveau.Equals(1)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal
+            ElseIf (AppSession.Niveau.Equals(2)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental
+            ElseIf (AppSession.Niveau.Equals(3)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional
+            ElseIf (AppSession.Niveau.Equals(4)) Then
+                Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
+            End If
+
+            Demande.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
+            Demande.Observation = entityVM.Observation
+            Demande.Reference = entityVM.Id
+            Demande.CollectiviteSinistreeId = entityVM.CollectiviteSinistreeId
+            Demande.DateDeclaration = entityVM.DateDeclaration
+            Demande.SinistrerId = entityVM.Id
+            Db.Demande.Add(Demande)
+
+            Try
+                Db.SaveChanges()
+                Return RedirectToAction("EditPieces", "Demandes", New With {.id = Demande.Id})
+            Catch ex As DbEntityValidationException
+                Util.GetError(ex, ModelState)
+            Catch ex As Exception
+                Util.GetError(ex, ModelState)
+            End Try
+            LoadComboBox(entityVM)
+            Return View("Create", entityVM)
         End Function
 
         ' POST: Sinistrer/Edit/5

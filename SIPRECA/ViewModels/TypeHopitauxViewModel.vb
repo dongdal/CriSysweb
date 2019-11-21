@@ -5,9 +5,19 @@ Public Class TypeHopitauxViewModel
     Public Property Id As Long
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Code", ResourceType:=GetType(Resource))>
+    <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Code As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Libelle", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Libelle As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Observation", ResourceType:=GetType(Resource))>
+    <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Observation As String
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -30,6 +40,8 @@ Public Class TypeHopitauxViewModel
         With Me
             .Id = entity.Id
             .Libelle = entity.Libelle
+            .Code = entity.Code
+            .Observation = entity.Observation
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
@@ -42,6 +54,8 @@ Public Class TypeHopitauxViewModel
         With entity
             .Id = Id
             .Libelle = Libelle
+            .Code = Code
+            .Observation = Observation
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId

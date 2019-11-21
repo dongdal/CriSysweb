@@ -59,13 +59,13 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.Telephone1Placeholder})
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
@@ -78,6 +78,26 @@ End Code
                         @Html.TextBoxFor(Function(m) m.DateDeNaissance, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateSinistrePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.DateDeNaissance, "", New With {.style = "color: #da0b0b"})
                     </div>
+
+                    @Html.LabelFor(Function(m) m.DateDeclaration, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.DateDeclaration, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "3", .Placeholder = Resource.DateDeclarationPlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.DateDeclaration, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.CollectiviteSinistreeId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4 form-group">
+                        @Html.DropDownListFor(Function(m) m.CollectiviteSinistreeId, New SelectList(Model.LesCollectiviteSinistrees, "Value", "Text"), Resource.ComboCollectiviteSinistree,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboCollectiviteSinistree})
+                        @Html.ValidationMessageFor(Function(m) m.CollectiviteSinistreeId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.Observation, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextAreaFor(Function(m) m.Observation, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ReferencePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Observation, "", New With {.style = "color: #da0b0b"})
+                    </div>
                 </div>
 
                 @<div Class="form-group row">
@@ -86,6 +106,8 @@ End Code
                         <Button type="submit" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
                         &nbsp;&nbsp;&nbsp;
                         @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                        &nbsp;&nbsp;&nbsp;
+                        <Button type="submit" Class="btn btn-link btn-square bg-primary text-dark shadow px-5" name="AddPieces"><i Class="icon-lock"></i> @Resource.BtnPieces</Button>
                     </div>
                 </div>
 

@@ -11,6 +11,7 @@ Partial Public Class AutreImpactHumainEtEconomique
     Public Property TotalPerteEconomiqueDolar As Double?
     Public Property AutrePerte As String
     Public Property AmpleurDuDanger As String
+    Public Property Source As String
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

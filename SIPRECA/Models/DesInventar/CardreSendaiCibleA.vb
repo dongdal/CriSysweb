@@ -20,6 +20,7 @@ Partial Public Class CardreSendaiCibleA
     Public Property NombreDisparueVieux As Long?
     Public Property NombreDisparueHandicape As Long?
     Public Property NombreDisparuePauvre As Long?
+    Public Property Source As String
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

@@ -42,10 +42,10 @@ Public Class AbrisViewModel
     Public Overridable Property TypeAbris As TypeAbris
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Ville", ResourceType:=GetType(Resource))>
-    Public Property VilleId As Long
-    Public Overridable Property LesVilles As ICollection(Of SelectListItem)
-    Public Overridable Property Ville As Ville
+    <Display(Name:="Commune", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As Long
+    Public Overridable Property LesCommunes As ICollection(Of SelectListItem)
+    Public Overridable Property Commune As Commune
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Organisation", ResourceType:=GetType(Resource))>
@@ -79,8 +79,8 @@ Public Class AbrisViewModel
             .Nom = entity.Nom
             .EstimationPopulation = entity.EstimationPopulation
             .Capacite = entity.Capacite
-            .VilleId = entity.VilleId
-            .Ville = entity.Ville
+            .CommuneId = entity.CommuneId
+            .Commune = entity.Commune
             .Location = entity.Location
             .TypeAbrisId = entity.TypeAbrisId
             .TypeAbris = entity.TypeAbris
@@ -100,7 +100,7 @@ Public Class AbrisViewModel
             .Nom = Nom
             .EstimationPopulation = EstimationPopulation
             .Capacite = Capacite
-            .VilleId = VilleId
+            .CommuneId = CommuneId
             .Location = Location
             .TypeAbrisId = TypeAbrisId
             .OganisationId = OrganisationId

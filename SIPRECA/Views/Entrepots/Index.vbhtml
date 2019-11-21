@@ -55,9 +55,7 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Nom, "Index", New With {.sortOrder = ViewBag.NomSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Ville, "Index", New With {.sortOrder = ViewBag.VilleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
+                        
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.TypeEntrepots, "Index", New With {.sortOrder = ViewBag.TypeEntrepots, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
@@ -83,9 +81,7 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Nom)
                             </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Ville.Libelle)
-                            </td>
+                            
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeEntrepot.Libelle)
                             </td>

@@ -20,6 +20,7 @@ Partial Public Class CardreSendaiCibleD
     Public Property NombreTotalRoutesTouche As Long?
     Public Property NombreRoutesEndommager As Long?
     Public Property NombreRoutesDetruits As Long?
+    Public Property Source As String
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

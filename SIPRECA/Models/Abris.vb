@@ -13,7 +13,7 @@ Partial Public Class Abris
 
     Public Property OganisationId As Long
     Public Property TypeAbrisId As Long
-    Public Property VilleId As Long
+    Public Property CommuneId As Long?
     Public Property Nom As String
     Public Property EstimationPopulation As Long
     Public Property Capacite As Long
@@ -28,7 +28,7 @@ Partial Public Class Abris
 
 
     Public Overridable Property Oganisation As Organisation
-    Public Overridable Property Ville As Ville
+    Public Overridable Property Commune As Commune
     Public Overridable Property TypeAbris As TypeAbris
 
     Public Overridable Property MaladieSinistre As ICollection(Of MaladieSinistre)

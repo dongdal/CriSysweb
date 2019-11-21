@@ -294,7 +294,14 @@ Namespace Controllers
                 End If
             Next
 
+            Dim AnneeBudgetaire = (From e In Db.AnneeBudgetaires Where e.StatutExistant = 1 Select e)
+            Dim LesAnneeBudgetaires As New List(Of SelectListItem)
+            For Each item In AnneeBudgetaire
+                LesAnneeBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
             entityVM.LesCollectiviteSinistrees = LesCollectiviteSinistrees
+            entityVM.LesAnneeBudgetaires = LesAnneeBudgetaires
             entityVM.PiecesJointes = Piecesjointes
             entityVM.LesSinistrers = LesSinistrers
             entityVM.LesUtilisateurs = LesUtilisateurs
@@ -314,6 +321,7 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As DemandeViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
+            entityVM.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
 
             If ModelState.IsValid Then
 
@@ -355,6 +363,20 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+        ' GET: Demande/Edit/5
+        Function EditPieces(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Demande As Demande = Db.Demande.Find(id)
+            If IsNothing(Demande) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New DemandeViewModel(Demande)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         ' POST: Demande/Edit/5
         'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -363,7 +385,28 @@ Namespace Controllers
         Function Edit(ByVal entityVM As DemandeViewModel) As ActionResult
             If Request.Form("AddAttachement") IsNot Nothing Then
                 Return UploadFile(entityVM)
-            ElseIf Request.Form("AddAttachement") IsNot Nothing Then
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            End If
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
+        <HttpPost()>
+        <ValidateAntiForgeryToken()>
+        Function EditPieces(ByVal entityVM As DemandeViewModel) As ActionResult
+            If Request.Form("AddAttachement") IsNot Nothing Then
+                Return UploadFileTo(entityVM)
             Else
                 If ModelState.IsValid Then
                     Db.Entry(entityVM.GetEntity).State = EntityState.Modified
@@ -429,6 +472,56 @@ Namespace Controllers
             End If
             LoadComboBox(entityVM)
             Return View("Edit", entityVM)
+        End Function
+
+        '<HttpPost>
+        <ValidateAntiForgeryToken()>
+        <HttpPost>
+        Public Function UploadFileTo(ByVal entityVM As DemandeViewModel) As ActionResult
+
+            If IsNothing(entityVM.Fichiers.FirstOrDefault) Then
+                ModelState.AddModelError("Fichiers", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
+            End If
+
+            If ModelState.IsValid Then
+
+                Dim leChemin = Path.Combine(Server.MapPath("~/Upload/Demandes/" & entityVM.Id & "/" & entityVM.Reference))
+                Dim RealPath = "/Upload/Demandes/" & entityVM.Id & "/" & entityVM.Reference
+
+                If Not Directory.Exists(leChemin) Then
+                    Directory.CreateDirectory(leChemin)
+                End If
+                Dim piecesjointes As New PieceJointe()
+                For Each files In entityVM.Fichiers
+                    If files.ContentLength > 0 Then
+                        'Checking file is available to save.  
+                        Dim fileExtension As String = Path.GetExtension(files.FileName)
+                        Dim fileName As String = files.FileName
+                        With piecesjointes
+                            .DateCreation = Now
+                            .StatutExistant = 1
+                            .DemandeId = entityVM.Id
+                            .Libelle = Now.Date.ToString("dd-MM-yyyy") & "_A_" & Now.Hour & "h" & Now.Minute & "min" & Now.Second & "s" & Now.Millisecond & "ms _" & Path.GetFileName(files.FileName.Replace(" ", "_").ToLower) ' & extension
+                            .Lien = RealPath & "/" & .Libelle
+                            '.filePath = Path.Combine(leChemin, .Libelle
+                            .AspNetUserId = GetCurrentUser.Id
+                        End With
+                        files.SaveAs(Path.Combine(leChemin, piecesjointes.Libelle))
+                        Db.PieceJointe.Add(piecesjointes)
+                        Try
+                            Db.SaveChanges()
+                        Catch ex As DbEntityValidationException
+                            Util.GetError(ex, ModelState)
+                        Catch ex As Exception
+                            Util.GetError(ex, ModelState)
+                        End Try
+
+                    End If
+                Next
+                Return RedirectToAction("EditPieces", New With {entityVM.Id})
+            End If
+            LoadComboBox(entityVM)
+            Return View("EditPieces", entityVM)
         End Function
 
         <HttpPost>

@@ -51,11 +51,11 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
-                              New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
-                        @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
+                        New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+                        @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                 </div>
@@ -134,13 +134,13 @@ End Code
 
         function CreateAbris() {
 		        var Nom= '#Nom';
-		        var VilleId= '#VilleId';
+            var CommuneId = '#CommuneId';
                 var OrganisationId = '#OrganisationId';
                 var TypeAbrisId = '#TypeAbrisId';
                 var EstimationPopulation = '#EstimationPopulation';
                 var Capacite = '#Capacite';
 
-            if (typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" || typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(TypeAbrisId).val() == "undefined" || $(TypeAbrisId).val() == "" ) {
+            if (typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" || typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(TypeAbrisId).val() == "undefined" || $(TypeAbrisId).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
@@ -152,7 +152,7 @@ End Code
                 alert('test');
                     var dataRow = {
                         'Nom': $(Nom).val(),
-                        'VilleId': $(VilleId).val(),
+                        'CommuneId': $(CommuneId).val(),
                         'OrganisationId': $(OrganisationId).val(),
                         'TypeAbrisId': $(TypeAbrisId).val(),
                         'EstimationPopulation': $(EstimationPopulation).val(),

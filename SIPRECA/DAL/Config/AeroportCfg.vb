@@ -5,7 +5,6 @@ Public Class AeroportCfg
     Public Sub New()
         Me.ToTable("Aeroport")
         Me.Property(Function(p) p.OganisationId).IsRequired()
-        Me.Property(Function(p) p.VilleId).IsRequired()
         Me.Property(Function(p) p.Location).IsOptional()
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)
         Me.Property(Function(p) p.Email).IsOptional().HasMaxLength(250)

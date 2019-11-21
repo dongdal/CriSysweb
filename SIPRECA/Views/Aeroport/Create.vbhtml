@@ -58,11 +58,11 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.VilleId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.VilleId, New SelectList(Model.LesVilles, "Value", "Text"), Resource.VilleCombo,
-                           New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.VilleCombo})
-                        @Html.ValidationMessageFor(Function(m) m.VilleId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
+                     New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+                        @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.SurfaceDePisteId, New With {.class = "col-sm-2 col-form-label required_field"})
@@ -193,7 +193,7 @@ End Code
                 var ICAO = '#ICAO';
                 var IATA = '#IATA';
 		        var Nom = '#Nom';
-		        var VilleId = '#VilleId';
+            var CommuneId = '#CommuneId';
             var OrganisationId = '#OganisationId';
                 var SurfaceDePisteId = '#SurfaceDePisteId';
                 var LongueurDePiste = '#LongueurDePiste';
@@ -214,7 +214,7 @@ End Code
             //alert($(OrganisationId).val());
             //alert($(Telephone).val());
 
-            if (typeof $(ICAO).val() == "undefined" || $(ICAO).val() == "" || $(IATA).val() == "undefined" || $(IATA).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" ||typeof $(VilleId).val() == "undefined" || $(VilleId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
+            if (typeof $(ICAO).val() == "undefined" || $(ICAO).val() == "" || $(IATA).val() == "undefined" || $(IATA).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
@@ -227,7 +227,7 @@ End Code
                         'ICAO': $(ICAO).val(),
                         'IATA': $(IATA).val(),
                         'Nom': $(Nom).val(),
-                        'VilleId': $(VilleId).val(),
+                        'CommuneId': $(CommuneId).val(),
                         'OganisationId': $(OrganisationId).val(),
                         'SurfaceDePisteId': $(SurfaceDePisteId).val(),
                         'LongueurDePiste': $(LongueurDePiste).val(),

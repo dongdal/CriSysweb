@@ -320,6 +320,17 @@ New With {.class = "form-control single-select", .tabindex = "15", .Placeholder 
                 @<br />
 
                 @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Source, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(Function(m) m.Source, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SourcePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Source, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
+                @<br />
+                @<br />
+
+                @<div Class="form-group row">
 
                     <Label Class="col-sm-1 col-form-label"></Label>
                     <div Class="col-sm-10">

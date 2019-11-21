@@ -30,10 +30,24 @@ End Code
                 @Html.HiddenFor(Function(m) m.AspNetUserId)
 
                 @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CODEPlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
                     @Html.LabelFor(Function(m) m.Libelle, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Libelle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Libelle, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Observation, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(Function(m) m.Observation, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ObservationPlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Observation, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 

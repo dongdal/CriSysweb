@@ -54,6 +54,7 @@ Partial Public Class CardreSendaiCibleC
     Public Property NombreMonumentImmobilierDetruits As Long?
     Public Property NombreDeBiensCulturelMobileEndomager As Long?
     Public Property NombreDeBiensCulturelMobileDetruits As Long?
+    Public Property Source As String
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

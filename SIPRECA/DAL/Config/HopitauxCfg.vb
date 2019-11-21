@@ -5,7 +5,6 @@ Public Class HopitauxCfg
     Public Sub New()
         Me.ToTable("Hopitaux")
         Me.Property(Function(p) p.OganisationId).IsRequired()
-        Me.Property(Function(p) p.VilleId).IsRequired()
         Me.Property(Function(p) p.Location).IsOptional()
         Me.Property(Function(p) p.Code).IsRequired().HasMaxLength(5)
         Me.Property(Function(p) p.Nom).IsRequired().HasMaxLength(250)

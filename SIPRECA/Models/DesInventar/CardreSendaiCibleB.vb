@@ -37,6 +37,7 @@ Partial Public Class CardreSendaiCibleB
     Public Property NombreMoyenSubsistanceVieux As Long?
     Public Property NombreMoyenSubsistanceHandicape As Long?
     Public Property NombreMoyenSubsistancePauvre As Long?
+    Public Property Source As String
 
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1

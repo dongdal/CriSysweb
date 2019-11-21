@@ -311,6 +311,7 @@
     <Compile Include="DAL\Config\PuissanceCfg.vb" />
     <Compile Include="DAL\Config\TypeEntrepotCfg.vb" />
     <Compile Include="DAL\Config\UsageHumanitaireCfg.vb" />
+    <Compile Include="DAL\Config\AlertCfg.vb" />
     <Compile Include="DAL\Config\VilleCfg.vb" />
     <Compile Include="DAL\Config\PaysCfg.vb" />
     <Compile Include="DAL\Config\PropositionCfg.vb" />
@@ -432,6 +433,10 @@
       <DependentUpon>201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb" />
+    <Compile Include="Migrations\201911201250304_Ville vers commune moyen de reponse.Designer.vb">
+      <DependentUpon>201911201250304_Ville vers commune moyen de reponse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911201250304_Ville vers commune moyen de reponse.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\Collecte.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
@@ -494,6 +499,7 @@
     <Compile Include="Models\SurfaceDePiste.vb" />
     <Compile Include="Models\TailleDeAeronef.vb" />
     <Compile Include="Models\UsageHumanitaire.vb" />
+    <Compile Include="Models\Alert.vb" />
     <Compile Include="Models\Ville.vb" />
     <Compile Include="Models\DesInventar\EvenementZone.vb" />
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
@@ -817,6 +823,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911180857492_Ajout de la date de declaration de demande d%27indemnisation.resx">
       <DependentUpon>201911180857492_Ajout de la date de declaration de demande d%27indemnisation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911201250304_Ville vers commune moyen de reponse.resx">
+      <DependentUpon>201911201250304_Ville vers commune moyen de reponse.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -2069,6 +2078,7 @@
     <Content Include="Views\Enquetes\CreateChamps.vbhtml" />
     <Content Include="Views\Enquetes\EditFormulaire.vbhtml" />
     <Content Include="Views\Enquetes\EditSection.vbhtml" />
+    <Content Include="Views\Demandes\EditPieces.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
