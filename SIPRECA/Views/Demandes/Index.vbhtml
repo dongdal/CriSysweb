@@ -53,10 +53,10 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-2">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                @*<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
                                     <i Class="fa fa-plus" aria-hidden="true"></i>
                                     @Resource.Btn_nouveau
-                                </a>
+                                </a>*@
                             </div>
                         </div>
 
@@ -173,9 +173,7 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                 End If
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
+
                                 @If item.Indemnisation.Select(Of Demande)(Function(e) e.Demande).Count >= 1 Then
                                     Dim indem = item.Indemnisation.Select(Of Long)(Function(e) e.Id).FirstOrDefault
                                     @<a Class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnInfoIndemnisation" href="@Url.Action("Details", "Indemnisations", New With {.id = indem})">
@@ -183,6 +181,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                     </a>
                                 ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental Or
                                     item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational) Then
+                                    @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i Class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
                                     @<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
@@ -207,24 +208,24 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                             <i class="fa fa-exchange" aria-hidden="true"></i>
                                         </a>
 
-                                        @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" onclick="Indemniser('@CInt(Util.ElementsSuiviDemandes.DecisionIndemnisation)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                             <i class="fa fa-money" aria-hidden="true"></i>
                                         </a>
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetCommunal) Then
 
                                         @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>*@
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </a>*@
 
                                         @*@<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>*@
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>*@
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
                                         @*@<a class="btn btn-round btn-inverse-primary waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </a>*@
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>*@
 
                                     End If
 
@@ -237,6 +238,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                         </a>
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionDepartemental Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental) Then
+                                        @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                            <i Class="fa fa-edit" aria-hidden="true"></i>
+                                        </a>
 
                                         @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationDepartemental)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
@@ -258,9 +262,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetDepartemental) Then
 
-                                        @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
+                                        @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>
+                                        </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
@@ -276,6 +280,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                         </a>
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional) Then
+                                        @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                            <i Class="fa fa-edit" aria-hidden="true"></i>
+                                        </a>
 
                                         @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationRegional)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
@@ -297,9 +304,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetRegional) Then
 
-                                        @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
+                                        @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>
+                                        </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
@@ -314,6 +321,9 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                         </a>
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational) Then
+                                        @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                            <i Class="fa fa-edit" aria-hidden="true"></i>
+                                        </a>
 
                                         @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationNational)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
@@ -325,15 +335,15 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
 
-                                        @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" onclick="Indemniser('@CInt(Util.ElementsSuiviDemandes.DecisionIndemnisation)' ,'@item.Id')">
+                                        @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                             <i class="fa fa-money" aria-hidden="true"></i>
                                         </a>
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetNational) Then
 
-                                        @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
+                                        @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>
+                                        </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 

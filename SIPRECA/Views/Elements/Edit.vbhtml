@@ -63,7 +63,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.UniteMesure, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.UniteMesure, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.UniteMesurePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.UniteMesure, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.UniteMesurePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.UniteMesure, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -78,7 +78,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Modele, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Modele, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.ModelePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Modele, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.ModelePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Modele, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -93,7 +93,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Longueur, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Longueur, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.LongueurPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Longueur, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.LongueurPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Longueur, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -108,7 +108,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Hauteur, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Hauteur, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.HauteurPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Hauteur, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.HauteurPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Hauteur, "", New With {.style = "color: #da0b0b"})
                     </div>
 

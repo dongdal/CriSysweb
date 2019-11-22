@@ -2091,6 +2091,7 @@
     <Content Include="Views\Shared\_LayoutAlertes.vbhtml" />
     <Content Include="Views\Home\IndexAlertes.vbhtml" />
     <Content Include="Views\Alertes\AlertByGroupExisting.vbhtml" />
+    <Content Include="Views\Demandes\EditPieces.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

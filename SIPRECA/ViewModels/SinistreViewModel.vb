@@ -38,6 +38,19 @@ Public Class SinistreViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    '----------------------------- Collectivité -------------------------------------------
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="CollectiviteSinistreeCollectivite", ResourceType:=GetType(Resource))>
+    Public Property CommuneId As ICollection(Of Long)
+    Public Overridable Property LesCollectivites As ICollection(Of SelectListItem)
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="AnneeBudgetaire", ResourceType:=GetType(Resource))>
+    Public Property AnneeBudgetaireId As Long
+    Public Overridable Property LesAnneeBudgetaires As ICollection(Of SelectListItem)
+    Public Overridable Property AnneeBudgetaire As AnneeBudgetaire
+
     Public Sub New()
     End Sub
 

@@ -64,9 +64,9 @@ End Code
                                 @Html.ValidationMessageFor(Function(m) m.DateDeclaration, "", New With {.style = "color: #da0b0b"})
                             </div>
                         </div>
-                        <br/>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
+                        <br />
                         <div Class="form-group row">
                             <div class="col-sm-4 form-group">
 
@@ -125,9 +125,19 @@ End Code
                             </tbody>
 
                         </table>
-                    </div>
-
+                        <br/>
+                        <br/>
+                        <div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-primary text-dark shadow px-5"})
                         </div>
+                    </div>
+                    
+                </div>
                     </div>
                 </div>
 
