@@ -408,8 +408,9 @@ Namespace Controllers
             If IsNothing(Installation) Then
                 Return HttpNotFound()
             End If
-
-            Return View(Installation)
+            Dim entityVM As New InstallationViewModel(Installation)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
         End Function
 
         <HttpPost>

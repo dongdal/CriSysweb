@@ -3723,4 +3723,37 @@
   <data name="DetailsInstallation" xml:space="preserve">
     <value>Détail de l'installation</value>
   </data>
+  <data name="ListEquipements" xml:space="preserve">
+    <value>Liste des équipements</value>
+  </data>
+  <data name="DetailsHopitaux" xml:space="preserve">
+    <value>Details de l'hôpital</value>
+  </data>
+  <data name="DetailsHeliports" xml:space="preserve">
+    <value>Détails de l'héliport</value>
+  </data>
+  <data name="DetailsEntrepots" xml:space="preserve">
+    <value>Détails de l'entrepôt</value>
+  </data>
+  <data name="DetailsAbris" xml:space="preserve">
+    <value>Détails de l'abri</value>
+  </data>
+  <data name="DetailsAeroport" xml:space="preserve">
+    <value>Détails de l'aéroport</value>
+  </data>
+  <data name="DetailsBureau" xml:space="preserve">
+    <value>Détails du bureau</value>
+  </data>
+  <data name="DetailsElement" xml:space="preserve">
+    <value>Details de l'élement</value>
+  </data>
+  <data name="DetailsImmobilisations" xml:space="preserve">
+    <value>Details de l'immobilisation</value>
+  </data>
+  <data name="DetailsPortDeMer" xml:space="preserve">
+    <value>Détail du port</value>
+  </data>
+  <data name="DetailsProjet" xml:space="preserve">
+    <value>Details du projet</value>
+  </data>
 </root>

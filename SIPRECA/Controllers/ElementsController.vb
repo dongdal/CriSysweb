@@ -127,17 +127,19 @@ Namespace Controllers
             Return View(entities.ToPagedList(pageNumber, pageSize))
         End Function
 
-        ' GET: Element/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim Element As Element = Db.Element.Find(id)
-        '    If IsNothing(Element) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(Element)
-        'End Function
+        ' GET: Entrepots/Edit/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Element As Element = Db.Element.Find(id)
+            If IsNothing(Element) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New ElementViewModel(Element)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
         Private Sub LoadComboBox(entityVM As ElementViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

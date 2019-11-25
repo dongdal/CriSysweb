@@ -124,16 +124,18 @@ Namespace Controllers
         End Function
 
         ' GET: Aeroport/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim Aeroport As Aeroport = Db.Aeroport.Find(id)
-        '    If IsNothing(Aeroport) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(Aeroport)
-        'End Function
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Aeroport As Aeroport = Db.Aeroport.Find(id)
+            If IsNothing(Aeroport) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New AeroportViewModel(Aeroport)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
         Private Sub LoadComboBox(entityVM As AeroportViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

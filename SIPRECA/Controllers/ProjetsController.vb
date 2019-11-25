@@ -103,16 +103,18 @@ Namespace Controllers
         End Function
 
         ' GET: Projet/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim Projet As Projet = Db.Projet.Find(id)
-        '    If IsNothing(Projet) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(Projet)
-        'End Function
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Projet As Projet = Db.Projet.Find(id)
+            If IsNothing(Projet) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New ProjetViewModel(Projet)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
 
         Private Sub LoadComboBox(entityVM As ProjetViewModel)

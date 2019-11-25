@@ -98,16 +98,18 @@ Namespace Controllers
         End Function
 
         ' GET: Abris/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim Abris As Abris = Db.Abris.Find(id)
-        '    If IsNothing(Abris) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(Abris)
-        'End Function
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Abris As Abris = Db.Abris.Find(id)
+            If IsNothing(Abris) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New AbrisViewModel(Abris)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
         Private Sub LoadComboBox(entityVM As AbrisViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

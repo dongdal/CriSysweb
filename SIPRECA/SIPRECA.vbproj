@@ -1851,7 +1851,6 @@
     <Content Include="Views\Organisations\Index.vbhtml" />
     <Content Include="Views\Heliports\Create.vbhtml" />
     <Content Include="Views\Heliports\Delete.vbhtml" />
-    <Content Include="Views\Heliports\Details.vbhtml" />
     <Content Include="Views\Heliports\Edit.vbhtml" />
     <Content Include="Views\Heliports\Index.vbhtml" />
     <Content Include="Views\TypeEntrepots\Create.vbhtml" />
@@ -1916,7 +1915,6 @@
     <Content Include="Views\CategorieDArticles\Index.vbhtml" />
     <Content Include="Views\Immobilisations\Create.vbhtml" />
     <Content Include="Views\Immobilisations\Delete.vbhtml" />
-    <Content Include="Views\Immobilisations\Details.vbhtml" />
     <Content Include="Views\Immobilisations\Edit.vbhtml" />
     <Content Include="Views\Immobilisations\Index.vbhtml" />
     <Content Include="Views\Cartes\Index.vbhtml" />
@@ -1927,29 +1925,24 @@
     <Content Include="Views\Villes\Index.vbhtml" />
     <Content Include="Views\Hopitaux\Create.vbhtml" />
     <Content Include="Views\Hopitaux\Delete.vbhtml" />
-    <Content Include="Views\Hopitaux\Details.vbhtml" />
     <Content Include="Views\Hopitaux\Edit.vbhtml" />
     <Content Include="Views\Hopitaux\Index.vbhtml" />
     <Content Include="Views\Shared\_MyMapPartial.vbhtml" />
     <Content Include="Views\Shared\_MyMapEnterPartial.vbhtml" />
     <Content Include="Views\Abris\Create.vbhtml" />
     <Content Include="Views\Abris\Delete.vbhtml" />
-    <Content Include="Views\Abris\Details.vbhtml" />
     <Content Include="Views\Abris\Edit.vbhtml" />
     <Content Include="Views\Abris\Index.vbhtml" />
     <Content Include="Views\Aeroport\Create.vbhtml" />
     <Content Include="Views\Aeroport\Delete.vbhtml" />
-    <Content Include="Views\Aeroport\Details.vbhtml" />
     <Content Include="Views\Aeroport\Edit.vbhtml" />
     <Content Include="Views\Aeroport\Index.vbhtml" />
     <Content Include="Views\Bureaux\Create.vbhtml" />
     <Content Include="Views\Bureaux\Delete.vbhtml" />
-    <Content Include="Views\Bureaux\Details.vbhtml" />
     <Content Include="Views\Bureaux\Edit.vbhtml" />
     <Content Include="Views\Bureaux\Index.vbhtml" />
     <Content Include="Views\Entrepots\Create.vbhtml" />
     <Content Include="Views\Entrepots\Delete.vbhtml" />
-    <Content Include="Views\Entrepots\Details.vbhtml" />
     <Content Include="Views\Entrepots\Edit.vbhtml" />
     <Content Include="Views\Entrepots\Index.vbhtml" />
     <Content Include="Views\Installations\Create.vbhtml" />
@@ -1959,12 +1952,10 @@
     <Content Include="Views\Installations\Index.vbhtml" />
     <Content Include="Views\PortDeMers\Create.vbhtml" />
     <Content Include="Views\PortDeMers\Delete.vbhtml" />
-    <Content Include="Views\PortDeMers\Details.vbhtml" />
     <Content Include="Views\PortDeMers\Edit.vbhtml" />
     <Content Include="Views\PortDeMers\Index.vbhtml" />
     <Content Include="Views\Elements\Create.vbhtml" />
     <Content Include="Views\Elements\Delete.vbhtml" />
-    <Content Include="Views\Elements\Details.vbhtml" />
     <Content Include="Views\Elements\Edit.vbhtml" />
     <Content Include="Views\Elements\Index.vbhtml" />
     <Content Include="Views\Personnels\Create.vbhtml" />
@@ -1974,7 +1965,6 @@
     <Content Include="Views\Personnels\Index.vbhtml" />
     <Content Include="Views\Projets\Create.vbhtml" />
     <Content Include="Views\Projets\Delete.vbhtml" />
-    <Content Include="Views\Projets\Details.vbhtml" />
     <Content Include="Views\Projets\Edit.vbhtml" />
     <Content Include="Views\Projets\Index.vbhtml" />
     <Content Include="Views\Home\IndexSahana.vbhtml" />
@@ -2092,6 +2082,16 @@
     <Content Include="Views\Home\IndexAlertes.vbhtml" />
     <Content Include="Views\Alertes\AlertByGroupExisting.vbhtml" />
     <Content Include="Views\Demandes\EditPieces.vbhtml" />
+    <Content Include="Views\Hopitaux\Details.vbhtml" />
+    <Content Include="Views\Heliports\Details.vbhtml" />
+    <Content Include="Views\Entrepots\Details.vbhtml" />
+    <Content Include="Views\Bureaux\Details.vbhtml" />
+    <Content Include="Views\Aeroport\Details.vbhtml" />
+    <Content Include="Views\Abris\Details.vbhtml" />
+    <Content Include="Views\Elements\Details.vbhtml" />
+    <Content Include="Views\Immobilisations\Details.vbhtml" />
+    <Content Include="Views\PortDeMers\Details.vbhtml" />
+    <Content Include="Views\Projets\Details.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

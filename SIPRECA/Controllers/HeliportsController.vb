@@ -320,6 +320,20 @@ Namespace Controllers
             Return View("Edit", entityVM)
         End Function
 
+        ' GET: Heliport/Edit/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Heliport As Heliport = Db.Heliport.Find(id)
+            If IsNothing(Heliport) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New HeliportViewModel(Heliport)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         <HttpPost>
         Public Function DeleteMateriel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then

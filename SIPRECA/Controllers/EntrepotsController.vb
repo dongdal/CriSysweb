@@ -332,6 +332,20 @@ Namespace Controllers
             Return View("Edit", entityVM)
         End Function
 
+        ' GET: Entrepots/Edit/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Entrepots As Entrepots = Db.Entrepots.Find(id)
+            If IsNothing(Entrepots) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New EntrepotsViewModel(Entrepots)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         <HttpPost>
         Public Function DeleteMateriel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then
