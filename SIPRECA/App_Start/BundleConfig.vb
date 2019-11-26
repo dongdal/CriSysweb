@@ -38,7 +38,8 @@ Public Module BundleConfig
                   "~/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css",
                   "~/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css",
                   "~/assets/css/PagedList.css",
-                  "~/assets/css/app-style.css"))
+                  "~/assets/css/app-style.css",
+                  "~/assets/plugins/summernote/dist/summernote-bs4.css"))
 
         bundles.Add(New ScriptBundle("~/bundles/TemplateScript").Include(
           "~/assets/js/jquery.min.js",
@@ -64,7 +65,8 @@ Public Module BundleConfig
           "~/assets/plugins/jquery.steps/js/jquery.steps.min.js",
           "~/assets/plugins/jquery-validation/js/jquery.validate.min.js",
           "~/assets/plugins/jquery.steps/js/jquery.wizard-init.js",
-          "~/assets/js/index.js"))
+          "~/assets/js/index.js",
+          "~/assets/plugins/summernote/dist/summernote-bs4.min.js"))
 
 
         bundles.Add(New StyleBundle("~/Assets/JQueryConfirmCSS").Include(

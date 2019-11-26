@@ -21,7 +21,7 @@ Public Class Util
     Public Shared Function SendSms(num As String, msg As String) As Boolean
         Using serialport1 = New SerialPort With {
                                                         .PortName = ConfigurationManager.AppSettings("SMSComPort"),
-                                                        .BaudRate = 9600,
+                                                        .BaudRate = 115200,
                                                         .Parity = Parity.None,
                                                         .DataBits = 8,
                                                         .StopBits = StopBits.One,
@@ -37,7 +37,7 @@ Public Class Util
                                                     }
 
 
-            Dim quote As String = """"
+            Dim quote As String = """" : Dim RpsInter As String = "" : Dim GSM As String = "GSM"
 
             Try
                 serialport1.Open()
@@ -45,22 +45,55 @@ Public Class Util
                     Trace.WriteLine("ouverture du port")
 
                     'Thread.Sleep(1000)
-                    serialport1.WriteLine("AT") ' verifi si le modem est ok
-                    'Thread.Sleep(1000)
-                    'tb_console.Text &= "resultat execution cmd AT= " + SerialPort1.ReadExisting.ToString
-                    serialport1.WriteLine("AT+CMGF=1" & vbCrLf) 'changer le mode d'envoie de donné (on passe en mode texe)
-                    'Thread.Sleep(1000)
+                    serialport1.WriteLine("AT" & vbCrLf) ' verifi si le modem est ok
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT+CREG?" & vbCrLf) ' Checking registration status...
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT+CGREG?" & vbCrLf) ' The device is registered in home network.
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT+CMGF?" & vbCrLf) ' Checking SMS Mode...
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT+CSMP=17,167,2,0" & vbCrLf) ' Encoding set for 7-bit
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT" & vbCrLf) ' Setting Character Set to GSM
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    serialport1.WriteLine("AT+CSCS=" & quote & GSM & quote & vbCrLf) ' Setting Character Set to GSM
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
                     'tb_console.Text &= "resultat execution cmd AT+CMGF=1= " + SerialPort1.ReadExisting.ToString
                     serialport1.WriteLine("AT+CMGS=" & quote & num & quote & vbCrLf) ' on indique le munero du destinataire
-                    'Thread.Sleep(1000)
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
                     'MessageBox.Show("resultat execution cmd AT+CMGS= " + SerialPort1.ReadExisting.ToString)
                     serialport1.WriteLine(msg & vbCrLf & Chr(26)) 'on envoie le sms
-                    'Thread.Sleep(1000)
-                    'tb_console.Text &= "resultat execution last cmd = " + SerialPort1.ReadExisting.ToString
-                    Trace.WriteLine(serialport1.ReadExisting.ToString)
-                    serialport1.WriteLine("AT+CMGF=0" & vbCrLf) 'changer le mode d'envoie de donné (on repasse en mode pdu)
-                    'Thread.Sleep(1000)
+                    '                    System.Threading.Thread.Sleep(1000)
+                    System.Threading.Thread.Sleep(2000)
+                    RpsInter += serialport1.ReadExisting
 
+                    'tb_console.Text &= "resultat execution cmd AT= " + SerialPort1.ReadExisting.ToString
+                    serialport1.WriteLine("AT+CMGF=1" & vbCrLf) 'changer le mode d'envoie de donné (on passe en mode texe)
+                    '                    System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
+
+                    ''tb_console.Text &= "resultat execution last cmd = " + SerialPort1.ReadExisting.ToString
+                    'Trace.WriteLine(serialport1.ReadExisting.ToString)
+                    'serialport1.WriteLine("AT+CMGF=0" & vbCrLf) 'changer le mode d'envoie de donné (on repasse en mode pdu)
+                    ''System.Threading.Thread.Sleep(1000)
+                    RpsInter += serialport1.ReadExisting
 
                     serialport1.Close()
                     Return True
@@ -73,6 +106,7 @@ Public Class Util
         End Using
         Return False
     End Function
+
 
 
 
@@ -320,6 +354,19 @@ Public Class Util
         ''' La demande a été approuvée
         ''' </summary>
         Approuvee = 3
+    End Enum
+
+    Public Enum TypeAlerte
+        ''' <summary>
+        ''' Alerte de type sms
+        ''' </summary>
+        SMS = 1
+
+        ''' <summary>
+        ''' Alerte de type mail
+        ''' </summary>
+        Mail = 2
+
     End Enum
 
     Public Shared Function CreatePoint(latitude As Double, longitude As Double) As DbGeometry

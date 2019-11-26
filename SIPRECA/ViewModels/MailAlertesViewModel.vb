@@ -1,10 +1,12 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 Imports SIPRECA.My.Resources
 
-Public Class AlertesViewModel
+Public Class MailAlertesViewModel
+
+    <AllowHtml>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Contenu", ResourceType:=GetType(Resource))>
-    <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    <StringLength(4000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Contenu As String
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>

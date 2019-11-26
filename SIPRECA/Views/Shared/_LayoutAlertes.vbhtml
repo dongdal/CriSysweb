@@ -151,6 +151,22 @@
             selectionFooter: "<div class='custom-header'>Selection footer</div>"
         });
 
+        $('.summernoteEditor').summernote({
+            //['insert', ['link', 'picture', 'video']],
+            height: 400,
+            tabsize: 2,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+            ]
+        });
+
     </script>
 
     @RenderSection("scripts", required:=False)

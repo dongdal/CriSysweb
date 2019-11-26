@@ -379,7 +379,7 @@
     <value>Sexe</value>
   </data>
   <data name="StringLongLength" xml:space="preserve">
-    <value>Le champ {0} doit comporter au maximum {2} caractères.</value>
+    <value>Le champ {0} doit comporter au maximum {1} caractères.</value>
   </data>
   <data name="GenderFemale" xml:space="preserve">
     <value>Féminin</value>
@@ -3682,7 +3682,7 @@
     <value>Sinistres concernés</value>
   </data>
   <data name="TheRequiredField" xml:space="preserve">
-    <value>Ce champ est requis</value>
+    <value>Ce champ est requit </value>
   </data>
   <data name="TransfertAlert" xml:space="preserve">
     <value>Transférer une alerte</value>
@@ -3720,7 +3720,34 @@
   <data name="SourcePlaceholder" xml:space="preserve">
     <value>Veuillez entrer les sources</value>
   </data>
-  <data name="TheRequiredField" xml:space="preserve">
-    <value>Ce champ est requit </value>
+  <data name="ListAlerts" xml:space="preserve">
+    <value>Liste des alertes</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>Envoi de mail</value>
+  </data>
+  <data name="SendSMS" xml:space="preserve">
+    <value>Envoi de sms</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TypeAlerteCombo" xml:space="preserve">
+    <value>Les types d'alerte</value>
+  </data>
+  <data name="TypeMail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="TypeSMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="SendingError" xml:space="preserve">
+    <value>Une erreur est survenue lors du processus. Veuillez réessayer. Si le problème persiste, veuillez contacter l'administrateur.</value>
+  </data>
+  <data name="SendMailSucces" xml:space="preserve">
+    <value>Votre mail a été délivré avec succès.</value>
+  </data>
+  <data name="SendSMSSuccess" xml:space="preserve">
+    <value>Votre sms a été délivré avec succès.</value>
   </data>
 </root>

@@ -27,7 +27,7 @@ Namespace Controllers
             Return aspuser
         End Function
 
-        Private Sub LoadComboBox(entityVM As AlertesViewModel)
+        Private Sub LoadComboBox(entityVM As SMSAlertesViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)
             Dim LesUtilisateurs As New List(Of SelectListItem)
 
@@ -75,15 +75,15 @@ Namespace Controllers
         End Sub
 
         ' GET: Alertes/AlertByGroupExisting
-        Function AlertByGroupExisting() As ActionResult
-            Dim entityVM As New AlertesViewModel
+        Function SendSMS() As ActionResult
+            Dim entityVM As New SMSAlertesViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
 
         <HttpPost()>
         <ValidateAntiForgeryToken>
-        Function AlertByGroupExisting(ByVal entityVM As AlertesViewModel) As ActionResult
+        Function SendSMS(ByVal entityVM As SMSAlertesViewModel) As ActionResult
             If (IsNothing(entityVM.OrganisationId) Or IsNothing(entityVM.SinistreId) Or entityVM.CommuneId.Count <= 0) Then
                 ModelState.AddModelError("", Resource.RequiredFields)
             End If
@@ -99,26 +99,40 @@ Namespace Controllers
                     For Each item In Collectivites
                         CollectivitesString = CollectivitesString & item.Commune.Libelle.ToUpper() & ", "
                     Next
-                    CollectivitesString.Remove(CollectivitesString.Length - 2)
+                    CollectivitesString = CollectivitesString.Remove(CollectivitesString.Length - 2)
                     SendMailAndSms(Personnel, Sinistre, TypeSinistre, CollectivitesString, Organisation, entityVM.Contenu.ToUpper())
-                    Return View(entityVM)
+                    Dim alert As New Alert With {
+                        .OrganisationId = entityVM.OrganisationId,
+                        .SinistreId = entityVM.SinistreId,
+                        .AspNetUserId = GetCurrentUser().Id,
+                        .DateCreation = Now(),
+                        .StatutExistant = 1,
+                        .Contenu = entityVM.Contenu
+                    }
+                    Db.Alert.Add(alert)
+                    Db.SaveChanges()
+                    ViewBag.Status = "Votre SMS a été envoyé avec succès."
+                    Return View()
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
+                    ViewBag.Status = "Une erreur est survenue lors du processus. Veuillez réessayer. Si le problème persiste, veuillez contacter l'administrateur."
                 Catch ex As Exception
                     Util.GetError(ex, ModelState)
+                    ViewBag.Status = "Une erreur est survenue lors du processus. Veuillez réessayer. Si le problème persiste, veuillez contacter l'administrateur."
                 End Try
             End If
-            Return View()
+            LoadComboBox(entityVM)
+            Return View(entityVM)
         End Function
 
         Private Sub SendMailAndSms(personnel As List(Of String), sinistre As Sinistre, typeSinistre As TypeSinistre, collectivitesString As String, organisation As String, contenu As String)
             Dim sms As New StringBuilder
-            sms.AppendFormat("ALERTE SINISTRE:  {0}. ", sinistre.Libelle.ToUpper())
-            sms.AppendFormat("DATE SINISTRE:  {0}. ", sinistre.DateCreation.ToLongDateString())
-            sms.AppendFormat("TYPE SINISTRE:  {0}. ", typeSinistre.Libelle.ToUpper())
-            sms.AppendFormat("COLLECTIVITES:  {0}. ", collectivitesString.ToUpper())
-            sms.AppendFormat("ORGANISATION CONCERNEE {0}. " & vbCrLf, organisation.ToUpper())
-            sms.Append(contenu & vbCrLf & "MERCI.")
+            sms.AppendFormat("ALERTE SINISTRE:  {0}. " & vbCrLf, sinistre.Libelle.ToUpper())
+            sms.AppendFormat("DATE SINISTRE:  {0}. " & vbCrLf, sinistre.DateCreation.ToString("dd-MM-yyyy"))
+            'sms.AppendFormat("TYPE SINISTRE:  {0}. ", typeSinistre.Libelle.ToUpper())
+            'sms.AppendFormat("COLLECTIVITES:  {0}. ", collectivitesString.ToUpper())
+            'sms.AppendFormat("ORGANISATION CONCERNEE {0}. ", organisation.ToUpper())
+            sms.Append(contenu)
 
             'Dim ANSI As Encoding = Encoding.GetEncoding("utf-8")
             Dim msg_ansi = Util.RemoveAccent(sms.ToString).ToUpper ' ANSI.GetString(ANSI.GetBytes(sms.ToString))

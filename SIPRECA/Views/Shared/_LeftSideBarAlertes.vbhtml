@@ -47,12 +47,12 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu" style="display: none;">
-                <li><a href="@Url.Action("HistoriqueAlertes", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHistoriqueAlerte</a></li>
+                <li><a href="@Url.Action("Index", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHistoriqueAlerte</a></li>
                 <li class="">
                     <a href="javaScript:void();"><i class="fa fa-long-arrow-right"></i> @Resource.ManageAlertCreate<i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="sidebar-submenu" style="display: none;">
-                        <li><a href="@Url.Action("AlertByImport", "Alertes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.MenuByImports</a></li>
-                        <li><a href="@Url.Action("AlertByGroupExisting", "Alertes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.MenuAlertByGroupExisting</a></li>
+                        <li><a href="@Url.Action("SendSMS", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendSMS</a></li>
+                        <li><a href="@Url.Action("SendMail", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendMail</a></li>
                     </ul>
                 </li>
             </ul>
