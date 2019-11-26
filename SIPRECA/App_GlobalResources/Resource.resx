@@ -3789,4 +3789,31 @@
   <data name="MenuTypeOffices" xml:space="preserve">
     <value>Les types de bureau</value>
   </data>
+  <data name="ListAlerts" xml:space="preserve">
+    <value>Liste des alertes</value>
+  </data>
+  <data name="SendingError" xml:space="preserve">
+    <value>Une erreur est survenue lors du processus. Veuillez réessayer. Si le problème persiste, veuillez contacter l'administrateur.</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>Envoi de mail</value>
+  </data>
+  <data name="SendMailSucces" xml:space="preserve">
+    <value>Votre mail a été délivré avec succès.</value>
+  </data>
+  <data name="SendSMS" xml:space="preserve">
+    <value>Envoi de SMS</value>
+  </data>
+  <data name="SendSMSSucces" xml:space="preserve">
+    <value>Votre SMS a été délivré avec succès.</value>
+  </data>
+  <data name="TypeAlerteCombo" xml:space="preserve">
+    <value>Type d'alertes</value>
+  </data>
+  <data name="TypeMail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="TypeSMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
 </root>

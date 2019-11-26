@@ -127,7 +127,7 @@ New With {.class = "form-control multiple-select", .tabindex = "4", .Placeholder
         if (response.Result == "OK") {
             $.confirm({
                 title: '@Resource.SuccessAlertTitle!',
-                content: '@Resource.SendMailSucces',
+                content: '@Resource.SendSMSSucces',
                 icon: 'fa fa-check',
                 type: 'green',
                 buttons: {
