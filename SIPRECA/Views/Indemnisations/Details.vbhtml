@@ -2,7 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.DetailsIndemnisations
-    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
+    'Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 

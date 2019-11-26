@@ -45,18 +45,28 @@
                 <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
-                <li><a href="@Url.Action("Index", "AnneeBudgetaires")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_AnneeBudgetaire</a></li>
-                <li><a href="@Url.Action("Index", "Communes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Communes</a></li>
-                <li><a href="@Url.Action("Index", "Departements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Departements</a></li>
-                <li><a href="@Url.Action("Index", "NatureAides")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNatureAide</a></li>
-                <li><a href="@Url.Action("Index", "Quartiers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
-                <li><a href="@Url.Action("Index", "Regions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
-                <li><a href="@Url.Action("Index", "Sinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSinistre</a></li>
-                <li><a href="@Url.Action("Index", "TypeAides")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
-                <li><a href="@Url.Action("Index", "TypeSinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
-                <li><a href="@Url.Action("Index", "TypeSuivis")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
-                <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
+                <li class="">
+                    <a href="javaScript:void();"><i class="fa fa-long-arrow-right"></i> @Resource.MenuBaseSettings<i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="sidebar-submenu" style="display: none;">
+                        <li><a href="@Url.Action("Index", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
+                        <li><a href="@Url.Action("Index", "AnneeBudgetaires")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_AnneeBudgetaire</a></li>
+                        <li><a href="@Url.Action("Index", "NatureAides")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNatureAide</a></li>
+                        <li><a href="@Url.Action("Index", "TypeAides")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAide</a></li>
+                        <li><a href="@Url.Action("Index", "TypeSinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSinistres</a></li>
+                        <li><a href="@Url.Action("Index", "TypeSuivis")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSuivis</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javaScript:void();"><i class="fa fa-long-arrow-right"></i> @Resource.ManageUniteGeographique<i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="sidebar-submenu" style="display: none;">
+                        <li><a href="@Url.Action("Index", "Regions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Regions</a></li>
+                        <li><a href="@Url.Action("Index", "Departements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Departements</a></li>
+                        <li><a href="@Url.Action("Index", "Communes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Communes</a></li>
+                        <li><a href="@Url.Action("Index", "Quartiers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuQuartier</a></li>
+                    </ul>
+                </li>
+                
+                @*<li><a href="@Url.Action("Index", "Cartes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>*@
             </ul>
         </li>
         <li>
@@ -65,11 +75,12 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Demandes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Demande</a></li>
-                <li><a href="@Url.Action("Index", "CollectiviteSinistrees")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Declarations</a></li>
                 <li><a href="@Url.Action("Index", "Indemnisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>
-                <li><a href="@Url.Action("Index", "Suivis")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSuivi</a></li>
+                <li><a href="@Url.Action("Index", "CollectiviteSinistrees")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Declarations</a></li>
+                <li><a href="@Url.Action("Index", "Demandes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Demande</a></li>
                 <li><a href="@Url.Action("Index", "Sinistrers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSinistrees</a></li>
+                <li><a href="@Url.Action("Index", "Sinistres")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSinistre</a></li>
+                <li><a href="@Url.Action("Index", "Suivis")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSuivi</a></li>
             </ul>
         </li>
         

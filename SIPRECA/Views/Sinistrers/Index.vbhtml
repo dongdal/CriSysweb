@@ -97,6 +97,9 @@ End Code
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
+                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_NewDem" href="@Url.Action("Create", "Demandes", New With {.id = item.Id})">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </a>
                                 <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>

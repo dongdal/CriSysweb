@@ -68,6 +68,8 @@ New With {.class = "form-control single-select", .tabindex = "3", .Placeholder =
                         <Button type="submit" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
                         &nbsp;&nbsp;&nbsp;
                         @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                        &nbsp;&nbsp;&nbsp;
+                        <Button type="submit" Class="btn btn-link btn-square bg-info text-dark shadow px-5" name="AddPieces"><i Class="icon-docs"></i> @Resource.BtnPieces</Button>
                     </div>
                 </div>
 

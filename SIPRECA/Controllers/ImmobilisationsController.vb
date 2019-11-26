@@ -109,17 +109,19 @@ Namespace Controllers
             Return View(entities.ToPagedList(pageNumber, pageSize))
         End Function
 
-        ' GET: Immobilisation/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim Immobilisation As Immobilisation = Db.Immobilisation.Find(id)
-        '    If IsNothing(Immobilisation) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(Immobilisation)
-        'End Function
+        ' GET: Heliport/Edit/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Immobilisation As Immobilisation = Db.Immobilisation.Find(id)
+            If IsNothing(Immobilisation) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New ImmobilisationViewModel(Immobilisation)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
         Private Sub LoadComboBox(entityVM As ImmobilisationViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

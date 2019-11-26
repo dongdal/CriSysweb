@@ -308,8 +308,15 @@ Namespace Controllers
         End Sub
 
         ' GET: Demande/Create
-        Function Create() As ActionResult
+        Function Create(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Sinistre As Sinistrer = Db.Sinistrer.Find(id)
+
             Dim entityVM As New DemandeViewModel
+            entityVM.Sinistrer = Sinistre
+            entityVM.SinistrerId = Sinistre.Id
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
@@ -334,11 +341,15 @@ Namespace Controllers
                 ElseIf (AppSession.Niveau.Equals(4)) Then
                     entityVM.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
                 End If
-
-                Db.Demande.Add(entityVM.GetEntity)
+                Dim entity = entityVM.GetEntity
+                Db.Demande.Add(entity)
                 Try
                     Db.SaveChanges()
-                    Return RedirectToAction("Index")
+                    If Request.Form("AddPieces") IsNot Nothing Then
+                        Return RedirectToAction("EditPieces", "Demandes", New With {.id = entity.Id})
+                    Else
+                        Return RedirectToAction("Index")
+                    End If
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception

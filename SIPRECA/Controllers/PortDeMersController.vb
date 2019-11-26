@@ -128,16 +128,18 @@ Namespace Controllers
         End Function
 
         ' GET: PortDeMer/Details/5
-        'Function Details(ByVal id As Long?) As ActionResult
-        '    If IsNothing(id) Then
-        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-        '    End If
-        '    Dim PortDeMer As PortDeMer = Db.PortDeMer.Find(id)
-        '    If IsNothing(PortDeMer) Then
-        '        Return HttpNotFound()
-        '    End If
-        '    Return View(PortDeMer)
-        'End Function
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim PortDeMer As PortDeMer = Db.PortDeMer.Find(id)
+            If IsNothing(PortDeMer) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New PortDeMerViewModel(PortDeMer)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
 
         Private Sub LoadComboBox(entityVM As PortDeMerViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

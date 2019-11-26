@@ -3,7 +3,6 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.ListIndemnisation
-    Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
 
 <div class="page-header">

@@ -394,7 +394,7 @@
     <value>Gestion des profils</value>
   </data>
   <data name="Statut" xml:space="preserve">
-    <value>Statut</value>
+    <value>Etat</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
     <value>CRISIS PLATEFORM</value>
@@ -430,7 +430,7 @@
     <value>Veuillez renseingner votre adresse</value>
   </data>
   <data name="CNIPlaceholder" xml:space="preserve">
-    <value>Veuillez saisir le Numéro de CNI</value>
+    <value>Veuillez saisir le numéro de CNI</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Voulez-vous vraiment supprimer cet élément?</value>
@@ -520,7 +520,7 @@
     <value>Veuillez saisir l'E-mail de l'utilisateur</value>
   </data>
   <data name="ExpirationCNIPlaceholder" xml:space="preserve">
-    <value>Veuillez saisir la Date expiration CNI</value>
+    <value>Veuillez saisir la date d'expiration CNI</value>
   </data>
   <data name="Libelle" xml:space="preserve">
     <value>Intitulé</value>
@@ -592,10 +592,10 @@
     <value>Etat</value>
   </data>
   <data name="Telephone1Placeholder" xml:space="preserve">
-    <value>Veuillez saisir le Téléphone N° 1</value>
+    <value>Veuillez saisir le téléphone N° 1</value>
   </data>
   <data name="Telephone2Placeholder" xml:space="preserve">
-    <value>Veuillez saisir le Téléphone N° 2</value>
+    <value>Veuillez saisir le téléphone N° 2</value>
   </data>
   <data name="UserNamePlaceholder" xml:space="preserve">
     <value>Veuillez entrer le nom d'utilisateur</value>
@@ -709,10 +709,10 @@
     <value>Gestion des régions</value>
   </data>
   <data name="Menu_Regions" xml:space="preserve">
-    <value>Les Regions</value>
+    <value>Les Régions</value>
   </data>
   <data name="RegionChefLieu" xml:space="preserve">
-    <value>Chef Lieu</value>
+    <value>Chef lieu</value>
   </data>
   <data name="ComboDepartement" xml:space="preserve">
     <value>Veuillez sélectionner le département</value>
@@ -754,19 +754,19 @@
     <value>Veillez selectionnner un type de suivi</value>
   </data>
   <data name="CreateDemande" xml:space="preserve">
-    <value>Enregistrez une demande d'indemnisation</value>
+    <value>Enregistrez une demande d'aide</value>
   </data>
   <data name="CreateIndemmisation" xml:space="preserve">
-    <value>Enregistrer une indemnisation</value>
+    <value>Enregistrer une aide</value>
   </data>
   <data name="CreateSuivi" xml:space="preserve">
-    <value>Ajoutez un suivi de demande d'indemnisation</value>
+    <value>Ajoutez un suivi de demande d'aide</value>
   </data>
   <data name="DeleteDemande" xml:space="preserve">
     <value>Supprimer une demande</value>
   </data>
   <data name="DeleteIndemnisation" xml:space="preserve">
-    <value>Supprimer une indemnisation</value>
+    <value>Supprimer une aide</value>
   </data>
   <data name="DeleteSuivi" xml:space="preserve">
     <value>Supprimer un suivi</value>
@@ -778,16 +778,16 @@
     <value>Modifier une demande</value>
   </data>
   <data name="EditIndemnisation" xml:space="preserve">
-    <value>Modifiez une indemnisation</value>
+    <value>Modifiez une aide</value>
   </data>
   <data name="EditSuivi" xml:space="preserve">
     <value>Modifier un suivi</value>
   </data>
   <data name="ListDemande" xml:space="preserve">
-    <value>Liste des demandes d'indemnisation</value>
+    <value>Liste des demandes d'aides</value>
   </data>
   <data name="ListIndemnisation" xml:space="preserve">
-    <value>Liste des indemnisations</value>
+    <value>Liste des aides</value>
   </data>
   <data name="ListSuivi" xml:space="preserve">
     <value>Liste des suivis</value>
@@ -796,13 +796,13 @@
     <value>Gestion des demandes d'aide</value>
   </data>
   <data name="ManageIndemnisation" xml:space="preserve">
-    <value>Gestion des indemnisations</value>
+    <value>Gestion des aides</value>
   </data>
   <data name="ManageSuivi" xml:space="preserve">
-    <value>Suivi des indemnisations</value>
+    <value>Suivi des aides</value>
   </data>
   <data name="MenuIndemnisation" xml:space="preserve">
-    <value>Les Indemnisations</value>
+    <value>Les aides</value>
   </data>
   <data name="MenuSuivi" xml:space="preserve">
     <value>Les Suivis</value>
@@ -817,7 +817,7 @@
     <value>Sinistre</value>
   </data>
   <data name="Sinistrer" xml:space="preserve">
-    <value>Sinistrer</value>
+    <value>Sinistré</value>
   </data>
   <data name="TypeSuivi" xml:space="preserve">
     <value>Type de suivi</value>
@@ -850,7 +850,7 @@
     <value>Veuillez sélectionner l'année budgétaire</value>
   </data>
   <data name="AnneeBudgetaireListe" xml:space="preserve">
-    <value>Années Budgétaires</value>
+    <value>Années budgétaires</value>
   </data>
   <data name="Error400_Explain" xml:space="preserve">
     <value>La requête envoyée est erronée. Veuillez executer de nouveau l'opération. Si le problème persiste, veuillez contacter l'administrateur.</value>
@@ -928,7 +928,7 @@
     <value>Annulation Confirmée!!!</value>
   </data>
   <data name="CreateSinistrer" xml:space="preserve">
-    <value>Ajouter un sinistrer</value>
+    <value>Ajouter un sinistré</value>
   </data>
   <data name="DateDeNaissance" xml:space="preserve">
     <value>Date de naissance</value>
@@ -937,7 +937,7 @@
     <value>Telecharger</value>
   </data>
   <data name="EditSinistrer" xml:space="preserve">
-    <value>Modifier un sinistrer</value>
+    <value>Modifier un sinistré</value>
   </data>
   <data name="ErreurTitle" xml:space="preserve">
     <value>Erreur!!!</value>
@@ -955,10 +955,10 @@
     <value>Une erreur est survenue pendant le traitment de votre requête.</value>
   </data>
   <data name="ListSinistrer" xml:space="preserve">
-    <value>Liste des sinistrers</value>
+    <value>Liste des sinistrés</value>
   </data>
   <data name="ManageSinistrer" xml:space="preserve">
-    <value>Gestion des sinistrer</value>
+    <value>Gestion des sinistrés</value>
   </data>
   <data name="MdlError_Fichier" xml:space="preserve">
     <value>Le champ {0} est obligatoire: veuillez le remplir.</value>
@@ -1084,10 +1084,10 @@
     <value>Entrez la superficie</value>
   </data>
   <data name="ComboNatureAide" xml:space="preserve">
-    <value>Selectionnez la nature de l'indemnisation</value>
+    <value>Selectionnez la nature de l'aide</value>
   </data>
   <data name="CreateIndemnisation" xml:space="preserve">
-    <value>Ajouter une indemnisation</value>
+    <value>Ajouter une aide</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
@@ -1096,7 +1096,7 @@
     <value>Entrez la description</value>
   </data>
   <data name="NatureAide" xml:space="preserve">
-    <value>Nature de l'indemnisation</value>
+    <value>Nature de l'aide</value>
   </data>
   <data name="QantitePlaceholder" xml:space="preserve">
     <value>Entrez la quantité</value>
@@ -1162,16 +1162,16 @@
     <value>Voulez-vous vraiment valider cette demande?</value>
   </data>
   <data name="DetailsIndemnisations" xml:space="preserve">
-    <value>Informations détaillées sur l'indemnisation</value>
+    <value>Informations détaillées sur l'aide</value>
   </data>
   <data name="IndemnisationCombo" xml:space="preserve">
-    <value>Veuillez sélectionner une indemnisation</value>
+    <value>Veuillez sélectionner une aide</value>
   </data>
   <data name="IndemniserSinistre" xml:space="preserve">
     <value>Indemniser sinistré</value>
   </data>
   <data name="LesIndemnisations" xml:space="preserve">
-    <value>Indemnisation</value>
+    <value>Aides</value>
   </data>
   <data name="MdlStatError_NatureAide" xml:space="preserve">
     <value>Veuillez sélectionner un élément de la liste</value>
@@ -1231,13 +1231,13 @@
     <value>Valider les modifications</value>
   </data>
   <data name="BtnInfoIndemnisation" xml:space="preserve">
-    <value>Aperçu des détails de l'indemnisation</value>
+    <value>Aperçu des détails de l'aide</value>
   </data>
   <data name="FindReferenceDemande" xml:space="preserve">
-    <value>VEUILLEZ RENSEIGNER LA RÉFÉRENCE DE LA DEMANDE</value>
+    <value>Veuillez rensegner la reference de la demande</value>
   </data>
   <data name="ReferenceDemande" xml:space="preserve">
-    <value>REFERENCE DE LA DEMANDE</value>
+    <value>Réference de la demande</value>
   </data>
   <data name="DateOperation" xml:space="preserve">
     <value>Date Opération</value>
@@ -1360,46 +1360,46 @@
     <value>Gestion des usages humanitaire</value>
   </data>
   <data name="CreateTypeEntrepot" xml:space="preserve">
-    <value>Ajouter un type d'entrepot</value>
+    <value>Ajouter un type d'entrepôt</value>
   </data>
   <data name="CreateTypeHopitaux" xml:space="preserve">
-    <value>Ajouter un type d'hopital</value>
+    <value>Ajouter un type d'hôpital</value>
   </data>
   <data name="CreateTypeImmobilisation" xml:space="preserve">
     <value>Ajouter un type d'immobilisation</value>
   </data>
   <data name="DeleteTypeEntrepot" xml:space="preserve">
-    <value>Supprimer un type d'entrepot</value>
+    <value>Supprimer un type d'entrepôt</value>
   </data>
   <data name="DeleteTypeHopitaux" xml:space="preserve">
-    <value>Supprimer un type d'hopital</value>
+    <value>Supprimer un type d'hôpital</value>
   </data>
   <data name="DeleteTypeImmobilisation" xml:space="preserve">
     <value>Supprimer un type d'immobilisation</value>
   </data>
   <data name="EditTypeEntrepot" xml:space="preserve">
-    <value>Modifier un type d'entrepot</value>
+    <value>Modifier un type d'entrepôt</value>
   </data>
   <data name="EditTypeHopitaux" xml:space="preserve">
-    <value>Modifier un type d'hopital</value>
+    <value>Modifier un type d'hôpitaux</value>
   </data>
   <data name="EditTypeImmobilisation" xml:space="preserve">
     <value>Modifier un type d'immobilisation</value>
   </data>
   <data name="ListTypeEntrepot" xml:space="preserve">
-    <value>Liste des types d'entrepot</value>
+    <value>Liste des types d'entrepôt</value>
   </data>
   <data name="ListTypeHopitaux" xml:space="preserve">
-    <value>Liste des types d'hopitaux</value>
+    <value>Liste des types d'hôpitaux</value>
   </data>
   <data name="ListTypeImmobilisation" xml:space="preserve">
     <value>Liste des types d'immobilisation</value>
   </data>
   <data name="ManageTypeEntrepot" xml:space="preserve">
-    <value>Gestion des types d'entrepot</value>
+    <value>Gestion des types d'entrepôt</value>
   </data>
   <data name="ManageTypeHopitaux" xml:space="preserve">
-    <value>Gestion des types d'hopitaux</value>
+    <value>Gestion des types d'hôpitaux</value>
   </data>
   <data name="ManageTypeImmobilisation" xml:space="preserve">
     <value>Gestion des types d'immobilisation</value>
@@ -1624,10 +1624,10 @@
     <value>Les tailles d'aéronef</value>
   </data>
   <data name="MenuTypeEntrepot" xml:space="preserve">
-    <value>Les types d'entrepots</value>
+    <value>Les types d'entrepôts</value>
   </data>
   <data name="MenuTypeHopitaux" xml:space="preserve">
-    <value>Les types d'hopitaux</value>
+    <value>Les types d'hôpitaux</value>
   </data>
   <data name="MenuTypeImmobilisation" xml:space="preserve">
     <value>Les types d'immobilidation</value>
@@ -1666,13 +1666,13 @@
     <value>Type immobilisation</value>
   </data>
   <data name="CreateHopitaux" xml:space="preserve">
-    <value>Ajouter un hopital</value>
+    <value>Ajouter un hôpital</value>
   </data>
   <data name="ListHopitaux" xml:space="preserve">
-    <value>Liste des hopitaux</value>
+    <value>Liste des hôpitaux</value>
   </data>
   <data name="ManageHopitaux" xml:space="preserve">
-    <value>Gestion des hopitaux</value>
+    <value>Gestion des hôpitaux</value>
   </data>
   <data name="NombreDeLitMax" xml:space="preserve">
     <value>Nombre max de lit</value>
@@ -1711,10 +1711,10 @@
     <value>Entrez le numéro de téléphone d'urgence</value>
   </data>
   <data name="TypeHopitaux" xml:space="preserve">
-    <value>Type d'hopitaux</value>
+    <value>Type d'hôpitaux</value>
   </data>
   <data name="TypeHopitauxCombo" xml:space="preserve">
-    <value>Veuillez selectionnez un type d'hopital</value>
+    <value>Veuillez selectionnez un type d'hôpital</value>
   </data>
   <data name="Capacite" xml:space="preserve">
     <value>Capacité</value>
@@ -1873,7 +1873,7 @@
     <value>Abri</value>
   </data>
   <data name="AbriPlaceholder" xml:space="preserve">
-    <value>Entrer l'abri</value>
+    <value>Veillez selectionner l'abri</value>
   </data>
   <data name="AnneeFabrication" xml:space="preserve">
     <value>Annee de fabrication</value>
@@ -1906,7 +1906,7 @@
     <value>Entrer la capacité douanière</value>
   </data>
   <data name="CapaciteRemorqueur" xml:space="preserve">
-    <value>Capacité Rémorqueur</value>
+    <value>Capacité rémorqueur</value>
   </data>
   <data name="CapaciteRemorqueurPlaceholder" xml:space="preserve">
     <value>Entrer la capacité du remorqueur </value>
@@ -1918,10 +1918,10 @@
     <value>Entrer la capacité de stockage de l'entreposage</value>
   </data>
   <data name="CapaciteStockageEntrepotDouanier" xml:space="preserve">
-    <value>Capacité stockage entrepot douanier</value>
+    <value>Capacité stockage entrepôt douanier</value>
   </data>
   <data name="CapaciteStockageEntrepotDouanierPlaceholder" xml:space="preserve">
-    <value>Entrer la capacité de stockage de l'entrepot douanier</value>
+    <value>Entrer la capacité de stockage de l'entrepôt douanier</value>
   </data>
   <data name="CapaciteStockageSecurise" xml:space="preserve">
     <value>Capacité  de stockage sécurisé</value>
@@ -1945,7 +1945,7 @@
     <value>Ajouter un personnel</value>
   </data>
   <data name="CreatePortDeMer" xml:space="preserve">
-    <value>Ajouter un port de mer</value>
+    <value>Ajouter un port</value>
   </data>
   <data name="CreateProjet" xml:space="preserve">
     <value>Ajouter un projet</value>
@@ -1996,7 +1996,7 @@
     <value>Liste du personnel</value>
   </data>
   <data name="ListPortDeMer" xml:space="preserve">
-    <value>Liste des port de mer</value>
+    <value>Liste des ports</value>
   </data>
   <data name="ListProjet" xml:space="preserve">
     <value>Liste des projets</value>
@@ -2026,7 +2026,7 @@
     <value>Gesttion du personnel</value>
   </data>
   <data name="ManagePortDeMer" xml:space="preserve">
-    <value>Gestion des port de mer</value>
+    <value>Gestion des port</value>
   </data>
   <data name="ManageProjet" xml:space="preserve">
     <value>Gestion des projets</value>
@@ -2089,7 +2089,7 @@
     <value>Entrer l'unité de la profondeur de la maré basse</value>
   </data>
   <data name="ProfondeurMareHaute" xml:space="preserve">
-    <value> Profondeur de la marée haute</value>
+    <value>Profondeur de la marée haute</value>
   </data>
   <data name="ProfondeurMareHautePlaceholder" xml:space="preserve">
     <value>Entrer la profondeur de la maré haute</value>
@@ -2125,7 +2125,7 @@
     <value>Entrer l'unité de la profondeur du terminal pétrolier</value>
   </data>
   <data name="Referencelaceholder" xml:space="preserve">
-    <value>Entrer la reference</value>
+    <value>Entrer la réference</value>
   </data>
   <data name="Reparations" xml:space="preserve">
     <value>Réparations</value>
@@ -2185,7 +2185,7 @@
     <value>Modifier un bureau</value>
   </data>
   <data name="EditHopitaux" xml:space="preserve">
-    <value>Modifier un hopital</value>
+    <value>Modifier un hôpital</value>
   </data>
   <data name="EditInstallation" xml:space="preserve">
     <value>Modifier une installation</value>
@@ -2212,10 +2212,10 @@
     <value>Modifier un aéroport</value>
   </data>
   <data name="EditEntrepot" xml:space="preserve">
-    <value>Modifier un entrepot</value>
+    <value>Modifier un entrepôt</value>
   </data>
   <data name="EditPortDeMer" xml:space="preserve">
-    <value>Modifier un port de mer</value>
+    <value>Modifier un port</value>
   </data>
   <data name="MenuInstallation" xml:space="preserve">
     <value>Les Installations</value>
@@ -2311,7 +2311,7 @@
     <value>Liste des évènements</value>
   </data>
   <data name="ListEvenementZone" xml:space="preserve">
-    <value>Liste des Zones</value>
+    <value>Liste des zones</value>
   </data>
   <data name="ListFacteur" xml:space="preserve">
     <value>Listes des facteurs</value>
@@ -2422,7 +2422,7 @@
     <value>Pertes économiques</value>
   </data>
   <data name="BetailTotalAffected" xml:space="preserve">
-    <value>Total Affecté</value>
+    <value>Total affecté</value>
   </data>
   <data name="BetailTotalDamaged" xml:space="preserve">
     <value>Total touché</value>
@@ -3118,7 +3118,7 @@
     <value>Modifier un service</value>
   </data>
   <data name="Hopitaux" xml:space="preserve">
-    <value>Hopitaux</value>
+    <value>Hôpitaux</value>
   </data>
   <data name="ListDesagregationRecoltesAgricole" xml:space="preserve">
     <value>Liste des cultures</value>
@@ -3316,7 +3316,7 @@
     <value>Profondeur terminal petrolier min</value>
   </data>
   <data name="TypeEntrepot" xml:space="preserve">
-    <value>Type d'entrepot</value>
+    <value>Type d'entrepôt</value>
   </data>
   <data name="CreateCollecte" xml:space="preserve">
     <value>Ajouter une collecte</value>
@@ -3556,7 +3556,7 @@
     <value>Gestion des moyens</value>
   </data>
   <data name="MenuHopitaux" xml:space="preserve">
-    <value>Les hopitaux</value>
+    <value>Les hôpitaux</value>
   </data>
   <data name="MenuMateriels" xml:space="preserve">
     <value>Les équipements</value>
@@ -3606,8 +3606,8 @@
   <data name="MenuOrganisation" xml:space="preserve">
     <value>Les organisations</value>
   </data>
-  <data name="*" xml:space="preserve">
-    <value />
+  <data name="Btn_NewDem" xml:space="preserve">
+    <value>Nouvelle demande</value>
   </data>
   <data name="DateDeclaration" xml:space="preserve">
     <value>Date de déclaration</value>
@@ -3720,34 +3720,73 @@
   <data name="SourcePlaceholder" xml:space="preserve">
     <value>Veuillez entrer les sources</value>
   </data>
-  <data name="ListAlerts" xml:space="preserve">
-    <value>Liste des alertes</value>
+  <data name="DetailsInstallation" xml:space="preserve">
+    <value>Détail de l'installation</value>
   </data>
-  <data name="SendMail" xml:space="preserve">
-    <value>Envoi de mail</value>
+  <data name="ListEquipements" xml:space="preserve">
+    <value>Liste des équipements</value>
   </data>
-  <data name="SendSMS" xml:space="preserve">
-    <value>Envoi de sms</value>
+  <data name="DetailsHopitaux" xml:space="preserve">
+    <value>Details de l'hôpital</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="DetailsHeliports" xml:space="preserve">
+    <value>Détails de l'héliport</value>
   </data>
-  <data name="TypeAlerteCombo" xml:space="preserve">
-    <value>Les types d'alerte</value>
+  <data name="DetailsEntrepots" xml:space="preserve">
+    <value>Détails de l'entrepôt</value>
   </data>
-  <data name="TypeMail" xml:space="preserve">
-    <value>Mail</value>
+  <data name="DetailsAbris" xml:space="preserve">
+    <value>Détails de l'abri</value>
   </data>
-  <data name="TypeSMS" xml:space="preserve">
-    <value>SMS</value>
+  <data name="DetailsAeroport" xml:space="preserve">
+    <value>Détails de l'aéroport</value>
   </data>
-  <data name="SendingError" xml:space="preserve">
-    <value>Une erreur est survenue lors du processus. Veuillez réessayer. Si le problème persiste, veuillez contacter l'administrateur.</value>
+  <data name="DetailsBureau" xml:space="preserve">
+    <value>Détails du bureau</value>
   </data>
-  <data name="SendMailSucces" xml:space="preserve">
-    <value>Votre mail a été délivré avec succès.</value>
+  <data name="DetailsElement" xml:space="preserve">
+    <value>Details de l'élement</value>
   </data>
-  <data name="SendSMSSuccess" xml:space="preserve">
-    <value>Votre sms a été délivré avec succès.</value>
+  <data name="DetailsImmobilisations" xml:space="preserve">
+    <value>Details de l'immobilisation</value>
+  </data>
+  <data name="DetailsPortDeMer" xml:space="preserve">
+    <value>Détail du port</value>
+  </data>
+  <data name="DetailsProjet" xml:space="preserve">
+    <value>Details du projet</value>
+  </data>
+  <data name="ManageUniteGeographique" xml:space="preserve">
+    <value>Unités géographique</value>
+  </data>
+  <data name="MenuBaseSettings" xml:space="preserve">
+    <value>Paramètre de base</value>
+  </data>
+  <data name="MenuGestionAbris" xml:space="preserve">
+    <value>Gestion des abris</value>
+  </data>
+  <data name="MenuGestionAeroport" xml:space="preserve">
+    <value>Gestion des aéroport</value>
+  </data>
+  <data name="MenuGestionDesHopitaux" xml:space="preserve">
+    <value>Gestion des hôpitaux</value>
+  </data>
+  <data name="MenuGestionDuPersonnel" xml:space="preserve">
+    <value>Gestion du personnel</value>
+  </data>
+  <data name="MenuGestionImmobilisation" xml:space="preserve">
+    <value>Gestion des immobilisations</value>
+  </data>
+  <data name="MenuGestionInfrastructures" xml:space="preserve">
+    <value>Gestion des infrastructures</value>
+  </data>
+  <data name="MenuGestionPort" xml:space="preserve">
+    <value>Gestion des Ports</value>
+  </data>
+  <data name="MenuGestionProjet" xml:space="preserve">
+    <value>Gestion des projets</value>
+  </data>
+  <data name="MenuTypeOffices" xml:space="preserve">
+    <value>Les types de bureau</value>
   </data>
 </root>

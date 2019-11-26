@@ -42,45 +42,92 @@
         <li class="sidebar-header">MAIN NAVIGATION</li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="icon-settings"></i><span>@Resource.MenuBaseSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                @*<li><a href="@Url.Action("Index", "CategorieDArticles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategoriArticle</a></li>*@
-                <li><a href="@Url.Action("Index", "CategorieElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
                 <li><a href="@Url.Action("Index", "Devises")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
                 <li><a href="@Url.Action("Index", "Materiels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMateriels</a></li>
-                <li><a href="@Url.Action("Index", "MarqueElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMarqueElement</a></li>
                 <li><a href="@Url.Action("Index", "Organisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuOrganisation</a></li>
-                <li><a href="@Url.Action("Index", "SurfaceDePistes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
-                <li><a href="@Url.Action("Index", "TailleDeAeronefs")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTailleDeAeronef</a></li>
-                <li><a href="@Url.Action("Index", "TypeEntrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>
-                <li><a href="@Url.Action("Index", "TypeHopitaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeHopitaux</a></li>
-                <li><a href="@Url.Action("Index", "TypeImmobilisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeImmobilisation</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-user"></i><span>@Resource.MenuGestionDuPersonnel</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypePersonnels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypePersonnel</a></li>
                 <li><a href="@Url.Action("Index", "Personnels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPersonnel</a></li>
-                @*<li><a href="@Url.Action("Index", "TypeVehicules")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeVehicule</a></li>*@
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-settings"></i><span>@Resource.MenuGestionDesHopitaux</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="@Url.Action("Index", "TypeHopitaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeHopitaux</a></li>
+                <li><a href="@Url.Action("Index", "Hopitaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHopitaux</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-settings"></i><span>@Resource.MenuGestionAbris</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypeAbris")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAbris</a></li>
+                <li><a href="@Url.Action("Index", "Abris")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAbris</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-settings"></i><span>@Resource.MenuGestionAeroport</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="@Url.Action("Index", "SurfaceDePistes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
+                <li><a href="@Url.Action("Index", "TailleDeAeronefs")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTailleDeAeronef</a></li>
                 <li><a href="@Url.Action("Index", "UsageHumanitaires")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuUsageHumanitaire</a></li>
-                @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
-
+                <li><a href="@Url.Action("Index", "Aeroport")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAeroport</a></li>
+                <li><a href="@Url.Action("Index", "Heliports")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHeliport</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-settings"></i><span>@Resource.MenuGestionInfrastructures</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="@Url.Action("Index", "TypeEntrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>
+                <li><a href="@Url.Action("Index", "TypeOffices")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeOffices</a></li>
+                <li><a href="@Url.Action("Index", "Bureaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuBureau</a></li>
+                <li><a href="@Url.Action("Index", "Entrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEntrepots</a></li>
+                <li><a href="@Url.Action("Index", "Installations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuInstallation</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-settings"></i><span>@Resource.MenuGestionImmobilisation</span><i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="@Url.Action("Index", "CategorieElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
+                <li><a href="@Url.Action("Index", "MarqueElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMarqueElement</a></li>
+                <li><a href="@Url.Action("Index", "TypeImmobilisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeImmobilisation</a></li>
+                <li><a href="@Url.Action("Index", "Elements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuElements</a></li>
+                <li><a href="@Url.Action("Index", "Immobilisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuImmobilisation</a></li>
             </ul>
         </li>
         <li>
             <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-handbag"></i><span>@Resource.MenuGestionDesMoyens</span>
+                <i class="icon-handbag"></i><span>@Resource.MenuGestionPort</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Abris")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAbris</a></li>
-                <li><a href="@Url.Action("Index", "Aeroport")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuAeroport</a></li>
-                <li><a href="@Url.Action("Index", "Bureaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuBureau</a></li>
-                <li><a href="@Url.Action("Index", "Entrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEntrepots</a></li>
-                <li><a href="@Url.Action("Index", "Elements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuElements</a></li>
-                <li><a href="@Url.Action("Index", "Hopitaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHopitaux</a></li>
-                <li><a href="@Url.Action("Index", "Heliports")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuHeliport</a></li>
-                <li><a href="@Url.Action("Index", "Immobilisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuImmobilisation</a></li>
-                <li><a href="@Url.Action("Index", "Installations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuInstallation</a></li>
                 <li><a href="@Url.Action("Index", "PortDeMers")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPortDeMer</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-handbag"></i><span>@Resource.MenuGestionProjet</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "Projets")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuProjet</a></li>
                 <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
             </ul>

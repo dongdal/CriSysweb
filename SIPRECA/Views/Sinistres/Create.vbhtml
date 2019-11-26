@@ -52,6 +52,14 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.LieuDuSinistre, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-10 form-group">
+                        @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCollectivites, "Value", "Text"), Resource.ComboLocalite,
+New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboLocalite, .Multiple = "Multiple"})
+                        @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
 
 
                 @<div Class="form-group row">

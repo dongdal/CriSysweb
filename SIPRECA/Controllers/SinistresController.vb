@@ -96,6 +96,27 @@ Namespace Controllers
             Dim TypeSinistre = (From e In Db.TypeSinistre Where e.StatutExistant = 1 Select e)
             Dim LesTypeSinistres As New List(Of SelectListItem)
 
+            Dim Collectivite = (From e In Db.Commune Where e.StatutExistant = 1 Select e)
+
+            If (AppSession.Niveau.Equals(Util.UserLevel.Departemental)) Then
+                Collectivite = Collectivite.Where(Function(e) e.DepartementId = AppSession.DepartementId)
+            ElseIf (AppSession.Niveau.Equals(Util.UserLevel.Regional)) Then
+                Collectivite = Collectivite.Where(Function(e) e.Departement.RegionId = AppSession.RegionId)
+            ElseIf (AppSession.Niveau.Equals(Util.UserLevel.Communal)) Then
+                Collectivite = Collectivite.Where(Function(e) e.Id = AppSession.CommuneId)
+            End If
+
+            Dim LesCollectivites As New List(Of SelectListItem)
+            For Each item In Collectivite
+                LesCollectivites.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
+            Dim AnneeBudgetaire = (From e In Db.AnneeBudgetaires Where e.StatutExistant = 1 Select e)
+            Dim LesAnneeBudgetaires As New List(Of SelectListItem)
+            For Each item In AnneeBudgetaire
+                LesAnneeBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
             For Each item In AspNetUser
                 If String.IsNullOrEmpty(item.Prenom) Then
                     LesUtilisateurs.Add(New SelectListItem With {.Value = item.Id, .Text = item.Nom})
@@ -108,6 +129,8 @@ Namespace Controllers
                 LesTypeSinistres.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
+            entityVM.LesCollectivites = LesCollectivites
+            entityVM.LesAnneeBudgetaires = LesAnneeBudgetaires
             entityVM.LesTypeSinistres = LesTypeSinistres
             entityVM.LesUtilisateurs = LesUtilisateurs
         End Sub
@@ -127,9 +150,28 @@ Namespace Controllers
         Function Create(ByVal entityVM As SinistreViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
-                Db.Sinistre.Add(entityVM.GetEntity)
+                Dim entity = entityVM.GetEntity
+                Db.Sinistre.Add(entity)
                 Try
                     Db.SaveChanges()
+
+                    For Each item In entityVM.CommuneId
+                        Dim collectiviteSinistre = New CollectiviteSinistree()
+                        collectiviteSinistre.CommuneId = item
+                        collectiviteSinistre.Libelle = entityVM.Libelle
+                        collectiviteSinistre.SinistreId = entity.Id
+                        collectiviteSinistre.DateSinistre = entityVM.DateDuSinistre
+                        collectiviteSinistre.AspNetUserId = GetCurrentUser.Id
+                        collectiviteSinistre.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
+                        Db.CollectiviteSinistree.Add(collectiviteSinistre)
+                        Try
+                            Db.SaveChanges()
+                        Catch ex As DbEntityValidationException
+                            Util.GetError(ex, ModelState)
+                        Catch ex As Exception
+                            Util.GetError(ex, ModelState)
+                        End Try
+                    Next
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)

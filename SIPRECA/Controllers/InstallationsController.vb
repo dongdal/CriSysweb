@@ -399,6 +399,20 @@ Namespace Controllers
             Return View("Edit", entityVM)
         End Function
 
+        ' GET: Installation/Edit/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Installation As Installation = Db.Installation.Find(id)
+            If IsNothing(Installation) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New InstallationViewModel(Installation)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         <HttpPost>
         Public Function DeleteMateriel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then

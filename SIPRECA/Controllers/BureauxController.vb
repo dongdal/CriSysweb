@@ -410,6 +410,20 @@ Namespace Controllers
             Return View("Edit", entityVM)
         End Function
 
+        ' GET: Bureau/Details/5
+        Function Details(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Bureau As Bureau = Db.Bureau.Find(id)
+            If IsNothing(Bureau) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New BureauViewModel(Bureau)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         <HttpPost>
         Public Function DeletePersonnel(id As String) As JsonResult
             If [String].IsNullOrEmpty(id) Then
