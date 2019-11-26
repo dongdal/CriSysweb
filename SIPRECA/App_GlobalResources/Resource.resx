@@ -3756,4 +3756,37 @@
   <data name="DetailsProjet" xml:space="preserve">
     <value>Details du projet</value>
   </data>
+  <data name="ManageUniteGeographique" xml:space="preserve">
+    <value>Unités géographique</value>
+  </data>
+  <data name="MenuBaseSettings" xml:space="preserve">
+    <value>Paramètre de base</value>
+  </data>
+  <data name="MenuGestionAbris" xml:space="preserve">
+    <value>Gestion des abris</value>
+  </data>
+  <data name="MenuGestionAeroport" xml:space="preserve">
+    <value>Gestion des aéroport</value>
+  </data>
+  <data name="MenuGestionDesHopitaux" xml:space="preserve">
+    <value>Gestion des hôpitaux</value>
+  </data>
+  <data name="MenuGestionDuPersonnel" xml:space="preserve">
+    <value>Gestion du personnel</value>
+  </data>
+  <data name="MenuGestionImmobilisation" xml:space="preserve">
+    <value>Gestion des immobilisations</value>
+  </data>
+  <data name="MenuGestionInfrastructures" xml:space="preserve">
+    <value>Gestion des infrastructures</value>
+  </data>
+  <data name="MenuGestionPort" xml:space="preserve">
+    <value>Gestion des Ports</value>
+  </data>
+  <data name="MenuGestionProjet" xml:space="preserve">
+    <value>Gestion des projets</value>
+  </data>
+  <data name="MenuTypeOffices" xml:space="preserve">
+    <value>Les types de bureau</value>
+  </data>
 </root>

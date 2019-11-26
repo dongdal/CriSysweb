@@ -53,7 +53,7 @@
                 <li><a href="@Url.Action("Index", "ServicesPubliquePertubes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuServicesPubliquePertube</a></li>
                 <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
                 <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
-                <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
+                @*<li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>*@
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>
