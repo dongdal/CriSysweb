@@ -142,7 +142,7 @@ Namespace Controllers
             Dim LesUtilisateurs As New List(Of SelectListItem)
             Dim Organisation = (From e In Db.Organisation Where e.StatutExistant = 1 Select e)
             Dim LesOrganisations As New List(Of SelectListItem)
-            Dim Commune = (From e In Db.Ville Where e.StatutExistant = 1 Select e)
+            Dim Commune = (From e In Db.Commune Where e.StatutExistant = 1 Select e)
             Dim LesCommunes As New List(Of SelectListItem)
             Dim SurfaceDePiste = (From e In Db.SurfaceDePiste Where e.StatutExistant = 1 Select e)
             Dim LesSurfaceDePistes As New List(Of SelectListItem)

@@ -3816,4 +3816,16 @@
   <data name="TypeSMS" xml:space="preserve">
     <value>SMS</value>
   </data>
+  <data name="DecimalDataType" xml:space="preserve">
+    <value>Le champ {0} doit comporter des valeurs entières ou décimales (avec virgules ",").</value>
+  </data>
+  <data name="GeoLatitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="GeoLatitudeLongitudeError" xml:space="preserve">
+    <value>Les champ latitude  et longitude doivent être des valeurs entières ou décimales (avec virgules ",").</value>
+  </data>
+  <data name="GeoLongitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
 </root>

@@ -47,14 +47,14 @@ End Code
                     @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                                   New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+                                New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboOrganisation})
                         @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
-                        New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+                     New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.CommuneCombo})
                         @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -64,19 +64,33 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.EstimationPopulation, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.EstimationPopulation, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.EstimationPopulationPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.EstimationPopulation, New With {.class = "form-control form-control-square ", .tabindex = "5", .Placeholder = Resource.EstimationPopulationPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.EstimationPopulation, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Capacite, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Capacite, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CapacitePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Capacite, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.CapacitePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Capacite, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.Latitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.Longitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
                 @Html.Partial("_MyMapEnterPartial")
 
+            @<br />
 
 
             End Using
@@ -139,17 +153,31 @@ End Code
                 var TypeAbrisId = '#TypeAbrisId';
                 var EstimationPopulation = '#EstimationPopulation';
                 var Capacite = '#Capacite';
+                var GeoLatitude = '#GeoLatitude';
+                var GeoLongitude = '#GeoLongitude';
+
+                //alert("DateNaissance= " + DateNaissance);
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    Latitude = $(GeoLatitude).val().replace(".",",");
+                    Longitude = $(GeoLongitude).val().replace(".", ",");
+               }
+
+          //      else if (Latitude == 0.0 || Longitude == 0.0 ) {
+          //          $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        //}
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
+
 
             if (typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" || typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(TypeAbrisId).val() == "undefined" || $(TypeAbrisId).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
-                }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+                }else{
 
-                alert('test');
                     var dataRow = {
                         'Nom': $(Nom).val(),
                         'CommuneId': $(CommuneId).val(),
@@ -160,7 +188,6 @@ End Code
                         'Latitude': Latitude,
                         'Longitude': Longitude
                     }
-                alert('test&');
                     //alert("c'est moi le createPatient avant ajax");
 
                     $.ajax({
@@ -191,6 +218,7 @@ End Code
                     });
                 }
 
+        }
 
             }
 

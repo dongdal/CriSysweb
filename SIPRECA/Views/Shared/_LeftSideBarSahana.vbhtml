@@ -61,7 +61,7 @@
         </li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuGestionDesHopitaux</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-stethoscope"></i><span>@Resource.MenuGestionDesHopitaux</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypeHopitaux")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeHopitaux</a></li>
@@ -70,7 +70,7 @@
         </li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuGestionAbris</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="icon-home"></i><span>@Resource.MenuGestionAbris</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypeAbris")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeAbris</a></li>
@@ -79,7 +79,7 @@
         </li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuGestionAeroport</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-plane"></i><span>@Resource.MenuGestionAeroport</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "SurfaceDePistes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSurfaceDePiste</a></li>
@@ -91,7 +91,7 @@
         </li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuGestionInfrastructures</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-institution"></i><span>@Resource.MenuGestionInfrastructures</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypeEntrepots")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeEntrepot</a></li>
@@ -103,7 +103,7 @@
         </li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuGestionImmobilisation</span><i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-hand-stop-o"></i><span>@Resource.MenuGestionImmobilisation</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "CategorieElements")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCategorieElement</a></li>
@@ -115,7 +115,7 @@
         </li>
         <li>
             <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-handbag"></i><span>@Resource.MenuGestionPort</span>
+                <i class="fa fa-ship"></i><span>@Resource.MenuGestionPort</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
@@ -124,7 +124,7 @@
         </li>
         <li>
             <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-handbag"></i><span>@Resource.MenuGestionProjet</span>
+                <i class="fa fa-bar-chart"></i><span>@Resource.MenuGestionProjet</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">

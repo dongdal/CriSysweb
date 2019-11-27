@@ -53,7 +53,7 @@ End Code
 
                                 @Html.LabelFor(Function(m) m.Nom, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.NamePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -62,14 +62,14 @@ End Code
                                 @Html.LabelFor(Function(m) m.TypeOfficeId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.TypeOfficeId, New SelectList(Model.LesTypeOffices, "Value", "Text"), Resource.TypeOfficeCombo,
-     New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.TypeOfficeCombo})
+New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.TypeOfficeCombo})
                                     @Html.ValidationMessageFor(Function(m) m.TypeOfficeId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                     New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+      New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.ComboOrganisation})
                                     @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
@@ -79,13 +79,13 @@ End Code
                                 @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
-New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.CommuneCombo})
                                     @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.CodePostale, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.CodePostale, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CodePostalePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.CodePostale, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.CodePostalePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.CodePostale, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
@@ -94,13 +94,13 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                             <div Class="form-group row">
                                 @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.TelephonePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "7", .Placeholder = Resource.TelephonePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.Telephone2, New With {.class = "col-sm-2 col-form-label"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.Telephone2Placeholder})
+                                    @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.Telephone2Placeholder})
                                     @Html.ValidationMessageFor(Function(m) m.Telephone2, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -109,10 +109,26 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                                 @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
                                 <div class="col-sm-10">
-                                    @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "9", .Placeholder = Resource.EmailPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
                                 </div>
+
+                                @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "10", .Placeholder = Resource.Latitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
                             </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "11", .Placeholder = Resource.Longitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+                            <br />
 
 
 
@@ -293,8 +309,12 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 @Section Scripts
 
     <script>
-    var oldLatitude = '@ViewBag.Latitude';
-    var oldLongitude = '@ViewBag.Longitude';
+ var GeoLatitude = '#GeoLatitude';
+        var GeoLongitude = '#GeoLongitude';
+
+        var oldLatitude = $(GeoLatitude).val().replace(",",".");
+        var oldLongitude = $(GeoLongitude).val().replace(",", ".");;
+
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
         .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '.</h6> <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
         .openPopup();
@@ -347,17 +367,26 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 		        var Telephone= '#Telephone';
                 var Telephone2 = '#Telephone2';
 		        var Email= '#Email';
-                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
-                //alert("DateNaissance= " + DateNaissance);
+             var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    if ($(GeoLatitude).val() != oldLatitude.replace(".", ",") || $(GeoLongitude).val() != oldLongitude.replace(".", ",")) {
+                        Latitude = $(GeoLatitude).val().replace(".", ",");
+                        Longitude = $(GeoLongitude).val().replace(".", ",");
+                    }
+                }
+
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
 
             if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(TypeOfficeId).val() == "undefined" || $(TypeOfficeId).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
-                }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+            } else if (!$(Code).val().match(Coderegex)) {
+                $.alert("Le champ code doit avoir maximum 5 caratères");
+            }else{
 
                     var dataRow = {
                         'Id': $(Id).val(),
@@ -403,8 +432,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                     });
                 }
-
-
+            }
             }
 
     </script>

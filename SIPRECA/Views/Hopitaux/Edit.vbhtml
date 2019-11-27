@@ -52,7 +52,7 @@ End Code
 
                                 @Html.LabelFor(Function(m) m.Nom, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.NamePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -61,14 +61,14 @@ End Code
                                 @Html.LabelFor(Function(m) m.TypeHopitauxId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.TypeHopitauxId, New SelectList(Model.LesTypeHopitauxs, "Value", "Text"), Resource.TypeHopitauxCombo,
-              New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.TypeHopitauxCombo})
+           New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.TypeHopitauxCombo})
                                     @Html.ValidationMessageFor(Function(m) m.TypeHopitauxId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                                   New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+                                New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.ComboOrganisation})
                                     @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
@@ -78,13 +78,13 @@ End Code
                                 @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4 form-group">
                                     @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
-                        New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+                     New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.CommuneCombo})
                                     @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.NombreDeMedecin, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.NombreDeMedecin, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreDeMedecinPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.NombreDeMedecin, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.NombreDeMedecinPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDeMedecin, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
@@ -93,13 +93,13 @@ End Code
                             <div Class="form-group row">
                                 @Html.LabelFor(Function(m) m.NombreDInfimiere, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.NombreDInfimiere, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.NombreDInfimierePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.NombreDInfimiere, New With {.class = "form-control form-control-square ", .tabindex = "7", .Placeholder = Resource.NombreDInfimierePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDInfimiere, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.NombreDePersonnelNonMedical, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.NombreDePersonnelNonMedical, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreDePersonnelNonMedicalPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.NombreDePersonnelNonMedical, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.NombreDePersonnelNonMedicalPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDePersonnelNonMedical, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -107,13 +107,13 @@ End Code
                             <div Class="form-group row">
                                 @Html.LabelFor(Function(m) m.NombreDeLitMin, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.NombreDeLitMin, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.NombreDeLitMinPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.NombreDeLitMin, New With {.class = "form-control form-control-square ", .tabindex = "9", .Placeholder = Resource.NombreDeLitMinPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDeLitMin, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.NombreDeLitMax, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.NombreDeLitMax, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreDeLitMaxPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.NombreDeLitMax, New With {.class = "form-control form-control-square", .tabindex = "10", .Placeholder = Resource.NombreDeLitMaxPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.NombreDeLitMax, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -121,13 +121,13 @@ End Code
                             <div Class="form-group row">
                                 @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label required_field"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.TelephonePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "11", .Placeholder = Resource.TelephonePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.TelephoneUrgence, New With {.class = "col-sm-2 col-form-label"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.TelephoneUrgence, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TelephoneUrgencePlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.TelephoneUrgence, New With {.class = "form-control form-control-square", .tabindex = "12", .Placeholder = Resource.TelephoneUrgencePlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.TelephoneUrgence, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
@@ -135,14 +135,28 @@ End Code
                             <div Class="form-group row">
                                 @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.SiteWebPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "13", .Placeholder = Resource.SiteWebPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
                                 </div>
 
                                 @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
+                                    @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "14", .Placeholder = Resource.EmailPlaceholder})
                                     @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "15", .Placeholder = Resource.Latitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "16", .Placeholder = Resource.Longitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
                                 </div>
                             </div>
 
@@ -230,8 +244,12 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 @Section Scripts
 
     <script>
-    var oldLatitude = '@ViewBag.Latitude';
-    var oldLongitude = '@ViewBag.Longitude';
+    var GeoLatitude = '#GeoLatitude';
+        var GeoLongitude = '#GeoLongitude';
+
+        var oldLatitude = $(GeoLatitude).val().replace(",",".");
+        var oldLongitude = $(GeoLongitude).val().replace(",", ".");;
+
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
         .bindPopup('<p><h6>' + 'Ancien emplacement : ' + '@Libelle.ToUpper()' + '</h6>. <br/><h6>Latitude: ' + oldLatitude + '</h6><br/><h6>Longitude: ' + oldLongitude + '</h6></p>')
         .openPopup();
@@ -287,17 +305,29 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 var TelephoneUrgence = '#TelephoneUrgence';
 		        var SiteWeb= '#SiteWeb';
 		        var Email= '#Email';
-                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
-                //alert("DateNaissance= " + DateNaissance);
+                 var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    if ($(GeoLatitude).val() != oldLatitude.replace(".", ",") || $(GeoLongitude).val() != oldLongitude.replace(".", ",")) {
+                        Latitude = $(GeoLatitude).val().replace(".", ",");
+                        Longitude = $(GeoLongitude).val().replace(".", ",");
+                    }
+                }
+
+          //      else if (Latitude == 0.0 || Longitude == 0.0 ) {
+          //          $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        //}
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
 
             if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
-                }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+            } else if (!$(Code).val().match(Coderegex)) {
+                $.alert("Le champ code doit avoir maximum 5 caratères");
+            }else{
 
                     var dataRow = {
                         'Id': $(Id).val(),
@@ -348,9 +378,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
                     });
                 }
-
-
             }
+        }
 
     </script>
 

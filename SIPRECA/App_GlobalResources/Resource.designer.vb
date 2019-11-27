@@ -2693,6 +2693,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Le champ {0} doit comporter des valeurs entières ou décimales (avec virgules &quot;,&quot;)..
+        '''</summary>
+        Public Shared ReadOnly Property DecimalDataType() As String
+            Get
+                Return ResourceManager.GetString("DecimalDataType", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Le champ {0} doit contenir un nombre (Exemple: 12; 4; 20,15; 0,95, etc.).
         '''</summary>
         Public Shared ReadOnly Property DecimalType() As String
@@ -4606,6 +4615,33 @@ Namespace My.Resources
         Public Shared ReadOnly Property GeographieEvenementsDate() As String
             Get
                 Return ResourceManager.GetString("GeographieEvenementsDate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Latitude.
+        '''</summary>
+        Public Shared ReadOnly Property GeoLatitude() As String
+            Get
+                Return ResourceManager.GetString("GeoLatitude", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les champ latitude  et longitude doivent être des valeurs entières ou décimales (avec virgules &quot;,&quot;)..
+        '''</summary>
+        Public Shared ReadOnly Property GeoLatitudeLongitudeError() As String
+            Get
+                Return ResourceManager.GetString("GeoLatitudeLongitudeError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Longitude.
+        '''</summary>
+        Public Shared ReadOnly Property GeoLongitude() As String
+            Get
+                Return ResourceManager.GetString("GeoLongitude", resourceCulture)
             End Get
         End Property
         

@@ -34,7 +34,7 @@ End Code
 
                     @Html.LabelFor(Function(m) m.Nom, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NamePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Nom, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.NamePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Nom, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -44,14 +44,14 @@ End Code
                     @Html.LabelFor(Function(m) m.OrganisationId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.OrganisationId, New SelectList(Model.LesOrganisations, "Value", "Text"), Resource.ComboOrganisation,
-                                New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboOrganisation})
+                             New With {.class = "form-control single-select", .tabindex = "3", .Placeholder = Resource.ComboOrganisation})
                         @Html.ValidationMessageFor(Function(m) m.OrganisationId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
-                     New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.CommuneCombo})
+                  New With {.class = "form-control single-select", .tabindex = "4", .Placeholder = Resource.CommuneCombo})
                         @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -61,13 +61,13 @@ End Code
 
                     @Html.LabelFor(Function(m) m.Possession, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Possession, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.PossessionPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Possession, New With {.class = "form-control form-control-square", .tabindex = "5", .Placeholder = Resource.PossessionPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Possession, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.HauteurMaximum, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.HauteurMaximum, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.HauteurMaximumPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.HauteurMaximum, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.HauteurMaximumPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.HauteurMaximum, "", New With {.style = "color: #da0b0b"})
                     </div>
 
@@ -76,13 +76,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.HauteurMaximumUnites, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.HauteurMaximumUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.HauteurMaximumUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.HauteurMaximumUnites, New With {.class = "form-control form-control-square ", .tabindex = "7", .Placeholder = Resource.HauteurMaximumUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.HauteurMaximumUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurQuaiChargementPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargement, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.ProfondeurQuaiChargementPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargement, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -90,13 +90,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurQuaiChargementUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurQuaiChargementUnites, New With {.class = "form-control form-control-square ", .tabindex = "9", .Placeholder = Resource.ProfondeurQuaiChargementUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurQuaiChargementUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurTerminalPetrolierPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolier, New With {.class = "form-control form-control-square", .tabindex = "10", .Placeholder = Resource.ProfondeurTerminalPetrolierPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolier, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -105,13 +105,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurTerminalPetrolierUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurTerminalPetrolierUnites, New With {.class = "form-control form-control-square ", .tabindex = "11", .Placeholder = Resource.ProfondeurTerminalPetrolierUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurTerminalPetrolierUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.CaleSeche, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CaleSeche, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CaleSechePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CaleSeche, New With {.class = "form-control form-control-square", .tabindex = "12", .Placeholder = Resource.CaleSechePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CaleSeche, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -119,13 +119,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.LongueurMaximaleNavirePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavire, New With {.class = "form-control form-control-square ", .tabindex = "13", .Placeholder = Resource.LongueurMaximaleNavirePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavire, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LongueurMaximaleNavireUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.LongueurMaximaleNavireUnites, New With {.class = "form-control form-control-square", .tabindex = "14", .Placeholder = Resource.LongueurMaximaleNavireUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.LongueurMaximaleNavireUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -133,13 +133,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Reparations, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Reparations, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ReparationsPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Reparations, New With {.class = "form-control form-control-square ", .tabindex = "15", .Placeholder = Resource.ReparationsPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Reparations, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Abri, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Abri, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.AbriPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Abri, New With {.class = "form-control form-control-square", .tabindex = "16", .Placeholder = Resource.AbriPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Abri, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -147,13 +147,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntreposagePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntreposage, New With {.class = "form-control form-control-square ", .tabindex = "17", .Placeholder = Resource.CapaciteStockageEntreposagePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntreposage, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CapaciteStockageSecurisePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapaciteStockageSecurise, New With {.class = "form-control form-control-square", .tabindex = "18", .Placeholder = Resource.CapaciteStockageSecurisePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapaciteStockageSecurise, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -161,13 +161,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteStockageEntrepotDouanierPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapaciteStockageEntrepotDouanier, New With {.class = "form-control form-control-square ", .tabindex = "19", .Placeholder = Resource.CapaciteStockageEntrepotDouanierPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapaciteStockageEntrepotDouanier, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.NombreRemorqueur, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.NombreRemorqueur, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreRemorqueurPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.NombreRemorqueur, New With {.class = "form-control form-control-square", .tabindex = "20", .Placeholder = Resource.NombreRemorqueurPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.NombreRemorqueur, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -175,13 +175,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.CapaciteRemorqueur, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteRemorqueur, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteRemorqueurPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapaciteRemorqueur, New With {.class = "form-control form-control-square ", .tabindex = "21", .Placeholder = Resource.CapaciteRemorqueurPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapaciteRemorqueur, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.NombreBarge, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.NombreBarge, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.NombreBargePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.NombreBarge, New With {.class = "form-control form-control-square", .tabindex = "22", .Placeholder = Resource.NombreBargePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.NombreBarge, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -189,13 +189,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.CapacietBarge, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapacietBarge, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapacietBargePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapacietBarge, New With {.class = "form-control form-control-square ", .tabindex = "23", .Placeholder = Resource.CapacietBargePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapacietBarge, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.EquipementChargement, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.EquipementChargement, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EquipementChargementPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.EquipementChargement, New With {.class = "form-control form-control-square", .tabindex = "24", .Placeholder = Resource.EquipementChargementPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.EquipementChargement, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -203,13 +203,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.CapaciteDouaniere, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.CapaciteDouaniere, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.CapaciteDouanierePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.CapaciteDouaniere, New With {.class = "form-control form-control-square ", .tabindex = "25", .Placeholder = Resource.CapaciteDouanierePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.CapaciteDouaniere, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Securite, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Securite, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.SecuritePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Securite, New With {.class = "form-control form-control-square", .tabindex = "26", .Placeholder = Resource.SecuritePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Securite, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -217,13 +217,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.ProfondeurMareHaute, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHaute, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareHautePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHaute, New With {.class = "form-control form-control-square ", .tabindex = "27", .Placeholder = Resource.ProfondeurMareHautePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHaute, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareHauteUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurMareHauteUnites, New With {.class = "form-control form-control-square", .tabindex = "28", .Placeholder = Resource.ProfondeurMareHauteUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurMareHauteUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -231,13 +231,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.ProfondeurMareBasse, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasse, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurMareBassePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasse, New With {.class = "form-control form-control-square ", .tabindex = "29", .Placeholder = Resource.ProfondeurMareBassePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasse, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurMareBasseUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurMareBasseUnites, New With {.class = "form-control form-control-square", .tabindex = "30", .Placeholder = Resource.ProfondeurMareBasseUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurMareBasseUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -245,13 +245,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.ProfondeurInondation, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurInondation, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.ProfondeurInondationPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurInondation, New With {.class = "form-control form-control-square ", .tabindex = "31", .Placeholder = Resource.ProfondeurInondationPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurInondation, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ProfondeurInondationUnitesPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.ProfondeurInondationUnites, New With {.class = "form-control form-control-square", .tabindex = "32", .Placeholder = Resource.ProfondeurInondationUnitesPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.ProfondeurInondationUnites, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -259,13 +259,13 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "4", .Placeholder = Resource.TelephonePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square ", .tabindex = "33", .Placeholder = Resource.TelephonePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Telephone2, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.TelephoneUrgencePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Telephone2, New With {.class = "form-control form-control-square", .tabindex = "34", .Placeholder = Resource.TelephoneUrgencePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Telephone2, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
@@ -273,16 +273,31 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.SiteWebPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "35", .Placeholder = Resource.SiteWebPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "36", .Placeholder = Resource.EmailPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "37", .Placeholder = Resource.Latitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "38", .Placeholder = Resource.Longitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+                @<br/>
 
                 @Html.Partial("_MyMapEnterPartial")
 
@@ -377,17 +392,31 @@ End Code
                 var Telephone2 = '#Telephone2';
 		        var SiteWeb= '#SiteWeb';
 		        var Email= '#Email';
-                //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
+                var GeoLatitude = '#GeoLatitude';
+                var GeoLongitude = '#GeoLongitude';
+
                 //alert("DateNaissance= " + DateNaissance);
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    Latitude = $(GeoLatitude).val().replace(".",",");
+                    Longitude = $(GeoLongitude).val().replace(".", ",");
+               }
+
+          //      else if (Latitude == 0.0 || Longitude == 0.0 ) {
+          //          $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        //}
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
 
             if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
-                }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+            } else if (!$(Code).val().match(Coderegex)) {
+                $.alert("Le champ code doit avoir maximum 5 caratères");
+            }else{
 
                     var dataRow = {
                         'Code': $(Code).val(),
@@ -459,8 +488,7 @@ End Code
 
                     });
                 }
-
-
+            }
             }
 
     </script>

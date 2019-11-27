@@ -74,14 +74,28 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.SiteWeb, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.SiteWebPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.SiteWeb, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.SiteWebPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.SiteWeb, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.EmailPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.EmailPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "9", .Placeholder = Resource.Latitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "10", .Placeholder = Resource.Longitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
@@ -89,7 +103,7 @@ End Code
 
 
             End Using
-            <br/>
+            <br />
             <div Class="form-group row">
                 <Label Class="col-sm-2 col-form-label"></Label>
                 <div Class="col-sm-10">
@@ -144,23 +158,37 @@ End Code
         function CreateHeliport() {
 		        var Code= '#Code';
 		        var Nom= '#Nom';
-            var CommuneId = '#CommuneId';
+                var CommuneId = '#CommuneId';
 		        var OrganisationId= '#OrganisationId';
 		        var Telephone= '#Telephone';
 		        var Telephone2= '#Telephone2';
 		        var SiteWeb= '#SiteWeb';
 		        var Email= '#Email';
+                var GeoLatitude = '#GeoLatitude';
+                var GeoLongitude = '#GeoLongitude';
 
                 //alert("DateNaissance= " + DateNaissance);
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    Latitude = $(GeoLatitude).val().replace(".",",");
+                    Longitude = $(GeoLongitude).val().replace(".", ",");
+               }
+
+          //      else if (Latitude == 0.0 || Longitude == 0.0 ) {
+          //          $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+		        //}
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
 
             if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
-                }
-                else if (Latitude == 0.0 || Longitude == 0.0 ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+            } else if (!$(Code).val().match(Coderegex)){
+                $.alert("Le champ code doit avoir maximum 5 caratères");
+            }else{
 
                     var dataRow = {
                         'Code': $(Code).val(),
@@ -172,7 +200,7 @@ End Code
                         'SiteWeb': $(SiteWeb).val(),
                         'Email': $(Email).val(),
                         'Latitude': Latitude,
-                        'Longitude': Longitude
+                        'Longitude': Longitude,
                     }
 
                     //alert("c'est moi le createPatient avant ajax");
@@ -212,8 +240,8 @@ End Code
 
                     });
                 }
-
             }
+             }
 
     </script>
 
