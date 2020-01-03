@@ -93,6 +93,21 @@
     <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -188,6 +203,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AlertesController.vb" />
     <Compile Include="Controllers\AlertsController.vb" />
+    <Compile Include="Controllers\BordereauTransfertsController.vb" />
     <Compile Include="Controllers\AnneeBudgetairesController.vb" />
     <Compile Include="Controllers\AutreImpactHumainEtEconomiqueController.vb" />
     <Compile Include="Controllers\CardreSendaiCibleBController.vb" />
@@ -198,6 +214,7 @@
     <Compile Include="Controllers\ElementsController.vb" />
     <Compile Include="Controllers\EnquetesController.vb" />
     <Compile Include="Controllers\EvenementZonesController.vb" />
+    <Compile Include="Controllers\ReportController.vb" />
     <Compile Include="Controllers\PerteBetailsController.vb" />
     <Compile Include="Controllers\ServicesPubliquePertubesController.vb" />
     <Compile Include="Controllers\SolutionsController.vb" />
@@ -254,7 +271,9 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
+    <Compile Include="DAL\Config\BordereauTransfertDemandeCfg.vb" />
     <Compile Include="DAL\Config\CollecteCfg.vb" />
+    <Compile Include="DAL\Config\BordereauTransfertCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\SolutionCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\TypeSolutionCfg.vb" />
     <Compile Include="DAL\Config\DesInventar\ZoneLocalisationCfg.vb" />
@@ -439,7 +458,21 @@
       <DependentUpon>201911201250304_Ville vers commune moyen de reponse.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911201250304_Ville vers commune moyen de reponse.vb" />
+    <Compile Include="Migrations\201911281553188_Add_Field_Code_On_Collectivite_And_Add_Table_BordereauTransfert.Designer.vb">
+      <DependentUpon>201911281553188_Add_Field_Code_On_Collectivite_And_Add_Table_BordereauTransfert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281553188_Add_Field_Code_On_Collectivite_And_Add_Table_BordereauTransfert.vb" />
+    <Compile Include="Migrations\201911281815167_Add_Table_BordereauTransfertDemande.Designer.vb">
+      <DependentUpon>201911281815167_Add_Table_BordereauTransfertDemande.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281815167_Add_Table_BordereauTransfertDemande.vb" />
+    <Compile Include="Migrations\201911290042024_Integration_With_JR.Designer.vb">
+      <DependentUpon>201911290042024_Integration_With_JR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911290042024_Integration_With_JR.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\BordereauTransfertDemande.vb" />
+    <Compile Include="Models\BordereauTransfert.vb" />
     <Compile Include="Models\Collecte.vb" />
     <Compile Include="Models\DesInventar\AutreImpactHumainEtEconomique.vb" />
     <Compile Include="Models\DesInventar\CibleDServicesPublique.vb" />
@@ -505,6 +538,14 @@
     <Compile Include="Models\Ville.vb" />
     <Compile Include="Models\DesInventar\EvenementZone.vb" />
     <Compile Include="Models\DesInventar\ZoneARisque.vb" />
+    <Compile Include="Report\Report.aspx.designer.vb">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report.aspx.vb">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewModels\BordereauTransfertViewModel.vb" />
     <Compile Include="ViewModels\MailAlertesViewModel.vb" />
     <Compile Include="ViewModels\SMSAlertesViewModel.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
@@ -830,6 +871,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911201250304_Ville vers commune moyen de reponse.resx">
       <DependentUpon>201911201250304_Ville vers commune moyen de reponse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281553188_Add_Field_Code_On_Collectivite_And_Add_Table_BordereauTransfert.resx">
+      <DependentUpon>201911281553188_Add_Field_Code_On_Collectivite_And_Add_Table_BordereauTransfert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281815167_Add_Table_BordereauTransfertDemande.resx">
+      <DependentUpon>201911281815167_Add_Table_BordereauTransfertDemande.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911290042024_Integration_With_JR.resx">
+      <DependentUpon>201911290042024_Integration_With_JR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1418,11 +1468,13 @@
     <Content Include="assets\images\gallery\carousel-img-8.png" />
     <Content Include="assets\images\gallery\carousel-img-9.png" />
     <Content Include="assets\images\gallery\Collect-Form-Picture.png" />
+    <Content Include="assets\images\gallery\gear.png" />
     <Content Include="assets\images\gallery\iconfinder_alert-b_86076.png" />
     <Content Include="assets\images\gallery\iconfinder_alert-o_86077.png" />
     <Content Include="assets\images\gallery\iconfinder_alert_87404.png" />
     <Content Include="assets\images\gallery\iconfinder_bell-notifications-notice-notify-alert_3993856.png" />
     <Content Include="assets\images\gallery\iconfinder_emergency_44843.png" />
+    <Content Include="assets\images\gallery\iconfinder_freebies1_glyph-13_2920356.png" />
     <Content Include="assets\images\gallery\iconfinder_Notification_3387297.png" />
     <Content Include="assets\images\gallery\modal-img.jpg" />
     <Content Include="assets\images\gallery\Module_Sahana.jpg" />
@@ -1561,6 +1613,23 @@
     <Content Include="assets\plugins\jquery.steps\css\jquery.steps.css" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.steps.min.js" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.wizard-init.js" />
+    <Content Include="assets\plugins\leaflet\images\layers-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\layers.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-abris-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-abris.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-aeroport-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-aeroport.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-grey-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-grey.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-heliport-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-heliport.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-hospital-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-hospital.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-ports-2x.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon-ports.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-icon.png" />
+    <Content Include="assets\plugins\leaflet\images\marker-shadow.png" />
     <Content Include="assets\plugins\leaflet\leaflet-src.esm.js" />
     <Content Include="assets\plugins\leaflet\leaflet-src.js" />
     <Content Include="assets\plugins\leaflet\leaflet.css" />
@@ -1644,6 +1713,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="Report\Report.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -1658,6 +1728,14 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Report\Template\BordereauTransfert.rdlc" />
+    <Content Include="Report\Template\ListeDesAbris.rdl" />
+    <Content Include="Report\Template\ListeDesAeroports.rdl" />
+    <Content Include="Report\Template\ListeDesBureaux.rdl" />
+    <Content Include="Report\Template\ListeDesEntrepots.rdl" />
+    <Content Include="Report\Template\ListeDesHeliports.rdl" />
+    <Content Include="Report\Template\ListeDesHopitaux.rdlc" />
+    <Content Include="Report\Template\ListeDesPorts.rdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -1682,6 +1760,15 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="Upload\Demandes\18\12\20-11-2019_A_17h30min27s756ms _7xdr1kwcifl.png" />
+    <Content Include="Upload\Demandes\19\13\21-11-2019_A_10h36min34s43ms _ces.png" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_16h50min12s669ms _2019-06-25_103701.png" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_17h3min48s628ms _2019-07-19_202031.png" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_17h5min8s672ms _2019-07-18_101847.png" />
+    <Content Include="Upload\Demandes\21\4578FR\22-11-2019_A_12h50min4s796ms _7xdr1kwcifl.png" />
+    <Content Include="Upload\Demandes\22\READ45\22-11-2019_A_12h52min45s648ms _7xdr1kwcifl.png" />
     <Content Include="Views\Account\_ChangePasswordPartial.vbhtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.vbhtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.vbhtml" />
@@ -2085,10 +2172,37 @@
     <Content Include="Views\Alerts\SendSMS.vbhtml" />
     <Content Include="Views\Alerts\Create.vbhtml" />
     <Content Include="Views\Alerts\Delete.vbhtml" />
-    <Content Include="Views\Alerts\Details.vbhtml" />
     <Content Include="Views\Alerts\Edit.vbhtml" />
     <Content Include="Views\Alerts\Index.vbhtml" />
     <Content Include="Views\Alerts\SendMail.vbhtml" />
+    <Content Include="Views\Shared\_LayoutChart.vbhtml" />
+    <Content Include="Views\Shared\_LayoutSahanaChart.vbhtml" />
+    <Content Include="Views\Account\ChangeUserPassword.vbhtml" />
+    <Content Include="Views\BordereauTransferts\Create.vbhtml" />
+    <Content Include="Views\BordereauTransferts\Delete.vbhtml" />
+    <Content Include="Views\BordereauTransferts\Details.vbhtml" />
+    <Content Include="Views\BordereauTransferts\Edit.vbhtml" />
+    <Content Include="Views\BordereauTransferts\Index.vbhtml" />
+    <Content Include="Upload\Demandes\19\13\20-11-2019_A_17h36min7s293ms _articles.docx" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_17h15min24s101ms _2-liste_personel.docx" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_17h15min55s532ms _app.pdf" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_18h13min26s50ms _cv_kanko.pdf" />
+    <Content Include="Upload\Demandes\1\RAz\29-07-2019_A_19h19min54s811ms _avendre.docx" />
+    <Content Include="Upload\Demandes\20\14\21-11-2019_A_11h37min3s961ms _articles.docx" />
+    <Content Include="Upload\Projets\1\RE12\13-09-2019_A_16h2min20s864ms _mise_sur_pied_3.docx" />
+    <Content Include="Views\BordereauTransferts\IndexDemandes.vbhtml" />
+    <Content Include="Views\Shared\_LayoutReport.vbhtml" />
+    <Content Include="Views\Shared\_LeftSideBarReport.vbhtml" />
+    <Content Include="Views\Report\ListeHopitaux.vbhtml" />
+    <Content Include="Views\Report\Delete.vbhtml" />
+    <Content Include="Views\Report\Edit.vbhtml" />
+    <Content Include="Views\Report\Index.vbhtml" />
+    <Content Include="Views\Indemnisations\DetailIndems.vbhtml" />
+    <Content Include="Views\Alerts\IndexSMS.vbhtml" />
+    <Content Include="Views\Alerts\Details.vbhtml" />
+    <Content Include="Views\Home\IndexParam.vbhtml" />
+    <Content Include="Views\Shared\_LayoutParam.vbhtml" />
+    <Content Include="Views\Shared\_LeftSideBarParam.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

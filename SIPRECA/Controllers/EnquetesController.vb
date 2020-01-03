@@ -352,6 +352,13 @@ Namespace Controllers
             LoadComboBoxChamps(entityVM)
             ViewBag.FormulaireId = formulaire.Id
             entityVM.ListeChamps = (From e In Db.Champs Where e.StatutExistant = 1 And e.Section.FormulaireId = formulaire.Id Select e Order By e.SectionId).ToList()
+
+            'Code nouvellement ajouté pour donner une valeur par defaut à la section et au type de champ
+            If (Session("LastSection") IsNot Nothing And Session("LastTypeChamp") IsNot Nothing) Then
+                entityVM.SectionId = Session("LastSection")
+                entityVM.TypeChampsId = Session("LastTypeChamp")
+            End If
+
             Return View(entityVM)
         End Function
 
@@ -384,6 +391,9 @@ Namespace Controllers
                 entityVM.AspNetUserIdChamps = GetCurrentUser().Id
                 If ModelState.IsValid Then
                     Dim entity = entityVM.GetEntityChamps()
+                    'Ce code a été ajouté pour gérer le fait que la dernière section et le dernier type de champ doivent automatiquement être chargé dans les ombo lors des prochains ajouts.
+                    Session("LastSection") = entity.SectionId
+                    Session("LastTypeChamp") = entity.TypeChampsId
                     Db.Champs.Add(entity)
                     Try
                         Db.SaveChanges()

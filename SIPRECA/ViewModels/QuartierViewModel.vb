@@ -5,6 +5,11 @@ Public Class QuartierViewModel
     Public Property Id As Long
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Code", ResourceType:=GetType(Resource))>
+    <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Code As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Libelle", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Libelle As String
@@ -41,13 +46,11 @@ Public Class QuartierViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Longitude", ResourceType:=GetType(Resource))>
-    Public Property Longitude As Double?
+    Public Property Longitude As Double? = 0.0
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Latitude", ResourceType:=GetType(Resource))>
-    Public Property Latitude As Double?
+    Public Property Latitude As Double? = 0.0
 
     Public Sub New()
     End Sub
@@ -60,8 +63,9 @@ Public Class QuartierViewModel
             .Libelle = entity.Libelle
             .StatutExistant = entity.StatutExistant
             .DateCreation = entity.DateCreation
-            .StatutExistant = StatutExistant
-            .Population = Population
+            .StatutExistant = entity.StatutExistant
+            .Population = entity.Population
+            .Code = entity.Code
             .Superficie = entity.Superficie
             .Latitude = entity.Latitude
             .Longitude = entity.Longitude
@@ -80,6 +84,7 @@ Public Class QuartierViewModel
             .StatutExistant = StatutExistant
             .Superficie = Superficie
             .Population = Population
+            .Code = Code
             .Longitude = Longitude
             .Latitude = Latitude
             .DateCreation = DateCreation

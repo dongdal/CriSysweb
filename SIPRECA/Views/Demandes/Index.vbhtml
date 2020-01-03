@@ -54,9 +54,9 @@ End Code
                         <div Class="col-sm-2">
                             <div Class="form-group">
                                 @*<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>*@
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>*@
                             </div>
                         </div>
 
@@ -90,9 +90,9 @@ End Code
             <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
                 <thead>
                     <tr>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Ordre, "Index", New With {.sortOrder = ViewBag.IDSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
-                        </th>
+                        @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                                @Html.ActionLink(Resource.Ordre, "Index", New With {.sortOrder = ViewBag.IDSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                            </th>*@
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Sinistre, "Index", New With {.sortOrder = ViewBag.CollectiviteSinistreeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
@@ -100,8 +100,8 @@ End Code
                             @Html.ActionLink(Resource.LeSinistrer, "Index", New With {.sortOrder = ViewBag.SinistrerSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
                         @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
-        </th>*@
+                                @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
+                            </th>*@
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateDeclaration, "Index", New With {.sortOrder = ViewBag.DateDeclarationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab, .RegionId = ViewBag.PageRegionId, .DepartementId = ViewBag.PageDepartementId, .CommuneId = ViewBag.PageCommuneId, .EtatAvancement = ViewBag.EtatAvancement})
                         </th>
@@ -117,9 +117,9 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Id)
-                            </td>
+                            @*<td class="sorting_asc text-center">
+                                    @Html.DisplayFor(Function(modelItem) item.Id)
+                                </td>*@
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.CollectiviteSinistree.Libelle)
                             </td>
@@ -138,39 +138,39 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental Or
 item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional Or
 item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
-                            @Resource.StatutEnCour
+                @Resource.StatutEnCour
 
-                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ValidationCommunal Or
-                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationDepartemental Or
-                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationRegional Or
-                                                        item.StatutExistant = Util.ElementsSuiviDemandes.ValidationNational Then
+            ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ValidationCommunal Or
+                                    item.StatutExistant = Util.ElementsSuiviDemandes.ValidationDepartemental Or
+                                    item.StatutExistant = Util.ElementsSuiviDemandes.ValidationRegional Or
+                                    item.StatutExistant = Util.ElementsSuiviDemandes.ValidationNational Then
 
-                            @Resource.StatutEnCour
+                @Resource.StatutEnCour
 
-                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.RejetCommunal Or
-                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetDepartemental Or
-                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetRegional Or
-                                                                                    item.StatutExistant = Util.ElementsSuiviDemandes.RejetNational Then
+            ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.RejetCommunal Or
+                                                                item.StatutExistant = Util.ElementsSuiviDemandes.RejetDepartemental Or
+                                                                item.StatutExistant = Util.ElementsSuiviDemandes.RejetRegional Or
+                                                                item.StatutExistant = Util.ElementsSuiviDemandes.RejetNational Then
 
-                            @Resource.StatutRejeter
+                @Resource.StatutRejeter
 
-                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionDepartemental Or
-                                                                                item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or
-                                                                                item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionNational Then
+            ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionDepartemental Or
+                                                            item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or
+                                                            item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionNational Then
 
-                            @Resource.StatutEnCour
+                @Resource.StatutEnCour
 
-                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal Or
-                                                    item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental Or
-                                                    item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional Then
+            ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal Or
+                                item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental Or
+                                item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional Then
 
-                            @Resource.StatutEnCour
+                @Resource.StatutEnCour
 
-                                ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation Then
+            ElseIf item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation Then
 
-                            @Resource.StatutIndemniser
+                @Resource.StatutIndemniser
 
-                                End If
+            End If
                             </td>
                             <td class="text-center">
 
@@ -207,6 +207,10 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                         @<a class="btn btn-round btn-gradient-bloody waves-effect waves-light m-1 " title="@Resource.TransfertDemande" onclick="Transfert('@CInt(Util.ElementsSuiviDemandes.TransfertCommunal)' ,'@item.Id')">
                                             <i class="fa fa-exchange" aria-hidden="true"></i>
                                         </a>
+
+                                        @*@<a class="btn btn-round btn-info waves-effect waves-light m-1 " title="@Resource.TransfertDemande" href="@Url.Action("Tansfert", Nothing, New With {.DemandeId = item.Id})">
+                                            <i class="fa fa-exchange" aria-hidden="true"></i>
+                                        </a>*@
 
                                         @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                             <i class="fa fa-money" aria-hidden="true"></i>
@@ -263,8 +267,8 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetDepartemental) Then
 
                                         @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>*@
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
@@ -305,8 +309,8 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetRegional) Then
 
                                         @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>*@
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional Or item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
@@ -342,8 +346,8 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.RejetNational) Then
 
                                         @*@<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                        </a>*@
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </a>*@
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.DecisionIndemnisation) Then
 
@@ -367,6 +371,8 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
     </div>
 </div>
+
+
 
 
 @Section Scripts

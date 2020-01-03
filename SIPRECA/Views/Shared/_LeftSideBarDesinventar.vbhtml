@@ -41,7 +41,7 @@
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
         <li>
-            <a href="index.html" class="waves-effect"  style="font-size: 11px;">
+            <a href="index.html" class="waves-effect" style="font-size: 11px;">
                 <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
@@ -49,10 +49,10 @@
                 <li><a href="@Url.Action("Index", "DesagregationRecoltesAgricoles")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRecoltesAgricoles</a></li>
                 <li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
                 <li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
-                <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
+   
                 <li><a href="@Url.Action("Index", "ServicesPubliquePertubes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuServicesPubliquePertube</a></li>
-                <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
-                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
+                @*<li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
+                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>*@
                 @*<li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>*@
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
@@ -68,6 +68,16 @@
                 <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
             </ul>
         </li>
+        <li>
+            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                <i class="icon-handbag"></i><span> @Resource.MenuManageSolution</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+                <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
+                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
+            </ul>
+        </li>
 
         <li>
             <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
@@ -76,9 +86,11 @@
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenementZones</a></li>
+                <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
+                <li><a href="@Url.Action("Query", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRequeteur</a></li>
             </ul>
         </li>
-        
+
     </ul>
 
 </div>

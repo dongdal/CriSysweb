@@ -10,6 +10,11 @@ Public Class RegionViewModel
     Public Property Libelle As String
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Code", ResourceType:=GetType(Resource))>
+    <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Code As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="RegionChefLieu", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property ChefLieu As String
@@ -61,6 +66,7 @@ Public Class RegionViewModel
             .Superficie = entity.Superficie
             .Latitude = entity.Latitude
             .Longitude = entity.Longitude
+            .Code = entity.Code
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
         End With
@@ -77,6 +83,7 @@ Public Class RegionViewModel
             .Population = Population
             .Longitude = Longitude
             .Latitude = Latitude
+            .Code = Code
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
         End With

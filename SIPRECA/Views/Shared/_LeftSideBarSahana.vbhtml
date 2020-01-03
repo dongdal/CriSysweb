@@ -39,7 +39,6 @@
         </div>
     </div>
     <ul class="sidebar-menu do-nicescrol">
-        <li class="sidebar-header">MAIN NAVIGATION</li>
         <li>
             <a href="index.html" class="waves-effect" style="font-size: 11px;">
                 <i class="icon-settings"></i><span>@Resource.MenuBaseSettings</span><i class="fa fa-angle-left pull-right"></i>
@@ -47,6 +46,7 @@
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "Devises")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuDevises</a></li>
                 <li><a href="@Url.Action("Index", "Materiels")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuMateriels</a></li>
+                <li><a href="@Url.Action("Index", "TypeOrganisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeOrganisation</a></li>
                 <li><a href="@Url.Action("Index", "Organisations")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuOrganisation</a></li>
             </ul>
         </li>
@@ -129,6 +129,14 @@
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "Projets")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuProjet</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                <i class="fa fa-bar-chart"></i><span>@Resource.MenuCartes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
             </ul>
         </li>

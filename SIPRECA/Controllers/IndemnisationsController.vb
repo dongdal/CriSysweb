@@ -93,6 +93,22 @@ Namespace Controllers
             Return View(entityVM)
         End Function
 
+        ' GET: Indemnisation/Details/5
+        Function DetailIndems(ByVal id As Long?) As ActionResult
+            If IsNothing(id) Then
+                'Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+                Return RedirectToAction("Error400", "Home", New With {Resource.SelectedDetailsId, .MyAction = "Index", .Controleur = "Indemnisations"})
+            End If
+            Dim Indemnisation As Indemnisation = Db.Indemnisation.Find(id)
+            If IsNothing(Indemnisation) Then
+                'Return HttpNotFound()
+                Return RedirectToAction("Error400", "Home", New With {Resource.SelectedDetailsId, .MyAction = "Index", .Controleur = "Indemnisations"})
+            End If
+            Dim entityVM As New IndemnisationViewModel(Indemnisation)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
 
         Private Sub LoadComboBox(entityVM As IndemnisationViewModel)
             Dim AspNetUser = (From e In Db.Users Where e.Etat = 1 Select e)

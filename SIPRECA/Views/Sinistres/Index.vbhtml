@@ -55,6 +55,9 @@ End Code
                             @Html.ActionLink(Resource.SinistreTypeSinistre, "Index", New With {.sortOrder = ViewBag.TypeSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.Commune, "Index", New With {.sortOrder = ViewBag.CommuneSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateDuSinistre, "Index", New With {.sortOrder = ViewBag.DateDuSinistreSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -76,6 +79,11 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.TypeSinistre.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
+                                @For Each it In item.CollectiviteSinistree
+                                    @Html.DisplayFor(Function(modelItem) it.Commune.Libelle)@<br>
+                                Next
+                            </td>
+                            <td Class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateDuSinistre)
                             </td>
                             <td class="sorting_asc text-center">
@@ -83,7 +91,7 @@ End Code
                             </td>
                            
                             <td class="text-center">
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.ids = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">

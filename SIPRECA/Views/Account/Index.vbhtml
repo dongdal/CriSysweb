@@ -5,6 +5,7 @@
 
 @Code
     ViewBag.Title = Resource.GestUserIndex
+    Layout = "~/Views/Shared/_LayoutParam.vbhtml"
 End Code
 
 <div class="page-header">

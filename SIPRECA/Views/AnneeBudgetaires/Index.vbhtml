@@ -57,12 +57,7 @@ End Code
                         </th><th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateFin, "Index", New With {.sortOrder = ViewBag.DateFinSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.Statut, "Index", New With {.sortOrder = ViewBag.StatutExistantSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
-                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>
+                       
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
                         </th>
@@ -81,19 +76,14 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateFin)
                             </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.StatutExistant)
-                            </td>
-                            <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateCreation)
-                            </td>
+                            
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
+                                @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>
+                                </a>*@
 
                             </td>
                         </tr>

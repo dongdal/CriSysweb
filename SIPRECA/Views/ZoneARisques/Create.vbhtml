@@ -31,6 +31,24 @@ End Code
                         @Html.TextBoxFor(Function(m) m.Libelle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Libelle, "", New With {.style = "color: #da0b0b"})
                     </div>
+                    @Html.LabelFor(Function(m) m.Rayon, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Rayon, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.Rayon})
+                        @Html.ValidationMessageFor(Function(m) m.Rayon, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.Latitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.Longitude})
+                        @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
+                    </div>
                 </div>
 
                 @Html.Partial("_MyMapEnterPartial")
@@ -72,6 +90,11 @@ End Code
         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
+
+            $(GeoLatitude).val(lat);
+            $(GeoLongitude).val(lon);
             //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
             //Clear existing marker,
 
@@ -90,22 +113,41 @@ End Code
 
         function CreateZoneARisque() {
             var Libelle = '#Libelle';
-		        
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
+            var Rayon = '#Rayon';
 
-            if (typeof $(Libelle).val() == "undefined" || $(Libelle).val() == "" ) {
+            Latitude = $(GeoLatitude).val().replace(".", ",");
+            Longitude = $(GeoLongitude).val().replace(".", ",");
+
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!Latitude.match(regex) || !Longitude.match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    Latitude = $(GeoLatitude).val().replace(".", ",");
+                    Longitude = $(GeoLongitude).val().replace(".", ",");
+                }
+
+                var Coderegex = /[a-zA-Z0-9_]{1,5}/;
+
+
+                if(typeof $(Libelle).val() == "undefined" || $(Libelle).val() == "" || typeof Rayon == "undefined" || typeof Rayon == "undefined") {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+                //else if (typeof Latitude == "undefined" || typeof Longitude == "undefined") {
+                //    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+                //}
+                else {
                     var dataRow = {
                         'Libelle': $(Libelle).val(),
+                        'Rayon': $(Rayon).val(),
                         'Latitude': Latitude,
-                        'Longitude': Longitude
+                        'Longitude': Longitude,
                     }
-               
+
                     $.ajax({
                         type: 'POST',
                         url: '@Url.Action("Create", "ZoneARisques")',
@@ -133,6 +175,7 @@ End Code
 
                     });
                 }
+            }
 
 
             }

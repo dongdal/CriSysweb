@@ -117,4 +117,3718 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Abri" xml:space="preserve">
+    <value>Shelter</value>
+  </data>
+  <data name="AbriPlaceholder" xml:space="preserve">
+    <value>Make select safe</value>
+  </data>
+  <data name="Abris" xml:space="preserve">
+    <value>shelters</value>
+  </data>
+  <data name="AbrisCapaciteMAx" xml:space="preserve">
+    <value>max</value>
+  </data>
+  <data name="AbrisCapaciteMin" xml:space="preserve">
+    <value>capacity min</value>
+  </data>
+  <data name="AbrisEstimationPopulationMAx" xml:space="preserve">
+    <value>max population</value>
+  </data>
+  <data name="AbrisEstimationPopulationMin" xml:space="preserve">
+    <value>population min</value>
+  </data>
+  <data name="AccountLockedMessage" xml:space="preserve">
+    <value>Your account has been blocked after several attempts of incorrect connection.</value>
+  </data>
+  <data name="AccountLockedMessageTimeLeft" xml:space="preserve">
+    <value>Time remaining until unblocking of the account: </value>
+  </data>
+  <data name="AccountLockedTitle" xml:space="preserve">
+    <value>Blocked account</value>
+  </data>
+  <data name="Acronyme" xml:space="preserve">
+    <value>Sigle</value>
+  </data>
+  <data name="AcronymePlaceholder" xml:space="preserve">
+    <value>Please enter the organization's acronym</value>
+  </data>
+  <data name="ActionList" xml:space="preserve">
+    <value>Action (s)</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>Add Group</value>
+  </data>
+  <data name="AddItem" xml:space="preserve">
+    <value>Add Item</value>
+  </data>
+  <data name="Adresse" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AdressePlaceholder" xml:space="preserve">
+    <value>Please address your renseingner</value>
+  </data>
+  <data name="AdresseUser" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Aeroport" xml:space="preserve">
+    <value>Airport</value>
+  </data>
+  <data name="AeroportLargeurDePisteMAx" xml:space="preserve">
+    <value>Max track width</value>
+  </data>
+  <data name="AeroportLargeurDePisteMin" xml:space="preserve">
+    <value>track width min</value>
+  </data>
+  <data name="AeroportLongueurDePisteMAx" xml:space="preserve">
+    <value>Max Track Length</value>
+  </data>
+  <data name="AeroportLongueurDePisteMin" xml:space="preserve">
+    <value>Track length min</value>
+  </data>
+  <data name="AffecteAgriculture" xml:space="preserve">
+    <value>Agriculture</value>
+  </data>
+  <data name="AffecteEducation" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="AffecteesIndirectment" xml:space="preserve">
+    <value>affected indirectment</value>
+  </data>
+  <data name="AffecteSante" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="AffectesDirectment" xml:space="preserve">
+    <value>affected directment</value>
+  </data>
+  <data name="AffecteTransport" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="AmpleurDuDanger" xml:space="preserve">
+    <value>Extent of the danger</value>
+  </data>
+  <data name="AnneeBudgetaire" xml:space="preserve">
+    <value>fiscal year</value>
+  </data>
+  <data name="AnneeBudgetaireListe" xml:space="preserve">
+    <value>fiscal years</value>
+  </data>
+  <data name="AnneeFabrication" xml:space="preserve">
+    <value>Year of manufacture</value>
+  </data>
+  <data name="AnneeFabricationPlaceholder" xml:space="preserve">
+    <value>Enter the year of manufacture of the element</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>CRISYS PLATEFORM</value>
+  </data>
+  <data name="Artichauts" xml:space="preserve">
+    <value>artichokes</value>
+  </data>
+  <data name="AutreDesagregation" xml:space="preserve">
+    <value>other disaggregation</value>
+  </data>
+  <data name="AutreImpactHumainEtEconomique" xml:space="preserve">
+    <value>Other human and economic impacts</value>
+  </data>
+  <data name="AutrePerte" xml:space="preserve">
+    <value>Other losses (description)</value>
+  </data>
+  <data name="AutresImpactsHumainsEconomiques" xml:space="preserve">
+    <value>Other human and economic impacts (DesInventar)</value>
+  </data>
+  <data name="AutresSecteurs" xml:space="preserve">
+    <value>other sectors</value>
+  </data>
+  <data name="BetailCombo" xml:space="preserve">
+    <value>Please select the animal</value>
+  </data>
+  <data name="BetailDestroyed" xml:space="preserve">
+    <value>total destroyed</value>
+  </data>
+  <data name="BetailPerdu" xml:space="preserve">
+    <value>lost cattle</value>
+  </data>
+  <data name="BetailPerteEconomique" xml:space="preserve">
+    <value>economic losses</value>
+  </data>
+  <data name="BetailTotalAffected" xml:space="preserve">
+    <value>total allocated</value>
+  </data>
+  <data name="BetailTotalDamaged" xml:space="preserve">
+    <value>total touched</value>
+  </data>
+  <data name="Blesse" xml:space="preserve">
+    <value>Injured</value>
+  </data>
+  <data name="BoitePostale" xml:space="preserve">
+    <value>Post box</value>
+  </data>
+  <data name="BoitePostalePlaceholder" xml:space="preserve">
+    <value>Please enter the postal address</value>
+  </data>
+  <data name="BP" xml:space="preserve">
+    <value>Post box</value>
+  </data>
+  <data name="BtnBuy" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>To close</value>
+  </data>
+  <data name="BtnDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="BtnFiltrer" xml:space="preserve">
+    <value>Start the filter</value>
+  </data>
+  <data name="BtnFinaliser" xml:space="preserve">
+    <value>Finalize</value>
+  </data>
+  <data name="BtnInfoIndemnisation" xml:space="preserve">
+    <value>Overview of details help</value>
+  </data>
+  <data name="BtnLogIn" xml:space="preserve">
+    <value>To log in</value>
+  </data>
+  <data name="BtnPieces" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="BtnPrint" xml:space="preserve">
+    <value>To print</value>
+  </data>
+  <data name="BtnSave" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="BtnUnlock" xml:space="preserve">
+    <value>unlock</value>
+  </data>
+  <data name="BtnValidate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="btn_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Btn_apercu" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Btn_Delete" xml:space="preserve">
+    <value>Delete an item</value>
+  </data>
+  <data name="Btn_Detail" xml:space="preserve">
+    <value>View details</value>
+  </data>
+  <data name="Btn_Edit" xml:space="preserve">
+    <value>Edit information</value>
+  </data>
+  <data name="Btn_GestUserRoles" xml:space="preserve">
+    <value>Change user role</value>
+  </data>
+  <data name="Btn_NewDem" xml:space="preserve">
+    <value>New request</value>
+  </data>
+  <data name="btn_Next" xml:space="preserve">
+    <value>following</value>
+  </data>
+  <data name="Btn_nouveau" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="btn_Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="btn_Save" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="Btn_Suivant" xml:space="preserve">
+    <value>following</value>
+  </data>
+  <data name="Btn_Terminer" xml:space="preserve">
+    <value>finish</value>
+  </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="BudgetPlaceholder" xml:space="preserve">
+    <value>Enter amount budget </value>
+  </data>
+  <data name="Bureau" xml:space="preserve">
+    <value>offices</value>
+  </data>
+  <data name="CadreSendai" xml:space="preserve">
+    <value>Complete information about the context Sendai</value>
+  </data>
+  <data name="CadreSendaiA" xml:space="preserve">
+    <value>Sendai framework A</value>
+  </data>
+  <data name="CadreSendaiB" xml:space="preserve">
+    <value>Frame Sendai B</value>
+  </data>
+  <data name="CadreSendaiC" xml:space="preserve">
+    <value>Sendai C Frame</value>
+  </data>
+  <data name="CadreSendaiD" xml:space="preserve">
+    <value>Sendai D Framework</value>
+  </data>
+  <data name="CaleSeche" xml:space="preserve">
+    <value>Dry dock</value>
+  </data>
+  <data name="CaleSechePlaceholder" xml:space="preserve">
+    <value>Enter the dry dock </value>
+  </data>
+  <data name="CancelingConfirmed" xml:space="preserve">
+    <value>Remove the canceled item.</value>
+  </data>
+  <data name="CancelingConfirmedCloture" xml:space="preserve">
+    <value>confirmed closing operation.</value>
+  </data>
+  <data name="CancelingIndemnisation" xml:space="preserve">
+    <value>You are about to cancel this operation.</value>
+  </data>
+  <data name="CancelingProcess" xml:space="preserve">
+    <value>Cancellation Confirmed !!!</value>
+  </data>
+  <data name="CancelingReception" xml:space="preserve">
+    <value>Canceling Receiving</value>
+  </data>
+  <data name="CancelingRejet" xml:space="preserve">
+    <value>rejection of the annulment</value>
+  </data>
+  <data name="CancelingTransfert" xml:space="preserve">
+    <value>Transfer Cancellation</value>
+  </data>
+  <data name="CancelingValidation" xml:space="preserve">
+    <value>Unverified</value>
+  </data>
+  <data name="CapacietBarge" xml:space="preserve">
+    <value>Capacity barge </value>
+  </data>
+  <data name="CapacietBargePlaceholder" xml:space="preserve">
+    <value>Enter the badge capacity</value>
+  </data>
+  <data name="Capacite" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+  <data name="CapaciteDisponible" xml:space="preserve">
+    <value>available capacity</value>
+  </data>
+  <data name="CapaciteDisponiblePlaceholder" xml:space="preserve">
+    <value>Enter the available capacity</value>
+  </data>
+  <data name="CapaciteDouaniere" xml:space="preserve">
+    <value>Customs capacity</value>
+  </data>
+  <data name="CapaciteDouanierePlaceholder" xml:space="preserve">
+    <value>Enter the customs capacity</value>
+  </data>
+  <data name="CapacitePlaceholder" xml:space="preserve">
+    <value>Enter capacity</value>
+  </data>
+  <data name="CapaciteRemorqueur" xml:space="preserve">
+    <value>tug capacity</value>
+  </data>
+  <data name="CapaciteRemorqueurPlaceholder" xml:space="preserve">
+    <value>Enter the tug capacity </value>
+  </data>
+  <data name="CapaciteStockageEntreposage" xml:space="preserve">
+    <value>Storage Storage Capacity</value>
+  </data>
+  <data name="CapaciteStockageEntreposagePlaceholder" xml:space="preserve">
+    <value>Enter the storage storage</value>
+  </data>
+  <data name="CapaciteStockageEntrepotDouanier" xml:space="preserve">
+    <value>Customs warehouse storage capacity</value>
+  </data>
+  <data name="CapaciteStockageEntrepotDouanierPlaceholder" xml:space="preserve">
+    <value>Enter the storage capacity of the customs warehouse</value>
+  </data>
+  <data name="CapaciteStockageSecurise" xml:space="preserve">
+    <value>Secure Storage Capacity</value>
+  </data>
+  <data name="CapaciteStockageSecurisePlaceholder" xml:space="preserve">
+    <value>Enter the storage capacity of the storage Secure </value>
+  </data>
+  <data name="CategorieElement" xml:space="preserve">
+    <value>Category Item</value>
+  </data>
+  <data name="CentresEducationnels" xml:space="preserve">
+    <value>educational centers</value>
+  </data>
+  <data name="ChampsId" xml:space="preserve">
+    <value>field concerned</value>
+  </data>
+  <data name="ChangePasswordImpossible" xml:space="preserve">
+    <value>Your password has not been changed. Check the information entered or contact the administrator.</value>
+  </data>
+  <data name="ChefLieu" xml:space="preserve">
+    <value>chief town</value>
+  </data>
+  <data name="ChefLieuPlaceholder" xml:space="preserve">
+    <value>Enter the county town</value>
+  </data>
+  <data name="ChgPwd" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Cible" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="CibleCDesagregationAgricoleCombo" xml:space="preserve">
+    <value>Please select a type of culture</value>
+  </data>
+  <data name="CibleCDesagregationAgricoleId" xml:space="preserve">
+    <value>disaggregated cultures</value>
+  </data>
+  <data name="CibleCombo" xml:space="preserve">
+    <value>Please select the target</value>
+  </data>
+  <data name="CibleCPerteBetail" xml:space="preserve">
+    <value>livestock loss</value>
+  </data>
+  <data name="CibleCPerteBetailCombo" xml:space="preserve">
+    <value>Please select a type of livestock</value>
+  </data>
+  <data name="CibleDServicesPublique" xml:space="preserve">
+    <value>disrupted public services</value>
+  </data>
+  <data name="CibleDServicesPubliqueCombo" xml:space="preserve">
+    <value>Please select utilities pertubés</value>
+  </data>
+  <data name="CNI" xml:space="preserve">
+    <value>CNI</value>
+  </data>
+  <data name="CNIPlaceholder" xml:space="preserve">
+    <value>Please enter the number CNI</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CODEPlaceholder" xml:space="preserve">
+    <value>Please enter the code</value>
+  </data>
+  <data name="CodePostale" xml:space="preserve">
+    <value>ZIP code</value>
+  </data>
+  <data name="CodePostalePlaceholder" xml:space="preserve">
+    <value>Enter postcode</value>
+  </data>
+  <data name="Collectivite" xml:space="preserve">
+    <value>collectivity</value>
+  </data>
+  <data name="CollectiviteSinistreeCollectivite" xml:space="preserve">
+    <value>locality</value>
+  </data>
+  <data name="CollectiviteSinistreeSinistre" xml:space="preserve">
+    <value>sinister</value>
+  </data>
+  <data name="ComboAnneeBudgetaire" xml:space="preserve">
+    <value>Please select the fiscal year</value>
+  </data>
+  <data name="ComboCategorieElement" xml:space="preserve">
+    <value>Make sure select an item category</value>
+  </data>
+  <data name="ComboCibleMateriel" xml:space="preserve">
+    <value>Please select the target</value>
+  </data>
+  <data name="ComboCollectiviteSinistree" xml:space="preserve">
+    <value>Please select a reporting</value>
+  </data>
+  <data name="ComboDemande" xml:space="preserve">
+    <value>Make selectionnnez demand</value>
+  </data>
+  <data name="ComboDepartement" xml:space="preserve">
+    <value>Please select the department</value>
+  </data>
+  <data name="ComboDevise" xml:space="preserve">
+    <value>Select currency </value>
+  </data>
+  <data name="ComboElement" xml:space="preserve">
+    <value>Please select the item</value>
+  </data>
+  <data name="ComboEnquete" xml:space="preserve">
+    <value>Please sélectionnerl'enquête</value>
+  </data>
+  <data name="ComboEvenement" xml:space="preserve">
+    <value>Make sure the select event</value>
+  </data>
+  <data name="ComboFacteur" xml:space="preserve">
+    <value>Make select a factor</value>
+  </data>
+  <data name="ComboFormulaire" xml:space="preserve">
+    <value>Please select a form</value>
+  </data>
+  <data name="ComboFournisseur" xml:space="preserve">
+    <value>Please select supplier</value>
+  </data>
+  <data name="ComboIndemnisation" xml:space="preserve">
+    <value>Make selectionnnez community</value>
+  </data>
+  <data name="ComboInfrastructure" xml:space="preserve">
+    <value>Please select infrastructure</value>
+  </data>
+  <data name="ComboLocalite" xml:space="preserve">
+    <value>Please select the city</value>
+  </data>
+  <data name="ComboMarqueElement" xml:space="preserve">
+    <value>Make select the brand of the item</value>
+  </data>
+  <data name="ComboMateriel" xml:space="preserve">
+    <value>Please select the equipment</value>
+  </data>
+  <data name="ComboNatureAide" xml:space="preserve">
+    <value>Select the type of aid</value>
+  </data>
+  <data name="ComboOrganisation" xml:space="preserve">
+    <value>Please select the organization</value>
+  </data>
+  <data name="ComboPersonnel" xml:space="preserve">
+    <value>Select staff</value>
+  </data>
+  <data name="ComboPuissance" xml:space="preserve">
+    <value>Make sure select an item</value>
+  </data>
+  <data name="ComboQuartier" xml:space="preserve">
+    <value>Make select a district</value>
+  </data>
+  <data name="ComboRegion" xml:space="preserve">
+    <value>Please select the region</value>
+  </data>
+  <data name="ComboSecteur" xml:space="preserve">
+    <value>Please select a sector</value>
+  </data>
+  <data name="ComboSection" xml:space="preserve">
+    <value>Please select a section</value>
+  </data>
+  <data name="ComboSinistre" xml:space="preserve">
+    <value>Please selectionnnez a disaster</value>
+  </data>
+  <data name="ComboSinistrer" xml:space="preserve">
+    <value>Make a selectionnnez sinistrer</value>
+  </data>
+  <data name="ComboTypeImmobilisation" xml:space="preserve">
+    <value>Please select the type of immobilization</value>
+  </data>
+  <data name="ComboTypeSinistre" xml:space="preserve">
+    <value>Please select the type of disaster</value>
+  </data>
+  <data name="ComboTypeSuivi" xml:space="preserve">
+    <value>SELECTING careful monitoring type</value>
+  </data>
+  <data name="ComboZoneARisque" xml:space="preserve">
+    <value>Make select the area</value>
+  </data>
+  <data name="Commune" xml:space="preserve">
+    <value>Borough</value>
+  </data>
+  <data name="CommuneCombo" xml:space="preserve">
+    <value>Please select a district</value>
+  </data>
+  <data name="CommuneConcernees" xml:space="preserve">
+    <value>municipalities concerned</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Do you really want to delete this item?</value>
+  </data>
+  <data name="ConfirmDeleteBis" xml:space="preserve">
+    <value>Do you really want to delete this item and all the elements that depend on it?</value>
+  </data>
+  <data name="ConfirmModification" xml:space="preserve">
+    <value>Are you sure you want to confirm brought moficiations? If you choose 'Yes' it will be possible to change this request.</value>
+  </data>
+  <data name="ConfirmPasswordPlacehoder" xml:space="preserve">
+    <value>Please confirm your password</value>
+  </data>
+  <data name="ConfirmReception" xml:space="preserve">
+    <value>Do you really receive this request?</value>
+  </data>
+  <data name="ConfirmRejet" xml:space="preserve">
+    <value>Do you really want to reject this request?</value>
+  </data>
+  <data name="ConfirmTransfert" xml:space="preserve">
+    <value>Do you really want to transfer this request?</value>
+  </data>
+  <data name="ConfirmValidation" xml:space="preserve">
+    <value>Do you really validate this request?</value>
+  </data>
+  <data name="ConnectedAs" xml:space="preserve">
+    <value>You are logged in as: </value>
+  </data>
+  <data name="ConnectForm" xml:space="preserve">
+    <value>authentication form</value>
+  </data>
+  <data name="ConnectTitle" xml:space="preserve">
+    <value>To log in</value>
+  </data>
+  <data name="Contenu" xml:space="preserve">
+    <value>Message content</value>
+  </data>
+  <data name="ContenuPlaceholde" xml:space="preserve">
+    <value>Please enter the message</value>
+  </data>
+  <data name="CoutDeLaReabilitationHeritageCulturel" xml:space="preserve">
+    <value>Cost of rehabilitation / reconstruction of affected assets (C-6a)</value>
+  </data>
+  <data name="CoutDeLaReabilitationMobileDetruit" xml:space="preserve">
+    <value>Economic losses to two destroyed mobile assets (C-6c)</value>
+  </data>
+  <data name="CoutDesLogementsEndommagesDetruits" xml:space="preserve">
+    <value>Cost of housing damaged / destroyed</value>
+  </data>
+  <data name="CreateAbris" xml:space="preserve">
+    <value>Add shelters</value>
+  </data>
+  <data name="CreateAeroport" xml:space="preserve">
+    <value>Add an airport</value>
+  </data>
+  <data name="CreateAlert" xml:space="preserve">
+    <value>Create alert</value>
+  </data>
+  <data name="CreateAnneeBudgetaire" xml:space="preserve">
+    <value>Creation of a new fiscal year</value>
+  </data>
+  <data name="CreateBureau" xml:space="preserve">
+    <value>Add Desktop</value>
+  </data>
+  <data name="CreateCategorieDArticle" xml:space="preserve">
+    <value>Add article category</value>
+  </data>
+  <data name="CreateCategorieElement" xml:space="preserve">
+    <value>Add Category </value>
+  </data>
+  <data name="CreateChamps" xml:space="preserve">
+    <value>Add Field</value>
+  </data>
+  <data name="CreateCollecte" xml:space="preserve">
+    <value>Add a collection</value>
+  </data>
+  <data name="CreateCollectiviteSinistree" xml:space="preserve">
+    <value>To declare a sinister</value>
+  </data>
+  <data name="CreateCommune" xml:space="preserve">
+    <value>Add a borough</value>
+  </data>
+  <data name="CreateDemande" xml:space="preserve">
+    <value>Register a request for help</value>
+  </data>
+  <data name="CreateDepartement" xml:space="preserve">
+    <value>Add a new department</value>
+  </data>
+  <data name="CreateDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Add a new culture</value>
+  </data>
+  <data name="CreateDevise" xml:space="preserve">
+    <value>Add currency</value>
+  </data>
+  <data name="CreateElement" xml:space="preserve">
+    <value>Add Item</value>
+  </data>
+  <data name="CreateEnquete" xml:space="preserve">
+    <value>Add survey</value>
+  </data>
+  <data name="CreateEnqueteRequiredField" xml:space="preserve">
+    <value>Please fill in the information field {0}</value>
+  </data>
+  <data name="CreateEntrepot" xml:space="preserve">
+    <value>Add warehouse</value>
+  </data>
+  <data name="CreateEvenement" xml:space="preserve">
+    <value>Add an event </value>
+  </data>
+  <data name="CreateEvenementZone" xml:space="preserve">
+    <value>Add Zone</value>
+  </data>
+  <data name="CreateFacteur" xml:space="preserve">
+    <value>Add a factor</value>
+  </data>
+  <data name="CreateFormulaire" xml:space="preserve">
+    <value>Add a new form</value>
+  </data>
+  <data name="CreateFormulaireRequiredField" xml:space="preserve">
+    <value>Please fill in the information field {0}</value>
+  </data>
+  <data name="CreateHeliport" xml:space="preserve">
+    <value>Add a heliport</value>
+  </data>
+  <data name="CreateHopitaux" xml:space="preserve">
+    <value>Add a hospital</value>
+  </data>
+  <data name="CreateImmobilisation" xml:space="preserve">
+    <value>Add asset</value>
+  </data>
+  <data name="CreateIndemmisation" xml:space="preserve">
+    <value>Save assistance</value>
+  </data>
+  <data name="CreateIndemnisation" xml:space="preserve">
+    <value>Add support</value>
+  </data>
+  <data name="CreateInstallation" xml:space="preserve">
+    <value>Add facility</value>
+  </data>
+  <data name="CreateMarqueElement" xml:space="preserve">
+    <value>Add tag</value>
+  </data>
+  <data name="CreateMateriel" xml:space="preserve">
+    <value>Adding equipment</value>
+  </data>
+  <data name="CreateNatureAide" xml:space="preserve">
+    <value>Add a kind of help</value>
+  </data>
+  <data name="CreateNiveauDAlert" xml:space="preserve">
+    <value>Add an alert level</value>
+  </data>
+  <data name="CreateOrganisation" xml:space="preserve">
+    <value>Add a new organization</value>
+  </data>
+  <data name="CreatePersonnel" xml:space="preserve">
+    <value>Add a personal</value>
+  </data>
+  <data name="CreatePerteBetail" xml:space="preserve">
+    <value>Add a new livestock</value>
+  </data>
+  <data name="CreatePortDeMer" xml:space="preserve">
+    <value>Add Port</value>
+  </data>
+  <data name="CreateProjet" xml:space="preserve">
+    <value>Add Project</value>
+  </data>
+  <data name="CreateProposition" xml:space="preserve">
+    <value>Add a proposal</value>
+  </data>
+  <data name="CreatePuissance" xml:space="preserve">
+    <value>Add power</value>
+  </data>
+  <data name="CreateQuartier" xml:space="preserve">
+    <value>Add Neighborhood</value>
+  </data>
+  <data name="CreateQuestion" xml:space="preserve">
+    <value>Add Question</value>
+  </data>
+  <data name="CreateRegion" xml:space="preserve">
+    <value>Add a region</value>
+  </data>
+  <data name="CreateRisque" xml:space="preserve">
+    <value>Add a risk</value>
+  </data>
+  <data name="CreateRisqueZone" xml:space="preserve">
+    <value>Add a risk</value>
+  </data>
+  <data name="CreateSecteur" xml:space="preserve">
+    <value>Add a new sector</value>
+  </data>
+  <data name="CreateSection" xml:space="preserve">
+    <value>Add a new section</value>
+  </data>
+  <data name="CreateSectionRequiredField" xml:space="preserve">
+    <value>Please fill in the information field {0}</value>
+  </data>
+  <data name="CreateServicesPubliquePertube" xml:space="preserve">
+    <value>Add New Service</value>
+  </data>
+  <data name="CreateSinistre" xml:space="preserve">
+    <value>Add a disaster</value>
+  </data>
+  <data name="CreateSinistrer" xml:space="preserve">
+    <value>Add a stricken</value>
+  </data>
+  <data name="CreateSolution" xml:space="preserve">
+    <value>Add a solution</value>
+  </data>
+  <data name="CreateSuivi" xml:space="preserve">
+    <value>Add a support request tracking</value>
+  </data>
+  <data name="CreateSurfaceDePiste" xml:space="preserve">
+    <value>Add a track surface</value>
+  </data>
+  <data name="CreateTailleDeAeronef" xml:space="preserve">
+    <value>Add aircraft size</value>
+  </data>
+  <data name="CreateTypeAbris" xml:space="preserve">
+    <value>Add a type of shelter</value>
+  </data>
+  <data name="CreateTypeAide" xml:space="preserve">
+    <value>Add type of help</value>
+  </data>
+  <data name="CreateTypeChamp" xml:space="preserve">
+    <value>Add a field type</value>
+  </data>
+  <data name="CreateTypeChamps" xml:space="preserve">
+    <value>Add a field type</value>
+  </data>
+  <data name="CreateTypeEntrepot" xml:space="preserve">
+    <value>Add a type of warehouse</value>
+  </data>
+  <data name="CreateTypeHopitaux" xml:space="preserve">
+    <value>Add a type of hospital</value>
+  </data>
+  <data name="CreateTypeImmobilisation" xml:space="preserve">
+    <value>Add an asset types</value>
+  </data>
+  <data name="CreateTypeMoyen" xml:space="preserve">
+    <value>Add a medium type</value>
+  </data>
+  <data name="CreateTypeOffice" xml:space="preserve">
+    <value>Add office type</value>
+  </data>
+  <data name="CreateTypeOrganisation" xml:space="preserve">
+    <value>Add a type of organization</value>
+  </data>
+  <data name="CreateTypePersonnel" xml:space="preserve">
+    <value>Add a type of staff</value>
+  </data>
+  <data name="CreateTypeSinistre" xml:space="preserve">
+    <value>Add a type of disaster</value>
+  </data>
+  <data name="CreateTypeSolution" xml:space="preserve">
+    <value>Add a type of solution</value>
+  </data>
+  <data name="CreateTypeSuivi" xml:space="preserve">
+    <value>Add a follow-kind</value>
+  </data>
+  <data name="CreateTypeVehicule" xml:space="preserve">
+    <value>Add a vehicle type</value>
+  </data>
+  <data name="CreateUsageHumanitaire" xml:space="preserve">
+    <value>Add humanitarian use</value>
+  </data>
+  <data name="CreateVille" xml:space="preserve">
+    <value>Add city</value>
+  </data>
+  <data name="CreateZoneARisque" xml:space="preserve">
+    <value>Add a risk area</value>
+  </data>
+  <data name="CrisisTitle" xml:space="preserve">
+    <value>CRISIS</value>
+  </data>
+  <data name="CultureCombo" xml:space="preserve">
+    <value>Please select culture</value>
+  </data>
+  <data name="CultureDestroyed" xml:space="preserve">
+    <value>total destroyed</value>
+  </data>
+  <data name="CulturePerteEconomique" xml:space="preserve">
+    <value>economic losses</value>
+  </data>
+  <data name="CulturesBoisEndomages" xml:space="preserve">
+    <value>Cultures / wood Damages in (ha)</value>
+  </data>
+  <data name="CultureTotalAffected" xml:space="preserve">
+    <value>total Affected</value>
+  </data>
+  <data name="CultureTotalDamaged" xml:space="preserve">
+    <value>total touched</value>
+  </data>
+  <data name="DateA" xml:space="preserve">
+    <value>AT : </value>
+  </data>
+  <data name="DateAchat" xml:space="preserve">
+    <value>Date of purchase</value>
+  </data>
+  <data name="DateAchatPlaceholder" xml:space="preserve">
+    <value>Enter the purchase date</value>
+  </data>
+  <data name="DateCreation" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="DateDabutPlaceholder" xml:space="preserve">
+    <value>Enter the start date</value>
+  </data>
+  <data name="DateDataType" xml:space="preserve">
+    <value>The field {0} should be of type date.</value>
+  </data>
+  <data name="DateDe" xml:space="preserve">
+    <value>from:</value>
+  </data>
+  <data name="DateDebut" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="DateDeclaration" xml:space="preserve">
+    <value>Declaration date</value>
+  </data>
+  <data name="DateDeclarationPlaceholder" xml:space="preserve">
+    <value>Be sure to enter the date of declaration</value>
+  </data>
+  <data name="DateDelivranceCNI" xml:space="preserve">
+    <value>Issuance Date CNI</value>
+  </data>
+  <data name="DateDeNaissance" xml:space="preserve">
+    <value>Birth date</value>
+  </data>
+  <data name="DateDePlaceholder" xml:space="preserve">
+    <value>Make sure to enter the date</value>
+  </data>
+  <data name="DateDuSinistre" xml:space="preserve">
+    <value>Date of incident</value>
+  </data>
+  <data name="DateDuSinistrePlaceholder" xml:space="preserve">
+    <value>Please enter the date of loss</value>
+  </data>
+  <data name="DateEvenementsGeographie" xml:space="preserve">
+    <value>Date, Events, Geography</value>
+  </data>
+  <data name="DateExpirationCNI" xml:space="preserve">
+    <value>Expiration Date CNI</value>
+  </data>
+  <data name="DateFin" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="DateFinPlaceholder" xml:space="preserve">
+    <value>Enter the end date</value>
+  </data>
+  <data name="DateGeographieEvenements" xml:space="preserve">
+    <value>Date, Geography, Events</value>
+  </data>
+  <data name="DateNaissance" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="DateNaissancePlaceholder" xml:space="preserve">
+    <value>Please enter the date of birth</value>
+  </data>
+  <data name="DateOperation" xml:space="preserve">
+    <value>Date Transaction</value>
+  </data>
+  <data name="DateSinistre" xml:space="preserve">
+    <value>Date of incident</value>
+  </data>
+  <data name="DateSinistrePlaceholder" xml:space="preserve">
+    <value>Kindly enter the date of loss</value>
+  </data>
+  <data name="Deces" xml:space="preserve">
+    <value>Death</value>
+  </data>
+  <data name="DecimalDataType" xml:space="preserve">
+    <value>The field {0} must contain whole or decimal values ​​(with commas ",").</value>
+  </data>
+  <data name="DecimalType" xml:space="preserve">
+    <value>Field {0} must contain a number (example: 12; 4; 20,15; 0.95, etc.)</value>
+  </data>
+  <data name="DeleteAlert" xml:space="preserve">
+    <value>Remove Watch</value>
+  </data>
+  <data name="DeleteAnneeBudgetaire" xml:space="preserve">
+    <value>Delete one year fiscal</value>
+  </data>
+  <data name="DeleteCategorieDArticle" xml:space="preserve">
+    <value>Delete an item category</value>
+  </data>
+  <data name="DeleteCategorieElement" xml:space="preserve">
+    <value>Delete Category</value>
+  </data>
+  <data name="DeleteChamps" xml:space="preserve">
+    <value>Delete Field</value>
+  </data>
+  <data name="DeleteCollecte" xml:space="preserve">
+    <value>Delete a collection</value>
+  </data>
+  <data name="DeleteCollectiviteSinistree" xml:space="preserve">
+    <value>Delete a claim</value>
+  </data>
+  <data name="DeleteCommune" xml:space="preserve">
+    <value>Delete district</value>
+  </data>
+  <data name="DeleteDemande" xml:space="preserve">
+    <value>Delete an application</value>
+  </data>
+  <data name="DeleteDepartement" xml:space="preserve">
+    <value>Delete department</value>
+  </data>
+  <data name="DeleteDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Delete a culture</value>
+  </data>
+  <data name="DeleteDevise" xml:space="preserve">
+    <value>Delete a currency</value>
+  </data>
+  <data name="DeleteEnquete" xml:space="preserve">
+    <value>Delete an investigation</value>
+  </data>
+  <data name="DeleteFormulaire" xml:space="preserve">
+    <value>Delete form</value>
+  </data>
+  <data name="DeleteHeliport" xml:space="preserve">
+    <value>Delete a heliport</value>
+  </data>
+  <data name="DeleteIndemnisation" xml:space="preserve">
+    <value>Abolish aid</value>
+  </data>
+  <data name="DeleteMarqueElement" xml:space="preserve">
+    <value>Delete Tag</value>
+  </data>
+  <data name="DeleteNatureAide" xml:space="preserve">
+    <value>Delete kind help</value>
+  </data>
+  <data name="DeleteOrganisation" xml:space="preserve">
+    <value>Delete an organization</value>
+  </data>
+  <data name="DeletePerteBetail" xml:space="preserve">
+    <value>Remove cattle</value>
+  </data>
+  <data name="DeleteProposition" xml:space="preserve">
+    <value>Delete proposal</value>
+  </data>
+  <data name="DeletePuissance" xml:space="preserve">
+    <value>Delete power</value>
+  </data>
+  <data name="DeleteQuartier" xml:space="preserve">
+    <value>Delete area</value>
+  </data>
+  <data name="DeleteQuestion" xml:space="preserve">
+    <value>Delete a question</value>
+  </data>
+  <data name="DeleteRegion" xml:space="preserve">
+    <value>To delete a region</value>
+  </data>
+  <data name="DeleteSecteur" xml:space="preserve">
+    <value>Delete Sector</value>
+  </data>
+  <data name="DeleteSection" xml:space="preserve">
+    <value>Delete section</value>
+  </data>
+  <data name="DeleteServicesPubliquePertube" xml:space="preserve">
+    <value>Delete Service</value>
+  </data>
+  <data name="DeleteSinistre" xml:space="preserve">
+    <value>Delete a disaster</value>
+  </data>
+  <data name="DeleteSuivi" xml:space="preserve">
+    <value>Delete track</value>
+  </data>
+  <data name="DeleteSurfaceDePiste" xml:space="preserve">
+    <value>Delete a track surface</value>
+  </data>
+  <data name="DeleteTailleDeAeronef" xml:space="preserve">
+    <value>Delete an aircraft size</value>
+  </data>
+  <data name="DeleteTypeAbris" xml:space="preserve">
+    <value>Delete a type of shelter</value>
+  </data>
+  <data name="DeleteTypeAide" xml:space="preserve">
+    <value>Delete a type of help</value>
+  </data>
+  <data name="DeleteTypeChamp" xml:space="preserve">
+    <value>Delete a field type</value>
+  </data>
+  <data name="DeleteTypeChamps" xml:space="preserve">
+    <value>Delete a field type</value>
+  </data>
+  <data name="DeleteTypeEntrepot" xml:space="preserve">
+    <value>Delete a type of warehouse</value>
+  </data>
+  <data name="DeleteTypeHopitaux" xml:space="preserve">
+    <value>Delete a type of hospital</value>
+  </data>
+  <data name="DeleteTypeImmobilisation" xml:space="preserve">
+    <value>Delete an asset types</value>
+  </data>
+  <data name="DeleteTypeMoyen" xml:space="preserve">
+    <value>Delete a medium type</value>
+  </data>
+  <data name="DeleteTypeOffice" xml:space="preserve">
+    <value>Delete an office type</value>
+  </data>
+  <data name="DeleteTypeOrganisation" xml:space="preserve">
+    <value>Delete a type of organization</value>
+  </data>
+  <data name="DeleteTypePersonnel" xml:space="preserve">
+    <value>Delete a type of staff</value>
+  </data>
+  <data name="DeleteTypeSinistre" xml:space="preserve">
+    <value>Delete a type of disaster</value>
+  </data>
+  <data name="DeleteTypeSolution" xml:space="preserve">
+    <value>Delete a type of solution</value>
+  </data>
+  <data name="DeleteTypeSuivi" xml:space="preserve">
+    <value>Delete track type</value>
+  </data>
+  <data name="DeleteTypeVehicule" xml:space="preserve">
+    <value>Delete a vehicle type</value>
+  </data>
+  <data name="DeleteUsageHumanitaire" xml:space="preserve">
+    <value>Delete a humanitarian use</value>
+  </data>
+  <data name="DelivranceCNIPlaceholder" xml:space="preserve">
+    <value>Please enter the delivery date CNI</value>
+  </data>
+  <data name="Demande" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="DemandeCollectiviteSinistree" xml:space="preserve">
+    <value>Title disaster</value>
+  </data>
+  <data name="Departement" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="Deplacees" xml:space="preserve">
+    <value>displaced</value>
+  </data>
+  <data name="DesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Cultures</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionPlaceholder" xml:space="preserve">
+    <value>Enter a description</value>
+  </data>
+  <data name="DetailsAbris" xml:space="preserve">
+    <value>Details shelter</value>
+  </data>
+  <data name="DetailsAeroport" xml:space="preserve">
+    <value>Details Airport</value>
+  </data>
+  <data name="DetailsBureau" xml:space="preserve">
+    <value>Office Details</value>
+  </data>
+  <data name="DetailsChamps" xml:space="preserve">
+    <value>the Field Information</value>
+  </data>
+  <data name="DetailsCollecte" xml:space="preserve">
+    <value>Information collection</value>
+  </data>
+  <data name="DetailsDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Culture Information</value>
+  </data>
+  <data name="DetailsElement" xml:space="preserve">
+    <value>Details of the element</value>
+  </data>
+  <data name="DetailsEntrepots" xml:space="preserve">
+    <value>Details warehouse</value>
+  </data>
+  <data name="DetailsFormulaires" xml:space="preserve">
+    <value>Detailed information on the fomulaire</value>
+  </data>
+  <data name="DetailsHeliports" xml:space="preserve">
+    <value>Details of the heliport</value>
+  </data>
+  <data name="DetailsHopitaux" xml:space="preserve">
+    <value>Details of the hospital</value>
+  </data>
+  <data name="DetailsImmobilisations" xml:space="preserve">
+    <value>Details of the asset</value>
+  </data>
+  <data name="DetailsIndemnisations" xml:space="preserve">
+    <value>Detailed information on using</value>
+  </data>
+  <data name="DetailsInstallation" xml:space="preserve">
+    <value>Installation details</value>
+  </data>
+  <data name="DetailsOrganisation" xml:space="preserve">
+    <value>Detailed information on the organization</value>
+  </data>
+  <data name="DetailsPerteBetail" xml:space="preserve">
+    <value>Information on livestock</value>
+  </data>
+  <data name="DetailsPortDeMer" xml:space="preserve">
+    <value>Detail of harbor</value>
+  </data>
+  <data name="DetailsProjet" xml:space="preserve">
+    <value>Details of the project</value>
+  </data>
+  <data name="DetailsProposition" xml:space="preserve">
+    <value>Detailed information on the proposal</value>
+  </data>
+  <data name="DetailsQuestion" xml:space="preserve">
+    <value>Detailed information on the issue</value>
+  </data>
+  <data name="DetailsSecteur" xml:space="preserve">
+    <value>Detailed information on the sector</value>
+  </data>
+  <data name="DetailsSection" xml:space="preserve">
+    <value>Detailed information on the section</value>
+  </data>
+  <data name="DetailsServicesPubliquePertube" xml:space="preserve">
+    <value>Service information</value>
+  </data>
+  <data name="DetailsTypeChamp" xml:space="preserve">
+    <value>Detailed information on the field type</value>
+  </data>
+  <data name="DetailsTypeOrganisation" xml:space="preserve">
+    <value>Detailed information on the type of organization</value>
+  </data>
+  <data name="Devise" xml:space="preserve">
+    <value>Motto</value>
+  </data>
+  <data name="Disaggregation" xml:space="preserve">
+    <value>disaggregation</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="Disparus" xml:space="preserve">
+    <value>disappeared</value>
+  </data>
+  <data name="DommagesCausesAutresInfrastructures" xml:space="preserve">
+    <value>Damage and losses caused to other infrastructure (D-4)</value>
+  </data>
+  <data name="DommagesPertesAutresActifsProductifs" xml:space="preserve">
+    <value>Damage and losses on all other productive assets (C-3)</value>
+  </data>
+  <data name="DommagesPertesCausesAutresInfrastructures" xml:space="preserve">
+    <value>Damage and losses caused to other infrastructure (D-4)</value>
+  </data>
+  <data name="DommagesPertesCausesPatrimoineCulturel" xml:space="preserve">
+    <value>Damage and losses caused to the cultural heritage (C-6)</value>
+  </data>
+  <data name="DommagesPertesInfrastructuresCritiques" xml:space="preserve">
+    <value>Damage and losses in critical infrastructures (D-2, D-3, D-4)</value>
+  </data>
+  <data name="DommagesPertesSecteurEducation" xml:space="preserve">
+    <value>Damage and losses in the education sector (D-3)</value>
+  </data>
+  <data name="DommagesPertesSecteurSante" xml:space="preserve">
+    <value>Damage and losses in critical infrastructures</value>
+  </data>
+  <data name="DommagesPhysiquesBetail" xml:space="preserve">
+    <value>Physical damage to livestock (C-2The)</value>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="EditAbris" xml:space="preserve">
+    <value>Edit a shelter</value>
+  </data>
+  <data name="EditAeroport" xml:space="preserve">
+    <value>Edit airport</value>
+  </data>
+  <data name="EditBureau" xml:space="preserve">
+    <value>Edit office</value>
+  </data>
+  <data name="EditCategorieDArticle" xml:space="preserve">
+    <value>Change an item category</value>
+  </data>
+  <data name="EditCategorieElement" xml:space="preserve">
+    <value>Edit category</value>
+  </data>
+  <data name="EditChamps" xml:space="preserve">
+    <value>Edit field</value>
+  </data>
+  <data name="EditCollecte" xml:space="preserve">
+    <value>To modify a collection</value>
+  </data>
+  <data name="EditCollectiviteSinistree" xml:space="preserve">
+    <value>Edit a claim</value>
+  </data>
+  <data name="EditCommune" xml:space="preserve">
+    <value>Edit the district</value>
+  </data>
+  <data name="EditDemande" xml:space="preserve">
+    <value>Change request</value>
+  </data>
+  <data name="EditDepartement" xml:space="preserve">
+    <value>Edit a department</value>
+  </data>
+  <data name="EditDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Changing a culture</value>
+  </data>
+  <data name="EditDevise" xml:space="preserve">
+    <value>Change currency</value>
+  </data>
+  <data name="EditElement" xml:space="preserve">
+    <value>Modofier an element</value>
+  </data>
+  <data name="EditEnquete" xml:space="preserve">
+    <value>Edit survey</value>
+  </data>
+  <data name="EditEntrepot" xml:space="preserve">
+    <value>Edit warehouse</value>
+  </data>
+  <data name="EditEvenement" xml:space="preserve">
+    <value>Edit an event</value>
+  </data>
+  <data name="EditEvenementZone" xml:space="preserve">
+    <value>Edit a zone</value>
+  </data>
+  <data name="EditFacteur" xml:space="preserve">
+    <value>Edit a factor</value>
+  </data>
+  <data name="EditFormulaire" xml:space="preserve">
+    <value>Edit Form</value>
+  </data>
+  <data name="EditHeliport" xml:space="preserve">
+    <value>Edit a heliport</value>
+  </data>
+  <data name="EditHopitaux" xml:space="preserve">
+    <value>Edit hospital</value>
+  </data>
+  <data name="EditImmobilisation" xml:space="preserve">
+    <value>Edit an asset</value>
+  </data>
+  <data name="EditIndemnisation" xml:space="preserve">
+    <value>Change support</value>
+  </data>
+  <data name="EditIndicateursAutreImpactHumainEtEconomique" xml:space="preserve">
+    <value>Edit the indicators of other human and economic impact</value>
+  </data>
+  <data name="EditIndicateursCibleA" xml:space="preserve">
+    <value>Edit indicators target A</value>
+  </data>
+  <data name="EditIndicateursCibleB" xml:space="preserve">
+    <value>Edit the target B indicators</value>
+  </data>
+  <data name="EditIndicateursCibleC" xml:space="preserve">
+    <value>Change Indicators Target C</value>
+  </data>
+  <data name="EditIndicateursCibleD" xml:space="preserve">
+    <value>Edit target indicators D</value>
+  </data>
+  <data name="EditInstallation" xml:space="preserve">
+    <value>Modifying an Installation</value>
+  </data>
+  <data name="EditMarqueElement" xml:space="preserve">
+    <value>Change brand</value>
+  </data>
+  <data name="EditMateriel" xml:space="preserve">
+    <value>Modify equipment</value>
+  </data>
+  <data name="EditNatureAide" xml:space="preserve">
+    <value>Change a kind of aid</value>
+  </data>
+  <data name="EditNiveauDAlert" xml:space="preserve">
+    <value>Edit an alert level</value>
+  </data>
+  <data name="EditOrganisation" xml:space="preserve">
+    <value>Edit organization</value>
+  </data>
+  <data name="EditPersonnel" xml:space="preserve">
+    <value>Edit Staff</value>
+  </data>
+  <data name="EditPerteBetail" xml:space="preserve">
+    <value>Edit cattle</value>
+  </data>
+  <data name="EditPortDeMer" xml:space="preserve">
+    <value>Edit a Port</value>
+  </data>
+  <data name="EditProjet" xml:space="preserve">
+    <value>Edit project</value>
+  </data>
+  <data name="EditProposition" xml:space="preserve">
+    <value>Edit a proposal</value>
+  </data>
+  <data name="EditPuissance" xml:space="preserve">
+    <value>Edit power</value>
+  </data>
+  <data name="EditQuartier" xml:space="preserve">
+    <value>Edit a neighborhood</value>
+  </data>
+  <data name="EditQuestion" xml:space="preserve">
+    <value>Edit Question</value>
+  </data>
+  <data name="EditRegion" xml:space="preserve">
+    <value>Edit Region</value>
+  </data>
+  <data name="EditRisque" xml:space="preserve">
+    <value>Edit a risk</value>
+  </data>
+  <data name="EditRisqueZone" xml:space="preserve">
+    <value>Edit a risk</value>
+  </data>
+  <data name="EditSecteur" xml:space="preserve">
+    <value>Change an Industry</value>
+  </data>
+  <data name="EditSection" xml:space="preserve">
+    <value>Edit a section</value>
+  </data>
+  <data name="EditServicesPubliquePertube" xml:space="preserve">
+    <value>Edit Service</value>
+  </data>
+  <data name="EditSinistre" xml:space="preserve">
+    <value>Edit a disaster</value>
+  </data>
+  <data name="EditSinistrer" xml:space="preserve">
+    <value>Edit a stricken</value>
+  </data>
+  <data name="EditSolution" xml:space="preserve">
+    <value>Edit solution</value>
+  </data>
+  <data name="EditSuivi" xml:space="preserve">
+    <value>Edit track</value>
+  </data>
+  <data name="EditSurfaceDePiste" xml:space="preserve">
+    <value>Edit a track surface</value>
+  </data>
+  <data name="EditTailleDeAeronef" xml:space="preserve">
+    <value>Edit an aircraft size</value>
+  </data>
+  <data name="EditTypeAbris" xml:space="preserve">
+    <value>Edit a type of shelter</value>
+  </data>
+  <data name="EditTypeAide" xml:space="preserve">
+    <value>Change a type of help</value>
+  </data>
+  <data name="EditTypeAnneeBudgetaire" xml:space="preserve">
+    <value>Edit a fiscal year</value>
+  </data>
+  <data name="EditTypeChamp" xml:space="preserve">
+    <value>Change a field type</value>
+  </data>
+  <data name="EditTypeChamps" xml:space="preserve">
+    <value>Change a field type</value>
+  </data>
+  <data name="EditTypeEntrepot" xml:space="preserve">
+    <value>Change a type of warehouse</value>
+  </data>
+  <data name="EditTypeHopitaux" xml:space="preserve">
+    <value>Edit a type of hospital</value>
+  </data>
+  <data name="EditTypeImmobilisation" xml:space="preserve">
+    <value>Change an asset types</value>
+  </data>
+  <data name="EditTypeMoyen" xml:space="preserve">
+    <value>Change a way to kind</value>
+  </data>
+  <data name="EditTypeOffice" xml:space="preserve">
+    <value>Edit an office type</value>
+  </data>
+  <data name="EditTypeOrganisation" xml:space="preserve">
+    <value>Change a type of organization</value>
+  </data>
+  <data name="EditTypePersonnel" xml:space="preserve">
+    <value>Edit a type of staff</value>
+  </data>
+  <data name="EditTypeSinistre" xml:space="preserve">
+    <value>Change a type of disaster</value>
+  </data>
+  <data name="EditTypeSolution" xml:space="preserve">
+    <value>Change a type of solution</value>
+  </data>
+  <data name="EditTypeSuivi" xml:space="preserve">
+    <value>Edit track type</value>
+  </data>
+  <data name="EditTypeVehicule" xml:space="preserve">
+    <value>Editing a vehicle type</value>
+  </data>
+  <data name="EditUsageHumanitaire" xml:space="preserve">
+    <value>Edit a humanitarian use</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="EditVille" xml:space="preserve">
+    <value>Change city</value>
+  </data>
+  <data name="EditZoneARisque" xml:space="preserve">
+    <value>Edit a risk area</value>
+  </data>
+  <data name="Element" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>Please enter the e-mail user</value>
+  </data>
+  <data name="EnglishLang" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EnqueteId" xml:space="preserve">
+    <value>concerned survey</value>
+  </data>
+  <data name="Entrepot" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="EntrepotCapaciteDisponibleMAx" xml:space="preserve">
+    <value>Available capacity max</value>
+  </data>
+  <data name="EntrepotCapaciteDisponibleMin" xml:space="preserve">
+    <value>Available capacity min</value>
+  </data>
+  <data name="EntrepotCapaciteMAx" xml:space="preserve">
+    <value>max</value>
+  </data>
+  <data name="EntrepotCapaciteMin" xml:space="preserve">
+    <value>capacity min</value>
+  </data>
+  <data name="EquipementChargement" xml:space="preserve">
+    <value>Loading facilities</value>
+  </data>
+  <data name="EquipementChargementPlaceholder" xml:space="preserve">
+    <value>Enter loading equipment</value>
+  </data>
+  <data name="ErreurTitle" xml:space="preserve">
+    <value>Mistake!!!</value>
+  </data>
+  <data name="Error400_Explain" xml:space="preserve">
+    <value>The request sent is wrong. Please execute the operation again. If the problem persists, contact the administrator.</value>
+  </data>
+  <data name="Error400_SelectAnnee" xml:space="preserve">
+    <value>Please reassure you that you select the fiscal year.</value>
+  </data>
+  <data name="Error400_SubTitle" xml:space="preserve">
+    <value>Bad request</value>
+  </data>
+  <data name="Error400_Title" xml:space="preserve">
+    <value>error 400</value>
+  </data>
+  <data name="ErrorAlertTitle" xml:space="preserve">
+    <value>YIKES !!!</value>
+  </data>
+  <data name="ErrorDateAlertBody" xml:space="preserve">
+    <value>Please fill in the dates correctly.</value>
+  </data>
+  <data name="ErrorProcess" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="ErrorProcessCloture" xml:space="preserve">
+    <value>An error has occurred during treatment equipment for your query.</value>
+  </data>
+  <data name="EstimationPopulation" xml:space="preserve">
+    <value>Estimated population</value>
+  </data>
+  <data name="EstimationPopulationPlaceholder" xml:space="preserve">
+    <value>Enter the population estimate</value>
+  </data>
+  <data name="Etat" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Evenement" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="EvenementCombo" xml:space="preserve">
+    <value>Make sure select an event</value>
+  </data>
+  <data name="EvenementsDateGeographie" xml:space="preserve">
+    <value>Events, Date, Geography</value>
+  </data>
+  <data name="EvenementsGeographieDate" xml:space="preserve">
+    <value>Events, Geography, Date</value>
+  </data>
+  <data name="EvenementZone" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="EvenementZoneId" xml:space="preserve">
+    <value>Relevant Event</value>
+  </data>
+  <data name="EvenementZoneIdCombo" xml:space="preserve">
+    <value>Please select the relevant event</value>
+  </data>
+  <data name="ExpirationCNIPlaceholder" xml:space="preserve">
+    <value>Please enter the expiration date CNI</value>
+  </data>
+  <data name="Facteur" xml:space="preserve">
+    <value>Postman</value>
+  </data>
+  <data name="FaireSomme" xml:space="preserve">
+    <value>Make the sum</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="FindReferenceDemande" xml:space="preserve">
+    <value>Please rensegner the reference request</value>
+  </data>
+  <data name="FormulaireId" xml:space="preserve">
+    <value>form concerned</value>
+  </data>
+  <data name="Fournisseur" xml:space="preserve">
+    <value>Provider</value>
+  </data>
+  <data name="FrenchLang" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="GenderFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="GenderMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="GeographieDateEvenements" xml:space="preserve">
+    <value>Geography, Date, Events</value>
+  </data>
+  <data name="GeographieEvenementsDate" xml:space="preserve">
+    <value>Geography, Events, Date</value>
+  </data>
+  <data name="GeoLatitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="GeoLatitudeLongitudeError" xml:space="preserve">
+    <value>The latitude and longitude field must be whole or decimal values ​​(with commas ",").</value>
+  </data>
+  <data name="GeoLongitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="GestPassWord" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="GestUser" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="GestUserActualPwd" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="GestUserIndex" xml:space="preserve">
+    <value>Users list</value>
+  </data>
+  <data name="GestUserName" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="GestUserPwd" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="GestUserPwdConf" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="GestUserPwdConfMatch" xml:space="preserve">
+    <value>the two passwords do not match.</value>
+  </data>
+  <data name="GestUserPwdConfNew" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="GestUserPwdConfNewMatch" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
+  <data name="GestUserPwdLength" xml:space="preserve">
+    <value>Field {0} must be counted between {2} and {1} characters.</value>
+  </data>
+  <data name="GestUserPwdMemo" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="GestUserPwdNew" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="GestUserRoles" xml:space="preserve">
+    <value>Edit the role of a user</value>
+  </data>
+  <data name="GestUserRolesTilte" xml:space="preserve">
+    <value>Profile Management</value>
+  </data>
+  <data name="GestUserRolesTo" xml:space="preserve">
+    <value>Assign (the) role (s)</value>
+  </data>
+  <data name="GestUserUserName" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="GestUserUserName1" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="GestUser_DeleteConection" xml:space="preserve">
+    <value>The external connection has been dropped.</value>
+  </data>
+  <data name="GestUser_ErrorOccured" xml:space="preserve">
+    <value>An error has occurred.</value>
+  </data>
+  <data name="GestUser_ManageAccount" xml:space="preserve">
+    <value>change my password</value>
+  </data>
+  <data name="GestUser_PwdDefine" xml:space="preserve">
+    <value>Your password has been set.</value>
+  </data>
+  <data name="GestUser_PwdModify" xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="GoToHomePage" xml:space="preserve">
+    <value>Return to the home page</value>
+  </data>
+  <data name="GoToPreviousPage" xml:space="preserve">
+    <value>go back to the previous page</value>
+  </data>
+  <data name="Hauteur" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="HauteurMaximum" xml:space="preserve">
+    <value>Maximum height</value>
+  </data>
+  <data name="HauteurMaximumPlaceholder" xml:space="preserve">
+    <value>Enter the maximum height</value>
+  </data>
+  <data name="HauteurMaximumUnites" xml:space="preserve">
+    <value>Units of the height</value>
+  </data>
+  <data name="HauteurMaximumUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the maximum height</value>
+  </data>
+  <data name="HauteurPlaceholder" xml:space="preserve">
+    <value>Enter the height of the element</value>
+  </data>
+  <data name="HectaresDetruits" xml:space="preserve">
+    <value>destroyed Heactares</value>
+  </data>
+  <data name="HectaresEndomages" xml:space="preserve">
+    <value>Damages in hectares</value>
+  </data>
+  <data name="HectaresTautauxDesCulturesTouche" xml:space="preserve">
+    <value>Total Ha affected crops</value>
+  </data>
+  <data name="Heliport" xml:space="preserve">
+    <value>Heliport</value>
+  </data>
+  <data name="HeritageCulturel" xml:space="preserve">
+    <value>cultural heritage</value>
+  </data>
+  <data name="HeureDOuverture" xml:space="preserve">
+    <value>Opening time</value>
+  </data>
+  <data name="HeureDOuverturePlaceholder" xml:space="preserve">
+    <value>Enter the opening time</value>
+  </data>
+  <data name="HeureFermeture" xml:space="preserve">
+    <value>Closure hour</value>
+  </data>
+  <data name="HeureFermeturePlaceholder" xml:space="preserve">
+    <value>Enter closing time</value>
+  </data>
+  <data name="HistoriqueAlerte" xml:space="preserve">
+    <value>Alert History</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="Hopitaux" xml:space="preserve">
+    <value>hospitals</value>
+  </data>
+  <data name="HopitauxPuissance" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="IATA" xml:space="preserve">
+    <value>IATA</value>
+  </data>
+  <data name="IATAPlaceholder" xml:space="preserve">
+    <value>Enter IATA</value>
+  </data>
+  <data name="ICAO" xml:space="preserve">
+    <value>ICAO</value>
+  </data>
+  <data name="ICAOPlaceholder" xml:space="preserve">
+    <value>Enter the ICAO</value>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="ImportMenu" xml:space="preserve">
+    <value>The imports</value>
+  </data>
+  <data name="Imprimer" xml:space="preserve">
+    <value>To print</value>
+  </data>
+  <data name="IndemnisationCombo" xml:space="preserve">
+    <value>Please select help</value>
+  </data>
+  <data name="IndemniserSinistre" xml:space="preserve">
+    <value>compensate stricken</value>
+  </data>
+  <data name="Infrastructure" xml:space="preserve">
+    <value>Infrastructure</value>
+  </data>
+  <data name="Instalation" xml:space="preserve">
+    <value>instalation</value>
+  </data>
+  <data name="InterruptionsServicesBase" xml:space="preserve">
+    <value>Interruptions of basic services (D-6)</value>
+  </data>
+  <data name="InvalidParam" xml:space="preserve">
+    <value>Your login / password is invalid. please try again please.</value>
+  </data>
+  <data name="Largeur" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="LargeurDePiste" xml:space="preserve">
+    <value>Track width</value>
+  </data>
+  <data name="LargeurDePistePlaceholder" xml:space="preserve">
+    <value>Enter the track width</value>
+  </data>
+  <data name="LargeurPlaceholder" xml:space="preserve">
+    <value>Enter the width of the element</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="LesIndemnisations" xml:space="preserve">
+    <value>aids</value>
+  </data>
+  <data name="LeSinistrer" xml:space="preserve">
+    <value>The sinister</value>
+  </data>
+  <data name="LesPiecesDemande" xml:space="preserve">
+    <value>The attachments</value>
+  </data>
+  <data name="Libelle" xml:space="preserve">
+    <value>Entitled</value>
+  </data>
+  <data name="LibellePlaceholder" xml:space="preserve">
+    <value>Please enter the libel</value>
+  </data>
+  <data name="LieuDuSinistre" xml:space="preserve">
+    <value>Place of incident</value>
+  </data>
+  <data name="LieuNaissance" xml:space="preserve">
+    <value>Birth Place</value>
+  </data>
+  <data name="LieuNaissancePlaceholder" xml:space="preserve">
+    <value>Please enter the place of birth</value>
+  </data>
+  <data name="LieuSinistrePlaceholder" xml:space="preserve">
+    <value>Please enter the disaster site</value>
+  </data>
+  <data name="ListAbris" xml:space="preserve">
+    <value>List of shelters</value>
+  </data>
+  <data name="ListAeroport" xml:space="preserve">
+    <value>List of airports</value>
+  </data>
+  <data name="ListAlerts" xml:space="preserve">
+    <value>Alert List</value>
+  </data>
+  <data name="ListBureau" xml:space="preserve">
+    <value>List of offices</value>
+  </data>
+  <data name="ListCategorieDArticle" xml:space="preserve">
+    <value>Categories list of articles</value>
+  </data>
+  <data name="ListCategorieElement" xml:space="preserve">
+    <value>Categories list </value>
+  </data>
+  <data name="ListCollecte" xml:space="preserve">
+    <value>List of collections</value>
+  </data>
+  <data name="ListCollectiviteSinistree" xml:space="preserve">
+    <value>List of reported claims</value>
+  </data>
+  <data name="ListCommune" xml:space="preserve">
+    <value>List of districts</value>
+  </data>
+  <data name="ListDemande" xml:space="preserve">
+    <value>List of aid applications</value>
+  </data>
+  <data name="ListDepartement" xml:space="preserve">
+    <value>List of departments</value>
+  </data>
+  <data name="ListDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>List of crops</value>
+  </data>
+  <data name="ListDevise" xml:space="preserve">
+    <value>List of currency</value>
+  </data>
+  <data name="ListElement" xml:space="preserve">
+    <value>Item List</value>
+  </data>
+  <data name="ListEnquete" xml:space="preserve">
+    <value>List of Surveys</value>
+  </data>
+  <data name="ListEntrepot" xml:space="preserve">
+    <value>List of warehouses</value>
+  </data>
+  <data name="ListEquipements" xml:space="preserve">
+    <value>List of equipment</value>
+  </data>
+  <data name="ListEvenement" xml:space="preserve">
+    <value>Events list</value>
+  </data>
+  <data name="ListEvenementZone" xml:space="preserve">
+    <value>List of zones</value>
+  </data>
+  <data name="ListFacteur" xml:space="preserve">
+    <value>Lists factors</value>
+  </data>
+  <data name="ListFormulaire" xml:space="preserve">
+    <value>List of forms</value>
+  </data>
+  <data name="ListHeliport" xml:space="preserve">
+    <value>List of heliports</value>
+  </data>
+  <data name="ListHopitaux" xml:space="preserve">
+    <value>Hospital List</value>
+  </data>
+  <data name="ListImmobilisation" xml:space="preserve">
+    <value>List of immobilization</value>
+  </data>
+  <data name="ListIndemnisation" xml:space="preserve">
+    <value>List of aid</value>
+  </data>
+  <data name="ListInstallation" xml:space="preserve">
+    <value>List of Facilities</value>
+  </data>
+  <data name="ListMarqueElement" xml:space="preserve">
+    <value>List of brands</value>
+  </data>
+  <data name="ListMateriel" xml:space="preserve">
+    <value>List of equipment</value>
+  </data>
+  <data name="ListMoyenDereponse" xml:space="preserve">
+    <value> the answers means</value>
+  </data>
+  <data name="ListNatureAide" xml:space="preserve">
+    <value>List of aid nature</value>
+  </data>
+  <data name="ListNiveauDAlert" xml:space="preserve">
+    <value>List of alert levels</value>
+  </data>
+  <data name="ListOrganisation" xml:space="preserve">
+    <value>List of Organizations</value>
+  </data>
+  <data name="ListPersonnel" xml:space="preserve">
+    <value>Personnel list</value>
+  </data>
+  <data name="ListPerteBetail" xml:space="preserve">
+    <value>List of different livestock</value>
+  </data>
+  <data name="ListPortDeMer" xml:space="preserve">
+    <value>List of ports</value>
+  </data>
+  <data name="ListProjet" xml:space="preserve">
+    <value>List of projects</value>
+  </data>
+  <data name="ListProposition" xml:space="preserve">
+    <value>List of Proposals</value>
+  </data>
+  <data name="ListPuissance" xml:space="preserve">
+    <value>List of powers</value>
+  </data>
+  <data name="ListQuartier" xml:space="preserve">
+    <value>List of districts</value>
+  </data>
+  <data name="ListRegion" xml:space="preserve">
+    <value>List of regions</value>
+  </data>
+  <data name="ListRisque" xml:space="preserve">
+    <value>Risk List</value>
+  </data>
+  <data name="ListRisqueZone" xml:space="preserve">
+    <value>Risk List</value>
+  </data>
+  <data name="ListSecteur" xml:space="preserve">
+    <value>List of sectors</value>
+  </data>
+  <data name="ListSection" xml:space="preserve">
+    <value>List of sections</value>
+  </data>
+  <data name="ListServicesPubliquePertube" xml:space="preserve">
+    <value>List of Services</value>
+  </data>
+  <data name="ListSinistre" xml:space="preserve">
+    <value>List of disasters</value>
+  </data>
+  <data name="ListSinistrer" xml:space="preserve">
+    <value>List of victims</value>
+  </data>
+  <data name="ListSolution" xml:space="preserve">
+    <value>Solutions list</value>
+  </data>
+  <data name="ListSuivi" xml:space="preserve">
+    <value>List followed</value>
+  </data>
+  <data name="ListSurfaceDePiste" xml:space="preserve">
+    <value>List of track surfaces</value>
+  </data>
+  <data name="ListTailleDeAeronef" xml:space="preserve">
+    <value>List of aircraft sizes</value>
+  </data>
+  <data name="ListTypeAbris" xml:space="preserve">
+    <value>List of types of shelters</value>
+  </data>
+  <data name="ListTypeAide" xml:space="preserve">
+    <value>List of types of assistance</value>
+  </data>
+  <data name="ListTypeAnneeBudgetaire" xml:space="preserve">
+    <value>List of fiscal years</value>
+  </data>
+  <data name="ListTypeChamp" xml:space="preserve">
+    <value>List of Field Types</value>
+  </data>
+  <data name="ListTypeChamps" xml:space="preserve">
+    <value>List of Field Types</value>
+  </data>
+  <data name="ListTypeEntrepot" xml:space="preserve">
+    <value>List of warehouse types</value>
+  </data>
+  <data name="ListTypeHopitaux" xml:space="preserve">
+    <value>List of types of hospitals</value>
+  </data>
+  <data name="ListTypeImmobilisation" xml:space="preserve">
+    <value>List of asset type</value>
+  </data>
+  <data name="ListTypeMoyen" xml:space="preserve">
+    <value>List of medium types</value>
+  </data>
+  <data name="ListTypeOffice" xml:space="preserve">
+    <value>Office Type List</value>
+  </data>
+  <data name="ListTypeOrganisation" xml:space="preserve">
+    <value>List of types of organization</value>
+  </data>
+  <data name="ListTypePersonnel" xml:space="preserve">
+    <value>List of types of staff</value>
+  </data>
+  <data name="ListTypeSinistre" xml:space="preserve">
+    <value>List of types of disaster</value>
+  </data>
+  <data name="ListTypeSolution" xml:space="preserve">
+    <value>List of types of solution</value>
+  </data>
+  <data name="ListTypeSuivi" xml:space="preserve">
+    <value>List of types of monitoring</value>
+  </data>
+  <data name="ListTypeVehicule" xml:space="preserve">
+    <value>List of types of vehicles</value>
+  </data>
+  <data name="ListUsageHumanitaire" xml:space="preserve">
+    <value>List of humanitarian uses</value>
+  </data>
+  <data name="ListVille" xml:space="preserve">
+    <value>City List</value>
+  </data>
+  <data name="ListZoneARisque" xml:space="preserve">
+    <value>List of risk areas</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>leasing</value>
+  </data>
+  <data name="LockScreenMsg" xml:space="preserve">
+    <value>Please enter your password to retrieve your session.</value>
+  </data>
+  <data name="LockScreenMsgOther" xml:space="preserve">
+    <value>Or connect with another account.</value>
+  </data>
+  <data name="LogementsTouchesEndommagésDetruits" xml:space="preserve">
+    <value>Housing affected (damaged or destroyed)</value>
+  </data>
+  <data name="Logique" xml:space="preserve">
+    <value>Logic</value>
+  </data>
+  <data name="LogiqueET" xml:space="preserve">
+    <value>AND</value>
+  </data>
+  <data name="LogiqueOU" xml:space="preserve">
+    <value>OR</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Longueur" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="LongueurDePiste" xml:space="preserve">
+    <value>Track Length</value>
+  </data>
+  <data name="LongueurDePistePlaceholder" xml:space="preserve">
+    <value>Enter the length of the track</value>
+  </data>
+  <data name="LongueurMaximaleNavire" xml:space="preserve">
+    <value>Maximum length of vessel</value>
+  </data>
+  <data name="LongueurMaximaleNavirePlaceholder" xml:space="preserve">
+    <value>Enter the maximum length native</value>
+  </data>
+  <data name="LongueurMaximaleNavireUnites" xml:space="preserve">
+    <value>Units of the maximum length of vessel </value>
+  </data>
+  <data name="LongueurMaximaleNavireUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the maximum length native</value>
+  </data>
+  <data name="LongueurPlaceholder" xml:space="preserve">
+    <value>Enter the length of the element</value>
+  </data>
+  <data name="MainNavigation" xml:space="preserve">
+    <value>MAIN MENU</value>
+  </data>
+  <data name="MaisonDetruite" xml:space="preserve">
+    <value>House destroyed</value>
+  </data>
+  <data name="MaisonEndommages" xml:space="preserve">
+    <value>House damaged</value>
+  </data>
+  <data name="ManageAbris" xml:space="preserve">
+    <value>Shelter management</value>
+  </data>
+  <data name="ManageAeroport" xml:space="preserve">
+    <value>Airport Management</value>
+  </data>
+  <data name="ManageAlert" xml:space="preserve">
+    <value>Managing Alerts</value>
+  </data>
+  <data name="ManageAlertCreate" xml:space="preserve">
+    <value>Creating alerts</value>
+  </data>
+  <data name="ManageAnneeBudgetaire" xml:space="preserve">
+    <value>Management of budgetary years</value>
+  </data>
+  <data name="ManageBureau" xml:space="preserve">
+    <value>Management offices</value>
+  </data>
+  <data name="ManageCategorieDArticle" xml:space="preserve">
+    <value>Management Article categories</value>
+  </data>
+  <data name="ManageCategorieElement" xml:space="preserve">
+    <value>Category Management</value>
+  </data>
+  <data name="ManageChamps" xml:space="preserve">
+    <value>Fields management</value>
+  </data>
+  <data name="ManageCollecte" xml:space="preserve">
+    <value>Managing collections</value>
+  </data>
+  <data name="ManageCollectiviteSinistree" xml:space="preserve">
+    <value>Managing disaster declarations</value>
+  </data>
+  <data name="ManageCommune" xml:space="preserve">
+    <value>Management of Common</value>
+  </data>
+  <data name="ManageDemande" xml:space="preserve">
+    <value>Management of requests for assistance</value>
+  </data>
+  <data name="ManageDepartement" xml:space="preserve">
+    <value>Management departments</value>
+  </data>
+  <data name="ManageDesagregationRecoltesAgricole" xml:space="preserve">
+    <value>Crop Management</value>
+  </data>
+  <data name="ManageDevise" xml:space="preserve">
+    <value>Managing currency</value>
+  </data>
+  <data name="ManageElement" xml:space="preserve">
+    <value>Managing assets</value>
+  </data>
+  <data name="ManageEnquete" xml:space="preserve">
+    <value>Investigation Management</value>
+  </data>
+  <data name="ManageEntrepot" xml:space="preserve">
+    <value>Warehouse Management</value>
+  </data>
+  <data name="ManageEvenement" xml:space="preserve">
+    <value>Events Manager</value>
+  </data>
+  <data name="ManageEvenementZone" xml:space="preserve">
+    <value>Areas Management</value>
+  </data>
+  <data name="ManageFacteur" xml:space="preserve">
+    <value>Management factors</value>
+  </data>
+  <data name="ManageFormulaire" xml:space="preserve">
+    <value>Forms Management</value>
+  </data>
+  <data name="ManageHeliport" xml:space="preserve">
+    <value>Management heliports</value>
+  </data>
+  <data name="ManageHopitaux" xml:space="preserve">
+    <value>Hospital management</value>
+  </data>
+  <data name="ManageImmobilisation" xml:space="preserve">
+    <value>Asset management</value>
+  </data>
+  <data name="ManageIndemnisation" xml:space="preserve">
+    <value>Management of aid</value>
+  </data>
+  <data name="ManageInstallation" xml:space="preserve">
+    <value>Facilities Management</value>
+  </data>
+  <data name="ManageMarqueElement" xml:space="preserve">
+    <value>Brand Management</value>
+  </data>
+  <data name="ManageMateriel" xml:space="preserve">
+    <value>Equipment management</value>
+  </data>
+  <data name="ManageMoyen" xml:space="preserve">
+    <value>Managing resources</value>
+  </data>
+  <data name="ManageNatureAide" xml:space="preserve">
+    <value>Management of aid nature</value>
+  </data>
+  <data name="ManageNiveauDAlert" xml:space="preserve">
+    <value>Managing levels Alete</value>
+  </data>
+  <data name="ManageOrganisation" xml:space="preserve">
+    <value>Managing Organizations</value>
+  </data>
+  <data name="ManagePersonnel" xml:space="preserve">
+    <value>Gesttion staff</value>
+  </data>
+  <data name="ManagePerteBetail" xml:space="preserve">
+    <value>Management of cattle</value>
+  </data>
+  <data name="ManagePortDeMer" xml:space="preserve">
+    <value>Port Management</value>
+  </data>
+  <data name="ManageProjet" xml:space="preserve">
+    <value>Project management</value>
+  </data>
+  <data name="ManageProposition" xml:space="preserve">
+    <value>Managing proposals</value>
+  </data>
+  <data name="ManagePuissance" xml:space="preserve">
+    <value>Management powers</value>
+  </data>
+  <data name="ManageQuartier" xml:space="preserve">
+    <value>Managing neighborhoods</value>
+  </data>
+  <data name="ManageRegion" xml:space="preserve">
+    <value>Management areas</value>
+  </data>
+  <data name="ManageRisque" xml:space="preserve">
+    <value>Risk management</value>
+  </data>
+  <data name="ManageRisqueZone" xml:space="preserve">
+    <value>Risk management</value>
+  </data>
+  <data name="ManageSecteur" xml:space="preserve">
+    <value>Management sectors</value>
+  </data>
+  <data name="ManageSection" xml:space="preserve">
+    <value>Managing Sections</value>
+  </data>
+  <data name="ManageServicesPubliquePertube" xml:space="preserve">
+    <value>Service Management</value>
+  </data>
+  <data name="ManageSinistre" xml:space="preserve">
+    <value>Disaster management</value>
+  </data>
+  <data name="ManageSinistrer" xml:space="preserve">
+    <value>Disaster management</value>
+  </data>
+  <data name="ManageSolution" xml:space="preserve">
+    <value>Management solutions</value>
+  </data>
+  <data name="ManageSuivi" xml:space="preserve">
+    <value>Monitoring of aid</value>
+  </data>
+  <data name="ManageSurfaceDePiste" xml:space="preserve">
+    <value>Managing track surfaces</value>
+  </data>
+  <data name="ManageTailleDeAeronef" xml:space="preserve">
+    <value>Management of aircraft sizes</value>
+  </data>
+  <data name="ManageTypeAbris" xml:space="preserve">
+    <value>Management types of shelters</value>
+  </data>
+  <data name="ManageTypeAide" xml:space="preserve">
+    <value>Management types of assistance</value>
+  </data>
+  <data name="ManageTypeChamp" xml:space="preserve">
+    <value>Management of field types</value>
+  </data>
+  <data name="ManageTypeChamps" xml:space="preserve">
+    <value>Management of field types</value>
+  </data>
+  <data name="ManageTypeEntrepot" xml:space="preserve">
+    <value>Management of warehouse types</value>
+  </data>
+  <data name="ManageTypeHopitaux" xml:space="preserve">
+    <value>Management types of hospitals</value>
+  </data>
+  <data name="ManageTypeImmobilisation" xml:space="preserve">
+    <value>Managing capital Types</value>
+  </data>
+  <data name="ManageTypeMoyen" xml:space="preserve">
+    <value>Management using standard</value>
+  </data>
+  <data name="ManageTypeOffice" xml:space="preserve">
+    <value>Office Type Management</value>
+  </data>
+  <data name="ManageTypeOrganisation" xml:space="preserve">
+    <value>Management types of organization</value>
+  </data>
+  <data name="ManageTypePersonnel" xml:space="preserve">
+    <value>Management types of staff</value>
+  </data>
+  <data name="ManageTypeSinistre" xml:space="preserve">
+    <value>Management types of disaster</value>
+  </data>
+  <data name="ManageTypeSolution" xml:space="preserve">
+    <value>Management types of solutions</value>
+  </data>
+  <data name="ManageTypeSuivi" xml:space="preserve">
+    <value>Management types of monitoring</value>
+  </data>
+  <data name="ManageTypeVehicule" xml:space="preserve">
+    <value>Management types of vehicle</value>
+  </data>
+  <data name="ManageUniteGeographique" xml:space="preserve">
+    <value>Geographical units</value>
+  </data>
+  <data name="ManageUsageHumanitaire" xml:space="preserve">
+    <value>Management uses humanitarian</value>
+  </data>
+  <data name="ManageVille" xml:space="preserve">
+    <value>Urban Management</value>
+  </data>
+  <data name="ManageZoneARisque" xml:space="preserve">
+    <value>Managing risk areas</value>
+  </data>
+  <data name="MarqueElement" xml:space="preserve">
+    <value>Mark element</value>
+  </data>
+  <data name="Materiel" xml:space="preserve">
+    <value>Facilities</value>
+  </data>
+  <data name="MdlError_Fichier" xml:space="preserve">
+    <value>The field {0} is required: please fill.</value>
+  </data>
+  <data name="MdlStatError_NatureAide" xml:space="preserve">
+    <value>Please select an item in the list</value>
+  </data>
+  <data name="MdlStatError_Quantite" xml:space="preserve">
+    <value>Please enter the amount</value>
+  </data>
+  <data name="MenuAbris" xml:space="preserve">
+    <value>Shelters</value>
+  </data>
+  <data name="MenuAeroport" xml:space="preserve">
+    <value>The airports</value>
+  </data>
+  <data name="MenuAlertByGroupExisting" xml:space="preserve">
+    <value>For existing groups</value>
+  </data>
+  <data name="MenuBaseSettings" xml:space="preserve">
+    <value>basic parameter</value>
+  </data>
+  <data name="MenuBureau" xml:space="preserve">
+    <value>The offices</value>
+  </data>
+  <data name="MenuByImports" xml:space="preserve">
+    <value>By File Imports</value>
+  </data>
+  <data name="MenuCartes" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="MenuCategoriArticle" xml:space="preserve">
+    <value>The article categories</value>
+  </data>
+  <data name="MenuCategorieElement" xml:space="preserve">
+    <value>The categories of items</value>
+  </data>
+  <data name="MenuDevises" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="MenuElements" xml:space="preserve">
+    <value>The elements</value>
+  </data>
+  <data name="MenuEnquete" xml:space="preserve">
+    <value>The surveys</value>
+  </data>
+  <data name="MenuEntrepots" xml:space="preserve">
+    <value>warehouses</value>
+  </data>
+  <data name="MenuEvenements" xml:space="preserve">
+    <value>The events</value>
+  </data>
+  <data name="MenuEvenementZones" xml:space="preserve">
+    <value>Declarations</value>
+  </data>
+  <data name="MenuFacteurs" xml:space="preserve">
+    <value>Factors</value>
+  </data>
+  <data name="MenuGestionAbris" xml:space="preserve">
+    <value>Shelter management</value>
+  </data>
+  <data name="MenuGestionAeroport" xml:space="preserve">
+    <value>Airport Management</value>
+  </data>
+  <data name="MenuGestionDesHopitaux" xml:space="preserve">
+    <value>Hospital management</value>
+  </data>
+  <data name="MenuGestionDesMoyens" xml:space="preserve">
+    <value>Managing resources</value>
+  </data>
+  <data name="MenuGestionDesSinistre" xml:space="preserve">
+    <value>Disaster management</value>
+  </data>
+  <data name="MenuGestionDuPersonnel" xml:space="preserve">
+    <value>Staff management</value>
+  </data>
+  <data name="MenuGestionImmobilisation" xml:space="preserve">
+    <value>Asset management</value>
+  </data>
+  <data name="MenuGestionInfrastructures" xml:space="preserve">
+    <value>Infrastructure Management</value>
+  </data>
+  <data name="MenuGestionPort" xml:space="preserve">
+    <value>Port Management</value>
+  </data>
+  <data name="MenuGestionProjet" xml:space="preserve">
+    <value>Project management</value>
+  </data>
+  <data name="MenuHeliport" xml:space="preserve">
+    <value>heliports</value>
+  </data>
+  <data name="MenuHistoriqueAlerte" xml:space="preserve">
+    <value>Alert History</value>
+  </data>
+  <data name="MenuHopitaux" xml:space="preserve">
+    <value>Hospitals</value>
+  </data>
+  <data name="MenuImmobilisation" xml:space="preserve">
+    <value>Investments</value>
+  </data>
+  <data name="MenuIndemnisation" xml:space="preserve">
+    <value>AIDS</value>
+  </data>
+  <data name="MenuInstallation" xml:space="preserve">
+    <value>The installations</value>
+  </data>
+  <data name="MenuManageEnquete" xml:space="preserve">
+    <value>Investigation Management</value>
+  </data>
+  <data name="MenuManageEvents" xml:space="preserve">
+    <value>Events Manager</value>
+  </data>
+  <data name="MenuManageRisks" xml:space="preserve">
+    <value>Risk management</value>
+  </data>
+  <data name="MenuMarqueElement" xml:space="preserve">
+    <value>Marks </value>
+  </data>
+  <data name="MenuMateriels" xml:space="preserve">
+    <value>the facilities</value>
+  </data>
+  <data name="MenuNatureAide" xml:space="preserve">
+    <value>Aid natures</value>
+  </data>
+  <data name="MenuNiveauDAlert" xml:space="preserve">
+    <value>Alert levels</value>
+  </data>
+  <data name="MenuOrganisation" xml:space="preserve">
+    <value>organizations</value>
+  </data>
+  <data name="MenuPersonnel" xml:space="preserve">
+    <value>The staff</value>
+  </data>
+  <data name="MenuPerteBetail" xml:space="preserve">
+    <value>the cattle</value>
+  </data>
+  <data name="MenuPortDeMer" xml:space="preserve">
+    <value>The ports</value>
+  </data>
+  <data name="MenuProjet" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="MenuPuissance" xml:space="preserve">
+    <value>The powers</value>
+  </data>
+  <data name="MenuQuartier" xml:space="preserve">
+    <value>Districts</value>
+  </data>
+  <data name="MenuRecoltesAgricoles" xml:space="preserve">
+    <value>Cultures</value>
+  </data>
+  <data name="MenuRisques" xml:space="preserve">
+    <value>The risks</value>
+  </data>
+  <data name="MenuServicesPubliquePertube" xml:space="preserve">
+    <value>Public services</value>
+  </data>
+  <data name="MenuSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MenuSinistre" xml:space="preserve">
+    <value>Disaster victims</value>
+  </data>
+  <data name="MenuSinistrees" xml:space="preserve">
+    <value>affected</value>
+  </data>
+  <data name="MenuSolutions" xml:space="preserve">
+    <value>The solutions</value>
+  </data>
+  <data name="MenuSuivi" xml:space="preserve">
+    <value>the Subscriptions</value>
+  </data>
+  <data name="MenuSurfaceDePiste" xml:space="preserve">
+    <value>The track surfaces</value>
+  </data>
+  <data name="MenuTailleDeAeronef" xml:space="preserve">
+    <value>The aircraft sizes</value>
+  </data>
+  <data name="MenuTypeAbris" xml:space="preserve">
+    <value>The shelters Types</value>
+  </data>
+  <data name="MenuTypeAide" xml:space="preserve">
+    <value>Aid Types</value>
+  </data>
+  <data name="MenuTypeChamps" xml:space="preserve">
+    <value>The types of fields</value>
+  </data>
+  <data name="MenuTypeEntrepot" xml:space="preserve">
+    <value>The types of warehouses</value>
+  </data>
+  <data name="MenuTypeHopitaux" xml:space="preserve">
+    <value>The types of hospitals</value>
+  </data>
+  <data name="MenuTypeImmobilisation" xml:space="preserve">
+    <value>The types of immobilidation</value>
+  </data>
+  <data name="MenuTypeOffices" xml:space="preserve">
+    <value>The office types</value>
+  </data>
+  <data name="MenuTypePersonnel" xml:space="preserve">
+    <value>The types of Personal</value>
+  </data>
+  <data name="MenuTypeSinistres" xml:space="preserve">
+    <value>Types of Claims</value>
+  </data>
+  <data name="MenuTypeSolutions" xml:space="preserve">
+    <value>The types of solutions</value>
+  </data>
+  <data name="MenuTypeSuivis" xml:space="preserve">
+    <value>The Following Types</value>
+  </data>
+  <data name="MenuTypeVehicule" xml:space="preserve">
+    <value>The types of vehicle</value>
+  </data>
+  <data name="MenuUsageHumanitaire" xml:space="preserve">
+    <value>The purpose hummanitaire</value>
+  </data>
+  <data name="MenuZoneARisques" xml:space="preserve">
+    <value>Risk areas</value>
+  </data>
+  <data name="Menu_AnneeBudgetaire" xml:space="preserve">
+    <value>The budget Years</value>
+  </data>
+  <data name="Menu_Communes" xml:space="preserve">
+    <value>The cities</value>
+  </data>
+  <data name="Menu_Declarations" xml:space="preserve">
+    <value>Declarations</value>
+  </data>
+  <data name="Menu_Demande" xml:space="preserve">
+    <value>the Demands</value>
+  </data>
+  <data name="Menu_Departements" xml:space="preserve">
+    <value>The departments</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Menu_Regions" xml:space="preserve">
+    <value>The regions</value>
+  </data>
+  <data name="Menu_UserManager" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="Minatd" xml:space="preserve">
+    <value>MINAT</value>
+  </data>
+  <data name="MINATName" xml:space="preserve">
+    <value>Ministry of Territorial Administration</value>
+  </data>
+  <data name="MINATSiteWeb" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="Modele" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ModelePlaceholder" xml:space="preserve">
+    <value>Enter the model element</value>
+  </data>
+  <data name="ModelError_SinistreDeclareUtilise" xml:space="preserve">
+    <value>Unable to remove this item because the requests are related to it. Please contact the administrator.</value>
+  </data>
+  <data name="ModelError_SinistreDejaDeclare" xml:space="preserve">
+    <value>Sorry, this disaster has been declared for this community and for the selected fiscal year.</value>
+  </data>
+  <data name="ModuleAlerte" xml:space="preserve">
+    <value>Managing Alerts</value>
+  </data>
+  <data name="ModuleCollecte" xml:space="preserve">
+    <value>Managing collections</value>
+  </data>
+  <data name="ModuleDesinventar" xml:space="preserve">
+    <value>Risk management</value>
+  </data>
+  <data name="ModuleList" xml:space="preserve">
+    <value>List of modules</value>
+  </data>
+  <data name="ModuleSahana" xml:space="preserve">
+    <value>Management response means</value>
+  </data>
+  <data name="ModuleSinistrer" xml:space="preserve">
+    <value>Disaster management</value>
+  </data>
+  <data name="Montant" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="NamePlaceholder" xml:space="preserve">
+    <value>Please enter the user name</value>
+  </data>
+  <data name="NatureAide" xml:space="preserve">
+    <value>Nature of Assistance</value>
+  </data>
+  <data name="NatureAideCombo" xml:space="preserve">
+    <value>Please select the type of aid</value>
+  </data>
+  <data name="NatureAideType" xml:space="preserve">
+    <value>Type of help</value>
+  </data>
+  <data name="Niveau" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="NiveauAutre" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="NiveauCombo" xml:space="preserve">
+    <value>Please select a level</value>
+  </data>
+  <data name="NiveauCommunal" xml:space="preserve">
+    <value>Communal level</value>
+  </data>
+  <data name="NiveauDAlert" xml:space="preserve">
+    <value>Alert level</value>
+  </data>
+  <data name="NiveauDAlertCombo" xml:space="preserve">
+    <value>Make sure select an alert level</value>
+  </data>
+  <data name="NiveauDepartemental" xml:space="preserve">
+    <value>Departmental level</value>
+  </data>
+  <data name="NiveauNational" xml:space="preserve">
+    <value>National level</value>
+  </data>
+  <data name="NiveauRegional" xml:space="preserve">
+    <value>Regional level</value>
+  </data>
+  <data name="Nom" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="NombreActifsProductifAfricoleDetruit" xml:space="preserve">
+    <value>Number of destroyed productive assets</value>
+  </data>
+  <data name="NombreActifsProductifAfricoleEndomager" xml:space="preserve">
+    <value>Number of damaged productive assets</value>
+  </data>
+  <data name="NombreAutreInfrastructureDetruits" xml:space="preserve">
+    <value>Number of destroyed infrastructure</value>
+  </data>
+  <data name="NombreAutreInfrastructureEndommager" xml:space="preserve">
+    <value>Number of damaged infrastructure</value>
+  </data>
+  <data name="NombreBarge" xml:space="preserve">
+    <value>Number of barge</value>
+  </data>
+  <data name="NombreBargePlaceholder" xml:space="preserve">
+    <value>Enter the number of bardge</value>
+  </data>
+  <data name="NombreBlesseAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreBlesseEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreBlesseFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreBlesseHandicape" xml:space="preserve">
+    <value>with disabilities</value>
+  </data>
+  <data name="NombreBlesseHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreBlessePauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreBlesseVieux" xml:space="preserve">
+    <value>The elderly</value>
+  </data>
+  <data name="NombreDanimauxPerdu" xml:space="preserve">
+    <value>waif</value>
+  </data>
+  <data name="NombreDanimauxToucheOuPerdu" xml:space="preserve">
+    <value>animals affected</value>
+  </data>
+  <data name="NombreDanimauxToucher" xml:space="preserve">
+    <value>animals affected</value>
+  </data>
+  <data name="NombreDeBiensCulturelMobileDetruits" xml:space="preserve">
+    <value>Number of destroyed movable cultural property (C-6g)</value>
+  </data>
+  <data name="NombreDeBiensCulturelMobileEndomager" xml:space="preserve">
+    <value>Number of damaged movable cultural property (C-6f)</value>
+  </data>
+  <data name="NombreDecesAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreDecesEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreDecesFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreDecesHandicape" xml:space="preserve">
+    <value>with a Disability</value>
+  </data>
+  <data name="NombreDecesHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreDecesPauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreDecesVieux" xml:space="preserve">
+    <value>older Peronnes</value>
+  </data>
+  <data name="NombreDeLitMax" xml:space="preserve">
+    <value>Max bed</value>
+  </data>
+  <data name="NombreDeLitMaxPlaceholder" xml:space="preserve">
+    <value>Enter the maximum number of bed</value>
+  </data>
+  <data name="NombreDeLitMin" xml:space="preserve">
+    <value>Min bed</value>
+  </data>
+  <data name="NombreDeLitMinPlaceholder" xml:space="preserve">
+    <value>Enter the minimum number of bed</value>
+  </data>
+  <data name="NombreDeMedecin" xml:space="preserve">
+    <value>Number of doctor</value>
+  </data>
+  <data name="NombreDeMedecinMax" xml:space="preserve">
+    <value>Maximum number of doctor</value>
+  </data>
+  <data name="NombreDeMedecinMin" xml:space="preserve">
+    <value>Number of physician min</value>
+  </data>
+  <data name="NombreDeMedecinPlaceholder" xml:space="preserve">
+    <value>Enter the number of doctor</value>
+  </data>
+  <data name="NombreDeMonumentImmobiliersEndomager" xml:space="preserve">
+    <value>Number of damaged movable cultural property (C-6f)</value>
+  </data>
+  <data name="NombreDePersonneAffecter" xml:space="preserve">
+    <value>Estimated number of people affected</value>
+  </data>
+  <data name="NombreDePersonneDirrectementAffecter" xml:space="preserve">
+    <value>Estimated people directly affected</value>
+  </data>
+  <data name="NombreDePersonneEvacue" xml:space="preserve">
+    <value>Number of evacuees</value>
+  </data>
+  <data name="NombreDePersonnelNonMedical" xml:space="preserve">
+    <value>Non-medical staff</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalMAx" xml:space="preserve">
+    <value>Number of non-medical staff max</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalMin" xml:space="preserve">
+    <value>Number of non-medical personnel min</value>
+  </data>
+  <data name="NombreDePersonnelNonMedicalPlaceholder" xml:space="preserve">
+    <value>Enter the number of medical staff name</value>
+  </data>
+  <data name="NombreDePersonneRelocaliser" xml:space="preserve">
+    <value>Number of persons relocated</value>
+  </data>
+  <data name="NombreDesEtablissementsdeSantedetruits" xml:space="preserve">
+    <value>Number of destroyed health facilities</value>
+  </data>
+  <data name="NombreDesEtablissementsdeSanteEndommager" xml:space="preserve">
+    <value>Number of damaged health facilities</value>
+  </data>
+  <data name="NombreDesEtablissementsEducationDetruits" xml:space="preserve">
+    <value>Number of destroyed facilities</value>
+  </data>
+  <data name="NombreDesEtablissementsEducationEndommager" xml:space="preserve">
+    <value>Number of damaged facilities</value>
+  </data>
+  <data name="NombreDetruitDetruit" xml:space="preserve">
+    <value>Number of lost pets</value>
+  </data>
+  <data name="NombreDInfimiere" xml:space="preserve">
+    <value>Number of infimière</value>
+  </data>
+  <data name="NombreDInfimiereMAx" xml:space="preserve">
+    <value>Number of nursing max</value>
+  </data>
+  <data name="NombreDInfimiereMin" xml:space="preserve">
+    <value>Number nurse min</value>
+  </data>
+  <data name="NombreDInfimierePlaceholder" xml:space="preserve">
+    <value>Enter the number of infirmiére</value>
+  </data>
+  <data name="NombreDinstallationStockAgricoleDetruit" xml:space="preserve">
+    <value>NombreDinstallationStockAgricoleDetruit</value>
+  </data>
+  <data name="NombreDinstallationStockAgricoleEndomager" xml:space="preserve">
+    <value>Number of damaged productive assets</value>
+  </data>
+  <data name="NombreDisparueAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreDisparueEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreDisparueFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreDisparueHandicape" xml:space="preserve">
+    <value>with disabilities</value>
+  </data>
+  <data name="NombreDisparueHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreDisparuePauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreDisparueVieux" xml:space="preserve">
+    <value>The elderly</value>
+  </data>
+  <data name="NombreGLIDE" xml:space="preserve">
+    <value>Number of GLIDE</value>
+  </data>
+  <data name="NombreHectarAfecter" xml:space="preserve">
+    <value>Hectares affected crops</value>
+  </data>
+  <data name="NombreHectarAquacultureDetruit" xml:space="preserve">
+    <value>Number of hectares destroyed</value>
+  </data>
+  <data name="NombreHectarAquacultureEndomager" xml:space="preserve">
+    <value>Number of hectares damaged</value>
+  </data>
+  <data name="NombreHectarDetruit" xml:space="preserve">
+    <value>destroyed hectares</value>
+  </data>
+  <data name="NombreHectarEndomager" xml:space="preserve">
+    <value>damaged hectares</value>
+  </data>
+  <data name="NombreHectarForetDetruit" xml:space="preserve">
+    <value>Number of hectares destroyed</value>
+  </data>
+  <data name="NombreHectarForetEndomager" xml:space="preserve">
+    <value>Number of hectares damaged</value>
+  </data>
+  <data name="NombreImpactSurLesMoyensDeSubsistance" xml:space="preserve">
+    <value>Impact on livelihood</value>
+  </data>
+  <data name="NombreInstallationActifsProductifsDetruit" xml:space="preserve">
+    <value>Number of productive assets destroyed facilities</value>
+  </data>
+  <data name="NombreInstallationActifsProductifsEndomager" xml:space="preserve">
+    <value>Number of productive assets damaged facilities</value>
+  </data>
+  <data name="NombreMaisonDetruiteAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreMaisonDetruiteEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreMaisonDetruiteFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreMaisonDetruiteHandicape" xml:space="preserve">
+    <value>with disabilities</value>
+  </data>
+  <data name="NombreMaisonDetruiteHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreMaisonDetruitePauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreMaisonDetruiteVieux" xml:space="preserve">
+    <value>The elderly</value>
+  </data>
+  <data name="NombreMaisonEndomageAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreMaisonEndomageEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreMaisonEndomageFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreMaisonEndomageHandicape" xml:space="preserve">
+    <value>with disabilities</value>
+  </data>
+  <data name="NombreMaisonEndomageHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreMaisonEndomagePauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreMaisonEndomageVieux" xml:space="preserve">
+    <value>The elderly</value>
+  </data>
+  <data name="NombreMonumentImmobilierDetruits" xml:space="preserve">
+    <value>Number of buildings / destroyed real assets (C-6)</value>
+  </data>
+  <data name="NombreMoyenSubsistanceAdult" xml:space="preserve">
+    <value>adults</value>
+  </data>
+  <data name="NombreMoyenSubsistanceEnfant" xml:space="preserve">
+    <value>children</value>
+  </data>
+  <data name="NombreMoyenSubsistanceFemme" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="NombreMoyenSubsistanceHandicape" xml:space="preserve">
+    <value>with disabilities</value>
+  </data>
+  <data name="NombreMoyenSubsistanceHomme" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="NombreMoyenSubsistancePauvre" xml:space="preserve">
+    <value>Under poverty</value>
+  </data>
+  <data name="NombreMoyenSubsistanceVieux" xml:space="preserve">
+    <value>The elderly</value>
+  </data>
+  <data name="NombreNavireDetruit" xml:space="preserve">
+    <value>Number of destroyed ships</value>
+  </data>
+  <data name="NombreNavireEndomager" xml:space="preserve">
+    <value>Number of damaged ships</value>
+  </data>
+  <data name="NombrePersonnesBlesseesOuMalades" xml:space="preserve">
+    <value>Number of injured or sick</value>
+  </data>
+  <data name="NombrePersonnesDecedees" xml:space="preserve">
+    <value>Number of deaths</value>
+  </data>
+  <data name="NombrePersonnesDisparues" xml:space="preserve">
+    <value>Number of missing persons</value>
+  </data>
+  <data name="NombrePersonnesLogementDetruits" xml:space="preserve">
+    <value>Number of people whose homes were destroyed</value>
+  </data>
+  <data name="NombrePersonnesLogementEndommagees" xml:space="preserve">
+    <value>Number of people whose homes were damaged</value>
+  </data>
+  <data name="NombreRemorqueur" xml:space="preserve">
+    <value>Number of tug</value>
+  </data>
+  <data name="NombreRemorqueurPlaceholder" xml:space="preserve">
+    <value>Enter the number of tug</value>
+  </data>
+  <data name="NombreRoutesDetruits" xml:space="preserve">
+    <value>Total destroyed roads</value>
+  </data>
+  <data name="NombreRoutesEndommager" xml:space="preserve">
+    <value>Total damaged roads</value>
+  </data>
+  <data name="NombreTotalActifsProductifAfricoleToucher" xml:space="preserve">
+    <value>Total assets affected agricultural productive</value>
+  </data>
+  <data name="NombreTotalAfecter" xml:space="preserve">
+    <value>Number of affected animals</value>
+  </data>
+  <data name="NombreTotalAutreInfrastructureTouche" xml:space="preserve">
+    <value>Many other affected infrastructure (D-4)</value>
+  </data>
+  <data name="NombreTotalBlesse" xml:space="preserve">
+    <value>total casualties</value>
+  </data>
+  <data name="NombreTotalDeces" xml:space="preserve">
+    <value>total deaths</value>
+  </data>
+  <data name="NombreTotaldesEtablissementDeSanteTouche" xml:space="preserve">
+    <value>Total number of health facilities affected (D-2)</value>
+  </data>
+  <data name="NombreTotaldesEtablissementEducationTouche" xml:space="preserve">
+    <value>Total number of affected plants (D-3)</value>
+  </data>
+  <data name="NombreTotalDinstallationStockAgricoleToucher" xml:space="preserve">
+    <value>Total assets affected agricultural productive</value>
+  </data>
+  <data name="NombreTotalDisparue" xml:space="preserve">
+    <value>total missing</value>
+  </data>
+  <data name="NombreTotalEndomager" xml:space="preserve">
+    <value>Number of affected animals</value>
+  </data>
+  <data name="NombreTotalHectarAquacultureToucher" xml:space="preserve">
+    <value>Total hectares allocated aquaculture</value>
+  </data>
+  <data name="NombreTotalHectarForetToucher" xml:space="preserve">
+    <value>Total Ha affected forests</value>
+  </data>
+  <data name="NombreTotalInstallationActifsProductifsToucher" xml:space="preserve">
+    <value>Number of productive assets facilities (C-3A)</value>
+  </data>
+  <data name="NombreTotalLogementEndommagerOuDetruit" xml:space="preserve">
+    <value>Total number of damaged or destroyed housing (target B)</value>
+  </data>
+  <data name="NombreTotalMaisonDetruite" xml:space="preserve">
+    <value>Total homes destroyed</value>
+  </data>
+  <data name="NombreTotalMaisonEndomage" xml:space="preserve">
+    <value>houses endomagées</value>
+  </data>
+  <data name="NombreTotalMoyenSubsistance" xml:space="preserve">
+    <value>Total livelihoods</value>
+  </data>
+  <data name="NombreTotalNavireToucher" xml:space="preserve">
+    <value>Total number of vessels affected</value>
+  </data>
+  <data name="NombreTotalPersonneMaisonDetruite" xml:space="preserve">
+    <value>People living in these housing (Indicator B-4)</value>
+  </data>
+  <data name="NombreTotalPersonneMaisonEndomage" xml:space="preserve">
+    <value>Number of people living in homes that were damaged (Indicator B-3)</value>
+  </data>
+  <data name="NombreTotalRoutesTouche" xml:space="preserve">
+    <value>Total affected routes</value>
+  </data>
+  <data name="NomPaceholder" xml:space="preserve">
+    <value>Please enter the organization name</value>
+  </data>
+  <data name="Noms" xml:space="preserve">
+    <value>Name (s)</value>
+  </data>
+  <data name="NoResponse" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="NumeroDeSerie" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="NumeroDeSeriePlaceholder" xml:space="preserve">
+    <value>Enter the serial number</value>
+  </data>
+  <data name="NumeroImobilisation" xml:space="preserve">
+    <value>Number of immobilization</value>
+  </data>
+  <data name="NumeroImobilisationPlaceholder" xml:space="preserve">
+    <value>Enter the asset number</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>observations</value>
+  </data>
+  <data name="ObservationPlaceholder" xml:space="preserve">
+    <value>Please enter the observation</value>
+  </data>
+  <data name="Ordre" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Ordrentree" xml:space="preserve">
+    <value>input order</value>
+  </data>
+  <data name="Organisation" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="ParAge" xml:space="preserve">
+    <value>by age</value>
+  </data>
+  <data name="ParSexe" xml:space="preserve">
+    <value>by gender</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Please enter the password</value>
+  </data>
+  <data name="Pays" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="PaysCombo" xml:space="preserve">
+    <value>Please select the country</value>
+  </data>
+  <data name="PersonnelAbris" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="PersonnelBureaux" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="PersonnelInstallation" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="PersonnelProjet" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="PerteBetail" xml:space="preserve">
+    <value>Animal</value>
+  </data>
+  <data name="PerteDeRecolteAgricole" xml:space="preserve">
+    <value>Loss of agricultural crops (C-2C)</value>
+  </data>
+  <data name="PerteEconomique" xml:space="preserve">
+    <value>economic loss</value>
+  </data>
+  <data name="PerteEconomiqueActifsProductifAfricole" xml:space="preserve">
+    <value>Economic loss from agricultural productive assets</value>
+  </data>
+  <data name="PerteEconomiqueActifsProductifs" xml:space="preserve">
+    <value>Economic loss from productive assets</value>
+  </data>
+  <data name="PerteEconomiqueAquaculture" xml:space="preserve">
+    <value>Economic losses affected aquaculture</value>
+  </data>
+  <data name="PerteEconomiqueDesCultureTouche" xml:space="preserve">
+    <value>economic losses affected crops</value>
+  </data>
+  <data name="PerteEconomiqueDesNaviresAffecter" xml:space="preserve">
+    <value>Economic loss of affected ships</value>
+  </data>
+  <data name="PerteEconomiqueDesStockAgricole" xml:space="preserve">
+    <value>Economic loss from agricultural productive assets</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesActifsProductionAgricoles" xml:space="preserve">
+    <value>economic loss and damage to agricultural production assets (C-2LAa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesAutresActifsProductifs" xml:space="preserve">
+    <value>economic loss and damage to all other productive assets (C-3)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesEtablissementsEnseignement" xml:space="preserve">
+    <value>economic loss and damage caused to educational institutions (D-3)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesCausesEtablissementsSante" xml:space="preserve">
+    <value>economic loss and damage to health facilities, education and other infrastructure</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesAquaculture" xml:space="preserve">
+    <value>economic loss and physical damage to aquaculture (C-2Aa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesCultures" xml:space="preserve">
+    <value>economic loss and physical damage to crops (C-2Ca)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesForets" xml:space="preserve">
+    <value>economic loss and physical damage to forests (C-2FOa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesPhysiquesPecheries" xml:space="preserve">
+    <value>economic loss and physical damage to fisheries (C-2FIa)</value>
+  </data>
+  <data name="PerteEconomiqueDommagesStocksAgricoles" xml:space="preserve">
+    <value>economic loss and damage to agricultural stocks (C-2LBa)</value>
+  </data>
+  <data name="PerteEconomiqueDuAuActifsMobileDetruit" xml:space="preserve">
+    <value>Economic losses to two destroyed mobile assets (C-6c)</value>
+  </data>
+  <data name="PerteEconomiqueDuAuRoutes" xml:space="preserve">
+    <value>Economic losses in road</value>
+  </data>
+  <data name="PerteEconomiqueInfrastructureToucher" xml:space="preserve">
+    <value>Economic loss of affected infrastructure (for C-5)</value>
+  </data>
+  <data name="PerteEconomiqueNombreInstallationsUnitesAutresInfrastructures" xml:space="preserve">
+    <value>Economic loss and number of installations / other infrastructure units (D-4)</value>
+  </data>
+  <data name="PerteEconomiqueSecteurEducation" xml:space="preserve">
+    <value>Economic losses in the education sector (C-5)</value>
+  </data>
+  <data name="PerteEconomiqueSecteurSante" xml:space="preserve">
+    <value>Economic Loss in the health sector (C-5)</value>
+  </data>
+  <data name="PerteEconomiqueSurForet" xml:space="preserve">
+    <value>economic losses affected forests</value>
+  </data>
+  <data name="PertesAquaculture" xml:space="preserve">
+    <value>aquaculture losses (C-2A)</value>
+  </data>
+  <data name="PertesBetail" xml:space="preserve">
+    <value>livestock losses (C-2L)</value>
+  </data>
+  <data name="PertesForetsSylviculture" xml:space="preserve">
+    <value>Forest loss and forestry (C-2FO)</value>
+  </data>
+  <data name="PertesPecheries" xml:space="preserve">
+    <value>Loss of fisheries (C-2FI)</value>
+  </data>
+  <data name="PertesProductionAgricole" xml:space="preserve">
+    <value>Losses in agricultural production (C-2LA)</value>
+  </data>
+  <data name="PerteStockAgricole" xml:space="preserve">
+    <value>Loss of agricultural stock (C-2LB)</value>
+  </data>
+  <data name="PerteTotalDeBetailTouche" xml:space="preserve">
+    <value>Total affected cattle</value>
+  </data>
+  <data name="PieceJointe" xml:space="preserve">
+    <value>Attachment</value>
+  </data>
+  <data name="PiecesJointeMenu" xml:space="preserve">
+    <value>Menu attachment</value>
+  </data>
+  <data name="Poids" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="PoidsPlaceholder" xml:space="preserve">
+    <value>Enter the weight of the element</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Population</value>
+  </data>
+  <data name="PopulationPlaceholder" xml:space="preserve">
+    <value>Enter the population</value>
+  </data>
+  <data name="PortDeMer" xml:space="preserve">
+    <value>Seaport</value>
+  </data>
+  <data name="PortDeMerHauteurMaximumMAx" xml:space="preserve">
+    <value>Max Max</value>
+  </data>
+  <data name="PortDeMerHauteurMaximumMin" xml:space="preserve">
+    <value>Maximum height min</value>
+  </data>
+  <data name="PortDeMerLongueurMaximaleNavireMAx" xml:space="preserve">
+    <value>Maximum Max ship</value>
+  </data>
+  <data name="PortDeMerLongueurMaximaleNavireMin" xml:space="preserve">
+    <value>Maximum vessel length min</value>
+  </data>
+  <data name="PortDeMerProfondeurQuaiChargementMAx" xml:space="preserve">
+    <value>Max loading dock Depth</value>
+  </data>
+  <data name="PortDeMerProfondeurQuaiChargementMin" xml:space="preserve">
+    <value>Depth loading dock min</value>
+  </data>
+  <data name="PortDeMerProfondeurTerminalPetrolierMin" xml:space="preserve">
+    <value>terminal depth tanker min</value>
+  </data>
+  <data name="PortDeProfondeurTerminalPetrolierMAx" xml:space="preserve">
+    <value>terminal depth tanker min</value>
+  </data>
+  <data name="Possession" xml:space="preserve">
+    <value>Possession</value>
+  </data>
+  <data name="PossessionPlaceholder" xml:space="preserve">
+    <value>Enter possession</value>
+  </data>
+  <data name="PoweredBy" xml:space="preserve">
+    <value>Powered By</value>
+  </data>
+  <data name="Prenom" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="PrenomPlaceholder" xml:space="preserve">
+    <value>Please enter the first name of the user</value>
+  </data>
+  <data name="Prenoms" xml:space="preserve">
+    <value>Name (s)</value>
+  </data>
+  <data name="PrixAchat" xml:space="preserve">
+    <value>Buying price</value>
+  </data>
+  <data name="PrixAchatPlaceholder" xml:space="preserve">
+    <value>Enter the purchase price</value>
+  </data>
+  <data name="ProfondeurInondation" xml:space="preserve">
+    <value>Unit of the depth of the flooding</value>
+  </data>
+  <data name="ProfondeurInondationPlaceholder" xml:space="preserve">
+    <value>Enter the depth of the flood</value>
+  </data>
+  <data name="ProfondeurInondationUnites" xml:space="preserve">
+    <value>Unit of the depth of the flooding</value>
+  </data>
+  <data name="ProfondeurInondationUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the depth of the flooding</value>
+  </data>
+  <data name="ProfondeurMareBasse" xml:space="preserve">
+    <value>low tide Depth</value>
+  </data>
+  <data name="ProfondeurMareBassePlaceholder" xml:space="preserve">
+    <value>Enter the depth of the low maré</value>
+  </data>
+  <data name="ProfondeurMareBasseUnites" xml:space="preserve">
+    <value>Unit of the depth of the low tide</value>
+  </data>
+  <data name="ProfondeurMareBasseUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the depth of the low maré</value>
+  </data>
+  <data name="ProfondeurMareHaute" xml:space="preserve">
+    <value>Depth of high tide</value>
+  </data>
+  <data name="ProfondeurMareHautePlaceholder" xml:space="preserve">
+    <value>Enter the depth of the high maré</value>
+  </data>
+  <data name="ProfondeurMareHauteUnites" xml:space="preserve">
+    <value>Unit of the depth of the high tide</value>
+  </data>
+  <data name="ProfondeurMareHauteUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the depth of the high maré</value>
+  </data>
+  <data name="ProfondeurQuaiChargement" xml:space="preserve">
+    <value>Depth loading dock </value>
+  </data>
+  <data name="ProfondeurQuaiChargementPlaceholder" xml:space="preserve">
+    <value>Enter the depth of the loading dock </value>
+  </data>
+  <data name="ProfondeurQuaiChargementUnites" xml:space="preserve">
+    <value>Units of the depth from the loading dock</value>
+  </data>
+  <data name="ProfondeurQuaiChargementUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit depth from the loading dock</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolier" xml:space="preserve">
+    <value>Depth oil terminal </value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierPlaceholder" xml:space="preserve">
+    <value>Enter the depth of the oil terminal</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierUnites" xml:space="preserve">
+    <value>Units of the depth of the oil terminal</value>
+  </data>
+  <data name="ProfondeurTerminalPetrolierUnitesPlaceholder" xml:space="preserve">
+    <value>Enter the unit of the depth of the oil terminal</value>
+  </data>
+  <data name="QantitePlaceholder" xml:space="preserve">
+    <value>Enter the amount</value>
+  </data>
+  <data name="Quantite" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Quartier" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="QuartierCommune" xml:space="preserve">
+    <value>town</value>
+  </data>
+  <data name="RaisonSocial" xml:space="preserve">
+    <value>Social reason</value>
+  </data>
+  <data name="RaisonSociale" xml:space="preserve">
+    <value>Social reason</value>
+  </data>
+  <data name="ReceptionDemande" xml:space="preserve">
+    <value>Receive a request</value>
+  </data>
+  <data name="Records" xml:space="preserve">
+    <value>Record (s)</value>
+  </data>
+  <data name="RecordsOn" xml:space="preserve">
+    <value>Sure</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="ReferenceDemande" xml:space="preserve">
+    <value>Reference demand</value>
+  </data>
+  <data name="Referencelaceholder" xml:space="preserve">
+    <value>Enter Reference</value>
+  </data>
+  <data name="ReferencePlaceholder" xml:space="preserve">
+    <value>Enter the reference</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="RegionChefLieu" xml:space="preserve">
+    <value>chief town</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Save user</value>
+  </data>
+  <data name="RegisterForm" xml:space="preserve">
+    <value>Registration Form</value>
+  </data>
+  <data name="RegisterUser" xml:space="preserve">
+    <value>Save user</value>
+  </data>
+  <data name="RejetDemande" xml:space="preserve">
+    <value>Reject an application</value>
+  </data>
+  <data name="ReloadAlert" xml:space="preserve">
+    <value>Raise alert</value>
+  </data>
+  <data name="Reparations" xml:space="preserve">
+    <value>Repairs</value>
+  </data>
+  <data name="ReparationsPlaceholder" xml:space="preserve">
+    <value>Enter repairs</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>The field {0} must be completed.</value>
+  </data>
+  <data name="RequiredFields" xml:space="preserve">
+    <value>Please complete all required fields</value>
+  </data>
+  <data name="Risque" xml:space="preserve">
+    <value>Risk</value>
+  </data>
+  <data name="RisqueCombo" xml:space="preserve">
+    <value>Make select a risk</value>
+  </data>
+  <data name="RoutesEndomages" xml:space="preserve">
+    <value>Damages in roads</value>
+  </data>
+  <data name="SaveBy" xml:space="preserve">
+    <value>recorded by</value>
+  </data>
+  <data name="Secteur" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="SecteurCombo" xml:space="preserve">
+    <value>Please select a sector</value>
+  </data>
+  <data name="SecteurLogement" xml:space="preserve">
+    <value>housing sector (C-4)</value>
+  </data>
+  <data name="SecteurProjet" xml:space="preserve">
+    <value>Project sector</value>
+  </data>
+  <data name="SectionId" xml:space="preserve">
+    <value>relevant section</value>
+  </data>
+  <data name="Securite" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SecuritePlaceholder" xml:space="preserve">
+    <value>Enter the security information </value>
+  </data>
+  <data name="SelectCombo" xml:space="preserve">
+    <value>Please select an item</value>
+  </data>
+  <data name="SelectDemandeId" xml:space="preserve">
+    <value>Please select a valid request</value>
+  </data>
+  <data name="SelectedDetailsId" xml:space="preserve">
+    <value>Please select a valid item</value>
+  </data>
+  <data name="SelectionAbris" xml:space="preserve">
+    <value>Shelters</value>
+  </data>
+  <data name="SelectionAeroport" xml:space="preserve">
+    <value>The airports</value>
+  </data>
+  <data name="SelectionBureau" xml:space="preserve">
+    <value>The offices</value>
+  </data>
+  <data name="SelectionEntrepot" xml:space="preserve">
+    <value>warehouses</value>
+  </data>
+  <data name="SelectionEvenementAffecte" xml:space="preserve">
+    <value>Select events that affected</value>
+  </data>
+  <data name="SelectionEvenementAvec" xml:space="preserve">
+    <value>Select only events with</value>
+  </data>
+  <data name="SelectionHeliport" xml:space="preserve">
+    <value>heliports</value>
+  </data>
+  <data name="SelectionHopitaux" xml:space="preserve">
+    <value>Hospitals</value>
+  </data>
+  <data name="SelectionInstallation" xml:space="preserve">
+    <value>The installations</value>
+  </data>
+  <data name="SelectionPortDeMer" xml:space="preserve">
+    <value>The ports</value>
+  </data>
+  <data name="SendingError" xml:space="preserve">
+    <value>An error occurred during the process. Try Again. If the problem persists, contact the administrator.</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>Mail sending</value>
+  </data>
+  <data name="SendMailSucces" xml:space="preserve">
+    <value>Your email has been successfully delivered.</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send the message</value>
+  </data>
+  <data name="SendSMS" xml:space="preserve">
+    <value>Sending SMS</value>
+  </data>
+  <data name="SendSMSSucces" xml:space="preserve">
+    <value>Your SMS has been successfully delivered.</value>
+  </data>
+  <data name="SerielCarteDonnees" xml:space="preserve">
+    <value>Seriel of the data card</value>
+  </data>
+  <data name="ServicePubliqueCombo" xml:space="preserve">
+    <value>Make select a Public Service</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>Session timed out</value>
+  </data>
+  <data name="Sexe" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="Sinistre" xml:space="preserve">
+    <value>sinister</value>
+  </data>
+  <data name="SinistreCombo" xml:space="preserve">
+    <value>Please select the sinister</value>
+  </data>
+  <data name="SinistreConcernes" xml:space="preserve">
+    <value>claims concerned</value>
+  </data>
+  <data name="Sinistrees" xml:space="preserve">
+    <value>disaster</value>
+  </data>
+  <data name="SinistreId" xml:space="preserve">
+    <value>The sinister</value>
+  </data>
+  <data name="Sinistrer" xml:space="preserve">
+    <value>stricken</value>
+  </data>
+  <data name="SinistreTypeSinistre" xml:space="preserve">
+    <value>Type of disaster</value>
+  </data>
+  <data name="SIPRECA_Text" xml:space="preserve">
+    <value>System management and risk prevention</value>
+  </data>
+  <data name="SiteWeb" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="SiteWebPlaceholder" xml:space="preserve">
+    <value>Please enter the address of the website</value>
+  </data>
+  <data name="SommeError" xml:space="preserve">
+    <value>Please reassure that are disaggregated elements gives the same value as that of {0}</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>sources</value>
+  </data>
+  <data name="SourcePlaceholder" xml:space="preserve">
+    <value>Please enter the sources</value>
+  </data>
+  <data name="Statut" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="StatutDemandeCombo" xml:space="preserve">
+    <value>Please select status</value>
+  </data>
+  <data name="StatutDemande_Approuvee" xml:space="preserve">
+    <value>approved</value>
+  </data>
+  <data name="StatutDemande_EnCours" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="StatutDemande_Rejetee" xml:space="preserve">
+    <value>rejected</value>
+  </data>
+  <data name="StatutEnCour" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="StatutExistant" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="StatutIndemniser" xml:space="preserve">
+    <value>indemnified</value>
+  </data>
+  <data name="StatutRejeter" xml:space="preserve">
+    <value>rejected</value>
+  </data>
+  <data name="StringLongLength" xml:space="preserve">
+    <value>The field {0} must have a maximum of {1} characters.</value>
+  </data>
+  <data name="SuccesAlertBody" xml:space="preserve">
+    <value>The operation was successful.</value>
+  </data>
+  <data name="SuccessAlertTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="SuccessProcess" xml:space="preserve">
+    <value>The selected item has been deleted successfully.</value>
+  </data>
+  <data name="SuccessProcessCloture" xml:space="preserve">
+    <value>The directive has been successfully closed.</value>
+  </data>
+  <data name="SuccessReception" xml:space="preserve">
+    <value>The application has been received successfully</value>
+  </data>
+  <data name="SuccessRejet" xml:space="preserve">
+    <value>The request was rejected successfully</value>
+  </data>
+  <data name="SuccessTitle" xml:space="preserve">
+    <value>Success!!!</value>
+  </data>
+  <data name="SuccessTransfert" xml:space="preserve">
+    <value>The application has been successfully transferred</value>
+  </data>
+  <data name="SuccessValidation" xml:space="preserve">
+    <value>The application has been successfully validated</value>
+  </data>
+  <data name="Superficie" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="SuperficiePlaceholder" xml:space="preserve">
+    <value>Enter the area</value>
+  </data>
+  <data name="SurfaceDePiste" xml:space="preserve">
+    <value>track surface</value>
+  </data>
+  <data name="SurfaceDePisteCombo" xml:space="preserve">
+    <value>Please select the track surface</value>
+  </data>
+  <data name="TabLocalisation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="TabRisques" xml:space="preserve">
+    <value>risks</value>
+  </data>
+  <data name="TabZoneARisque" xml:space="preserve">
+    <value>Risk area</value>
+  </data>
+  <data name="TailleDeAeronef" xml:space="preserve">
+    <value>size of the aircraft</value>
+  </data>
+  <data name="TailleDeAeronefCombo" xml:space="preserve">
+    <value>Please select the size of the aircraft</value>
+  </data>
+  <data name="TeamisName" xml:space="preserve">
+    <value>Team Information System Ltd.</value>
+  </data>
+  <data name="TeamisWebSite" xml:space="preserve">
+    <value>http://m3pc.isoft-net.com</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Telephone1Placeholder" xml:space="preserve">
+    <value>Please enter the telephone No. 1</value>
+  </data>
+  <data name="Telephone2" xml:space="preserve">
+    <value>phone 2</value>
+  </data>
+  <data name="Telephone2Placeholder" xml:space="preserve">
+    <value>Please enter the phone # 2</value>
+  </data>
+  <data name="TelephonePlaceholder" xml:space="preserve">
+    <value>Please enter the phone number</value>
+  </data>
+  <data name="TelephoneUrgence" xml:space="preserve">
+    <value>Emergency Phone </value>
+  </data>
+  <data name="TelephoneUrgencePlaceholder" xml:space="preserve">
+    <value>Enter the emergency phone number</value>
+  </data>
+  <data name="TheRequiredField" xml:space="preserve">
+    <value>This field is requested </value>
+  </data>
+  <data name="Titre" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="TitreDuPoste" xml:space="preserve">
+    <value>Position Title</value>
+  </data>
+  <data name="TitreDuPostePlaceholder" xml:space="preserve">
+    <value>Enter job title</value>
+  </data>
+  <data name="TotalEconomiqueLogementEndomagerOuDetruit" xml:space="preserve">
+    <value>Economic losses housing damaged / destroyed</value>
+  </data>
+  <data name="TotalPerteEconomiqueDolar" xml:space="preserve">
+    <value>Total economic loss (USD $)</value>
+  </data>
+  <data name="TotalPerteEconomiqueLocalDevise" xml:space="preserve">
+    <value>Total economic loss (local currency)</value>
+  </data>
+  <data name="TransfertAlert" xml:space="preserve">
+    <value>Forward alert</value>
+  </data>
+  <data name="TransfertDemande" xml:space="preserve">
+    <value>Transfer request</value>
+  </data>
+  <data name="TrierLesResultats" xml:space="preserve">
+    <value>Sort results by</value>
+  </data>
+  <data name="TypeAbris" xml:space="preserve">
+    <value>Type of shelter</value>
+  </data>
+  <data name="TypeAbrisCombo" xml:space="preserve">
+    <value>Make select the type of shelter</value>
+  </data>
+  <data name="TypeAideCombo" xml:space="preserve">
+    <value>Veullez select a type of help</value>
+  </data>
+  <data name="TypeAlerteCombo" xml:space="preserve">
+    <value>Type alerts</value>
+  </data>
+  <data name="TypeChampsCombo" xml:space="preserve">
+    <value>Please select a field type</value>
+  </data>
+  <data name="TypeChampsId" xml:space="preserve">
+    <value>Field Type</value>
+  </data>
+  <data name="TypeEntrepot" xml:space="preserve">
+    <value>Type of warehouse</value>
+  </data>
+  <data name="TypeEntrepotIdCombo" xml:space="preserve">
+    <value>Kindly select the type of warehouse</value>
+  </data>
+  <data name="TypeEntrepots" xml:space="preserve">
+    <value>Type of warehouse</value>
+  </data>
+  <data name="TypeHopitaux" xml:space="preserve">
+    <value>Type of hospital</value>
+  </data>
+  <data name="TypeHopitauxCombo" xml:space="preserve">
+    <value>Please select a type of hospital</value>
+  </data>
+  <data name="TypeImmobilisation" xml:space="preserve">
+    <value>Type capital</value>
+  </data>
+  <data name="TypeMail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="TypeOffice" xml:space="preserve">
+    <value>Type Desktop</value>
+  </data>
+  <data name="TypeOfficeCombo" xml:space="preserve">
+    <value>Please select the type of office</value>
+  </data>
+  <data name="TypeOrganisation" xml:space="preserve">
+    <value>Type of organization</value>
+  </data>
+  <data name="TypeOrganisationCombo" xml:space="preserve">
+    <value>Please select the type of organization</value>
+  </data>
+  <data name="TypePersonnel" xml:space="preserve">
+    <value>Type of staff</value>
+  </data>
+  <data name="TypePersonnelCombo" xml:space="preserve">
+    <value>Please select the type of staff</value>
+  </data>
+  <data name="TypeSinistre" xml:space="preserve">
+    <value>Type of disaster concerned</value>
+  </data>
+  <data name="TypeSMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="TypeSolution" xml:space="preserve">
+    <value>Solution type</value>
+  </data>
+  <data name="TypeSolutionCombo" xml:space="preserve">
+    <value>Make select a type of solution</value>
+  </data>
+  <data name="TypeSuivi" xml:space="preserve">
+    <value>Tracking Type</value>
+  </data>
+  <data name="UniteMesure" xml:space="preserve">
+    <value>Measuring unit</value>
+  </data>
+  <data name="UniteMesurePlaceholder" xml:space="preserve">
+    <value>Enter the measuring unit</value>
+  </data>
+  <data name="Uploader" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="UsageHumanitaire" xml:space="preserve">
+    <value>humanitarian use</value>
+  </data>
+  <data name="UsageHumanitaireCombo" xml:space="preserve">
+    <value>Please select humanitarian use</value>
+  </data>
+  <data name="UserNamePlaceholder" xml:space="preserve">
+    <value>Please enter the username</value>
+  </data>
+  <data name="Utilisateur" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Valeur" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ValeurEconomiqueDesMaisonsDetruites" xml:space="preserve">
+    <value>The economic value of destroyed houses</value>
+  </data>
+  <data name="ValeurEconomiqueDesMaisonsEndomager" xml:space="preserve">
+    <value>The economic value of houses damaged</value>
+  </data>
+  <data name="ValeurParUnite" xml:space="preserve">
+    <value>Value per unit</value>
+  </data>
+  <data name="ValeurParUnitePlaceholder" xml:space="preserve">
+    <value>Enter the value per unit </value>
+  </data>
+  <data name="ValiderDemande" xml:space="preserve">
+    <value>Validate demand</value>
+  </data>
+  <data name="ValiderModification" xml:space="preserve">
+    <value>Confirm changes</value>
+  </data>
+  <data name="Ville" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="VilleCombo" xml:space="preserve">
+    <value>Please select a city</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="XAF" xml:space="preserve">
+    <value>XAF</value>
+  </data>
+  <data name="YesResponse" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ZoneARisque" xml:space="preserve">
+    <value>Risk area</value>
+  </data>
+  <data name="ZoneARisqueCombo" xml:space="preserve">
+    <value>Make select area</value>
+  </data>
 </root>

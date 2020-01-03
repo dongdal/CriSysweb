@@ -35,6 +35,7 @@ Namespace Controllers
             ViewBag.SuperficieSort = If(sortOrder = "Superficie", "Superficie_desc", "Superficie")
             ViewBag.SuperficieSortSort = If(sortOrder = "Population", "Population_desc", "Population")
             ViewBag.PopulationSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
+            ViewBag.CodeSort = If(sortOrder = "Code", "Code_desc", "Code")
 
             If Not String.IsNullOrEmpty(searchString) Then
                 page = 1
@@ -46,7 +47,8 @@ Namespace Controllers
 
             Dim entities = (From e In Db.Region Where e.StatutExistant = 1 Select e)
             If Not String.IsNullOrEmpty(searchString) Then
-                entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.ChefLieu.ToUpper.Contains(value:=searchString.ToUpper))
+                entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Code.ToUpper.Contains(value:=searchString.ToUpper) Or
+                                              e.ChefLieu.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -61,6 +63,11 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.ChefLieu)
                 Case "ChefLieu_desc"
                     entities = entities.OrderByDescending(Function(e) e.ChefLieu)
+
+                Case "Code"
+                    entities = entities.OrderBy(Function(e) e.Code)
+                Case "Code_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Code)
 
                 Case "Superficie"
                     entities = entities.OrderBy(Function(e) e.Superficie)

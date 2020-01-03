@@ -198,10 +198,12 @@ Namespace Controllers
             ElseIf (AppSession.Niveau.Equals(4)) Then
                 Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
             End If
+            'Dim LaCommune = (From e In Db.Commune Where e.StatutExistant = 1 And e.Id = entityVM.CollectiviteSinistreeId Select e).FirstOrDefault()
+            Dim LaCommune = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.Id = entityVM.CollectiviteSinistreeId Select e.Commune).FirstOrDefault()
 
             Demande.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
             Demande.Observation = entityVM.Observation
-            Demande.Reference = entityVM.Id
+            Demande.Reference = LaCommune.Code
             Demande.CollectiviteSinistreeId = entityVM.CollectiviteSinistreeId
             Demande.DateDeclaration = entityVM.DateDeclaration
             Demande.SinistrerId = entityVM.Id
@@ -233,10 +235,10 @@ Namespace Controllers
             ElseIf (AppSession.Niveau.Equals(4)) Then
                 Demande.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
             End If
-
+            Dim LaCommune = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.Id = entityVM.CollectiviteSinistreeId Select e.Commune).FirstOrDefault()
             Demande.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
             Demande.Observation = entityVM.Observation
-            Demande.Reference = entityVM.Id
+            Demande.Reference = LaCommune.Code
             Demande.CollectiviteSinistreeId = entityVM.CollectiviteSinistreeId
             Demande.DateDeclaration = entityVM.DateDeclaration
             Demande.SinistrerId = entityVM.Id

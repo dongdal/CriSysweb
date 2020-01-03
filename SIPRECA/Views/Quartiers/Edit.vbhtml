@@ -41,7 +41,7 @@ End Code
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.CommuneId, New SelectList(Model.LesCommunes, "Value", "Text"), Resource.CommuneCombo,
 New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ComboDepartement})
-                        @Html.ValidationMessageFor(Function(m) m.CommuneCombo, "", New With {.style = "color: #da0b0b"})
+                        @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 
@@ -57,6 +57,15 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                         @Html.TextBoxFor(Function(m) m.Population, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.PopulationPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Population, "", New With {.style = "color: #da0b0b"})
                     </div>
+                </div>
+
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "5", .Placeholder = Resource.SuperficiePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
                 </div>
 
                 @<div Class="form-group row">

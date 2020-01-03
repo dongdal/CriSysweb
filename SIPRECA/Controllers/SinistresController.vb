@@ -184,16 +184,18 @@ Namespace Controllers
         End Function
 
         ' GET: Sinistre/Edit/5
-        Function Edit(ByVal id As Long?) As ActionResult
-            If IsNothing(id) Then
+        Function Edit(ByVal ids As Long?) As ActionResult
+            If IsNothing(ids) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
-            Dim Sinistre As Sinistre = Db.Sinistre.Find(id)
+            Dim Sinistre As Sinistre = Db.Sinistre.Find(ids)
             If IsNothing(Sinistre) Then
                 Return HttpNotFound()
             End If
             Dim entityVM As New SinistreViewModel(Sinistre)
             LoadComboBox(entityVM)
+            Dim lesCommunes = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.SinistreId = ids Select e.Commune.Id).ToList
+            entityVM.CommuneId = lesCommunes
             Return View(entityVM)
         End Function
 
@@ -207,6 +209,16 @@ Namespace Controllers
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
                     Db.SaveChanges()
+                    DeleteCollectivite(entityVM)
+                    AddCollectivite(entityVM)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
@@ -216,6 +228,29 @@ Namespace Controllers
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
+        End Function
+
+        Function AddCollectivite(ByVal entityVM As SinistreViewModel)
+            For Each item In entityVM.CommuneId
+                Dim collectiviteSinistre = New CollectiviteSinistree()
+                collectiviteSinistre.CommuneId = item
+                collectiviteSinistre.Libelle = entityVM.Libelle
+                collectiviteSinistre.SinistreId = entityVM.Id
+                collectiviteSinistre.DateSinistre = entityVM.DateDuSinistre
+                collectiviteSinistre.AspNetUserId = GetCurrentUser.Id
+                collectiviteSinistre.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
+                Db.CollectiviteSinistree.Add(collectiviteSinistre)
+            Next
+            Return True
+        End Function
+
+        Function DeleteCollectivite(ByVal entityVM As SinistreViewModel)
+
+            Dim collectiviteSinistre = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.SinistreId = entityVM.Id Select e).ToList
+            For Each item In collectiviteSinistre
+                Db.CollectiviteSinistree.Remove(item)
+            Next
+            Return True
         End Function
 
         ' GET: Sinistre/Delete/5

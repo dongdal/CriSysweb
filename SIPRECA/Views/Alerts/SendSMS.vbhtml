@@ -80,7 +80,7 @@ New With {.class = "form-control multiple-select", .tabindex = "4", .Placeholder
                             </span>
                         </Button>
                         &nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                        @Html.ActionLink(Resource.BtnCancel, "IndexSMS", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
                     </div>
                 </div>
 

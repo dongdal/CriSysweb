@@ -35,6 +35,13 @@ Public Class InstallationViewModel
     <Display(Name:="Location", ResourceType:=GetType(Resource))>
     Public Property Location As DbGeometry
 
+    <RegularExpression("^(\d+(((\,))\d+)?)$", ErrorMessageResourceName:="DecimalDataType", ErrorMessageResourceType:=GetType(Resource))>
+    <Display(Name:="Latitude", ResourceType:=GetType(Resource))>
+    Public Property GeoLatitude As Double? = 0.0
+
+    <RegularExpression("^(\d+(((\,))\d+)?)$", ErrorMessageResourceName:="DecimalDataType", ErrorMessageResourceType:=GetType(Resource))>
+    <Display(Name:="GeoLongitude", ResourceType:=GetType(Resource))>
+    Public Property GeoLongitude As Double? = 0.0
 
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -108,6 +115,8 @@ Public Class InstallationViewModel
             .DateCreation = entity.DateCreation
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
+            .GeoLongitude = entity.Location.XCoordinate.ToString()
+            .GeoLatitude = entity.Location.YCoordinate.ToString()
         End With
     End Sub
 

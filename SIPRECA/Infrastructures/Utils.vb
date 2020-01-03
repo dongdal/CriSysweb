@@ -134,7 +134,11 @@ Public Class Util
         End Get
     End Property
 
-
+    Public Shared Function GetNumeroBordereau() As String
+        Dim leBordereau As String = Now.ToString("dddd").Substring(0, 2)
+        leBordereau = leBordereau & "-" & Now.DayOfYear().ToString & (Now.Hour * 3600 + Now.Minute * 60 + Now.Second).ToString & Now.ToString("yy")
+        Return leBordereau.ToUpper
+    End Function
 
     Shared Sub GetError(cex As Exception, modelState As ModelStateDictionary)
         If TypeOf (cex) Is Entity.Validation.DbEntityValidationException Then

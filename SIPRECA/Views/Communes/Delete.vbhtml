@@ -67,6 +67,14 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                    </div>
+
+                </div>
+
+                @<div Class="form-group row">
                     <Label Class="col-sm-2 col-form-label"></Label>
                     <div Class="col-sm-10">
                         <Button type="submit" Class="btn btn-link btn-square bg-danger text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Delete</Button>

@@ -2,6 +2,8 @@
 Imports SIPRECA.My.Resources
 
 Public Class SMSAlertesViewModel
+    Public Property Id As Long = 0
+
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Contenu", ResourceType:=GetType(Resource))>
     <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
@@ -48,25 +50,20 @@ Public Class SMSAlertesViewModel
     Public Sub New()
     End Sub
 
-    'Public Sub New(entity As Abris)
-    '    With Me
-    '        .Id = entity.Id
-    '        .Nom = entity.Nom
-    '        .EstimationPopulation = entity.EstimationPopulation
-    '        .Capacite = entity.Capacite
-    '        .VilleId = entity.VilleId
-    '        .Ville = entity.Ville
-    '        .Location = entity.Location
-    '        .TypeAbrisId = entity.TypeAbrisId
-    '        .TypeAbris = entity.TypeAbris
-    '        .OrganisationId = entity.OganisationId
-    '        .Organisation = entity.Oganisation
-    '        .StatutExistant = entity.StatutExistant
-    '        .DateCreation = entity.DateCreation
-    '        .AspNetUser = entity.AspNetUser
-    '        .AspNetUserId = entity.AspNetUserId
-    '    End With
-    'End Sub
+    Public Sub New(entity As Alert)
+        With Me
+            .Id = entity.Id
+            .OrganisationId = entity.OrganisationId
+            .SinistreId = entity.SinistreId
+            .Sinistre = entity.Sinistre
+            .Organisation = entity.Organisation
+            .Contenu = entity.Contenu
+            .StatutExistant = entity.StatutExistant
+            .DateCreation = entity.DateCreation
+            .AspNetUser = entity.AspNetUser
+            .AspNetUserId = entity.AspNetUserId
+        End With
+    End Sub
 
     'Public Function GetEntity() As Abris
     '    Dim entity As New Abris

@@ -290,10 +290,10 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
 
         function EditHopitaux() {
-            var Id = '#Id';
+                var Id = '#Id';
 		        var Code= '#Code';
 		        var Nom= '#Nom';
-            var CommuneId = '#CommuneId';
+                var CommuneId = '#CommuneId';
                 var OrganisationId = '#OrganisationId';
                 var TypeHopitauxId = '#TypeHopitauxId';
                 var NombreDeLitMin = '#NombreDeLitMin';

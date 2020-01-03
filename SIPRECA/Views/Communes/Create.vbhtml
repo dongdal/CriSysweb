@@ -54,6 +54,14 @@ End Code
                     </div>
                 </div>
 
+                @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "5", .Placeholder = Resource.SuperficiePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
+                    </div>
+                </div>
+
 
                 @<div Class="form-group row">
                     <Label Class="col-sm-2 col-form-label"></Label>

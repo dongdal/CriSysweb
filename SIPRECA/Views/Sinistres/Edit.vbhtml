@@ -58,16 +58,27 @@ End Code
                     </div>
                 </div>
 
+
+
                 @<div Class="form-group row">
-                    <Label Class="col-sm-2 col-form-label"></Label>
-                    <div Class="col-sm-10">
-                        <Button type="submit" Class="btn btn-link btn-square bg-warning text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
-                    </div>
+                    @Html.LabelFor(Function(m) m.CommuneId, New With {.class = "col-sm-2 col-form-label required_field"})
+                     <div class="col-sm-10 form-group">
+                         @Html.ListBoxFor(Function(m) m.CommuneId, Model.LesCollectivites,
+     New With {.class = "form-control select2", .style = "width: 100%; height:36px;", .multiple = "multiple"})
+                         @Html.ValidationMessageFor(Function(m) m.CommuneId, "", New With {.style = "color: #da0b0b"})
+                     </div>
                 </div>
 
-            End Using
+        @<div Class="form-group row">
+            <Label Class="col-sm-2 col-form-label"></Label>
+            <div Class="col-sm-10">
+                <Button type="submit" Class="btn btn-link btn-square bg-warning text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.Btn_Edit</Button>
+                &nbsp;&nbsp;&nbsp;
+                @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+            </div>
+        </div>
+
+                    End Using
 
         </div>
     </div>

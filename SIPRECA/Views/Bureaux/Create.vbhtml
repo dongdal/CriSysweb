@@ -95,15 +95,18 @@ New With {.class = "form-control single-select", .tabindex = "3", .Placeholder =
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                   
+
+                </div>
+
+                @<div Class="form-group row">
+                    
+                     @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "10", .Placeholder = Resource.Latitude})
                         @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                </div>
-
-                @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "11", .Placeholder = Resource.Longitude})

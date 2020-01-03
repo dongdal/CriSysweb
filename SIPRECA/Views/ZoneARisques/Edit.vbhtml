@@ -50,6 +50,25 @@ End Code
                                         @Html.TextBoxFor(Function(m) m.Libelle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder})
                                         @Html.ValidationMessageFor(Function(m) m.Libelle, "", New With {.style = "color: #da0b0b"})
                                     </div>
+                                    @Html.LabelFor(Function(m) m.Rayon, New With {.class = "col-sm-2 col-form-label"})
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(Function(m) m.Rayon, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.Rayon})
+                                        @Html.ValidationMessageFor(Function(m) m.Rayon, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+                                </div>
+
+                                <div Class="form-group row">
+                                    @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.Latitude})
+                                        @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                                    </div>
+
+                                    @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.Longitude})
+                                        @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
+                                    </div>
                                 </div>
 
                                 @Html.Partial("_MyMapEnterPartial")
@@ -198,6 +217,10 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 @Section Scripts
 
     <script>
+        var GeoLatitude = '#GeoLatitude';
+        var GeoLongitude = '#GeoLongitude';
+        var Rayon = '#Rayon';
+
     var oldLatitude = '@ViewBag.Latitude';
     var oldLongitude = '@ViewBag.Longitude';
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
@@ -247,25 +270,40 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
         function EditZoneARisque() {
                 var Id = '#Id';
                 var Libelle = '#Libelle';
-		        
+
+
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    if ($(GeoLatitude).val() != oldLatitude.replace(".", ",") || $(GeoLongitude).val() != oldLongitude.replace(".", ",")) {
+                        Latitude = $(GeoLatitude).val().replace(".", ",");
+                        Longitude = $(GeoLongitude).val().replace(".", ",");
+
+                    }
+                }
+
 
                 //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
                 //alert("DateNaissance= " + DateNaissance);
 
-            if (typeof $(Libelle).val() == "undefined" || $(Libelle).val() == "") {
+                if (typeof $(Libelle).val() == "undefined" || $(Libelle).val() == "" || typeof $(Rayon).val() == "undefined" || $(Rayon).val() == "") {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
+                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined") {
                     $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+                }
+                else {
 
                     var dataRow = {
                         'Id': $(Id).val(),
                         'Libelle': $(Libelle).val(),
+                        'Rayon': $(Rayon).val(),
                         'Latitude': Latitude,
-                        'Longitude': Longitude
+                        'Longitude': Longitude,
                     }
 
                     //alert("c'est moi le createPatient avant ajax");
@@ -293,7 +331,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                     });
                 }
 
-
+            }
             }
 
     </script>

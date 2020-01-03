@@ -10,6 +10,11 @@ Public Class CommuneViewModel
     Public Property Libelle As String
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Code", ResourceType:=GetType(Resource))>
+    <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Code As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <RegularExpression("^(\d+(((\,))\d+)?)$", ErrorMessageResourceName:="DecimalType", ErrorMessageResourceType:=GetType(Resource))>
     <Display(Name:="Superficie", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
@@ -56,6 +61,7 @@ Public Class CommuneViewModel
     Public Sub New(entity As Commune)
         With Me
             .Id = entity.Id
+            .Code = entity.Code
             .Departement = entity.Departement
             .DepartementId = entity.DepartementId
             .Libelle = entity.Libelle
@@ -74,6 +80,7 @@ Public Class CommuneViewModel
         Dim entity As New Commune
         With entity
             .Id = Id
+            .Code = Code
             .DepartementId = DepartementId
             .Libelle = Libelle
             .StatutExistant = StatutExistant

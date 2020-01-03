@@ -83,7 +83,7 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
+                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("DetailIndems", New With {.id = item.Id})">
                                     <i class="fa fa-list" aria-hidden="true"></i>
                                 </a>
                             </td>

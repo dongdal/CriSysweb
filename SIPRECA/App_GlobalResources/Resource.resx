@@ -397,7 +397,7 @@
     <value>Etat</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
-    <value>CRISIS PLATEFORM</value>
+    <value>CRISYS PLATEFORM</value>
   </data>
   <data name="ChgPwd" xml:space="preserve">
     <value>Changer mot de passe</value>
@@ -2206,7 +2206,7 @@
     <value>Secteur du projet</value>
   </data>
   <data name="ModuleSahana" xml:space="preserve">
-    <value>Gestion des moyens de réponse</value>
+    <value>Gestion moyens de réponse</value>
   </data>
   <data name="EditAeroport" xml:space="preserve">
     <value>Modifier un aéroport</value>
@@ -3430,7 +3430,7 @@
     <value>Ajouter un type de champ</value>
   </data>
   <data name="CrisisTitle" xml:space="preserve">
-    <value>CRISIS</value>
+    <value>CRISYS</value>
   </data>
   <data name="DeleteChamps" xml:space="preserve">
     <value>Supprimer un champ</value>
@@ -3827,5 +3827,101 @@
   </data>
   <data name="GeoLongitude" xml:space="preserve">
     <value>Longitude</value>
+  </data>
+  <data name="ConnectedAs" xml:space="preserve">
+    <value>Vous êtes connecté en tant que: </value>
+  </data>
+  <data name="BtnTransferer" xml:space="preserve">
+    <value>Tranférer</value>
+  </data>
+  <data name="CreateBordereauTransfert" xml:space="preserve">
+    <value>Générer un nouveau bordereau de transfert</value>
+  </data>
+  <data name="DateTransfert" xml:space="preserve">
+    <value>Date Transfert</value>
+  </data>
+  <data name="DeleteBordereauTransfert" xml:space="preserve">
+    <value>Supprimer un bordereau de transfert</value>
+  </data>
+  <data name="EditBordereauTransfert" xml:space="preserve">
+    <value>Modifier un bordereau de transfert</value>
+  </data>
+  <data name="ElementsATransferer" xml:space="preserve">
+    <value>A tranférer</value>
+  </data>
+  <data name="LibelleBordereauTransfert" xml:space="preserve">
+    <value>Bordereau de transfert</value>
+  </data>
+  <data name="ListBordereauTransfert" xml:space="preserve">
+    <value>Liste des bordereaux de transferts</value>
+  </data>
+  <data name="ManageBordereauTransfert" xml:space="preserve">
+    <value>Gestion des bordereaux de transfert</value>
+  </data>
+  <data name="ManageReport" xml:space="preserve">
+    <value>Gestion des rapports</value>
+  </data>
+  <data name="MenuBordereauATransfert" xml:space="preserve">
+    <value>Demandes à transférer</value>
+  </data>
+  <data name="MenuBordereauTransfere" xml:space="preserve">
+    <value>Bordereaux transférés</value>
+  </data>
+  <data name="MenuBordereauTransfert" xml:space="preserve">
+    <value>Les Bordereaux Transfert</value>
+  </data>
+  <data name="MenuListeAbris" xml:space="preserve">
+    <value>Liste des abris</value>
+  </data>
+  <data name="MenuListeAeroports" xml:space="preserve">
+    <value>Listes des aéroports</value>
+  </data>
+  <data name="MenuListeBureau" xml:space="preserve">
+    <value>Liste des bureaux</value>
+  </data>
+  <data name="MenuListeEntrepot" xml:space="preserve">
+    <value>Liste des entrepôts</value>
+  </data>
+  <data name="MenuListeHeliports" xml:space="preserve">
+    <value>Liste Héliports</value>
+  </data>
+  <data name="MenuListeHopitaux" xml:space="preserve">
+    <value>Liste Hopitaux</value>
+  </data>
+  <data name="MenuListePorts" xml:space="preserve">
+    <value>Liste des Ports</value>
+  </data>
+  <data name="ModuleParametrage" xml:space="preserve">
+    <value>Module de Paramétrage</value>
+  </data>
+  <data name="NumeroBordereau" xml:space="preserve">
+    <value>Numéro Bordereau</value>
+  </data>
+  <data name="Rayon" xml:space="preserve">
+    <value>Rayon</value>
+  </data>
+  <data name="CrisysIntro" xml:space="preserve">
+    <value>Système informatique capable de permettre notamment la collecte des informations sur les infrastructures techniques des différents acteurs participants à la gestion des risques, d’analyser les données collectées pour prévenir les catastrophes et des moyens de réponse aux sinistres.</value>
+  </data>
+  <data name="MenuManageSolution" xml:space="preserve">
+    <value>Gestion des solutions</value>
+  </data>
+  <data name="MenuTypeOrganisation" xml:space="preserve">
+    <value>Les Types d'organisation</value>
+  </data>
+  <data name="ListAlertsMail" xml:space="preserve">
+    <value>Liste des mails</value>
+  </data>
+  <data name="ListAlertsSMS" xml:space="preserve">
+    <value>Liste des SMS</value>
+  </data>
+  <data name="SendMailDetails" xml:space="preserve">
+    <value>Détails du mail</value>
+  </data>
+  <data name="SendSMSDetails" xml:space="preserve">
+    <value>Détails du SMS</value>
+  </data>
+  <data name="MenuRequeteur" xml:space="preserve">
+    <value>Réqueteur</value>
   </data>
 </root>

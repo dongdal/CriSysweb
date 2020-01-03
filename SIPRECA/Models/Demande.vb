@@ -3,6 +3,7 @@ Partial Public Class Demande
         Indemnisation = New HashSet(Of Indemnisation)()
         PieceJointe = New HashSet(Of PieceJointe)()
         Suivi = New HashSet(Of Suivi)()
+        BordereauTransfertDemande = New HashSet(Of BordereauTransfertDemande)()
     End Sub
 
     Public Property Id As Long
@@ -30,5 +31,6 @@ Partial Public Class Demande
     Public Overridable Property Indemnisation As ICollection(Of Indemnisation)
     Public Overridable Property PieceJointe As ICollection(Of PieceJointe)
     Public Overridable Property Suivi As ICollection(Of Suivi)
+    Public Overridable Property BordereauTransfertDemande As ICollection(Of BordereauTransfertDemande)
 
 End Class

@@ -51,6 +51,7 @@ End Code
                 </div>
             </div>
         </div>
+
     </div>
 
     <div class="row">
@@ -62,6 +63,16 @@ End Code
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-3">
+            <div class="card card-success">
+                <a href="@Url.Action("IndexParam")"><img src="~/assets/images/gallery/iconfinder_freebies1_glyph-13_2920356.png" class="card-img-top" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title text-primary" style="text-align:center">@Resource.Menu_UserManager</h5>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <!-- End container-fluid-->
@@ -80,7 +91,7 @@ End Code
                 <div class="modal-body">
 
                     @Html.DropDownList("AnneeBudgetaireId", DirectCast(ViewBag.LesAnneesBudgetaires,
-                                              IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
+                                                IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
 
                 </div>
                 <div class="modal-footer">

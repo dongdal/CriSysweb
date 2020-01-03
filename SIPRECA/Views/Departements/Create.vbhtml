@@ -56,8 +56,14 @@ End Code
                     @Html.LabelFor(Function(m) m.RegionId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.RegionId, New SelectList(Model.Regions, "Value", "Text"), Resource.ComboRegion,
-       New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.ComboRegion})
+                          New With {.class = "form-control single-select", .tabindex = "5", .Placeholder = Resource.ComboRegion})
                         @Html.ValidationMessageFor(Function(m) m.RegionId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "6", .Placeholder = Resource.SuperficiePlaceholder})
+                        @Html.ValidationMessageFor(Function(m) m.Code, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                 </div>

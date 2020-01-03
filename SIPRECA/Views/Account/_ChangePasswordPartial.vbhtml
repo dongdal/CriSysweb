@@ -1,38 +1,37 @@
 ﻿@Imports Microsoft.AspNet.Identity
-@ModelType ManageUserViewModel
+@Imports SIPRECA.My.Resources
+@ModelType SIPRECA.ManageUserViewModel
 
-<p class="text-info">Vous êtes connecté en tant que <strong>@User.Identity.GetUserName()</strong>.</p>
 
-@Using Html.BeginForm("Manage", "Account", FormMethod.Post, New With {.class = "form-horizontal", .role = "form"})
+<p class="text-info"><h4>@Resource.ConnectedAs <strong style="color: #3f51b5; font-weight:bolder">@User.Identity.GetUserName()</strong></h4></p>
 
-    @Html.AntiForgeryToken()
+<br />
 
-    @<text>
-    <h4>Formulaire de modification du mot de passe</h4>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(Function(m) m.OldPassword, New With {.class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.PasswordFor(Function(m) m.OldPassword, New With {.class = "form-control"})
-        </div>
+<div Class="form-group row">
+    @Html.LabelFor(Function(m) m.OldPassword, New With {.class = "col-sm-3 col-form-label required_field"})
+    <div class="col-sm-4">
+        @Html.PasswordFor(Function(m) m.OldPassword, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.GestUserActualPwd})
+        @Html.ValidationMessageFor(Function(m) m.OldPassword, "", New With {.style = "color: #da0b0b"})
     </div>
-    <div class="form-group">
-        @Html.LabelFor(Function(m) m.NewPassword, New With {.class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.PasswordFor(Function(m) m.NewPassword, New With {.class = "form-control"})
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(Function(m) m.ConfirmPassword, New With {.class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.PasswordFor(Function(m) m.ConfirmPassword, New With {.class = "form-control"})
-        </div>
-    </div>
+</div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Modifier le mot de passe" class="btn btn-default" />
-        </div>
+<div Class="form-group row">
+    @Html.LabelFor(Function(m) m.NewPassword, New With {.class = "col-sm-3 col-form-label required_field"})
+    <div class="col-sm-4">
+        @Html.PasswordFor(Function(m) m.NewPassword, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.GestUserPwdNew})
+        @Html.ValidationMessageFor(Function(m) m.NewPassword, "", New With {.style = "color: #da0b0b"})
     </div>
-    </text>
-End Using
+</div>
+
+
+<div Class="form-group row">
+    @Html.LabelFor(Function(m) m.ConfirmPassword, New With {.Class = "col-sm-3 col-form-label required_field"})
+    <div class="col-sm-4">
+        @Html.PasswordFor(Function(m) m.ConfirmPassword, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.GestUserPwdConfNew})
+        @Html.ValidationMessageFor(Function(m) m.ConfirmPassword, "", New With {.style = "color: #da0b0b"})
+    </div>
+</div>
+
+
+
+

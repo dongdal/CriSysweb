@@ -13,7 +13,7 @@ End Code
             <div class="card-img-overlay rounded-left my-5">
                 <h4 class="text-white">@Resource.AppTitle</h4>
                 <h1 class="text-white">@Resource.Minatd</h1>
-                <p class="card-text text-white pt-3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                <p class="card-text text-justify text-black pt-3">@Resource.CrisysIntro</p>
             </div>
         </div>
         <div class="card mb-0">

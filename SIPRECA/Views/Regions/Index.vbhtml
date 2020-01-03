@@ -50,6 +50,9 @@ End Code
                 <thead>
                     <tr>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                            @Html.ActionLink(Resource.Code, "Index", New With {.sortOrder = ViewBag.CodeSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Libelle, "Index", New With {.sortOrder = ViewBag.LibelleSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
@@ -73,6 +76,9 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
+                            <td class="sorting_asc text-center">
+                                @Html.DisplayFor(Function(modelItem) item.Code)
+                            </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>

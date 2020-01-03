@@ -9,6 +9,7 @@ Partial Public Class Collectivite
     Public Property Id As Long
 
     Public Property Libelle As String
+    Public Property Code As String
     Public Property Superficie As Double
     Public Property Population As Double
     Public Property Longitude As Double?

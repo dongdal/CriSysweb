@@ -19,6 +19,172 @@ Namespace Controllers
             End Set
         End Property
 
+        Public Function Hopitaux() As JsonResult
+            Dim entities = (From p In _db.Hopitaux
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                .TypeHopital = p.TypeHopitaux.Libelle,
+                                p.Nom,
+                                p.Code,
+                                p.NombreDeLitMin,
+                                p.NombreDeLitMax,
+                                p.NombreDeMedecin,
+                                p.NombreDInfimiere,
+                                p.NombreDePersonnelNonMedical,
+                                p.Telephone,
+                                p.TelephoneUrgence,
+                                p.SiteWeb,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Heliports() As JsonResult
+            Dim entities = (From p In _db.Heliport
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                p.Nom,
+                                p.Code,
+                                p.Telephone,
+                                .TelephoneUrgence = p.Telephone2,
+                                p.SiteWeb,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Aeroport() As JsonResult
+            Dim entities = (From p In _db.Aeroport
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                .SurfacePiste = p.SurfaceDePiste.Libelle,
+                                .TailleDeAeronef = p.TailleDeAeronef.Libelle,
+                                .UsageHumanitaire = p.UsageHumanitaire.Libelle,
+                                p.Nom,
+                                p.ICAO,
+                                p.IATA,
+                                p.LongueurDePiste,
+                                p.LargeurDePiste,
+                                p.Telephone,
+                                p.Telephone2,
+                                p.SiteWeb,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Abris() As JsonResult
+            Dim entities = (From p In _db.Abris
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                .TypeAbris = p.TypeAbris.Libelle,
+                                p.Nom,
+                                p.EstimationPopulation,
+                                p.Capacite,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Infrastructures() As JsonResult
+            Dim entities = (From p In _db.Infrastructure
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                p.Nom,
+                                p.Code,
+                                p.CodePostale,
+                                p.Telephone,
+                                .TelephoneUrgence = p.Telephone2,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Ports() As JsonResult
+            Dim entities = (From p In _db.PortDeMer
+                            Select New With {
+                                p.Id,
+                                .Organisation = p.Oganisation.Nom,
+                                p.Nom,
+                                p.Code,
+                                p.Possession,
+                                p.HauteurMaximum,
+                                p.HauteurMaximumUnites,
+                                p.ProfondeurQuaiChargement,
+                                p.ProfondeurQuaiChargementUnites,
+                                p.ProfondeurTerminalPetrolier,
+                                p.ProfondeurTerminalPetrolierUnites,
+                                p.CaleSeche,
+                                p.LongueurMaximaleNavire,
+                                p.LongueurMaximaleNavireUnites,
+                                p.Reparations,
+                                p.Abri,
+                                p.CapaciteStockageEntreposage,
+                                p.CapaciteStockageSecurise,
+                                p.CapaciteStockageEntrepotDouanier,
+                                p.NombreRemorqueur,
+                                p.CapaciteRemorqueur,
+                                p.NombreBarge,
+                                p.CapacietBarge,
+                                p.EquipementChargement,
+                                p.CapaciteDouaniere,
+                                p.Securite,
+                                p.ProfondeurMareHaute,
+                                p.ProfondeurMareHauteUnites,
+                                p.ProfondeurMareBasse,
+                                p.ProfondeurMareBasseUnites,
+                                p.ProfondeurInondation,
+                                p.ProfondeurInondationUnites,
+                                p.Telephone,
+                                .TelephoneUrgence = p.Telephone2,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function ZonesRisques() As JsonResult
+            Dim entities = (From p In _db.ZoneARisque
+                            Select New With {
+                                p.Libelle,
+                                p.Rayon,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Risques = (From r In _db.RisqueZone Where r.ZoneARisqueId = p.Id Select risque = r.Risque.Libelle & " (" & r.NiveauDAlert.Libelle & ")").ToList()
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
         Private Sub LoadComboBox(entityVM As FiltreViewModel)
 
             Dim Organisation = (From e In Db.Organisation Where e.StatutExistant = 1 Select e)

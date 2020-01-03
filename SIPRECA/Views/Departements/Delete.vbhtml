@@ -67,9 +67,15 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
+
+                    @Html.LabelFor(Function(m) m.Code, New With {.class = "col-sm-2 col-form-label"})
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(Function(m) m.Code, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                    </div>
+
                     @Html.LabelFor(Function(m) m.StatutExistant, New With {.class = "col-sm-2 col-form-label"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.StatutExistant, New With {.class = "form-control form-control-square", .tabindex = "7", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
+                        @Html.TextBoxFor(Function(m) m.StatutExistant, New With {.class = "form-control form-control-square", .tabindex = "8", .Placeholder = Resource.LibellePlaceholder, .readonly = "true"})
                     </div>
 
                 </div>

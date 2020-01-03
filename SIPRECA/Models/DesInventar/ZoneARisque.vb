@@ -10,6 +10,7 @@ Partial Public Class ZoneARisque
     Public Property Id As Long
     Public Property Libelle As String
     Public Property Location As DbGeometry
+    Public Property Rayon As Double
     Public Property DateCreation As DateTime = Now
     Public Property StatutExistant As Short = 1
 

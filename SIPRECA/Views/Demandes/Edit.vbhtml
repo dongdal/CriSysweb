@@ -26,6 +26,7 @@ End Code
         @Html.HiddenFor(Function(m) m.DateCreation)
         @Html.HiddenFor(Function(m) m.AspNetUserId)
         @Html.HiddenFor(Function(m) m.AnneeBudgetaireId)
+        @Html.HiddenFor(Function(m) m.Reference)
         @<div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -46,7 +47,7 @@ End Code
                                 <div Class="form-group row">
                                     @Html.LabelFor(Function(m) m.Reference, New With {.class = "col-sm-2 col-form-label required_field"})
                                     <div class="col-sm-4">
-                                        @Html.TextBoxFor(Function(m) m.Reference, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ReferencePlaceholder})
+                                        @Html.TextBoxFor(Function(m) m.Reference, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.ReferencePlaceholder, .readonly = "true"})
                                         @Html.ValidationMessageFor(Function(m) m.Reference, "", New With {.style = "color: #da0b0b"})
                                     </div>
 

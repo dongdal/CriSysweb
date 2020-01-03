@@ -40,6 +40,7 @@ Namespace Controllers
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
+            ViewBag.CodeSort = If(sortOrder = "Code", "Code_desc", "Code")
             ViewBag.CommuneSort = If(sortOrder = "Commune", "Commune_desc", "Commune")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
@@ -56,7 +57,8 @@ Namespace Controllers
 
             Dim entities = (From e In Db.Quartier Where e.StatutExistant = 1 Select e)
             If Not String.IsNullOrEmpty(searchString) Then
-                entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Commune.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or e.Commune.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
+                                                                                                                                                    e.Code.ToUpper.Contains(value:=searchString.ToUpper))
             End If
             ViewBag.EnregCount = entities.Count
 
@@ -66,10 +68,16 @@ Namespace Controllers
                     entities = entities.OrderBy(Function(e) e.Libelle)
                 Case "Libelle_desc"
                     entities = entities.OrderByDescending(Function(e) e.Libelle)
+
                 Case "Commune"
                     entities = entities.OrderBy(Function(e) e.Commune.Libelle)
                 Case "Commune_desc"
                     entities = entities.OrderByDescending(Function(e) e.Commune.Libelle)
+
+                Case "Code"
+                    entities = entities.OrderBy(Function(e) e.Code)
+                Case "Code_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Code)
 
                 Case "Superficie"
                     entities = entities.OrderBy(Function(e) e.Superficie)

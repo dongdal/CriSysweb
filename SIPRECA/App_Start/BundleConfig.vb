@@ -39,6 +39,7 @@ Public Module BundleConfig
                   "~/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css",
                   "~/assets/css/PagedList.css",
                   "~/assets/css/app-style.css",
+                  "~/assets/plugins/c3/css/c3.min.css",
                   "~/assets/plugins/summernote/dist/summernote-bs4.css"))
 
         bundles.Add(New ScriptBundle("~/bundles/TemplateScript").Include(
@@ -66,6 +67,9 @@ Public Module BundleConfig
           "~/assets/plugins/jquery-validation/js/jquery.validate.min.js",
           "~/assets/plugins/jquery.steps/js/jquery.wizard-init.js",
           "~/assets/js/index.js",
+          "~/assets/plugins/d3/d3.min.js",
+          "~/assets/plugins/c3/js/c3.min.js",
+          "~/assets/plugins/c3/js/c3.js",
           "~/assets/plugins/summernote/dist/summernote-bs4.min.js"))
 
 
@@ -74,6 +78,12 @@ Public Module BundleConfig
 
         bundles.Add(New ScriptBundle("~/bundles/JQueryConfirmJS").Include(
   "~/assets/js/jquery-confirm.min.js"))
+
+        bundles.Add(New StyleBundle("~/Assets/LeafletCSS").Include(
+                  "~/assets/plugins/leaflet/leaflet.css"))
+
+        bundles.Add(New ScriptBundle("~/bundles/LeafletJS").Include(
+            "~/assets/plugins/leaflet/leaflet.js"))
 
     End Sub
 End Module

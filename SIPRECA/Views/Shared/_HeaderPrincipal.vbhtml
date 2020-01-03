@@ -142,21 +142,21 @@
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="#">
                             @*<i class="flag-icon flag-icon-gb"></i>*@
                             @If ViewContext.RouteData.Values("culture").Equals("en") Then
-                                @<i class="flag-icon flag-icon-gb"></i> @Resource.EnglishLang
+                                @<i class=""></i> @Resource.EnglishLang
                             ElseIf ViewContext.RouteData.Values("culture").Equals("fr-FR") Then
-                                @<i class="flag-icon flag-icon-fr"></i> @Resource.FrenchLang
+                                @<i class=""></i> @Resource.FrenchLang
                             End If
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right animated fadeIn">
                             <li class="dropdown-item">
                                 <a href="@Url.RouteUrl(LeLienFrancais)">
-                                    <i class="flag-icon flag-icon-fr"> </i> @Resource.FrenchLang (fr-FR)
+                                    <i class=""> </i> @Resource.FrenchLang (fr-FR)
                                 </a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="@Url.RouteUrl(LeLienAnglais)">
-                                    <i class="flag-icon flag-icon-gb"> </i> @Resource.EnglishLang (en-GB)
+                                    <i class=""> </i> @Resource.EnglishLang (en-GB)
                                 </a>
                             </li>
                         </ul>

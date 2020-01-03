@@ -1,4 +1,6 @@
-﻿Imports System.Net
+﻿Imports System.Data.Entity
+Imports System.Data.Entity.Validation
+Imports System.Net
 Imports SIPRECA
 Imports SIPRECA.My.Resources
 
@@ -16,6 +18,10 @@ Public Class HomeController
         End Set
     End Property
 
+    Function IndexParam() As ActionResult
+        Return View()
+    End Function
+
     Function Index() As ActionResult
         Dim AnneesBudgetaires = (From annee In Db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee).ToList()
         Dim LesAnneesBudgetaires As New List(Of SelectListItem)
@@ -27,6 +33,14 @@ Public Class HomeController
     End Function
 
     Function IndexSahana() As ActionResult
+        Dim MoyenReponse As New MoyenReponse()
+        MoyenReponse.Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count
+        ViewBag.MoyenReponse = MoyenReponse
         Return View()
     End Function
 
@@ -44,6 +58,27 @@ Public Class HomeController
 
     Function IndexSinistre(AnneeBudgetaireId As Long?) As ActionResult
         AppSession.LesAnneeBudgetaires = Db.AnneeBudgetaires.Where(Function(e) e.StatutExistant = 1).ToList
+        Dim EtatDemande As New EtatDemande()
+        Dim entities = (From e In Db.Demande Select e)
+        If AppSession.Niveau.Equals(Util.UserLevel.Communal) Then
+            entities = entities.Where(Function(e) e.CollectiviteSinistree.CommuneId = AppSession.CommuneId)
+        ElseIf AppSession.Niveau.Equals(Util.UserLevel.Regional) Then
+            entities = entities.Where(Function(e) e.StatutExistant >= 3 Or
+                                                           e.StatutExistant = -2 And
+                                                         (e.CollectiviteSinistree.Commune.DepartementId = AppSession.DepartementId Or e.AspNetUser.DepartementId = AppSession.DepartementId Or
+                                                         e.AspNetUser.Commune.DepartementId = AppSession.DepartementId))
+        Else
+            entities = entities.Where(Function(e) e.StatutExistant >= 7 Or
+                                                           e.StatutExistant = -3 And
+                                                           (e.CollectiviteSinistree.Commune.Departement.RegionId = AppSession.RegionId Or e.AspNetUser.RegionId = AppSession.RegionId Or
+                                                           e.AspNetUser.Departement.RegionId = AppSession.RegionId Or
+                                                           e.AspNetUser.Commune.Departement.RegionId = AppSession.RegionId))
+        End If
+        EtatDemande.DemandesEnCours = entities.Where(Function(e) e.StatutExistant > 0 And e.StatutExistant <> 15 And e.StatutExistant <> 16).ToList().Count
+        EtatDemande.DemandesRejetees = entities.Where(Function(e) e.StatutExistant < 0 Or e.StatutExistant = 15).ToList().Count
+        EtatDemande.DemandesApprouvees = entities.Where(Function(e) e.StatutExistant = 16).ToList().Count
+        ViewBag.EtatDemade = EtatDemande
+
         If IsNothing(AnneeBudgetaireId) Then
             If IsNothing(AppSession.AnneeBudgetaire) Then
                 Return RedirectToAction("Error400", "Home", New With {Resource.Error400_SelectAnnee, .MyAction = "Index", .Controleur = "Home"})
@@ -79,3 +114,56 @@ Public Class HomeController
         Return View()
     End Function
 End Class
+
+Public Class EtatDemande
+    Public Property DemandesEnCours As Double = 0.0
+    Public Property DemandesRejetees As Double = 0.0
+    Public Property DemandesApprouvees As Double = 0.0
+
+    Public Sub New()
+
+    End Sub
+End Class
+
+Public Class MoyenReponse
+    Public Property Hopitaux As Double = 0.0
+    Public Property Heliports As Double = 0.0
+    Public Property PortDeMer As Double = 0.0
+    Public Property Abris As Double = 0.0
+    Public Property Aeroports As Double = 0.0
+    Public Property Bureaux As Double = 0.0
+    Public Property Entrepots As Double = 0.0
+
+    Public Sub New()
+
+    End Sub
+End Class
+
+
+'Dim LesRegions = (From e In Db.Region Where e.StatutExistant = 1 Select e).ToList()
+'For Each region In LesRegions
+'    Dim LesDepartements = region.Departement.OrderBy(Function(e) e.Libelle).ToList()
+'    Dim i As Integer = 1
+'    For Each departement In LesDepartements
+'        Dim CodeDep As String = ""
+'        CodeDep = IIf(i < 10, region.Code & "0" & i.ToString(), region.Code & i.ToString())
+'        departement.Code = CodeDep
+'        Db.Entry(departement).State = EntityState.Modified
+'        i = i + 1
+'        Dim LesCommunes = departement.Commune.OrderBy(Function(e) e.Libelle).ToList()
+'        Dim j As Integer = 1
+'        For Each commune In LesCommunes
+'            commune.Code = IIf(j < 10, CodeDep & "0" & j.ToString(), CodeDep & j.ToString())
+'            Db.Entry(commune).State = EntityState.Modified
+'            j = j + 1
+'        Next
+'    Next
+'Next
+'Try
+'    Db.SaveChanges()
+'    Return RedirectToAction("Index")
+'Catch ex As DbEntityValidationException
+'    Util.GetError(ex, ModelState)
+'Catch ex As Exception
+'    Util.GetError(ex, ModelState)
+'End Try

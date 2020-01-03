@@ -428,22 +428,25 @@ Public Class AccountController
     End Function
 
     '
-    ' POST: /Account/Manage
+    ' POST: /Account/ChangeUserPassword
     <HttpPost>
     <ValidateAntiForgeryToken>
-    Public Async Function Manage(model As ManageUserViewModel) As Task(Of ActionResult)
+    Public Async Function ChangeUserPassword(model As ManageUserViewModel) As Task(Of ActionResult)
         Dim hasLocalLogin As Boolean = HasPassword()
         ViewBag.HasLocalPassword = hasLocalLogin
-        ViewBag.ReturnUrl = Url.Action("Manage")
+        ViewBag.ReturnUrl = Url.Action("ChangeUserPassword")
         If hasLocalLogin Then
             If ModelState.IsValid Then
                 Dim result As IdentityResult = Await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword)
                 If result.Succeeded Then
-                    Return RedirectToAction("Manage", New With {
+                    Return RedirectToAction("ChangeUserPassword", New With {
                         .Message = ManageMessageId.ChangePasswordSuccess
                     })
                 Else
-                    AddErrors(result)
+                    'AddErrors(result)
+                    Return RedirectToAction("ChangeUserPassword", New With {
+                        .Message = ManageMessageId.ChangePasswordImpossible
+                    })
                 End If
             End If
         Else
@@ -456,7 +459,7 @@ Public Class AccountController
             If ModelState.IsValid Then
                 Dim result As IdentityResult = Await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword)
                 If result.Succeeded Then
-                    Return RedirectToAction("Manage", New With {
+                    Return RedirectToAction("ChangeUserPassword", New With {
                         .Message = ManageMessageId.SetPasswordSuccess
                     })
                 Else
@@ -468,6 +471,48 @@ Public Class AccountController
         ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
         Return View(model)
     End Function
+
+    '
+    ' POST: /Account/Manage
+    '<HttpPost>
+    '<ValidateAntiForgeryToken>
+    'Public Async Function Manage(model As ManageUserViewModel) As Task(Of ActionResult)
+    '    Dim hasLocalLogin As Boolean = HasPassword()
+    '    ViewBag.HasLocalPassword = hasLocalLogin
+    '    ViewBag.ReturnUrl = Url.Action("Manage")
+    '    If hasLocalLogin Then
+    '        If ModelState.IsValid Then
+    '            Dim result As IdentityResult = Await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword)
+    '            If result.Succeeded Then
+    '                Return RedirectToAction("Manage", New With {
+    '                    .Message = ManageMessageId.ChangePasswordSuccess
+    '                })
+    '            Else
+    '                AddErrors(result)
+    '            End If
+    '        End If
+    '    Else
+    '        ' L’utilisateur ne possède pas de mot de passe local. Supprimez donc toutes les erreurs de validation causées par un champ OldPassword manquant
+    '        Dim state As ModelState = ModelState("OldPassword")
+    '        If state IsNot Nothing Then
+    '            state.Errors.Clear()
+    '        End If
+
+    '        If ModelState.IsValid Then
+    '            Dim result As IdentityResult = Await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword)
+    '            If result.Succeeded Then
+    '                Return RedirectToAction("Manage", New With {
+    '                    .Message = ManageMessageId.SetPasswordSuccess
+    '                })
+    '            Else
+    '                AddErrors(result)
+    '            End If
+    '        End If
+    '    End If
+
+    '    ' Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+    '    Return View(model)
+    'End Function
 
     '
     ' POST: /Account/ExternalLogin
@@ -567,6 +612,17 @@ Public Class AccountController
     <ValidateAntiForgeryToken>
     Public Function LogOff() As ActionResult
         AuthenticationManager.SignOut()
+        AppSession.AnneeBudgetaire = Nothing
+        AppSession.LesAnneeBudgetaires = Nothing
+        AppSession.CommuneId = Nothing
+        AppSession.DepartementId = Nothing
+        AppSession.RegionId = Nothing
+        AppSession.UserId = Nothing
+        AppSession.UserName = Nothing
+        AppSession.NomUser = Nothing
+        AppSession.PrenomUser = Nothing
+        AppSession.ListEvenementZone = Nothing
+        AppSession.Niveau = Nothing
         Return RedirectToAction("Login", "Logins")
     End Function
 

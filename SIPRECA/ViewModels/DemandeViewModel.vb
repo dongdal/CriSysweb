@@ -7,7 +7,7 @@ Public Class DemandeViewModel
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Reference", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
-    Public Property Reference As String
+    Public Property Reference As String = "(.Auto)"
 
     <Display(Name:="Observation", ResourceType:=GetType(Resource))>
     <StringLength(1000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>

@@ -5,6 +5,11 @@ Public Class DepartementViewModel
     Public Property Id As Long
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Code", ResourceType:=GetType(Resource))>
+    <StringLength(100, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
+    Public Property Code As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Libelle", ResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Libelle As String
@@ -72,6 +77,7 @@ Public Class DepartementViewModel
             .Longitude = entity.Longitude
             .AspNetUser = entity.AspNetUser
             .AspNetUserId = entity.AspNetUserId
+            .Code = entity.Code
         End With
     End Sub
 
@@ -86,6 +92,7 @@ Public Class DepartementViewModel
             .Population = Population
             .Longitude = Longitude
             .Latitude = Latitude
+            .Code = Code
             .DateCreation = DateCreation
             .AspNetUserId = AspNetUserId
         End With

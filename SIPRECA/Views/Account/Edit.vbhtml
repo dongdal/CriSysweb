@@ -2,7 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.Register
-    Layout = "~/Views/Shared/_LayoutPrincipal.vbhtml"
+    Layout = "~/Views/Shared/_LayoutParam.vbhtml"
 End Code
 
 

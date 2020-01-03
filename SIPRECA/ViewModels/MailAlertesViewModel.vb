@@ -2,6 +2,7 @@
 Imports SIPRECA.My.Resources
 
 Public Class MailAlertesViewModel
+    Public Property Id As Long = 0
 
     <AllowHtml>
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -50,6 +51,20 @@ Public Class MailAlertesViewModel
     Public Sub New()
     End Sub
 
+    Public Sub New(entity As Alert)
+        With Me
+            .Id = entity.Id
+            .OrganisationId = entity.OrganisationId
+            .SinistreId = entity.SinistreId
+            .Sinistre = entity.Sinistre
+            .Organisation = entity.Organisation
+            .Contenu = entity.Contenu
+            .StatutExistant = entity.StatutExistant
+            .DateCreation = entity.DateCreation
+            .AspNetUser = entity.AspNetUser
+            .AspNetUserId = entity.AspNetUserId
+        End With
+    End Sub
     'Public Sub New(entity As Abris)
     '    With Me
     '        .Id = entity.Id

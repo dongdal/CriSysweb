@@ -125,6 +125,20 @@ End Code
                                 </div>
                             </div>
 
+                            <div Class="form-group row">
+                                @Html.LabelFor(Function(m) m.GeoLatitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLatitude, New With {.class = "form-control form-control-square", .tabindex = "15", .Placeholder = Resource.Latitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLatitude, "", New With {.style = "color: #da0b0b"})
+                                </div>
+
+                                @Html.LabelFor(Function(m) m.GeoLongitude, New With {.class = "col-sm-2 col-form-label"})
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(Function(m) m.GeoLongitude, New With {.class = "form-control form-control-square", .tabindex = "16", .Placeholder = Resource.Longitude})
+                                    @Html.ValidationMessageFor(Function(m) m.GeoLongitude, "", New With {.style = "color: #da0b0b"})
+                                </div>
+                            </div>
+
                             @Html.Partial("_MyMapEnterPartial")
 
                             <br />
@@ -317,6 +331,9 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
 @Section Scripts
     <script>
+        var GeoLatitude = '#GeoLatitude';
+        var GeoLongitude = '#GeoLongitude';
+
     var oldLatitude = '@ViewBag.Latitude';
     var oldLongitude = '@ViewBag.Longitude';
     L.marker([oldLatitude, oldLongitude]).addTo(mymap)
@@ -371,18 +388,30 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 var CodePostale = '#CodePostale';
 		        var Telephone= '#Telephone';
                 var Telephone2 = '#Telephone2';
-		        var Email= '#Email';
+            var Email = '#Email';
+
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+                $.alert('@Resource.GeoLatitudeLongitudeError');
+            } else {
+
+                if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
+                    if ($(GeoLatitude).val() != oldLatitude.replace(".", ",") || $(GeoLongitude).val() != oldLongitude.replace(".", ",")) {
+                        Latitude = $(GeoLatitude).val().replace(".", ",");
+                        Longitude = $(GeoLongitude).val().replace(".", ",");
+                    }
+                }
                 //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
                 //alert("DateNaissance= " + DateNaissance);
 
-            if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" ||typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "" ) {
+                if (typeof $(Code).val() == "undefined" || $(Code).val() == "" || typeof $(Nom).val() == "undefined" || $(Nom).val() == "" || typeof $(CommuneId).val() == "undefined" || $(CommuneId).val() == "" || typeof $(OrganisationId).val() == "undefined" || $(OrganisationId).val() == "" || typeof $(Telephone).val() == "undefined" || $(Telephone).val() == "") {
                     //alert("Veuillez renseigner tous les champs obligatoires.");
                     $.alert('"Veuillez renseigner tous les champs obligatoires."');
                 }
-                else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined" ) {
-                    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
-		        }
-		        else{
+                //else if (Latitude == 0.0 || Longitude == 0.0 || typeof Latitude == "undefined" || typeof Longitude == "undefined") {
+                //    $.alert('"Veuillez sélectionner un emplacement sur la carte."');
+                //}
+                else {
 
                     var dataRow = {
                         'Id': $(Id).val(),
@@ -430,7 +459,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                     });
                 }
 
-
+            }
             }
 
     </script>

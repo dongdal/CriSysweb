@@ -72,7 +72,7 @@ Namespace Controllers
 
             If AppSession.Niveau.Equals(Util.UserLevel.Communal) Then
 
-                entities = (From e In Db.Demande Where e.CollectiviteSinistree.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
+                entities = (From e In Db.Demande Where e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
                                                      e.CollectiviteSinistree.CommuneId = AppSession.CommuneId Select e)
 
             ElseIf AppSession.Niveau.Equals(Util.UserLevel.Departemental) Then
@@ -83,7 +83,7 @@ Namespace Controllers
                 '                                         (e.AspNetUser.DepartementId = AppSession.DepartementId Or
                 '                                         e.AspNetUser.Commune.DepartementId = AppSession.DepartementId) Select e)
 
-                entities = (From e In Db.Demande Where e.CollectiviteSinistree.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
+                entities = (From e In Db.Demande Where e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
                                                          e.StatutExistant >= 3 Or
                                                            e.StatutExistant = -2 And
                                                          (e.CollectiviteSinistree.Commune.DepartementId = AppSession.DepartementId Or e.AspNetUser.DepartementId = AppSession.DepartementId Or
@@ -94,7 +94,7 @@ Namespace Controllers
                 End If
             ElseIf AppSession.Niveau.Equals(Util.UserLevel.Regional) Then
 
-                entities = (From e In Db.Demande Where e.CollectiviteSinistree.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
+                entities = (From e In Db.Demande Where e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
                                                            e.StatutExistant >= 7 Or
                                                            e.StatutExistant = -3 And
                                                            (e.CollectiviteSinistree.Commune.Departement.RegionId = AppSession.RegionId Or e.AspNetUser.RegionId = AppSession.RegionId Or
@@ -108,7 +108,7 @@ Namespace Controllers
                 End If
             Else
 
-                entities = (From e In Db.Demande Where e.CollectiviteSinistree.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
+                entities = (From e In Db.Demande Where e.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id And
                                                        e.StatutExistant >= 11 Select e)
                 If (RegionId.HasValue) Then
                     entities = FiltrerDemandeRegionale(entities, RegionId.Value)
@@ -331,6 +331,7 @@ Namespace Controllers
             entityVM.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
 
             If ModelState.IsValid Then
+                Dim LaCommune = (From e In Db.CollectiviteSinistree Where e.StatutExistant = 1 And e.Id = entityVM.CollectiviteSinistreeId Select e.Commune).FirstOrDefault()
 
                 If (AppSession.Niveau.Equals(1)) Then
                     entityVM.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal
@@ -341,6 +342,7 @@ Namespace Controllers
                 ElseIf (AppSession.Niveau.Equals(4)) Then
                     entityVM.StatutExistant = Util.ElementsSuiviDemandes.CreationNational
                 End If
+                entityVM.Reference = LaCommune.Code
                 Dim entity = entityVM.GetEntity
                 Db.Demande.Add(entity)
                 Try
@@ -373,6 +375,38 @@ Namespace Controllers
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
+
+        '' GET: Demande/Tansfert/5
+        'Function Tansfert(ByVal DemandeId As Long?) As ActionResult
+        '    If IsNothing(DemandeId) Then
+        '        Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+        '    End If
+        '    Dim Demande As Demande = Db.Demande.Find(DemandeId)
+        '    If IsNothing(Demande) Then
+        '        Return HttpNotFound()
+        '    End If
+        '    Dim entityVM As New DemandeViewModel(Demande)
+        '    LoadComboBox(entityVM)
+        '    Return View(entityVM)
+        'End Function
+
+        '<HttpPost()>
+        '<ValidateAntiForgeryToken()>
+        'Function Tansfert(ByVal entityVM As DemandeViewModel) As ActionResult
+        '    If ModelState.IsValid Then
+        '        Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+        '        Try
+        '            Db.SaveChanges()
+        '            Return RedirectToAction("Index")
+        '        Catch ex As DbEntityValidationException
+        '            Util.GetError(ex, ModelState)
+        '        Catch ex As Exception
+        '            Util.GetError(ex, ModelState)
+        '        End Try
+        '    End If
+        '    LoadComboBox(entityVM)
+        '    Return View(entityVM)
+        'End Function
 
         ' GET: Demande/Edit/5
         Function EditPieces(ByVal id As Long?) As ActionResult

@@ -46,7 +46,7 @@
             </a>
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "TypeChamps")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeChamps</a></li>
-                <li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>
+                @*<li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>*@
                 @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
 
             </ul>

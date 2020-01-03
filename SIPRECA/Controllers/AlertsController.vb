@@ -29,7 +29,7 @@ Namespace Controllers
         End Function
 
         ' GET: Alerts
-        Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?, TypeAlerteFilter As String) As ActionResult
+        Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
             ViewBag.CurrentSort = sortOrder
             ViewBag.ContenuSort = If(sortOrder = "Contenu", "Contenu_desc", "Contenu")
             ViewBag.OrganisationSort = If(sortOrder = "Organisation", "Organisation_desc", "Organisation")
@@ -38,10 +38,9 @@ Namespace Controllers
             ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
 
-            ViewBag.TypeAlerteFilter = TypeAlerteFilter
-
             Dim entities = Db.Alert.Include(Function(a) a.AspNetUser).Include(Function(a) a.Organisation).Include(Function(a) a.Sinistre)
-            entities = FiltrerTypeAlerte(entities, TypeAlerteFilter)
+            entities = entities.Where(Function(e) e.StatutExistant = 1)
+            'entities = FiltrerTypeAlerte(entities, TypeAlerteFilter)
 
             If Not String.IsNullOrEmpty(searchString) Then
                 entities = entities.Where(Function(e) e.Organisation.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistre.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
@@ -70,11 +69,52 @@ Namespace Controllers
                     Exit Select
             End Select
 
-            Dim TypeAlerte As New List(Of SelectListItem) From {
-                New SelectListItem With {.Value = Util.TypeAlerte.SMS, .Text = Resource.TypeSMS},
-                New SelectListItem With {.Value = Util.TypeAlerte.Mail, .Text = Resource.TypeMail}
-            }
-            ViewBag.TypeAlerte = TypeAlerte
+            ViewBag.EnregCount = entities.Count
+            Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
+            Dim pageNumber As Integer = If(page, 1)
+
+            Return View(entities.ToPagedList(pageNumber, pageSize))
+        End Function
+
+        Function IndexSMS(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            ViewBag.CurrentSort = sortOrder
+            ViewBag.ContenuSort = If(sortOrder = "Contenu", "Contenu_desc", "Contenu")
+            ViewBag.OrganisationSort = If(sortOrder = "Organisation", "Organisation_desc", "Organisation")
+            ViewBag.SinistrerSort = If(sortOrder = "Sinistrer", "Sinistrer_desc", "Sinistrer")
+            ViewBag.TypeSinistrerSort = If(sortOrder = "TypeSinistrer", "TypeSinistrer_desc", "TypeSinistrer")
+            ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
+            ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
+
+
+            Dim entities = Db.Alert.Include(Function(a) a.AspNetUser).Include(Function(a) a.Organisation).Include(Function(a) a.Sinistre)
+            entities = entities.Where(Function(e) e.StatutExistant = 2)
+
+            If Not String.IsNullOrEmpty(searchString) Then
+                entities = entities.Where(Function(e) e.Organisation.Nom.ToUpper.Contains(value:=searchString.ToUpper) Or e.Sinistre.Libelle.ToUpper.Contains(value:=searchString.ToUpper) Or
+                                              e.Contenu.ToUpper.Contains(value:=searchString.ToUpper))
+            End If
+
+            Select Case sortOrder
+                Case "Contenu"
+                    entities = entities.OrderBy(Function(e) e.Contenu)
+                Case "Contenu_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Contenu)
+                Case "Sinistrer"
+                    entities = entities.OrderBy(Function(e) e.Sinistre.Libelle)
+                Case "Sinistrer_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Sinistre.Libelle)
+                Case "Organisation"
+                    entities = entities.OrderBy(Function(e) e.Organisation.Nom)
+                Case "Organisation_desc"
+                    entities = entities.OrderByDescending(Function(e) e.Organisation.Nom)
+                Case "DateCreation"
+                    entities = entities.OrderBy(Function(e) e.DateCreation)
+                Case "DateCreation_desc"
+                    entities = entities.OrderByDescending(Function(e) e.DateCreation)
+                Case Else
+                    entities = entities.OrderByDescending(Function(e) e.DateCreation)
+                    Exit Select
+            End Select
 
             ViewBag.EnregCount = entities.Count
             Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
@@ -105,7 +145,8 @@ Namespace Controllers
             If IsNothing(alert) Then
                 Return HttpNotFound()
             End If
-            Return View(alert)
+            Dim entityVM As New MailAlertesViewModel(alert)
+            Return View(entityVM)
         End Function
 
         ' GET: Alerts/Create
@@ -395,8 +436,8 @@ Namespace Controllers
                         .SinistreId = entityVM.SinistreId,
                         .AspNetUserId = GetCurrentUser().Id,
                         .DateCreation = Now(),
-                        .StatutExistant = 1,
-                        .Contenu = entityVM.Contenu
+                        .StatutExistant = 2,
+                        .Contenu = entityVM.Contenu.ToUpper()
                     }
                     Db.Alert.Add(alert)
                     Db.SaveChanges()
@@ -414,8 +455,8 @@ Namespace Controllers
 
         Private Sub SendingSms(personnel As List(Of String), sinistre As Sinistre, typeSinistre As TypeSinistre, collectivitesString As String, organisation As String, contenu As String)
             Dim sms As New StringBuilder
-            sms.AppendFormat("ALERTE SINISTRE:  {0}. " & vbCrLf, sinistre.Libelle.ToUpper())
-            sms.AppendFormat("DATE SINISTRE:  {0}. " & vbCrLf, sinistre.DateCreation.ToString("dd-MM-yyyy"))
+            'sms.AppendFormat("ALERTE SINISTRE:  {0}. " & vbCrLf, sinistre.Libelle.ToUpper())
+            'sms.AppendFormat("DATE SINISTRE:  {0}. " & vbCrLf, sinistre.DateCreation.ToString("dd-MM-yyyy"))
             'sms.AppendFormat("TYPE SINISTRE:  {0}. ", typeSinistre.Libelle.ToUpper())
             'sms.AppendFormat("COLLECTIVITES:  {0}. ", collectivitesString.ToUpper())
             'sms.AppendFormat("ORGANISATION CONCERNEE {0}. ", organisation.ToUpper())
