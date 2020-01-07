@@ -19,7 +19,7 @@ End Code
 <div class="container-fluid">
 
     <div class="card">
-        < class="card-body">
+        <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.CreateEntrepot</div>
             <hr>
             @Using Html.BeginForm("Create", "Entrepots", FormMethod.Post, New With {.autocomplete = "off"})
@@ -143,7 +143,7 @@ New With {.class = "form-control single-select", .tabindex = "3", .Placeholder =
 
         </div>
     </div>
-
+    </div>
 
 @Section Scripts
 
@@ -160,13 +160,17 @@ New With {.class = "form-control single-select", .tabindex = "3", .Placeholder =
                 .openOn(mymap);
         }
 
-
         //mymap.on('click', onMapClick);
         var theMarker = {};
 
         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
+
+            $(GeoLatitude).val(lat);
+            $(GeoLongitude).val(lon);
             //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
             //Clear existing marker,
 
@@ -198,11 +202,13 @@ New With {.class = "form-control single-select", .tabindex = "3", .Placeholder =
                 var GeoLatitude = '#GeoLatitude';
                 var GeoLongitude = '#GeoLongitude';
 
-                //alert("DateNaissance= " + DateNaissance);
+            Latitude = $(GeoLatitude).val().replace(".", ",");
+            Longitude = $(GeoLongitude).val().replace(".", ",");
+
             var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
-            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+            if (!Latitude.match(regex) || !Longitude.match(regex)) {
                 $.alert('@Resource.GeoLatitudeLongitudeError');
-            } else {
+            }else {
 
                 if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
                     Latitude = $(GeoLatitude).val().replace(".",",");

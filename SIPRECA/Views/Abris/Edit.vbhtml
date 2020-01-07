@@ -322,10 +322,16 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
 
         var theMarker = {};
 
-        mymap.on('click', function (e) {
+         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
 
+            $(GeoLatitude).val(lat);
+            $(GeoLongitude).val(lon);
+            //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
+            //Clear existing marker,
 
             if (theMarker != undefined) {
                 mymap.removeLayer(theMarker);
@@ -334,8 +340,8 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
             Latitude = lat;
 
             //Add a marker to show where you clicked.
-            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude +'</h6></p>').openPopup();
-            //theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup("Nouvel emplacement de "+'@Libelle.ToUpper'+". Latitude: " + Latitude + " et Longitude: " + Longitude).openPopup();
+            theMarker = L.marker([lat, lon]).addTo(mymap).bindPopup('<p><h6>' + 'Nouvel emplacement de : ' + $('#Nom').val() + '</h6>. <br/><h6>Latitude: ' + Latitude + '</h6><br/><h6>Longitude: ' + Longitude + '</h6></p>').openPopup();
+            //theMarker = L.polygon([lat, lon]).addTo(mymap).bindPopup("You clicked the map at LAT: " + lat + " and LONG: " + lon).openPopup();
 
         });
 
@@ -348,10 +354,13 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 var OrganisationId = '#OrganisationId';
                 var EstimationPopulation = '#EstimationPopulation';
                 var Capacite = '#Capacite';
-             var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
-            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+              Latitude = $(GeoLatitude).val().replace(".", ",");
+            Longitude = $(GeoLongitude).val().replace(".", ",");
+
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!Latitude.match(regex) || !Longitude.match(regex)) {
                 $.alert('@Resource.GeoLatitudeLongitudeError');
-            } else {
+            }  else {
 
                 if (typeof $(GeoLatitude).val() != "undefined" && $(GeoLatitude).val() != "" & typeof $(GeoLongitude).val() != "undefined" & $(GeoLongitude).val() != "") {
                     if ($(GeoLatitude).val() != oldLatitude.replace(".", ",") || $(GeoLongitude).val() != oldLongitude.replace(".", ",")) {

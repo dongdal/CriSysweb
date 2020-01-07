@@ -171,6 +171,11 @@ End Code
         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
+
+            $(GeoLatitude).val(lat);
+            $(GeoLongitude).val(lon);
             //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
             //Clear existing marker,
 
@@ -186,7 +191,6 @@ End Code
 
         });
 
-
         function CreateInstallation() {
 		        var Code= '#Code';
 		        var Nom= '#Nom';
@@ -201,9 +205,11 @@ End Code
                 var GeoLatitude = '#GeoLatitude';
                 var GeoLongitude = '#GeoLongitude';
                 //alert("You clicked the map at LAT: " + Latitude + " and LONG: " + Longitude);
-                //alert("DateNaissance= " + DateNaissance);
-             var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
-            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+               Latitude = $(GeoLatitude).val().replace(".", ",");
+            Longitude = $(GeoLongitude).val().replace(".", ",");
+
+            var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
+            if (!Latitude.match(regex) || !Longitude.match(regex)) {
                 $.alert('@Resource.GeoLatitudeLongitudeError');
             } else {
 

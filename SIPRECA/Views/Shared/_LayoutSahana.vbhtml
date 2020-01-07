@@ -9,7 +9,7 @@
     <title>@ViewBag.Title - @Resource.SIPRECA_Text</title>
     @Styles.Render("~/Assets/TemplateStyle")
     @Styles.Render("~/Assets/JQueryConfirmCSS")
-    @Styles.Render("~/Assets/LeafletCSS")
+    @*@Styles.Render("~/Assets/LeafletCSS")*@
 
     @*@Scripts.Render("~/bundles/TemplateScript")*@
     @RenderSection("css", required:=False)
@@ -46,7 +46,7 @@
 
     @Scripts.Render("~/bundles/TemplateScript")
     @Scripts.Render("~/bundles/JQueryConfirmJS")
-    @Scripts.Render("~/bundles/LeafletJS")
+    @*@Scripts.Render("~/bundles/LeafletJS")*@
 
     <!--DataTable Start-->
     <script>

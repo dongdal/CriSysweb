@@ -4,6 +4,7 @@
     ViewBag.Title = Resource.ListMoyenDereponse
     Layout = "~/Views/Shared/_LayoutSahana.vbhtml"
 End Code
+@Styles.Render("~/Assets/LeafletCSS")
 
 
 <div class="page-header">
@@ -543,7 +544,9 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
         var heliportsLayer = new L.LayerGroup();
         var aeroportsLayer = new L.LayerGroup();
         var abrisLayer = new L.LayerGroup();
-        var infraLayer = new L.LayerGroup();
+        var instalLayer = new L.LayerGroup();
+        var bureauLayer = new L.LayerGroup();
+        var entrepLayer = new L.LayerGroup();
         var portsLayer = new L.LayerGroup();
         var zonesRisqueLayer = new L.LayerGroup();
 
@@ -552,7 +555,9 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
             "Héliports": heliportsLayer,
             "Aeroports": aeroportsLayer,
             "Abris": abrisLayer,
-            "Infrastructures": infraLayer,
+            "Installations": instalLayer,
+            "Bureaux": bureauLayer,
+            "Entrenpots": entrepLayer,
             "Ports": portsLayer,
             "Zones à risque": zonesRisqueLayer
         };
@@ -586,7 +591,10 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                             'Nombre d\'infirmières : <b>' + (item.NombreDInfimiere) + '</b><br>' +
                             'Nombre de lits : <b>' + (item.NombreDeLitMin) + ' - ' + (item.NombreDeLitMax) + '</b><br>' +
                             'Téléphone : <b>' + item.Telephone + '</b><br>' +
-                            'Téléphone d\'urgence : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>'
+                            'Téléphone d\'urgence : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Hopitaux")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
                         )
                     );
             });
@@ -608,12 +616,15 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                         .bindPopup('<b>' + item.Nom + '</b><br>' +
                             '<b>' + item.Organisation + '</b><br>' +
                             'Téléphone : <b>' + item.Telephone + '</b><br>' +
-                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>'
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Heliports")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
                         )
                     );
             });
         });
-        
+
         $.get( "@Url.Action("Aeroport", "Cartes")", function(data) {
             //console.log(data);
             var aeroportIcon = L.icon({
@@ -635,7 +646,10 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                             'Longueur : <b>' + (item.LongueurDePiste) + '</b> - Largeur : <b>' + (item.LargeurDePiste) + '</b><br>' +
                             'Taille de l\'aeronef : <b>' + item.TailleDeAeronef + '</b><br>' +
                             'Téléphone : <b>' + item.Telephone + '</b><br>' +
-                            'Téléphone 2 : <b>' + ((item.Telephone2)?item.Telephone2:'N/C') + '</b><br>'
+                            'Téléphone 2 : <b>' + ((item.Telephone2)?item.Telephone2:'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Aeroport")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
                         )
                     );
             });
@@ -658,16 +672,19 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                             '<b>' + item.Organisation + '</b><br>' +
                             'Type : <b>' + item.TypeAbris + '</b><br>' +
                             'Capacite : <b>' + item.Capacite + '</b><br>' +
-                            'Estimation Population : <b>' + item.EstimationPopulation + '</b><br>'
+                            'Estimation Population : <b>' + item.EstimationPopulation + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Abris")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
                         )
                     );
             });
         });
 
-        $.get( "@Url.Action("Infrastructures", "Cartes")", function(data) {
+        $.get( "@Url.Action("Bureaux", "Cartes")", function(data) {
             //console.log(data);
             var infraIcon = L.icon({
-                iconUrl: "@Url.Content("~/assets/plugins/leaflet/images/marker-icon-grey.png")",
+                iconUrl: "@Url.Content("~/assets/plugins/leaflet/images/Bureau.png")",
                 shadowUrl: "@Url.Content("~/assets/plugins/leaflet/images/marker-shadow.png")",
                 iconSize: [25, 41],
                 iconAnchor: [12, 40],
@@ -676,18 +693,76 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                 shadowAnchor: [12, 40]
             });
             $.each(data, function (index, item) {
-                infraLayer.addLayer(L.marker([item.Lat, item.Long], {icon: infraIcon}) //.addTo(mymap)
+                bureauLayer.addLayer(L.marker([item.Lat, item.Long], {icon: infraIcon}) //.addTo(mymap)
                         .bindPopup('<b>' + item.Code + ' - ' + item.Nom + '</b><br>' +
                             '<b>' + item.Organisation + '</b><br>' +
                             'Téléphone : <b>' + item.Telephone + '</b><br>' +
                             'Téléphone 2 : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>' +
-                            'Code Postal : <b>' + ((item.CodePostale)?item.CodePostale:'N/C') + '</b><br>'
+                            'Code Postal : <b>' + ((item.CodePostale) ? item.CodePostale : 'N/C') + '</b><br>' +
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence) ? item.TelephoneUrgence : 'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Bureaux")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
                         )
                     );
             });
         });
 
-        
+        $.get( "@Url.Action("Installations", "Cartes")", function(data) {
+            //console.log(data);
+            var infraIcon = L.icon({
+                iconUrl: "@Url.Content("~/assets/plugins/leaflet/images/Installations.png")",
+                shadowUrl: "@Url.Content("~/assets/plugins/leaflet/images/marker-shadow.png")",
+                iconSize: [25, 41],
+                iconAnchor: [12, 40],
+                popupAnchor: [1, -32],
+                shadowSize: [41, 41],
+                shadowAnchor: [12, 40]
+            });
+            $.each(data, function (index, item) {
+                instalLayer.addLayer(L.marker([item.Lat, item.Long], {icon: infraIcon}) //.addTo(mymap)
+                        .bindPopup('<b>' + item.Code + ' - ' + item.Nom + '</b><br>' +
+                            '<b>' + item.Organisation + '</b><br>' +
+                            'Téléphone : <b>' + item.Telephone + '</b><br>' +
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>' +
+                            'Code Postal : <b>' + ((item.CodePostale) ? item.CodePostale : 'N/C') + '</b><br>' +
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence) ? item.TelephoneUrgence : 'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Installations")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
+                        )
+                    );
+            });
+        });
+
+        $.get( "@Url.Action("Entrepots", "Cartes")", function(data) {
+            //console.log(data);
+            var infraIcon = L.icon({
+                iconUrl: "@Url.Content("~/assets/plugins/leaflet/images/Entrepot.png")",
+                shadowUrl: "@Url.Content("~/assets/plugins/leaflet/images/marker-shadow.png")",
+                iconSize: [25, 41],
+                iconAnchor: [12, 40],
+                popupAnchor: [1, -32],
+                shadowSize: [41, 41],
+                shadowAnchor: [12, 40]
+            });
+            $.each(data, function (index, item) {
+                entrepLayer.addLayer(L.marker([item.Lat, item.Long], {icon: infraIcon}) //.addTo(mymap)
+                        .bindPopup('<b>' + item.Code + ' - ' + item.Nom + '</b><br>' +
+                            '<b>' + item.Organisation + '</b><br>' +
+                            'Téléphone : <b>' + item.Telephone + '</b><br>' +
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence)?item.TelephoneUrgence:'N/C') + '</b><br>' +
+                            'Code Postal : <b>' + ((item.CodePostale) ? item.CodePostale : 'N/C') + '</b><br>' +
+                            'Téléphone 2 : <b>' + ((item.TelephoneUrgence) ? item.TelephoneUrgence : 'N/C') + '</b><br>' +
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "Entrepots")/`+ item.Id + `">
+                                    cliquer ici
+                                </a>`
+                        )
+                    );
+            });
+        });
+
+
         $.get( "@Url.Action("Ports", "Cartes")", function(data) {
             //console.log(data);
             var infraIcon = L.icon({
@@ -706,7 +781,7 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                             'Possession : <b>' + item.Possession + '</b><br>' +
                             'Téléphone : <b>' + item.Telephone + '</b><br>' +
                             'Téléphone 2 : <b>' + ((item.TelephoneUrgence) ? item.TelephoneUrgence : 'N/C') + '</b><br>' +
-                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Edit" href="@Url.Action("Edit", "PortDeMers")/`+ item.Id + `">
+                            `Détails : <a class=" " target="_blank" title="@Resource.Btn_Detail" href="@Url.Action("Details", "PortDeMers")/`+ item.Id + `">
                                     cliquer ici
                                 </a>`
                         )
@@ -714,7 +789,7 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
             });
         });
 
-        $.get( "@Url.Action("ZonesRisques", "Cartes")", function(data) {            
+        $.get( "@Url.Action("ZonesRisques", "Cartes")", function(data) {
             console.log(data);
             $.each(data, function (index, item) {
                 zonesRisqueLayer.addLayer(L.circle([item.Lat, item.Long], { radius : item.Rayon, color : '#ff0000' }) //.addTo(mymap)
@@ -723,7 +798,9 @@ New With {.class = "form-control", .multiple = "multiple", .tabindex = "2", .sty
                     );
             });
         });
-        
+
     </script>
 
 end section
+
+@Scripts.Render("~/bundles/LeafletJS")

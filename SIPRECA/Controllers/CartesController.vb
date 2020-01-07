@@ -24,6 +24,7 @@ Namespace Controllers
                             Select New With {
                                 .Organisation = p.Oganisation.Nom,
                                 .TypeHopital = p.TypeHopitaux.Libelle,
+                                p.Id,
                                 p.Nom,
                                 p.Code,
                                 p.NombreDeLitMin,
@@ -48,6 +49,7 @@ Namespace Controllers
             Dim entities = (From p In _db.Heliport
                             Select New With {
                                 .Organisation = p.Oganisation.Nom,
+                                p.Id,
                                 p.Nom,
                                 p.Code,
                                 p.Telephone,
@@ -70,6 +72,7 @@ Namespace Controllers
                                 .SurfacePiste = p.SurfaceDePiste.Libelle,
                                 .TailleDeAeronef = p.TailleDeAeronef.Libelle,
                                 .UsageHumanitaire = p.UsageHumanitaire.Libelle,
+                                p.Id,
                                 p.Nom,
                                 p.ICAO,
                                 p.IATA,
@@ -93,6 +96,7 @@ Namespace Controllers
                             Select New With {
                                 .Organisation = p.Oganisation.Nom,
                                 .TypeAbris = p.TypeAbris.Libelle,
+                                p.Id,
                                 p.Nom,
                                 p.EstimationPopulation,
                                 p.Capacite,
@@ -105,10 +109,51 @@ Namespace Controllers
             Return Json(entities, JsonRequestBehavior.AllowGet)
         End Function
 
-        Public Function Infrastructures() As JsonResult
-            Dim entities = (From p In _db.Infrastructure
+        Public Function Bureaux() As JsonResult
+            Dim entities = (From p In _db.Bureau
                             Select New With {
                                 .Organisation = p.Oganisation.Nom,
+                                p.Id,
+                                p.Nom,
+                                p.Code,
+                                p.CodePostale,
+                                p.Telephone,
+                                .TelephoneUrgence = p.Telephone2,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Entrepots() As JsonResult
+            Dim entities = (From p In _db.Entrepots
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                p.Id,
+                                p.Nom,
+                                p.Code,
+                                p.CodePostale,
+                                p.Telephone,
+                                .TelephoneUrgence = p.Telephone2,
+                                p.Email,
+                                p.DateCreation,
+                                p.StatutExistant,
+                                .Long = p.Location.XCoordinate,
+                                .Lat = p.Location.YCoordinate,
+                                .Commune = p.Commune.Libelle
+                            }).ToList()
+            Return Json(entities, JsonRequestBehavior.AllowGet)
+        End Function
+
+        Public Function Installations() As JsonResult
+            Dim entities = (From p In _db.Installation
+                            Select New With {
+                                .Organisation = p.Oganisation.Nom,
+                                p.Id,
                                 p.Nom,
                                 p.Code,
                                 p.CodePostale,
@@ -174,6 +219,7 @@ Namespace Controllers
         Public Function ZonesRisques() As JsonResult
             Dim entities = (From p In _db.ZoneARisque
                             Select New With {
+                                p.Id,
                                 p.Libelle,
                                 p.Rayon,
                                 p.DateCreation,

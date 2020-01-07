@@ -1613,6 +1613,9 @@
     <Content Include="assets\plugins\jquery.steps\css\jquery.steps.css" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.steps.min.js" />
     <Content Include="assets\plugins\jquery.steps\js\jquery.wizard-init.js" />
+    <Content Include="assets\plugins\leaflet\images\Bureau.png" />
+    <Content Include="assets\plugins\leaflet\images\Entrepot.png" />
+    <Content Include="assets\plugins\leaflet\images\Installations.png" />
     <Content Include="assets\plugins\leaflet\images\layers-2x.png" />
     <Content Include="assets\plugins\leaflet\images\layers.png" />
     <Content Include="assets\plugins\leaflet\images\marker-icon-2x.png" />

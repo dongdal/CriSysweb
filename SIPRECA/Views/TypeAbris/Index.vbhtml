@@ -19,7 +19,7 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeSuivi</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.ListTypeAbris</div>
             <hr>
             @Using Html.BeginForm("Index", "TypeAbris", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()

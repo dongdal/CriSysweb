@@ -358,9 +358,15 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
         //mymap.on('click', onMapClick);
         var theMarker = {};
 
+
         mymap.on('click', function (e) {
             lat = e.latlng.lat;
             lon = e.latlng.lng;
+            var GeoLatitude = '#GeoLatitude';
+            var GeoLongitude = '#GeoLongitude';
+
+            $(GeoLatitude).val(lat);
+            $(GeoLongitude).val(lon);
             //console.log("You clicked the map at LAT: " + lat + " and LONG: " + lon);
             //Clear existing marker,
 
@@ -377,6 +383,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
         });
 
 
+
         function EditInstallation() {
             var Id = '#Id';
 		        var Code= '#Code';
@@ -390,8 +397,11 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 var Telephone2 = '#Telephone2';
             var Email = '#Email';
 
+               Latitude = $(GeoLatitude).val().replace(".", ",");
+            Longitude = $(GeoLongitude).val().replace(".", ",");
+
             var regex = /^[-+]?(\d+(((\,))\d+)?)$/;
-            if (!$(GeoLatitude).val().match(regex) || !$(GeoLongitude).val().match(regex)) {
+            if (!Latitude.match(regex) || !Longitude.match(regex)) {
                 $.alert('@Resource.GeoLatitudeLongitudeError');
             } else {
 

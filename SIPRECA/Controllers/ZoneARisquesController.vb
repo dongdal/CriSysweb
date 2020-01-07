@@ -408,11 +408,13 @@ Namespace Controllers
         Public Property Libelle As String
         Public Property Latitude As String
         Public Property Longitude As String
+        Public Property Rayon As Double
 
         Public Function GetEntity(Str As String) As ZoneARisque
             Dim entity As New ZoneARisque
             With entity
                 .Id = Id
+                .Rayon = Rayon
                 .Libelle = Libelle
                 .Location = Util.CreatePoint(latitude:=Latitude, longitude:=Longitude)
                 .StatutExistant = 1
