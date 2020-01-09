@@ -72,6 +72,15 @@ End Code
                 </div>
             </div>
         </div>
+        
+        <div class="col-lg-3">
+            <div class="card card-success">
+                <a href="@Url.Action("IndexReport")"><img src="~/assets/images/gallery/analytics-1925495_1920.png" class="card-img-top" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleReport</h5>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

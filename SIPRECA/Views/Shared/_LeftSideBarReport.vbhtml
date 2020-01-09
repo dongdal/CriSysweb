@@ -42,18 +42,18 @@
         <li class="sidebar-header">@Resource.MainNavigation</li>
 
         <li class="">
-            <a href="javaScript:void();" class="waves-effect">
-                <i class="icon-bell"></i><span>@Resource.ManageAlert</span>
+            <a href="javaScript:void();" class="waves-effect" style="font-size:12px">
+                <i class="icon-pie-chart"></i><span>@Resource.ManageReport</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu" style="display: none;">
-                <li><a href="@Url.Action("ListeHopitaux", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeHopitaux</a></li>
+                <li><a href="@Url.Action("ListeDesAbris", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeAbris</a></li>
+                <li><a href="@Url.Action("ListeDesAeroports", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeAeroports</a></li>
+                <li><a href="@Url.Action("ListeDesBureaux", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeBureau</a></li>
+                <li><a href="@Url.Action("ListeDesEntrepots", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeEntrepot</a></li>
                 <li><a href="@Url.Action("ListeHeliports", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeHeliports</a></li>
-                <li><a href="@Url.Action("ListePorts", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListePorts</a></li>
-                <li><a href="@Url.Action("ListeAeroports", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeAeroports</a></li>
-                <li><a href="@Url.Action("ListeBureau", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeBureau</a></li>
-                <li><a href="@Url.Action("ListeAbris", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeAbris</a></li>
-                <li><a href="@Url.Action("ListeEntrepot", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeEntrepot</a></li>
+                <li><a href="@Url.Action("ListeHopitaux", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListeHopitaux</a></li>
+                <li><a href="@Url.Action("ListeDesPorts", "Report")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuListePorts</a></li>
             </ul>
         </li>
 

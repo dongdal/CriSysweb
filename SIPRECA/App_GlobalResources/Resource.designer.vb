@@ -7319,11 +7319,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des bureaux.
+        '''</summary>
+        Public Shared ReadOnly Property MenuListeBureaux() As String
+            Get
+                Return ResourceManager.GetString("MenuListeBureaux", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des entrepôts.
         '''</summary>
         Public Shared ReadOnly Property MenuListeEntrepot() As String
             Get
                 Return ResourceManager.GetString("MenuListeEntrepot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des entrepots.
+        '''</summary>
+        Public Shared ReadOnly Property MenuListeEntrepots() As String
+            Get
+                Return ResourceManager.GetString("MenuListeEntrepots", resourceCulture)
             End Get
         End Property
         
@@ -7828,6 +7846,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ModuleParametrage() As String
             Get
                 Return ResourceManager.GetString("ModuleParametrage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Module de reporting.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleReport() As String
+            Get
+                Return ResourceManager.GetString("ModuleReport", resourceCulture)
             End Get
         End Property
         

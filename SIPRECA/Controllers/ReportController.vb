@@ -30,19 +30,23 @@ Public Class ReportController
         Return View()
     End Function
 
-    Function ListeAeroports() As ActionResult
+    Function ListeDesAeroports() As ActionResult
         Return View()
     End Function
 
-    Function ListeBureau() As ActionResult
+    Function ListeDesBureaux() As ActionResult
         Return View()
     End Function
 
-    Function ListeAbris() As ActionResult
+    Function ListeDesAbris() As ActionResult
         Return View()
     End Function
 
-    Function ListeEntrepot() As ActionResult
+    Function ListeDesEntrepots() As ActionResult
+        Return View()
+    End Function
+
+    Function ListeDesPorts() As ActionResult
         Return View()
     End Function
 End Class

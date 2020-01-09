@@ -3924,4 +3924,13 @@
   <data name="MenuRequeteur" xml:space="preserve">
     <value>Réqueteur</value>
   </data>
+  <data name="MenuListeBureaux" xml:space="preserve">
+    <value>Liste des bureaux</value>
+  </data>
+  <data name="MenuListeEntrepots" xml:space="preserve">
+    <value>Liste des entrepots</value>
+  </data>
+  <data name="ModuleReport" xml:space="preserve">
+    <value>Module de reporting</value>
+  </data>
 </root>

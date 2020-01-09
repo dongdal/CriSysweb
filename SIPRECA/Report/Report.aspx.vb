@@ -22,20 +22,51 @@ Public Class Report
                 Case "ListeHopitaux" '--------------------------------------------------Liste Des Hopitaux'--------------------------------------------------
 
                     Dim ReportName As String = "ListeDesHopitaux"
-                    Dim ViewName As String = "vBordereauTransfert"
+                    Dim ViewName As String = "vHopitaux"
 
                     ShowListeDesHopitaux(ReportName, ViewName)
 
-                Case "OrdreRecette"
-                    'Dim Id As String = Request("Id")
+                Case "ListeDesAbris" '--------------------------------------------------Liste Des Abris'--------------------------------------------------
 
-                    'Dim OrdreRecet = (From elt In db.OrdreRecette Where elt.Id = Id Select elt).FirstOrDefault
+                    Dim ReportName As String = "ListeDesAbris"
+                    Dim ViewName As String = "vAbris"
 
-                    'If Not (OrdreRecet.Controle.TypeControle.Libelle.Contains("Approbation")) Then
-                    '    ShowOrdreRecette("OrdreDeRecette", DsOrdreRecette(Id, "OrdreRecetteId"), DsDetailOrdreRecette(Id, "OrdreRecetteId"))
-                    'Else
-                    '    ShowOrdreRecetteApprobationModele("OrdreRecetteApprobationModele", DsOrdreRecetteApprobationModele(Id, "OrdreRecetteId"), DsDetailOrdreRecette(Id, "OrdreRecetteId"))
-                    'End If
+                    ShowListeItems(ReportName, ViewName)
+
+                Case "ListeDesAeroports" '--------------------------------------------------Liste Des Aeroports'--------------------------------------------------
+
+                    Dim ReportName As String = "ListeDesAeroports"
+                    Dim ViewName As String = "vAeroport"
+
+                    ShowListeItems(ReportName, ViewName)
+
+                Case "ListeDesBureaux" '--------------------------------------------------Liste Des Bureaux'--------------------------------------------------
+
+                    Dim ReportName As String = "ListeDesBureaux"
+                    Dim ViewName As String = "vBureaux"
+
+                    ShowListeItems(ReportName, ViewName)
+
+                Case "ListeDesEntrepots" '--------------------------------------------------Liste Des Entrepots'--------------------------------------------------
+
+                    Dim ReportName As String = "ListeDesEntrepots"
+                    Dim ViewName As String = "vEntrepot"
+
+                    ShowListeItems(ReportName, ViewName)
+
+                Case "ListeDesPorts" '--------------------------------------------------Liste Des Ports'--------------------------------------------------
+
+                    Dim ReportName As String = "ListeDesPorts"
+                    Dim ViewName As String = "vPortDeMer"
+
+                    ShowListeItems(ReportName, ViewName)
+
+                Case "ListeDesHeliports" '--------------------------------------------------Liste Des Heliports'--------------------------------------------------
+
+                    Dim ReportName As String = "ListeDesHeliports"
+                    Dim ViewName As String = "vHeliport"
+
+                    ShowListeItems(ReportName, ViewName)
 
             End Select
         End If
@@ -102,6 +133,26 @@ Public Class Report
     End Sub
 
     Private Sub ShowListeDesHopitaux(reportName As String, ViewName As String)
+        SIPRECA_Report.Reset()
+        SIPRECA_Report.LocalReport.ReportPath = Path.Combine(Server.MapPath("~/Report/Template"), reportName & ".rdlc")
+        SIPRECA_Report.LocalReport.DataSources.Clear()
+
+        With SIPRECA_Report.LocalReport.DataSources
+            .Add(New ReportDataSource("DataSet1", GetSQLDataForList(ViewName)))
+        End With
+    End Sub
+
+    Private Sub ShowListeDesAbris(reportName As String, ViewName As String)
+        SIPRECA_Report.Reset()
+        SIPRECA_Report.LocalReport.ReportPath = Path.Combine(Server.MapPath("~/Report/Template"), reportName & ".rdlc")
+        SIPRECA_Report.LocalReport.DataSources.Clear()
+
+        With SIPRECA_Report.LocalReport.DataSources
+            .Add(New ReportDataSource("DataSet1", GetSQLDataForList(ViewName)))
+        End With
+    End Sub
+
+    Private Sub ShowListeItems(reportName As String, ViewName As String)
         SIPRECA_Report.Reset()
         SIPRECA_Report.LocalReport.ReportPath = Path.Combine(Server.MapPath("~/Report/Template"), reportName & ".rdlc")
         SIPRECA_Report.LocalReport.DataSources.Clear()

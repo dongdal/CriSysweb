@@ -1454,6 +1454,7 @@
     <Content Include="assets\images\gallery\7.jpg" />
     <Content Include="assets\images\gallery\8.jpg" />
     <Content Include="assets\images\gallery\9.jpg" />
+    <Content Include="assets\images\gallery\analytics-1925495_1920.png" />
     <Content Include="assets\images\gallery\authentication-bg.png" />
     <Content Include="assets\images\gallery\carousel-img-1.png" />
     <Content Include="assets\images\gallery\carousel-img-10.png" />
@@ -1732,13 +1733,13 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Report\Template\BordereauTransfert.rdlc" />
-    <Content Include="Report\Template\ListeDesAbris.rdl" />
-    <Content Include="Report\Template\ListeDesAeroports.rdl" />
-    <Content Include="Report\Template\ListeDesBureaux.rdl" />
-    <Content Include="Report\Template\ListeDesEntrepots.rdl" />
-    <Content Include="Report\Template\ListeDesHeliports.rdl" />
+    <Content Include="Report\Template\ListeDesAbris.rdlc" />
+    <Content Include="Report\Template\ListeDesAeroports.rdlc" />
+    <Content Include="Report\Template\ListeDesBureaux.rdlc" />
+    <Content Include="Report\Template\ListeDesEntrepots.rdlc" />
+    <Content Include="Report\Template\ListeDesHeliports.rdlc" />
     <Content Include="Report\Template\ListeDesHopitaux.rdlc" />
-    <Content Include="Report\Template\ListeDesPorts.rdl" />
+    <Content Include="Report\Template\ListeDesPorts.rdlc" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2197,15 +2198,19 @@
     <Content Include="Views\Shared\_LayoutReport.vbhtml" />
     <Content Include="Views\Shared\_LeftSideBarReport.vbhtml" />
     <Content Include="Views\Report\ListeHopitaux.vbhtml" />
-    <Content Include="Views\Report\Delete.vbhtml" />
-    <Content Include="Views\Report\Edit.vbhtml" />
-    <Content Include="Views\Report\Index.vbhtml" />
     <Content Include="Views\Indemnisations\DetailIndems.vbhtml" />
     <Content Include="Views\Alerts\IndexSMS.vbhtml" />
     <Content Include="Views\Alerts\Details.vbhtml" />
     <Content Include="Views\Home\IndexParam.vbhtml" />
     <Content Include="Views\Shared\_LayoutParam.vbhtml" />
     <Content Include="Views\Shared\_LeftSideBarParam.vbhtml" />
+    <Content Include="Views\Report\ListeDesAbris.vbhtml" />
+    <Content Include="Views\Report\ListeDesAeroports.vbhtml" />
+    <Content Include="Views\Report\ListeDesBureaux.vbhtml" />
+    <Content Include="Views\Report\ListeDesEntrepots.vbhtml" />
+    <Content Include="Views\Report\ListeHeliports.vbhtml" />
+    <Content Include="Views\Home\IndexReport.vbhtml" />
+    <Content Include="Views\Report\ListeDesPorts.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

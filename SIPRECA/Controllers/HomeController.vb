@@ -44,6 +44,10 @@ Public Class HomeController
         Return View()
     End Function
 
+    Function IndexReport() As ActionResult
+        Return View()
+    End Function
+
     Function IndexDesinventar() As ActionResult
         Return View()
     End Function

@@ -3831,4 +3831,13 @@
   <data name="ZoneARisqueCombo" xml:space="preserve">
     <value>Make select area</value>
   </data>
+  <data name="MenuListeBureaux" xml:space="preserve">
+    <value>List of offices</value>
+  </data>
+  <data name="MenuListeEntrepots" xml:space="preserve">
+    <value>List of warehouses</value>
+  </data>
+  <data name="ModuleReport" xml:space="preserve">
+    <value>Reporting module</value>
+  </data>
 </root>
