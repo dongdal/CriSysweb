@@ -1,6 +1,6 @@
 ﻿Public Class Ressource
     Public Property Id As Long
-    Public Property ModuleId As Long
+    Public Property ModulesId As Long
     Public Overridable Property Modules As Modules
     Public Property Libelle As String
     Public Property Description As String

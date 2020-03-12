@@ -201,6 +201,12 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccessRules\ModuleRolesController.vb" />
+    <Compile Include="Controllers\AccessRules\ActionSousRessourcesController.vb" />
+    <Compile Include="Controllers\AccessRules\SousRessourcesController.vb" />
+    <Compile Include="Controllers\AccessRules\RessourcesController.vb" />
+    <Compile Include="Controllers\AccessRules\ModulesController.vb" />
+    <Compile Include="Controllers\AccessRules\ActionsController.vb" />
     <Compile Include="Controllers\AlertesController.vb" />
     <Compile Include="Controllers\AlertsController.vb" />
     <Compile Include="Controllers\BordereauTransfertsController.vb" />
@@ -271,12 +277,12 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
-    <Compile Include="DAL\Config\AccesRules\SousRessourceCfg.vb" />
-    <Compile Include="DAL\Config\AccesRules\RessourceCfg.vb" />
-    <Compile Include="DAL\Config\AccesRules\ModulesCfg.vb" />
-    <Compile Include="DAL\Config\AccesRules\ModuleRoleCfg.vb" />
-    <Compile Include="DAL\Config\AccesRules\ActionSousRessourceCfg.vb" />
-    <Compile Include="DAL\Config\AccesRules\ActionsCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\SousRessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\RessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\ModulesCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\ModuleRoleCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\ActionSousRessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccessRules\ActionsCfg.vb" />
     <Compile Include="DAL\Config\BordereauTransfertDemandeCfg.vb" />
     <Compile Include="DAL\Config\CollecteCfg.vb" />
     <Compile Include="DAL\Config\BordereauTransfertCfg.vb" />
@@ -480,13 +486,17 @@
       <DependentUpon>202003121037217_Add_Acces_Rules_Tables.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202003121037217_Add_Acces_Rules_Tables.vb" />
+    <Compile Include="Migrations\202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.Designer.vb">
+      <DependentUpon>202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb" />
     <Compile Include="Migrations\Configuration.vb" />
-    <Compile Include="Models\AccesRules\Actions.vb" />
-    <Compile Include="Models\AccesRules\ActionSousRessource.vb" />
-    <Compile Include="Models\AccesRules\ModuleRole.vb" />
-    <Compile Include="Models\AccesRules\Modules.vb" />
-    <Compile Include="Models\AccesRules\Ressource.vb" />
-    <Compile Include="Models\AccesRules\SousRessource.vb" />
+    <Compile Include="Models\AccessRules\Actions.vb" />
+    <Compile Include="Models\AccessRules\ActionSousRessource.vb" />
+    <Compile Include="Models\AccessRules\ModuleRole.vb" />
+    <Compile Include="Models\AccessRules\Modules.vb" />
+    <Compile Include="Models\AccessRules\Ressource.vb" />
+    <Compile Include="Models\AccessRules\SousRessource.vb" />
     <Compile Include="Models\BordereauTransfertDemande.vb" />
     <Compile Include="Models\BordereauTransfert.vb" />
     <Compile Include="Models\Collecte.vb" />
@@ -561,6 +571,12 @@
       <DependentUpon>Report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ViewModels\AccessRules\ModuleRoleViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\ActionSousRessourceViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\SousRessourcesViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\ModulesViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\RessourceViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\ActionsViewModel.vb" />
     <Compile Include="ViewModels\BordereauTransfertViewModel.vb" />
     <Compile Include="ViewModels\MailAlertesViewModel.vb" />
     <Compile Include="ViewModels\SMSAlertesViewModel.vb" />
@@ -899,6 +915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003121037217_Add_Acces_Rules_Tables.resx">
       <DependentUpon>202003121037217_Add_Acces_Rules_Tables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.resx">
+      <DependentUpon>202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
