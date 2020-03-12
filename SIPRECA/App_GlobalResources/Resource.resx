@@ -3942,4 +3942,121 @@
   <data name="DeleteSinistrer" xml:space="preserve">
     <value>Supprimer un sinistré</value>
   </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ActionsCombo" xml:space="preserve">
+    <value>Veuillez sélectionner une action</value>
+  </data>
+  <data name="CreateActions" xml:space="preserve">
+    <value>Ajouter une nouvelle action</value>
+  </data>
+  <data name="CreateActionSousRessource" xml:space="preserve">
+    <value>Affecter une action à une ressource</value>
+  </data>
+  <data name="CreateModule" xml:space="preserve">
+    <value>Ajouter un nouveau module</value>
+  </data>
+  <data name="CreateModuleRole" xml:space="preserve">
+    <value>Affecter un module à un rôle</value>
+  </data>
+  <data name="CreateRessource" xml:space="preserve">
+    <value>Ajouter une nouvelle ressource</value>
+  </data>
+  <data name="CreateSousRessource" xml:space="preserve">
+    <value>Ajouter une nouvelle sous ressource</value>
+  </data>
+  <data name="DeleteActions" xml:space="preserve">
+    <value>Supprimer une action</value>
+  </data>
+  <data name="DeleteActionSousRessource" xml:space="preserve">
+    <value>Supprimer une affectation</value>
+  </data>
+  <data name="DeleteModule" xml:space="preserve">
+    <value>Supprimer un module</value>
+  </data>
+  <data name="DeleteModuleRole" xml:space="preserve">
+    <value>Supprimer une affectation</value>
+  </data>
+  <data name="DeleteRessource" xml:space="preserve">
+    <value>Supprimer une ressource</value>
+  </data>
+  <data name="DeleteSousRessource" xml:space="preserve">
+    <value>Supprimer une sous ressource</value>
+  </data>
+  <data name="EditActions" xml:space="preserve">
+    <value>Modifier une action</value>
+  </data>
+  <data name="EditActionSousRessource" xml:space="preserve">
+    <value>Modifier une affectation</value>
+  </data>
+  <data name="EditModule" xml:space="preserve">
+    <value>Modifier un module</value>
+  </data>
+  <data name="EditModuleRole" xml:space="preserve">
+    <value>Modifier une affectation</value>
+  </data>
+  <data name="EditRessource" xml:space="preserve">
+    <value>Modifier une ressource</value>
+  </data>
+  <data name="EditSousRessource" xml:space="preserve">
+    <value>Modifier une sous ressource</value>
+  </data>
+  <data name="ListActions" xml:space="preserve">
+    <value>Liste des actions</value>
+  </data>
+  <data name="ListActionSousRessource" xml:space="preserve">
+    <value>Liste des actions affectées à une ressource</value>
+  </data>
+  <data name="ListModule" xml:space="preserve">
+    <value>Liste des modules</value>
+  </data>
+  <data name="ListModuleRole" xml:space="preserve">
+    <value>Liste des modules affectés à une rôle</value>
+  </data>
+  <data name="ListRessource" xml:space="preserve">
+    <value>Liste des ressources</value>
+  </data>
+  <data name="ListSousRessource" xml:space="preserve">
+    <value>Liste des sous ressources</value>
+  </data>
+  <data name="ManageActions" xml:space="preserve">
+    <value>Gestion des actions</value>
+  </data>
+  <data name="ManageActionSousRessource" xml:space="preserve">
+    <value>Gestion des affectations d'action</value>
+  </data>
+  <data name="ManageModule" xml:space="preserve">
+    <value>Gestion des modules</value>
+  </data>
+  <data name="ManageModuleRole" xml:space="preserve">
+    <value>Gestion des affectations de module</value>
+  </data>
+  <data name="ManageRessource" xml:space="preserve">
+    <value>Gestion des ressources</value>
+  </data>
+  <data name="ManageSousRessource" xml:space="preserve">
+    <value>Gestion des sous ressources</value>
+  </data>
+  <data name="Modules" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ModulesCombo" xml:space="preserve">
+    <value>Veuillez sélectionner un module</value>
+  </data>
+  <data name="Ressource" xml:space="preserve">
+    <value>Ressource</value>
+  </data>
+  <data name="RessourcesCombo" xml:space="preserve">
+    <value>Veuillez sélectionner une ressource</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rôle</value>
+  </data>
+  <data name="RoleCombo" xml:space="preserve">
+    <value>Veuillez sélectionner un role</value>
+  </data>
+  <data name="SousRessourceCombo" xml:space="preserve">
+    <value>Veuillez sélectinner une ressource</value>
+  </data>
 </root>

@@ -6,7 +6,7 @@ Public Class ModuleRoleViewModel
     Public Property Id As Long
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="Module", ResourceType:=GetType(Resource))>
+    <Display(Name:="Modules", ResourceType:=GetType(Resource))>
     Public Property ModulesId As Long
     Public Overridable Property LesModules As ICollection(Of SelectListItem)
     Public Overridable Property Modules As Modules

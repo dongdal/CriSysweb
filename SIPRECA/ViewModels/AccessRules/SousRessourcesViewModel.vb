@@ -10,7 +10,7 @@ Public Class SousRessourceViewModel
     Public Property Libelle As String
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="RessourceId", ResourceType:=GetType(Resource))>
+    <Display(Name:="Ressource", ResourceType:=GetType(Resource))>
     Public Property RessourceId As Long
     Public Overridable Property LesRessources As ICollection(Of SelectListItem)
     Public Overridable Property Ressource As Ressource
