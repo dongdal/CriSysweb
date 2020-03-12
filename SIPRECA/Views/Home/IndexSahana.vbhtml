@@ -63,9 +63,9 @@ End Code
                     console.log("onmouseout", d, i);
                 }
             },
-            color: {
-                pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
-            },
+            //color: {
+            //    pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
+            //},
             padding: {
                 top: 0,
                 right: 0,
@@ -77,14 +77,27 @@ End Code
         setTimeout(function () {
             c3PieChart.load({
                 columns: [
-                    ["Hôpitaux", @ViewBag.MoyenReponse.Hopitaux],
+                    ["Hopitaux", @ViewBag.MoyenReponse.Hopitaux],
                     ["Bureaux", @ViewBag.MoyenReponse.Bureaux],
-                    ["Héliports", @ViewBag.MoyenReponse.Heliports],
-                    ["Port de Mer", @ViewBag.MoyenReponse.PortDeMer],
-                    ["Aéroport", @ViewBag.MoyenReponse.Aeroports],
+                    ["Heliports", @ViewBag.MoyenReponse.Heliports],
+                    ["Port_de_Mer", @ViewBag.MoyenReponse.PortDeMer],
+                    ["Aeroport", @ViewBag.MoyenReponse.Aeroports],
                     ["Abris", @ViewBag.MoyenReponse.Abris],
                     ["Entrepots", @ViewBag.MoyenReponse.Entrepots],
-                ]
+                ],
+                colors: {
+                    Hopitaux: '#0dceec',
+                    Bureaux: '#15ca20',
+                    Heliports: '#fd3550',
+                    Port_de_Mer: '#3fd5a0',
+                    Aeroport: '#765b0c',
+                    Abris: '#223035',
+                    Entrepots: '#b81cff',
+                },
+                color: function (color, d) {
+                    // d will be 'id' when called for legends
+                    return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+                }
             });
         }, 1500);
 
@@ -102,18 +115,31 @@ End Code
             bindto: '#c3-bar-chart',
             data: {
                 columns: [
-                    ["Hôpitaux", @ViewBag.MoyenReponse.Hopitaux],
-                    ["Héliports", @ViewBag.MoyenReponse.Heliports],
+                    ["Hopitaux", @ViewBag.MoyenReponse.Hopitaux],
+                    ["Heliports", @ViewBag.MoyenReponse.Heliports],
                     ["Bureaux", @ViewBag.MoyenReponse.Bureaux],
-                    ["Port de Mer", @ViewBag.MoyenReponse.PortDeMer],
-                    ["Aéroport", @ViewBag.MoyenReponse.Aeroports],
+                    ["Port_de_Mer", @ViewBag.MoyenReponse.PortDeMer],
+                    ["Aeroport", @ViewBag.MoyenReponse.Aeroports],
                     ["Abris", @ViewBag.MoyenReponse.Abris]
                 ],
-                type: 'bar'
+                type: 'bar',
+                colors: {
+                    Hopitaux: '#0dceec',
+                    Bureaux: '#15ca20',
+                    Heliports: '#fd3550',
+                    Port_de_Mer: '#3fd5a0',
+                    Aeroport: '#765b0c',
+                    Abris: '#223035',
+                    Entrepots: '#b81cff',
+                },
+                color: function (color, d) {
+                    // d will be 'id' when called for legends
+                    return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+                }
             },
-            color: {
-                pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
-            },
+            //color: {
+            //    pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
+            //},
             padding: {
                 top: 0,
                 right: 0,

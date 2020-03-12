@@ -40,6 +40,7 @@ Public Class HomeController
         MoyenReponse.Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count
         MoyenReponse.Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count
         MoyenReponse.Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.PortDeMer = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e).ToList().Count
         ViewBag.MoyenReponse = MoyenReponse
         Return View()
     End Function

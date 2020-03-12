@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class SinistrersController
@@ -148,6 +149,10 @@ Namespace Controllers
         Function Create(ByVal entityVM As SinistrerViewModel) As ActionResult
 
             entityVM.AspNetUserId = GetCurrentUser.Id
+            If (entityVM.CollectiviteSinistreeId <= 0) Then
+                ModelState.AddModelError("CollectiviteSinistreeId", Resource.CollectiviteSinistreeIdModelError)
+            End If
+
             If ModelState.IsValid Then
                 Dim entity = entityVM.GetEntity
                 Db.Sinistrer.Add(entity)
@@ -297,15 +302,16 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
             Dim Sinistrer As Sinistrer = Db.Sinistrer.Find(id)
-            Db.Sinistrer.Remove(Sinistrer)
+            Sinistrer.StatutExistant = 0
+            Db.Entry(Sinistrer).State = EntityState.Modified
             Try
-                Db.SaveChanges()
-                Return RedirectToAction("Index")
-            Catch ex As DbEntityValidationException
-                Util.GetError(ex, ModelState)
-            Catch ex As Exception
-                Util.GetError(ex, ModelState)
-            End Try
+                    Db.SaveChanges()
+                    Return RedirectToAction("Index")
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
             Return View(New SinistrerViewModel(Sinistrer))
         End Function
 

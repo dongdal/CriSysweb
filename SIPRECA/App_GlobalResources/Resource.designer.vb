@@ -1280,6 +1280,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez remplir le champ &apos;Intitulé du sinistre&quot;.
+        '''</summary>
+        Public Shared ReadOnly Property CollectiviteSinistreeIdModelError() As String
+            Get
+                Return ResourceManager.GetString("CollectiviteSinistreeIdModelError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Sinistre.
         '''</summary>
         Public Shared ReadOnly Property CollectiviteSinistreeSinistre() As String
@@ -3022,6 +3031,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property DeleteSinistre() As String
             Get
                 Return ResourceManager.GetString("DeleteSinistre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer un sinistré.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteSinistrer() As String
+            Get
+                Return ResourceManager.GetString("DeleteSinistrer", resourceCulture)
             End Get
         End Property
         
@@ -7562,7 +7580,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Les Sinistrées.
+        '''  Recherche une chaîne localisée semblable à Les Sinistrés.
         '''</summary>
         Public Shared ReadOnly Property MenuSinistrees() As String
             Get
@@ -7886,7 +7904,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom de l&apos;utilisateur.
+        '''  Recherche une chaîne localisée semblable à Veuillez entrer le nom.
         '''</summary>
         Public Shared ReadOnly Property NamePlaceholder() As String
             Get
@@ -9632,6 +9650,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez saisir un numéro à neuf chiffres (Ex: 655554554 ou 667667667, ...).
+        '''</summary>
+        Public Shared ReadOnly Property PhoneNumberType() As String
+            Get
+                Return ResourceManager.GetString("PhoneNumberType", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Pièce jointe.
         '''</summary>
         Public Shared ReadOnly Property PieceJointe() As String
@@ -9803,7 +9830,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Veuillez entrer le prénom de l&apos;utilisateur.
+        '''  Recherche une chaîne localisée semblable à Veuillez entrer le prénom.
         '''</summary>
         Public Shared ReadOnly Property PrenomPlaceholder() As String
             Get
@@ -10073,7 +10100,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Rayon.
+        '''  Recherche une chaîne localisée semblable à Rayon (en Km).
         '''</summary>
         Public Shared ReadOnly Property Rayon() As String
             Get
@@ -10406,7 +10433,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Sélectionner les événements qu&apos;on affecté.
+        '''  Recherche une chaîne localisée semblable à Sélectionner les secteurs affectés.
         '''</summary>
         Public Shared ReadOnly Property SelectionEvenementAffecte() As String
             Get

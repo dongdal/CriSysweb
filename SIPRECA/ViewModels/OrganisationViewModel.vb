@@ -38,6 +38,7 @@ Public Class OrganisationViewModel
     Public Property SiteWeb As String
 
     '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <RegularExpression("^\d{9}$", ErrorMessageResourceName:="PhoneNumberType", ErrorMessageResourceType:=GetType(Resource))>
     <Display(Name:="Telephone", ResourceType:=GetType(Resource))>
     <StringLength(20, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Telephone As String

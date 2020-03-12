@@ -1740,6 +1740,7 @@
     <Content Include="Report\Template\ListeDesHeliports.rdlc" />
     <Content Include="Report\Template\ListeDesHopitaux.rdlc" />
     <Content Include="Report\Template\ListeDesPorts.rdlc" />
+    <None Include="Properties\PublishProfiles\CriSys Profile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2211,6 +2212,7 @@
     <Content Include="Views\Report\ListeHeliports.vbhtml" />
     <Content Include="Views\Home\IndexReport.vbhtml" />
     <Content Include="Views\Report\ListeDesPorts.vbhtml" />
+    <Content Include="Views\Demandes\EditPieces.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -2239,7 +2241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

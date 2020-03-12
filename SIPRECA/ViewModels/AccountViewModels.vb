@@ -104,6 +104,7 @@ Public Class RegisterViewModel
     Public Property AdresseUser As String
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <RegularExpression("^\d{9}$", ErrorMessageResourceName:="PhoneNumberType", ErrorMessageResourceType:=GetType(Resource))>
     <Display(Name:="Telephone", ResourceType:=GetType(Resource))>
     Public Property Telephone As String
 
@@ -231,6 +232,7 @@ Public Class EditUserViewModel
     Public Property AdresseUser As String
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <RegularExpression("^\d{9}$", ErrorMessageResourceName:="PhoneNumberType", ErrorMessageResourceType:=GetType(Resource))>
     <Display(Name:="Telephone", ResourceType:=GetType(Resource))>
     Public Property Telephone As String
 

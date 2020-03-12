@@ -580,13 +580,13 @@
     <value>Gestion des types de suivi</value>
   </data>
   <data name="NamePlaceholder" xml:space="preserve">
-    <value>Veuillez entrer le nom de l'utilisateur</value>
+    <value>Veuillez entrer le nom</value>
   </data>
   <data name="PasswordPlaceholder" xml:space="preserve">
     <value>Veuillez entrer le mot de passe</value>
   </data>
   <data name="PrenomPlaceholder" xml:space="preserve">
-    <value>Veuillez entrer le prénom de l'utilisateur</value>
+    <value>Veuillez entrer le prénom</value>
   </data>
   <data name="StatutExistant" xml:space="preserve">
     <value>Etat</value>
@@ -3184,7 +3184,7 @@
     <value>Gestion des moyens</value>
   </data>
   <data name="SelectionEvenementAffecte" xml:space="preserve">
-    <value>Sélectionner les événements qu'on affecté</value>
+    <value>Sélectionner les secteurs affectés</value>
   </data>
   <data name="SelectionEvenementAvec" xml:space="preserve">
     <value>Sélectionner seulement les évènements avec</value>
@@ -3598,7 +3598,7 @@
     <value>Gestion des sinistrés</value>
   </data>
   <data name="MenuSinistrees" xml:space="preserve">
-    <value>Les Sinistrées</value>
+    <value>Les Sinistrés</value>
   </data>
   <data name="Ordre" xml:space="preserve">
     <value>Ordre</value>
@@ -3898,7 +3898,7 @@
     <value>Numéro Bordereau</value>
   </data>
   <data name="Rayon" xml:space="preserve">
-    <value>Rayon</value>
+    <value>Rayon (en Km)</value>
   </data>
   <data name="CrisysIntro" xml:space="preserve">
     <value>Système informatique capable de permettre notamment la collecte des informations sur les infrastructures techniques des différents acteurs participants à la gestion des risques, d’analyser les données collectées pour prévenir les catastrophes et des moyens de réponse aux sinistres.</value>
@@ -3932,5 +3932,14 @@
   </data>
   <data name="ModuleReport" xml:space="preserve">
     <value>Module de reporting</value>
+  </data>
+  <data name="PhoneNumberType" xml:space="preserve">
+    <value>Veuillez saisir un numéro à neuf chiffres (Ex: 655554554 ou 667667667, ...)</value>
+  </data>
+  <data name="CollectiviteSinistreeIdModelError" xml:space="preserve">
+    <value>Veuillez remplir le champ 'Intitulé du sinistre"</value>
+  </data>
+  <data name="DeleteSinistrer" xml:space="preserve">
+    <value>Supprimer un sinistré</value>
   </data>
 </root>

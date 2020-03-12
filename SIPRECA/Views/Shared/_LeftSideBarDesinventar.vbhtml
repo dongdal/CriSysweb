@@ -87,7 +87,7 @@
             <ul class="sidebar-submenu">
                 <li><a href="@Url.Action("Index", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenementZones</a></li>
                 <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
-                <li><a href="@Url.Action("Query", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRequeteur</a></li>
+                <li><a href="@Url.Action("Query", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRequeteur</a></li>
             </ul>
         </li>
 

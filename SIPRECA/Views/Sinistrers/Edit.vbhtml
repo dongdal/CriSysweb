@@ -23,6 +23,7 @@ End Code
             <hr>
             @Using Html.BeginForm("Edit", "Sinistrers", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
+                @Html.ValidationSummary(True)
                 @Html.HiddenFor(Function(m) m.Id)
                 @Html.HiddenFor(Function(m) m.StatutExistant)
                 @Html.HiddenFor(Function(m) m.DateCreation)
@@ -69,7 +70,7 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.Email, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.EmailPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Email, "", New With {.style = "color: #da0b0b"})
@@ -79,7 +80,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.DateDeNaissance, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.DateDeNaissance, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateSinistrePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.DateDeNaissance, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateNaissancePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.DateDeNaissance, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

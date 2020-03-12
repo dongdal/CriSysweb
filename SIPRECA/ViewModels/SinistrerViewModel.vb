@@ -21,6 +21,7 @@ Public Class SinistrerViewModel
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Telephone", ResourceType:=GetType(Resource))>
+    <RegularExpression("^\d{9}$", ErrorMessageResourceName:="PhoneNumberType", ErrorMessageResourceType:=GetType(Resource))>
     <StringLength(250, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Telephone As String
 
@@ -59,9 +60,9 @@ Public Class SinistrerViewModel
     <StringLength(1000, ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="StringLongLength")>
     Public Property Observation As String
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="DemandeCollectiviteSinistree", ResourceType:=GetType(Resource))>
-    Public Property CollectiviteSinistreeId As String
+    Public Property CollectiviteSinistreeId As Long = 0
     Public Overridable Property LesCollectiviteSinistrees As ICollection(Of SelectListItem)
     Public Overridable Property CollectiviteSinistree As CollectiviteSinistree
 

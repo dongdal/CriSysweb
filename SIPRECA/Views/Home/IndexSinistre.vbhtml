@@ -80,10 +80,19 @@ End Code
         setTimeout(function () {
             c3PieChart.load({
                 columns: [
-                    ["Demandes en cours", @ViewBag.EtatDemade.DemandesEnCours],
-                    ["Demandes  rejetées", @ViewBag.EtatDemade.DemandesRejetees],
-                    ["Demandes Approuvées", @ViewBag.EtatDemade.DemandesApprouvees],
-                ]
+                    ["Demandes_En_cours", @ViewBag.EtatDemade.DemandesEnCours],
+                    ["Demandes_rejetees", @ViewBag.EtatDemade.DemandesRejetees],
+                    ["Demandes_Approuvees", @ViewBag.EtatDemade.DemandesApprouvees],
+                ],
+                colors: {
+                    Demandes_En_cours: '#0dceec',
+                    Demandes_rejetees: '#15ca20',
+                    Demandes_Approuvees: '#fd3550',
+                },
+                color: function (color, d) {
+                    // d will be 'id' when called for legends
+                    return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+                }
             });
         }, 1500);
 
@@ -101,14 +110,23 @@ End Code
             bindto: '#c3-bar-chart',
             data: {
                 columns: [
-                    ["Demandes en cours", @ViewBag.EtatDemade.DemandesEnCours],
-                    ["Demandes  rejetées", @ViewBag.EtatDemade.DemandesRejetees]
+                    ["Demandes_En_cours", @ViewBag.EtatDemade.DemandesEnCours],
+                    ["Demandes_rejetees", @ViewBag.EtatDemade.DemandesRejetees]
                 ],
-                type: 'bar'
+                type: 'bar',
+                colors: {
+                    Demandes_En_cours: '#0dceec',
+                    Demandes_rejetees: '#15ca20',
+                    Demandes_Approuvees: '#fd3550',
+                },
+                color: function (color, d) {
+                    // d will be 'id' when called for legends
+                    return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+                }
             },
-            color: {
-                pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
-            },
+            //color: {
+            //    pattern: ['#0dceec', '#15ca20', '#fd3550', '#8ae48f', "#ff9700", "#fd3550", "#223035", "#b81cff", "#765b0c", "#3fd5a0", "#1a262b", "#000c33", "#ffff00", "#ffcc99", "#993366", "#993333"]
+            //},
             padding: {
                 top: 0,
                 right: 0,
@@ -125,7 +143,7 @@ End Code
         setTimeout(function () {
             c3BarChart.load({
                 columns: [
-                    ["Demandes Approuvées", @ViewBag.EtatDemade.DemandesApprouvees]
+                    ["Demandes_Approuvees", @ViewBag.EtatDemade.DemandesApprouvees]
                 ]
             });
         }, 1000);

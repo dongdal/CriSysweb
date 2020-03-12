@@ -2635,7 +2635,7 @@
     <value>Amount</value>
   </data>
   <data name="NamePlaceholder" xml:space="preserve">
-    <value>Please enter the user name</value>
+    <value>Please enter the name</value>
   </data>
   <data name="NatureAide" xml:space="preserve">
     <value>Nature of Assistance</value>
@@ -3271,7 +3271,7 @@
     <value>First</value>
   </data>
   <data name="PrenomPlaceholder" xml:space="preserve">
-    <value>Please enter the first name of the user</value>
+    <value>Please enter the surname</value>
   </data>
   <data name="Prenoms" xml:space="preserve">
     <value>Name (s)</value>
@@ -3469,7 +3469,7 @@
     <value>warehouses</value>
   </data>
   <data name="SelectionEvenementAffecte" xml:space="preserve">
-    <value>Select events that affected</value>
+    <value>Select the affected sectors</value>
   </data>
   <data name="SelectionEvenementAvec" xml:space="preserve">
     <value>Select only events with</value>
@@ -3839,5 +3839,17 @@
   </data>
   <data name="ModuleReport" xml:space="preserve">
     <value>Reporting module</value>
+  </data>
+  <data name="PhoneNumberType" xml:space="preserve">
+    <value>Please enter a nine-digit number (Ex: 655554554 or 667667667, ...)</value>
+  </data>
+  <data name="Rayon" xml:space="preserve">
+    <value>Radius (in Km)</value>
+  </data>
+  <data name="CollectiviteSinistreeIdModelError" xml:space="preserve">
+    <value>Please fill in the field "Claim title"</value>
+  </data>
+  <data name="DeleteSinistrer" xml:space="preserve">
+    <value>Delete a claimant</value>
   </data>
 </root>

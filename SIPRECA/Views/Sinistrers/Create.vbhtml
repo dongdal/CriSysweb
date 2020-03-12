@@ -41,7 +41,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Prenom, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Prenom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.CNIPlaceholder})
+                        @Html.TextBoxFor(Function(m) m.Prenom, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.PrenomPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Prenom, "", New With {.style = "color: #da0b0b"})
                     </div>
                     @Html.LabelFor(Function(m) m.Sexe, New With {.class = "col-sm-2 col-form-label required_field"})
@@ -59,7 +59,7 @@ End Code
                 </div>
 
                 @<div Class="form-group row">
-                    @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label "})
+                    @Html.LabelFor(Function(m) m.Telephone, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
                         @Html.TextBoxFor(Function(m) m.Telephone, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.Telephone1Placeholder})
                         @Html.ValidationMessageFor(Function(m) m.Telephone, "", New With {.style = "color: #da0b0b"})
@@ -75,7 +75,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.DateDeNaissance, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.DateDeNaissance, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateSinistrePlaceholder})
+                        @Html.TextBoxFor(Function(m) m.DateDeNaissance, New With {.class = "form-control form-control-square default-datepicker", .tabindex = "4", .Placeholder = Resource.DateNaissancePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.DateDeNaissance, "", New With {.style = "color: #da0b0b"})
                     </div>
 
