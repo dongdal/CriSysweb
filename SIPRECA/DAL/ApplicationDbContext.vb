@@ -140,6 +140,16 @@ Public Class ApplicationDbContext
         modelBuilder.Configurations.Add(New ZoneLocalisationCfg())
 
         '-----------------------------------------------------------------------------END DESINVENTAR-----------------------------------------------------------------------------
+
+        '-----------------------------------------------------------------------------START ACCES RULES-----------------------------------------------------------------------------
+        modelBuilder.Configurations.Add(New ActionsCfg())
+        modelBuilder.Configurations.Add(New ActionSousRessourceCfg())
+        modelBuilder.Configurations.Add(New ModuleRoleCfg())
+        modelBuilder.Configurations.Add(New ModulesCfg())
+        modelBuilder.Configurations.Add(New RessourceCfg())
+        modelBuilder.Configurations.Add(New SousRessourceCfg())
+        '-----------------------------------------------------------------------------END ACCES RULES-----------------------------------------------------------------------------
+
     End Sub
 
     Public Property Abris() As DbSet(Of Abris)
@@ -261,5 +271,15 @@ Public Class ApplicationDbContext
     Public Property ZoneARisque() As DbSet(Of ZoneARisque)
     Public Property ZoneLocalisation() As DbSet(Of ZoneLocalisation)
     '-----------------------------------------------------------------------------END DESINVENTAR-----------------------------------------------------------------------------
+
+    '-----------------------------------------------------------------------------START ACCES RULES-----------------------------------------------------------------------------
+    Public Property Actions() As DbSet(Of Actions)
+    Public Property ActionSousRessource() As DbSet(Of ActionSousRessource)
+    Public Property ModuleRole() As DbSet(Of ModuleRole)
+    Public Property Modules() As DbSet(Of Modules)
+    Public Property Ressource() As DbSet(Of Ressource)
+    Public Property SousRessource() As DbSet(Of SousRessource)
+    '-----------------------------------------------------------------------------END ACCES RULES-----------------------------------------------------------------------------
+
 
 End Class

@@ -271,6 +271,12 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
+    <Compile Include="DAL\Config\AccesRules\SousRessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccesRules\RessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccesRules\ModulesCfg.vb" />
+    <Compile Include="DAL\Config\AccesRules\ModuleRoleCfg.vb" />
+    <Compile Include="DAL\Config\AccesRules\ActionSousRessourceCfg.vb" />
+    <Compile Include="DAL\Config\AccesRules\ActionsCfg.vb" />
     <Compile Include="DAL\Config\BordereauTransfertDemandeCfg.vb" />
     <Compile Include="DAL\Config\CollecteCfg.vb" />
     <Compile Include="DAL\Config\BordereauTransfertCfg.vb" />
@@ -471,6 +477,12 @@
     </Compile>
     <Compile Include="Migrations\201911290042024_Integration_With_JR.vb" />
     <Compile Include="Migrations\Configuration.vb" />
+    <Compile Include="Models\AccesRules\Actions.vb" />
+    <Compile Include="Models\AccesRules\ActionSousRessource.vb" />
+    <Compile Include="Models\AccesRules\ModuleRole.vb" />
+    <Compile Include="Models\AccesRules\Modules.vb" />
+    <Compile Include="Models\AccesRules\Ressource.vb" />
+    <Compile Include="Models\AccesRules\SousRessource.vb" />
     <Compile Include="Models\BordereauTransfertDemande.vb" />
     <Compile Include="Models\BordereauTransfert.vb" />
     <Compile Include="Models\Collecte.vb" />

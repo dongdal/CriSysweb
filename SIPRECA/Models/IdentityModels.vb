@@ -52,6 +52,12 @@ Public Class ApplicationUser
         TypeSuivi = New HashSet(Of TypeSuivi)()
         ValeurChamps = New HashSet(Of ValeurChamps)()
         Zone = New HashSet(Of Zone)()
+        Modules = New HashSet(Of Modules)()
+        ModuleRole = New HashSet(Of ModuleRole)()
+        Actions = New HashSet(Of Actions)()
+        ActionSousRessource = New HashSet(Of ActionSousRessource)()
+        Ressource = New HashSet(Of Ressource)()
+        SousRessource = New HashSet(Of SousRessource)()
     End Sub
 
     Public Property Nom As String
@@ -125,6 +131,12 @@ Public Class ApplicationUser
     Public Overridable Property TypeSuivi As ICollection(Of TypeSuivi)
     Public Overridable Property ValeurChamps As ICollection(Of ValeurChamps)
     Public Overridable Property Zone As ICollection(Of Zone)
+    Public Overridable Property Modules As ICollection(Of Modules)
+    Public Overridable Property ModuleRole As ICollection(Of ModuleRole)
+    Public Overridable Property Actions As ICollection(Of Actions)
+    Public Overridable Property ActionSousRessource As ICollection(Of ActionSousRessource)
+    Public Overridable Property Ressource As ICollection(Of Ressource)
+    Public Overridable Property SousRessource As ICollection(Of SousRessource)
 
 
 End Class
