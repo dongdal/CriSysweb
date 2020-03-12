@@ -100,7 +100,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New ModulesViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: Modules/Create

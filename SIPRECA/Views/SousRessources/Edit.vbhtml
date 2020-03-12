@@ -1,15 +1,16 @@
-﻿@ModelType RessourceViewModel
+﻿@ModelType SousRessourceViewModel
 @Imports SIPRECA.My.Resources
 @Code
-    ViewBag.Title = Resource.EditRessource
+    ViewBag.Title = Resource.EditSousRessource
+    Layout = "~/Views/Shared/_LayoutParam.vbhtml"
 End Code
 
 <div class="page-header">
-    <h1 class="page-title">@Resource.ManageRessource</h1>
+    <h1 class="page-title">@Resource.ManageSousRessource</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
-        <li class="breadcrumb-item"><a href=@Url.Action("Index", "Ressources")>@Resource.ManageRessource</a></li>
-        <li class="breadcrumb-item active">@Resource.EditRessource</li>
+        <li class="breadcrumb-item"><a href=@Url.Action("Index", "SousRessources")>@Resource.ManageSousRessource</a></li>
+        <li class="breadcrumb-item active">@Resource.EditSousRessource</li>
     </ol>
 </div>
 
@@ -17,9 +18,9 @@ End Code
 
     <div class="card">
         <div class="card-body">
-            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditRessource</div>
+            <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.EditSousRessource</div>
             <hr>
-            @Using Html.BeginForm("Edit", "Ressources", FormMethod.Post, New With {.autocomplete = "off"})
+            @Using Html.BeginForm("Edit", "SousRessources", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(m) m.Id)
                 @Html.HiddenFor(Function(m) m.StatutExistant)
@@ -34,11 +35,11 @@ End Code
                         @Html.ValidationMessageFor(Function(m) m.Libelle, "", New With {.style = "color: #da0b0b"})
                     </div>
 
-                    @Html.LabelFor(Function(m) m.ModulesId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    @Html.LabelFor(Function(m) m.RessourceId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.ModulesId, New SelectList(Model.LesModules, "Value", "Text"), Resource.ModulesCombo,
- New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ModulesCombo})
-                        @Html.ValidationMessageFor(Function(m) m.ModulesId, "", New With {.style = "color: #da0b0b"})
+                        @Html.DropDownListFor(Function(m) m.RessourceId, New SelectList(Model.LesRessources, "Value", "Text"), Resource.RessourcesCombo,
+New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.RessourcesCombo})
+                        @Html.ValidationMessageFor(Function(m) m.LesRessources, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
 

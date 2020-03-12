@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateActionSousRessource
+    Layout = "~/Views/Shared/_LayoutParam.vbhtml"
 End Code
 
 <div class="page-header">

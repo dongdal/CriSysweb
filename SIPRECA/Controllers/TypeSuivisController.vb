@@ -94,7 +94,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New TypeSuiviViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: TypeSuivi/Create

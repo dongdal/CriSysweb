@@ -114,7 +114,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New ModuleRoleViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: ModuleRole/Create

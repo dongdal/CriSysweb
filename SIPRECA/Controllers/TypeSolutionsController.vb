@@ -94,7 +94,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New TypeSolutionViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: TypeSolution/Create

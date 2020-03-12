@@ -2251,6 +2251,24 @@
     <Content Include="Views\Home\IndexReport.vbhtml" />
     <Content Include="Views\Report\ListeDesPorts.vbhtml" />
     <Content Include="Views\Demandes\EditPieces.vbhtml" />
+    <Content Include="Views\Actions\Create.vbhtml" />
+    <Content Include="Views\Actions\Edit.vbhtml" />
+    <Content Include="Views\Actions\Index.vbhtml" />
+    <Content Include="Views\Modules\Create.vbhtml" />
+    <Content Include="Views\Modules\Edit.vbhtml" />
+    <Content Include="Views\Modules\Index.vbhtml" />
+    <Content Include="Views\Ressources\Create.vbhtml" />
+    <Content Include="Views\Ressources\Edit.vbhtml" />
+    <Content Include="Views\Ressources\Index.vbhtml" />
+    <Content Include="Views\SousRessources\Create.vbhtml" />
+    <Content Include="Views\SousRessources\Edit.vbhtml" />
+    <Content Include="Views\SousRessources\Index.vbhtml" />
+    <Content Include="Views\ModuleRole\Create.vbhtml" />
+    <Content Include="Views\ModuleRole\Edit.vbhtml" />
+    <Content Include="Views\ModuleRole\Index.vbhtml" />
+    <Content Include="Views\ActionSousRessource\Create.vbhtml" />
+    <Content Include="Views\ActionSousRessource\Edit.vbhtml" />
+    <Content Include="Views\ActionSousRessource\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

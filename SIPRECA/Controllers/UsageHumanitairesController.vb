@@ -94,7 +94,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New UsageHumanitaireViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: UsageHumanitaire/Create

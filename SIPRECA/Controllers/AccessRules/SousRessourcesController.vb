@@ -103,7 +103,7 @@ Namespace Controllers
             Dim Ressources = (From e In Db.Ressource Where e.StatutExistant = 1 Select e)
             Dim LesRessources As New List(Of SelectListItem)
             For Each item In Ressources
-                LesRessources.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                LesRessources.Add(New SelectListItem With {.Value = item.Id, .Text = item.Modules.Libelle & " -> " & item.Libelle})
             Next
 
             entityVM.LesRessources = LesRessources
@@ -114,7 +114,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New SousRessourceViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: SousRessource/Create

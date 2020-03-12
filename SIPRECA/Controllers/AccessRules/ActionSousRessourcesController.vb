@@ -100,10 +100,10 @@ Namespace Controllers
                 LesActions.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
 
-            Dim SousRessource = (From e In Db.Actions Where e.StatutExistant = 1 Select e)
+            Dim SousRessource = (From e In Db.SousRessource Where e.StatutExistant = 1 Select e)
             Dim LesSousRessources As New List(Of SelectListItem)
             For Each item In SousRessource
-                LesSousRessources.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+                LesSousRessources.Add(New SelectListItem With {.Value = item.Ressource.Modules.Libelle & " -> " & item.Ressource.Libelle & " -> " & item.Id, .Text = item.Libelle})
             Next
 
             entityVM.LesActions = LesActions
@@ -115,7 +115,7 @@ Namespace Controllers
         Function Create() As ActionResult
             Dim entityVM As New ActionSousRessourceViewModel
             LoadComboBox(entityVM)
-            Return View()
+            Return View(entityVM)
         End Function
 
         ' POST: ActionSousRessource/Create

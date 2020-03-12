@@ -2,6 +2,7 @@
 @Imports SIPRECA.My.Resources
 @Code
     ViewBag.Title = Resource.CreateActions
+    Layout = "~/Views/Shared/_LayoutParam.vbhtml"
 End Code
 
 
@@ -35,7 +36,7 @@ End Code
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Description, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.DescriptionPlaceholder})
+                        @Html.TextAreaFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.DescriptionPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Description, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
