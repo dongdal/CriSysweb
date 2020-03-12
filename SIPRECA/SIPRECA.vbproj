@@ -476,6 +476,10 @@
       <DependentUpon>201911290042024_Integration_With_JR.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201911290042024_Integration_With_JR.vb" />
+    <Compile Include="Migrations\202003121037217_Add_Acces_Rules_Tables.Designer.vb">
+      <DependentUpon>202003121037217_Add_Acces_Rules_Tables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003121037217_Add_Acces_Rules_Tables.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccesRules\Actions.vb" />
     <Compile Include="Models\AccesRules\ActionSousRessource.vb" />
@@ -892,6 +896,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911290042024_Integration_With_JR.resx">
       <DependentUpon>201911290042024_Integration_With_JR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121037217_Add_Acces_Rules_Tables.resx">
+      <DependentUpon>202003121037217_Add_Acces_Rules_Tables.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -9,7 +9,7 @@ Public Class ModuleRole
     Public Property DateCreation As DateTime = Now()
 
     Public Property AspNetRolesId As String
-    Public Overridable Property AspNetRoles As IdentityUserRole
+    Public Overridable Property AspNetRoles As IdentityRole
 
     Public Property AspNetUserId As String
     Public Overridable Property AspNetUser As ApplicationUser
