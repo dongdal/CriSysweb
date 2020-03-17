@@ -571,6 +571,7 @@
       <DependentUpon>Report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ViewModels\AccessRules\AccessRightsManagerViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\ModuleRoleViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\ActionSousRessourceViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\SousRessourcesViewModel.vb" />
@@ -2263,12 +2264,13 @@
     <Content Include="Views\SousRessources\Create.vbhtml" />
     <Content Include="Views\SousRessources\Edit.vbhtml" />
     <Content Include="Views\SousRessources\Index.vbhtml" />
-    <Content Include="Views\ModuleRole\Create.vbhtml" />
-    <Content Include="Views\ModuleRole\Edit.vbhtml" />
-    <Content Include="Views\ModuleRole\Index.vbhtml" />
+    <Content Include="Views\ModuleRoles\Create.vbhtml" />
+    <Content Include="Views\ModuleRoles\Edit.vbhtml" />
+    <Content Include="Views\ModuleRoles\Index.vbhtml" />
     <Content Include="Views\ActionSousRessource\Create.vbhtml" />
     <Content Include="Views\ActionSousRessource\Edit.vbhtml" />
     <Content Include="Views\ActionSousRessource\Index.vbhtml" />
+    <Content Include="Views\Account\AccessRightsManager.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

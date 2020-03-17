@@ -279,6 +279,7 @@ Public Class ApplicationDbContext
     Public Property Modules() As DbSet(Of Modules)
     Public Property Ressource() As DbSet(Of Ressource)
     Public Property SousRessource() As DbSet(Of SousRessource)
+    Public Property IdentityUserRole() As DbSet(Of IdentityUserRole)
     '-----------------------------------------------------------------------------END ACCES RULES-----------------------------------------------------------------------------
 
 

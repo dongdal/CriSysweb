@@ -128,6 +128,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Attribution des privilèges.
+        '''</summary>
+        Public Shared ReadOnly Property AccessRightsManagerTitle() As String
+            Get
+                Return ResourceManager.GetString("AccessRightsManagerTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Votre compte a été bloqué après plusieurs tentatives de connexion erronées..
         '''</summary>
         Public Shared ReadOnly Property AccountLockedMessage() As String
@@ -7211,11 +7220,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les actions.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_Actions() As String
+            Get
+                Return ResourceManager.GetString("Menu_Actions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Années Budgetaires.
         '''</summary>
         Public Shared ReadOnly Property Menu_AnneeBudgetaire() As String
             Get
                 Return ResourceManager.GetString("Menu_AnneeBudgetaire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Données de base.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_BasicsDatas() As String
+            Get
+                Return ResourceManager.GetString("Menu_BasicsDatas", resourceCulture)
             End Get
         End Property
         
@@ -7265,11 +7292,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les affectation de rôles.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_ModuleRoles() As String
+            Get
+                Return ResourceManager.GetString("Menu_ModuleRoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les modules.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_Modules() As String
+            Get
+                Return ResourceManager.GetString("Menu_Modules", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les Régions.
         '''</summary>
         Public Shared ReadOnly Property Menu_Regions() As String
             Get
                 Return ResourceManager.GetString("Menu_Regions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les ressources.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_Ressources() As String
+            Get
+                Return ResourceManager.GetString("Menu_Ressources", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les sous ressources.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_SoursRessources() As String
+            Get
+                Return ResourceManager.GetString("Menu_SoursRessources", resourceCulture)
             End Get
         End Property
         

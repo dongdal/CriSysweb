@@ -4038,6 +4038,24 @@
   <data name="ManageSousRessource" xml:space="preserve">
     <value>Gestion des sous ressources</value>
   </data>
+  <data name="Menu_Actions" xml:space="preserve">
+    <value>Les actions</value>
+  </data>
+  <data name="Menu_BasicsDatas" xml:space="preserve">
+    <value>Données de base</value>
+  </data>
+  <data name="Menu_ModuleRoles" xml:space="preserve">
+    <value>Les affectation de rôles</value>
+  </data>
+  <data name="Menu_Modules" xml:space="preserve">
+    <value>Les modules</value>
+  </data>
+  <data name="Menu_Ressources" xml:space="preserve">
+    <value>Les ressources</value>
+  </data>
+  <data name="Menu_SoursRessources" xml:space="preserve">
+    <value>Les sous ressources</value>
+  </data>
   <data name="Modules" xml:space="preserve">
     <value>Module</value>
   </data>
@@ -4058,5 +4076,8 @@
   </data>
   <data name="SousRessourceCombo" xml:space="preserve">
     <value>Veuillez sélectinner une ressource</value>
+  </data>
+  <data name="AccessRightsManagerTitle" xml:space="preserve">
+    <value>Attribution des privilèges</value>
   </data>
 </root>

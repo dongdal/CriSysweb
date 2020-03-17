@@ -383,16 +383,67 @@ Public Class AccountController
             Dim idManager = New IdentityManager()
             Dim user = Db.Users.Find(model.Id)
             idManager.ClearUserRoles(user.Id)
+            'Dim SelectedRoles As New List(Of IdentityRole)
             For Each role As SelectRoleEditorViewModel In model.Roles
                 If role.Selected Then
                     idManager.AddUserToRole(user.Id, role.RoleName)
+                    Dim tempoRole = (From e In Db.Roles Where e.Name.ToUpper().Equals(role.RoleName.ToUpper()) Select e).FirstOrDefault()
+                    'SelectedRoles.Add(tempoRole)
                 End If
             Next
-            Return RedirectToAction("Index")
+            'Return RedirectToAction("Index")
+            Return RedirectToAction(actionName:="AccessRightsManager", controllerName:="Account", routeValues:=New With {.UserId = user.Id})
         End If
         Return View()
     End Function
 
+    <HttpGet>
+    Public Function AccessRightsManager(UserId As String) As ActionResult
+
+        If IsNothing(UserId) Then 'on vérifie si l'id envoyé en paramètre est bel et bien non vide. S'il est vide, on renvoit une erreur de type HttpNotFount
+            Return HttpNotFound()
+        End If
+
+        ' get user roles
+        'Dim Roles As List(Of String) = UserManager.
+        'Dim Roles = (From u In Db.Users Select (From userRole In u.Roles Join role In Db.Roles On userRole.RoleId Equals role.Id Select role.Id)).ToList()
+        Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(UserId) Select userRole).ToList()
+        If IsNothing(UserRoles) Then 'on vérifie si la liste des rôles est vide. Si c'est le cas, on renvoit une erreur de type HttpNotFount
+            Return HttpNotFound()
+        End If
+        'Dim ModuleRoleList As New List(Of ModuleRole)
+        Dim entityVM As New AccessRightsManagerViewModel With {
+            .LesModuleRoles = New List(Of ModuleRole),
+            .LesRessources = New List(Of Ressource)
+        }
+        For Each userRole In UserRoles
+            Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
+            For Each item In moduleRole
+                If Not (entityVM.LesModuleRoles.Contains(item)) Then
+                    entityVM.LesModuleRoles.Add(item)
+                End If
+            Next
+        Next
+
+        For Each item In entityVM.LesModuleRoles
+            For Each ressource In item.Modules.Ressource
+                entityVM.LesRessources.Add(ressource)
+            Next
+        Next
+
+        'For Each ressource In entityVM.LesRessources
+        '    For Each sousRessource In ressource.SousRessource.ToList
+        '        Dim optionGroup As Object = New SelectListGroup() With {.Name = sousRessource.Libelle.ToUpper()}
+        '        Dim LesActions = Db.Actions.Where(Function(e) e.StatutExistant = 1).ToList()
+        '        For Each actions In LesActions
+        '            entityVM.LesActions.Add(New SelectListItem With {.Value = sousRessource.Id & "-" & actions.Id, .Text = actions.Libelle, .Group = optionGroup})
+        '        Next
+        '    Next
+        'Next
+
+        entityVM.SelectedAspNetUserId = UserId
+        Return View(entityVM)
+    End Function
 
     '
     ' POST: /Account/Disassociate
