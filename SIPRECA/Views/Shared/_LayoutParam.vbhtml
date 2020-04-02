@@ -104,7 +104,7 @@
         //multiselect start
 
         $('#my_multi_select1').multiSelect();
-        $('#my_multi_select2').multiSelect({
+        $('.my_multi_select2').multiSelect({
             selectableOptgroup: true
         });
 

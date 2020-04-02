@@ -4080,4 +4080,16 @@
   <data name="AccessRightsManagerTitle" xml:space="preserve">
     <value>Attribution des privilèges</value>
   </data>
+  <data name="SoursRessource" xml:space="preserve">
+    <value>Sours ressource</value>
+  </data>
+  <data name="Error400_AccessRights" xml:space="preserve">
+    <value>Vous n'êtes pas autorisé à accéder à cette ressource</value>
+  </data>
+  <data name="MdlStatError_ActionList" xml:space="preserve">
+    <value>Veuillez sélectionner au moins une action</value>
+  </data>
+  <data name="ModuleRole" xml:space="preserve">
+    <value>Module - Rôle</value>
+  </data>
 </root>

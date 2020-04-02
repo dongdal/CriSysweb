@@ -135,5 +135,30 @@
         End Set
     End Property
 
+    Shared Property ActionSousRessourceList As List(Of ActionSousRessource)
+        Get
+            Return HttpContext.Current.Session("ActionSousRessourceList")
+        End Get
+        Set(value As List(Of ActionSousRessource))
+            HttpContext.Current.Session("ActionSousRessourceList") = value
+        End Set
+    End Property
 
+    Shared Property ModuleUserList As List(Of Long)
+        Get
+            Return HttpContext.Current.Session("ModuleUserList")
+        End Get
+        Set(value As List(Of Long))
+            HttpContext.Current.Session("ModuleUserList") = value
+        End Set
+    End Property
+
+    Shared Property ListRessources As List(Of Ressource)
+        Get
+            Return HttpContext.Current.Session("ListRessources")
+        End Get
+        Set(value As List(Of Ressource))
+            HttpContext.Current.Session("ListRessources") = value
+        End Set
+    End Property
 End Class

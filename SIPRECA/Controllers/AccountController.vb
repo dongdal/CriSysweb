@@ -1,4 +1,5 @@
 ﻿Imports System.Data.Entity
+Imports System.Data.Entity.Validation
 Imports System.Net
 Imports System.Threading.Tasks
 Imports Microsoft.AspNet.Identity
@@ -21,6 +22,7 @@ Public Class AccountController
             _db = value
         End Set
     End Property
+
     Public Sub New()
         Me.New(New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext())))
     End Sub
@@ -404,9 +406,7 @@ Public Class AccountController
             Return HttpNotFound()
         End If
 
-        ' get user roles
-        'Dim Roles As List(Of String) = UserManager.
-        'Dim Roles = (From u In Db.Users Select (From userRole In u.Roles Join role In Db.Roles On userRole.RoleId Equals role.Id Select role.Id)).ToList()
+        ' Depuis la table AspNetUserRole, on récupère les rôles aux quels l'utilisateur en cours de traitement a droit et on les charge dans une liste
         Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(UserId) Select userRole).ToList()
         If IsNothing(UserRoles) Then 'on vérifie si la liste des rôles est vide. Si c'est le cas, on renvoit une erreur de type HttpNotFount
             Return HttpNotFound()
@@ -414,37 +414,124 @@ Public Class AccountController
         'Dim ModuleRoleList As New List(Of ModuleRole)
         Dim entityVM As New AccessRightsManagerViewModel With {
             .LesModuleRoles = New List(Of ModuleRole),
-            .LesRessources = New List(Of Ressource)
+            .LesRessources = New List(Of Ressource),
+            .LesActions = New List(Of SelectListItem)
         }
-        For Each userRole In UserRoles
+        For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
+            'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
             Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
             For Each item In moduleRole
                 If Not (entityVM.LesModuleRoles.Contains(item)) Then
-                    entityVM.LesModuleRoles.Add(item)
+                    entityVM.LesModuleRoles.Add(item) 'on charge la liste des modules et roles en se rassurant qu'il n'y aura pas d'élément en double d'où le "Not (entityVM.LesModuleRoles.Contains(item))"
                 End If
             Next
         Next
 
         For Each item In entityVM.LesModuleRoles
+            'On recherche toutes les ressources liées aux modules que nous avons sélectionné.
             For Each ressource In item.Modules.Ressource
                 entityVM.LesRessources.Add(ressource)
             Next
         Next
 
-        'For Each ressource In entityVM.LesRessources
-        '    For Each sousRessource In ressource.SousRessource.ToList
-        '        Dim optionGroup As Object = New SelectListGroup() With {.Name = sousRessource.Libelle.ToUpper()}
-        '        Dim LesActions = Db.Actions.Where(Function(e) e.StatutExistant = 1).ToList()
-        '        For Each actions In LesActions
-        '            entityVM.LesActions.Add(New SelectListItem With {.Value = sousRessource.Id & "-" & actions.Id, .Text = actions.Libelle, .Group = optionGroup})
-        '        Next
-        '    Next
-        'Next
+        For Each ressource In entityVM.LesRessources
+            'Loop and add the Parent Nodes.
+            For Each sousRessource As SousRessource In ressource.SousRessource
+                'On crée le groupe en fonction de la ressource en cours.
+                Dim group As New SelectListGroup() With {
+                    .Name = sousRessource.Ressource.Modules.Libelle.ToUpper() & "->" & sousRessource.Ressource.Libelle.ToUpper() & "->" & sousRessource.Libelle.ToUpper()
+                }
+
+                'On charge les actions et on les affecte au groupe correspondant à la sous ressource en cours.
+                For Each actions As Actions In Db.Actions.Where(Function(a) a.StatutExistant = 1)
+                    entityVM.LesActions.Add(New SelectListItem() With {
+                        .Value = sousRessource.Id & "-" & actions.Id,
+                        .Text = actions.Libelle,
+                        .Group = group
+                    })
+                Next
+            Next
+        Next
 
         entityVM.SelectedAspNetUserId = UserId
         Return View(entityVM)
     End Function
 
+    <HttpPost>
+    <ValidateAntiForgeryToken>
+    Public Function AccessRightsManager(entityVM As AccessRightsManagerViewModel) As ActionResult
+        If (IsNothing(entityVM.ActionsId)) Then
+            ModelState.AddModelError("", Resource.MdlStatError_ActionList)
+        End If
+        If ModelState.IsValid Then
+            'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
+            DeleteAccessRights(entityVM.SelectedAspNetUserId)
+            For Each item In entityVM.ActionsId 'Pour chaque élément dans la liste (Ex: Id_ress-Id_act) on fera un split sur le "-" pour avoir l'id de la sous ressource et de l'action correspondante
+                'Création d'un tableau IdArray  de chaînes de caractères qui recevra les deux identifiants après l'opération de split.
+                'Le premier élément du tableau correspondra à l'identition de la sous ressource, et le second à l'identifiant de l'action.
+                Dim IdArray As String() = item.Split(New Char() {"-"c})
+                'Création d'un objet ActionSousRessource
+                Dim actionSousRessource As New ActionSousRessource With {
+                .ActionsId = IdArray(1),
+                .SousRessourceId = IdArray(0),
+                .AspNetUserId = entityVM.SelectedAspNetUserId,
+                .DateCreation = Now,
+                .StatutExistant = 1
+                }
+                Db.ActionSousRessource.Add(actionSousRessource)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            Next
+            Return RedirectToAction("Index")
+        End If
+        Return View(entityVM)
+    End Function
+
+    ''' <summary>
+    ''' Cette fonction permet de supprimer tous les anciens droits d'accès accordés à l'utilisateur dont l'identifiant est passé en paramètre.
+    ''' </summary>
+    ''' <param name="UserId"></param>
+    Private Sub DeleteAccessRights(UserId As String)
+        'On sélectionne tous les droits de l'utilsiateur
+        Dim AllUserRights = (From e In Db.ActionSousRessource Where e.AspNetUserId = UserId Select e).ToList()
+        Db.ActionSousRessource.RemoveRange(AllUserRights)
+        Try
+            Db.SaveChanges()
+        Catch ex As DbEntityValidationException
+            Util.GetError(ex, ModelState)
+        Catch ex As Exception
+            Util.GetError(ex, ModelState)
+        End Try
+    End Sub
+
+    'Public Function Index() As ActionResult
+    '    Dim items As New List(Of SelectListItem)()
+    '    Dim entities As New VehiclesEntities()
+
+    '    'Loop and add the Parent Nodes.
+    '    For Each type As VehicleType In entities.VehicleTypes
+    '        'Create the Group.
+    '        Dim group As New SelectListGroup() With {
+    '            .Name = type.Name
+    '        }
+
+    '        'Loop and add the Items.
+    '        For Each subType As VehicleSubType In entities.VehicleSubTypes.Where(Function(v) v.VehicleTypeId = type.Id)
+    '            items.Add(New SelectListItem() With {
+    '                .Value = subType.Id.ToString(),
+    '                .Text = subType.Name,
+    '                .Group = group
+    '            })
+    '        Next
+    '    Next
+
+    '    Return View(items)
+    'End Function
     '
     ' POST: /Account/Disassociate
     <HttpPost>

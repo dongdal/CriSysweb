@@ -2267,9 +2267,9 @@
     <Content Include="Views\ModuleRoles\Create.vbhtml" />
     <Content Include="Views\ModuleRoles\Edit.vbhtml" />
     <Content Include="Views\ModuleRoles\Index.vbhtml" />
-    <Content Include="Views\ActionSousRessource\Create.vbhtml" />
-    <Content Include="Views\ActionSousRessource\Edit.vbhtml" />
-    <Content Include="Views\ActionSousRessource\Index.vbhtml" />
+    <Content Include="Views\ActionSousRessources\Create.vbhtml" />
+    <Content Include="Views\ActionSousRessources\Edit.vbhtml" />
+    <Content Include="Views\ActionSousRessources\Index.vbhtml" />
     <Content Include="Views\Account\AccessRightsManager.vbhtml" />
   </ItemGroup>
   <ItemGroup>

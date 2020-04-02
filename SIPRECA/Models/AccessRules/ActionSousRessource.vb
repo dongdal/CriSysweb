@@ -8,6 +8,6 @@
     Public Property StatutExistant As Short = 1
     Public Property DateCreation As DateTime = Now()
 
-    Public Property AspNetUserId As String
+    Public Property AspNetUserId As String 'Il s'agit de l'utilisateur à qui on souhaite accorder des droits
     Public Overridable Property AspNetUser As ApplicationUser
 End Class

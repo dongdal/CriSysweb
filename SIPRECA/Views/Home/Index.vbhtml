@@ -18,71 +18,94 @@ End Code
     <!-- End Breadcrumb-->
     <h6 class="text-uppercase">@Resource.ModuleList</h6>
     <hr>
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
+    @If AppSession.ModuleUserList.Contains(1) Or AppSession.ModuleUserList.Contains(2) Or AppSession.ModuleUserList.Contains(3) Or AppSession.ModuleUserList.Contains(4) Then
+        @<div Class="row">
+            @If AppSession.ModuleUserList.Contains(1) Then
+                @<div Class="col-lg-3">
+                    <div Class="card card-success">
+                        <a href="javascript:void();" data-toggle="modal" data-target="#primarymodal"><img src="~/assets/images/gallery/1.jpg" Class="card-img-top" alt="Card image cap"></a>
+                        <div Class="card-body">
+                            <h5 Class="card-title text-primary" style="text-align:center">@Resource.ModuleSinistrer</h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexSahana")"><img src="~/assets/images/gallery/Module_Sahana.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleSahana</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexDesinventar")"><img src="~/assets/images/gallery/1.jpg" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleDesinventar</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexCollecte")"><img src="~/assets/images/gallery/Collect-Form-Picture.png" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleCollecte</h5>
-                </div>
-            </div>
-        </div>
 
-    </div>
+            End If
 
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexAlertes")"><img src="~/assets/images/gallery/iconfinder_bell-notifications-notice-notify-alert_3993856.png" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleAlerte</h5>
+            @If AppSession.ModuleUserList.Contains(2) Then
+                @<div Class="col-lg-3">
+                    <div Class="card card-success">
+                        <a href="@Url.Action("IndexSahana")"><img src="~/assets/images/gallery/Module_Sahana.jpg" Class="card-img-top" alt="Card image cap"></a>
+                        <div Class="card-body">
+                            <h5 Class="card-title text-primary" style="text-align:center">@Resource.ModuleSahana</h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexParam")"><img src="~/assets/images/gallery/iconfinder_freebies1_glyph-13_2920356.png" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.Menu_UserManager</h5>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-3">
-            <div class="card card-success">
-                <a href="@Url.Action("IndexReport")"><img src="~/assets/images/gallery/analytics-1925495_1920.png" class="card-img-top" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleReport</h5>
-                </div>
-            </div>
-        </div>
+            End If
 
-    </div>
+            @If AppSession.ModuleUserList.Contains(3) Then
+                @<div Class="col-lg-3">
+                    <div Class="card card-success">
+                        <a href="@Url.Action("IndexDesinventar")"><img src="~/assets/images/gallery/1.jpg" Class="card-img-top" alt="Card image cap"></a>
+                        <div Class="card-body">
+                            <h5 Class="card-title text-primary" style="text-align:center">@Resource.ModuleDesinventar</h5>
+                        </div>
+                    </div>
+                </div>
+            End If
+
+            @If AppSession.ModuleUserList.Contains(4) Then
+                @<div Class="col-lg-3">
+                    <div Class="card card-success">
+                        <a href="@Url.Action("IndexCollecte")"><img src="~/assets/images/gallery/Collect-Form-Picture.png" Class="card-img-top" alt="Card image cap"></a>
+                        <div Class="card-body">
+                            <h5 Class="card-title text-primary" style="text-align:center">@Resource.ModuleCollecte</h5>
+                        </div>
+                    </div>
+                </div>
+
+            End If
+        </div>
+    End If
+
+    @If AppSession.ModuleUserList.Contains(5) Or AppSession.ModuleUserList.Contains(6) Or AppSession.ModuleUserList.Contains(7) Then
+        @<div class="row">
+            @If AppSession.ModuleUserList.Contains(5) Then
+                @<div class="col-lg-3">
+                    <div class="card card-success">
+                        <a href="@Url.Action("IndexAlertes")"><img src="~/assets/images/gallery/iconfinder_bell-notifications-notice-notify-alert_3993856.png" class="card-img-top" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleAlerte</h5>
+                        </div>
+                    </div>
+                </div>
+            End If
+
+            @If AppSession.ModuleUserList.Contains(6) Then
+                @<div class="col-lg-3">
+                    <div class="card card-success">
+                        <a href="@Url.Action("IndexParam")"><img src="~/assets/images/gallery/iconfinder_freebies1_glyph-13_2920356.png" class="card-img-top" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary" style="text-align:center">@Resource.Menu_UserManager</h5>
+                        </div>
+                    </div>
+                </div>
+            End If
+
+            @If AppSession.ModuleUserList.Contains(7) Then
+                @<div class="col-lg-3">
+                    <div class="card card-success">
+                        <a href="@Url.Action("IndexReport")"><img src="~/assets/images/gallery/analytics-1925495_1920.png" class="card-img-top" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary" style="text-align:center">@Resource.ModuleReport</h5>
+                        </div>
+                    </div>
+                </div>
+            End If
+
+        </div>
+    End If
 </div>
 <!-- End container-fluid-->
 <!--Primary Modal -->
@@ -100,7 +123,7 @@ End Code
                 <div class="modal-body">
 
                     @Html.DropDownList("AnneeBudgetaireId", DirectCast(ViewBag.LesAnneesBudgetaires,
-                                                IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
+                                                 IEnumerable(Of SelectListItem)), Resource.ComboAnneeBudgetaire, New With {.class = "form-control single-select"})
 
                 </div>
                 <div class="modal-footer">

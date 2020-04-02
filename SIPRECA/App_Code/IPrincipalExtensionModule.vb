@@ -2,7 +2,7 @@
 Imports System.Runtime.CompilerServices
 
 Public Module IPrincipalExtensionModule
-    <Extension()> _
+    <Extension()>
     Public Function IsInAnyRole(principal As IPrincipal, ParamArray roles As String()) As Boolean
         For Each role In roles
             If principal.IsInRole(role) Then
@@ -13,9 +13,9 @@ Public Module IPrincipalExtensionModule
         Return False
     End Function
 
-    <Extension()> _
+    <Extension()>
     Public Function IsInAnyRole(principal As IPrincipal, str_roles As String) As Boolean
-        Dim roles = str_roles.split(",")
+        Dim roles = str_roles.Split(",")
         For Each role In roles
             If principal.IsInRole(role.Trim) Then
                 Return True

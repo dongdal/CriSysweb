@@ -42,14 +42,23 @@ Public Class LoginsController
 
     Private Function GetUsers() As ApplicationUser
         Dim id = User.Identity.GetUserId
-        Dim aspuser = db.Users.Find(id)
+        Dim aspuser = Db.Users.Find(id)
         Return aspuser
     End Function
     Private Function RecuperUserName() As String
         Return User.Identity.GetUserName
     End Function
 
-    Private db As New ApplicationDbContext
+    Private _db As New ApplicationDbContext
+
+    Public Property Db As ApplicationDbContext
+        Get
+            Return _db
+        End Get
+        Set(value As ApplicationDbContext)
+            _db = value
+        End Set
+    End Property
 
     Public Sub New()
         Me.New(New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext())))
@@ -91,6 +100,35 @@ Public Class LoginsController
         Return View(model)
     End Function
 
+    ''' <summary>
+    ''' Cette fonction permet d'attribuer une valeur aux différentes variable de session qui seront utilisées tout au long de l'exécution du programme. Il prend en paramètre l'utilisateur qui vient de se connecter
+    ''' </summary>
+    ''' <param name="appUser"></param>
+    Private Sub InitAppSessionValues(ByVal appUser As ApplicationUser)
+        AppSession.UserId = appUser.Id
+        AppSession.NomUser = appUser.Nom
+        AppSession.PrenomUser = appUser.Prenom
+        AppSession.UserName = appUser.UserName
+        AppSession.Niveau = appUser.Niveau
+        AppSession.ActionSousRessourceList = New List(Of ActionSousRessource)
+        AppSession.ActionSousRessourceList = (From actSubRes In Db.ActionSousRessource Where actSubRes.AspNetUserId = AppSession.UserId Select actSubRes).ToList()
+        AppSession.ModuleUserList = New List(Of Long)
+        Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(AppSession.UserId) Select userRole).ToList()
+        For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
+            'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
+            Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
+            For Each item In moduleRole
+                If Not (AppSession.ModuleUserList.Contains(item.Modules.Id)) Then
+                    AppSession.ModuleUserList.Add(item.Modules.Id)
+                End If
+            Next
+        Next
+
+        Long.TryParse(appUser.CommuneId.ToString, AppSession.CommuneId)
+        Long.TryParse(appUser.DepartementId.ToString, AppSession.DepartementId)
+        Long.TryParse(appUser.RegionId.ToString, AppSession.RegionId)
+    End Sub
+
     '
     ' POST: /Account/Login
     <HttpPost>
@@ -111,27 +149,13 @@ Public Class LoginsController
             Else
                 Dim result As Object = UserManager.PasswordHasher.VerifyHashedPassword(appUser.PasswordHash, model.Password)
                 If result = PasswordVerificationResult.Success Then
-                    AppSession.UserId = appUser.Id
-                    AppSession.NomUser = appUser.Nom
-                    AppSession.PrenomUser = appUser.Prenom
-                    AppSession.UserName = appUser.UserName
-                    AppSession.Niveau = appUser.Niveau
-                    Long.TryParse(appUser.CommuneId.ToString, AppSession.CommuneId)
-                    Long.TryParse(appUser.DepartementId.ToString, AppSession.DepartementId)
-                    Long.TryParse(appUser.RegionId.ToString, AppSession.RegionId)
+                    InitAppSessionValues(appUser)
                     appUser.AccessFailedCount = 0
                     appUser.LockoutEndDateUtc = Nothing
                     appUser.LockoutEnabled = False
                     UserManager.Update(appUser)
                     Await SignInAsync(appUser, model.RememberMe)
                     Return RedirectToAction("Index", "Home")
-                    'ElseIf result = PasswordVerificationResult.SuccessRehashNeeded Then
-                    '    ' Logged in using old Membership credentials - update hashed password in database
-                    '    ' Since we update the user on login anyway, we'll just set the new hash
-                    '    ' Optionally could set password via the ApplicationUserManager by using
-                    '    ' RemovePassword() and AddPassword()
-                    '    appUser.PasswordHash = UserManager.PasswordHasher.HashPassword(model.Password)
-                    '    Return RedirectToAction("Index", "Home")
                 Else
                     ' Failed login, increment failed login counter
                     ' Lockout for 15 minutes if more than 10 failed attempts

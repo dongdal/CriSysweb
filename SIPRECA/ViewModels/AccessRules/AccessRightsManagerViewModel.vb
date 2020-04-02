@@ -27,17 +27,17 @@ Public Class AccessRightsManagerViewModel
     Public Overridable Property LesRessources As ICollection(Of Ressource)
     Public Overridable Property Ressource As Ressource
 
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    <Display(Name:="SousRessource", ResourceType:=GetType(Resource))>
-    Public Property SousRessourceId As Long
-    Public Overridable Property LesSousRessources As ICollection(Of SelectListItem)
-    Public Overridable Property SousRessource As SousRessource
-
     '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
-    '<Display(Name:="Actions", ResourceType:=GetType(Resource))>
-    'Public Property ActionsId As List(Of Long)
-    'Public Overridable Property LesActions As ICollection(Of SelectListItem)
-    'Public Overridable Property Actions As Actions
+    '<Display(Name:="SousRessource", ResourceType:=GetType(Resource))>
+    'Public Property SousRessourceId As List(Of Long)
+    'Public Overridable Property LesSousRessources As ICollection(Of SelectListItem)
+    'Public Overridable Property SousRessource As SousRessource
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Actions", ResourceType:=GetType(Resource))>
+    Public Property ActionsId As List(Of String)
+    Public Overridable Property LesActions As ICollection(Of SelectListItem)
+    Public Overridable Property Actions As Actions
 
     <Display(Name:="Utilisateur", ResourceType:=GetType(Resource))>
     Public Property SelectedAspNetUserId As String

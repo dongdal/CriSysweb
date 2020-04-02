@@ -4628,6 +4628,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Vous n&apos;êtes pas autorisé à accéder à cette ressource.
+        '''</summary>
+        Public Shared ReadOnly Property Error400_AccessRights() As String
+            Get
+                Return ResourceManager.GetString("Error400_AccessRights", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à La requête envoyée est erronée. Veuillez executer de nouveau l&apos;opération. Si le problème persiste, veuillez contacter l&apos;administrateur..
         '''</summary>
         Public Shared ReadOnly Property Error400_Explain() As String
@@ -7202,6 +7211,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Veuillez sélectionner au moins une action.
+        '''</summary>
+        Public Shared ReadOnly Property MdlStatError_ActionList() As String
+            Get
+                Return ResourceManager.GetString("MdlStatError_ActionList", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Veuillez sélectionner un élément de la liste.
         '''</summary>
         Public Shared ReadOnly Property MdlStatError_NatureAide() As String
@@ -8224,6 +8242,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ModuleReport() As String
             Get
                 Return ResourceManager.GetString("ModuleReport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Module - Rôle.
+        '''</summary>
+        Public Shared ReadOnly Property ModuleRole() As String
+            Get
+                Return ResourceManager.GetString("ModuleRole", resourceCulture)
             End Get
         End Property
         
@@ -11113,6 +11140,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property SourcePlaceholder() As String
             Get
                 Return ResourceManager.GetString("SourcePlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Sours ressource.
+        '''</summary>
+        Public Shared ReadOnly Property SoursRessource() As String
+            Get
+                Return ResourceManager.GetString("SoursRessource", resourceCulture)
             End Get
         End Property
         

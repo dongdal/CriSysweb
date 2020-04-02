@@ -24,37 +24,18 @@ End Code
             <hr>
             @Using Html.BeginForm("AccessRightsManager", "Account", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
-                @<div Class="row">
+                @Html.HiddenFor(Function(m) m.SelectedAspNetUserId)
+                     @<div Class="row">
                     <div Class="col-lg-12">
                         <div Class="card">
                             <div Class="card-body">
                                 <div Class="row">
-                                    <div Class="col-md-3">
-                                        <ul Class="nav nav-pills nav-pills-dark flex-column top-icon" role="tablist">
-
-                                            @For each moduleRole In Model.LesModuleRoles
-                                                @<li Class="nav-item">
-                                                    <a Class="nav-link " data-toggle="pill" href="#module-@moduleRole.Modules.Id.ToString()">
-                                                        <i class="icon-home"></i>
-                                                        <span class="hidden-xs">@moduleRole.Modules.Libelle.ToUpper()</span>
-                                                    </a>
-                                                </li>
-                                            Next
-                                        </ul>
-                                    </div>
-
-                                    <div Class="col-md-9">
-                                        <!-- Tab panes -->
-                                        <div Class="tab-content">
-                                            @For Each moduleRole In Model.LesModuleRoles
-                                                @<div id="module-@moduleRole.Modules.Id.ToString()" Class="container tab-pane ">
-                                                    <h4> @moduleRole.Modules.Description.ToUpper()</h4>
-                                                    <p> @moduleRole.Modules.Description.ToUpper() : There are many variations Of passages Of Lorem Ipsum available, but the majority have suffered alteration In some form, by injected humour, Or randomised words which don't look even slightly believable.</p>
-                                                    <p>If you are going To use a passage Of Lorem Ipsum, you need To be sure there isn't anything embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet</p>
-                                                </div>
-                                            Next
-
-                                        </div>
+                                    <div class="col-md-12 form-group">
+                                        @Html.LabelFor(Function(m) m.ActionsId, New With {.class = "col-form-label"})<br />
+                                        @Html.DropDownListFor(Function(m) m.ActionsId, Model.LesActions,
+New With {.class = "form-control multi-select my_multi_select2", .multiple = "multiple", .style = "font-size: 5px;  height: 200px; "})
+                                        @Html.ValidationMessageFor(Function(m) m.ActionsId, "",
+New With {.style = "color: #da0b0b"})
                                     </div>
                                 </div><!--End row-->
                             </div>
@@ -62,6 +43,14 @@ End Code
                     </div>
                 </div>
 
+                @<div Class="form-group row">
+                    <Label Class="col-sm-2 col-form-label"></Label>
+                    <div Class="col-sm-10">
+                        <Button type="submit" Class="btn btn-link btn-square bg-primary text-dark shadow px-5"><i Class="icon-lock"></i> @Resource.BtnSave</Button>
+                        &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink(Resource.BtnCancel, "Index", Nothing, New With {.class = "btn btn-link btn-square bg-white text-dark shadow px-5"})
+                    </div>
+                </div>
             End Using
 
         </div>

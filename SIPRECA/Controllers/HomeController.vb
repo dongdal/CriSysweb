@@ -18,50 +18,25 @@ Public Class HomeController
         End Set
     End Property
 
-    Function IndexParam() As ActionResult
-        Return View()
-    End Function
 
     Function Index() As ActionResult
-        Dim AnneesBudgetaires = (From annee In Db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee).ToList()
-        Dim LesAnneesBudgetaires As New List(Of SelectListItem)
-        For Each item In AnneesBudgetaires
-            LesAnneesBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+        AppSession.ListRessources = New List(Of Ressource)
+        For Each item In AppSession.ActionSousRessourceList
+            AppSession.ListRessources.Add(item.SousRessource.Ressource)
         Next
-        ViewBag.LesAnneesBudgetaires = LesAnneesBudgetaires
-        Return View()
-    End Function
-
-    Function IndexSahana() As ActionResult
-        Dim MoyenReponse As New MoyenReponse()
-        MoyenReponse.Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.PortDeMer = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e).ToList().Count
-        ViewBag.MoyenReponse = MoyenReponse
-        Return View()
-    End Function
-
-    Function IndexReport() As ActionResult
-        Return View()
-    End Function
-
-    Function IndexDesinventar() As ActionResult
-        Return View()
-    End Function
-
-    Function IndexCollecte() As ActionResult
-        Return View()
-    End Function
-
-    Function IndexAlertes() As ActionResult
-        Return View()
+        Dim AnneesBudgetaires = (From annee In Db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee).ToList()
+            Dim LesAnneesBudgetaires As New List(Of SelectListItem)
+            For Each item In AnneesBudgetaires
+                LesAnneesBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+            ViewBag.LesAnneesBudgetaires = LesAnneesBudgetaires
+            Return View()
     End Function
 
     Function IndexSinistre(AnneeBudgetaireId As Long?) As ActionResult
+        If Not AppSession.ModuleUserList.Contains(1) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
         AppSession.LesAnneeBudgetaires = Db.AnneeBudgetaires.Where(Function(e) e.StatutExistant = 1).ToList
         Dim EtatDemande As New EtatDemande()
         Dim entities = (From e In Db.Demande Select e)
@@ -97,6 +72,57 @@ Public Class HomeController
             Return HttpNotFound()
         End If
         AppSession.AnneeBudgetaire = anneeBudgetaire
+        Return View()
+    End Function
+
+    Function IndexSahana() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(2) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Dim MoyenReponse As New MoyenReponse()
+        MoyenReponse.Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count
+        MoyenReponse.PortDeMer = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e).ToList().Count
+        ViewBag.MoyenReponse = MoyenReponse
+        Return View()
+    End Function
+
+    Function IndexDesinventar() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(3) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Return View()
+    End Function
+
+    Function IndexCollecte() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(4) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Return View()
+    End Function
+
+    Function IndexAlertes() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(5) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Return View()
+    End Function
+
+    Function IndexParam() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(6) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Return View()
+    End Function
+
+    Function IndexReport() As ActionResult
+        If Not AppSession.ModuleUserList.Contains(7) Then
+            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
         Return View()
     End Function
 

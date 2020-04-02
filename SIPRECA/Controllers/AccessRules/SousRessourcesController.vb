@@ -100,7 +100,7 @@ Namespace Controllers
                 End If
             Next
 
-            Dim Ressources = (From e In Db.Ressource Where e.StatutExistant = 1 Select e)
+            Dim Ressources = (From e In Db.Ressource Where e.StatutExistant = 1 Select e).ToList
             Dim LesRessources As New List(Of SelectListItem)
             For Each item In Ressources
                 LesRessources.Add(New SelectListItem With {.Value = item.Id, .Text = item.Modules.Libelle & " -> " & item.Libelle})
