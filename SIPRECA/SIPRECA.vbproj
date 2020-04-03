@@ -277,6 +277,7 @@
     <Compile Include="Controllers\TypeSuivisController.vb" />
     <Compile Include="Controllers\TypeVehiculesController.vb" />
     <Compile Include="Controllers\UsageHumanitairesController.vb" />
+    <Compile Include="DAL\Config\AccessRules\AspNetUserActionSousRessourceCfg.vb" />
     <Compile Include="DAL\Config\AccessRules\SousRessourceCfg.vb" />
     <Compile Include="DAL\Config\AccessRules\RessourceCfg.vb" />
     <Compile Include="DAL\Config\AccessRules\ModulesCfg.vb" />
@@ -490,6 +491,10 @@
       <DependentUpon>202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb" />
+    <Compile Include="Migrations\202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.Designer.vb">
+      <DependentUpon>202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccessRules\Actions.vb" />
     <Compile Include="Models\AccessRules\ActionSousRessource.vb" />
@@ -572,6 +577,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewModels\AccessRules\AccessRightsManagerViewModel.vb" />
+    <Compile Include="ViewModels\AccessRules\AspNetUserActionSousRessource.vb" />
     <Compile Include="ViewModels\AccessRules\ModuleRoleViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\ActionSousRessourceViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\SousRessourcesViewModel.vb" />
@@ -919,6 +925,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.resx">
       <DependentUpon>202003121200590_Alter_table_rename_column_ModuleId_to_ModulesId.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.resx">
+      <DependentUpon>202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

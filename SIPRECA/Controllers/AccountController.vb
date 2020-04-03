@@ -442,14 +442,24 @@ Public Class AccountController
                     .Name = sousRessource.Ressource.Modules.Libelle.ToUpper() & "->" & sousRessource.Ressource.Libelle.ToUpper() & "->" & sousRessource.Libelle.ToUpper()
                 }
 
-                'On charge les actions et on les affecte au groupe correspondant à la sous ressource en cours.
-                For Each actions As Actions In Db.Actions.Where(Function(a) a.StatutExistant = 1)
+                Dim ActionSousRessource = (From a In Db.ActionSousRessource Where a.StatutExistant = 1 And a.SousRessourceId = sousRessource.Id Select a).ToList
+                'Pour chaque sous ressource, on charge les actions possibles pour la ressource et on les affecte au groupe correspondant à la sous ressource.
+                For Each actSousRes In ActionSousRessource
                     entityVM.LesActions.Add(New SelectListItem() With {
-                        .Value = sousRessource.Id & "-" & actions.Id,
-                        .Text = actions.Libelle,
+                        .Value = actSousRes.Id,
+                        .Text = actSousRes.Actions.Libelle,
                         .Group = group
                     })
                 Next
+
+                'On charge les actions et on les affecte au groupe correspondant à la sous ressource en cours.
+                'For Each actions As Actions In Db.Actions.Where(Function(a) a.StatutExistant = 1)
+                '    entityVM.LesActions.Add(New SelectListItem() With {
+                '        .Value = sousRessource.Id & "-" & actions.Id,
+                '        .Text = actions.Libelle,
+                '        .Group = group
+                '    })
+                'Next
             Next
         Next
 

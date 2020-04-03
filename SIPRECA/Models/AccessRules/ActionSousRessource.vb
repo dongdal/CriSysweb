@@ -10,4 +10,10 @@
 
     Public Property AspNetUserId As String 'Il s'agit de l'utilisateur à qui on souhaite accorder des droits
     Public Overridable Property AspNetUser As ApplicationUser
+
+
+    Public Overridable Property AspNetUserActionSousRessource As ICollection(Of AspNetUserActionSousRessource)
+    Public Sub New()
+        AspNetUserActionSousRessource = New HashSet(Of AspNetUserActionSousRessource)()
+    End Sub
 End Class

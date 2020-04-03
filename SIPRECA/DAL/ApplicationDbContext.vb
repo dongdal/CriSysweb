@@ -144,6 +144,7 @@ Public Class ApplicationDbContext
         '-----------------------------------------------------------------------------START ACCES RULES-----------------------------------------------------------------------------
         modelBuilder.Configurations.Add(New ActionsCfg())
         modelBuilder.Configurations.Add(New ActionSousRessourceCfg())
+        modelBuilder.Configurations.Add(New AspNetUserActionSousRessourceCfg())
         modelBuilder.Configurations.Add(New ModuleRoleCfg())
         modelBuilder.Configurations.Add(New ModulesCfg())
         modelBuilder.Configurations.Add(New RessourceCfg())
@@ -275,6 +276,7 @@ Public Class ApplicationDbContext
     '-----------------------------------------------------------------------------START ACCES RULES-----------------------------------------------------------------------------
     Public Property Actions() As DbSet(Of Actions)
     Public Property ActionSousRessource() As DbSet(Of ActionSousRessource)
+    Public Property AspNetUserActionSousRessource() As DbSet(Of AspNetUserActionSousRessource)
     Public Property ModuleRole() As DbSet(Of ModuleRole)
     Public Property Modules() As DbSet(Of Modules)
     Public Property Ressource() As DbSet(Of Ressource)

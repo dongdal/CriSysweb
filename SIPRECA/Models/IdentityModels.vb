@@ -58,6 +58,8 @@ Public Class ApplicationUser
         ActionSousRessource = New HashSet(Of ActionSousRessource)()
         Ressource = New HashSet(Of Ressource)()
         SousRessource = New HashSet(Of SousRessource)()
+        AspNetUserActionSousRessource = New HashSet(Of AspNetUserActionSousRessource)()
+        AspNetUserActionSousRessources = New HashSet(Of AspNetUserActionSousRessource)()
     End Sub
 
     Public Property Nom As String
@@ -137,6 +139,8 @@ Public Class ApplicationUser
     Public Overridable Property ActionSousRessource As ICollection(Of ActionSousRessource)
     Public Overridable Property Ressource As ICollection(Of Ressource)
     Public Overridable Property SousRessource As ICollection(Of SousRessource)
+    Public Overridable Property AspNetUserActionSousRessource As ICollection(Of AspNetUserActionSousRessource)
+    Public Overridable Property AspNetUserActionSousRessources As ICollection(Of AspNetUserActionSousRessource)
 
 
 End Class
