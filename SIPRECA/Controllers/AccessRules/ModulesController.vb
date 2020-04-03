@@ -118,6 +118,9 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As ModulesViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
+            If (IsNothing(entityVM.AspNetRolesId)) Then
+                ModelState.AddModelError("AspNetRolesId", Resource.RequiredField)
+            End If
             If ModelState.IsValid Then
                 Dim entity = entityVM.GetEntity
                 Db.Modules.Add(entity)

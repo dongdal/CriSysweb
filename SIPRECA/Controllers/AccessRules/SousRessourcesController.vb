@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class SousRessourcesController
@@ -106,8 +107,16 @@ Namespace Controllers
                 LesRessources.Add(New SelectListItem With {.Value = item.Id, .Text = item.Modules.Libelle & " -> " & item.Libelle})
             Next
 
+
+            Dim Actions = (From e In Db.Actions Select e Where e.StatutExistant = 1)
+            Dim LesActions As New List(Of SelectListItem)
+            For Each item In Actions
+                LesActions.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
+            Next
+
             entityVM.LesRessources = LesRessources
             entityVM.LesUtilisateurs = LesUtilisateurs
+            entityVM.LesActions = LesActions
         End Sub
 
         ' GET: SousRessource/Create
@@ -124,10 +133,15 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As SousRessourceViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
+            If (IsNothing(entityVM.ActionsId)) Then
+                ModelState.AddModelError("ActionsId", Resource.RequiredField)
+            End If
             If ModelState.IsValid Then
-                Db.SousRessource.Add(entityVM.GetEntity)
+                Dim entity = entityVM.GetEntity()
+                Db.SousRessource.Add(entity)
                 Try
                     Db.SaveChanges()
+                    AddActionSousRessource(entityVM.ActionsId, entity.Id)
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
@@ -138,6 +152,38 @@ Namespace Controllers
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
+
+        Private Sub AddActionSousRessource(ByVal ListActions As List(Of Long), IdSousRessource As Long)
+            For Each action In ListActions
+                Dim actionSousRessource As New ActionSousRessource With {
+                .ActionsId = action,
+                .AspNetUserId = GetCurrentUser().Id,
+                .SousRessourceId = IdSousRessource,
+                .DateCreation = Now,
+                .StatutExistant = 1
+                }
+                Db.ActionSousRessource.Add(actionSousRessource)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            Next
+        End Sub
+
+        Private Sub DeleteActionSousRessource(IdSousRessource As Long)
+            Dim actionSousRessource = (From e In Db.ActionSousRessource Where e.SousRessourceId = IdSousRessource Select e)
+            Db.ActionSousRessource.RemoveRange(actionSousRessource)
+            Try
+                Db.SaveChanges()
+            Catch ex As DbEntityValidationException
+                Util.GetError(ex, ModelState)
+            Catch ex As Exception
+                Util.GetError(ex, ModelState)
+            End Try
+        End Sub
 
         ' GET: SousRessource/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
@@ -150,6 +196,16 @@ Namespace Controllers
             End If
             Dim entityVM As New SousRessourceViewModel(SousRessource)
             LoadComboBox(entityVM)
+
+            entityVM.ActionsId = (From actSousRes In Db.ActionSousRessource Where actSousRes.SousRessourceId = id Select actSousRes.ActionsId).ToList()
+            For Each IdAction In entityVM.ActionsId
+                For Each item In entityVM.LesActions
+                    If item.Value = IdAction.ToString Then
+                        item.Selected = True
+                    End If
+                Next
+            Next
+
             Return View(entityVM)
         End Function
 
@@ -159,10 +215,15 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As SousRessourceViewModel) As ActionResult
+            If (IsNothing(entityVM.ActionsId)) Then
+                ModelState.AddModelError("ActionsId", Resource.RequiredField)
+            End If
             If ModelState.IsValid Then
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
                     Db.SaveChanges()
+                    DeleteActionSousRessource(entityVM.Id) 'On supprime les anciens enregistrements dans la table ActionSousRessource
+                    AddActionSousRessource(entityVM.ActionsId, entityVM.Id) 'On ajoute les nouvelles références
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)

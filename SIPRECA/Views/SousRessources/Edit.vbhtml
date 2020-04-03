@@ -44,9 +44,15 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                 </div>
 
                 @<div Class="form-group row">
+                    @Html.LabelFor(Function(m) m.ActionsId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.ListBoxFor(Function(m) m.ActionsId, Model.LesActions, New With {.class = "form-control single-select", .multiple = "multiple", .tabindex = "3"})
+                        @Html.ValidationMessageFor(Function(m) m.ActionsId, "", New With {.style = "color: #da0b0b"})
+                    </div>
+
                     @Html.LabelFor(Function(m) m.Description, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextAreaFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.DescriptionPlaceholder})
+                        @Html.TextAreaFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "4", .Placeholder = Resource.DescriptionPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Description, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

@@ -34,6 +34,12 @@ Public Class SousRessourceViewModel
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
 
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Actions", ResourceType:=GetType(Resource))>
+    Public Property ActionsId As List(Of Long)
+    Public Overridable Property LesActions As ICollection(Of SelectListItem)
+    Public Overridable Property Actions As Actions
+
     Public Sub New()
     End Sub
 

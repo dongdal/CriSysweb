@@ -74,7 +74,7 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Libelle)
                             </td>
                             <td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.Ressource.Libelle)
+                                @item.Ressource.Modules.Libelle.ToUpper() -> @item.Ressource.Libelle
                             </td>
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Description)
