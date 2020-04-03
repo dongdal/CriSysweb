@@ -7,7 +7,7 @@ Public Class ModuleRoleViewModel
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Modules", ResourceType:=GetType(Resource))>
-    Public Property ModulesId As Long
+    Public Property ModulesId As List(Of Long)
     Public Overridable Property LesModules As ICollection(Of SelectListItem)
     Public Overridable Property Modules As Modules
 
@@ -37,7 +37,7 @@ Public Class ModuleRoleViewModel
     Public Sub New(entity As ModuleRole)
         With Me
             .Id = entity.Id
-            .ModulesId = entity.ModulesId
+            '.ModulesId = entity.ModulesId
             .Modules = entity.Modules
             .AspNetRolesId = entity.AspNetRolesId
             .AspNetRoles = entity.AspNetRoles
@@ -52,7 +52,7 @@ Public Class ModuleRoleViewModel
         Dim entity As New ModuleRole
         With entity
             .Id = Id
-            .ModulesId = ModulesId
+            '.ModulesId = ModulesId
             .AspNetRolesId = AspNetRolesId
             .StatutExistant = StatutExistant
             .DateCreation = DateCreation

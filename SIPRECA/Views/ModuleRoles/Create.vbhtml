@@ -33,8 +33,8 @@ End Code
 
                     @Html.LabelFor(Function(m) m.ModulesId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.ModulesId, New SelectList(Model.LesModules, "Value", "Text"), Resource.ModulesCombo,
-             New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ModulesCombo})
+                        @Html.DropDownListFor(Function(m) m.ModulesId, New SelectList(Model.LesModules, "Value", "Text"),
+       New With {.class = "form-control multiple-select", .multiple = "multiple", .tabindex = "2"})
                         @Html.ValidationMessageFor(Function(m) m.ModulesId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

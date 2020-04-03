@@ -31,14 +31,13 @@ End Code
                     @Html.LabelFor(Function(m) m.AspNetRolesId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
                         @Html.DropDownListFor(Function(m) m.AspNetRolesId, New SelectList(Model.LesRoles, "Value", "Text"), Resource.RoleCombo,
-New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.RoleCombo})
+             New With {.class = "form-control single-select", .tabindex = "1", .Placeholder = Resource.RoleCombo})
                         @Html.ValidationMessageFor(Function(m) m.AspNetRolesId, "", New With {.style = "color: #da0b0b"})
                     </div>
 
                     @Html.LabelFor(Function(m) m.ModulesId, New With {.class = "col-sm-2 col-form-label required_field"})
                     <div class="col-sm-4 form-group">
-                        @Html.DropDownListFor(Function(m) m.ModulesId, New SelectList(Model.LesModules, "Value", "Text"), Resource.ModulesCombo,
-       New With {.class = "form-control single-select", .tabindex = "2", .Placeholder = Resource.ModulesCombo})
+                        @Html.ListBoxFor(Function(m) m.ModulesId, Model.LesModules, New With {.class = "form-control single-select", .multiple = "multiple", .tabindex = "2"})
                         @Html.ValidationMessageFor(Function(m) m.ModulesId, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>

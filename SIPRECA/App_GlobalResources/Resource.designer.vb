@@ -7238,6 +7238,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à .
+        '''</summary>
+        Public Shared ReadOnly Property MdlStatError_Role() As String
+            Get
+                Return ResourceManager.GetString("MdlStatError_Role", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Les actions.
         '''</summary>
         Public Shared ReadOnly Property Menu_Actions() As String

@@ -4092,4 +4092,7 @@
   <data name="ModuleRole" xml:space="preserve">
     <value>Module - Rôle</value>
   </data>
+  <data name="MdlStatError_Role" xml:space="preserve">
+    <value />
+  </data>
 </root>

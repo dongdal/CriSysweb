@@ -125,15 +125,25 @@ Namespace Controllers
         Function Create(ByVal entityVM As ModuleRoleViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
-                Db.ModuleRole.Add(entityVM.GetEntity)
-                Try
-                    Db.SaveChanges()
-                    Return RedirectToAction("Index")
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+                For Each item In entityVM.ModulesId
+                    Dim ModuleRole As New ModuleRole With {
+                    .AspNetRolesId = entityVM.AspNetRolesId,
+                    .AspNetUserId = entityVM.AspNetUserId,
+                    .ModulesId = item,
+                    .DateCreation = Now,
+                    .Id = entityVM.Id,
+                    .StatutExistant = 1
+                    }
+                    Db.ModuleRole.Add(ModuleRole)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                Next
+                Return RedirectToAction("Index")
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -150,6 +160,16 @@ Namespace Controllers
             End If
             Dim entityVM As New ModuleRoleViewModel(ModuleRole)
             LoadComboBox(entityVM)
+
+            entityVM.ModulesId = (From modRol In Db.ModuleRole Where modRol.Id = id Select modRol.ModulesId).ToList()
+            For Each IdModule In entityVM.ModulesId
+                For Each item In entityVM.LesModules
+                    If item.Value = IdModule.ToString Then
+                        item.Selected = True
+                    End If
+                Next
+            Next
+
             Return View(entityVM)
         End Function
 

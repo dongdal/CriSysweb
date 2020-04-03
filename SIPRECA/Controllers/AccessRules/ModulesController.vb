@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class ModulesController
@@ -93,7 +94,14 @@ Namespace Controllers
                 End If
             Next
 
+            Dim AspNetRoles = (From e In Db.Roles Select e)
+            Dim LesAspNetRoles As New List(Of SelectListItem)
+            For Each item In AspNetRoles
+                LesAspNetRoles.Add(New SelectListItem With {.Value = item.Id, .Text = item.Name})
+            Next
+
             entityVM.LesUtilisateurs = LesUtilisateurs
+            entityVM.LesAspNetRoles = LesAspNetRoles
         End Sub
 
         ' GET: Modules/Create
@@ -111,9 +119,11 @@ Namespace Controllers
         Function Create(ByVal entityVM As ModulesViewModel) As ActionResult
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
-                Db.Modules.Add(entityVM.GetEntity)
+                Dim entity = entityVM.GetEntity
+                Db.Modules.Add(entity)
                 Try
                     Db.SaveChanges()
+                    AddModuleRole(entityVM.AspNetRolesId, entity.Id)
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
@@ -124,6 +134,26 @@ Namespace Controllers
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
+
+        Private Sub AddModuleRole(ByVal ListRoles As List(Of String), IdModule As Long)
+            For Each role In ListRoles
+                Dim ModuleRole As New ModuleRole With {
+                .AspNetRolesId = role,
+                .AspNetUserId = GetCurrentUser().Id,
+                .ModulesId = IdModule,
+                .DateCreation = Now,
+                .StatutExistant = 1
+                }
+                Db.ModuleRole.Add(ModuleRole)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            Next
+        End Sub
 
         ' GET: Modules/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
@@ -136,6 +166,16 @@ Namespace Controllers
             End If
             Dim entityVM As New ModulesViewModel(Modules)
             LoadComboBox(entityVM)
+
+            entityVM.AspNetRolesId = (From modRol In Db.ModuleRole Where modRol.ModulesId = id Select modRol.AspNetRolesId).ToList()
+            For Each IdRole In entityVM.AspNetRolesId
+                For Each item In entityVM.LesAspNetRoles
+                    If item.Value = IdRole.ToString Then
+                        item.Selected = True
+                    End If
+                Next
+            Next
+
             Return View(entityVM)
         End Function
 
@@ -145,10 +185,15 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As ModulesViewModel) As ActionResult
+            If (IsNothing(entityVM.AspNetRolesId)) Then
+                ModelState.AddModelError("AspNetRolesId", Resource.RequiredField)
+            End If
             If ModelState.IsValid Then
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
                     Db.SaveChanges()
+                    DeleteModuleRole(entityVM.Id) 'On supprime les anciens enregistrements dans la table ModuleRole
+                    AddModuleRole(entityVM.AspNetRolesId, entityVM.Id) 'On ajoute les nouvelles références
                     Return RedirectToAction("Index")
                 Catch ex As DbEntityValidationException
                     Util.GetError(ex, ModelState)
@@ -159,6 +204,18 @@ Namespace Controllers
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
+
+        Private Sub DeleteModuleRole(IdModule As Long)
+            Dim moduleRole = (From e In Db.ModuleRole Where e.ModulesId = IdModule Select e)
+            Db.ModuleRole.RemoveRange(moduleRole)
+            Try
+                Db.SaveChanges()
+            Catch ex As DbEntityValidationException
+                Util.GetError(ex, ModelState)
+            Catch ex As Exception
+                Util.GetError(ex, ModelState)
+            End Try
+        End Sub
 
         ' GET: Modules/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult

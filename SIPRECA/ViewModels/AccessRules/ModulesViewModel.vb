@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel.DataAnnotations
+Imports Microsoft.AspNet.Identity.EntityFramework
 Imports SIPRECA.My.Resources
 
 Public Class ModulesViewModel
@@ -27,6 +28,12 @@ Public Class ModulesViewModel
     Public Property AspNetUserId As String
     Public Overridable Property LesUtilisateurs As ICollection(Of SelectListItem)
     Public Overridable Property AspNetUser As ApplicationUser
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="Role", ResourceType:=GetType(Resource))>
+    Public Property AspNetRolesId As List(Of String)
+    Public Overridable Property LesAspNetRoles As ICollection(Of SelectListItem)
+    Public Overridable Property AspNetRoles As IdentityRole
 
     Public Sub New()
     End Sub

@@ -33,12 +33,18 @@ End Code
                         @Html.TextBoxFor(Function(m) m.Libelle, New With {.class = "form-control form-control-square", .tabindex = "1", .Placeholder = Resource.LibellePlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Libelle, "", New With {.style = "color: #da0b0b"})
                     </div>
+
+                    @Html.LabelFor(Function(m) m.AspNetRolesId, New With {.class = "col-sm-2 col-form-label required_field"})
+                    <div class="col-sm-4">
+                        @Html.ListBoxFor(Function(m) m.AspNetRolesId, Model.LesAspNetRoles, New With {.class = "form-control single-select", .multiple = "multiple", .tabindex = "2"})
+                        @Html.ValidationMessageFor(Function(m) m.AspNetRolesId, "", New With {.style = "color: #da0b0b"})
+                    </div>
                 </div>
 
                 @<div Class="form-group row">
                     @Html.LabelFor(Function(m) m.Description, New With {.class = "col-sm-2 col-form-label "})
                     <div class="col-sm-4">
-                        @Html.TextAreaFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "2", .Placeholder = Resource.DescriptionPlaceholder})
+                        @Html.TextAreaFor(Function(m) m.Description, New With {.class = "form-control form-control-square", .tabindex = "3", .Placeholder = Resource.DescriptionPlaceholder})
                         @Html.ValidationMessageFor(Function(m) m.Description, "", New With {.style = "color: #da0b0b"})
                     </div>
                 </div>
