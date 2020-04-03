@@ -476,19 +476,17 @@ Public Class AccountController
         If ModelState.IsValid Then
             'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
             DeleteAccessRights(entityVM.SelectedAspNetUserId)
-            For Each item In entityVM.ActionsId 'Pour chaque élément dans la liste (Ex: Id_ress-Id_act) on fera un split sur le "-" pour avoir l'id de la sous ressource et de l'action correspondante
-                'Création d'un tableau IdArray  de chaînes de caractères qui recevra les deux identifiants après l'opération de split.
-                'Le premier élément du tableau correspondra à l'identition de la sous ressource, et le second à l'identifiant de l'action.
-                Dim IdArray As String() = item.Split(New Char() {"-"c})
-                'Création d'un objet ActionSousRessource
-                Dim actionSousRessource As New ActionSousRessource With {
-                .ActionsId = IdArray(1),
-                .SousRessourceId = IdArray(0),
+            'Pour chaque élément dans la liste représentant l'identifiant d'un tuple de la table actionSousRessource, on enregistra dans la table aspnetuserAction....  
+            'la valeur en cours à partir de laquelle il sera facile d'avoir l'action associée
+            For Each item In entityVM.ActionsId
+                Dim aspNetUserActionSousRessource As New AspNetUserActionSousRessource With {
+                .ActionSousRessourceId = item,
                 .AspNetUserId = entityVM.SelectedAspNetUserId,
                 .DateCreation = Now,
-                .StatutExistant = 1
+                .StatutExistant = 1,
+                .UserId = User.Identity.GetUserId()
                 }
-                Db.ActionSousRessource.Add(actionSousRessource)
+                Db.AspNetUserActionSousRessource.Add(aspNetUserActionSousRessource)
                 Try
                     Db.SaveChanges()
                 Catch ex As DbEntityValidationException
@@ -502,14 +500,49 @@ Public Class AccountController
         Return View(entityVM)
     End Function
 
+    '<HttpPost>
+    '<ValidateAntiForgeryToken>
+    'Public Function AccessRightsManager(entityVM As AccessRightsManagerViewModel) As ActionResult
+    '    If (IsNothing(entityVM.ActionsId)) Then
+    '        ModelState.AddModelError("", Resource.MdlStatError_ActionList)
+    '    End If
+    '    If ModelState.IsValid Then
+    '        'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
+    '        DeleteAccessRights(entityVM.SelectedAspNetUserId)
+    '        For Each item In entityVM.ActionsId 'Pour chaque élément dans la liste (Ex: Id_ress-Id_act) on fera un split sur le "-" pour avoir l'id de la sous ressource et de l'action correspondante
+    '            'Création d'un tableau IdArray  de chaînes de caractères qui recevra les deux identifiants après l'opération de split.
+    '            'Le premier élément du tableau correspondra à l'identition de la sous ressource, et le second à l'identifiant de l'action.
+    '            Dim IdArray As String() = item.Split(New Char() {"-"c})
+    '            'Création d'un objet ActionSousRessource
+    '            Dim actionSousRessource As New ActionSousRessource With {
+    '            .ActionsId = IdArray(1),
+    '            .SousRessourceId = IdArray(0),
+    '            .AspNetUserId = entityVM.SelectedAspNetUserId,
+    '            .DateCreation = Now,
+    '            .StatutExistant = 1
+    '            }
+    '            Db.ActionSousRessource.Add(actionSousRessource)
+    '            Try
+    '                Db.SaveChanges()
+    '            Catch ex As DbEntityValidationException
+    '                Util.GetError(ex, ModelState)
+    '            Catch ex As Exception
+    '                Util.GetError(ex, ModelState)
+    '            End Try
+    '        Next
+    '        Return RedirectToAction("Index")
+    '    End If
+    '    Return View(entityVM)
+    'End Function
+
     ''' <summary>
     ''' Cette fonction permet de supprimer tous les anciens droits d'accès accordés à l'utilisateur dont l'identifiant est passé en paramètre.
     ''' </summary>
     ''' <param name="UserId"></param>
     Private Sub DeleteAccessRights(UserId As String)
         'On sélectionne tous les droits de l'utilsiateur
-        Dim AllUserRights = (From e In Db.ActionSousRessource Where e.AspNetUserId = UserId Select e).ToList()
-        Db.ActionSousRessource.RemoveRange(AllUserRights)
+        Dim AllUserRights = (From e In Db.AspNetUserActionSousRessource Where e.AspNetUserId = UserId Select e).ToList()
+        Db.AspNetUserActionSousRessource.RemoveRange(AllUserRights)
         Try
             Db.SaveChanges()
         Catch ex As DbEntityValidationException
