@@ -153,12 +153,31 @@
         End Set
     End Property
 
-    Shared Property ListRessources As List(Of Ressource)
+    Shared Property ListRessources As List(Of Long)
         Get
             Return HttpContext.Current.Session("ListRessources")
         End Get
-        Set(value As List(Of Ressource))
+        Set(value As List(Of Long))
             HttpContext.Current.Session("ListRessources") = value
         End Set
     End Property
+
+    Shared Property ListSousRessources As List(Of Long)
+        Get
+            Return HttpContext.Current.Session("ListSousRessources")
+        End Get
+        Set(value As List(Of Long))
+            HttpContext.Current.Session("ListSousRessources") = value
+        End Set
+    End Property
+
+    Shared Property ListUserActionSousResource As List(Of AspNetUserActionSousRessource)
+        Get
+            Return HttpContext.Current.Session("ListUserActionSousResource")
+        End Get
+        Set(value As List(Of AspNetUserActionSousRessource))
+            HttpContext.Current.Session("ListUserActionSousResource") = value
+        End Set
+    End Property
+
 End Class

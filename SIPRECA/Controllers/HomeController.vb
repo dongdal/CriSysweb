@@ -20,12 +20,8 @@ Public Class HomeController
 
 
     Function Index() As ActionResult
-        AppSession.ListRessources = New List(Of Ressource)
-        For Each item In AppSession.ActionSousRessourceList
-            AppSession.ListRessources.Add(item.SousRessource.Ressource)
-        Next
         Dim AnneesBudgetaires = (From annee In Db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee).ToList()
-            Dim LesAnneesBudgetaires As New List(Of SelectListItem)
+        Dim LesAnneesBudgetaires As New List(Of SelectListItem)
             For Each item In AnneesBudgetaires
                 LesAnneesBudgetaires.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
             Next
@@ -79,14 +75,16 @@ Public Class HomeController
         If Not AppSession.ModuleUserList.Contains(2) Then
             Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
-        Dim MoyenReponse As New MoyenReponse()
-        MoyenReponse.Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count
-        MoyenReponse.PortDeMer = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e).ToList().Count
+
+        Dim MoyenReponse As New MoyenReponse With {
+            .Abris = (From e In Db.Abris Where e.StatutExistant = 1 Select e).ToList().Count,
+            .Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e).ToList().Count,
+            .Bureaux = (From e In Db.Bureau Where e.StatutExistant = 1 Select e).ToList().Count,
+            .Entrepots = (From e In Db.Entrepots Where e.StatutExistant = 1 Select e).ToList().Count,
+            .Heliports = (From e In Db.Heliport Where e.StatutExistant = 1 Select e).ToList().Count,
+            .Hopitaux = (From e In Db.Hopitaux Where e.StatutExistant = 1 Select e).ToList().Count,
+            .PortDeMer = (From e In Db.PortDeMer Where e.StatutExistant = 1 Select e).ToList().Count
+        }
         ViewBag.MoyenReponse = MoyenReponse
         Return View()
     End Function

@@ -1,10 +1,9 @@
 ﻿Imports System.Security.Principal
 Imports System.Runtime.CompilerServices
-Imports SIPRECA
 
-Public Module IPrincipalExtensionModule
+Module MyExtensionModule
     <Extension()>
-    Public Function IsInAnyRole(principal As IPrincipal, ParamArray roles As String()) As Boolean
+    Public Function IsInRole(principal As IPrincipal, ParamArray roles As String()) As Boolean
         For Each role In roles
             If principal.IsInRole(role) Then
                 Return True
@@ -15,7 +14,7 @@ Public Module IPrincipalExtensionModule
     End Function
 
     <Extension()>
-    Public Function IsInAnyRole(principal As IPrincipal, str_roles As String) As Boolean
+    Public Function IsInRole(principal As IPrincipal, str_roles As String) As Boolean
         Dim roles = str_roles.Split(",")
         For Each role In roles
             If principal.IsInRole(role.Trim) Then

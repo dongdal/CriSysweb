@@ -40,19 +40,22 @@
     </div>
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="fa fa-bell"></i><span>@Resource.ManageAlert</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("IndexSMS", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendSMS</a></li>
-                <li><a href="@Url.Action("Index", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendMail</a></li>
-            </ul>
-        </li>
-        
-
-
+        @If AppSession.ListRessources.Contains(19) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="fa fa-bell"></i><span>@Resource.ManageAlert</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(59) Then
+                        @<li><a href="@Url.Action("IndexSMS", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendSMS</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(60) Then
+                        @<li><a href="@Url.Action("Index", "Alerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i>@Resource.SendMail</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
 
     </ul>
 

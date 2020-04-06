@@ -27,7 +27,7 @@
     <IISExpressUseClassicPipelineMode />
     <Use64BitIISExpress />
     <UseGlobalApplicationHostFile />
-    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +37,19 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>SIPRECA.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -351,6 +364,7 @@
     <Compile Include="DAL\Config\PropositionCfg.vb" />
     <Compile Include="DAL\Config\QuartierCfg.vb" />
     <Compile Include="DAL\Config\TypeAideCfg.vb" />
+    <Compile Include="Infrastructures\MyExtensionModule.vb" />
     <Compile Include="Migrations\201907232032095_Create-DataBase.Designer.vb">
       <DependentUpon>201907232032095_Create-DataBase.vb</DependentUpon>
     </Compile>
@@ -495,6 +509,14 @@
       <DependentUpon>202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb" />
+    <Compile Include="Migrations\202004061401371_Remove_Table_AspNetUserActionSousRessource.Designer.vb">
+      <DependentUpon>202004061401371_Remove_Table_AspNetUserActionSousRessource.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061401371_Remove_Table_AspNetUserActionSousRessource.vb" />
+    <Compile Include="Migrations\202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.Designer.vb">
+      <DependentUpon>202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccessRules\Actions.vb" />
     <Compile Include="Models\AccessRules\ActionSousRessource.vb" />
@@ -577,7 +599,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewModels\AccessRules\AccessRightsManagerViewModel.vb" />
-    <Compile Include="ViewModels\AccessRules\AspNetUserActionSousRessource.vb" />
+    <Compile Include="Models\AccessRules\AspNetUserActionSousRessource.vb" />
     <Compile Include="ViewModels\AccessRules\ModuleRoleViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\ActionSousRessourceViewModel.vb" />
     <Compile Include="ViewModels\AccessRules\SousRessourcesViewModel.vb" />
@@ -658,7 +680,9 @@
     <Compile Include="ViewModels\TypeSuiviViewModel.vb" />
     <Compile Include="ViewModels\TypeVehiculeViewModel.vb" />
     <Compile Include="ViewModels\UsageHumanitaireViewModel.vb" />
-    <Content Include="App_Code\IPrincipalExtensionModule.vb" />
+    <Content Include="App_Code\IPrincipalExtensionModule.vb">
+      <CustomToolNamespace>My.MyExtensions</CustomToolNamespace>
+    </Content>
     <Compile Include="App_GlobalResources\Resource.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -928,6 +952,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.resx">
       <DependentUpon>202004031258513_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061401371_Remove_Table_AspNetUserActionSousRessource.resx">
+      <DependentUpon>202004061401371_Remove_Table_AspNetUserActionSousRessource.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.resx">
+      <DependentUpon>202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

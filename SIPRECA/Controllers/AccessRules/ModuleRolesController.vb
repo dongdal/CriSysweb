@@ -60,7 +60,7 @@ Namespace Controllers
                     entities = entities.OrderByDescending(Function(e) e.AspNetRoles.Name)
 
                 Case Else
-                    entities = entities.OrderBy(Function(e) e.Modules.Libelle)
+                    entities = entities.OrderBy(Function(e) e.Id)
                     Exit Select
             End Select
 

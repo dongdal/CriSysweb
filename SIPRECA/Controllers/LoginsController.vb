@@ -110,20 +110,24 @@ Public Class LoginsController
         AppSession.PrenomUser = appUser.Prenom
         AppSession.UserName = appUser.UserName
         AppSession.Niveau = appUser.Niveau
-        AppSession.ActionSousRessourceList = New List(Of ActionSousRessource)
-        AppSession.ActionSousRessourceList = (From actSubRes In Db.ActionSousRessource Where actSubRes.AspNetUserId = AppSession.UserId Select actSubRes).ToList()
-        AppSession.ModuleUserList = New List(Of Long)
-        Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(AppSession.UserId) Select userRole).ToList()
-        For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
-            'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
-            Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
-            For Each item In moduleRole
-                If Not (AppSession.ModuleUserList.Contains(item.Modules.Id)) Then
-                    AppSession.ModuleUserList.Add(item.Modules.Id)
-                End If
-            Next
-        Next
-
+        Dim ListUserActionSousResource = (From e In Db.AspNetUserActionSousRessource Where e.AspNetUserId.Equals(AppSession.UserId) Select e).ToList()
+        AppSession.ListUserActionSousResource = IIf(IsNothing(ListUserActionSousResource), New List(Of AspNetUserActionSousRessource), ListUserActionSousResource)
+        AppSession.ModuleUserList = (From m In AppSession.ListUserActionSousResource Select m.ActionSousRessource.SousRessource.Ressource.Modules.Id).ToList()
+        AppSession.ListRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Ressource.Id).ToList()
+        AppSession.ListSousRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Id).ToList()
+        'AppSession.ActionSousRessourceList = New List(Of ActionSousRessource)
+        'AppSession.ActionSousRessourceList = (From actSubRes In Db.ActionSousRessource Where actSubRes.AspNetUserId = AppSession.UserId Select actSubRes).ToList()
+        'AppSession.ModuleUserList = New List(Of Long)
+        'Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(AppSession.UserId) Select userRole).ToList()
+        'For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
+        '    'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
+        '    Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
+        '    For Each item In moduleRole
+        '        If Not (AppSession.ModuleUserList.Contains(item.Modules.Id)) Then
+        '            AppSession.ModuleUserList.Add(item.Modules.Id)
+        '        End If
+        '    Next
+        'Next
         Long.TryParse(appUser.CommuneId.ToString, AppSession.CommuneId)
         Long.TryParse(appUser.DepartementId.ToString, AppSession.DepartementId)
         Long.TryParse(appUser.RegionId.ToString, AppSession.RegionId)

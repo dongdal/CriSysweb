@@ -40,56 +40,84 @@
     </div>
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
-        <li>
-            <a href="index.html" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "PerteBetails")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPerteBetail</a></li>
-                <li><a href="@Url.Action("Index", "DesagregationRecoltesAgricoles")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRecoltesAgricoles</a></li>
-                <li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
-                <li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
-   
-                <li><a href="@Url.Action("Index", "ServicesPubliquePertubes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuServicesPubliquePertube</a></li>
-                @*<li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
-                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>*@
-                @*<li><a href="@Url.Action("Index", "Cartes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuCartes</a></li>*@
-                @*<li><a href="@Url.Action("Index", "Indemmisations")"><i class="fa fa-long-arrow-right"></i> @Resource.MenuIndemnisation</a></li>*@
+        @If AppSession.ListRessources.Contains(14) Then
+            @<li>
+                <a href="index.html" class="waves-effect" style="font-size: 11px;">
+                    <i class="icon-settings"></i><span>@Resource.MenuSettings</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(45) Then
+                        @<li><a href="@Url.Action("Index", "PerteBetails")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuPerteBetail</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(46) Then
+                        @<li><a href="@Url.Action("Index", "DesagregationRecoltesAgricoles")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRecoltesAgricoles</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(47) Then
+                        @<li><a href="@Url.Action("Index", "Facteurs")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuFacteurs</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(48) Then
+                        @<li><a href="@Url.Action("Index", "NiveauDAlerts")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuNiveauDAlert</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(49) Then
+                        @<li><a href="@Url.Action("Index", "ServicesPubliquePertubes")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuServicesPubliquePertube</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
 
-            </ul>
-        </li>
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-handbag"></i><span> @Resource.MenuManageRisks</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Risques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
-                <li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-handbag"></i><span> @Resource.MenuManageSolution</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
-                <li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
-            </ul>
-        </li>
+        @If AppSession.ListRessources.Contains(15) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="icon-handbag"></i><span> @Resource.MenuManageRisks</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(50) Then
+                        @<li><a href="@Url.Action("Index", "Risques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRisques</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(51) Then
+                        @<li><a href="@Url.Action("Index", "ZoneARisques")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuZoneARisques</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
 
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="icon-diamond"></i><span>@Resource.MenuManageEvents</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenementZones</a></li>
-                <li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
-                <li><a href="@Url.Action("Query", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRequeteur</a></li>
-            </ul>
-        </li>
+        @If AppSession.ListRessources.Contains(16) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="icon-handbag"></i><span> @Resource.MenuManageSolution</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(52) Then
+                        @<li><a href="@Url.Action("Index", "Solutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuSolutions</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(53) Then
+                        @<li><a href="@Url.Action("Index", "TypeSolutions")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuTypeSolutions</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
+
+        @If AppSession.ListRessources.Contains(17) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="icon-diamond"></i><span>@Resource.MenuManageEvents</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(54) Then
+                        @<li><a href="@Url.Action("Index", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenementZones</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(55) Then
+                        @<li><a href="@Url.Action("Index", "Evenements")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuEvenements</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(56) Then
+                        @<li><a href="@Url.Action("Query", "EvenementZones")" style="font-size: 11px;"><i class="fa fa-long-arrow-right"></i> @Resource.MenuRequeteur</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
 
     </ul>
 
