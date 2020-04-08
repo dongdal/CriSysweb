@@ -10,6 +10,7 @@ Imports System.Web.Mvc
 Imports Microsoft.AspNet.Identity
 Imports PagedList
 Imports SIPRECA
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class AnneeBudgetairesController
@@ -34,51 +35,56 @@ Namespace Controllers
 
         ' GET: AnneeBudgetaires
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            ViewBag.CurrentSort = sortOrder
-            ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
-            ViewBag.DateDebutSort = If(sortOrder = "DateDebut", "DateDebut_desc", "DateDebut")
-            ViewBag.DateFinSort = If(sortOrder = "DateFin", "DateFin_desc", "DateFin")
-            ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
-            ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
-
-            If Not String.IsNullOrEmpty(searchString) Then
-                page = 1
+            If AppSession.ListActionSousRessource.Contains(1, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             Else
-                searchString = currentFilter
+                ViewBag.CurrentSort = sortOrder
+                ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
+                ViewBag.DateDebutSort = If(sortOrder = "DateDebut", "DateDebut_desc", "DateDebut")
+                ViewBag.DateFinSort = If(sortOrder = "DateFin", "DateFin_desc", "DateFin")
+                ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
+                ViewBag.StatutExistantSort = If(sortOrder = "StatutExistant", "StatutExistant_desc", "StatutExistant")
+
+                If Not String.IsNullOrEmpty(searchString) Then
+                    page = 1
+                Else
+                    searchString = currentFilter
+                End If
+
+                ViewBag.CurrentFilter = searchString
+
+                Dim entities = (From e In Db.AnneeBudgetaires Where e.StatutExistant = 1 Select e)
+                If Not String.IsNullOrEmpty(searchString) Then
+                    entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
+                End If
+                ViewBag.EnregCount = entities.Count
+
+                Select Case sortOrder
+
+                    Case "Libelle"
+                        entities = entities.OrderBy(Function(e) e.Libelle)
+                    Case "Libelle_desc"
+                        entities = entities.OrderByDescending(Function(e) e.Libelle)
+                    Case "DateDebut"
+                        entities = entities.OrderBy(Function(e) e.DateDebut)
+                    Case "DateDebut_desc"
+                        entities = entities.OrderByDescending(Function(e) e.DateDebut)
+                    Case "DateFin"
+                        entities = entities.OrderBy(Function(e) e.DateFin)
+                    Case "DateFin_desc"
+                        entities = entities.OrderByDescending(Function(e) e.DateFin)
+
+                    Case Else
+                        entities = entities.OrderBy(Function(e) e.Libelle)
+                        Exit Select
+                End Select
+
+                Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
+                Dim pageNumber As Integer = If(page, 1)
+
+                Return View(entities.ToPagedList(pageNumber, pageSize))
             End If
 
-            ViewBag.CurrentFilter = searchString
-
-            Dim entities = (From e In Db.AnneeBudgetaires Where e.StatutExistant = 1 Select e)
-            If Not String.IsNullOrEmpty(searchString) Then
-                entities = entities.Where(Function(e) e.Libelle.ToUpper.Contains(value:=searchString.ToUpper))
-            End If
-            ViewBag.EnregCount = entities.Count
-
-            Select Case sortOrder
-
-                Case "Libelle"
-                    entities = entities.OrderBy(Function(e) e.Libelle)
-                Case "Libelle_desc"
-                    entities = entities.OrderByDescending(Function(e) e.Libelle)
-                Case "DateDebut"
-                    entities = entities.OrderBy(Function(e) e.DateDebut)
-                Case "DateDebut_desc"
-                    entities = entities.OrderByDescending(Function(e) e.DateDebut)
-                Case "DateFin"
-                    entities = entities.OrderBy(Function(e) e.DateFin)
-                Case "DateFin_desc"
-                    entities = entities.OrderByDescending(Function(e) e.DateFin)
-
-                Case Else
-                    entities = entities.OrderBy(Function(e) e.Libelle)
-                    Exit Select
-            End Select
-
-            Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
-            Dim pageNumber As Integer = If(page, 1)
-
-            Return View(entities.ToPagedList(pageNumber, pageSize))
         End Function
 
         Private Sub LoadComboBox(entityVM As AnneeBudgetairesViewModel)
@@ -97,21 +103,29 @@ Namespace Controllers
 
         ' GET: AnneeBudgetaires/Details/5
         Function Details(ByVal id As Long?) As ActionResult
-            If IsNothing(id) Then
-                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            If AppSession.ListActionSousRessource.Contains(1, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                If IsNothing(id) Then
+                    Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+                End If
+                Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
+                If IsNothing(anneeBudgetaire) Then
+                    Return HttpNotFound()
+                End If
+                Return View(anneeBudgetaire)
             End If
-            Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
-            If IsNothing(anneeBudgetaire) Then
-                Return HttpNotFound()
-            End If
-            Return View(anneeBudgetaire)
         End Function
 
         ' GET: AnneeBudgetaires/Create
         Function Create() As ActionResult
-            Dim entityVM As New AnneeBudgetairesViewModel
-            LoadComboBox(entityVM)
-            Return View()
+            If AppSession.ListActionSousRessource.Contains(1, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                Dim entityVM As New AnneeBudgetairesViewModel
+                LoadComboBox(entityVM)
+                Return View()
+            End If
         End Function
 
         ' POST: AnneeBudgetaires/Create
@@ -120,34 +134,42 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As AnneeBudgetairesViewModel) As ActionResult
-            entityVM.AspNetUserId = GetCurrentUser.Id
-            If ModelState.IsValid Then
-                Db.AnneeBudgetaires.Add(entityVM.GetEntity)
-                Try
-                    Db.SaveChanges()
-                    Return RedirectToAction("Index")
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+            If AppSession.ListActionSousRessource.Contains(1, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                entityVM.AspNetUserId = GetCurrentUser.Id
+                If ModelState.IsValid Then
+                    Db.AnneeBudgetaires.Add(entityVM.GetEntity)
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+                LoadComboBox(entityVM)
+                Return View(entityVM)
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
         End Function
 
         ' GET: AnneeBudgetaires/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If IsNothing(id) Then
-                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            If AppSession.ListActionSousRessource.Contains(1, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                If IsNothing(id) Then
+                    Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+                End If
+                Dim anneeBudgetaires As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
+                If IsNothing(anneeBudgetaires) Then
+                    Return HttpNotFound()
+                End If
+                Dim entityVM As New AnneeBudgetairesViewModel(anneeBudgetaires)
+                LoadComboBox(entityVM)
+                Return View(entityVM)
             End If
-            Dim anneeBudgetaires As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
-            If IsNothing(anneeBudgetaires) Then
-                Return HttpNotFound()
-            End If
-            Dim entityVM As New AnneeBudgetairesViewModel(anneeBudgetaires)
-            LoadComboBox(entityVM)
-            Return View(entityVM)
         End Function
 
         ' POST: AnneeBudgetaires/Edit/5
@@ -156,31 +178,39 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As AnneeBudgetairesViewModel) As ActionResult
-            If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                Try
-                    Db.SaveChanges()
-                    Return RedirectToAction("Index")
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+            If AppSession.ListActionSousRessource.Contains(1, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                If ModelState.IsValid Then
+                    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                    Try
+                        Db.SaveChanges()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+                LoadComboBox(entityVM)
+                Return View(entityVM)
             End If
-            LoadComboBox(entityVM)
-            Return View(entityVM)
         End Function
 
         ' GET: AnneeBudgetaires/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If IsNothing(id) Then
-                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            If AppSession.ListActionSousRessource.Contains(1, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                If IsNothing(id) Then
+                    Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+                End If
+                Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
+                If IsNothing(anneeBudgetaire) Then
+                    Return HttpNotFound()
+                End If
+                Return View(anneeBudgetaire)
             End If
-            Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
-            If IsNothing(anneeBudgetaire) Then
-                Return HttpNotFound()
-            End If
-            Return View(anneeBudgetaire)
         End Function
 
         ' POST: AnneeBudgetaires/Delete/5
@@ -188,10 +218,14 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
-            Db.AnneeBudgetaires.Remove(anneeBudgetaire)
-            Db.SaveChanges()
-            Return RedirectToAction("Index")
+            If AppSession.ListActionSousRessource.Contains(1, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Else
+                Dim anneeBudgetaire As AnneeBudgetaire = Db.AnneeBudgetaires.Find(id)
+                Db.AnneeBudgetaires.Remove(anneeBudgetaire)
+                Db.SaveChanges()
+                Return RedirectToAction("Index")
+            End If
         End Function
 
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)

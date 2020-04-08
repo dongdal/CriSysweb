@@ -31,7 +31,7 @@ Public Class HomeController
 
     Function IndexSinistre(AnneeBudgetaireId As Long?) As ActionResult
         If Not AppSession.ModuleUserList.Contains(1) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         AppSession.LesAnneeBudgetaires = Db.AnneeBudgetaires.Where(Function(e) e.StatutExistant = 1).ToList
         Dim EtatDemande As New EtatDemande()
@@ -73,7 +73,7 @@ Public Class HomeController
 
     Function IndexSahana() As ActionResult
         If Not AppSession.ModuleUserList.Contains(2) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
 
         Dim MoyenReponse As New MoyenReponse With {
@@ -91,35 +91,35 @@ Public Class HomeController
 
     Function IndexDesinventar() As ActionResult
         If Not AppSession.ModuleUserList.Contains(3) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Return View()
     End Function
 
     Function IndexCollecte() As ActionResult
         If Not AppSession.ModuleUserList.Contains(4) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Return View()
     End Function
 
     Function IndexAlertes() As ActionResult
         If Not AppSession.ModuleUserList.Contains(5) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Return View()
     End Function
 
     Function IndexParam() As ActionResult
         If Not AppSession.ModuleUserList.Contains(6) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Return View()
     End Function
 
     Function IndexReport() As ActionResult
         If Not AppSession.ModuleUserList.Contains(7) Then
-            Return RedirectToAction("Error400", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Return View()
     End Function
@@ -131,6 +131,13 @@ Public Class HomeController
     End Function
 
     Function Error400(Error400_SelectAnnee As String, Optional MyAction As String = "Index", Optional Controleur As String = "Home") As ActionResult
+        ViewBag.Error400_SelectAnnee = Error400_SelectAnnee
+        ViewBag.Action = MyAction
+        ViewBag.Controleur = Controleur
+        Return View()
+    End Function
+
+    Function Error404(Error400_SelectAnnee As String, Optional MyAction As String = "Index", Optional Controleur As String = "Home") As ActionResult
         ViewBag.Error400_SelectAnnee = Error400_SelectAnnee
         ViewBag.Action = MyAction
         ViewBag.Controleur = Controleur

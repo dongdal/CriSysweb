@@ -419,7 +419,7 @@ Public Class AccountController
         }
         For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
             'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
-            Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
+            Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e Order By e.Id).ToList()
             For Each item In moduleRole
                 If Not (entityVM.LesModuleRoles.Contains(item)) Then
                     entityVM.LesModuleRoles.Add(item) 'on charge la liste des modules et roles en se rassurant qu'il n'y aura pas d'élément en double d'où le "Not (entityVM.LesModuleRoles.Contains(item))"

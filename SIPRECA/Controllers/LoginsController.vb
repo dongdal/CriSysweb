@@ -115,6 +115,7 @@ Public Class LoginsController
         AppSession.ModuleUserList = (From m In AppSession.ListUserActionSousResource Select m.ActionSousRessource.SousRessource.Ressource.Modules.Id).ToList()
         AppSession.ListRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Ressource.Id).ToList()
         AppSession.ListSousRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Id).ToList()
+        AppSession.ListActionSousRessource = (From actRes In AppSession.ListUserActionSousResource Select actRes.ActionSousRessource).ToList()
         'AppSession.ActionSousRessourceList = New List(Of ActionSousRessource)
         'AppSession.ActionSousRessourceList = (From actSubRes In Db.ActionSousRessource Where actSubRes.AspNetUserId = AppSession.UserId Select actSubRes).ToList()
         'AppSession.ModuleUserList = New List(Of Long)

@@ -180,4 +180,13 @@
         End Set
     End Property
 
+    Shared Property ListActionSousRessource As List(Of ActionSousRessource)
+        Get
+            Return HttpContext.Current.Session("ListActionSousRessource")
+        End Get
+        Set(value As List(Of ActionSousRessource))
+            HttpContext.Current.Session("ListActionSousRessource") = value
+        End Set
+    End Property
+
 End Class

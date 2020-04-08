@@ -40,29 +40,46 @@
     </div>
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="fa fa-lock"></i><span>@Resource.Menu_BasicsDatas</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "ModuleRoles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_ModuleRoles</a></li>
-                <li><a href="@Url.Action("Index", "Actions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Actions</a></li>
-                <li><a href="@Url.Action("Index", "Modules")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Modules</a></li>
-                <li><a href="@Url.Action("Index", "Ressources")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Ressources</a></li>
-                <li><a href="@Url.Action("Index", "SousRessources")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_SoursRessources</a></li>
-            </ul>
-        </li>
+        @If AppSession.ListRessources.Contains(20) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="fa fa-lock"></i><span>@Resource.Menu_BasicsDatas</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(61) Then
+                        @<li><a href="@Url.Action("Index", "ModuleRoles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_ModuleRoles</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(62) Then
+                        @<li><a href="@Url.Action("Index", "Actions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Actions</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(63) Then
+                        @<li><a href="@Url.Action("Index", "Modules")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Modules</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(64) Then
+                        @<li><a href="@Url.Action("Index", "Ressources")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Ressources</a></li>
+                    End If
+                    @If AppSession.ListSousRessources.Contains(65) Then
+                        @<li><a href="@Url.Action("Index", "SousRessources")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_SoursRessources</a></li>
+                    End If
+                </ul>
+            </li>
+        End If
 
-        <li>
-            <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
-                <i class="fa fa-users"></i><span>@Resource.Menu_UserManager</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="sidebar-submenu">
-                <li><a href="@Url.Action("Index", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
-            </ul>
-        </li>
+        @If AppSession.ListRessources.Contains(21) Then
+            @<li>
+                <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
+                    <i class="fa fa-users"></i><span>@Resource.Menu_UserManager</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    @If AppSession.ListSousRessources.Contains(66) Then
+                        @<li><a href="@Url.Action("Index", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
+                    End If
+                    
+                </ul>
+            </li>
+        End If
 
 
 

@@ -26,10 +26,13 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(1, 1) Then
+                                    @<a Class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                End If
+
                             </div>
                         </div>
 
@@ -54,10 +57,11 @@ End Code
                         </th>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateDebut, "Index", New With {.sortOrder = ViewBag.DateDebutSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th><th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
+                        </th>
+                        <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.DateFin, "Index", New With {.sortOrder = ViewBag.DateFinSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                       
+
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
                         </th>
@@ -76,14 +80,14 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.DateFin)
                             </td>
-                            
+
                             <td class="text-center">
                                 <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>*@
 
                             </td>
                         </tr>

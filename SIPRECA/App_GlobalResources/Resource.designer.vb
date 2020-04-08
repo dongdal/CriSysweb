@@ -4673,6 +4673,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à La ressource que vous recherchez est inexistant..
+        '''</summary>
+        Public Shared ReadOnly Property Error404_Explain() As String
+            Get
+                Return ResourceManager.GetString("Error404_Explain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ressource inexistante.
+        '''</summary>
+        Public Shared ReadOnly Property Error404_SubTitle() As String
+            Get
+                Return ResourceManager.GetString("Error404_SubTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ressource inexistante.
+        '''</summary>
+        Public Shared ReadOnly Property Error404_Title() As String
+            Get
+                Return ResourceManager.GetString("Error404_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à OUPS!!!.
         '''</summary>
         Public Shared ReadOnly Property ErrorAlertTitle() As String

@@ -4095,4 +4095,13 @@
   <data name="MdlStatError_Role" xml:space="preserve">
     <value />
   </data>
+  <data name="Error404_Explain" xml:space="preserve">
+    <value>La ressource que vous recherchez est inexistant.</value>
+  </data>
+  <data name="Error404_SubTitle" xml:space="preserve">
+    <value>Ressource inexistante</value>
+  </data>
+  <data name="Error404_Title" xml:space="preserve">
+    <value>Ressource inexistante</value>
+  </data>
 </root>

@@ -42,4 +42,21 @@ Public Module IPrincipalExtensionModule
         Return False
     End Function
 
+    ''' <summary>
+    ''' Méthode d'extension permettant de vérifier si une liste d'éléments de type ActionSousRessource contient une référence pour une sous ressource et une action données.
+    ''' </summary>
+    ''' <param name="ListActionSousRessource"></param>
+    ''' <param name="SousRessourceId"></param>
+    ''' <param name="ActionId"></param>
+    ''' <returns></returns>
+    <Extension()>
+    Public Function Contains(ListActionSousRessource As List(Of ActionSousRessource), SousRessourceId As Long, ActionId As Long) As Boolean
+        For Each actionSousRessource In ListActionSousRessource
+            If actionSousRessource.SousRessourceId = SousRessourceId And actionSousRessource.ActionsId = ActionId Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
 End Module

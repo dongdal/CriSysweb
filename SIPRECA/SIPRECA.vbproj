@@ -2310,6 +2310,7 @@
     <Content Include="Views\ActionSousRessources\Edit.vbhtml" />
     <Content Include="Views\ActionSousRessources\Index.vbhtml" />
     <Content Include="Views\Account\AccessRightsManager.vbhtml" />
+    <Content Include="Views\Home\Error404.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
