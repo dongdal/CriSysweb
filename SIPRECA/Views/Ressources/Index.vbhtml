@@ -27,10 +27,12 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(64, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                End If
                             </div>
                         </div>
 
@@ -58,9 +60,6 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Description, "Index", New With {.sortOrder = ViewBag.DescriptionSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                            @Html.ActionLink(Resource.DateCreation, "Index", New With {.sortOrder = ViewBag.DateCreationSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                        </th>*@
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
                         </th>
@@ -79,13 +78,13 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Description)
                             </td>
-                            @*<td class="sorting_asc text-center">
-                                @Html.DisplayFor(Function(modelItem) item.DateCreation)
-                            </td>*@
+
                             <td class="text-center">
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(64, 3) Then
+                                    @<a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
+                                End If
 
                             </td>
                         </tr>

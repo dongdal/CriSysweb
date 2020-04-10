@@ -47,9 +47,9 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="sidebar-submenu">
-                    @If AppSession.ListSousRessources.Contains(61) Then
+                    @*@If AppSession.ListSousRessources.Contains(61) Then
                         @<li><a href="@Url.Action("Index", "ModuleRoles")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_ModuleRoles</a></li>
-                    End If
+                    End If*@
                     @If AppSession.ListSousRessources.Contains(62) Then
                         @<li><a href="@Url.Action("Index", "Actions")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_Actions</a></li>
                     End If

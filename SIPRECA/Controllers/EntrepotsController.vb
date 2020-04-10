@@ -28,6 +28,9 @@ Namespace Controllers
 
         ' GET: Entrepots
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.CodePostaleSort = If(sortOrder = "CodePostale", "CodePostale_desc", "CodePostale")
@@ -174,6 +177,9 @@ Namespace Controllers
 
         ' GET: Entrepots/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New EntrepotsViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -182,6 +188,9 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As EntrepotsJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Entrepots
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -230,6 +239,9 @@ Namespace Controllers
 
         ' GET: Entrepots/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -251,6 +263,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As EntrepotsViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddMateriel") IsNot Nothing Then
                 Return AddMateriel(entityVM)
             Else
@@ -275,6 +290,9 @@ Namespace Controllers
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         Function EditEntrepot(ByVal entityVM As EntrepotsJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Entrepots
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -334,6 +352,9 @@ Namespace Controllers
 
         ' GET: Entrepots/Edit/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -377,6 +398,9 @@ Namespace Controllers
 
         ' GET: Entrepots/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -394,6 +418,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(35, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Entrepots As Entrepots = Db.Entrepots.Find(id)
             Db.Entrepots.Remove(Entrepots)
             Try

@@ -30,6 +30,9 @@ Namespace Controllers
 
         ' GET: Alerts
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(60, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.ContenuSort = If(sortOrder = "Contenu", "Contenu_desc", "Contenu")
             ViewBag.OrganisationSort = If(sortOrder = "Organisation", "Organisation_desc", "Organisation")
@@ -77,6 +80,9 @@ Namespace Controllers
         End Function
 
         Function IndexSMS(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(59, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.ContenuSort = If(sortOrder = "Contenu", "Contenu_desc", "Contenu")
             ViewBag.OrganisationSort = If(sortOrder = "Organisation", "Organisation_desc", "Organisation")
@@ -138,6 +144,9 @@ Namespace Controllers
 
         ' GET: Alerts/Details/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(60, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -325,6 +334,9 @@ Namespace Controllers
 
         ' GET: Alerts/SendMail
         Function SendMail() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(60, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New MailAlertesViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -335,6 +347,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken>
         Async Function SendMail(ByVal entityVM As MailAlertesViewModel) As Threading.Tasks.Task(Of JsonResult)
+            If AppSession.ListActionSousRessource.Contains(60, 1) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If (IsNothing(entityVM.OrganisationId) Or IsNothing(entityVM.SinistreId) Or entityVM.CommuneId.Count <= 0) Then
                 ModelState.AddModelError("", Resource.RequiredFields)
             End If
@@ -405,6 +420,9 @@ Namespace Controllers
 
         ' GET: Alerts/SendSMS
         Function SendSMS() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(59, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New SMSAlertesViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -414,6 +432,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken>
         Function SendSMS(ByVal entityVM As SMSAlertesViewModel) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(59, 1) Then
+                Return Return Json(New With {.Result = "Error"})
+            End If
             If (IsNothing(entityVM.OrganisationId) Or IsNothing(entityVM.SinistreId) Or entityVM.CommuneId.Count <= 0) Then
                 ModelState.AddModelError("", Resource.RequiredFields)
             End If

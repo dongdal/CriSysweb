@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class NatureAidesController
@@ -27,6 +28,9 @@ Namespace Controllers
 
         ' GET: NatureAide
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
@@ -105,6 +109,9 @@ Namespace Controllers
 
         ' GET: NatureAide/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New NatureAideViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -116,6 +123,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As NatureAideViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
                 Db.NatureAide.Add(entityVM.GetEntity)
@@ -134,6 +144,9 @@ Namespace Controllers
 
         ' GET: NatureAide/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -152,6 +165,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As NatureAideViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If ModelState.IsValid Then
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
@@ -169,6 +185,9 @@ Namespace Controllers
 
         ' GET: NatureAide/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -186,6 +205,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(2, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim NatureAide As NatureAide = Db.NatureAide.Find(id)
             Db.NatureAide.Remove(NatureAide)
             Try

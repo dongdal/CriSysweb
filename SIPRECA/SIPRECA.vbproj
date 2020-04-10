@@ -2253,9 +2253,6 @@
     <Content Include="Views\Shared\_LayoutAlertes.vbhtml" />
     <Content Include="Views\Home\IndexAlertes.vbhtml" />
     <Content Include="Views\Alerts\SendSMS.vbhtml" />
-    <Content Include="Views\Alerts\Create.vbhtml" />
-    <Content Include="Views\Alerts\Delete.vbhtml" />
-    <Content Include="Views\Alerts\Edit.vbhtml" />
     <Content Include="Views\Alerts\Index.vbhtml" />
     <Content Include="Views\Alerts\SendMail.vbhtml" />
     <Content Include="Views\Shared\_LayoutChart.vbhtml" />

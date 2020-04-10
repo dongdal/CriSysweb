@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class PersonnelsController
@@ -27,6 +28,9 @@ Namespace Controllers
 
         ' GET: Personnel
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.PrenomSort = If(sortOrder = "Prenom", "Prenom_desc", "Prenom")
@@ -155,6 +159,9 @@ Namespace Controllers
 
         ' GET: Personnel/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New PersonnelViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -166,6 +173,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As PersonnelViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
                 Db.Personnel.Add(entityVM.GetEntity)
@@ -184,6 +194,9 @@ Namespace Controllers
 
         ' GET: Personnel/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -202,6 +215,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As PersonnelViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If ModelState.IsValid Then
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
@@ -219,6 +235,9 @@ Namespace Controllers
 
         ' GET: Personnel/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -236,6 +255,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(22, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Personnel As Personnel = Db.Personnel.Find(id)
             Db.Personnel.Remove(Personnel)
             Try

@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class TypeSinistresController
@@ -27,6 +28,9 @@ Namespace Controllers
 
         ' GET: TypeSinistre
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
@@ -92,6 +96,9 @@ Namespace Controllers
 
         ' GET: TypeSinistre/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New TypeSinistreViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -103,6 +110,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As TypeSinistreViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
                 Db.TypeSinistre.Add(entityVM.GetEntity)
@@ -121,6 +131,9 @@ Namespace Controllers
 
         ' GET: TypeSinistre/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -139,6 +152,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As TypeSinistreViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If ModelState.IsValid Then
                 Db.Entry(entityVM.GetEntity).State = EntityState.Modified
                 Try
@@ -156,6 +172,9 @@ Namespace Controllers
 
         ' GET: TypeSinistre/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -173,6 +192,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(4, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim TypeSinistre As TypeSinistre = Db.TypeSinistre.Find(id)
             Db.TypeSinistre.Remove(TypeSinistre)
             Try

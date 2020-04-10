@@ -27,10 +27,12 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(35, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                End If
                             </div>
                         </div>
 
@@ -55,7 +57,7 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.Nom, "Index", New With {.sortOrder = ViewBag.NomSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        
+
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.TypeEntrepots, "Index", New With {.sortOrder = ViewBag.TypeEntrepots, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
@@ -81,7 +83,7 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Nom)
                             </td>
-                            
+
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.TypeEntrepot.Libelle)
                             </td>
@@ -92,15 +94,16 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Telephone)
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
-                                    <i class="fa fa-list" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                @If AppSession.ListActionSousRessource.Contains(35, 5) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </a>
+                                End If
+                                @If AppSession.ListActionSousRessource.Contains(35, 3) Then
+                                    @<a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
+                                End If
                             </td>
                         </tr>
                     Next

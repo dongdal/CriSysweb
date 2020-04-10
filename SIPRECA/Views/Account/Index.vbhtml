@@ -29,10 +29,12 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Register")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(66, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Register")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                end if
                             </div>
                         </div>
 
@@ -98,15 +100,23 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.Telephone)
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="#" data-toggle="modal" data-target="#@item.UserName">
-                                    <i class="fa fa-info" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_GestUserRoles" href="@Url.Action("UserRoles", New With {.id = item.Id})">
-                                    <i class="fa fa-users" aria-hidden="true"></i>
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(66, 3) Then
+                                    @<a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
+                                End If
+
+                                @If AppSession.ListActionSousRessource.Contains(66, 5) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="#" data-toggle="modal" data-target="#@item.UserName">
+                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                    </a>
+                                End If
+
+                                @If AppSession.ListActionSousRessource.Contains(66, 15) Then
+                                    @<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_GestUserRoles" href="@Url.Action("UserRoles", New With {.id = item.Id})">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                    </a>
+                                End If
 
                                 <div class="modal fade" id="@item.UserName">
                                     <div class="modal-dialog modal-lg">
@@ -218,8 +228,8 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                     New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
-            Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
+                                                                                          New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+            Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber)  @Resource.RecordsOn  @Model.PageCount (@ViewBag.EnregCount  @Resource.Records)
 
         </div>
 

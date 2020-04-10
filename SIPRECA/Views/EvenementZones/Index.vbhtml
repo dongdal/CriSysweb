@@ -27,10 +27,12 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(54, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                End If
                             </div>
                         </div>
 
@@ -49,7 +51,7 @@ End Code
             <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
                 <thead>
                     <tr>
-                        
+
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.ZoneARisque, "Index", New With {.sortOrder = ViewBag.DateDeNaissanceSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
@@ -66,7 +68,7 @@ End Code
                 <tbody>
                     @For Each item In Model
                         @<tr>
-                            
+
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.ZoneARisque.Libelle)
                             </td>
@@ -75,75 +77,76 @@ End Code
                             </td>
 
                             <td class="text-center">
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
 
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1 nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" 
-                                   title="@Resource.CadreSendai" href="javascript:void();"  data-toggle="dropdown">
-                                    <i class="icon-list" aria-hidden="true"></i>
-                                </a>
-                                <div Class="dropdown-menu dropdown-menu-right animated fadeIn">
-                                    <ul Class="list-group list-group-flush">
-                                        <li Class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 12px;">
-                                            @Resource.CadreSendai
-                                        </li>
-                                        <li Class="list-group-item">
-                                            <a href="@Url.Action("Edit", "CardreSendaiCibleA", New With {.EvenementZoneId = item.Id})">
-                                                <div class="media">
-                                                    <i class="icon-note mr-3 text-info"></i>
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiA</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li Class="list-group-item">
-                                            <a href="@Url.Action("Edit", "CardreSendaiCibleB", New With {.EvenementZoneId = item.Id})">
-                                                <div class="media">
-                                                    <i class="icon-note mr-3 text-info"></i>
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiB</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li Class="list-group-item">
-                                            <a href="@Url.Action("Edit", "CardreSendaiCibleC", New With {.EvenementZoneId = item.Id})">
-                                                <div class="media">
-                                                    <i class="icon-note mr-3 text-info"></i>
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiC</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li Class="list-group-item">
-                                            <a href="@Url.Action("Edit", "CardreSendaiCibleD", New With {.EvenementZoneId = item.Id})">
-                                                <div class="media">
-                                                    <i class="icon-note mr-3 text-info"></i>
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiD</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li Class="list-group-item">
-                                            <a href="@Url.Action("Edit", "AutreImpactHumainEtEconomique", New With {.EvenementZoneId = item.Id})">
-                                                <div class="media">
-                                                    <i class="icon-note mr-3 text-info"></i>
-                                                    <div class="media-body">
-                                                        <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.AutreImpactHumainEtEconomique</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @If AppSession.ListActionSousRessource.Contains(54, 3) Then
+                                    @<a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
+                                End If
 
-                                @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </a>*@
+                                @If AppSession.ListActionSousRessource.Contains(54, 3) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1 nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect"
+                                        title="@Resource.CadreSendai" href="javascript:void();" data-toggle="dropdown">
+                                        <i class="icon-list" aria-hidden="true"></i>
+                                    </a>
+                                    @<div Class="dropdown-menu dropdown-menu-right animated fadeIn">
+                                        <ul Class="list-group list-group-flush">
+                                            <li Class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 12px;">
+                                                @Resource.CadreSendai
+                                            </li>
+                                            <li Class="list-group-item">
+                                                <a href="@Url.Action("Edit", "CardreSendaiCibleA", New With {.EvenementZoneId = item.Id})">
+                                                    <div class="media">
+                                                        <i class="icon-note mr-3 text-info"></i>
+                                                        <div class="media-body">
+                                                            <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiA</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li Class="list-group-item">
+                                                <a href="@Url.Action("Edit", "CardreSendaiCibleB", New With {.EvenementZoneId = item.Id})">
+                                                    <div class="media">
+                                                        <i class="icon-note mr-3 text-info"></i>
+                                                        <div class="media-body">
+                                                            <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiB</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li Class="list-group-item">
+                                                <a href="@Url.Action("Edit", "CardreSendaiCibleC", New With {.EvenementZoneId = item.Id})">
+                                                    <div class="media">
+                                                        <i class="icon-note mr-3 text-info"></i>
+                                                        <div class="media-body">
+                                                            <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiC</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li Class="list-group-item">
+                                                <a href="@Url.Action("Edit", "CardreSendaiCibleD", New With {.EvenementZoneId = item.Id})">
+                                                    <div class="media">
+                                                        <i class="icon-note mr-3 text-info"></i>
+                                                        <div class="media-body">
+                                                            <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.CadreSendaiD</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li Class="list-group-item">
+                                                <a href="@Url.Action("Edit", "AutreImpactHumainEtEconomique", New With {.EvenementZoneId = item.Id})">
+                                                    <div class="media">
+                                                        <i class="icon-note mr-3 text-info"></i>
+                                                        <div class="media-body">
+                                                            <h6 class="mt-0 msg-title" style="font-size: 12px;">@Resource.AutreImpactHumainEtEconomique</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                End If
 
                             </td>
                         </tr>

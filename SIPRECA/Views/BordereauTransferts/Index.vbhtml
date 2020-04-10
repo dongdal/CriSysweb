@@ -77,12 +77,14 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.DateTransfert)
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-dark waves-effect waves-light m-1" title="@Resource.BtnPrint" onclick="showReport(@item.Id)" href="#">
-                                    <i class="fa fa-print" aria-hidden="true"></i>
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(16, 13) Then
+                                    @<a class="btn btn-round btn-dark waves-effect waves-light m-1" title="@Resource.BtnPrint" onclick="showReport(@item.Id)" href="#">
+                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                    </a>
+                                End If
                                 @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </a>*@
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>*@
 
                             </td>
                         </tr>

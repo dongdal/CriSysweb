@@ -29,6 +29,9 @@ Namespace Controllers
 
         ' GET: Hopitaux
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.NombreDeLitMinSort = If(sortOrder = "NombreDeLitMin", "NombreDeLitMin_desc", "NombreDeLitMin")
@@ -218,6 +221,9 @@ Namespace Controllers
 
         ' GET: Hopitaux/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New HopitauxViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -226,6 +232,9 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As HopitauxJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Hopitaux
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -274,6 +283,9 @@ Namespace Controllers
 
         ' GET: Hopitaux/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -297,6 +309,9 @@ Namespace Controllers
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         Function EditHopitaux(ByVal entityVM As HopitauxJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Hopitaux
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -322,6 +337,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As HopitauxViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddMateriel") IsNot Nothing Then
                 Return AddMateriel(entityVM)
             Else
@@ -440,6 +458,9 @@ Namespace Controllers
 
         ' GET: Hopitaux/Edit/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -483,6 +504,9 @@ Namespace Controllers
 
         ' GET: Hopitaux/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -500,6 +524,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(24, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Hopitaux As Hopitaux = Db.Hopitaux.Find(id)
             Db.Hopitaux.Remove(Hopitaux)
             Try

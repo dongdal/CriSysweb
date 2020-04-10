@@ -29,6 +29,9 @@ Namespace Controllers
 
         ' GET: Aeroport
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.ICAOSort = If(sortOrder = "ICAO", "ICAO_desc", "ICAO")
@@ -125,6 +128,9 @@ Namespace Controllers
 
         ' GET: Aeroport/Details/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -202,6 +208,9 @@ Namespace Controllers
 
         ' GET: Aeroport/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New AeroportViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -210,6 +219,9 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As AeroportJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Aeroport
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -258,6 +270,9 @@ Namespace Controllers
 
         ' GET: Aeroport/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -280,6 +295,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As AeroportViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddMateriel") IsNot Nothing Then
                 Return AddMateriel(entityVM)
             Else
@@ -304,6 +322,9 @@ Namespace Controllers
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         Function EditAeroport(ByVal entityVM As AeroportJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Aeroport
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -410,6 +431,9 @@ Namespace Controllers
 
         ' GET: Aeroport/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -427,6 +451,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(30, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Aeroport As Aeroport = Db.Aeroport.Find(id)
             Db.Aeroport.Remove(Aeroport)
             Try

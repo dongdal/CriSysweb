@@ -3,6 +3,7 @@ Imports System.Data.Entity.Validation
 Imports System.Net
 Imports Microsoft.AspNet.Identity
 Imports PagedList
+Imports SIPRECA.My.Resources
 
 Namespace Controllers
     Public Class CartesController
@@ -358,6 +359,9 @@ Namespace Controllers
 
         ' GET: Carte
         Function Index() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(44, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New FiltreViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -366,6 +370,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Query(ByVal entityVM As FiltreViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(44, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If (ModelState.IsValid) Then
                 Dim QueryFieldsResult As New QueryCartesResult()
                 Dim Aeroports = (From e In Db.Aeroport Where e.StatutExistant = 1 Select e)

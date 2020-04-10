@@ -10,7 +10,7 @@ End Code
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "Home")>@Resource.Menu_Home</a></li>
         <li class="breadcrumb-item"><a href=@Url.Action("Index", "EvenementZones")>@Resource.ManageEvenementZone</a></li>
-        <li class="breadcrumb-item active">@Resource.CreateEvenementZone</li>
+        <li class="breadcrumb-item active">@Resource.MenuRequeteur</li>
     </ol>
 </div>
 

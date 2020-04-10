@@ -48,6 +48,9 @@ Namespace Controllers
 
         ' GET: Demande
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?, CommuneId As Long?, DepartementId As Long?, RegionId As Long?, EtatAvancement As String) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.IDSort = If(sortOrder = "Id", "Id_desc", "Id")
             ViewBag.CollectiviteSinistreeSort = If(sortOrder = "CollectiviteSinistree", "CollectiviteSinistree_desc", "CollectiviteSinistree")
@@ -309,6 +312,9 @@ Namespace Controllers
 
         ' GET: Demande/Create
         Function Create(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -327,6 +333,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As DemandeViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             entityVM.AnneeBudgetaireId = AppSession.AnneeBudgetaire.Id
 
@@ -364,6 +373,9 @@ Namespace Controllers
 
         ' GET: Demande/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -410,6 +422,9 @@ Namespace Controllers
 
         ' GET: Demande/Edit/5
         Function EditPieces(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -428,6 +443,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As DemandeViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddAttachement") IsNot Nothing Then
                 Return UploadFile(entityVM)
             Else
@@ -450,6 +468,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function EditPieces(ByVal entityVM As DemandeViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddAttachement") IsNot Nothing Then
                 Return UploadFileTo(entityVM)
             Else
@@ -473,6 +494,9 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         <HttpPost>
         Public Function UploadFile(ByVal entityVM As DemandeViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 11) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
 
             If IsNothing(entityVM.Fichiers.FirstOrDefault) Then
                 ModelState.AddModelError("Fichiers", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
@@ -523,6 +547,9 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         <HttpPost>
         Public Function UploadFileTo(ByVal entityVM As DemandeViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 11) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
 
             If IsNothing(entityVM.Fichiers.FirstOrDefault) Then
                 ModelState.AddModelError("Fichiers", Resource.MdlError_Fichier) 'Le champ {0} est obligatoire: veuillez le remplir.
@@ -571,6 +598,9 @@ Namespace Controllers
 
         <HttpPost>
         Public Function DeleteFile(id As String) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(11, 12) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If [String].IsNullOrEmpty(id) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
@@ -608,11 +638,31 @@ Namespace Controllers
             End Try
         End Function
 
+        ' GET: Demande/Delete/5
+        Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim Demande As Demande = Db.Demande.Find(id)
+            If IsNothing(Demande) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New DemandeViewModel(Demande)
+            LoadComboBox(entityVM)
+            Return View(entityVM)
+        End Function
+
         ' POST: Demande/Delete/5
         <HttpPost()>
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Demande As Demande = Db.Demande.Find(id)
             Db.Demande.Remove(Demande)
             Try
@@ -626,22 +676,11 @@ Namespace Controllers
             Return View(New DemandeViewModel(Demande))
         End Function
 
-        ' GET: Demande/Delete/5
-        Function Delete(ByVal id As Long?) As ActionResult
-            If IsNothing(id) Then
-                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
-            End If
-            Dim Demande As Demande = Db.Demande.Find(id)
-            If IsNothing(Demande) Then
-                Return HttpNotFound()
-            End If
-            Dim entityVM As New DemandeViewModel(Demande)
-            LoadComboBox(entityVM)
-            Return View(entityVM)
-        End Function
-
         <HttpPost>
         Public Function ConfirmSuivi(id As String, type As String) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(11, 5) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If [String].IsNullOrEmpty(id) Or [String].IsNullOrEmpty(type) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
@@ -708,6 +747,9 @@ Namespace Controllers
 
         <HttpPost>
         Public Function RejetSuivi(id As String, type As String) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(11, 7) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If [String].IsNullOrEmpty(id) Or [String].IsNullOrEmpty(type) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
@@ -777,6 +819,9 @@ Namespace Controllers
 
         <HttpPost>
         Public Function TransfertSuivi(id As String, type As String) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(11, 8) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If [String].IsNullOrEmpty(id) Or [String].IsNullOrEmpty(type) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})
@@ -839,6 +884,9 @@ Namespace Controllers
 
         <HttpPost>
         Public Function ReceptionSuivi(id As String, type As String) As JsonResult
+            If AppSession.ListActionSousRessource.Contains(11, 9) Then
+                Return Json(New With {.Result = "Error"})
+            End If
             If [String].IsNullOrEmpty(id) Or [String].IsNullOrEmpty(type) Then
                 Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
                 Return Json(New With {.Result = "Error"})

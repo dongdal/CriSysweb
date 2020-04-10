@@ -29,6 +29,9 @@ Namespace Controllers
 
         ' GET: Indemnisation
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?, DemandeId As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.NatureAideSort = If(sortOrder = "NatureAide", "NatureAide_desc", "NatureAide")
@@ -79,6 +82,9 @@ Namespace Controllers
 
         ' GET: Indemnisation/Details/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 'Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
                 Return RedirectToAction("Error400", "Home", New With {Resource.SelectedDetailsId, .MyAction = "Index", .Controleur = "Indemnisations"})
@@ -95,6 +101,9 @@ Namespace Controllers
 
         ' GET: Indemnisation/Details/5
         Function DetailIndems(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 'Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
                 Return RedirectToAction("Error400", "Home", New With {Resource.SelectedDetailsId, .MyAction = "Index", .Controleur = "Indemnisations"})
@@ -163,6 +172,9 @@ Namespace Controllers
 
         ' GET: Indemnisation/Create
         Function Create(ByVal DemandeId As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(DemandeId) Then
                 Return RedirectToAction("Error400", "Home", New With {Resource.SelectDemandeId, .MyAction = "Index", .Controleur = "Demande"})
             End If
@@ -186,6 +198,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As IndemnisationViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             If ModelState.IsValid Then
                 Dim entity = entityVM.GetEntity
@@ -205,6 +220,9 @@ Namespace Controllers
 
         ' GET: Indemnisation/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -223,6 +241,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As IndemnisationViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddDetailsIndemnisation") IsNot Nothing Then
                 Return AddDetailsIndemnisation(entityVM)
             Else
@@ -247,6 +268,9 @@ Namespace Controllers
 
         ' GET: Indemnisation/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -264,6 +288,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(10, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Indemnisation As Indemnisation = Db.Indemnisation.Find(id)
             Db.Indemnisation.Remove(Indemnisation)
             Try

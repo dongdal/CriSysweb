@@ -29,6 +29,9 @@ Namespace Controllers
 
         ' GET: Installation
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.NomSort = If(sortOrder = "Nom", "Nom_desc", "Nom")
             ViewBag.CodePostaleSort = If(sortOrder = "CodePostale", "CodePostale_desc", "CodePostale")
@@ -173,6 +176,9 @@ Namespace Controllers
 
         ' GET: Installation/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New InstallationViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -181,6 +187,9 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As InstallationsJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Installation
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -229,6 +238,9 @@ Namespace Controllers
 
         ' GET: Installation/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -253,22 +265,15 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As InstallationViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddPersonnel") IsNot Nothing Then
                 Return AddPersonnel(entityVM)
             ElseIf Request.Form("AddMateriel") IsNot Nothing Then
                 Return AddMateriel(entityVM)
             Else
-                'If ModelState.IsValid Then
-                '    Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                '    Try
-                '        Db.SaveChanges()
-                '        Return RedirectToAction("Index")
-                '    Catch ex As DbEntityValidationException
-                '        Util.GetError(ex, ModelState)
-                '    Catch ex As Exception
-                '        Util.GetError(ex, ModelState)
-                '    End Try
-                'End If
+
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -277,6 +282,9 @@ Namespace Controllers
         'POST: Heliport/Installation/5
         <HttpPost()>
         Function EditInstallation(ByVal entityVM As InstallationsJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New Installation
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -401,6 +409,9 @@ Namespace Controllers
 
         ' GET: Installation/Edit/5
         Function Details(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 5) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -444,6 +455,9 @@ Namespace Controllers
 
         ' GET: Installation/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -461,6 +475,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(36, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Installation As Installation = Db.Installation.Find(id)
             Db.Installation.Remove(Installation)
             Try

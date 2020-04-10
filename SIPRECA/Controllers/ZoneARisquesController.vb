@@ -28,6 +28,9 @@ Namespace Controllers
 
         ' GET: ZoneARisque
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.DateCreationSort = If(sortOrder = "DateCreation", "DateCreation_desc", "DateCreation")
@@ -132,6 +135,9 @@ Namespace Controllers
 
         ' GET: ZoneARisque/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New ZoneARisqueViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -142,6 +148,9 @@ Namespace Controllers
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         Function Create(ByVal entityVM As ZoneARisqueJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New ZoneARisque
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -165,6 +174,9 @@ Namespace Controllers
 
         ' GET: ZoneARisque/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -189,6 +201,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As ZoneARisqueViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If Request.Form("AddQuartier") IsNot Nothing Then
                 Return AddQuartier(entityVM)
             ElseIf Request.Form("AddRisqueZone") IsNot Nothing Then
@@ -212,6 +227,9 @@ Namespace Controllers
 
         <HttpPost()>
         Function EditZoneARisque(ByVal entityVM As ZoneARisqueJS) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Ent As New ZoneARisque
             Ent = entityVM.GetEntity(GetCurrentUser.Id)
 
@@ -365,6 +383,9 @@ Namespace Controllers
 
         ' GET: ZoneARisque/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -382,6 +403,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(51, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim ZoneARisque As ZoneARisque = Db.ZoneARisque.Find(id)
             Db.ZoneARisque.Remove(ZoneARisque)
             Try

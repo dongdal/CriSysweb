@@ -28,6 +28,9 @@ Namespace Controllers
 
         ' GET: Modules
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 2) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             ViewBag.CurrentSort = sortOrder
             ViewBag.LibelleSort = If(sortOrder = "Libelle", "Libelle_desc", "Libelle")
             ViewBag.DescriptionSort = If(sortOrder = "Description", "Description_desc", "Description")
@@ -106,6 +109,9 @@ Namespace Controllers
 
         ' GET: Modules/Create
         Function Create() As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim entityVM As New ModulesViewModel
             LoadComboBox(entityVM)
             Return View(entityVM)
@@ -117,6 +123,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As ModulesViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 1) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             entityVM.AspNetUserId = GetCurrentUser.Id
             If (IsNothing(entityVM.AspNetRolesId)) Then
                 ModelState.AddModelError("AspNetRolesId", Resource.RequiredField)
@@ -160,6 +169,9 @@ Namespace Controllers
 
         ' GET: Modules/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -188,6 +200,9 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As ModulesViewModel) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 3) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If (IsNothing(entityVM.AspNetRolesId)) Then
                 ModelState.AddModelError("AspNetRolesId", Resource.RequiredField)
             End If
@@ -222,6 +237,9 @@ Namespace Controllers
 
         ' GET: Modules/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             If IsNothing(id) Then
                 Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
             End If
@@ -239,6 +257,9 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
+            If AppSession.ListActionSousRessource.Contains(63, 4) Then
+                Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+            End If
             Dim Modules As Modules = Db.Modules.Find(id)
             Db.Modules.Remove(Modules)
             Try

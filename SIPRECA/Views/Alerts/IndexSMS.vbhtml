@@ -27,26 +27,14 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-2">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.SendSMS" href="@Url.Action("SendSMS")">
-                                    <i Class="fa fa-envelope" aria-hidden="true"></i>
-                                    @Resource.SendSMS
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(59, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.SendSMS" href="@Url.Action("SendSMS")">
+                                        <i Class="fa fa-envelope" aria-hidden="true"></i>
+                                        @Resource.SendSMS
+                                    </a>
+                                End If
                             </div>
                         </div>
-                        @*<div Class="col-sm-2">
-                                <div Class="form-group">
-                                    <a class="btn btn-round btn-primary waves-effect waves-light m-1" style="background:#7f00ff;" title="@Resource.SendMail" href="@Url.Action("SendMail")">
-                                        <i Class="fa fa-send" aria-hidden="true"></i>
-                                        @Resource.SendMail
-                                    </a>
-                                </div>
-                            </div>*@
-
-                        @*<div Class="col-sm-3">
-                                <div Class="col-md-12">
-                                    @Html.DropDownList("TypeAlerteFilter", DirectCast(ViewBag.TypeAlerte, IEnumerable(Of SelectListItem)), Resource.TypeAlerteCombo, New With {.class = "form-control single-select"})
-                                </div>
-                            </div>*@
 
                         <div class="col-sm-3 text-right">
                             <div class="input-group mb-4">
@@ -108,9 +96,6 @@ End Code
                             </td>
 
                             <td class="text-center">
-                                @*<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
-                                    <i class="fa fa-list" aria-hidden="true"></i>
-                                </a>*@
 
                             </td>
                         </tr>

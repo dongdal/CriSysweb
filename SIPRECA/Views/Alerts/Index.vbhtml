@@ -108,9 +108,11 @@ End Code
                             </td>
 
                             <td class="text-center">
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
-                                    <i class="fa fa-list" aria-hidden="true"></i>
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(60, 5) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </a>
+                                End If
 
                             </td>
                         </tr>

@@ -83,9 +83,11 @@ End Code
                                 @Html.DisplayFor(Function(modelItem) item.DateCreation)
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("DetailIndems", New With {.id = item.Id})">
-                                    <i class="fa fa-list" aria-hidden="true"></i>
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(10, 5) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("DetailIndems", New With {.id = item.Id})">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </a>
+                                End If
                             </td>
                         </tr>
                     Next
@@ -94,7 +96,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                                    New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>

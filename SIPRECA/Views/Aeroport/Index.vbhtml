@@ -27,10 +27,12 @@ End Code
                     <div Class="row col-sm-12">
                         <div Class="col-sm-8">
                             <div Class="form-group">
-                                <a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
-                                    <i Class="fa fa-plus" aria-hidden="true"></i>
-                                    @Resource.Btn_nouveau
-                                </a>
+                                @If AppSession.ListActionSousRessource.Contains(30, 1) Then
+                                    @<a class="btn btn-round btn-primary waves-effect waves-light m-1" title="@Resource.Btn_nouveau" href="@Url.Action("Create")">
+                                        <i Class="fa fa-plus" aria-hidden="true"></i>
+                                        @Resource.Btn_nouveau
+                                    </a>
+                                End If
                             </div>
                         </div>
 
@@ -67,15 +69,7 @@ End Code
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Html.ActionLink(Resource.LargeurDePiste, "Index", New With {.sortOrder = ViewBag.LargeurDePisteSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
                         </th>
-                        @*<th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                @Html.ActionLink(Resource.SurfaceDePiste, "Index", New With {.sortOrder = ViewBag.NombreDeLitMaxSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                            </th>
-                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                @Html.ActionLink(Resource.TailleDeAeronef, "Index", New With {.sortOrder = ViewBag.NombreDeMedecinSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                            </th>
-                            <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
-                                @Html.ActionLink(Resource.UsageHumanitaire, "Index", New With {.sortOrder = ViewBag.NombreDInfimiereSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab})
-                            </th>*@
+
 
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">
                             @Resource.ActionList
@@ -95,7 +89,7 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.IATA)
                             </td>
-                            
+
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.Oganisation.Nom)
                             <td class="sorting_asc text-center">
@@ -104,26 +98,17 @@ End Code
                             <td class="sorting_asc text-center">
                                 @Html.DisplayFor(Function(modelItem) item.LargeurDePiste)
                             </td>
-                            @*<td class="sorting_asc text-center">
-                                    @Html.DisplayFor(Function(modelItem) item.SurfaceDePiste.Libelle)
-                                </td>
-                                <td class="sorting_asc text-center">
-                                    @Html.DisplayFor(Function(modelItem) item.TailleDeAeronef.Libelle)
-                                </td>
-                                <td class="sorting_asc text-center">
-                                    @Html.DisplayFor(Function(modelItem) item.UsageHumanitaire.Libelle)
-                                </td>*@
-
                             <td class="text-center">
-                                <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
-                                    <i class="fa fa-list" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>*@
+                                @If AppSession.ListActionSousRessource.Contains(30, 5) Then
+                                    @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.Btn_Detail" href="@Url.Action("Details", New With {.id = item.Id})">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </a>
+                                End If
+                                @If AppSession.ListActionSousRessource.Contains(30, 3) Then
+                                    @<a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </a>
+                                End If
 
                             </td>
                         </tr>
@@ -133,7 +118,7 @@ End Code
             </table>
 
             @Html.PagedListPager(Model, Function(page) Url.Action("Index",
-                                                                                               New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
+                                                                                                    New With {.page = page, .sortOrder = ViewBag.CurrentSort, .currentFilter = ViewBag.CurrentFilter, .tab = ViewBag.activeTab}))
             Page @IIf(Model.PageCount < Model.PageNumber, 0, Model.PageNumber) @Resource.RecordsOn @Model.PageCount (@ViewBag.EnregCount @Resource.Records)
 
         </div>
