@@ -29,7 +29,7 @@ Namespace Controllers
 
         ' GET: Enquetes
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -189,7 +189,7 @@ Namespace Controllers
 
         ' GET: Enquetes/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New EnqueteViewModel()
@@ -203,7 +203,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(entityVM As EnqueteViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
 
@@ -233,7 +233,7 @@ Namespace Controllers
 
         ' GET: Enquetes/CreateFromulaire
         Function CreateFromulaire(EnqueteId As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(EnqueteId) Then
@@ -257,7 +257,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function CreateFromulaire(entityVM As EnqueteViewModel, BtnPrevious As String, BtnNext As String) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If (BtnPrevious IsNot Nothing) Then
@@ -294,7 +294,7 @@ Namespace Controllers
 
         ' GET: Enquetes/CreateSection
         Function CreateSection(FormulaireId As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(FormulaireId) Then
@@ -318,7 +318,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function CreateSection(entityVM As EnqueteViewModel, BtnPrevious As String, BtnNext As String, BtnSave As String) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If (BtnPrevious IsNot Nothing) Then
@@ -360,7 +360,7 @@ Namespace Controllers
 
         ' GET: Enquetes/CreateChamps
         Function CreateChamps(FormulaireId As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(FormulaireId) Then
@@ -392,7 +392,7 @@ Namespace Controllers
         <ValidateAntiForgeryToken()>
         <HttpPost()>
         Function CreateChamps(entityVM As EnqueteViewModel, BtnPrevious As String, BtnSave As String) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If (BtnPrevious IsNot Nothing) Then
@@ -441,7 +441,7 @@ Namespace Controllers
         '<ValidateAntiForgeryToken()>
         <HttpPost()>
         Function CreatePoposition(ByVal Libelle As String, ChampsId As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
 
@@ -474,7 +474,7 @@ Namespace Controllers
 
         ' GET: Enquetes/EditFormulaire/5
         Function EditFormulaire(ByVal IdFormulaire As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(IdFormulaire) Then
@@ -496,7 +496,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function EditFormulaire(entityVM As EnqueteViewModel, BtnPrevious As String, BtnNext As String) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
 
@@ -534,7 +534,7 @@ Namespace Controllers
 
         ' GET: Enquetes/EditSection/5
         Function EditSection(ByVal IdSection As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(IdSection) Then
@@ -556,7 +556,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function EditSection(entityVM As EnqueteViewModel, BtnPrevious As String, BtnNext As String, BtnSave As String) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
 
@@ -598,7 +598,7 @@ Namespace Controllers
 
         ' GET: Enquetes/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -619,7 +619,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(entityVM As EnqueteViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If ModelState.IsValid Then
@@ -641,7 +641,7 @@ Namespace Controllers
 
         ' GET: Enquetes/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -661,7 +661,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(58, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim enquete As Enquete = Db.Enquete.Find(id)
@@ -679,7 +679,7 @@ Namespace Controllers
 
         <HttpPost>
         Public Function DeleteFormulaire(ByVal id As Long?) As JsonResult
-            If AppSession.ListActionSousRessource.Contains(58, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
                 Return Json(New With {.Result = "Error"})
             End If
             If IsNothing(id) Then
@@ -727,7 +727,7 @@ Namespace Controllers
 
         <HttpPost>
         Public Function DeleteSection(ByVal id As Long?) As JsonResult
-            If AppSession.ListActionSousRessource.Contains(58, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
                 Return Json(New With {.Result = "Error"})
             End If
             If IsNothing(id) Then
@@ -768,7 +768,7 @@ Namespace Controllers
 
         <HttpPost>
         Public Function DeleteChamps(ByVal id As Long?) As JsonResult
-            If AppSession.ListActionSousRessource.Contains(58, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
                 Return Json(New With {.Result = "Error"})
             End If
             If IsNothing(id) Then

@@ -28,7 +28,7 @@ Namespace Controllers
 
         ' GET: Ressource
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -116,7 +116,7 @@ Namespace Controllers
 
         ' GET: Ressource/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New RessourceViewModel
@@ -130,7 +130,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As RessourceViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             entityVM.AspNetUserId = GetCurrentUser.Id
@@ -151,7 +151,7 @@ Namespace Controllers
 
         ' GET: Ressource/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -172,7 +172,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As RessourceViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If ModelState.IsValid Then
@@ -192,7 +192,7 @@ Namespace Controllers
 
         ' GET: Ressource/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -212,7 +212,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(64, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(64, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Ressource As Ressource = Db.Ressource.Find(id)

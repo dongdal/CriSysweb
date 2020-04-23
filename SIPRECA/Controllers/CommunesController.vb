@@ -39,7 +39,7 @@ Namespace Controllers
 
         ' GET: Commune
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -138,7 +138,7 @@ Namespace Controllers
 
         ' GET: Commune/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New CommuneViewModel
@@ -152,7 +152,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As CommuneViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             entityVM.AspNetUserId = GetCurrentUser.Id
@@ -173,7 +173,7 @@ Namespace Controllers
 
         ' GET: Commune/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -194,7 +194,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As CommuneViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If ModelState.IsValid Then
@@ -214,7 +214,7 @@ Namespace Controllers
 
         ' GET: Commune/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -234,7 +234,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(8, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(8, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Commune As Commune = Db.Commune.Find(id)

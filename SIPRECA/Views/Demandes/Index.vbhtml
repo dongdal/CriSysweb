@@ -176,7 +176,7 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                 @If item.Indemnisation.Select(Of Demande)(Function(e) e.Demande).Count >= 1 Then
                                     Dim indem = item.Indemnisation.Select(Of Long)(Function(e) e.Id).FirstOrDefault
-                                    If AppSession.ListActionSousRessource.Contains(11, 5) Then
+                                    If Not AppSession.ListActionSousRessource.Contains(11, 5) Then
                                         @<a Class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnInfoIndemnisation" href="@Url.Action("Details", "Indemnisations", New With {.id = indem})">
                                             <i Class="fa fa-list" aria-hidden="true"></i>
                                         </a>
@@ -184,13 +184,13 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                 ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental Or
                                                                                     item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational) Then
 
-                                    If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                                    If Not AppSession.ListActionSousRessource.Contains(11, 3) Then
                                         @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                             <i Class="fa fa-edit" aria-hidden="true"></i>
                                         </a>
                                     End If
 
-                                    If AppSession.ListActionSousRessource.Contains(11, 4) Then
+                                    If Not AppSession.ListActionSousRessource.Contains(11, 4) Then
                                         @<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("Delete", New With {.id = item.Id})">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </a>
@@ -201,25 +201,25 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
                                 @If (AppSession.Niveau.Equals(Util.UserLevel.Communal)) Then
 
                                     If (item.StatutExistant = Util.ElementsSuiviDemandes.CreationCommunal) Then
-                                        If AppSession.ListActionSousRessource.Contains(11, 5) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 5) Then
                                             @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationCommunal)' ,'@item.Id')" data-id="@item.Id">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
                                         End If
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationCommunal) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 7) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 7) Then
                                             @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetCommunal)' ,'@item.Id')">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         End If
-                                        If AppSession.ListActionSousRessource.Contains(11, 8) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 8) Then
                                             @<a class="btn btn-round btn-gradient-bloody waves-effect waves-light m-1 " title="@Resource.TransfertDemande" onclick="Transfert('@CInt(Util.ElementsSuiviDemandes.TransfertCommunal)' ,'@item.Id')">
                                                 <i class="fa fa-exchange" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
                                             @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                                 <i class="fa fa-money" aria-hidden="true"></i>
                                             </a>
@@ -246,39 +246,39 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     If (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertCommunal) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 9) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 9) Then
                                             @<a class="btn btn-round btn-danger waves-effect waves-light m-1 " title="@Resource.ReceptionDemande" onclick="Reception('@CInt(Util.ElementsSuiviDemandes.ReceptionDepartemental)' ,'@item.Id')">
                                                 <i class="fa fa-download" aria-hidden="true"></i>
                                             </a>
                                         End If
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionDepartemental Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationDepartemental) Then
-                                        If AppSession.ListActionSousRessource.Contains(11, 4) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 4) Then
                                             @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                                 <i Class="fa fa-edit" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 6) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 6) Then
                                             @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationDepartemental)' ,'@item.Id')">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
                                         End If
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationDepartemental) Then
-                                        If AppSession.ListActionSousRessource.Contains(11, 7) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 7) Then
                                             @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetDepartemental)' ,'@item.Id')">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 8) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 8) Then
                                             @<a class="btn btn-round btn-gradient-bloody waves-effect waves-light m-1 " title="@Resource.TransfertDemande" onclick="Transfert('@CInt(Util.ElementsSuiviDemandes.TransfertDepartemental)' ,'@item.Id')">
                                                 <i class="fa fa-exchange" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
                                             @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                                 <i class="fa fa-money" aria-hidden="true"></i>
                                             </a>
@@ -298,7 +298,7 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     If (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertDepartemental) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 9) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 9) Then
                                             @<a class="btn btn-round btn-danger waves-effect waves-light m-1 " title="@Resource.ReceptionDemande" onclick="Reception('@CInt(Util.ElementsSuiviDemandes.ReceptionRegionale)' ,'@item.Id')">
                                                 <i class="fa fa-download" aria-hidden="true"></i>
                                             </a>
@@ -306,13 +306,13 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationRegional) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 3) Then
                                             @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                                 <i Class="fa fa-edit" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 6) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 6) Then
                                             @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationRegional)' ,'@item.Id')">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
@@ -320,19 +320,19 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationRegional) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 7) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 7) Then
                                             @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetRegional)' ,'@item.Id')">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 8) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 8) Then
                                             @<a class="btn btn-round btn-gradient-bloody waves-effect waves-light m-1 " title="@Resource.TransfertDemande" onclick="Transfert('@CInt(Util.ElementsSuiviDemandes.TransfertRegional)' ,'@item.Id')">
                                                 <i class="fa fa-exchange" aria-hidden="true"></i>
                                             </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
                                             @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                                 <i class="fa fa-money" aria-hidden="true"></i>
                                             </a>
@@ -352,7 +352,7 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     If (item.StatutExistant = Util.ElementsSuiviDemandes.TransfertRegional) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 9) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 9) Then
                                         @<a class="btn btn-round btn-danger waves-effect waves-light m-1 " title="@Resource.ReceptionDemande" onclick="Reception('@CInt(Util.ElementsSuiviDemandes.ReceptionNational)' ,'@item.Id')">
                                             <i class="fa fa-download" aria-hidden="true"></i>
                                         </a>
@@ -360,13 +360,13 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ReceptionRegionale Or item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 3) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 3) Then
                                         @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("Edit", New With {.id = item.Id})">
                                             <i Class="fa fa-edit" aria-hidden="true"></i>
                                         </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 6) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 6) Then
                                         @<a class="btn btn-round btn-gradient-quepal waves-effect waves-light m-1 " title="@Resource.ValiderDemande" onclick="validation('@CInt(Util.ElementsSuiviDemandes.CreationNational)' ,'@item.Id')">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                         </a>
@@ -374,13 +374,13 @@ item.StatutExistant = Util.ElementsSuiviDemandes.CreationNational Then
 
                                     ElseIf (item.StatutExistant = Util.ElementsSuiviDemandes.ValidationNational) Then
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 7) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 7) Then
                                         @<a class="btn btn-round btn-gradient-ibiza waves-effect waves-light m-1 " title="@Resource.RejetDemande" onclick="Rejeter('@CInt(Util.ElementsSuiviDemandes.RejetNational)' ,'@item.Id')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                         End If
 
-                                        If AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
+                                        If Not AppSession.ListActionSousRessource.Contains(11, 10) Or AppSession.ListActionSousRessource.Contains(10, 1) Then
                                         @<a class="btn btn-round btn-success waves-effect waves-light m-1 " title="@Resource.IndemniserSinistre" href="@Url.Action("Create", "Indemnisations", New With {.DemandeId = item.Id})">
                                             <i class="fa fa-money" aria-hidden="true"></i>
                                         </a>

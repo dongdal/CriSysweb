@@ -28,7 +28,7 @@ Namespace Controllers
 
         ' GET: ServicesPubliquePertube
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -96,7 +96,7 @@ Namespace Controllers
 
         ' GET: ServicesPubliquePertube/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New ServicesPubliquePertubeViewModel
@@ -110,7 +110,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As ServicesPubliquePertubeViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             entityVM.AspNetUserId = GetCurrentUser.Id
@@ -131,7 +131,7 @@ Namespace Controllers
 
         ' GET: ServicesPubliquePertube/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -152,7 +152,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As ServicesPubliquePertubeViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If ModelState.IsValid Then
@@ -172,7 +172,7 @@ Namespace Controllers
 
         ' GET: ServicesPubliquePertube/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -192,7 +192,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(49, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(49, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim ServicesPubliquePertube As ServicesPubliquePertube = Db.ServicesPubliquePertube.Find(id)

@@ -28,7 +28,7 @@ Namespace Controllers
 
         ' GET: EvenementZone
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -75,7 +75,7 @@ Namespace Controllers
 
         ' GET: EvenementZone
         Function QueryResult(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(56, 14) Then
+            If Not AppSession.ListActionSousRessource.Contains(56, 14) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -230,7 +230,7 @@ Namespace Controllers
 
         ' GET: EvenementZone/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New EvenementZoneViewModel
@@ -244,7 +244,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As EvenementZoneViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             entityVM.AspNetUserId = GetCurrentUser.Id
@@ -299,7 +299,7 @@ Namespace Controllers
 
         ' GET: EvenementZone/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -320,7 +320,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As EvenementZoneViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
 
@@ -342,7 +342,7 @@ Namespace Controllers
 
         ' GET: EvenementZone/Query
         Function Query() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(56, 14) Then
+            If Not AppSession.ListActionSousRessource.Contains(56, 14) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New QueryViewModel
@@ -353,7 +353,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Query(ByVal entityVM As QueryViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(56, 14) Then
+            If Not AppSession.ListActionSousRessource.Contains(56, 14) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If (ModelState.IsValid) Then
@@ -562,7 +562,7 @@ Namespace Controllers
 
         ' GET: EvenementZone/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -582,7 +582,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(54, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(54, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim EvenementZone As EvenementZone = Db.EvenementZone.Find(id)

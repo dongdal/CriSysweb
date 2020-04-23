@@ -39,7 +39,7 @@ Namespace Controllers
 
         ' GET: Departement
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -144,7 +144,7 @@ Namespace Controllers
 
         ' GET: Departement/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New DepartementViewModel
@@ -158,7 +158,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Create(ByVal entityVM As DepartementViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             entityVM.AspNetUserId = GetCurrentUser.Id
@@ -179,7 +179,7 @@ Namespace Controllers
 
         ' GET: Departement/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -200,7 +200,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As DepartementViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If ModelState.IsValid Then
@@ -220,7 +220,7 @@ Namespace Controllers
 
         ' GET: Departement/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -240,7 +240,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(7, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(7, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Departement As Departement = Db.Departement.Find(id)

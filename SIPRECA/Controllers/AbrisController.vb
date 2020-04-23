@@ -29,7 +29,7 @@ Namespace Controllers
 
         ' GET: Abris
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -102,7 +102,7 @@ Namespace Controllers
 
         ' GET: Abris/Details/5
         Function Details(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 5) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 5) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -181,7 +181,7 @@ Namespace Controllers
 
         ' GET: Abris/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New AbrisViewModel
@@ -192,7 +192,7 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As AbrisJS) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Ent As New Abris
@@ -241,7 +241,7 @@ Namespace Controllers
 
         ' GET: Abris/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -268,7 +268,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As AbrisViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If Request.Form("AddPersonnel") IsNot Nothing Then
@@ -294,7 +294,7 @@ Namespace Controllers
 
         <HttpPost()>
         Function EditAbris(ByVal entityVM As AbrisJS) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Ent As New Abris
@@ -457,7 +457,7 @@ Namespace Controllers
 
         ' GET: Abris/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -477,7 +477,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(26, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(26, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Abris As Abris = Db.Abris.Find(id)

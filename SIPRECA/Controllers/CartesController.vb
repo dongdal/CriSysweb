@@ -359,7 +359,7 @@ Namespace Controllers
 
         ' GET: Carte
         Function Index() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(44, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(44, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New FiltreViewModel
@@ -370,7 +370,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Query(ByVal entityVM As FiltreViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(44, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(44, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If (ModelState.IsValid) Then

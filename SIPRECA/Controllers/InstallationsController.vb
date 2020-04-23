@@ -29,7 +29,7 @@ Namespace Controllers
 
         ' GET: Installation
         Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 2) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 2) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             ViewBag.CurrentSort = sortOrder
@@ -176,7 +176,7 @@ Namespace Controllers
 
         ' GET: Installation/Create
         Function Create() As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim entityVM As New InstallationViewModel
@@ -187,7 +187,7 @@ Namespace Controllers
 
         <HttpPost()>
         Function Create(ByVal entityVM As InstallationsJS) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 1) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Ent As New Installation
@@ -238,7 +238,7 @@ Namespace Controllers
 
         ' GET: Installation/Edit/5
         Function Edit(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -265,7 +265,7 @@ Namespace Controllers
         <HttpPost()>
         <ValidateAntiForgeryToken()>
         Function Edit(ByVal entityVM As InstallationViewModel) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If Request.Form("AddPersonnel") IsNot Nothing Then
@@ -282,7 +282,7 @@ Namespace Controllers
         'POST: Heliport/Installation/5
         <HttpPost()>
         Function EditInstallation(ByVal entityVM As InstallationsJS) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 3) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 3) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Ent As New Installation
@@ -409,7 +409,7 @@ Namespace Controllers
 
         ' GET: Installation/Edit/5
         Function Details(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 5) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 5) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -455,7 +455,7 @@ Namespace Controllers
 
         ' GET: Installation/Delete/5
         Function Delete(ByVal id As Long?) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             If IsNothing(id) Then
@@ -475,7 +475,7 @@ Namespace Controllers
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>
         Function DeleteConfirmed(ByVal id As Long) As ActionResult
-            If AppSession.ListActionSousRessource.Contains(36, 4) Then
+            If Not AppSession.ListActionSousRessource.Contains(36, 4) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
             Dim Installation As Installation = Db.Installation.Find(id)

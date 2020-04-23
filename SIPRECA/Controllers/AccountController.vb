@@ -46,7 +46,7 @@ Public Class AccountController
 
     '<LocalizedAuthorize(Roles:="Administrateur")>
     Public Function Index(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
-        If AppSession.ListActionSousRessource.Contains(66, 2) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 2) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         ViewBag.CurrentSort = sortOrder
@@ -266,7 +266,7 @@ Public Class AccountController
     ' GET: /Account/Register
     <AllowAnonymous>
     Public Function Register() As ActionResult
-        If AppSession.ListActionSousRessource.Contains(66, 1) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 1) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         Dim model = New RegisterViewModel()
@@ -280,7 +280,7 @@ Public Class AccountController
     <AllowAnonymous>
     <ValidateAntiForgeryToken>
     Public Async Function Register(model As RegisterViewModel) As Task(Of ActionResult)
-        If AppSession.ListActionSousRessource.Contains(66, 1) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 1) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         If ModelState.IsValid Then
@@ -318,7 +318,7 @@ Public Class AccountController
 
     '<LocalizedAuthorize(Roles:="Administrateur")>
     Public Function Edit(id As String, Optional Message As ManageMessageId? = Nothing) As ActionResult
-        If AppSession.ListActionSousRessource.Contains(66, 3) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 3) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         If IsNothing(id) Then
@@ -339,7 +339,7 @@ Public Class AccountController
     <HttpPost>
     <ValidateAntiForgeryToken>
     Public Async Function Edit(model As EditUserViewModel) As Task(Of ActionResult)
-        If AppSession.ListActionSousRessource.Contains(66, 3) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 3) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         If model Is Nothing Then
@@ -382,7 +382,7 @@ Public Class AccountController
     'Get
     '<LocalizedAuthorize(Roles:="Administrateur")>
     Public Function UserRoles(id As String) As ActionResult
-        If AppSession.ListActionSousRessource.Contains(66, 15) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         If IsNothing(id) Then
@@ -399,7 +399,7 @@ Public Class AccountController
     <HttpPost>
     <ValidateAntiForgeryToken>
     Public Function UserRoles(model As SelectUserRolesViewModel) As ActionResult
-        If AppSession.ListActionSousRessource.Contains(66, 15) Then
+        If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
         If ModelState.IsValid Then
@@ -422,7 +422,7 @@ Public Class AccountController
 
     <HttpGet>
     Public Function AccessRightsManager(UserId As String) As ActionResult
-        'If AppSession.ListActionSousRessource.Contains(66, 15) Then
+        'If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
         '    Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         'End If
 
@@ -494,7 +494,7 @@ Public Class AccountController
     <HttpPost>
     <ValidateAntiForgeryToken>
     Public Function AccessRightsManager(entityVM As AccessRightsManagerViewModel) As ActionResult
-        'If AppSession.ListActionSousRessource.Contains(66, 15) Then
+        'If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
         '    Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         'End If
         If (IsNothing(entityVM.ActionsId)) Then
