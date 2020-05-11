@@ -4104,4 +4104,22 @@
   <data name="Error404_Title" xml:space="preserve">
     <value>Ressource inexistante</value>
   </data>
+  <data name="CreateRoles" xml:space="preserve">
+    <value>Ajouter un rôle</value>
+  </data>
+  <data name="DeleteRoles" xml:space="preserve">
+    <value>Supprimer un rôle</value>
+  </data>
+  <data name="EditRoles" xml:space="preserve">
+    <value>Modifier un rôle</value>
+  </data>
+  <data name="ListRoles" xml:space="preserve">
+    <value>Liste des rôles</value>
+  </data>
+  <data name="ManageRoles" xml:space="preserve">
+    <value>Gestion des rôles</value>
+  </data>
+  <data name="Menu_ManageRoles" xml:space="preserve">
+    <value>Les rôles / profils</value>
+  </data>
 </root>

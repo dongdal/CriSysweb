@@ -422,9 +422,9 @@ Public Class AccountController
 
     <HttpGet>
     Public Function AccessRightsManager(UserId As String) As ActionResult
-        'If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
-        '    Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
-        'End If
+        If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
 
         If IsNothing(UserId) Then 'on vérifie si l'id envoyé en paramètre est bel et bien non vide. S'il est vide, on renvoit une erreur de type HttpNotFount
             Return HttpNotFound()
@@ -494,9 +494,9 @@ Public Class AccountController
     <HttpPost>
     <ValidateAntiForgeryToken>
     Public Function AccessRightsManager(entityVM As AccessRightsManagerViewModel) As ActionResult
-        'If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
-        '    Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
-        'End If
+        If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
         If (IsNothing(entityVM.ActionsId)) Then
             ModelState.AddModelError("", Resource.MdlStatError_ActionList)
         End If

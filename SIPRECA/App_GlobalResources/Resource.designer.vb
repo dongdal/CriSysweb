@@ -2252,6 +2252,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Ajouter un rôle.
+        '''</summary>
+        Public Shared ReadOnly Property CreateRoles() As String
+            Get
+                Return ResourceManager.GetString("CreateRoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Ajouter un nouveau secteur.
         '''</summary>
         Public Shared ReadOnly Property CreateSecteur() As String
@@ -3121,6 +3130,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property DeleteRessource() As String
             Get
                 Return ResourceManager.GetString("DeleteRessource", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Supprimer un rôle.
+        '''</summary>
+        Public Shared ReadOnly Property DeleteRoles() As String
+            Get
+                Return ResourceManager.GetString("DeleteRoles", resourceCulture)
             End Get
         End Property
         
@@ -4228,6 +4246,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property EditRisqueZone() As String
             Get
                 Return ResourceManager.GetString("EditRisqueZone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Modifier un rôle.
+        '''</summary>
+        Public Shared ReadOnly Property EditRoles() As String
+            Get
+                Return ResourceManager.GetString("EditRoles", resourceCulture)
             End Get
         End Property
         
@@ -6059,6 +6086,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Liste des rôles.
+        '''</summary>
+        Public Shared ReadOnly Property ListRoles() As String
+            Get
+                Return ResourceManager.GetString("ListRoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Liste des secteurs.
         '''</summary>
         Public Shared ReadOnly Property ListSecteur() As String
@@ -6950,6 +6986,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Gestion des rôles.
+        '''</summary>
+        Public Shared ReadOnly Property ManageRoles() As String
+            Get
+                Return ResourceManager.GetString("ManageRoles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Gestion des secteurs.
         '''</summary>
         Public Shared ReadOnly Property ManageSecteur() As String
@@ -7342,6 +7387,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property Menu_Home() As String
             Get
                 Return ResourceManager.GetString("Menu_Home", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Les rôles / profils.
+        '''</summary>
+        Public Shared ReadOnly Property Menu_ManageRoles() As String
+            Get
+                Return ResourceManager.GetString("Menu_ManageRoles", resourceCulture)
             End Get
         End Property
         
