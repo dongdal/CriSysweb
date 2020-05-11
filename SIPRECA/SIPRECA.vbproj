@@ -2308,6 +2308,10 @@
     <Content Include="Views\ActionSousRessources\Index.vbhtml" />
     <Content Include="Views\Account\AccessRightsManager.vbhtml" />
     <Content Include="Views\Home\Error404.vbhtml" />
+    <Content Include="Views\Account\CreateRoles.vbhtml" />
+    <Content Include="Views\Account\EditRoles.vbhtml" />
+    <Content Include="Views\Account\IndexRoles.vbhtml" />
+    <Content Include="Views\Account\DeleteRoles.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

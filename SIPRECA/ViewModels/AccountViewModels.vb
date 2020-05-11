@@ -115,7 +115,7 @@ Public Class RegisterViewModel
     Public Property Email As String
 
     <Display(Name:="Etat", ResourceType:=GetType(Resource))>
-    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")> 
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     Public Property Etat As Short = 1
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -428,5 +428,35 @@ Public Class SelectRoleEditorViewModel
             M_RoleName = value
         End Set
     End Property
+
+End Class
+
+Public Class RolesViewModel
+
+    Public Property Id As String
+
+    <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
+    <Display(Name:="RoleName", ResourceType:=GetType(Resource))>
+    Public Property Name As String
+
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(entity As IdentityRole)
+        With Me
+            .Id = entity.Id
+            .Name = entity.Name
+        End With
+    End Sub
+
+    Public Function GetEntity() As IdentityRole
+        Dim entity As New IdentityRole
+        With entity
+            .Id = Id
+            .Name = Name
+        End With
+        Return entity
+    End Function
 
 End Class

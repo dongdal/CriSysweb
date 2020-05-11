@@ -142,6 +142,169 @@ Public Class AccountController
         Return View(entities.ToPagedList(pageNumber, pageSize))
     End Function
 
+    Public Function IndexRoles(sortOrder As String, currentFilter As String, searchString As String, page As Integer?) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 2) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        ViewBag.CurrentSort = sortOrder
+        ViewBag.NameSort = If(sortOrder = "Name", "Name_desc", "Name")
+
+        If Not String.IsNullOrEmpty(searchString) Then
+            page = 1
+        Else
+            searchString = currentFilter
+        End If
+
+        ViewBag.CurrentFilter = searchString
+
+        Dim entities = (From role In Db.Roles Select role)
+        If Not String.IsNullOrEmpty(searchString) Then
+            entities = entities.Where(Function(role) role.Name.ToUpper.Contains(value:=searchString.ToUpper))
+        End If
+        ViewBag.EnregCount = entities.Count
+
+        Select Case sortOrder
+
+            Case "Name"
+                entities = entities.OrderBy(Function(e) e.Name)
+            Case "Name_desc"
+                entities = entities.OrderByDescending(Function(e) e.Name)
+
+            Case Else
+                entities = entities.OrderBy(Function(e) e.Id)
+                Exit Select
+        End Select
+
+        Dim RoleList As New List(Of RolesViewModel)
+        If Not IsNothing(entities) Then
+            For Each item In entities
+                Dim Role As New RolesViewModel
+                Role.Id = item.Id
+                Role.Name = item.Name
+                RoleList.Add(Role)
+            Next
+        End If
+
+        Dim pageSize As Integer = ConfigurationManager.AppSettings("pageSize")
+        Dim pageNumber As Integer = If(page, 1)
+
+        Return View(RoleList.ToPagedList(pageNumber, pageSize))
+    End Function
+
+    ' GET: Account/CreateRoles
+    Function CreateRoles() As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 1) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        Dim entityVM As New RolesViewModel
+        Return View(entityVM)
+    End Function
+
+    ' POST: Account/CreateRoles
+    'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
+    'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
+    <HttpPost()>
+    <ValidateAntiForgeryToken()>
+    Function CreateRoles(ByVal entityVM As RolesViewModel) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 1) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        Else
+            If ModelState.IsValid Then
+                Dim ListIdString = (From e In Db.Roles Select e.Id Order By Id Ascending).ToList
+                Dim ListId As New List(Of Integer)
+                For Each id In ListIdString
+                    Dim temp As Integer = 0
+                    Integer.TryParse(id, temp)
+                    ListId.Add(temp)
+                Next
+                entityVM.Id = ListId.LastOrDefault + 1
+                Db.Roles.Add(entityVM.GetEntity)
+                Try
+                    Db.SaveChanges()
+                    Return RedirectToAction("IndexRoles")
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            Return View(entityVM)
+        End If
+    End Function
+
+    ' GET: Account/EditRoles/5
+    Function EditRoles(ByVal id As String) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 3) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        Else
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim roles As IdentityRole = Db.Roles.Find(id)
+            If IsNothing(roles) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New RolesViewModel(roles)
+            Return View(entityVM)
+        End If
+    End Function
+
+    ' POST: Account/EditRoles/5
+    'Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
+    'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
+    <HttpPost()>
+    <ValidateAntiForgeryToken()>
+    Function EditRoles(ByVal entityVM As RolesViewModel) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 3) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        Else
+            If ModelState.IsValid Then
+                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                Try
+                    Db.SaveChanges()
+                    Return RedirectToAction("IndexRoles")
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+            End If
+            Return View(entityVM)
+        End If
+    End Function
+
+    ' GET: Account/DeleteRoles/5
+    Function DeleteRoles(ByVal id As String) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 4) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        Else
+            If IsNothing(id) Then
+                Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+            End If
+            Dim role As IdentityRole = Db.Roles.Find(id)
+            If IsNothing(role) Then
+                Return HttpNotFound()
+            End If
+            Dim entityVM As New RolesViewModel(role)
+            Return View(entityVM)
+        End If
+    End Function
+
+    ' POST: Account/DeleteRoles/5
+    <HttpPost()>
+    <ActionName("DeleteRoles")>
+    <ValidateAntiForgeryToken()>
+    Function DeleteRolesConfirmed(ByVal id As String) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(10012, 4) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        Else
+            Dim role As IdentityRole = Db.Roles.Find(id)
+            Db.Roles.Remove(role)
+            Db.SaveChanges()
+            Return RedirectToAction("IndexRoles")
+        End If
+    End Function
+
     '
     ' GET: /Account/Login
     <AllowAnonymous>

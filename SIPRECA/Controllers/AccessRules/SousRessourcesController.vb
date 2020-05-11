@@ -183,7 +183,20 @@ Namespace Controllers
         End Sub
 
         Private Sub DeleteActionSousRessource(IdSousRessource As Long)
-            Dim actionSousRessource = (From e In Db.ActionSousRessource Where e.SousRessourceId = IdSousRessource Select e)
+            Dim actionSousRessource = (From e In Db.ActionSousRessource Where e.SousRessourceId = IdSousRessource Select e).ToList
+            For Each item In actionSousRessource
+                Dim aspnetuseractionsousressource = (From e In Db.AspNetUserActionSousRessource Where e.ActionSousRessourceId = item.Id Select e).FirstOrDefault()
+                If Not IsNothing(aspnetuseractionsousressource) Then
+                    Db.AspNetUserActionSousRessource.Remove(aspnetuseractionsousressource)
+                    Try
+                        Db.SaveChanges()
+                    Catch ex As DbEntityValidationException
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End If
+            Next
             Db.ActionSousRessource.RemoveRange(actionSousRessource)
             Try
                 Db.SaveChanges()

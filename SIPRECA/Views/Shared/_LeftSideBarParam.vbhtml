@@ -40,7 +40,7 @@
     </div>
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">@Resource.MainNavigation</li>
-        @If AppSession.ListRessources.Contains(20) Then
+        @If AppSession.ListRessources.Contains(21) Then
             @<li>
                 <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
                     <i class="fa fa-lock"></i><span>@Resource.Menu_BasicsDatas</span>
@@ -66,7 +66,7 @@
             </li>
         End If
 
-        @If AppSession.ListRessources.Contains(21) Then
+        @If AppSession.ListRessources.Contains(22) Then
             @<li>
                 <a href="javaScript:void();" class="waves-effect" style="font-size: 11px;">
                     <i class="fa fa-users"></i><span>@Resource.Menu_UserManager</span>
@@ -76,7 +76,10 @@
                     @If AppSession.ListSousRessources.Contains(66) Then
                         @<li><a href="@Url.Action("Index", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_UserManager</a></li>
                     End If
-                    
+
+                    @If AppSession.ListSousRessources.Contains(10012) Then
+                        @<li><a href="@Url.Action("IndexRoles", "Account")" style="font-size: 12px;"><i class="fa fa-long-arrow-right"></i> @Resource.Menu_ManageRoles</a></li>
+                    End If
                 </ul>
             </li>
         End If

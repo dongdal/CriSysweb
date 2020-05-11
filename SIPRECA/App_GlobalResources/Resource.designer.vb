@@ -10811,6 +10811,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une chaîne localisée semblable à Nom du rôle.
+        '''</summary>
+        Public Shared ReadOnly Property RoleName() As String
+            Get
+                Return ResourceManager.GetString("RoleName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une chaîne localisée semblable à Routes endomagés.
         '''</summary>
         Public Shared ReadOnly Property RoutesEndomages() As String

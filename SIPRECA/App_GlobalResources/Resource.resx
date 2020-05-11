@@ -4122,4 +4122,7 @@
   <data name="Menu_ManageRoles" xml:space="preserve">
     <value>Les rôles / profils</value>
   </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Nom du rôle</value>
+  </data>
 </root>
