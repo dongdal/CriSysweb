@@ -18,14 +18,18 @@ End Code
 
 <div class="container-fluid">
 
-    <div class="card gradient-titanium">
+    <div class="card">
         <div class="card-body">
             <div class="card-title text-uppercase"><i class="fa fa-address-book-o"></i> @Resource.AccessRightsManagerTitle</div>
             <hr>
+            @If Not String.IsNullOrEmpty(ViewBag.ErreurModel) Then
+                @<div Class="text-danger"><i class="fa fa-times"></i> @ViewBag.ErreurModel</div>
+            End If
+            <br>
             @Using Html.BeginForm("AccessRightsManager", "Account", FormMethod.Post, New With {.autocomplete = "off"})
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(Function(m) m.SelectedAspNetUserId)
-                     @<div Class="row">
+                @<div Class="row">
                     <div Class="col-lg-12">
                         <div Class="card">
                             <div Class="card-body">
@@ -33,9 +37,9 @@ End Code
                                     <div class="col-md-12 form-group">
                                         @Html.LabelFor(Function(m) m.ActionsId, New With {.class = "col-form-label"})<br />
                                         @Html.DropDownListFor(Function(m) m.ActionsId, Model.LesActions,
-New With {.class = "form-control multi-select my_multi_select2", .multiple = "multiple", .style = "font-size: 5px;  height: 200px; "})
+    New With {.class = "form-control multi-select my_multi_select2", .multiple = "multiple", .style = "font-size: 5px;  height: 200px; "})
                                         @Html.ValidationMessageFor(Function(m) m.ActionsId, "",
-New With {.style = "color: #da0b0b"})
+    New With {.style = "color: #da0b0b"})
                                     </div>
                                 </div><!--End row-->
                             </div>

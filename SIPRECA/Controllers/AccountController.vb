@@ -178,9 +178,10 @@ Public Class AccountController
         Dim RoleList As New List(Of RolesViewModel)
         If Not IsNothing(entities) Then
             For Each item In entities
-                Dim Role As New RolesViewModel
-                Role.Id = item.Id
-                Role.Name = item.Name
+                Dim Role As New RolesViewModel With {
+                    .Id = item.Id,
+                    .Name = item.Name
+                }
                 RoleList.Add(Role)
             Next
         End If
@@ -584,7 +585,7 @@ Public Class AccountController
     End Function
 
     <HttpGet>
-    Public Function AccessRightsManager(UserId As String) As ActionResult
+    Public Function AccessRightsManager(UserId As String, Optional ErreurModel As String = "") As ActionResult
         If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
@@ -649,7 +650,7 @@ Public Class AccountController
                 'Next
             Next
         Next
-
+        ViewBag.ErreurModel = ErreurModel
         entityVM.SelectedAspNetUserId = UserId
         Return View(entityVM)
     End Function
@@ -687,7 +688,15 @@ Public Class AccountController
             Next
             Return RedirectToAction("Index")
         End If
-        Return View(entityVM)
+        Dim MessagesBuilder As New StringBuilder()
+        For Each StateModel In ViewData.ModelState.Values
+            For Each msg In StateModel.Errors
+                MessagesBuilder.Append(msg.ErrorMessage & vbCrLf)
+            Next
+        Next
+
+        Return RedirectToAction(actionName:="AccessRightsManager", controllerName:="Account",
+                                routeValues:=New With {.UserId = entityVM.SelectedAspNetUserId, .ErreurModel = MessagesBuilder.ToString})
     End Function
 
     '<HttpPost>
