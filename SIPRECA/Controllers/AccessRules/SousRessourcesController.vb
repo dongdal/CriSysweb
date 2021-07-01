@@ -146,65 +146,63 @@ Namespace Controllers
                 ModelState.AddModelError("ActionsId", Resource.RequiredField)
             End If
             If ModelState.IsValid Then
-                Dim entity = entityVM.GetEntity()
-                Db.SousRessource.Add(entity)
-                Try
-                    Db.SaveChanges()
-                    AddActionSousRessource(entityVM.ActionsId, entity.Id)
-                    Return RedirectToAction("Index")
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+                Using transaction = Db.Database.BeginTransaction
+                    Try
+                        Dim entity = entityVM.GetEntity()
+                        Db.SousRessource.Add(entity)
+                        AddActionSousRessource(entityVM.ActionsId, entity.Id)
+                        Db.SaveChanges()
+                        transaction.Commit()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        transaction.Rollback()
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        transaction.Rollback()
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End Using
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
         End Function
 
         Private Sub AddActionSousRessource(ByVal ListActions As List(Of Long), IdSousRessource As Long)
-            For Each action In ListActions
-                Dim actionSousRessource As New ActionSousRessource With {
-                .ActionsId = action,
-                .AspNetUserId = GetCurrentUser().Id,
-                .SousRessourceId = IdSousRessource,
-                .DateCreation = Now,
-                .StatutExistant = 1
-                }
-                Db.ActionSousRessource.Add(actionSousRessource)
-                Try
-                    Db.SaveChanges()
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+            'on crée une liste d'action sur les sous ressources
+            Dim actionSousRessourceList As New List(Of ActionSousRessource)
+            'on récupère l'utilisateur connecté
+            Dim currentUserId = GetCurrentUser().Id
+            For Each IdAction In ListActions
+                actionSousRessourceList.Add(New ActionSousRessource With {
+                                            .ActionsId = IdAction,
+                                            .AspNetUserId = currentUserId,
+                                            .SousRessourceId = IdSousRessource,
+                                            .DateCreation = Now,
+                                            .StatutExistant = 1
+                                            })
             Next
+            Db.ActionSousRessource.AddRange(actionSousRessourceList)
         End Sub
 
         Private Sub DeleteActionSousRessource(IdSousRessource As Long)
+            'on récupère la liste des actions liées à la sous ressource IdSousRessource dans la table ActionSousRessource
             Dim actionSousRessource = (From e In Db.ActionSousRessource Where e.SousRessourceId = IdSousRessource Select e).ToList
+
+            'liste des actions possibles sur une sous ressource et qui ont été affectées à un (des) utilisateur(s)
+            Dim userActionSousResourceList As New List(Of AspNetUserActionSousRessource)
+
+            'on fait une boucle pour récupérer toutes les actions possibles sur des sous ressources et qui ont été affectées à un (des) utilisateur(s)
             For Each item In actionSousRessource
-                Dim aspnetuseractionsousressource = (From e In Db.AspNetUserActionSousRessource Where e.ActionSousRessourceId = item.Id Select e).FirstOrDefault()
-                If Not IsNothing(aspnetuseractionsousressource) Then
-                    Db.AspNetUserActionSousRessource.Remove(aspnetuseractionsousressource)
-                    Try
-                        Db.SaveChanges()
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
+                Dim userActionSousRessource = (From e In Db.AspNetUserActionSousRessource Where e.ActionSousRessourceId = item.Id Select e).FirstOrDefault()
+                If Not IsNothing(userActionSousRessource) Then
+                    userActionSousResourceList.Add(userActionSousRessource)
                 End If
             Next
+            'on supprime les actions possibles sur les sous ressources qui ont été affectées à un(des) utilisateur(s) dans la table AspNetUserActionSousRessource
+            Db.AspNetUserActionSousRessource.RemoveRange(userActionSousResourceList)
+
+            'on supprime les actions possibles sur les sous ressources dans la table ActionSousRessource
             Db.ActionSousRessource.RemoveRange(actionSousRessource)
-            Try
-                Db.SaveChanges()
-            Catch ex As DbEntityValidationException
-                Util.GetError(ex, ModelState)
-            Catch ex As Exception
-                Util.GetError(ex, ModelState)
-            End Try
         End Sub
 
         ' GET: SousRessource/Edit/5
@@ -247,17 +245,22 @@ Namespace Controllers
                 ModelState.AddModelError("ActionsId", Resource.RequiredField)
             End If
             If ModelState.IsValid Then
-                Db.Entry(entityVM.GetEntity).State = EntityState.Modified
-                Try
-                    Db.SaveChanges()
-                    DeleteActionSousRessource(entityVM.Id) 'On supprime les anciens enregistrements dans la table ActionSousRessource
-                    AddActionSousRessource(entityVM.ActionsId, entityVM.Id) 'On ajoute les nouvelles références
-                    Return RedirectToAction("Index")
-                Catch ex As DbEntityValidationException
-                    Util.GetError(ex, ModelState)
-                Catch ex As Exception
-                    Util.GetError(ex, ModelState)
-                End Try
+                Using transaction = Db.Database.BeginTransaction
+                    Try
+                        Db.Entry(entityVM.GetEntity).State = EntityState.Modified
+                        DeleteActionSousRessource(entityVM.Id) 'On supprime les anciens enregistrements dans la table ActionSousRessource
+                        AddActionSousRessource(entityVM.ActionsId, entityVM.Id) 'On ajoute les nouvelles références
+                        Db.SaveChanges()
+                        transaction.Commit()
+                        Return RedirectToAction("Index")
+                    Catch ex As DbEntityValidationException
+                        transaction.Rollback()
+                        Util.GetError(ex, ModelState)
+                    Catch ex As Exception
+                        transaction.Rollback()
+                        Util.GetError(ex, ModelState)
+                    End Try
+                End Using
             End If
             LoadComboBox(entityVM)
             Return View(entityVM)
