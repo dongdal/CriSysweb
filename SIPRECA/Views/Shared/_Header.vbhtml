@@ -59,7 +59,7 @@
                         </div>
                     </li>
 
-                    <li Class="nav-item dropdown-lg">
+                    @*<li Class="nav-item dropdown-lg">
                         <a Class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                             <i Class="icon-envelope-open"></i>
                         </a>
@@ -167,7 +167,8 @@
                                 <li Class="list-group-item"><a href="javaScript:void();">See All Notifications</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li>*@
+                    
                     <li Class="nav-item language">
                         <a Class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="#">
                             @*<i class="flag-icon flag-icon-gb"></i>*@

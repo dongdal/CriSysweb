@@ -678,7 +678,7 @@ Namespace Controllers
 
         <HttpPost>
         Public Function ConfirmSuivi(id As String, type As String) As JsonResult
-            If Not AppSession.ListActionSousRessource.Contains(11, 5) Then
+            If Not AppSession.ListActionSousRessource.Contains(11, 6) Then
                 Return Json(New With {.Result = "Error"})
             End If
             If [String].IsNullOrEmpty(id) Or [String].IsNullOrEmpty(type) Then
