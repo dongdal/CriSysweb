@@ -414,25 +414,32 @@ Namespace Controllers
                     ModelState.AddModelError("SectionId", Resource.TheRequiredField)
                 End If
 
-
                 entityVM.AspNetUserIdChamps = GetCurrentUser().Id
                 If ModelState.IsValid Then
-                    Dim entity = entityVM.GetEntityChamps()
-                    'Ce code a été ajouté pour gérer le fait que la dernière section et le dernier type de champ doivent automatiquement être chargé dans les ombo lors des prochains ajouts.
-                    Session("LastSection") = entity.SectionId
-                    Session("LastTypeChamp") = entity.TypeChampsId
-                    Db.Champs.Add(entity)
-                    Try
-                        Db.SaveChanges()
-                        ViewBag.FormulaireId = entityVM.FormulaireId
-                        Return RedirectToAction("CreateChamps", New With {entityVM.FormulaireId})
-                    Catch ex As DbEntityValidationException
-                        Util.GetError(ex, ModelState)
-                    Catch ex As Exception
-                        Util.GetError(ex, ModelState)
-                    End Try
+                    Using transaction = Db.Database.BeginTransaction
+                        Try
+                            Dim entity = entityVM.GetEntityChamps()
+                            'Ce code a été ajouté pour gérer le fait que la dernière section et le dernier type de champ doivent automatiquement être chargé dans les ombo lors des prochains ajouts.
+                            Session("LastSection") = entity.SectionId
+                            Session("LastTypeChamp") = entity.TypeChampsId
+                            Db.Champs.Add(entity)
+                            Db.Proposition.Add(New Proposition With {.Libelle = entity.Titre, .ChampsId = entity.Id})
+                            Db.SaveChanges()
+                            transaction.Commit()
+                            ViewBag.FormulaireId = entityVM.FormulaireId
+                            Return RedirectToAction("CreateChamps", New With {entityVM.FormulaireId})
+
+                        Catch ex As DbEntityValidationException
+                            transaction.Rollback()
+                            Util.GetError(ex, ModelState)
+                        Catch ex As Exception
+                            transaction.Rollback()
+                            Util.GetError(ex, ModelState)
+                        End Try
+                    End Using
                 End If
             End If
+
             LoadComboBoxChamps(entityVM)
             entityVM.ListeChamps = (From e In Db.Champs Where e.StatutExistant = 1 And e.Section.FormulaireId = entityVM.FormulaireId Select e Order By e.SectionId).ToList()
             Return View(entityVM)
@@ -799,6 +806,36 @@ Namespace Controllers
             End Try
         End Function
 
+        <HttpPost>
+        Public Function DeleteProposition(ByVal id As Long?) As JsonResult
+            If Not AppSession.ListActionSousRessource.Contains(58, 4) Then
+                Return Json(New With {.Result = "Error"})
+            End If
+            If IsNothing(id) Then
+                Response.StatusCode = CType(HttpStatusCode.BadRequest, Integer)
+                Return Json(New With {.Result = "Error"})
+            End If
+            Try
+                Dim proposition = Db.Proposition.Find(id)
+                If proposition Is Nothing Then
+                    Response.StatusCode = CType(HttpStatusCode.NotFound, Integer)
+                    Return Json(New With {.Result = "Error"})
+                End If
+                Db.Proposition.Remove(proposition)
+                Try
+                    Db.SaveChanges()
+                Catch ex As DbEntityValidationException
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    Util.GetError(ex, ModelState)
+                End Try
+
+                Return Json(New With {.Result = "OK"})
+            Catch ex As Exception
+                'Return Json(New With {.Result = "ERROR", .Message = ex.Message})
+                Return Json(New With {.Result = "Error"})
+            End Try
+        End Function
 
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
             If (disposing) Then

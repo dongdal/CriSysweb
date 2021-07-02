@@ -106,10 +106,32 @@ End Code
                                         @Html.DisplayFor(Function(modelItem) item.Section.Titre)
                                     </td>
                                     <td class="sorting_asc text-left" style="color: darkblue; font-weight:bold">
-                                        @For Each prop In item.Proposition
-                                            @<i class="fa fa-caret-right"></i> @Html.DisplayFor(Function(modelProp) prop.Libelle)
-                                            @<br />
-                                        Next
+
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th> @Resource.Libelle</th>
+                                                    <th> @Resource.Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @For Each prop In item.Proposition
+                                                    @<tr>
+                                                        <td class="text-center">
+                                                            @Html.DisplayFor(Function(modelProp) prop.Libelle)
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-inverse-danger btn-round waves-effect waves-light m-1 DeleteProposition" title="@Resource.DeleteProposition" href="javascript:void(0);" data-id="@prop.Id">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                        </td>
+
+                                                    </tr>
+                                                Next
+
+                                            </tbody>
+                                        </table>
+
                                     </td>
                                     <td class="text-center">
                                         <a class="btn btn-round btn-success waves-effect waves-light m-1" title="@Resource.btn_Add Proposition" href="#" data-toggle="modal" data-target="#Proposition_@item.Id">
@@ -118,7 +140,7 @@ End Code
                                         @*<a class="btn btn-round btn-danger waves-effect waves-light m-1" title="@Resource.Btn_Delete" href="@Url.Action("DeleteChamps", New With {.id = item.Id})">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                             </a>*@
-                                        <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteChamps" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                        <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteChamps" title="@Resource.DeleteChamps" href="javascript:void(0);" data-id="@item.Id">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </a>
 
@@ -279,6 +301,82 @@ End Code
                     Confirmer: function () {
                         $.ajax({
                             url: '@Url.Action("DeleteChamps")',
+                            type: 'POST',
+                            data: { id: Id }
+                        }).done(function (data) {
+                            if (data.Result == "OK") {
+                                //$ctrl.closest('li').remove();
+                                $.confirm({
+                                    title: '@Resource.SuccessTitle',
+                                    content: '@Resource.SuccessProcess',
+                                    animationSpeed: 1000,
+                                    animationBounce: 3,
+                                    animation: 'rotatey',
+                                    closeAnimation: 'scaley',
+                                    theme: 'supervan',
+                                    buttons: {
+                                        OK: function () {
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                            else if (data.Result.Message) {
+                                alert(data.Result.Message);
+                            }
+                        }).fail(function () {
+                            @*//$.alert('@Resource.ErrorProcess');*@
+                            $.confirm({
+                                title: '@Resource.ErreurTitle',
+                                content: '@Resource.ErrorProcess',
+                                animationSpeed: 1000,
+                                animationBounce: 3,
+                                animation: 'rotatey',
+                                closeAnimation: 'scaley',
+                                theme: 'supervan',
+                                buttons: {
+                                    OK: function () {
+                                    }
+                                }
+                            });
+                        })
+                    },
+                    Annuler: function () {
+                        $.confirm({
+                            title: '@Resource.CancelingProcess',
+                            content: '@Resource.CancelingConfirmed',
+                            animationSpeed: 1000,
+                            animationBounce: 3,
+                            animation: 'rotatey',
+                            closeAnimation: 'scaley',
+                            theme: 'supervan',
+                            buttons: {
+                                OK: function () {
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        $('.DeleteProposition').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            var Id = $(this).data("id");
+            //$.alert("Identifiant= " + Id);
+            $.confirm({
+                title: '@Resource.Btn_Delete',
+                content: '@Resource.ConfirmDeleteBis',
+                animationSpeed: 1000,
+                animationBounce: 3,
+                animation: 'rotatey',
+                closeAnimation: 'scaley',
+                theme: 'supervan',
+                buttons: {
+                    Confirmer: function () {
+                        $.ajax({
+                            url: '@Url.Action("DeleteProposition")',
                             type: 'POST',
                             data: { id: Id }
                         }).done(function (data) {
