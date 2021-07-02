@@ -364,6 +364,7 @@
     <Compile Include="DAL\Config\PropositionCfg.vb" />
     <Compile Include="DAL\Config\QuartierCfg.vb" />
     <Compile Include="DAL\Config\TypeAideCfg.vb" />
+    <Compile Include="Infrastructures\Comparators\ModuleRoleComparer.vb" />
     <Compile Include="Infrastructures\MyExtensionModule.vb" />
     <Compile Include="Migrations\201907232032095_Create-DataBase.Designer.vb">
       <DependentUpon>201907232032095_Create-DataBase.vb</DependentUpon>
