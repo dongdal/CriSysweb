@@ -18,13 +18,13 @@ Public Class AccessRightsManagerViewModel
     '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="ModuleRole", ResourceType:=GetType(Resource))>
     Public Property ModuleRoleId As Long
-    Public Overridable Property LesModuleRoles As ICollection(Of ModuleRole)
+    Public Overridable Property LesModuleRoles As List(Of ModuleRole)
     Public Overridable Property ModuleRole As ModuleRole
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Ressource", ResourceType:=GetType(Resource))>
     Public Property RessourceId As Long
-    Public Overridable Property LesRessources As ICollection(Of Ressource)
+    Public Overridable Property LesRessources As List(Of Ressource)
     Public Overridable Property Ressource As Ressource
 
     '<Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
@@ -36,7 +36,7 @@ Public Class AccessRightsManagerViewModel
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="Actions", ResourceType:=GetType(Resource))>
     Public Property ActionsId As List(Of String)
-    Public Overridable Property LesActions As ICollection(Of SelectListItem)
+    Public Overridable Property LesActions As List(Of SelectListItem)
     Public Overridable Property Actions As Actions
 
     <Display(Name:="Utilisateur", ResourceType:=GetType(Resource))>

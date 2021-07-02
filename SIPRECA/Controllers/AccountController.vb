@@ -590,7 +590,7 @@ Public Class AccountController
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
 
-        If IsNothing(UserId) Then 'on vérifie si l'id envoyé en paramètre est bel et bien non vide. S'il est vide, on renvoit une erreur de type HttpNotFount
+        If String.IsNullOrEmpty(UserId) Then 'on vérifie si l'id envoyé en paramètre est bel et bien non vide. S'il est vide, on renvoit une erreur de type HttpNotFount
             Return HttpNotFound()
         End If
 
@@ -599,27 +599,25 @@ Public Class AccountController
         If IsNothing(UserRoles) Then 'on vérifie si la liste des rôles est vide. Si c'est le cas, on renvoit une erreur de type HttpNotFount
             Return HttpNotFound()
         End If
+
         'Dim ModuleRoleList As New List(Of ModuleRole)
         Dim entityVM As New AccessRightsManagerViewModel With {
             .LesModuleRoles = New List(Of ModuleRole),
             .LesRessources = New List(Of Ressource),
             .LesActions = New List(Of SelectListItem)
         }
+
         For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
             'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
             Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e Order By e.Id).ToList()
-            For Each item In moduleRole
-                If Not (entityVM.LesModuleRoles.Contains(item)) Then
-                    entityVM.LesModuleRoles.Add(item) 'on charge la liste des modules et roles en se rassurant qu'il n'y aura pas d'élément en double d'où le "Not (entityVM.LesModuleRoles.Contains(item))"
-                End If
-            Next
+            entityVM.LesModuleRoles.AddRange(moduleRole)
         Next
+        entityVM.LesModuleRoles = entityVM.LesModuleRoles.Distinct(New ModuleRoleComparer()).ToList()
+
 
         For Each item In entityVM.LesModuleRoles
             'On recherche toutes les ressources liées aux modules que nous avons sélectionné.
-            For Each ressource In item.Modules.Ressource
-                entityVM.LesRessources.Add(ressource)
-            Next
+            entityVM.LesRessources.AddRange(item.Modules.Ressource)
         Next
 
         For Each ressource In entityVM.LesRessources
@@ -630,24 +628,27 @@ Public Class AccountController
                     .Name = sousRessource.Ressource.Modules.Libelle.ToUpper() & "->" & sousRessource.Ressource.Libelle.ToUpper() & "->" & sousRessource.Libelle.ToUpper()
                 }
 
+                'On récupère toutes les actions qu'il est possible d'effectuer sur la ressource en cours.
                 Dim ActionSousRessource = (From a In Db.ActionSousRessource Where a.StatutExistant = 1 And a.SousRessourceId = sousRessource.Id Select a).ToList
+
+                'On récupère toutes les actions accéssibles à que l'utilisateur en cours de modification peut effectuer sur la ressource en cours
+                Dim UserActionSousRessource = (From a In Db.AspNetUserActionSousRessource Where a.StatutExistant = 1 And
+                                                                                              a.ActionSousRessource.SousRessourceId = sousRessource.Id Select a).ToList
+
+                Dim isSelected As Boolean = False
+
                 'Pour chaque sous ressource, on charge les actions possibles pour la ressource et on les affecte au groupe correspondant à la sous ressource.
                 For Each actSousRes In ActionSousRessource
+
+                    'On vérifie si l'utilisateur peut effectuer une action sur une sous ressource particulière. Si c'est le cas, isSelected sera à True
+                    isSelected = actSousRes.AspNetUserActionSousRessource.Where(Function(e) e.AspNetUserId = UserId).Count > 0
                     entityVM.LesActions.Add(New SelectListItem() With {
                         .Value = actSousRes.Id,
                         .Text = actSousRes.Actions.Libelle,
-                        .Group = group
+                        .Group = group,
+                        .Selected = isSelected
                     })
                 Next
-
-                'On charge les actions et on les affecte au groupe correspondant à la sous ressource en cours.
-                'For Each actions As Actions In Db.Actions.Where(Function(a) a.StatutExistant = 1)
-                '    entityVM.LesActions.Add(New SelectListItem() With {
-                '        .Value = sousRessource.Id & "-" & actions.Id,
-                '        .Text = actions.Libelle,
-                '        .Group = group
-                '    })
-                'Next
             Next
         Next
         ViewBag.ErreurModel = ErreurModel
@@ -661,33 +662,43 @@ Public Class AccountController
         If Not AppSession.ListActionSousRessource.Contains(66, 15) Then
             Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
         End If
+
         If (IsNothing(entityVM.ActionsId)) Then
             ModelState.AddModelError("", Resource.MdlStatError_ActionList)
         End If
         If ModelState.IsValid Then
-            'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
-            DeleteAccessRights(entityVM.SelectedAspNetUserId)
-            'Pour chaque élément dans la liste représentant l'identifiant d'un tuple de la table actionSousRessource, on enregistra dans la table aspnetuserAction....  
-            'la valeur en cours à partir de laquelle il sera facile d'avoir l'action associée
-            For Each item In entityVM.ActionsId
-                Dim aspNetUserActionSousRessource As New AspNetUserActionSousRessource With {
-                .ActionSousRessourceId = item,
-                .AspNetUserId = entityVM.SelectedAspNetUserId,
-                .DateCreation = Now,
-                .StatutExistant = 1,
-                .UserId = User.Identity.GetUserId()
-                }
-                Db.AspNetUserActionSousRessource.Add(aspNetUserActionSousRessource)
+            Using transaction = Db.Database.BeginTransaction
                 Try
+                    'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
+                    DeleteAccessRights(entityVM.SelectedAspNetUserId)
+
+                    'Pour chaque élément dans la liste représentant l'identifiant d'un tuple de la table actionSousRessource, on enregistra dans la table aspnetuserAction....  
+                    'la valeur en cours à partir de laquelle il sera facile d'avoir l'action associée
+                    For Each item In entityVM.ActionsId
+                        Db.AspNetUserActionSousRessource.Add(New AspNetUserActionSousRessource With {
+                        .ActionSousRessourceId = item,
+                        .AspNetUserId = entityVM.SelectedAspNetUserId,
+                        .DateCreation = Now,
+                        .StatutExistant = 1,
+                        .UserId = User.Identity.GetUserId()
+                        })
+                    Next
+
                     Db.SaveChanges()
+                    transaction.Commit()
+                    Return RedirectToAction("Index")
+
                 Catch ex As DbEntityValidationException
+                    transaction.Rollback()
                     Util.GetError(ex, ModelState)
                 Catch ex As Exception
+                    transaction.Rollback()
                     Util.GetError(ex, ModelState)
                 End Try
-            Next
-            Return RedirectToAction("Index")
+            End Using
         End If
+
+        'On récupère les différentes erreurs qui ont été rencontrées
         Dim MessagesBuilder As New StringBuilder()
         For Each StateModel In ViewData.ModelState.Values
             For Each msg In StateModel.Errors
@@ -699,41 +710,6 @@ Public Class AccountController
                                 routeValues:=New With {.UserId = entityVM.SelectedAspNetUserId, .ErreurModel = MessagesBuilder.ToString})
     End Function
 
-    '<HttpPost>
-    '<ValidateAntiForgeryToken>
-    'Public Function AccessRightsManager(entityVM As AccessRightsManagerViewModel) As ActionResult
-    '    If (IsNothing(entityVM.ActionsId)) Then
-    '        ModelState.AddModelError("", Resource.MdlStatError_ActionList)
-    '    End If
-    '    If ModelState.IsValid Then
-    '        'Dans un Premier temps, on procède au nettoyage de la base de données en supprimant les anciens droits d'accès de l'utilisateur sur lequel les traitements sont effectués
-    '        DeleteAccessRights(entityVM.SelectedAspNetUserId)
-    '        For Each item In entityVM.ActionsId 'Pour chaque élément dans la liste (Ex: Id_ress-Id_act) on fera un split sur le "-" pour avoir l'id de la sous ressource et de l'action correspondante
-    '            'Création d'un tableau IdArray  de chaînes de caractères qui recevra les deux identifiants après l'opération de split.
-    '            'Le premier élément du tableau correspondra à l'identition de la sous ressource, et le second à l'identifiant de l'action.
-    '            Dim IdArray As String() = item.Split(New Char() {"-"c})
-    '            'Création d'un objet ActionSousRessource
-    '            Dim actionSousRessource As New ActionSousRessource With {
-    '            .ActionsId = IdArray(1),
-    '            .SousRessourceId = IdArray(0),
-    '            .AspNetUserId = entityVM.SelectedAspNetUserId,
-    '            .DateCreation = Now,
-    '            .StatutExistant = 1
-    '            }
-    '            Db.ActionSousRessource.Add(actionSousRessource)
-    '            Try
-    '                Db.SaveChanges()
-    '            Catch ex As DbEntityValidationException
-    '                Util.GetError(ex, ModelState)
-    '            Catch ex As Exception
-    '                Util.GetError(ex, ModelState)
-    '            End Try
-    '        Next
-    '        Return RedirectToAction("Index")
-    '    End If
-    '    Return View(entityVM)
-    'End Function
-
     ''' <summary>
     ''' Cette fonction permet de supprimer tous les anciens droits d'accès accordés à l'utilisateur dont l'identifiant est passé en paramètre.
     ''' </summary>
@@ -742,13 +718,6 @@ Public Class AccountController
         'On sélectionne tous les droits de l'utilsiateur
         Dim AllUserRights = (From e In Db.AspNetUserActionSousRessource Where e.AspNetUserId = UserId Select e).ToList()
         Db.AspNetUserActionSousRessource.RemoveRange(AllUserRights)
-        Try
-            Db.SaveChanges()
-        Catch ex As DbEntityValidationException
-            Util.GetError(ex, ModelState)
-        Catch ex As Exception
-            Util.GetError(ex, ModelState)
-        End Try
     End Sub
 
     'Public Function Index() As ActionResult
