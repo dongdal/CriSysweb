@@ -10,6 +10,7 @@ Public Class CollecteCfg
         Me.Property(Function(p) p.Longitude).IsOptional()
         Me.Property(Function(p) p.LibellePosition).IsOptional().HasMaxLength(250)
         Me.Property(Function(p) p.DateCreation).IsRequired()
+        Me.Property(Function(p) p.DateCollecte).IsRequired()
         Me.Property(Function(p) p.StatutExistant).IsRequired()
         Me.Property(Function(p) p.AspNetUserId).IsRequired()
     End Sub

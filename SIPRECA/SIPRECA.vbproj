@@ -518,6 +518,18 @@
       <DependentUpon>202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb" />
+    <Compile Include="Migrations\202107060916355_Alter_table_Collecte_Add_Field_DateCollecte.Designer.vb">
+      <DependentUpon>202107060916355_Alter_table_Collecte_Add_Field_DateCollecte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107060916355_Alter_table_Collecte_Add_Field_DateCollecte.vb" />
+    <Compile Include="Migrations\202107081122156_Alter_Table_ValeurChamps_Add_Fields_CodeCollecte_DateSynchro_DateCollecte_StatutExist_Latitude_Longitude.Designer.vb">
+      <DependentUpon>202107081122156_Alter_Table_ValeurChamps_Add_Fields_CodeCollecte_DateSynchro_DateCollecte_StatutExist_Latitude_Longitude.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081122156_Alter_Table_ValeurChamps_Add_Fields_CodeCollecte_DateSynchro_DateCollecte_StatutExist_Latitude_Longitude.vb" />
+    <Compile Include="Migrations\202107081133280_Alter_Table_ValeurChamps_Set_Field_CodeCollecte_Required_MaxLength_128.Designer.vb">
+      <DependentUpon>202107081133280_Alter_Table_ValeurChamps_Set_Field_CodeCollecte_Required_MaxLength_128.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081133280_Alter_Table_ValeurChamps_Set_Field_CodeCollecte_Required_MaxLength_128.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccessRules\Actions.vb" />
     <Compile Include="Models\AccessRules\ActionSousRessource.vb" />
@@ -959,6 +971,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.resx">
       <DependentUpon>202004061415595_Add_Table_AspNetUserActionSousRessource_To_Know_Witch_User_Can_Make_Witch_Action1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060916355_Alter_table_Collecte_Add_Field_DateCollecte.resx">
+      <DependentUpon>202107060916355_Alter_table_Collecte_Add_Field_DateCollecte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081122156_Alter_Table_ValeurChamps_Add_Fields_CodeCollecte_DateSynchro_DateCollecte_StatutExist_Latitude_Longitude.resx">
+      <DependentUpon>202107081122156_Alter_Table_ValeurChamps_Add_Fields_CodeCollecte_DateSynchro_DateCollecte_StatutExist_Latitude_Longitude.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081133280_Alter_Table_ValeurChamps_Set_Field_CodeCollecte_Required_MaxLength_128.resx">
+      <DependentUpon>202107081133280_Alter_Table_ValeurChamps_Set_Field_CodeCollecte_Required_MaxLength_128.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
