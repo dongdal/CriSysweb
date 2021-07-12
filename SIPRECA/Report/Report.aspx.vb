@@ -1,16 +1,58 @@
 ﻿Imports Microsoft.Reporting.WebForms
 Imports System.Data.SqlClient
+Imports System.Globalization
 Imports System.IO
 
 Public Class Report
     Inherits System.Web.UI.Page
 
     Private db As New ApplicationDbContext
+    Private _reportName As String
+    Private _reportViewName As String
+    Private Const ALL_ROWS As String = "ALL_ROWS"
+
+    Public Property ReportName As String
+        Get
+            Return _reportName
+        End Get
+        Set(value As String)
+            _reportName = value
+        End Set
+    End Property
+
+    Public Shared ReadOnly Property ConnectionString() As String
+        Get
+            Return ConfigurationManager.ConnectionStrings("DefaultConnection").ConnectionString
+        End Get
+    End Property
+
+    Public Property ReportViewName As String
+        Get
+            Return _reportViewName
+        End Get
+        Set(value As String)
+            _reportViewName = value
+        End Set
+    End Property
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             Dim type = Request("type")
             Select Case type
+                Case "ExportCollectDatas" '--------------------------------------------------Exportation des données de collecte '--------------------------------------------------
+
+                    Dim FormulaireId As Long = Request("FormulaireId")
+                    Dim DateDebut As String = ConvertDate(Request("DateDebut"))
+                    Dim DateFin As String = ConvertDate(Request("DateFin"))
+
+                    ReportName = "ExportCollectDatas"
+                    ReportViewName = "vExportCollectDatas"
+
+                    Dim ChampDateFiltre = "DateCollecte" 'On effectuera un filtre sur les dates afin de classer les données de la plus récente à la plus ancienne.
+                    Dim NomChampIdFiltre = "FormulaireId" 'on effectuera un filtre sur les formulaires afin de ne récupérer que les données liées à un seul formulaire précis
+
+                    ShowExportCollectDatas(ReportName, DateDebut, DateFin, GetDataByDateFilter(ChampDateFiltre, DateDebut, DateFin, NomChampIdFiltre, FormulaireId))
+
                 Case "BordereauTransfert" '--------------------------------------------------Bordereau transfert'--------------------------------------------------
 
                     Dim BordereauId As Long = Request("BordereauId")
@@ -74,13 +116,59 @@ Public Class Report
     End Sub
 
 
-    Public Shared ReadOnly Property ConnectionString() As String
-        Get
-            Return ConfigurationManager.ConnectionStrings("DefaultConnection").ConnectionString
-        End Get
-    End Property
+    Private Function ConvertDate(dateConvert As Date) As String
+        Dim mydate() = dateConvert.ToString.Split(" ")
+        Dim time = mydate(1)
+        Dim tempoDateTable() = mydate(0).Split("/")
+
+        Dim jour = tempoDateTable(0)
+        Dim mois = tempoDateTable(1)
+        Dim annee = tempoDateTable(2)
+        Dim resultDate = annee & "-" & mois & "-" + jour
+        Return resultDate
+    End Function
 
 
+    Private Function ConvertDate(dateConvert As String) As String
+        Dim resultDate As New Date '= DateTime.ParseExact(dateConvert, format, CultureInfo.InvariantCulture)
+        Date.TryParseExact(dateConvert, AppSession.DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, resultDate)
+        Return resultDate.ToString("yyyy-MM-dd")
+    End Function
+
+    Private Function GetDataByDateFilter(ByVal ChampDateFiltre As String, ByVal DateDebut As String, ByVal DateFin As String, ByVal NomChampIdFiltre As String, ByVal ChampIdFiltreValeur As String) As DataTable
+        Dim matable As DataTable = Nothing
+        Dim colonne As String = ""
+
+        If (NomChampIdFiltre.ToUpper.Equals(ALL_ROWS)) Then
+            ChampIdFiltreValeur = ALL_ROWS
+        End If
+
+        Dim datefilter = ChampDateFiltre & " >= (CONVERT(datetime2, @DateDebut, 120)) AND  " & ChampDateFiltre & " <= (CONVERT(datetime2, @DateFin, 120))"
+        Dim cmd As String = ""
+
+        cmd = String.Format(" SELECT * FROM {0} Where (" & datefilter & " AND {1} LIKE '" & ChampIdFiltreValeur & "%') ", ReportViewName, NomChampIdFiltre)
+
+        Using myConnection As New SqlConnection(ConnectionString)
+            Using macmd As SqlCommand = New SqlCommand(cmd, myConnection)
+                macmd.Parameters.AddWithValue("@DateDebut", DateDebut + " 00:00:00")
+                macmd.Parameters.AddWithValue("@DateFin", DateFin + " 23:59:59")
+                macmd.CommandTimeout = 0
+                Try
+                    myConnection.Open()
+                    Using reader As SqlDataReader = macmd.ExecuteReader
+                        matable = New DataTable
+                        matable.Load(reader)
+                        reader.Close()
+                    End Using
+                Catch ex As Exception
+                    'logMessage(ex.Message)
+                End Try
+            End Using
+            myConnection.Close()
+        End Using
+
+        Return matable
+    End Function
 
     Private Function GetData(viewName As String, ByVal id_value As String, Optional idName As String = "Id") As DataTable
         Dim matable As DataTable = Nothing
@@ -109,17 +197,17 @@ Public Class Report
         Return matable
     End Function
 
-    Public Function DsOrdreRecetteApprobationModele(ByVal parmValueId As Long, ByVal parIdName As String) As DataTable
-        Return getData("V_OrdreRecetteApprobationModele", parmValueId, parIdName)
-    End Function
+    Private Sub ShowExportCollectDatas(reportName As String, DateDebut As String, DateFin As String, ValeurSourceDonnees As Object)
+        SIPRECA_Report.Reset()
+        SIPRECA_Report.LocalReport.ReportPath = Path.Combine(Server.MapPath("~/Report/Template"), reportName & ".rdlc")
+        SIPRECA_Report.LocalReport.DataSources.Clear()
 
-    Public Function DsOrdreRecette(ByVal parmValueId As Long, ByVal parIdName As String) As DataTable
-        Return getData("V_OrdreRecette", parmValueId, parIdName)
-    End Function
+        'Ajout des paramètres
+        SIPRECA_Report.LocalReport.SetParameters(New ReportParameter() {New ReportParameter("DateDebut", DateDebut)})
+        SIPRECA_Report.LocalReport.SetParameters(New ReportParameter() {New ReportParameter("DateFin", DateFin)})
 
-    Public Function DsDetailOrdreRecette(ByVal parmValueId As Long, ByVal parIdName As String) As DataTable
-        Return getData("V_DetailOrdreRecette", parmValueId, parIdName)
-    End Function
+        SIPRECA_Report.LocalReport.DataSources.Add(New ReportDataSource("DsExportCollectDatas", ValeurSourceDonnees))
+    End Sub
 
     Private Sub ShowBordereauTransfert(reportName As String, BordereauId As Long, ViewName As String)
         SIPRECA_Report.Reset()

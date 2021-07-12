@@ -4125,4 +4125,7 @@
   <data name="RoleName" xml:space="preserve">
     <value>Nom du rôle</value>
   </data>
+  <data name="ExportCollectDatas" xml:space="preserve">
+    <value>Exporter les données de collecte</value>
+  </data>
 </root>

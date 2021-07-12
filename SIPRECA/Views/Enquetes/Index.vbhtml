@@ -48,7 +48,7 @@ End Code
                 </div>
             End Using
 
-            <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
+            <table id="default-datatable" class="table table-bordered dataTable table-responsive" role="grid" aria-describedby="default-datatable_info">
                 <thead>
                     <tr>
                         <th class="sorting_asc text-center" tabindex="0" aria-controls="datatable-responsive">

@@ -1716,6 +1716,9 @@
   <data name="ExpirationCNIPlaceholder" xml:space="preserve">
     <value>Please Enter The Cni Expiration Date</value>
   </data>
+  <data name="ExportCollectDatas" xml:space="preserve">
+    <value>Export collect datas</value>
+  </data>
   <data name="Facteur" xml:space="preserve">
     <value>Postman</value>
   </data>

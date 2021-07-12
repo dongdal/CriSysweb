@@ -621,6 +621,7 @@
     <Compile Include="ViewModels\AccessRules\ActionsViewModel.vb" />
     <Compile Include="ViewModels\BordereauTransfertViewModel.vb" />
     <Compile Include="ViewModels\MailAlertesViewModel.vb" />
+    <Compile Include="ViewModels\Report\ExportCollectDatasViewModel.vb" />
     <Compile Include="ViewModels\SMSAlertesViewModel.vb" />
     <Compile Include="ViewModels\AnneeBudgetairesAbrisViewModel.vb" />
     <Compile Include="ViewModels\DesInventar\CardreSendaiCibleCViewModel.vb" />
@@ -1841,6 +1842,7 @@
     <Content Include="Report\Template\ListeDesHopitaux.rdlc" />
     <Content Include="Report\Template\ListeDesPorts.rdlc" />
     <None Include="Properties\PublishProfiles\CriSys Profile.pubxml" />
+    <Content Include="Report\Template\ExportCollectDatas.rdlc" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2334,6 +2336,7 @@
     <Content Include="Views\Account\EditRoles.vbhtml" />
     <Content Include="Views\Account\IndexRoles.vbhtml" />
     <Content Include="Views\Account\DeleteRoles.vbhtml" />
+    <Content Include="Views\Report\ExportCollectDatas.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

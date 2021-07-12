@@ -49,34 +49,21 @@ Public Class ReportController
     Function ListeDesPorts() As ActionResult
         Return View()
     End Function
+
+    ' GET: Report/ExportCollectDatas/5
+    Function ExportCollectDatas(ByVal FormulaireId As Long) As ActionResult
+        If Not AppSession.ListActionSousRessource.Contains(58, 3) Or Not AppSession.ListActionSousRessource.Contains(58, 1) Then
+            Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
+        End If
+        If IsNothing(FormulaireId) Then
+            Return New HttpStatusCodeResult(HttpStatusCode.BadRequest)
+        End If
+        Dim formulaire As Formulaire = Db.Formulaire.Find(FormulaireId)
+        If IsNothing(formulaire) Then
+            Return HttpNotFound()
+        End If
+        Dim entityVM As New ExportCollectDatasViewModel(FormulaireId, formulaire.EnqueteId)
+        Return View(entityVM)
+    End Function
 End Class
 
-
-
-'Dim LesRegions = (From e In Db.Region Where e.StatutExistant = 1 Select e).ToList()
-'For Each region In LesRegions
-'    Dim LesDepartements = region.Departement.OrderBy(Function(e) e.Libelle).ToList()
-'    Dim i As Integer = 1
-'    For Each departement In LesDepartements
-'        Dim CodeDep As String = ""
-'        CodeDep = IIf(i < 10, region.Code & "0" & i.ToString(), region.Code & i.ToString())
-'        departement.Code = CodeDep
-'        Db.Entry(departement).State = EntityState.Modified
-'        i = i + 1
-'        Dim LesCommunes = departement.Commune.OrderBy(Function(e) e.Libelle).ToList()
-'        Dim j As Integer = 1
-'        For Each commune In LesCommunes
-'            commune.Code = IIf(j < 10, CodeDep & "0" & j.ToString(), CodeDep & j.ToString())
-'            Db.Entry(commune).State = EntityState.Modified
-'            j = j + 1
-'        Next
-'    Next
-'Next
-'Try
-'    Db.SaveChanges()
-'    Return RedirectToAction("Index")
-'Catch ex As DbEntityValidationException
-'    Util.GetError(ex, ModelState)
-'Catch ex As Exception
-'    Util.GetError(ex, ModelState)
-'End Try

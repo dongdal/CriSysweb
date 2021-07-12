@@ -82,7 +82,7 @@
     <script>
         $('.default-datepicker').datepicker({
             todayHighlight: true,
-            format: "dd/mm/yyyy"
+            format: "@AppSession.DateFormat"
         });
         $('#autoclose-datepicker').datepicker({
             autoclose: true,

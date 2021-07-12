@@ -52,7 +52,7 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                         </div>
                     </div>
 
-                    @<table id="ListeSection" Class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
+                    @<table id="ListeSection" Class="table table-bordered dataTable table-responsive" role="grid" aria-describedby="default-datatable_info">
                         <thead>
                             <tr>
 
@@ -86,6 +86,10 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                     <td class="text-center">
                                         <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("EditFormulaire", New With {.IdFormulaire = item.Id})">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+
+                                        <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnPrint" href="@Url.Action("ExportCollectDatas", "Report", New With {.FormulaireId = item.Id})">
+                                            <i class="fa fa-print" aria-hidden="true"></i>
                                         </a>
 
                                         <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteFormulaire" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">

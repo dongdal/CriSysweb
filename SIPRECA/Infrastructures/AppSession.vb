@@ -1,40 +1,12 @@
 ﻿Public Class AppSession
-
-    'Shared Property InstrusVerificationPeriodiqueProche As List(Of Instrument)
-    '    Get
-    '        Return HttpContext.Current.Session("InstrusVerificationPeriodiqueProche")
-    '    End Get
-    '    Set(value As List(Of Instrument))
-    '        HttpContext.Current.Session("InstrusVerificationPeriodiqueProche") = value
-    '    End Set
-    'End Property
-
-    'Shared Property LesOrdreRecetteDepasses As List(Of OrdreRecette)
-    '    Get
-    '        Return HttpContext.Current.Session("LesOrdreRecetteDepasses")
-    '    End Get
-    '    Set(value As List(Of OrdreRecette))
-    '        HttpContext.Current.Session("LesOrdreRecetteDepasses") = value
-    '    End Set
-    'End Property
-
-    'Shared Property ServiceUtilisateur As UserService
-    '    Get
-    '        Return HttpContext.Current.Session("ServiceUtilisateur")
-    '    End Get
-    '    Set(value As UserService)
-    '        HttpContext.Current.Session("ServiceUtilisateur") = value
-    '    End Set
-    'End Property
-
-    'Shared Property ListeDemandeControle As List(Of Demande)
-    '    Get
-    '        Return HttpContext.Current.Session("ListeDemandeControle")
-    '    End Get
-    '    Set(value As List(Of Demande))
-    '        HttpContext.Current.Session("ListeDemandeControle") = value
-    '    End Set
-    'End Property
+    Shared Property DateFormat As String
+        Get
+            Return HttpContext.Current.Session("DateFormat")
+        End Get
+        Set(value As String)
+            HttpContext.Current.Session("DateFormat") = value
+        End Set
+    End Property
 
     Shared Property RegionId As Long
         Get

@@ -80,15 +80,6 @@ Public Class LoginsController
         AuthenticationManager.SignIn(New AuthenticationProperties() With {.IsPersistent = isPersistent}, identity)
     End Function
 
-    'Private Sub LoadComboBox(ByVal model As LoginViewModel)
-    '    Dim AnneeBudgetaire = (From annee In db.AnneeBudgetaires Where annee.StatutExistant = 1 Select annee)
-    '    Dim LesAnneeBudgetaire As New List(Of SelectListItem)
-    '    For Each item In AnneeBudgetaire
-    '        LesAnneeBudgetaire.Add(New SelectListItem With {.Value = item.Id, .Text = item.Libelle})
-    '    Next
-
-    '    model.LesAnneeBudgetaires = LesAnneeBudgetaire
-    'End Sub
 
     '
     ' GET: /Account/Login
@@ -116,19 +107,9 @@ Public Class LoginsController
         AppSession.ListRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Ressource.Id).ToList()
         AppSession.ListSousRessources = (From res In AppSession.ListUserActionSousResource Select res.ActionSousRessource.SousRessource.Id).ToList()
         AppSession.ListActionSousRessource = (From actRes In AppSession.ListUserActionSousResource Select actRes.ActionSousRessource).ToList()
-        'AppSession.ActionSousRessourceList = New List(Of ActionSousRessource)
-        'AppSession.ActionSousRessourceList = (From actSubRes In Db.ActionSousRessource Where actSubRes.AspNetUserId = AppSession.UserId Select actSubRes).ToList()
-        'AppSession.ModuleUserList = New List(Of Long)
-        'Dim UserRoles = (From userRole In Db.IdentityUserRole Where userRole.UserId.Equals(AppSession.UserId) Select userRole).ToList()
-        'For Each userRole In UserRoles 'Pour chaque élément se trouvant dans la liste
-        '    'On sélectionne les modules aux quels peut accéder l'utilisateur en cours de traitement. La sélection se fait en triant les modules en fonction de son(ses) rôle(s)
-        '    Dim moduleRole = (From e In Db.ModuleRole Where e.AspNetRolesId = userRole.RoleId Select e).ToList()
-        '    For Each item In moduleRole
-        '        If Not (AppSession.ModuleUserList.Contains(item.Modules.Id)) Then
-        '            AppSession.ModuleUserList.Add(item.Modules.Id)
-        '        End If
-        '    Next
-        'Next
+
+        AppSession.DateFormat = "dd-MM-yyyy"
+
         Long.TryParse(appUser.CommuneId.ToString, AppSession.CommuneId)
         Long.TryParse(appUser.DepartementId.ToString, AppSession.DepartementId)
         Long.TryParse(appUser.RegionId.ToString, AppSession.RegionId)

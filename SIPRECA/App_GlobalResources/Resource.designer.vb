@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Public Class Resource
@@ -4858,6 +4858,15 @@ Namespace My.Resources
         Public Shared ReadOnly Property ExpirationCNIPlaceholder() As String
             Get
                 Return ResourceManager.GetString("ExpirationCNIPlaceholder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une chaîne localisée semblable à Exporter les données de collecte.
+        '''</summary>
+        Public Shared ReadOnly Property ExportCollectDatas() As String
+            Get
+                Return ResourceManager.GetString("ExportCollectDatas", resourceCulture)
             End Get
         End Property
         
