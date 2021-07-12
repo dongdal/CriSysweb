@@ -84,17 +84,19 @@ New With {.class = "form-control single-select", .tabindex = "2", .Placeholder =
                                         @Html.DisplayFor(Function(modelItem) item.Description)
                                     </td>
                                     <td class="text-center">
-                                        <a class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("EditFormulaire", New With {.IdFormulaire = item.Id})">
-                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        </a>
+                                        @If (item.StatutExistant = StatutExistantEnum.Termine) Then
+                                            @<a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnPrint" href="@Url.Action("ExportCollectDatas", "Report", New With {.FormulaireId = item.Id})">
+                                                <i class="fa fa-print" aria-hidden="true"></i>
+                                            </a>
+                                        Else
+                                            @<a Class="btn btn-round btn-warning waves-effect waves-light m-1" title="@Resource.Btn_Edit" href="@Url.Action("EditFormulaire", New With {.IdFormulaire = item.Id})">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
 
-                                        <a class="btn btn-round btn-info waves-effect waves-light m-1" title="@Resource.BtnPrint" href="@Url.Action("ExportCollectDatas", "Report", New With {.FormulaireId = item.Id})">
-                                            <i class="fa fa-print" aria-hidden="true"></i>
-                                        </a>
-
-                                        <a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteFormulaire" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </a>
+                                            @<a class="btn btn-round btn-danger waves-effect waves-light m-1 DeleteFormulaire" title="@Resource.Btn_Delete" href="javascript:void(0);" data-id="@item.Id">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                        End If
 
                                     </td>
                                 </tr>

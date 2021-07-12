@@ -247,7 +247,8 @@ Namespace Controllers
                 .EnqueteId = enquete.Id
             }
             LoadComboBoxFormulaire(entityVM)
-            entityVM.ListeFormulaires = (From e In Db.Formulaire Where e.StatutExistant = 1 And e.EnqueteId = enquete.Id Select e).ToList()
+            entityVM.ListeFormulaires = (From e In Db.Formulaire Where e.StatutExistant = StatutExistantEnum.Encours Or e.StatutExistant = StatutExistantEnum.Termine And
+                                                                     e.EnqueteId = enquete.Id Select e).ToList()
             Return View(entityVM)
         End Function
 
@@ -288,7 +289,8 @@ Namespace Controllers
                 End If
             End If
             LoadComboBoxFormulaire(entityVM)
-            entityVM.ListeFormulaires = (From e In Db.Formulaire Where e.StatutExistant = 1 And e.EnqueteId = entityVM.EnqueteId Select e).ToList()
+            entityVM.ListeFormulaires = (From e In Db.Formulaire Where e.StatutExistant = StatutExistantEnum.Encours Or e.StatutExistant = StatutExistantEnum.Termine And
+                                                                     e.EnqueteId = entityVM.EnqueteId Select e).ToList()
             Return View(entityVM)
         End Function
 
@@ -304,11 +306,16 @@ Namespace Controllers
             If IsNothing(formulaire) Then
                 Return HttpNotFound()
             End If
+
+            If (formulaire.StatutExistant = StatutExistantEnum.Termine) Then
+                Return RedirectToAction("Index")
+            End If
+
             Dim entityVM As New EnqueteViewModel With {
                 .FormulaireId = formulaire.Id
             }
             LoadComboBoxSection(entityVM)
-            entityVM.ListeSections = (From e In Db.Section Where e.StatutExistant = 1 And e.FormulaireId = formulaire.Id Select e).ToList()
+            entityVM.ListeSections = (From e In Db.Section Where e.StatutExistant = StatutExistantEnum.Encours And e.FormulaireId = formulaire.Id Select e).ToList()
             Return View(entityVM)
         End Function
 
@@ -370,12 +377,17 @@ Namespace Controllers
             If IsNothing(formulaire) Then
                 Return HttpNotFound()
             End If
+
+            If (formulaire.StatutExistant = StatutExistantEnum.Termine) Then
+                Return RedirectToAction("Index")
+            End If
+
             Dim entityVM As New EnqueteViewModel With {
                 .FormulaireId = formulaire.Id
             }
             LoadComboBoxChamps(entityVM)
             ViewBag.FormulaireId = formulaire.Id
-            entityVM.ListeChamps = (From e In Db.Champs Where e.StatutExistant = 1 And e.Section.FormulaireId = formulaire.Id Select e Order By e.SectionId).ToList()
+            entityVM.ListeChamps = (From e In Db.Champs Where e.StatutExistant = StatutExistantEnum.Encours And e.Section.FormulaireId = formulaire.Id Select e Order By e.SectionId).ToList()
 
             'Code nouvellement ajouté pour donner une valeur par defaut à la section et au type de champ
             If (Session("LastSection") IsNot Nothing And Session("LastTypeChamp") IsNot Nothing) Then
@@ -391,12 +403,22 @@ Namespace Controllers
         'plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         <ValidateAntiForgeryToken()>
         <HttpPost()>
-        Function CreateChamps(entityVM As EnqueteViewModel, BtnPrevious As String, BtnSave As String) As ActionResult
+        Function CreateChamps(entityVM As EnqueteViewModel, BtnPrevious As String, BtnSave As String, BtnTerminer As String) As ActionResult
             If Not AppSession.ListActionSousRessource.Contains(58, 1) Then
                 Return RedirectToAction("Error404", "Home", New With {Resource.Error400_AccessRights, .MyAction = "Index", .Controleur = "Home"})
             End If
+
             If (BtnPrevious IsNot Nothing) Then
                 Return RedirectToAction("CreateSection", New With {entityVM.FormulaireId})
+            End If
+
+            If (BtnTerminer IsNot Nothing) Then
+                If IsNothing(entityVM.FormulaireId) Then
+                    ModelState.AddModelError("FormulaireId", Resource.TheRequiredField)
+                Else
+                    VerrouillerFormulaire(entityVM.FormulaireId)
+                    Return RedirectToAction("Index")
+                End If
             End If
 
             'If (BtnNext IsNot Nothing) Then
@@ -836,6 +858,54 @@ Namespace Controllers
                 Return Json(New With {.Result = "Error"})
             End Try
         End Function
+
+        ''' <summary>
+        ''' Cette méthode permet de procéder au verrouillage de tous les éléments liés au formulaire dont l'identifiant est passé en paramètre. Cette opération se déroule dans une transaction, 
+        ''' de sorte qu'en cas d'erreur qu'un Rollback soit effectué afin de ramener le système à son état d'origine.
+        ''' </summary>
+        ''' <param name="FormulaireId"> Représent l'identifiant du formulaire à vérrouiller.</param>
+        Private Sub VerrouillerFormulaire(ByVal FormulaireId As Long)
+            'On ouvre une transaction dans laquelle on fera appel au bloc try -- catch
+
+            Using transaction = Db.Database.BeginTransaction
+                Try
+                    ' Verrouillage des Proposisitions
+                    Dim PropositionList = (From prop In Db.Proposition Where prop.Champs.Section.FormulaireId = FormulaireId).ToList()
+                    For Each proposition In PropositionList
+                        proposition.StatutExistant = StatutExistantEnum.Termine
+                        Db.Entry(proposition).State = EntityState.Modified
+                    Next
+
+                    ' Verrouillage des Champs
+                    Dim ChampsList = (From champ In Db.Champs Where champ.Section.FormulaireId = FormulaireId).ToList()
+                    For Each champ In ChampsList
+                        champ.StatutExistant = StatutExistantEnum.Termine
+                        Db.Entry(champ).State = EntityState.Modified
+                    Next
+
+                    ' Verrouillage des Sections
+                    Dim SectionList = (From section In Db.Section Where section.FormulaireId = FormulaireId).ToList()
+                    For Each section In SectionList
+                        section.StatutExistant = StatutExistantEnum.Termine
+                        Db.Entry(section).State = EntityState.Modified
+                    Next
+
+                    ' Verrouillage du formulaire
+                    Dim Formulaire = Db.Formulaire.Find(FormulaireId)
+                    Formulaire.StatutExistant = StatutExistantEnum.Termine
+                    Db.Entry(Formulaire).State = EntityState.Modified
+
+                    Db.SaveChanges()
+                    transaction.Commit()
+                Catch ex As DbEntityValidationException
+                    transaction.Rollback()
+                    Util.GetError(ex, ModelState)
+                Catch ex As Exception
+                    transaction.Rollback()
+                    Util.GetError(ex, ModelState)
+                End Try
+            End Using
+        End Sub
 
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
             If (disposing) Then

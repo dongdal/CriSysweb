@@ -24,10 +24,10 @@ Public Class EnqueteViewModel
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="StatutExistant", ResourceType:=GetType(Resource))>
-    Public Property StatutExistant As Short = 1
-    Public Property StatutExistantFormulaire As Short = 1
-    Public Property StatutExistantSection As Short = 1
-    Public Property StatutExistantChamps As Short = 1
+    Public Property StatutExistant As StatutExistantEnum = StatutExistantEnum.Encours
+    Public Property StatutExistantFormulaire As StatutExistantEnum = StatutExistantEnum.Encours
+    Public Property StatutExistantSection As StatutExistantEnum = StatutExistantEnum.Encours
+    Public Property StatutExistantChamps As StatutExistantEnum = StatutExistantEnum.Encours
 
     <Required(ErrorMessageResourceType:=GetType(Resource), ErrorMessageResourceName:="RequiredField")>
     <Display(Name:="DateCreation", ResourceType:=GetType(Resource))>
@@ -101,6 +101,8 @@ Public Class EnqueteViewModel
     Public Overridable Property ListeChamps As List(Of Champs) 'La liste des champs déjà enregistrés et à afficher après enregistrement
 
     Public Property PropositionViewModel As New PropositionViewModel
+
+    'Public Property Disabled As Boolean = False
 
     Public Sub New()
     End Sub
